@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>關於前端工程師 Frontend Engineer 的 10 個關鍵字</title>
+    <url>/2020/06/13/about-frontend-engineer-10-keywords%20copy/</url>
+    <content><![CDATA[<p>以下整理了前端工程師相關的 10 個關鍵字，涵蓋技能、工具與工作方式：</p>
+<ol>
+<li><p><strong>HTML</strong>：前端結構的基礎語言，用於定義網頁的內容和結構。</p>
+</li>
+<li><p><strong>CSS</strong>：用於設計網頁的樣式，包括佈局、配色和字體。</p>
+</li>
+<li><p><strong>JavaScript</strong>：前端開發的核心語言，為網頁添加互動性。</p>
+</li>
+<li><p><strong>React &#x2F; Vue &#x2F; Angular</strong>：主流的前端框架和函式庫，用於構建動態、模組化的應用程式。</p>
+</li>
+<li><p><strong>Responsive Design</strong>（響應式設計）：確保網站在不同裝置和螢幕大小下的最佳顯示效果。</p>
+</li>
+<li><p><strong>REST API &#x2F; GraphQL</strong>：前端與後端通訊的重要工具，用於前後端資料請求與傳輸。</p>
+</li>
+<li><p><strong>Webpack &#x2F; Vite &#x2F; Parcel</strong>：模組打包工具，用於構建和優化前端資源。</p>
+</li>
+<li><p><strong>Git &#x2F; GitHub &#x2F; GitLab</strong>：版本控制工具，用於協作開發與代碼管理。</p>
+</li>
+<li><p><strong>Cross-Browser Compatibility</strong>（跨瀏覽器相容性）：確保網站在不同瀏覽器上的一致性表現。</p>
+</li>
+<li><p><strong>UI&#x2F;UX Design</strong>（使用者介面&#x2F;使用者體驗設計）：理解使用者需求，優化網頁的易用性與美觀度。</p>
+</li>
+</ol>
+<p>這些關鍵字反映了前端工程師日常工作的核心技能與工具，對應徵該職位或提升專業能力至關重要！</p>
+<p>以上關鍵字為前端工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
+]]></content>
+      <tags>
+        <tag>開發者</tag>
+        <tag>軟體工程師</tag>
+        <tag>SWE</tag>
+        <tag>Software Engineer</tag>
+        <tag>Software</tag>
+        <tag>軟體開發</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>網頁前端工程師</tag>
+        <tag>前端工程師</tag>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>關於軟體工程師 Software Engineer 的 10 個關鍵字</title>
     <url>/2015/01/22/about-software-engineer-10-keywords/</url>
     <content><![CDATA[<p>以下整理了軟體工程師相關的十個關鍵字，涵蓋技能、工具與工作方式：</p>
