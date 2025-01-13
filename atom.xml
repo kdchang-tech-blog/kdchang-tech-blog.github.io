@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>KD&#39;s Tech Blog</title>
+  <icon>https://tech.kdchang.cc/logo.png</icon>
+  <subtitle>Hi, 我是 KD Chang 張凱迪，我在這書寫程式設計技術筆記 | KD&#39;s 技術部落格</subtitle>
+  <link href="https://tech.kdchang.cc/atom.xml" rel="self"/>
+  
+  <link href="https://tech.kdchang.cc/"/>
+  <updated>2025-01-13T04:11:14.301Z</updated>
+  <id>https://tech.kdchang.cc/</id>
+  
+  <author>
+    <name>張凱迪（KD Chang）</name>
+    <email>kdchang.cc@gmail.com</email>
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>關於軟體工程師 Software Engineer 的 10 個關鍵字</title>
+    <link href="https://tech.kdchang.cc/2024/01/22/about-software-engineer-10-keywords/"/>
+    <id>https://tech.kdchang.cc/2024/01/22/about-software-engineer-10-keywords/</id>
+    <published>2024-01-22T03:33:41.000Z</published>
+    <updated>2025-01-13T04:11:14.301Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;以下整理了軟體工程師相關的十個關鍵字，涵蓋技能、工具與工作方式：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;程式語言 (Programming Language)&lt;/strong&gt; - 如 Python、Java、C++、JavaScript 等。 </summary>
+        
+      
+    
+    
+    
+    
+    <category term="開發者" scheme="https://tech.kdchang.cc/tags/%E9%96%8B%E7%99%BC%E8%80%85/"/>
+    
+    <category term="軟體工程師" scheme="https://tech.kdchang.cc/tags/%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB/"/>
+    
+    <category term="SWE" scheme="https://tech.kdchang.cc/tags/SWE/"/>
+    
+    <category term="Software Engineer" scheme="https://tech.kdchang.cc/tags/Software-Engineer/"/>
+    
+    <category term="Software" scheme="https://tech.kdchang.cc/tags/Software/"/>
+    
+    <category term="軟體開發" scheme="https://tech.kdchang.cc/tags/%E8%BB%9F%E9%AB%94%E9%96%8B%E7%99%BC/"/>
+    
+  </entry>
+  
+</feed>
