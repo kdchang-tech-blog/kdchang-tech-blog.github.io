@@ -1,0 +1,90 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword"  content="<%= config.keyword %>">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="<%= config.root %>img/logo.ico">
+    <meta name="google-site-verification" content="cMTgiEFMM7gXpRMBbu_05Lnj0scwhDPCMvpfhQOpENI" />
+    <script src="<%- config.root %>js/search.js"></script> 
+
+    <% if (theme.fancybox){ %>
+    <link rel="stylesheet" href="<%- config.root %>fancybox/jquery.fancybox.css" media="screen" type="text/css">
+    <script src="<%- config.root %>fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript">
+    (function($){
+      $('.fancybox').fancybox();
+    })(jQuery);
+    </script>
+    <% } %>
+    
+    <% if (config.search) { %>
+       <script type="text/javascript">      
+         var search_path = "<%= config.search.path %>";
+       if (search_path.length == 0) {
+         search_path = "search.xml";
+       }
+       var path = "<%= config.root %>" + search_path;
+         searchFunc(path, 'local-search-input', 'local-search-result');
+       </script>
+    <% } %>
+    <title>
+        <% if (page.title) { %>
+          <%= page.title + ' - ' + config.SEOTitle %>
+        <% } else{%>
+          <%= config.SEOTitle %>
+        <% } %>
+    </title>
+
+    <link rel="canonical" href="<%= config.url + config.root + (page.path||'').replace('index.html', '') %>">
+
+    <!-- Bootstrap Core CSS -->
+    <%- css('css/bootstrap.min.css') %>
+
+    <!-- Custom CSS -->
+    <%- css('css/hux-blog.min.css') %>
+
+    <!-- Pygments Github CSS -->
+    <%- css('css/syntax') %>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/main.css?v=1">
+
+    <!-- og tag -->
+    <meta name="generator" content="<%- config.title %>">
+    <% if (page.title) { %>
+      <meta name="og:title" content="<%= page.title + ' - ' + config.SEOTitle %>">
+      <meta name="og:site_name" content="<%= page.title + ' - ' + config.SEOTitle %>">
+    <% } else{%>
+      <meta name="og:title" content="<%= config.SEOTitle %>">
+      <meta name="og:site_name" content="<%= config.SEOTitle %>">
+    <% } %>
+    <% if (page.description) { %>
+      <meta name="description" content="<%= page.description %>">
+      <meta name="og:description" content="<%= page.description %>">
+    <% } else{%>
+      <meta name="description" content="<%= config.description %>">
+      <meta name="og:description" content="<%= config.description %>">
+    <% } %>
+    <% if (page.cover) { %>
+      <meta name="og:image" content="<%= page.cover %>">
+    <% } else{%>
+      <meta name="og:image" content="<%= config.url %>/img/logo.png">
+    <% } %>
+    <meta name="og:type" content="website">
+    <!--Twitter Graph-->
+    <meta name="twitter:card" content="summary" />
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
