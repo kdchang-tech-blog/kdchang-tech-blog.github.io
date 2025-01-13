@@ -49,8 +49,8 @@ disqus_username: kdchang-tech-blog
 # Baidu Analytics
 # ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 # Google Analytics 4
-ga_track_id: 'G-FN9X92SM77'            # Format: UA-xxxxxx-xx
-ga_domain: tech.kdchang.cc
+# ga_track_id: 'G-FN9X92SM77'            # Format: UA-xxxxxx-xx
+# ga_domain: tech.kdchang.cc
 
 
 # Sidebar settings
@@ -144,7 +144,7 @@ pagination_dir: page
 ## Google Analytics 4
 google_analytics:
   enable: true
-  id: G-4V2CZ8CL7E
+  id: G-FN9X92SM77
   site: auto
 
 # Extensions
