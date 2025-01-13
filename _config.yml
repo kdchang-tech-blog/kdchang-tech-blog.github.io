@@ -21,7 +21,7 @@ pretty_urls:
 #Custom Setting Start
 
 # Site settings
-SEOTitle: KD Chang 張凱迪 | KD's Tech Blog 技術部落格
+SEOTitle: KD's Tech Blog 技術部落格 | KD Chang 張凱迪
 header-img: img/cover.jpg
 email: kdchang.cc@gmail.com
 description: "Hi 我是 KD Chang 張凱迪，我在這書寫程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品經理和教育工作者對軟體工程、軟體開發和程式設計的思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！"
