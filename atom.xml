@@ -6,7 +6,7 @@
   <link href="https://tech.kdchang.cc/atom.xml" rel="self"/>
   
   <link href="https://tech.kdchang.cc/"/>
-  <updated>2025-01-13T07:54:28.801Z</updated>
+  <updated>2025-01-16T06:22:39.505Z</updated>
   <id>https://tech.kdchang.cc/</id>
   
   <author>
@@ -17,11 +17,133 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>關於後端工程師 Backend Engineer 的 10 個關鍵字</title>
+    <title>Vue.js 3 官方入門語法教學筆記 [2] - Attribute Bindings 屬性綁定 | 學習筆記</title>
+    <link href="https://tech.kdchang.cc/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/"/>
+    <id>https://tech.kdchang.cc/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/</id>
+    <published>2021-02-01T18:23:41.000Z</published>
+    <updated>2025-01-16T06:22:39.505Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;Attribute Bindings 屬性綁定&lt;/strong&gt;&lt;br&gt;在 Vue 中，Mustache 語法只能用於文字插值。要將屬性綁定到動態值，我們需要使用 &lt;code&gt;v-bind&lt;/code&gt; 指令：&lt;/p&gt;
+&lt;figure</summary>
+        
+      
+    
+    
+    
+    
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
+    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    
+    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
+    
+    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記</title>
+    <link href="https://tech.kdchang.cc/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/"/>
+    <id>https://tech.kdchang.cc/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/</id>
+    <published>2021-01-31T18:23:41.000Z</published>
+    <updated>2025-01-16T06:22:39.505Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Declarative-Rendering-聲明式渲染&quot;&gt;&lt;a href=&quot;#Declarative-Rendering-聲明式渲染&quot; class=&quot;headerlink&quot; title=&quot;Declarative Rendering</summary>
+        
+      
+    
+    
+    
+    
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
+    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    
+    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
+    
+    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue3 Options API 和 Composition API 風格差異教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/"/>
+    <id>https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/</id>
+    <published>2020-11-16T03:33:41.000Z</published>
+    <updated>2025-01-16T06:22:39.505Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;根據&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
+    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    
+    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
+    
+    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
+    
+    <category term="Options API" scheme="https://tech.kdchang.cc/tags/Options-API/"/>
+    
+    <category term="Composition API" scheme="https://tech.kdchang.cc/tags/Composition-API/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</title>
     <link href="https://tech.kdchang.cc/2020/06/21/about-backend-engineer-10-keywords/"/>
     <id>https://tech.kdchang.cc/2020/06/21/about-backend-engineer-10-keywords/</id>
     <published>2020-06-21T02:12:43.000Z</published>
-    <updated>2025-01-13T07:54:28.801Z</updated>
+    <updated>2025-01-16T06:22:39.505Z</updated>
     
     
       
@@ -66,11 +188,11 @@
   </entry>
   
   <entry>
-    <title>關於前端工程師 Frontend Engineer 的 10 個關鍵字</title>
-    <link href="https://tech.kdchang.cc/2020/06/13/about-frontend-engineer-10-keywords%20copy/"/>
-    <id>https://tech.kdchang.cc/2020/06/13/about-frontend-engineer-10-keywords%20copy/</id>
+    <title>關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字</title>
+    <link href="https://tech.kdchang.cc/2020/06/13/about-frontend-engineer-10-keywords/"/>
+    <id>https://tech.kdchang.cc/2020/06/13/about-frontend-engineer-10-keywords/</id>
     <published>2020-06-13T06:33:41.000Z</published>
-    <updated>2025-01-13T07:54:28.801Z</updated>
+    <updated>2025-01-16T06:22:39.505Z</updated>
     
     
       
@@ -83,6 +205,14 @@
     
     
     
+    
+    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    
+    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
+    
+    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
     
     <category term="開發者" scheme="https://tech.kdchang.cc/tags/%E9%96%8B%E7%99%BC%E8%80%85/"/>
     
@@ -98,14 +228,6 @@
     
     <category term="Web" scheme="https://tech.kdchang.cc/tags/Web/"/>
     
-    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
-    
-    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
-    
-    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
-    
     <category term="網頁前端工程師" scheme="https://tech.kdchang.cc/tags/%E7%B6%B2%E9%A0%81%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/"/>
     
     <category term="前端工程師" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/"/>
@@ -117,7 +239,7 @@
     <link href="https://tech.kdchang.cc/2015/01/22/about-software-engineer-10-keywords/"/>
     <id>https://tech.kdchang.cc/2015/01/22/about-software-engineer-10-keywords/</id>
     <published>2015-01-22T03:33:41.000Z</published>
-    <updated>2025-01-13T07:54:28.801Z</updated>
+    <updated>2025-01-16T06:22:39.505Z</updated>
     
     
       
