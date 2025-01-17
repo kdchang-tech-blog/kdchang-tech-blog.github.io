@@ -65,6 +65,8 @@ const text = ref('')
 
 現在，我們試著將代碼重構為使用 `v-model`。
 
+SFC/Composition 版本：
+
 ```html
 <script setup>
 import { ref } from 'vue'
@@ -76,4 +78,82 @@ const text = ref('')
   <input v-model="text" placeholder="Type here">
   <p>{{ text }}</p>
 </template>
+```
+
+SFC/Options 版本：
+
+```html
+<script>
+export default {
+  data() {
+    return {
+      text: ''
+    }
+  },
+  methods: {
+    onInput(e) {
+      this.text = e.target.value
+    }
+  }
+}
+</script>
+
+<template>
+  <input :value="text" @input="onInput" placeholder="Type here">
+  <p>{{ text }}</p>
+</template>
+```
+
+HTML/Options 版本：
+
+```html
+<script type="module">
+import { createApp } from 'vue'
+
+createApp({
+  data() {
+    return {
+      text: ''
+    }
+  },
+  methods: {
+    onInput(e) {
+      this.text = e.target.value
+    }
+  }
+}).mount('#app')
+</script>
+
+<div id="app">
+  <input :value="text" @input="onInput" placeholder="Type here">
+  <p>{{ text }}</p>
+</div>
+```
+
+HTML/Composition 版本：
+
+```html
+<script type="module">
+import { createApp, ref } from 'vue'
+
+createApp({
+  setup() {
+    const text = ref('')
+
+    function onInput(e) {
+      text.value = e.target.value
+    }
+
+    return {
+      text,
+      onInput
+    }
+  }
+}).mount('#app')
+</script>
+
+<div id="app">
+  <input :value="text" @input="onInput" placeholder="Type here">
+  <p>{{ text }}</p>
+</div>
 ```
