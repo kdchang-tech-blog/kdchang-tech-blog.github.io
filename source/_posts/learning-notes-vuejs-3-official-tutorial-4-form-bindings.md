@@ -1,6 +1,6 @@
 ---
 title: Vue.js 3 官方入門語法教學筆記 [4] - Form Bindings 表單綁定 | 學習筆記
-date: 2021-02-02 02:23:41
+date: 2021-02-04 02:23:41
 author: kdchang
 tags: 
     - vue
