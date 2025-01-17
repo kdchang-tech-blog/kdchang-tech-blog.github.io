@@ -6,7 +6,7 @@
   <link href="https://tech.kdchang.cc/atom.xml" rel="self"/>
   
   <link href="https://tech.kdchang.cc/"/>
-  <updated>2025-01-17T04:34:52.542Z</updated>
+  <updated>2025-01-17T05:52:06.700Z</updated>
   <id>https://tech.kdchang.cc/</id>
   
   <author>
@@ -17,11 +17,129 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [8] - Lifecycle and Template Refs 生命週期與模板引用 | 學習筆記</title>
+    <link href="https://tech.kdchang.cc/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/"/>
+    <id>https://tech.kdchang.cc/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/</id>
+    <published>2021-02-07T18:23:41.000Z</published>
+    <updated>2025-01-17T05:52:06.700Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Lifecycle-and-Template-Refs-生命週期與模板引用&quot;&gt;&lt;a href=&quot;#Lifecycle-and-Template-Refs-生命週期與模板引用&quot; class=&quot;headerlink&quot; title=&quot;Lifecycle and</summary>
+        
+      
+    
+    
+    
+    
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
+    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    
+    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
+    
+    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [7] - Computed Property 計算屬性 | 學習筆記</title>
+    <link href="https://tech.kdchang.cc/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/"/>
+    <id>https://tech.kdchang.cc/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/</id>
+    <published>2021-02-06T18:23:41.000Z</published>
+    <updated>2025-01-17T05:52:06.700Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Computed-Property-計算屬性&quot;&gt;&lt;a href=&quot;#Computed-Property-計算屬性&quot; class=&quot;headerlink&quot; title=&quot;Computed Property 計算屬性&quot;&gt;&lt;/a&gt;Computed Property</summary>
+        
+      
+    
+    
+    
+    
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
+    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    
+    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
+    
+    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [6] - List Rendering 表單綁定 | 學習筆記</title>
+    <link href="https://tech.kdchang.cc/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/"/>
+    <id>https://tech.kdchang.cc/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/</id>
+    <published>2021-02-05T18:23:41.000Z</published>
+    <updated>2025-01-17T05:52:06.700Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;List Rendering 列表渲染&lt;/strong&gt;&lt;br&gt;我們可以使用 &lt;code&gt;v-for&lt;/code&gt; 指令根據一個來源陣列來渲染元素列表：&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
+    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    
+    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
+    
+    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [5] - Conditional Rendering 表單綁定 | 學習筆記</title>
     <link href="https://tech.kdchang.cc/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/"/>
     <id>https://tech.kdchang.cc/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/</id>
     <published>2021-02-04T18:23:41.000Z</published>
-    <updated>2025-01-17T04:34:52.542Z</updated>
+    <updated>2025-01-17T05:52:06.700Z</updated>
     
     
       
@@ -61,7 +179,7 @@
     <link href="https://tech.kdchang.cc/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/"/>
     <id>https://tech.kdchang.cc/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/</id>
     <published>2021-02-03T18:23:41.000Z</published>
-    <updated>2025-01-17T04:34:52.542Z</updated>
+    <updated>2025-01-17T05:52:06.700Z</updated>
     
     
       
@@ -101,7 +219,7 @@
     <link href="https://tech.kdchang.cc/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/"/>
     <id>https://tech.kdchang.cc/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</id>
     <published>2021-02-02T18:23:41.000Z</published>
-    <updated>2025-01-17T04:34:52.542Z</updated>
+    <updated>2025-01-17T05:52:06.700Z</updated>
     
     
       
@@ -141,7 +259,7 @@
     <link href="https://tech.kdchang.cc/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/"/>
     <id>https://tech.kdchang.cc/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/</id>
     <published>2021-02-01T18:23:41.000Z</published>
-    <updated>2025-01-17T04:34:52.542Z</updated>
+    <updated>2025-01-17T05:52:06.700Z</updated>
     
     
       
@@ -181,7 +299,7 @@
     <link href="https://tech.kdchang.cc/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/"/>
     <id>https://tech.kdchang.cc/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/</id>
     <published>2021-01-31T18:23:41.000Z</published>
-    <updated>2025-01-17T04:34:52.542Z</updated>
+    <updated>2025-01-17T05:52:06.700Z</updated>
     
     
       
@@ -220,7 +338,7 @@
     <link href="https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/"/>
     <id>https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/</id>
     <published>2020-11-16T03:33:41.000Z</published>
-    <updated>2025-01-17T04:34:52.542Z</updated>
+    <updated>2025-01-17T05:52:06.700Z</updated>
     
     
       
@@ -263,7 +381,7 @@
     <link href="https://tech.kdchang.cc/2020/06/21/about-backend-engineer-10-keywords/"/>
     <id>https://tech.kdchang.cc/2020/06/21/about-backend-engineer-10-keywords/</id>
     <published>2020-06-21T02:12:43.000Z</published>
-    <updated>2025-01-17T04:34:52.542Z</updated>
+    <updated>2025-01-17T05:52:06.700Z</updated>
     
     
       
@@ -312,7 +430,7 @@
     <link href="https://tech.kdchang.cc/2020/06/13/about-frontend-engineer-10-keywords/"/>
     <id>https://tech.kdchang.cc/2020/06/13/about-frontend-engineer-10-keywords/</id>
     <published>2020-06-13T06:33:41.000Z</published>
-    <updated>2025-01-17T04:34:52.542Z</updated>
+    <updated>2025-01-17T05:52:06.700Z</updated>
     
     
       
@@ -359,7 +477,7 @@
     <link href="https://tech.kdchang.cc/2015/01/22/about-software-engineer-10-keywords/"/>
     <id>https://tech.kdchang.cc/2015/01/22/about-software-engineer-10-keywords/</id>
     <published>2015-01-22T03:33:41.000Z</published>
-    <updated>2025-01-17T04:34:52.542Z</updated>
+    <updated>2025-01-17T05:52:06.700Z</updated>
     
     
       

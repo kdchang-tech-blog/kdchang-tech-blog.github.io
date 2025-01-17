@@ -26,11 +26,11 @@
     
     <title>
         
-          Vue.js 3 官方入門語法教學筆記 [2] - Attribute Bindings 屬性綁定 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          Vue.js 3 官方入門語法教學筆記 [8] - Lifecycle and Template Refs 生命週期與模板引用 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.cc/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/">
+    <link rel="canonical" href="https://tech.kdchang.cc/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="Vue.js 3 官方入門語法教學筆記 [2] - Attribute Bindings 屬性綁定 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="Vue.js 3 官方入門語法教學筆記 [2] - Attribute Bindings 屬性綁定 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="Vue.js 3 官方入門語法教學筆記 [8] - Lifecycle and Template Refs 生命週期與模板引用 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="Vue.js 3 官方入門語法教學筆記 [8] - Lifecycle and Template Refs 生命週期與模板引用 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="Hi 我是 KD Chang 張凱迪，我在這書寫程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -192,10 +192,10 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>Vue.js 3 官方入門語法教學筆記 [2] - Attribute Bindings 屬性綁定 | 學習筆記</h1>
+                    <h1>Vue.js 3 官方入門語法教學筆記 [8] - Lifecycle and Template Refs 生命週期與模板引用 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2021-02-01
+                        2021-02-07
                     </span>
                     <br>
                     <div class="tags">
@@ -242,17 +242,19 @@
                 </div>
                 <br>
                 <div>
-                    <p><strong>Attribute Bindings 屬性綁定</strong><br>在 Vue 中，Mustache 語法只能用於文字插值。要將屬性綁定到動態值，我們需要使用 <code>v-bind</code> 指令：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">&quot;dynamicId&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+                    <h2 id="Lifecycle-and-Template-Refs-生命週期與模板引用"><a href="#Lifecycle-and-Template-Refs-生命週期與模板引用" class="headerlink" title="Lifecycle and Template Refs 生命週期與模板引用"></a>Lifecycle and Template Refs 生命週期與模板引用</h2><p>到目前為止，Vue.js 透過響應式資料與聲明式渲染，幫助我們處理了所有的 DOM 更新。然而，無可避免地會有需要手動操作 DOM 的情況。</p>
+<p>我們可以使用特殊的 <code>ref</code> 屬性來請求模板引用 (template ref)，也就是模板中某個元素的引用：</p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">&quot;pElementRef&quot;</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>指令是一種特殊的屬性，以 <code>v-</code> 前綴開頭，屬於 Vue 的模板語法的一部分。與文字插值類似，指令的值是 JavaScript 表達式，可以訪問組件的狀態。有關 <code>v-bind</code> 和指令語法的完整細節，請參閱官方說明<a target="_blank" rel="noopener" href="https://vuejs.org/guide/essentials/template-syntax.html">指南 - 模板語法</a>。</p>
-<p>冒號之後的部分（<code>:id</code>）是指令的「參數」。在這裡，元素的 <code>id</code> 屬性將與組件狀態中的 <code>dynamicId</code> 屬性同步。</p>
-<p>由於 <code>v-bind</code> 的使用頻率很高，Vue 提供了專用的簡寫語法：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">:id</span>=<span class="string">&quot;dynamicId&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="定義引用"><a href="#定義引用" class="headerlink" title="定義引用"></a>定義引用</h3><p>為了訪問這個引用，我們需要宣告一個名稱匹配的 <code>ref</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> pElementRef = <span class="title function_">ref</span>(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+<p>請注意，這個 <code>ref</code> 在初始化時會是 <code>null</code>，因為當 <code>&lt;script setup&gt;</code> 被執行時，對應的 DOM 元素還不存在。模板引用只有在元件掛載 (mounted) 後才能被訪問。</p>
+<h3 id="在掛載後執行程式碼"><a href="#在掛載後執行程式碼" class="headerlink" title="在掛載後執行程式碼"></a>在掛載後執行程式碼</h3><p>我們可以使用 <code>onMounted()</code> 函式在掛載後執行程式碼：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 元件已掛載完成</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<hr>
-<p>我們可以試著將動態類名綁定到 <code>&lt;h1&gt;</code>，使用 <code>titleClass</code> 的 <code>ref</code> 作為值。如果綁定正確，文字應該會變成紅色！</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> titleClass = <span class="title function_">ref</span>(<span class="string">&#x27;title&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">:class</span>=<span class="string">&quot;titleClass&quot;</span>&gt;</span>Make me red<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> <span class="comment">&lt;!-- add dynamic class binding here --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.title</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="生命週期鉤子"><a href="#生命週期鉤子" class="headerlink" title="生命週期鉤子"></a>生命週期鉤子</h3><p>這稱為生命週期鉤子 (lifecycle hook)，它允許我們在元件生命週期的特定時間點註冊回呼函式。其他的生命週期鉤子還包括 <code>onUpdated</code> 和 <code>onUnmounted</code> 等。更多細節請參考官方文件 <a target="_blank" rel="noopener" href="https://vuejs.org/guide/essentials/lifecycle.html">生命週期圖示</a>。</p>
+<h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>現在，我們可以嘗試添加一個 <code>onMounted</code> 鉤子，透過 <code>pElementRef.value</code> 訪問 <code>&lt;p&gt;</code> 元素，並對其進行一些直接的 DOM 操作（例如更改 <code>textContent</code>）。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> pElementRef = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  pElementRef.<span class="property">value</span>.<span class="property">textContent</span> = <span class="string">&#x27;mounted!&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">&quot;pElementRef&quot;</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
                 </div>
 
                 <br>
@@ -268,7 +270,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/" title="Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/" title="Vue.js 3 官方入門語法教學筆記 [3] - Event Listeners 事件監聽器 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [3] - Event Listeners 事件監聽器 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/" title="Vue.js 3 官方入門語法教學筆記 [4] - Form Bindings 表單綁定 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [4] - Form Bindings 表單綁定 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/" title="Vue.js 3 官方入門語法教學筆記 [6] - List Rendering 表單綁定 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [6] - List Rendering 表單綁定 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/" title="Vue.js 3 官方入門語法教學筆記 [5] - Conditional Rendering 表單綁定 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [5] - Conditional Rendering 表單綁定 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/" title="Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/" title="Vue.js 3 官方入門語法教學筆記 [2] - Attribute Bindings 屬性綁定 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [2] - Attribute Bindings 屬性綁定 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/" title="Vue.js 3 官方入門語法教學筆記 [3] - Event Listeners 事件監聽器 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [3] - Event Listeners 事件監聽器 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/" title="Vue.js 3 官方入門語法教學筆記 [4] - Form Bindings 表單綁定 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [4] - Form Bindings 表單綁定 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/" title="Vue.js 3 官方入門語法教學筆記 [6] - List Rendering 表單綁定 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [6] - List Rendering 表單綁定 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -304,8 +306,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.cc/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/";
-    var disqus_url = "https://tech.kdchang.cc/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/";
+    var disqus_identifier = "https://tech.kdchang.cc/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/";
+    var disqus_url = "https://tech.kdchang.cc/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
