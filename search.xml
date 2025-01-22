@@ -89,33 +89,6 @@
       </tags>
   </entry>
   <entry>
-    <title>關於軟體工程師 Software Engineer 的 10 個關鍵字</title>
-    <url>/2015/01/22/about-software-engineer-10-keywords/</url>
-    <content><![CDATA[<p>以下整理了軟體工程師相關的十個關鍵字，涵蓋技能、工具與工作方式：</p>
-<ol>
-<li><strong>程式語言 (Programming Language)</strong> - 如 Python、Java、C++、JavaScript 等。  </li>
-<li><strong>版本控制 (Version Control)</strong> - 例如 Git、GitHub（平台）、GitLab（平台）。  </li>
-<li><strong>測試 (Testing)</strong> - 單元測試 (Unit Testing)、整合測試 (Integration Testing)。  </li>
-<li><strong>敏捷開發 (Agile Development)</strong> - Scrum、Kanban 等工作方法。  </li>
-<li><strong>架構設計和系統設計 (Architecture Design、System Design)</strong> - 微服務 (Microservices)、單體架構 (Monolithic Architecture)。  </li>
-<li><strong>資料庫 (Database)</strong> - SQL、NoSQL (如 MongoDB)。  </li>
-<li><strong>雲端運算 (Cloud Computing)</strong> - AWS、Azure、Google Cloud。  </li>
-<li><strong>DevOps</strong> - CI&#x2F;CD、自動化部署 (Automation Deployment)。  </li>
-<li><strong>演算法 (Algorithm)</strong> - 演算法、資料結構、問題解決能力。  </li>
-<li><strong>團隊合作 (Collaboration)</strong> - 跨部門溝通、工具 (如 JIRA、Confluence)。</li>
-</ol>
-<p>以上關鍵字為軟體工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
-]]></content>
-      <tags>
-        <tag>開發者</tag>
-        <tag>軟體工程師</tag>
-        <tag>SWE</tag>
-        <tag>Software Engineer</tag>
-        <tag>Software</tag>
-        <tag>軟體開發</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>async/await 入門教學筆記 | 學習筆記</title>
     <url>/2021/01/16/learning-notes-javascript-async-await/</url>
     <content><![CDATA[<p><code>async</code> 和 <code>await</code> 是 JavaScript 中處理非同步操作的語法糖，它們使得非同步代碼更加易讀和易寫，避免了傳統回調函數（callback）或 <code>Promise</code> 的 <code>.then()</code> 鏈式調用的冗長性。</p>
@@ -151,6 +124,33 @@
         <tag>異步</tag>
         <tag>async/await</tag>
         <tag>fetch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>關於軟體工程師 Software Engineer 的 10 個關鍵字</title>
+    <url>/2015/01/22/about-software-engineer-10-keywords/</url>
+    <content><![CDATA[<p>以下整理了軟體工程師相關的十個關鍵字，涵蓋技能、工具與工作方式：</p>
+<ol>
+<li><strong>程式語言 (Programming Language)</strong> - 如 Python、Java、C++、JavaScript 等。  </li>
+<li><strong>版本控制 (Version Control)</strong> - 例如 Git、GitHub（平台）、GitLab（平台）。  </li>
+<li><strong>測試 (Testing)</strong> - 單元測試 (Unit Testing)、整合測試 (Integration Testing)。  </li>
+<li><strong>敏捷開發 (Agile Development)</strong> - Scrum、Kanban 等工作方法。  </li>
+<li><strong>架構設計和系統設計 (Architecture Design、System Design)</strong> - 微服務 (Microservices)、單體架構 (Monolithic Architecture)。  </li>
+<li><strong>資料庫 (Database)</strong> - SQL、NoSQL (如 MongoDB)。  </li>
+<li><strong>雲端運算 (Cloud Computing)</strong> - AWS、Azure、Google Cloud。  </li>
+<li><strong>DevOps</strong> - CI&#x2F;CD、自動化部署 (Automation Deployment)。  </li>
+<li><strong>演算法 (Algorithm)</strong> - 演算法、資料結構、問題解決能力。  </li>
+<li><strong>團隊合作 (Collaboration)</strong> - 跨部門溝通、工具 (如 JIRA、Confluence)。</li>
+</ol>
+<p>以上關鍵字為軟體工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
+]]></content>
+      <tags>
+        <tag>開發者</tag>
+        <tag>軟體工程師</tag>
+        <tag>SWE</tag>
+        <tag>Software Engineer</tag>
+        <tag>Software</tag>
+        <tag>軟體開發</tag>
       </tags>
   </entry>
   <entry>
