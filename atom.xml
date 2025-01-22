@@ -6,7 +6,7 @@
   <link href="https://tech.kdchang.cc/atom.xml" rel="self"/>
   
   <link href="https://tech.kdchang.cc/"/>
-  <updated>2025-01-21T05:23:43.576Z</updated>
+  <updated>2025-01-22T06:26:46.457Z</updated>
   <id>https://tech.kdchang.cc/</id>
   
   <author>
@@ -17,11 +17,77 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</title>
+    <link href="https://tech.kdchang.cc/2024/06/22/software-engineer-and-web-develement-skill-tree/"/>
+    <id>https://tech.kdchang.cc/2024/06/22/software-engineer-and-web-develement-skill-tree/</id>
+    <published>2024-06-22T03:33:41.000Z</published>
+    <updated>2025-01-22T06:26:46.457Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前端工程&quot;&gt;&lt;a href=&quot;#前端工程&quot; class=&quot;headerlink&quot; title=&quot;前端工程&quot;&gt;&lt;/a&gt;前端工程&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://roadmap.sh/frontend&quot;&gt;Frontend Roadmap&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Software Engineer" scheme="https://tech.kdchang.cc/tags/Software-Engineer/"/>
+    
+    <category term="Frontend Roadmap" scheme="https://tech.kdchang.cc/tags/Frontend-Roadmap/"/>
+    
+    <category term="Backend Roadmap" scheme="https://tech.kdchang.cc/tags/Backend-Roadmap/"/>
+    
+    <category term="DevOps" scheme="https://tech.kdchang.cc/tags/DevOps/"/>
+    
+    <category term="Full Stack" scheme="https://tech.kdchang.cc/tags/Full-Stack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常見 Web Frontend 前端工程師面試準備題目清單</title>
+    <link href="https://tech.kdchang.cc/2024/01/22/web-frontend-interview-question-list/"/>
+    <id>https://tech.kdchang.cc/2024/01/22/web-frontend-interview-question-list/</id>
+    <published>2024-01-22T03:33:41.000Z</published>
+    <updated>2025-01-22T06:26:46.457Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前端工程面試準備清單&quot;&gt;&lt;a href=&quot;#前端工程面試準備清單&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="Software Engineer" scheme="https://tech.kdchang.cc/tags/Software-Engineer/"/>
+    
+    <category term="前端工程師" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/"/>
+    
+    <category term="Frontend Roadmap" scheme="https://tech.kdchang.cc/tags/Frontend-Roadmap/"/>
+    
+    <category term="前端面試" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%A9%A6/"/>
+    
+    <category term="interview question" scheme="https://tech.kdchang.cc/tags/interview-question/"/>
+    
+    <category term="interview" scheme="https://tech.kdchang.cc/tags/interview/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [14] - Slots 插槽 | 學習筆記</title>
     <link href="https://tech.kdchang.cc/2021/02/13/learning-notes-vuejs-3-official-tutorial-13-slots/"/>
     <id>https://tech.kdchang.cc/2021/02/13/learning-notes-vuejs-3-official-tutorial-13-slots/</id>
     <published>2021-02-13T18:23:41.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.456Z</updated>
     
     
       
@@ -60,7 +126,7 @@
     <link href="https://tech.kdchang.cc/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/"/>
     <id>https://tech.kdchang.cc/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/</id>
     <published>2021-02-11T18:23:41.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.456Z</updated>
     
     
       
@@ -99,7 +165,7 @@
     <link href="https://tech.kdchang.cc/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/"/>
     <id>https://tech.kdchang.cc/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/</id>
     <published>2021-02-10T18:23:41.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.456Z</updated>
     
     
       
@@ -138,7 +204,7 @@
     <link href="https://tech.kdchang.cc/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/"/>
     <id>https://tech.kdchang.cc/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/</id>
     <published>2021-02-09T18:23:41.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.456Z</updated>
     
     
       
@@ -177,7 +243,7 @@
     <link href="https://tech.kdchang.cc/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/"/>
     <id>https://tech.kdchang.cc/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/</id>
     <published>2021-02-08T18:23:41.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.457Z</updated>
     
     
       
@@ -216,7 +282,7 @@
     <link href="https://tech.kdchang.cc/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/"/>
     <id>https://tech.kdchang.cc/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/</id>
     <published>2021-02-07T18:23:41.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.456Z</updated>
     
     
       
@@ -255,7 +321,7 @@
     <link href="https://tech.kdchang.cc/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/"/>
     <id>https://tech.kdchang.cc/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/</id>
     <published>2021-02-06T18:23:41.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.456Z</updated>
     
     
       
@@ -294,7 +360,7 @@
     <link href="https://tech.kdchang.cc/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/"/>
     <id>https://tech.kdchang.cc/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/</id>
     <published>2021-02-05T18:23:41.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.456Z</updated>
     
     
       
@@ -334,7 +400,7 @@
     <link href="https://tech.kdchang.cc/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/"/>
     <id>https://tech.kdchang.cc/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/</id>
     <published>2021-02-04T18:23:41.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.456Z</updated>
     
     
       
@@ -374,7 +440,7 @@
     <link href="https://tech.kdchang.cc/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/"/>
     <id>https://tech.kdchang.cc/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/</id>
     <published>2021-02-03T18:23:41.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.456Z</updated>
     
     
       
@@ -414,7 +480,7 @@
     <link href="https://tech.kdchang.cc/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/"/>
     <id>https://tech.kdchang.cc/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</id>
     <published>2021-02-02T18:23:41.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.456Z</updated>
     
     
       
@@ -454,7 +520,7 @@
     <link href="https://tech.kdchang.cc/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/"/>
     <id>https://tech.kdchang.cc/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/</id>
     <published>2021-02-01T18:23:41.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.456Z</updated>
     
     
       
@@ -494,7 +560,7 @@
     <link href="https://tech.kdchang.cc/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/"/>
     <id>https://tech.kdchang.cc/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/</id>
     <published>2021-01-31T18:23:41.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.456Z</updated>
     
     
       
@@ -533,7 +599,7 @@
     <link href="https://tech.kdchang.cc/2021/01/16/learning-notes-javascript-async-await/"/>
     <id>https://tech.kdchang.cc/2021/01/16/learning-notes-javascript-async-await/</id>
     <published>2021-01-16T03:33:41.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.456Z</updated>
     
     
       
@@ -574,7 +640,7 @@
     <link href="https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/"/>
     <id>https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/</id>
     <published>2020-11-16T03:33:41.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.457Z</updated>
     
     
       
@@ -617,7 +683,7 @@
     <link href="https://tech.kdchang.cc/2020/06/21/about-backend-engineer-10-keywords/"/>
     <id>https://tech.kdchang.cc/2020/06/21/about-backend-engineer-10-keywords/</id>
     <published>2020-06-21T02:12:43.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.456Z</updated>
     
     
       
@@ -666,7 +732,7 @@
     <link href="https://tech.kdchang.cc/2020/06/13/about-frontend-engineer-10-keywords/"/>
     <id>https://tech.kdchang.cc/2020/06/13/about-frontend-engineer-10-keywords/</id>
     <published>2020-06-13T06:33:41.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.456Z</updated>
     
     
       
@@ -713,7 +779,7 @@
     <link href="https://tech.kdchang.cc/2015/01/22/about-software-engineer-10-keywords/"/>
     <id>https://tech.kdchang.cc/2015/01/22/about-software-engineer-10-keywords/</id>
     <published>2015-01-22T03:33:41.000Z</published>
-    <updated>2025-01-21T05:23:43.576Z</updated>
+    <updated>2025-01-22T06:26:46.456Z</updated>
     
     
       

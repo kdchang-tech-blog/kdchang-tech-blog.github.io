@@ -26,11 +26,11 @@
     
     <title>
         
-          Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.cc/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/">
+    <link rel="canonical" href="https://tech.kdchang.cc/tags/Frontend-Roadmap/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="Hi 我是 KD Chang 張凱迪，我在這書寫程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -178,189 +178,223 @@
 
 
     <!-- Main Content -->
-    <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
-
-<!-- Post Header -->
-<style type="text/css">
-    header.intro-header{
-        background-image: url('/img/cover.jpg')
-    }
-</style>
-<header class="intro-header" >
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/cover.jpg')">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-
-                    <h1>Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記</h1>
-                    <span class="meta">
-                        Posted by kdchang on
-                        2021-02-09
-                    </span>
-                    <br>
-                    <div class="tags">
-                        
-                          <a class="tag" href="/tags/#vue" title="vue">vue</a>
-                        
-                          <a class="tag" href="/tags/#vue3" title="vue3">vue3</a>
-                        
-                          <a class="tag" href="/tags/#vue.js" title="vue.js">vue.js</a>
-                        
-                          <a class="tag" href="/tags/#vue.js 3" title="vue.js 3">vue.js 3</a>
-                        
-                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
-                        
-                          <a class="tag" href="/tags/#前端開發" title="前端開發">前端開發</a>
-                        
-                          <a class="tag" href="/tags/#前端工程" title="前端工程">前端工程</a>
-                        
-                          <a class="tag" href="/tags/#frontend" title="frontend">frontend</a>
-                        
-                          <a class="tag" href="/tags/#frontend engineer" title="frontend engineer">frontend engineer</a>
-                        
-
-                    </div>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>KD&#39;s Tech Blog</h1>
+                    <!--<hr class="small">-->
+                    <span class="subheading">Hi, 我是 KD Chang 張凱迪，我在這書寫程式設計技術筆記 | KD&#39;s 技術部落格</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
 
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        
+
+<!-- USE SIDEBAR -->
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
-                <br>
-                <div>
-                    <div class="fb-like" data-href="https://www.facebook.com/kdchang.cc" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
-                </div>
-                <br>
-                <div>
-                    <h1 id="Components-元件"><a href="#Components-元件" class="headerlink" title="Components 元件"></a>Components 元件</h1><p>到目前為止，我們只使用了一個單一的元件。實際的 Vue 應用程式通常是由巢狀元件所組成的。</p>
-<p>父元件可以在其模板中渲染另一個元件作為子元件。要使用子元件，我們需要先匯入它：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span><br></pre></td></tr></table></figure>
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+                <!-- Main Content -->
 
-<p>然後，我們可以在模板中使用該元件，如下所示：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
 
-<p>我們現在試試看將匯入子元件並將其渲染到模板中。</p>
-<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<div class="post-preview">
 
-<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>A Child Component!<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <a href="/2024/06/22/software-engineer-and-web-develement-skill-tree/">
+        <h2 class="post-title">
+            軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前端工程Frontend Roadmap &#x2F; Frontend Beginner Roadmap
 
-                </div>
+ HTML
+ CSS
+ JavaScript
+ Version Control Systems&#x2F;Git&#x2F;Github
+ npm
+ Vue
+ React
+ Tailwind
+ Vitest
+ Cypress
+ TypeScript
+ PWA
 
-                <br>
-                <section>
-                    歡迎分享按讚給予支持和鼓勵！
-                    <div class="fb-like" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
-                </section>
-                <br>
-                <div>
-                    <div class="fb-page" data-href="https://www.facebook.com/kdchang.cc" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/kdchang.cc" class="fb-xfbml-parse-ignore"><a target="_blank" rel="noopener" href="https://www.facebook.com/kdchang.cc">KD Chang（張凱迪）</a></blockquote></div>
-                </div>
-                <hr>
-                <div>
-                    <h3>Related Posts</h3>
-                    <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/" title="Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/" title="Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/" title="Vue.js 3 官方入門語法教學筆記 [12] - Emits 事件傳遞 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [12] - Emits 事件傳遞 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/13/learning-notes-vuejs-3-official-tutorial-13-slots/" title="Vue.js 3 官方入門語法教學筆記 [14] - Slots 插槽 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [14] - Slots 插槽 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/" title="Vue.js 3 官方入門語法教學筆記 [2] - Attribute Bindings 屬性綁定 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [2] - Attribute Bindings 屬性綁定 | 學習筆記</a></h3></div></li></ul>
-                    </div>
-                </div>
-                <!-- Tags -->
-                <h3>Comments</h3>
-                <hr>
-                
-                <!-- disqus start -->
-                <div class="comment">
-                    <div id="disqus_thread" class="disqus-thread"></div>
-                </div>
-                <!-- disqus end -->
-                
+後端Backend R......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-06-22
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2024/01/22/web-frontend-interview-question-list/">
+        <h2 class="post-title">
+            常見 Web Frontend 前端工程師面試準備題目清單
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前端工程面試準備清單
+掌握基礎知識：在開始解決複雜問題之前，您需要確保對前端開發的基礎知識有扎實的理解，包括 HTML、CSS 和 JavaScript，以及它們如何協作來創建響應式和互動式的網頁。如果您認為自己在這些主題上仍需學習，請參考前端學習路線圖。
+
+練習寫程式：通過小型專案或在 LeetCode 和 HackerRank 等平台上解決問題，來提升您的前端寫程式技能。專注於與前端開發......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-01-22
+    </p>
+
+</div>
+<hr>
+
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+    
+</ul>
+
 
             </div>
-
     <!-- Sidebar Container -->
-
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
                 <!-- Featured Tags -->
                 
+
+                <!-- Short About -->
+                <section class="visible-md visible-lg">
+                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
+                    <div class="short-about">
+
+                        
+                            <img src="/img/avatar.jpg" />
+                        
+
+                        
+                            <p>KD Chang 張凱迪（@kdchang），台灣大學，主修經濟學，臺大資管所畢業。是一個軟體工程師，也是一位 PM 產品/專案經理和教育工作者。曾服務過上市網路軟體公司、上市科技電子公司、台灣 AI 人工智慧新創獨角獸公司，也曾參與數個新創組織的創辦和多個網路產品服務的開發。A Software Engineer, Product/Project Manager &amp; Educator.:)</p>
+                        
+
+                        <!-- SNS Link -->
+                        <ul class="list-inline">
+                            
+                            
+                                <li>
+                                    <a target="_blank" href="https://twitter.com/kaidichang">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+                            
+
+                            
+
+                            
+                                <li>
+                                    <a target="_blank" href="https://www.facebook.com/kdchang.cc">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+
+                            
+                                <li>
+                                    <a target="_blank" href="https://www.instagram.com/kdchang.cc">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+
+                            
+                                <li>
+                                    <a target="_blank"  href="https://github.com/kdchang">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+                            
+                            
+                            
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a target="_blank" rel="noopener" href="https://www.kdchang.cc">KD Chang&#39;s Blog</a></li>
+                    
+                        <li><a target="_blank" rel="noopener" href="https://open.firstory.me/user/soft-skills-hacker">聽出職場軟實力 Podcast</a></li>
+                    
+                        <li><a target="_blank" rel="noopener" href="https://tw.coderbridge.com/">CoderBridge</a></li>
+                    
+                        <li><a target="_blank" rel="noopener" href="https://tw.yohowto.com/">Yohowto</a></li>
+                    
+                        <li><a target="_blank" rel="noopener" href="http://weekly.techbridge.cc/">TechBridge Weekly 技術週刊</a></li>
+                    
+                        <li><a target="_blank" rel="noopener" href="http://blog.techbridge.cc/">TechBridge Blog</a></li>
+                    
+                </ul>
+                
+                <hr>
+                <!-- facebook follow -->
+                <a target="_blank" rel="noopener" href="https://twitter.com/kaidichang?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @kaidichang</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <br>
+                <div class="fb-like" data-href="https://www.facebook.com/kdchang.cc" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+                <br>
+                <iframe style="margin-left: 2px; margin-bottom:-5px;"
+                    frameborder="0" scrolling="0" width="200px" height="20px" src="https://ghbtns.com/github-btn.html?user=kdchang&type=follow&count=true">
+                </iframe>
             </div>
-
-        </div>
+        
     </div>
-</article>
-
-
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.cc/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/";
-    var disqus_url = "https://tech.kdchang.cc/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/";
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus 公共JS代码 end -->
-
-
-	<!-- Go to www.addthis.com/dashboard to customize your tools -->
-	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5728979c6a10856b"></script>
-
-
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<!-- <script>
-    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
-        anchors.options = {
-          visible: 'always',
-          placement: 'right',
-          icon: '#'
-        };
-        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-    })
-</script> -->
-<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
-<script>
-   anchors.add('h1, h2, h3');
-</script>
-<style>
-    /* place left on bigger screen */
-    @media all and (min-width: 800px) {
-        .anchorjs-link{
-            position: absolute;
-            left: -0.75em;
-            font-size: 1.1em;
-            margin-top : -0.1em;
-        }
-    }
-</style>
-
-
+</div>
 
     <!-- Footer -->
     <!-- Footer -->
