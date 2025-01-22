@@ -540,40 +540,6 @@
       </tags>
   </entry>
   <entry>
-    <title>軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</title>
-    <url>/2024/06/22/software-engineer-and-web-develement-skill-tree/</url>
-    <content><![CDATA[<h1 id="前端工程"><a href="#前端工程" class="headerlink" title="前端工程"></a>前端工程</h1><p><a href="https://roadmap.sh/frontend">Frontend Roadmap</a> &#x2F; <a href="https://roadmap.sh/frontend?r=frontend-beginner">Frontend Beginner Roadmap</a></p>
-<ol>
-<li><input disabled="" type="checkbox"> HTML</li>
-<li><input disabled="" type="checkbox"> CSS</li>
-<li><input disabled="" type="checkbox"> JavaScript</li>
-<li><input disabled="" type="checkbox"> Version Control Systems&#x2F;Git&#x2F;Github</li>
-<li><input disabled="" type="checkbox"> npm</li>
-<li><input disabled="" type="checkbox"> Vue</li>
-<li><input disabled="" type="checkbox"> React</li>
-<li><input disabled="" type="checkbox"> Tailwind</li>
-<li><input disabled="" type="checkbox"> Vitest</li>
-<li><input disabled="" type="checkbox"> Cypress</li>
-<li><input disabled="" type="checkbox"> TypeScript</li>
-<li><input disabled="" type="checkbox"> PWA</li>
-</ol>
-<h1 id="後端"><a href="#後端" class="headerlink" title="後端"></a>後端</h1><p><a href="https://roadmap.sh/backend">Backend Roadmap</a> &#x2F; <a href="https://roadmap.sh/backend?r=backend-beginner">Backend Beginner Roadmap</a></p>
-<h1 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h1><p><a href="https://roadmap.sh/devops">DevOps Roadmap</a> &#x2F; <a href="https://roadmap.sh/devops?r=devops-beginner">DevOps Beginner Roadmap</a></p>
-<h1 id="全端"><a href="#全端" class="headerlink" title="全端"></a>全端</h1><p><a href="https://roadmap.sh/full-stack">Full Stack Roadmap</a></p>
-<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
-<li><a href="https://github.com/kamranahmedse/developer-roadmap?tab=readme-ov-file">github developer-roadmap</a></li>
-<li><a href="https://hackmd.io/@were1122was/BkUpHXuAq">N+1 Queries 效能問題</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Software Engineer</tag>
-        <tag>Frontend Roadmap</tag>
-        <tag>Backend Roadmap</tag>
-        <tag>DevOps</tag>
-        <tag>Full Stack</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue3 Options API 和 Composition API 風格差異教學筆記 | 學習筆記</title>
     <url>/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>根據<a href="https://vuejs.org/guide/introduction.html#api-styles">官方文件的說明</a>，一般來說 Vue 元件可以用兩種不同的 API 風格來撰寫：<strong>Options API</strong> 和 <strong>Composition API</strong>。</p>
@@ -628,6 +594,40 @@
       </tags>
   </entry>
   <entry>
+    <title>軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</title>
+    <url>/2024/06/22/software-engineer-and-web-develement-skill-tree/</url>
+    <content><![CDATA[<h1 id="前端工程"><a href="#前端工程" class="headerlink" title="前端工程"></a>前端工程</h1><p><a href="https://roadmap.sh/frontend">Frontend Roadmap</a> &#x2F; <a href="https://roadmap.sh/frontend?r=frontend-beginner">Frontend Beginner Roadmap</a></p>
+<ol>
+<li><input disabled="" type="checkbox"> HTML</li>
+<li><input disabled="" type="checkbox"> CSS</li>
+<li><input disabled="" type="checkbox"> JavaScript</li>
+<li><input disabled="" type="checkbox"> Version Control Systems&#x2F;Git&#x2F;Github</li>
+<li><input disabled="" type="checkbox"> npm</li>
+<li><input disabled="" type="checkbox"> Vue</li>
+<li><input disabled="" type="checkbox"> React</li>
+<li><input disabled="" type="checkbox"> Tailwind</li>
+<li><input disabled="" type="checkbox"> Vitest</li>
+<li><input disabled="" type="checkbox"> Cypress</li>
+<li><input disabled="" type="checkbox"> TypeScript</li>
+<li><input disabled="" type="checkbox"> PWA</li>
+</ol>
+<h1 id="後端"><a href="#後端" class="headerlink" title="後端"></a>後端</h1><p><a href="https://roadmap.sh/backend">Backend Roadmap</a> &#x2F; <a href="https://roadmap.sh/backend?r=backend-beginner">Backend Beginner Roadmap</a></p>
+<h1 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h1><p><a href="https://roadmap.sh/devops">DevOps Roadmap</a> &#x2F; <a href="https://roadmap.sh/devops?r=devops-beginner">DevOps Beginner Roadmap</a></p>
+<h1 id="全端"><a href="#全端" class="headerlink" title="全端"></a>全端</h1><p><a href="https://roadmap.sh/full-stack">Full Stack Roadmap</a></p>
+<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
+<li><a href="https://github.com/kamranahmedse/developer-roadmap?tab=readme-ov-file">github developer-roadmap</a></li>
+<li><a href="https://hackmd.io/@were1122was/BkUpHXuAq">N+1 Queries 效能問題</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Software Engineer</tag>
+        <tag>Frontend Roadmap</tag>
+        <tag>Backend Roadmap</tag>
+        <tag>DevOps</tag>
+        <tag>Full Stack</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>常見 Web Frontend 前端工程師面試準備題目清單</title>
     <url>/2024/01/22/web-frontend-interview-question-list/</url>
     <content><![CDATA[<h1 id="前端工程面試準備清單"><a href="#前端工程面試準備清單" class="headerlink" title="前端工程面試準備清單"></a>前端工程面試準備清單</h1><ol>
@@ -660,7 +660,7 @@
 <li><code>.class</code> 選擇具有該 class 的所有元素。</li>
 </ul>
 <hr>
-<h3 id="2-什麼是-CSS-中的盒模型（Box-Model）？"><a href="#2-什麼是-CSS-中的盒模型（Box-Model）？" class="headerlink" title="2. 什麼是 CSS 中的盒模型（Box Model）？"></a>2. <strong>什麼是 CSS 中的盒模型（Box Model）？</strong></h3><p>CSS 盒模型描述了在 DOM 中為元素生成的矩形框。盒模型由以下幾層組成：  </p>
+<h3 id="2-什麼是-CSS-中的盒模型（Box-Model）？"><a href="#2-什麼是-CSS-中的盒模型（Box-Model）？" class="headerlink" title="2. 什麼是 CSS 中的盒模型（Box Model）？"></a>2. <strong>什麼是 CSS 中的盒模型（Box Model）？</strong></h3><p>CSS 盒模型描述了在 <code>DOM</code> 中為元素生成的矩形框。盒模型由以下幾層組成：  </p>
 <ol>
 <li><strong>內容（Content）：</strong> 最內層，用於顯示文字和圖片。  </li>
 <li><strong>內邊距（Padding）：</strong> 內容與邊框之間的空間。  </li>
@@ -668,6 +668,219 @@
 <li><strong>外邊距（Margin）：</strong> 邊框外部的空間，用於將該元素與其他元素分隔開。</li>
 </ol>
 <p>通過分別控制每一層，您可以定義使用者介面中每個元素的外觀。</p>
+<h3 id="3-CSS-中-inline、inline-block-和-block-元素的區別"><a href="#3-CSS-中-inline、inline-block-和-block-元素的區別" class="headerlink" title="3. CSS 中 inline、inline-block 和 block 元素的區別"></a>3. <strong>CSS 中 inline、inline-block 和 block 元素的區別</strong></h3><p>在 CSS 中，inline、inline-block 和 block 元素的區別在於它們在網頁中的呈現方式：  </p>
+<ol>
+<li><p><strong>Inline（行內元素）：</strong>  </p>
+<ul>
+<li>不具有寬度或高度的屬性。  </li>
+<li>不會換行，僅佔據其內容所需的寬度。  </li>
+<li>範例：<code>&lt;span&gt;</code>、<code>&lt;a&gt;</code>。</li>
+</ul>
+</li>
+<li><p><strong>Inline-block（行內區塊元素）：</strong>  </p>
+<ul>
+<li>與 inline 元素類似，不會換行，但允許設定寬度和高度。  </li>
+<li>範例：<code>&lt;img&gt;</code>。</li>
+</ul>
+</li>
+<li><p><strong>Block（區塊元素）：</strong>  </p>
+<ul>
+<li>會從新行開始，默認佔據可用寬度的整行。  </li>
+<li>可以自訂寬度和高度。  </li>
+<li>範例：<code>&lt;div&gt;</code>、<code>&lt;p&gt;</code>。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="4-HTML-結構中的-SEO-最佳實踐"><a href="#4-HTML-結構中的-SEO-最佳實踐" class="headerlink" title="4. HTML 結構中的 SEO 最佳實踐"></a>4. <strong>HTML 結構中的 SEO 最佳實踐</strong></h3><p><strong>純 HTML 方面：</strong>  </p>
+<ol>
+<li><strong>使用語義化的 HTML：</strong> 使用 <code>&lt;header&gt;</code>、<code>&lt;nav&gt;</code>、<code>&lt;main&gt;</code>、<code>&lt;article&gt;</code>、<code>&lt;section&gt;</code> 和 <code>&lt;footer&gt;</code> 等標籤，提供有意義的結構。  </li>
+<li><strong>正確的標題層級：</strong> 正確使用 <code>&lt;h1&gt;</code> 到 <code>&lt;h6&gt;</code>，每個頁面僅使用一次 <code>&lt;h1&gt;</code> 作為主標題，其次是 <code>&lt;h2&gt;</code>、<code>&lt;h3&gt;</code> 至 <code>&lt;h6&gt;</code>等。  </li>
+<li><strong>Meta 標籤：</strong> 包含相關的 <code>&lt;meta&gt;</code> 標籤，例如描述（description）、關鍵字（keywords）和視口（viewport），提供網站的元數據。  </li>
+<li><strong>圖片的 Alt 屬性：</strong> 為圖片添加描述性的 <code>alt</code> 屬性，以提高無障礙性和搜尋引擎的理解能力。</li>
+</ol>
+<p><strong>其他最佳實踐：</strong>  </p>
+<ol>
+<li><strong>內部連結：</strong> 使用內部鏈接連接網站內的內容，幫助搜尋引擎爬取並了解網站結構。  </li>
+<li><strong>行動裝置友好設計：</strong> 以行動優先的方式設計網站和 CSS，確保響應式設計以提升用戶體驗和搜尋引擎排名。  </li>
+<li><strong>快速載入時間：</strong> 優化圖片、使用高效的代碼並利用快取來提升頁面載入速度，載入速度越快，在搜尋結果中越具競爭力。</li>
+</ol>
+<hr>
+<h3 id="5-什麼是文件物件模型（DOM）？"><a href="#5-什麼是文件物件模型（DOM）？" class="headerlink" title="5. 什麼是文件物件模型（DOM）？"></a>5. <strong>什麼是文件物件模型（DOM）？</strong></h3><p>文件物件模型（Document Object Model，DOM）是用於網頁文件的 API，它將 HTML 網頁的結構表示為一棵樹，其中每個節點對應於文檔中的一部分（例如元素、屬性或文本）。</p>
+<hr>
+<h3 id="6-如何為元素添加事件監聽器？"><a href="#6-如何為元素添加事件監聽器？" class="headerlink" title="6. 如何為元素添加事件監聽器？"></a>6. <strong>如何為元素添加事件監聽器？</strong></h3><p>要為元素添加事件監聽器，首先需要通過文檔物件的某種方法（如 <code>getElementById</code>）獲取該元素，然後使用該物件的 <code>addEventListener</code> 方法。</p>
+<p>此方法需要接收三個參數：事件名稱（如 <code>click</code>、<code>keyup</code>、<code>mouseup</code> 等）、事件處理函數，以及可選的 boolean（指示是否在捕獲階段觸發事件）。</p>
+<hr>
+<h3 id="7-null-和-undefined-的區別是什麼？"><a href="#7-null-和-undefined-的區別是什麼？" class="headerlink" title="7. null 和 undefined 的區別是什麼？"></a>7. <strong>null 和 undefined 的區別是什麼？</strong></h3><p>在 JavaScript 中：  </p>
+<ul>
+<li><strong>undefined</strong> 是新變數的默認值，表示變數已被定義，但尚未賦值。  </li>
+<li><strong>null</strong> 是一個值，表示<code>沒有值</code>或<code>沒有物件</code>，需要由開發者明確賦值給變數。</li>
+</ul>
+<hr>
+<h3 id="8-cookies、sessionStorage-和-localStorage-的區別是什麼？"><a href="#8-cookies、sessionStorage-和-localStorage-的區別是什麼？" class="headerlink" title="8. cookies、sessionStorage 和 localStorage 的區別是什麼？"></a>8. <strong>cookies、sessionStorage 和 localStorage 的區別是什麼？</strong></h3><ul>
+<li><p><strong>Cookies：</strong><br>小型資料片段，存儲於瀏覽器中，主要用於在 HTTP 請求之間保留資訊，例如用戶身份驗證、會話管理和追蹤用戶行為。  </p>
+</li>
+<li><p><strong>sessionStorage：</strong><br>用於臨時存儲，只能在同一個 <code>session</code> 中訪問（即瀏覽器視窗或標籤頁開著時）。當瀏覽器視窗關閉時，數據會丟失。</p>
+</li>
+<li><p><strong>localStorage：</strong><br>與 <code>sessionStorage</code> 類似，但資料在瀏覽器窗口或標籤頁關閉後依然存在，提供長期存儲功能。相較於 <code>cookies</code>，<code>localStorage</code> 的大小限制更大，更適合存儲大資料集。</p>
+</li>
+</ul>
+<hr>
+<h3 id="9-瀏覽器如何渲染網站？"><a href="#9-瀏覽器如何渲染網站？" class="headerlink" title="9. 瀏覽器如何渲染網站？"></a>9. <strong>瀏覽器如何渲染網站？</strong></h3><p>瀏覽器渲染網頁的過程包括以下幾個步驟：  </p>
+<ol>
+<li>解析 HTML。  </li>
+<li>解析 CSS 並應用樣式。  </li>
+<li>計算頁面佈局中每個元素的位置。  </li>
+<li>將實際像素繪製到屏幕上，並將它們排序到不同的圖層中。  </li>
+<li>組合所有圖層，根據 <code>z-index</code> 值、不透明度等渲染到屏幕上。  </li>
+<li>執行 JavaScript 代碼。  </li>
+<li>加載非同步資源。</li>
+</ol>
+<hr>
+<h3 id="10-什麼是媒體查詢（Media-Queries）？"><a href="#10-什麼是媒體查詢（Media-Queries）？" class="headerlink" title="10. 什麼是媒體查詢（Media Queries）？"></a>10. <strong>什麼是媒體查詢（Media Queries）？</strong></h3><p>媒體查詢是 CSS 中的一項功能，允許前端開發者根據設備或視口的各種特性應用不同的樣式。例如，根據設備的寬度、高度、方向或類型設定不同的樣式。</p>
+<p>通過媒體查詢，可以實現響應式設計，使樣式適應不同的屏幕尺寸和設備能力。</p>
+<hr>
+<h2 id="中級知識"><a href="#中級知識" class="headerlink" title="中級知識"></a><strong>中級知識</strong></h2><h3 id="1-em-和-rem-單位的區別"><a href="#1-em-和-rem-單位的區別" class="headerlink" title="1. em 和 rem 單位的區別"></a><strong>1. em 和 rem 單位的區別</strong></h3><p><strong>EM 和 REM 在 CSS 中的比較</strong><br>它們都是相對單位，但相對於的基準不同：  </p>
+<ul>
+<li><strong>em</strong>：相對於父元素的字體大小。如果父元素的字體大小是 20px，設定 <code>font-size: 2em</code> 則等於 40px。  </li>
+<li><strong>rem</strong>：相對於頁面根元素（<code>&lt;html&gt;</code> 元素）的字體大小。例如，若 <code>&lt;html&gt;</code> 的字體大小是 16px，則 <code>1rem</code> 等於 16px。</li>
+</ul>
+<hr>
+<h3 id="2-如何建立-Flexbox-布局"><a href="#2-如何建立-Flexbox-布局" class="headerlink" title="2. 如何建立 Flexbox 布局"></a><strong>2. 如何建立 Flexbox 布局</strong></h3><p>建立 Flexbox 布局需要兩個主要步驟：  </p>
+<ol>
+<li><strong>設置容器元素：</strong> 將 <code>display: flex;</code> 屬性應用到容器元素上。  </li>
+<li><strong>設定子元素的 Flex 屬性：</strong> 對容器內的每個元素設置 Flexbox 屬性，例如 <code>flex: 1</code>。</li>
+</ol>
+<hr>
+<h3 id="3-CSS-特殊性（Specificity）的解釋及其運作原理"><a href="#3-CSS-特殊性（Specificity）的解釋及其運作原理" class="headerlink" title="3. CSS 特殊性（Specificity）的解釋及其運作原理"></a><strong>3. CSS 特殊性（Specificity）的解釋及其運作原理</strong></h3><p>CSS 特殊性用於決定在樣式衝突時應該應用哪一組樣式。它遵循以下優先順序：  </p>
+<ol>
+<li><strong>行內樣式（Inline style）：</strong> 擁有最高優先權，會覆蓋其他樣式。  </li>
+<li><strong>ID 選擇器：</strong> 僅次於行內樣式，覆蓋其他類型的樣式。  </li>
+<li><strong>類別選擇器（Class-based selectors）：</strong> 覆蓋類型選擇器，但低於 ID 選擇器和行內樣式。  </li>
+<li><strong>類型選擇器（Type selectors）：</strong> 優先級最低，會被其他選擇器覆蓋。</li>
+</ol>
+<hr>
+<h3 id="4-如何建立-CSS-Grid-布局"><a href="#4-如何建立-CSS-Grid-布局" class="headerlink" title="4. 如何建立 CSS Grid 布局"></a><strong>4. 如何建立 CSS Grid 布局</strong></h3><p>建立 Grid 布局的步驟：  </p>
+<ol>
+<li>將包含元素設置為 <code>display: grid</code>。  </li>
+<li>使用 <code>grid-template-rows</code> 和 <code>grid-template-columns</code> 屬性定義網格的結構。  </li>
+<li>將元素放置於網格容器內，並使用 <code>grid-column</code> 或 <code>grid-row</code> 屬性指定位置。</li>
+</ol>
+<hr>
+<h3 id="5-什麼是閉包（Closures），以及如何使用它們？"><a href="#5-什麼是閉包（Closures），以及如何使用它們？" class="headerlink" title="5. 什麼是閉包（Closures），以及如何使用它們？"></a><strong>5. 什麼是閉包（Closures），以及如何使用它們？</strong></h3><p>閉包是指當一個函數定義在另一個函數內時，即使外部函數已執行完畢，內部函數仍然可以訪問外部函數的變數和參數。<br>閉包的用途：  </p>
+<ul>
+<li><strong>創建私有變數：</strong> 內部函數可以訪問，但外部無法直接存取。  </li>
+<li><strong>實現複雜對象：</strong> 創建只有內部上下文可用的豐富數據結構。</li>
+</ul>
+<hr>
+<h3 id="6-什麼是事件委派（Event-Delegation）？"><a href="#6-什麼是事件委派（Event-Delegation）？" class="headerlink" title="6. 什麼是事件委派（Event Delegation）？"></a><strong>6. 什麼是事件委派（Event Delegation）？</strong></h3><p>事件委派是一種在父元素上定義事件處理器的技術，用來處理子元素觸發的事件。<br><strong>事件委派原理：</strong><br>當事件被觸發時，它會沿著 DOM 層次結構向上冒泡，直到到達父元素的事件處理器。</p>
+<hr>
+<h3 id="7-什麼是-Promise，如何運作？"><a href="#7-什麼是-Promise，如何運作？" class="headerlink" title="7. 什麼是 Promise，如何運作？"></a><strong>7. 什麼是 Promise，如何運作？</strong></h3><p>Promise 是 JavaScript 中用於表示非同步操作最終完成（或失敗）的對象。  </p>
+<ul>
+<li><strong>用途：</strong> 通過 Promise，可以處理非同步操作的成功結果或失敗情況。  </li>
+<li><strong>工作原理：</strong> Promise 提供 <code>.then()</code> 和 <code>.catch()</code> 方法，分別用於處理成功和失敗的結果。</li>
+</ul>
+<hr>
+<h3 id="8-如何優化網站資源以加快加載時間？"><a href="#8-如何優化網站資源以加快加載時間？" class="headerlink" title="8. 如何優化網站資源以加快加載時間？"></a><strong>8. 如何優化網站資源以加快加載時間？</strong></h3><p>根據資源類型，使用不同的優化技術：  </p>
+<ul>
+<li><strong>CSS 和 JavaScript 文件：</strong> 最小化並壓縮代碼。  </li>
+<li><strong>圖片：</strong> 使用如 JPEGOptim 或 ImageOptim 等工具壓縮圖片，確保過程中不損失質量。</li>
+</ul>
+<hr>
+<h3 id="9-什麼是-Service-Workers？它們的用途是什麼？"><a href="#9-什麼是-Service-Workers？它們的用途是什麼？" class="headerlink" title="9. 什麼是 Service Workers？它們的用途是什麼？"></a><strong>9. 什麼是 Service Workers？它們的用途是什麼？</strong></h3><p>Service Workers 是在網頁應用程序背景中執行的腳本，與網頁主線程分開運作，提供以下功能：  </p>
+<ul>
+<li>離線快取。  </li>
+<li>推送通知。  </li>
+<li>背景同步。</li>
+</ul>
+<hr>
+<h3 id="10-什麼是同源政策（Same-Origin-Policy）？"><a href="#10-什麼是同源政策（Same-Origin-Policy）？" class="headerlink" title="10. 什麼是同源政策（Same-Origin Policy）？"></a><strong>10. 什麼是同源政策（Same-Origin Policy）？</strong></h3><p>同源政策是瀏覽器中的一項安全功能，用於防止網站從其他網站訪問數據（如導入腳本或 API 請求）。  </p>
+<ul>
+<li><strong>用途：</strong> 防止惡意腳本竊取其他網站的敏感數據（如 cookies、本地存儲或內容）。  </li>
+<li><strong>解決方案：</strong> 使用跨源資源共享（CORS）。服務器需指定允許訪問的域名，並且客戶端應發送正確的標頭，雙方即可進行互動，即使不在同一域名下。</li>
+</ul>
+<hr>
+<h2 id="進階知識"><a href="#進階知識" class="headerlink" title="進階知識"></a><strong>進階知識</strong></h2><h3 id="1-什麼是-CSS-變數？什麼時候會用到？"><a href="#1-什麼是-CSS-變數？什麼時候會用到？" class="headerlink" title="1. 什麼是 CSS 變數？什麼時候會用到？"></a><strong>1. 什麼是 CSS 變數？什麼時候會用到？</strong></h3><p>CSS 變數類似於前端程式語言中的變數，可以由開發者設置並在整個 CSS 樣式表中重複使用。  </p>
+<ul>
+<li><strong>優點：</strong> 將全局使用的值（如顏色）集中管理。例如，CSS 框架常用變數設置常量（如將黑色設置為 <code>#222</code> 而非 <code>#000</code>）。  </li>
+<li><strong>應用場景：</strong> 當網站需要一致性的設計風格或易於更新的全局樣式時。</li>
+</ul>
+<hr>
+<h3 id="2-如何實現-Critical-CSS-優化網頁的加載時間？"><a href="#2-如何實現-Critical-CSS-優化網頁的加載時間？" class="headerlink" title="2. 如何實現 Critical CSS 優化網頁的加載時間？"></a><strong>2. 如何實現 Critical CSS 優化網頁的加載時間？</strong></h3><p>Critical CSS 是指將關鍵 CSS 規則從 CSS 文件中移除，並內嵌到網站的 <code>&lt;head&gt;</code> 元素中：  </p>
+<ol>
+<li><strong>方法：</strong> 將頁面渲染所需的關鍵樣式直接嵌入到 HTML 文件的 <code>&lt;head&gt;</code> 中。  </li>
+<li><strong>好處：</strong> 關鍵樣式能立即加載，減少渲染時間；非關鍵樣式則隨後加載（如主 CSS 文件）。</li>
+</ol>
+<hr>
+<h3 id="3-JavaScript-中的事件循環（Event-Loop）是如何運作的？"><a href="#3-JavaScript-中的事件循環（Event-Loop）是如何運作的？" class="headerlink" title="3. JavaScript 中的事件循環（Event Loop）是如何運作的？"></a><strong>3. JavaScript 中的事件循環（Event Loop）是如何運作的？</strong></h3><p>事件循環是 JavaScript 的核心概念，允許執行非同步代碼。<br><strong>運作過程：</strong>  </p>
+<ol>
+<li><strong>調用棧（Call Stack）：</strong> JavaScript 使用單線程執行代碼，函數按順序添加到調用棧，執行完畢後移除。  </li>
+<li><strong>非同步操作：</strong> 非同步操作由瀏覽器的 Web API 處理，從調用棧中移除，單獨執行。  </li>
+<li><strong>任務隊列（Task Queue）：</strong> 當非同步操作完成後，回調函數被放入任務隊列中等待執行。  </li>
+<li><strong>事件循環：</strong> 檢查調用棧是否為空，若為空，將任務隊列中的回調函數推入調用棧執行。</li>
+</ol>
+<hr>
+<h3 id="4-JavaScript-中的非同步操作處理方式有哪些？"><a href="#4-JavaScript-中的非同步操作處理方式有哪些？" class="headerlink" title="4. JavaScript 中的非同步操作處理方式有哪些？"></a><strong>4. JavaScript 中的非同步操作處理方式有哪些？</strong></h3><p>JavaScript 提供了 4 種主要方法處理非同步操作：  </p>
+<ol>
+<li><strong>回調函數（Callbacks）：</strong> 當非同步操作完成後調用指定函數。  </li>
+<li><strong>Promises：</strong> 表示非同步操作最終完成的結果，使用 <code>.then()</code> 和 <code>.catch()</code> 處理成功或失敗情況。  </li>
+<li><strong>Async&#x2F;Await：</strong> Promise 的進化語法，讓非同步代碼看起來像同步代碼，易於閱讀和維護。  </li>
+<li><strong>事件監聽器（Event Listeners）：</strong> 當特定事件（如用戶操作）觸發時調用回調函數。</li>
+</ol>
+<hr>
+<h3 id="5-如何在單頁應用程式中管理狀態？"><a href="#5-如何在單頁應用程式中管理狀態？" class="headerlink" title="5. 如何在單頁應用程式中管理狀態？"></a><strong>5. 如何在單頁應用程式中管理狀態？</strong></h3><p>在沒有使用函式庫或是框架（如 React 或 Vue.js）的情況下，管理狀態相對複雜，可考慮以下方法：  </p>
+<ol>
+<li><strong>全局變數：</strong> 使用全局變數或全局對象集中管理狀態，但大型應用難以維護。  </li>
+<li><strong>模組模式（Module Pattern）：</strong> 將狀態封裝到模組內，提供清晰的 API 來管理狀態。  </li>
+<li><strong>發布&#x2F;訂閱模式（Pub&#x2F;Sub Pattern）：</strong> 基於事件驅動的架構，分離狀態變更邏輯，更靈活但更複雜。  </li>
+<li><strong>狀態管理庫：</strong> 使用像 Redux 這樣的庫，幫助統一管理應用的狀態。</li>
+</ol>
+<hr>
+<h3 id="6-虛擬-DOM-的運作方式及其優勢"><a href="#6-虛擬-DOM-的運作方式及其優勢" class="headerlink" title="6. 虛擬 DOM 的運作方式及其優勢"></a><strong>6. 虛擬 DOM 的運作方式及其優勢</strong></h3><p><strong>運作方式：</strong>  </p>
+<ol>
+<li>將用戶界面複製到內存中的「虛擬 DOM」，這是一個輕量級的 DOM 副本。  </li>
+<li>當狀態變化時，創建新的虛擬 DOM 並與舊版本進行比較（Diff 算法）。  </li>
+<li>系統計算出最小的更新操作，僅修改需要變更的節點，減少真實 DOM 操作。</li>
+</ol>
+<p><strong>優勢：</strong>  </p>
+<ul>
+<li><strong>性能優化：</strong> 通過減少 DOM 更新次數，降低 UI 的重排和重繪成本。  </li>
+<li><strong>跨平台支持：</strong> 虛擬 DOM 提供了應用與渲染 API 的抽象層，支持跨平台實現。  </li>
+<li><strong>一致性：</strong> 確保 UI 與內部狀態同步，減少錯誤和不一致情況。</li>
+</ul>
+<hr>
+<h3 id="7-什麼是伺服器端渲染（SSR）？何時使用？"><a href="#7-什麼是伺服器端渲染（SSR）？何時使用？" class="headerlink" title="7. 什麼是伺服器端渲染（SSR）？何時使用？"></a><strong>7. 什麼是伺服器端渲染（SSR）？何時使用？</strong></h3><p><strong>伺服器端渲染（SSR）：</strong> 是由伺服器生成完整的 HTML，並將其發送給客戶端，而非在客戶端動態生成內容（即客戶端渲染，CSR）。  </p>
+<p><strong>適用場景：</strong>  </p>
+<ul>
+<li><strong>內容驅動型網站：</strong> 如新聞網站、部落格等需要快速呈現內容的網站。  </li>
+<li><strong>SEO 重視應用：</strong> 如果網站依賴於搜索引擎流量，SSR 可以改善 SEO 表現。  </li>
+<li><strong>漸進式 Web 應用：</strong> 需要快速加載的應用可使用 SSR 初始渲染，並在客戶端進行後續交互。</li>
+</ul>
+<hr>
+<h3 id="8-如何分析並改進-Web-應用性能？"><a href="#8-如何分析並改進-Web-應用性能？" class="headerlink" title="8. 如何分析並改進 Web 應用性能？"></a><strong>8. 如何分析並改進 Web 應用性能？</strong></h3><p>需要監控的核心指標包括：  </p>
+<ul>
+<li><strong>首次內容繪製（FCP）：</strong> 首次內容呈現所需時間。  </li>
+<li><strong>最大內容繪製（LCP）：</strong> 最大內容元素呈現所需時間。  </li>
+<li><strong>可交互時間（TTI）：</strong> 網頁完全可交互所需時間。  </li>
+<li><strong>總阻塞時間（TBT）：</strong> 主線程被阻塞的總時間。  </li>
+<li><strong>累積佈局偏移（CLS）：</strong> 測量視覺穩定性。</li>
+</ul>
+<hr>
+<h3 id="9-什麼是內容安全政策（CSP）？如何提高應用的安全性？"><a href="#9-什麼是內容安全政策（CSP）？如何提高應用的安全性？" class="headerlink" title="9. 什麼是內容安全政策（CSP）？如何提高應用的安全性？"></a><strong>9. 什麼是內容安全政策（CSP）？如何提高應用的安全性？</strong></h3><p><strong>CSP（Content Security Policy）：</strong> 一種安全標準，用於防止跨站腳本（XSS）和代碼注入攻擊。它通過定義和執行允許的資源來源白名單來運作。  </p>
+<p><strong>優勢：</strong>  </p>
+<ul>
+<li><strong>增強安全性：</strong> 有效防禦 XSS 和數據注入攻擊。  </li>
+<li><strong>更高控制權：</strong> 開發者可細化政策來控制內容來源。  </li>
+<li><strong>符合規範：</strong> 幫助達成 OWASP Top 10 等安全合規要求。</li>
+</ul>
+<hr>
+<h3 id="10-什麼是-Tree-Shaking？如何提升-Web-應用性能？"><a href="#10-什麼是-Tree-Shaking？如何提升-Web-應用性能？" class="headerlink" title="10. 什麼是 Tree Shaking？如何提升 Web 應用性能？"></a><strong>10. 什麼是 Tree Shaking？如何提升 Web 應用性能？</strong></h3><p><strong>Tree Shaking：</strong> 是 JavaScript 模組打包工具（如 Webpack、Vite）用來移除未使用代碼的技術。  </p>
+<p><strong>優勢：</strong>  </p>
+<ul>
+<li><strong>減少打包大小：</strong> 移除無用代碼，減少發送給客戶端的資源量，加速加載。  </li>
+<li><strong>性能提升：</strong> 更小的打包大小使解析和執行代碼更快，提升應用響應速度。  </li>
+<li><strong>資源最佳化：</strong> 開發者可撰寫模組化代碼，而無需擔心未使用的依賴影響打包體積。</li>
+</ul>
 <h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
 <li><a href="https://github.com/kamranahmedse/developer-roadmap?tab=readme-ov-file">github developer-roadmap</a></li>
 <li><a href="https://roadmap.sh/questions/frontend">Top 30 Popular Front End Developer Interview Questions</a></li>
