@@ -317,3 +317,11 @@ JavaScript 提供了 4 種主要方法處理非同步操作：
 # 參考文件
 1. [github developer-roadmap](https://github.com/kamranahmedse/developer-roadmap?tab=readme-ov-file)
 2. [Top 30 Popular Front End Developer Interview Questions](https://roadmap.sh/questions/frontend)
+3. [2020 資深前端工程師面試心得（4y, 100k+）](https://life.huli.tw/2020/04/28/2020-senior-front-end-engineer-interview-249c719c1a97/)
+4. [最常見的前端面試題目](https://www.explainthis.io/zh-hant/swe-questions/frontend)
+5. [前端工程師面試問題集 - H5BP](https://h5bp.org/Front-end-Developer-Interview-Questions/translations/chinese-traditional/)
+6. [前端工程師面試問題集](https://gist.github.com/hanksudo/5873678)
+7. [前端面試問題](https://hackmd.io/@mingjunlu/front-end-interview-questions)
+8. [前端面試技術考實戰分享-JS篇](https://medium.com/@Ching810/2024%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%A9%A6%E6%8A%80%E8%A1%93%E8%80%83%E5%AF%A6%E6%88%B0%E5%88%86%E4%BA%AB-js%E7%AF%87-387ed332d12b)
+9. [QNAP/雷技/Yahoo/Synology-前端工程師-面試經驗分享](https://www.1111.com.tw/1000w/fanshome/discussTopic.asp?cat=FANS&id=233847)
+10. [2024 資深前端工程師面試心得](https://medium.com/hannah-lin/2024-%E8%B3%87%E6%B7%B1%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB%E9%9D%A2%E8%A9%A6%E5%BF%83%E5%BE%97-3cc0f718e78f)
