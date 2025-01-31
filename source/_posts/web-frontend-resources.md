@@ -18,3 +18,4 @@ tags:
 2. [100 天 CSS 練習挑戰](https://100dayscss.com/)
 3. [javascript30](https://javascript30.com/)
 4. [greatfrontend](https://www.greatfrontend.com/)
+5. [零基礎一年轉職前端工程師：完整路徑、心得、資源全公開](https://www.thisweb.dev/post/front-end-beginner-guide)
