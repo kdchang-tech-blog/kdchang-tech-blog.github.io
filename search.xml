@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</title>
+    <url>/2020/06/21/about-backend-engineer-10-keywords/</url>
+    <content><![CDATA[<p>以下整理了後端工程師相關的 10 個關鍵字，涵蓋技能、工具與工作方式：</p>
+<ol>
+<li><p><strong>Node.js &#x2F; Python &#x2F; Java &#x2F; Ruby &#x2F; PHP</strong>：常見的後端程式語言，用於構建伺服器端應用程式。</p>
+</li>
+<li><p><strong>Database</strong>（資料庫）：包括 <strong>SQL（如 MySQL, PostgreSQL）</strong> 和 <strong>NoSQL（如 MongoDB, Redis）</strong> 的操作與優化。</p>
+</li>
+<li><p><strong>REST API &#x2F; GraphQL</strong>：設計與實現伺服器端 API 以支援前端資料請求。</p>
+</li>
+<li><p><strong>Authentication &amp; Authorization</strong>（認證與授權）：如 OAuth、JWT、Session，確保使用者安全與數據保護。</p>
+</li>
+<li><p><strong>Docker &#x2F; Kubernetes</strong>：容器化與編排工具，用於應用部署與資源管理。</p>
+</li>
+<li><p><strong>Cloud Services</strong>：如 AWS、Google Cloud、Microsoft Azure，支援應用程式的雲端部署與運行。</p>
+</li>
+<li><p><strong>Microservices</strong>（微服務架構）：設計可拆分且可獨立部署的服務模組。</p>
+</li>
+<li><p><strong>Message Queues</strong>（訊息佇列）：如 RabbitMQ、Kafka，用於分布式系統的非同步通訊。</p>
+</li>
+<li><p><strong>Version Control</strong>（版本控制）：如 Git &#x2F; GitHub，用於團隊協作與程式碼管理。</p>
+</li>
+<li><p><strong>Performance Optimization</strong>（效能優化）：針對伺服器與資料庫的效能調優，提升系統效率。</p>
+</li>
+</ol>
+<p>以上關鍵字為後端工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
+]]></content>
+      <tags>
+        <tag>開發者</tag>
+        <tag>軟體工程師</tag>
+        <tag>SWE</tag>
+        <tag>Software Engineer</tag>
+        <tag>Software</tag>
+        <tag>軟體開發</tag>
+        <tag>backend</tag>
+        <tag>backend engineer</tag>
+        <tag>後端開發</tag>
+        <tag>後端工程</tag>
+        <tag>網頁後端工程師</tag>
+        <tag>後端工程師</tag>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字</title>
     <url>/2020/06/13/about-frontend-engineer-10-keywords/</url>
     <content><![CDATA[<p>以下整理了前端工程師相關的 10 個關鍵字，涵蓋技能、工具與工作方式：</p>
@@ -39,53 +83,9 @@
         <tag>Software Engineer</tag>
         <tag>Software</tag>
         <tag>軟體開發</tag>
+        <tag>Web</tag>
         <tag>網頁前端工程師</tag>
         <tag>前端工程師</tag>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</title>
-    <url>/2020/06/21/about-backend-engineer-10-keywords/</url>
-    <content><![CDATA[<p>以下整理了後端工程師相關的 10 個關鍵字，涵蓋技能、工具與工作方式：</p>
-<ol>
-<li><p><strong>Node.js &#x2F; Python &#x2F; Java &#x2F; Ruby &#x2F; PHP</strong>：常見的後端程式語言，用於構建伺服器端應用程式。</p>
-</li>
-<li><p><strong>Database</strong>（資料庫）：包括 <strong>SQL（如 MySQL, PostgreSQL）</strong> 和 <strong>NoSQL（如 MongoDB, Redis）</strong> 的操作與優化。</p>
-</li>
-<li><p><strong>REST API &#x2F; GraphQL</strong>：設計與實現伺服器端 API 以支援前端資料請求。</p>
-</li>
-<li><p><strong>Authentication &amp; Authorization</strong>（認證與授權）：如 OAuth、JWT、Session，確保使用者安全與數據保護。</p>
-</li>
-<li><p><strong>Docker &#x2F; Kubernetes</strong>：容器化與編排工具，用於應用部署與資源管理。</p>
-</li>
-<li><p><strong>Cloud Services</strong>：如 AWS、Google Cloud、Microsoft Azure，支援應用程式的雲端部署與運行。</p>
-</li>
-<li><p><strong>Microservices</strong>（微服務架構）：設計可拆分且可獨立部署的服務模組。</p>
-</li>
-<li><p><strong>Message Queues</strong>（訊息佇列）：如 RabbitMQ、Kafka，用於分布式系統的非同步通訊。</p>
-</li>
-<li><p><strong>Version Control</strong>（版本控制）：如 Git &#x2F; GitHub，用於團隊協作與程式碼管理。</p>
-</li>
-<li><p><strong>Performance Optimization</strong>（效能優化）：針對伺服器與資料庫的效能調優，提升系統效率。</p>
-</li>
-</ol>
-<p>以上關鍵字為後端工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
-]]></content>
-      <tags>
-        <tag>開發者</tag>
-        <tag>軟體工程師</tag>
-        <tag>SWE</tag>
-        <tag>Software Engineer</tag>
-        <tag>Software</tag>
-        <tag>軟體開發</tag>
-        <tag>Web</tag>
-        <tag>backend</tag>
-        <tag>backend engineer</tag>
-        <tag>後端開發</tag>
-        <tag>後端工程</tag>
-        <tag>網頁後端工程師</tag>
-        <tag>後端工程師</tag>
       </tags>
   </entry>
   <entry>
@@ -425,6 +425,34 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [7] - Computed Property 計算屬性 | 學習筆記</title>
+    <url>/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/</url>
+    <content><![CDATA[<h1 id="Computed-Property-計算屬性"><a href="#Computed-Property-計算屬性" class="headerlink" title="Computed Property 計算屬性"></a>Computed Property 計算屬性</h1><p>讓我們在前一個待辦清單的範例基礎上繼續改進。這裡，我們已經為每個待辦項目新增了切換功能 (toggle)，這是透過在每個待辦物件中新增一個 <code>done</code> 屬性，並使用 <code>v-model</code> 綁定到核取方塊來實現的：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in todos&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;todo.done&quot;</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>接下來我們可以進一步改進功能，新增一個按鈕來隱藏已完成的待辦項目。我們已經有一個按鈕可以切換 <code>hideCompleted</code> 狀態。但要如何根據這個狀態來動態渲染不同的待辦清單項目呢？</p>
+<p>這裡引入了 <code>computed()</code>。我們可以建立一個計算屬性，基於其他的響應式數據來源來計算它的 <code>.value</code> 值：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref, computed &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> hideCompleted = <span class="title function_">ref</span>(<span class="literal">false</span>);</span><br><span class="line"><span class="keyword">const</span> todos = <span class="title function_">ref</span>([</span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> filteredTodos = <span class="title function_">computed</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 根據 `todos.value` 和 `hideCompleted.value`</span></span><br><span class="line">  <span class="comment">// 返回篩選後的待辦項目</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>我們將 <code>v-for</code> 的數據來源從原本的 <code>todos</code> 改為 <code>filteredTodos</code>：</p>
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- &lt;li v-for=&quot;todo in todos&quot;&gt;</span></span><br><span class="line"><span class="addition">+ &lt;li v-for=&quot;todo in filteredTodos&quot;&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>計算屬性會自動追蹤其計算邏輯中使用的其他響應式數據作為依賴項目。它會快取計算結果，並在其依賴項目改變時自動更新。</p>
+<p>現在，嘗試新增一個 <code>filteredTodos</code> 計算屬性，並實現其計算邏輯！如果實現正確，當隱藏已完成項目時，勾選一個待辦項目應會立即將其隱藏。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, computed &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">let</span> id = <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> newTodo = <span class="title function_">ref</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> hideCompleted = <span class="title function_">ref</span>(<span class="literal">false</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todos = <span class="title function_">ref</span>([</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn HTML&#x27;</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn JavaScript&#x27;</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn Vue&#x27;</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;</span></span><br><span class="line"><span class="language-javascript">])</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> filteredTodos = <span class="title function_">computed</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">return</span> hideCompleted.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">    ? todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> !t.<span class="property">done</span>)</span></span><br><span class="line"><span class="language-javascript">    : todos.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">addTodo</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span>.<span class="title function_">push</span>(&#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: newTodo.<span class="property">value</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;)</span></span><br><span class="line"><span class="language-javascript">  newTodo.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">removeTodo</span>(<span class="params">todo</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span> = todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> t !== todo)</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">form</span> @<span class="attr">submit.prevent</span>=<span class="string">&quot;addTodo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;newTodo&quot;</span> <span class="attr">required</span> <span class="attr">placeholder</span>=<span class="string">&quot;new todo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in filteredTodos&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;todo.id&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;todo.done&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">:class</span>=<span class="string">&quot;&#123; done: todo.done &#125;&quot;</span>&gt;</span>&#123;&#123; todo.text &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;removeTodo(todo)&quot;</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;hideCompleted = !hideCompleted&quot;</span>&gt;</span></span><br><span class="line">    &#123;&#123; hideCompleted ? &#x27;Show all&#x27; : &#x27;Hide completed&#x27; &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.done</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">text-decoration</span>: line-through;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [6] - List Rendering 表單綁定 | 學習筆記</title>
     <url>/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/</url>
     <content><![CDATA[<p><strong>List Rendering 列表渲染</strong><br>我們可以使用 <code>v-for</code> 指令根據一個來源陣列來渲染元素列表：</p>
@@ -449,34 +477,6 @@
 <hr>
 <p>更多關於 <code>v-for</code> 的詳細內容，請參閱官方<a href="https://vuejs.org/guide/essentials/list.html">指南 - 列表渲染</a>。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// give each todo a unique id</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">let</span> id = <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> newTodo = <span class="title function_">ref</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todos = <span class="title function_">ref</span>([</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn HTML&#x27;</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn JavaScript&#x27;</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn Vue&#x27;</span> &#125;</span></span><br><span class="line"><span class="language-javascript">])</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">addTodo</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span>.<span class="title function_">push</span>(&#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: newTodo.<span class="property">value</span> &#125;)</span></span><br><span class="line"><span class="language-javascript">  newTodo.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">removeTodo</span>(<span class="params">todo</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span> = todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> t !== todo)</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">form</span> @<span class="attr">submit.prevent</span>=<span class="string">&quot;addTodo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;newTodo&quot;</span> <span class="attr">required</span> <span class="attr">placeholder</span>=<span class="string">&quot;new todo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in todos&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;todo.id&quot;</span>&gt;</span></span><br><span class="line">      &#123;&#123; todo.text &#125;&#125;</span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;removeTodo(todo)&quot;</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [7] - Computed Property 計算屬性 | 學習筆記</title>
-    <url>/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/</url>
-    <content><![CDATA[<h1 id="Computed-Property-計算屬性"><a href="#Computed-Property-計算屬性" class="headerlink" title="Computed Property 計算屬性"></a>Computed Property 計算屬性</h1><p>讓我們在前一個待辦清單的範例基礎上繼續改進。這裡，我們已經為每個待辦項目新增了切換功能 (toggle)，這是透過在每個待辦物件中新增一個 <code>done</code> 屬性，並使用 <code>v-model</code> 綁定到核取方塊來實現的：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in todos&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;todo.done&quot;</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>接下來我們可以進一步改進功能，新增一個按鈕來隱藏已完成的待辦項目。我們已經有一個按鈕可以切換 <code>hideCompleted</code> 狀態。但要如何根據這個狀態來動態渲染不同的待辦清單項目呢？</p>
-<p>這裡引入了 <code>computed()</code>。我們可以建立一個計算屬性，基於其他的響應式數據來源來計算它的 <code>.value</code> 值：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref, computed &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> hideCompleted = <span class="title function_">ref</span>(<span class="literal">false</span>);</span><br><span class="line"><span class="keyword">const</span> todos = <span class="title function_">ref</span>([</span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> filteredTodos = <span class="title function_">computed</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 根據 `todos.value` 和 `hideCompleted.value`</span></span><br><span class="line">  <span class="comment">// 返回篩選後的待辦項目</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>我們將 <code>v-for</code> 的數據來源從原本的 <code>todos</code> 改為 <code>filteredTodos</code>：</p>
-<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- &lt;li v-for=&quot;todo in todos&quot;&gt;</span></span><br><span class="line"><span class="addition">+ &lt;li v-for=&quot;todo in filteredTodos&quot;&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>計算屬性會自動追蹤其計算邏輯中使用的其他響應式數據作為依賴項目。它會快取計算結果，並在其依賴項目改變時自動更新。</p>
-<p>現在，嘗試新增一個 <code>filteredTodos</code> 計算屬性，並實現其計算邏輯！如果實現正確，當隱藏已完成項目時，勾選一個待辦項目應會立即將其隱藏。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, computed &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">let</span> id = <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> newTodo = <span class="title function_">ref</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> hideCompleted = <span class="title function_">ref</span>(<span class="literal">false</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todos = <span class="title function_">ref</span>([</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn HTML&#x27;</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn JavaScript&#x27;</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn Vue&#x27;</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;</span></span><br><span class="line"><span class="language-javascript">])</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> filteredTodos = <span class="title function_">computed</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">return</span> hideCompleted.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">    ? todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> !t.<span class="property">done</span>)</span></span><br><span class="line"><span class="language-javascript">    : todos.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">addTodo</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span>.<span class="title function_">push</span>(&#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: newTodo.<span class="property">value</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;)</span></span><br><span class="line"><span class="language-javascript">  newTodo.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">removeTodo</span>(<span class="params">todo</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span> = todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> t !== todo)</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">form</span> @<span class="attr">submit.prevent</span>=<span class="string">&quot;addTodo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;newTodo&quot;</span> <span class="attr">required</span> <span class="attr">placeholder</span>=<span class="string">&quot;new todo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in filteredTodos&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;todo.id&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;todo.done&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">:class</span>=<span class="string">&quot;&#123; done: todo.done &#125;&quot;</span>&gt;</span>&#123;&#123; todo.text &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;removeTodo(todo)&quot;</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;hideCompleted = !hideCompleted&quot;</span>&gt;</span></span><br><span class="line">    &#123;&#123; hideCompleted ? &#x27;Show all&#x27; : &#x27;Hide completed&#x27; &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.done</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">text-decoration</span>: line-through;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>vue</tag>
         <tag>vue3</tag>
@@ -540,42 +540,6 @@
       </tags>
   </entry>
   <entry>
-    <title>軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</title>
-    <url>/2024/06/22/software-engineer-and-web-develement-skill-tree/</url>
-    <content><![CDATA[<h1 id="前端工程"><a href="#前端工程" class="headerlink" title="前端工程"></a>前端工程</h1><p><a href="https://roadmap.sh/frontend">Frontend Roadmap</a> &#x2F; <a href="https://roadmap.sh/frontend?r=frontend-beginner">Frontend Beginner Roadmap</a></p>
-<ol>
-<li><input checked="" disabled="" type="checkbox"> HTML</li>
-<li><input disabled="" type="checkbox"> CSS</li>
-<li><input disabled="" type="checkbox"> JavaScript</li>
-<li><input disabled="" type="checkbox"> Version Control Systems&#x2F;Git&#x2F;Github</li>
-<li><input disabled="" type="checkbox"> npm</li>
-<li><input disabled="" type="checkbox"> Vue</li>
-<li><input disabled="" type="checkbox"> React</li>
-<li><input disabled="" type="checkbox"> Angular</li>
-<li><input disabled="" type="checkbox"> Tailwind</li>
-<li><input disabled="" type="checkbox"> Vitest</li>
-<li><input disabled="" type="checkbox"> Cypress</li>
-<li><input disabled="" type="checkbox"> TypeScript</li>
-<li><input disabled="" type="checkbox"> PWA</li>
-<li><input disabled="" type="checkbox"> SASS&#x2F;LESS&#x2F;PostCSS</li>
-</ol>
-<h1 id="後端"><a href="#後端" class="headerlink" title="後端"></a>後端</h1><p><a href="https://roadmap.sh/backend">Backend Roadmap</a> &#x2F; <a href="https://roadmap.sh/backend?r=backend-beginner">Backend Beginner Roadmap</a></p>
-<h1 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h1><p><a href="https://roadmap.sh/devops">DevOps Roadmap</a> &#x2F; <a href="https://roadmap.sh/devops?r=devops-beginner">DevOps Beginner Roadmap</a></p>
-<h1 id="全端"><a href="#全端" class="headerlink" title="全端"></a>全端</h1><p><a href="https://roadmap.sh/full-stack">Full Stack Roadmap</a></p>
-<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
-<li><a href="https://github.com/kamranahmedse/developer-roadmap?tab=readme-ov-file">github developer-roadmap</a></li>
-<li><a href="https://hackmd.io/@were1122was/BkUpHXuAq">N+1 Queries 效能問題</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Software Engineer</tag>
-        <tag>Frontend Roadmap</tag>
-        <tag>Backend Roadmap</tag>
-        <tag>DevOps</tag>
-        <tag>Full Stack</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue3 Options API 和 Composition API 風格差異教學筆記 | 學習筆記</title>
     <url>/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>根據<a href="https://vuejs.org/guide/introduction.html#api-styles">官方文件的說明</a>，一般來說 Vue 元件可以用兩種不同的 API 風格來撰寫：<strong>Options API</strong> 和 <strong>Composition API</strong>。</p>
@@ -627,6 +591,42 @@
         <tag>frontend engineer</tag>
         <tag>Options API</tag>
         <tag>Composition API</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</title>
+    <url>/2024/06/22/software-engineer-and-web-develement-skill-tree/</url>
+    <content><![CDATA[<h1 id="前端工程"><a href="#前端工程" class="headerlink" title="前端工程"></a>前端工程</h1><p><a href="https://roadmap.sh/frontend">Frontend Roadmap</a> &#x2F; <a href="https://roadmap.sh/frontend?r=frontend-beginner">Frontend Beginner Roadmap</a></p>
+<ol>
+<li><input checked="" disabled="" type="checkbox"> HTML</li>
+<li><input disabled="" type="checkbox"> CSS</li>
+<li><input disabled="" type="checkbox"> JavaScript</li>
+<li><input disabled="" type="checkbox"> Version Control Systems&#x2F;Git&#x2F;Github</li>
+<li><input disabled="" type="checkbox"> npm</li>
+<li><input disabled="" type="checkbox"> Vue</li>
+<li><input disabled="" type="checkbox"> React</li>
+<li><input disabled="" type="checkbox"> Angular</li>
+<li><input disabled="" type="checkbox"> Tailwind</li>
+<li><input disabled="" type="checkbox"> Vitest</li>
+<li><input disabled="" type="checkbox"> Cypress</li>
+<li><input disabled="" type="checkbox"> TypeScript</li>
+<li><input disabled="" type="checkbox"> PWA</li>
+<li><input disabled="" type="checkbox"> SASS&#x2F;LESS&#x2F;PostCSS</li>
+</ol>
+<h1 id="後端"><a href="#後端" class="headerlink" title="後端"></a>後端</h1><p><a href="https://roadmap.sh/backend">Backend Roadmap</a> &#x2F; <a href="https://roadmap.sh/backend?r=backend-beginner">Backend Beginner Roadmap</a></p>
+<h1 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h1><p><a href="https://roadmap.sh/devops">DevOps Roadmap</a> &#x2F; <a href="https://roadmap.sh/devops?r=devops-beginner">DevOps Beginner Roadmap</a></p>
+<h1 id="全端"><a href="#全端" class="headerlink" title="全端"></a>全端</h1><p><a href="https://roadmap.sh/full-stack">Full Stack Roadmap</a></p>
+<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
+<li><a href="https://github.com/kamranahmedse/developer-roadmap?tab=readme-ov-file">github developer-roadmap</a></li>
+<li><a href="https://hackmd.io/@were1122was/BkUpHXuAq">N+1 Queries 效能問題</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Software Engineer</tag>
+        <tag>Frontend Roadmap</tag>
+        <tag>Backend Roadmap</tag>
+        <tag>DevOps</tag>
+        <tag>Full Stack</tag>
       </tags>
   </entry>
   <entry>
