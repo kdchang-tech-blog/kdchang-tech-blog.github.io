@@ -16,69 +16,6 @@
   </url>
   
   <url>
-    <loc>https://tech.kdchang.cc/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</loc>
-    
-    <lastmod>2025-02-06</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.cc/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/</loc>
-    
-    <lastmod>2025-02-06</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.cc/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/</loc>
-    
-    <lastmod>2025-02-06</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.cc/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/</loc>
-    
-    <lastmod>2025-02-06</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.cc/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/</loc>
-    
-    <lastmod>2025-02-06</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.cc/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/</loc>
-    
-    <lastmod>2025-02-06</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.cc/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/</loc>
-    
-    <lastmod>2025-02-06</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/</loc>
-    
-    <lastmod>2025-02-06</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.cc/2024/06/22/software-engineer-and-web-develement-skill-tree/</loc>
-    
-    <lastmod>2025-02-06</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://tech.kdchang.cc/2024/01/22/web-frontend-interview-question-list/</loc>
     
     <lastmod>2025-02-06</lastmod>
@@ -135,14 +72,14 @@
   </url>
   
   <url>
-    <loc>https://tech.kdchang.cc/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/</loc>
+    <loc>https://tech.kdchang.cc/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/</loc>
     
     <lastmod>2025-02-06</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tech.kdchang.cc/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/</loc>
+    <loc>https://tech.kdchang.cc/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/</loc>
     
     <lastmod>2025-02-06</lastmod>
     
@@ -163,7 +100,70 @@
   </url>
   
   <url>
+    <loc>https://tech.kdchang.cc/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</loc>
+    
+    <lastmod>2025-02-06</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://tech.kdchang.cc/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/</loc>
+    
+    <lastmod>2025-02-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.cc/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/</loc>
+    
+    <lastmod>2025-02-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.cc/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/</loc>
+    
+    <lastmod>2025-02-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.cc/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/</loc>
+    
+    <lastmod>2025-02-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.cc/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/</loc>
+    
+    <lastmod>2025-02-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.cc/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/</loc>
+    
+    <lastmod>2025-02-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.cc/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/</loc>
+    
+    <lastmod>2025-02-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/</loc>
+    
+    <lastmod>2025-02-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.cc/2024/06/22/software-engineer-and-web-develement-skill-tree/</loc>
     
     <lastmod>2025-02-06</lastmod>
     
