@@ -158,7 +158,7 @@
     <url>/2017/02/01/learning-notes-javascript-intro-tutorial/</url>
     <content><![CDATA[<p>ECMAScript 6 又稱 ECMAScript 2015，是 JavaScript 語言的新一代標準，讓 JavaScript 可以更容易撰寫大型複雜的應用程式並避免不必要的錯誤。</p>
 <p>以下介紹常用 ES6 入門語法：</p>
-<h1 id="一、let-amp-const-變數宣告"><a href="#一、let-amp-const-變數宣告" class="headerlink" title="一、let &amp; const 變數宣告"></a>一、let &amp; const 變數宣告</h1><ol>
+<h2 id="一、let-amp-const-變數宣告"><a href="#一、let-amp-const-變數宣告" class="headerlink" title="一、let &amp; const 變數宣告"></a>一、let &amp; const 變數宣告</h2><ol>
 <li><p><code>let</code>：用於宣告變數，可重新賦值。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&#x27;John&#x27;</span>;</span><br><span class="line">name = <span class="string">&#x27;Mike&#x27;</span>;  <span class="comment">// 可以重新賦值</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -226,11 +226,11 @@
 </tbody></table>
 <p>**建議盡量用 <code>let</code> 和 <code>const</code>，避免使用 <code>var</code>**！<br>這樣可以減少潛在的 bug，也符合現代 JavaScript 開發的最佳實踐。</p>
 <hr>
-<h3 id="二、模板字串（Template-Literals）"><a href="#二、模板字串（Template-Literals）" class="headerlink" title="二、模板字串（Template Literals）"></a>二、模板字串（Template Literals）</h3><p>以前字串串變數要使用 <code>+</code>，現在可以使用反引號 (&#96;&#96;) 定義字串，可插入變數。</p>
+<h2 id="二、模板字串（Template-Literals）"><a href="#二、模板字串（Template-Literals）" class="headerlink" title="二、模板字串（Template Literals）"></a>二、模板字串（Template Literals）</h2><p>以前字串串變數要使用 <code>+</code>，現在可以使用反引號 (&#96;&#96;) 定義字串，可插入變數。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">&#x27;John&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> age = <span class="number">25</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`我叫 <span class="subst">$&#123;name&#125;</span>，今年 <span class="subst">$&#123;age&#125;</span> 歲`</span>);</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="三、箭頭函式（Arrow-Functions）"><a href="#三、箭頭函式（Arrow-Functions）" class="headerlink" title="三、箭頭函式（Arrow Functions）"></a>三、箭頭函式（Arrow Functions）</h3><ol>
+<h2 id="三、箭頭函式（Arrow-Functions）"><a href="#三、箭頭函式（Arrow-Functions）" class="headerlink" title="三、箭頭函式（Arrow Functions）"></a>三、箭頭函式（Arrow Functions）</h2><ol>
 <li>基本語法：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">add</span> = (<span class="params">a, b</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>簡寫形式：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">add</span> = (<span class="params">a, b</span>) =&gt; a + b;</span><br></pre></td></tr></table></figure></li>
 <li>單一參數可省略括號：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">square</span> = n =&gt; n * n;</span><br></pre></td></tr></table></figure>
@@ -297,17 +297,17 @@
 <li><strong>callback 回呼函式、內部函式用箭頭函式。</strong></li>
 </ul>
 <p>這樣就可以避免大部分 <code>this</code> 的混亂狀況！</p>
-<h3 id="四、解構賦值（Destructuring）"><a href="#四、解構賦值（Destructuring）" class="headerlink" title="四、解構賦值（Destructuring）"></a>四、解構賦值（Destructuring）</h3><ol>
+<h2 id="四、解構賦值（Destructuring）"><a href="#四、解構賦值（Destructuring）" class="headerlink" title="四、解構賦值（Destructuring）"></a>四、解構賦值（Destructuring）</h2><ol>
 <li>陣列解構：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> [a, b, c] = arr;</span><br></pre></td></tr></table></figure></li>
 <li>物件解構：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123; <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>: <span class="number">25</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> &#123; name, age &#125; = person;</span><br></pre></td></tr></table></figure></li>
 </ol>
 <hr>
-<h3 id="五、展開運算符（Spread-Operator）"><a href="#五、展開運算符（Spread-Operator）" class="headerlink" title="五、展開運算符（Spread Operator）"></a>五、展開運算符（Spread Operator）</h3><ol>
+<h2 id="五、展開運算符（Spread-Operator）"><a href="#五、展開運算符（Spread-Operator）" class="headerlink" title="五、展開運算符（Spread Operator）"></a>五、展開運算符（Spread Operator）</h2><ol>
 <li>陣列展開：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = [...arr1, <span class="number">4</span>, <span class="number">5</span>];</span><br></pre></td></tr></table></figure></li>
 <li>物件展開：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>: <span class="number">25</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> obj2 = &#123; ...obj1, <span class="attr">city</span>: <span class="string">&#x27;Taipei&#x27;</span> &#125;;</span><br></pre></td></tr></table></figure></li>
 </ol>
 <hr>
-<h3 id="六、預設參數（Default-Parameters）"><a href="#六、預設參數（Default-Parameters）" class="headerlink" title="六、預設參數（Default Parameters）"></a>六、預設參數（Default Parameters）</h3><p>函式參數可設定預設值：</p>
+<h2 id="六、預設參數（Default-Parameters）"><a href="#六、預設參數（Default-Parameters）" class="headerlink" title="六、預設參數（Default Parameters）"></a>六、預設參數（Default Parameters）</h2><p>函式參數可設定預設值：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">greet</span> = (<span class="params">name = <span class="string">&#x27;訪客&#x27;</span></span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>!`</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">greet</span>();         <span class="comment">// Hello, 訪客!</span></span><br><span class="line"><span class="title function_">greet</span>(<span class="string">&#x27;John&#x27;</span>);   <span class="comment">// Hello, John!</span></span><br></pre></td></tr></table></figure>
 
 <hr>
@@ -498,6 +498,36 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [3] - Event Listeners 事件監聽器 | 學習筆記</title>
+    <url>/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</url>
+    <content><![CDATA[<p><strong>Event Listeners 事件監聽器</strong><br>在 Vue 中，我們可以使用 <code>v-on</code> 指令監聽 DOM 事件：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>由於 <code>v-on</code> 的使用頻率很高，Vue 提供了一個簡寫語法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在這裡，<code>increment</code> 是在 <code>&lt;script setup&gt;</code> 中定義的一個函式：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 定義響應式狀態</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">// 定義函式來更新狀態</span><br><span class="line">function increment() &#123;</span><br><span class="line">  // 更新組件的狀態</span><br><span class="line">  count.value++</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在函式內，我們可以透過修改 <code>ref</code> 的值來更新組件的狀態。</p>
+<hr>
+<p>事件處理器也可以使用內聯表達式，並透過<strong>修飾符</strong>簡化常見任務。這些細節在<a href="https://vuejs.org/guide/essentials/event-handling.html">指南 - 事件處理</a>中有詳細說明。</p>
+<hr>
+<p>現在，我們可以試著自己實作 <code>increment</code> 函式，並使用 <code>v-on</code> 將它綁定到按鈕。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [4] - Form Bindings 表單綁定 | 學習筆記</title>
     <url>/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/</url>
     <content><![CDATA[<p><strong>Form Bindings 表單綁定</strong><br>使用 <code>v-bind</code> 和 <code>v-on</code> 結合，我們可以對表單輸入元素創建雙向綁定：</p>
@@ -555,36 +585,6 @@
 <hr>
 <p>更多關於 <code>v-if</code> 的詳細內容請參閱官方<a href="https://vuejs.org/guide/essentials/conditional.html">指南 - 條件渲染</a>。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> awesome = <span class="title function_">ref</span>(<span class="literal">true</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">toggle</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  awesome.<span class="property">value</span> = !awesome.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;toggle&quot;</span>&gt;</span>Toggle<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [3] - Event Listeners 事件監聽器 | 學習筆記</title>
-    <url>/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</url>
-    <content><![CDATA[<p><strong>Event Listeners 事件監聽器</strong><br>在 Vue 中，我們可以使用 <code>v-on</code> 指令監聽 DOM 事件：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>由於 <code>v-on</code> 的使用頻率很高，Vue 提供了一個簡寫語法：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>在這裡，<code>increment</code> 是在 <code>&lt;script setup&gt;</code> 中定義的一個函式：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 定義響應式狀態</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">// 定義函式來更新狀態</span><br><span class="line">function increment() &#123;</span><br><span class="line">  // 更新組件的狀態</span><br><span class="line">  count.value++</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>在函式內，我們可以透過修改 <code>ref</code> 的值來更新組件的狀態。</p>
-<hr>
-<p>事件處理器也可以使用內聯表達式，並透過<strong>修飾符</strong>簡化常見任務。這些細節在<a href="https://vuejs.org/guide/essentials/event-handling.html">指南 - 事件處理</a>中有詳細說明。</p>
-<hr>
-<p>現在，我們可以試著自己實作 <code>increment</code> 函式，並使用 <code>v-on</code> 將它綁定到按鈕。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>vue</tag>
         <tag>vue3</tag>
@@ -800,27 +800,6 @@
         <tag>Backend Roadmap</tag>
         <tag>DevOps</tag>
         <tag>Full Stack</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常見 Web Frontend 前端工程師學習資源和工具</title>
-    <url>/2024/03/22/web-frontend-resources/</url>
-    <content><![CDATA[<h1 id="學習資源"><a href="#學習資源" class="headerlink" title="學習資源"></a>學習資源</h1><ol>
-<li><a href="https://frontendmasters.com/guides/front-end-handbook/2024/">前端開發大全手冊：The Front End Developer&#x2F;Engineer Handbook 2024</a></li>
-<li><a href="https://100dayscss.com/">100 天 CSS 練習挑戰</a></li>
-<li><a href="https://javascript30.com/">javascript30</a></li>
-<li><a href="https://www.greatfrontend.com/">greatfrontend</a></li>
-<li><a href="https://www.thisweb.dev/post/front-end-beginner-guide">零基礎一年轉職前端工程師：完整路徑、心得、資源全公開</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>前端工程</tag>
-        <tag>Software Engineer</tag>
-        <tag>前端工程師</tag>
-        <tag>Frontend Roadmap</tag>
-        <tag>前端面試</tag>
-        <tag>interview question</tag>
-        <tag>interview</tag>
       </tags>
   </entry>
   <entry>
@@ -1088,6 +1067,27 @@
 <li><a href="https://medium.com/@Ching810/2024%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%A9%A6%E6%8A%80%E8%A1%93%E8%80%83%E5%AF%A6%E6%88%B0%E5%88%86%E4%BA%AB-js%E7%AF%87-387ed332d12b">前端面試技術考實戰分享-JS篇</a></li>
 <li><a href="https://www.1111.com.tw/1000w/fanshome/discussTopic.asp?cat=FANS&id=233847">QNAP&#x2F;雷技&#x2F;Yahoo&#x2F;Synology-前端工程師-面試經驗分享</a></li>
 <li><a href="https://medium.com/hannah-lin/2024-%E8%B3%87%E6%B7%B1%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB%E9%9D%A2%E8%A9%A6%E5%BF%83%E5%BE%97-3cc0f718e78f">2024 資深前端工程師面試心得</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>前端工程</tag>
+        <tag>Software Engineer</tag>
+        <tag>前端工程師</tag>
+        <tag>Frontend Roadmap</tag>
+        <tag>前端面試</tag>
+        <tag>interview question</tag>
+        <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常見 Web Frontend 前端工程師學習資源和工具</title>
+    <url>/2024/03/22/web-frontend-resources/</url>
+    <content><![CDATA[<h1 id="學習資源"><a href="#學習資源" class="headerlink" title="學習資源"></a>學習資源</h1><ol>
+<li><a href="https://frontendmasters.com/guides/front-end-handbook/2024/">前端開發大全手冊：The Front End Developer&#x2F;Engineer Handbook 2024</a></li>
+<li><a href="https://100dayscss.com/">100 天 CSS 練習挑戰</a></li>
+<li><a href="https://javascript30.com/">javascript30</a></li>
+<li><a href="https://www.greatfrontend.com/">greatfrontend</a></li>
+<li><a href="https://www.thisweb.dev/post/front-end-beginner-guide">零基礎一年轉職前端工程師：完整路徑、心得、資源全公開</a></li>
 </ol>
 ]]></content>
       <tags>

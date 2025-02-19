@@ -246,7 +246,7 @@
                 <div>
                     <p>ECMAScript 6 又稱 ECMAScript 2015，是 JavaScript 語言的新一代標準，讓 JavaScript 可以更容易撰寫大型複雜的應用程式並避免不必要的錯誤。</p>
 <p>以下介紹常用 ES6 入門語法：</p>
-<h1 id="一、let-amp-const-變數宣告"><a href="#一、let-amp-const-變數宣告" class="headerlink" title="一、let &amp; const 變數宣告"></a>一、let &amp; const 變數宣告</h1><ol>
+<h2 id="一、let-amp-const-變數宣告"><a href="#一、let-amp-const-變數宣告" class="headerlink" title="一、let &amp; const 變數宣告"></a>一、let &amp; const 變數宣告</h2><ol>
 <li><p><code>let</code>：用於宣告變數，可重新賦值。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&#x27;John&#x27;</span>;</span><br><span class="line">name = <span class="string">&#x27;Mike&#x27;</span>;  <span class="comment">// 可以重新賦值</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -314,11 +314,11 @@
 </tbody></table>
 <p>**建議盡量用 <code>let</code> 和 <code>const</code>，避免使用 <code>var</code>**！<br>這樣可以減少潛在的 bug，也符合現代 JavaScript 開發的最佳實踐。</p>
 <hr>
-<h3 id="二、模板字串（Template-Literals）"><a href="#二、模板字串（Template-Literals）" class="headerlink" title="二、模板字串（Template Literals）"></a>二、模板字串（Template Literals）</h3><p>以前字串串變數要使用 <code>+</code>，現在可以使用反引號 (&#96;&#96;) 定義字串，可插入變數。</p>
+<h2 id="二、模板字串（Template-Literals）"><a href="#二、模板字串（Template-Literals）" class="headerlink" title="二、模板字串（Template Literals）"></a>二、模板字串（Template Literals）</h2><p>以前字串串變數要使用 <code>+</code>，現在可以使用反引號 (&#96;&#96;) 定義字串，可插入變數。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">&#x27;John&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> age = <span class="number">25</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`我叫 <span class="subst">$&#123;name&#125;</span>，今年 <span class="subst">$&#123;age&#125;</span> 歲`</span>);</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="三、箭頭函式（Arrow-Functions）"><a href="#三、箭頭函式（Arrow-Functions）" class="headerlink" title="三、箭頭函式（Arrow Functions）"></a>三、箭頭函式（Arrow Functions）</h3><ol>
+<h2 id="三、箭頭函式（Arrow-Functions）"><a href="#三、箭頭函式（Arrow-Functions）" class="headerlink" title="三、箭頭函式（Arrow Functions）"></a>三、箭頭函式（Arrow Functions）</h2><ol>
 <li>基本語法：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">add</span> = (<span class="params">a, b</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>簡寫形式：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">add</span> = (<span class="params">a, b</span>) =&gt; a + b;</span><br></pre></td></tr></table></figure></li>
 <li>單一參數可省略括號：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">square</span> = n =&gt; n * n;</span><br></pre></td></tr></table></figure>
@@ -385,17 +385,17 @@
 <li><strong>callback 回呼函式、內部函式用箭頭函式。</strong></li>
 </ul>
 <p>這樣就可以避免大部分 <code>this</code> 的混亂狀況！</p>
-<h3 id="四、解構賦值（Destructuring）"><a href="#四、解構賦值（Destructuring）" class="headerlink" title="四、解構賦值（Destructuring）"></a>四、解構賦值（Destructuring）</h3><ol>
+<h2 id="四、解構賦值（Destructuring）"><a href="#四、解構賦值（Destructuring）" class="headerlink" title="四、解構賦值（Destructuring）"></a>四、解構賦值（Destructuring）</h2><ol>
 <li>陣列解構：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> [a, b, c] = arr;</span><br></pre></td></tr></table></figure></li>
 <li>物件解構：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123; <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>: <span class="number">25</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> &#123; name, age &#125; = person;</span><br></pre></td></tr></table></figure></li>
 </ol>
 <hr>
-<h3 id="五、展開運算符（Spread-Operator）"><a href="#五、展開運算符（Spread-Operator）" class="headerlink" title="五、展開運算符（Spread Operator）"></a>五、展開運算符（Spread Operator）</h3><ol>
+<h2 id="五、展開運算符（Spread-Operator）"><a href="#五、展開運算符（Spread-Operator）" class="headerlink" title="五、展開運算符（Spread Operator）"></a>五、展開運算符（Spread Operator）</h2><ol>
 <li>陣列展開：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = [...arr1, <span class="number">4</span>, <span class="number">5</span>];</span><br></pre></td></tr></table></figure></li>
 <li>物件展開：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>: <span class="number">25</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> obj2 = &#123; ...obj1, <span class="attr">city</span>: <span class="string">&#x27;Taipei&#x27;</span> &#125;;</span><br></pre></td></tr></table></figure></li>
 </ol>
 <hr>
-<h3 id="六、預設參數（Default-Parameters）"><a href="#六、預設參數（Default-Parameters）" class="headerlink" title="六、預設參數（Default Parameters）"></a>六、預設參數（Default Parameters）</h3><p>函式參數可設定預設值：</p>
+<h2 id="六、預設參數（Default-Parameters）"><a href="#六、預設參數（Default-Parameters）" class="headerlink" title="六、預設參數（Default Parameters）"></a>六、預設參數（Default Parameters）</h2><p>函式參數可設定預設值：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">greet</span> = (<span class="params">name = <span class="string">&#x27;訪客&#x27;</span></span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>!`</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">greet</span>();         <span class="comment">// Hello, 訪客!</span></span><br><span class="line"><span class="title function_">greet</span>(<span class="string">&#x27;John&#x27;</span>);   <span class="comment">// Hello, John!</span></span><br></pre></td></tr></table></figure>
 
 <hr>
