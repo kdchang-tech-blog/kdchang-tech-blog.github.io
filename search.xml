@@ -327,6 +327,88 @@
       </tags>
   </entry>
   <entry>
+    <title>SQL 入門語法教學筆記 | 學習筆記</title>
+    <url>/2018/02/01/learning-notes-sql-intro-tutorial/</url>
+    <content><![CDATA[<p>SQL 是操作關聯式資料庫使用的語法。以下介紹常用 SQL 入門語法：</p>
+<h2 id="一、資料庫基本概念"><a href="#一、資料庫基本概念" class="headerlink" title="一、資料庫基本概念"></a>一、資料庫基本概念</h2><p>資料庫 (Database)：儲存資料的容器。<br>資料表 (Table)：儲存資料的表格，每列 (row) 為一筆紀錄，每欄 (column) 為一種資料屬性。</p>
+<hr>
+<h2 id="二、基本-SQL-語法"><a href="#二、基本-SQL-語法" class="headerlink" title="二、基本 SQL 語法"></a>二、基本 SQL 語法</h2><h4 id="1-建立資料庫"><a href="#1-建立資料庫" class="headerlink" title="1. 建立資料庫"></a>1. 建立資料庫</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE my_database;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-使用資料庫"><a href="#2-使用資料庫" class="headerlink" title="2. 使用資料庫"></a>2. 使用資料庫</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">USE my_database;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-建立資料表"><a href="#3-建立資料表" class="headerlink" title="3. 建立資料表"></a>3. 建立資料表</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> users (</span><br><span class="line">    id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY AUTO_INCREMENT,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">    email <span class="type">VARCHAR</span>(<span class="number">100</span>),</span><br><span class="line">    age <span class="type">INT</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-查詢資料"><a href="#4-查詢資料" class="headerlink" title="4. 查詢資料"></a>4. 查詢資料</h4><p>查詢所有欄位</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
+<p>選擇特定欄位</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-插入資料"><a href="#5-插入資料" class="headerlink" title="5. 插入資料"></a>5. 插入資料</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> users (name, email, age) <span class="keyword">VALUES</span> (<span class="string">&#x27;John&#x27;</span>, <span class="string">&#x27;john@example.com&#x27;</span>, <span class="number">25</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-更新資料"><a href="#6-更新資料" class="headerlink" title="6. 更新資料"></a>6. 更新資料</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> users <span class="keyword">SET</span> age <span class="operator">=</span> <span class="number">26</span> <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-刪除資料"><a href="#7-刪除資料" class="headerlink" title="7. 刪除資料"></a>7. 刪除資料</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="三、條件查詢"><a href="#三、條件查詢" class="headerlink" title="三、條件查詢"></a>三、條件查詢</h2><h4 id="1-WHERE-條件"><a href="#1-WHERE-條件" class="headerlink" title="1. WHERE 條件"></a>1. WHERE 條件</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-AND、OR、NOT"><a href="#2-AND、OR、NOT" class="headerlink" title="2. AND、OR、NOT"></a>2. AND、OR、NOT</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">20</span> <span class="keyword">AND</span> name <span class="operator">=</span> <span class="string">&#x27;John&#x27;</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">20</span> <span class="keyword">OR</span> age <span class="operator">&lt;</span> <span class="number">18</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> <span class="keyword">NOT</span> age <span class="operator">=</span> <span class="number">25</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-LIKE-模糊查詢"><a href="#3-LIKE-模糊查詢" class="headerlink" title="3. LIKE 模糊查詢"></a>3. LIKE 模糊查詢</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> name <span class="keyword">LIKE</span> <span class="string">&#x27;J%&#x27;</span>;  <span class="comment">-- 以J開頭</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> email <span class="keyword">LIKE</span> <span class="string">&#x27;%@gmail.com&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-ORDER-BY-排序"><a href="#4-ORDER-BY-排序" class="headerlink" title="4. ORDER BY 排序"></a>4. ORDER BY 排序</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">ASC</span>;  <span class="comment">-- 遞增排序</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">DESC</span>; <span class="comment">-- 遞減排序</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-LIMIT-限制筆數"><a href="#5-LIMIT-限制筆數" class="headerlink" title="5. LIMIT 限制筆數"></a>5. LIMIT 限制筆數</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users LIMIT <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、聚合函數"><a href="#四、聚合函數" class="headerlink" title="四、聚合函數"></a>四、聚合函數</h2><h4 id="1-計算筆數"><a href="#1-計算筆數" class="headerlink" title="1. 計算筆數"></a>1. 計算筆數</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-最大-x2F-最小值"><a href="#2-最大-x2F-最小值" class="headerlink" title="2. 最大&#x2F;最小值"></a>2. 最大&#x2F;最小值</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MAX</span>(age) <span class="keyword">FROM</span> users;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MIN</span>(age) <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-平均-x2F-總和"><a href="#3-平均-x2F-總和" class="headerlink" title="3. 平均&#x2F;總和"></a>3. 平均&#x2F;總和</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">AVG</span>(age) <span class="keyword">FROM</span> users;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(age) <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="五、分組查詢"><a href="#五、分組查詢" class="headerlink" title="五、分組查詢"></a>五、分組查詢</h2><h4 id="1-GROUP-BY"><a href="#1-GROUP-BY" class="headerlink" title="1. GROUP BY"></a>1. GROUP BY</h4><p><code>GROUP BY</code> 查詢欄位僅能包含 <code>GROUP BY</code> 和聚合函數</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> age, <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> users <span class="keyword">GROUP</span> <span class="keyword">BY</span> age;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-HAVING-搭配-GROUP-BY-當作查詢條件"><a href="#2-HAVING-搭配-GROUP-BY-當作查詢條件" class="headerlink" title="2. HAVING 搭配 GROUP BY 當作查詢條件"></a>2. HAVING 搭配 GROUP BY 當作查詢條件</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> age, <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> users <span class="keyword">GROUP</span> <span class="keyword">BY</span> age <span class="keyword">HAVING</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">&gt;</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="六、資料表連接-JOIN"><a href="#六、資料表連接-JOIN" class="headerlink" title="六、資料表連接 (JOIN)"></a>六、資料表連接 (JOIN)</h2><h4 id="1-INNER-JOIN"><a href="#1-INNER-JOIN" class="headerlink" title="1. INNER JOIN"></a>1. INNER JOIN</h4><p>內連接，僅返回兩個資料表中「符合交集條件」的資料。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-LEFT-JOIN"><a href="#2-LEFT-JOIN" class="headerlink" title="2. LEFT JOIN"></a>2. LEFT JOIN</h4><p>左連接，返回左表 (users) 所有資料，即使右表 (orders) 無對應資料，也會顯示左表資料，右表無資料則會顯示 NULL。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-RIGHT-JOIN"><a href="#3-RIGHT-JOIN" class="headerlink" title="3. RIGHT JOIN"></a>3. RIGHT JOIN</h4><p>右連接，返回右表 (orders) 所有資料，即使左表 (users) 無對應資料，也會顯示右表資料，左表無資料則會顯示 NULL。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-FULL-JOIN-部分資料庫支援"><a href="#4-FULL-JOIN-部分資料庫支援" class="headerlink" title="4. FULL JOIN (部分資料庫支援)"></a>4. FULL JOIN (部分資料庫支援)</h4><p>全外連接，返回兩個表中所有資料，無對應資料則顯示 NULL。(MySQL 不支援 FULL JOIN，需使用 UNION 模擬)</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">FULL</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
+
+<p>七、合併查詢 (UNION)</p>
+<ol>
+<li>UNION</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">30</span></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&lt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
+<p>說明：</p>
+<p>UNION 用於合併兩個或多個查詢的結果。<br>預設會去除重複資料。<br>欄位數量與型態須一致。</p>
+<ol start="2">
+<li>UNION ALL</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">30</span></span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&lt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
+<p>說明：</p>
+<p>與 UNION 類似，但不會去除重複資料。</p>
+<hr>
+<p>以上整理了 SQL 入門常見的基本語法，可以基本處理資料庫操作需求。</p>
+]]></content>
+      <tags>
+        <tag>SQL</tag>
+        <tag>資料庫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記</title>
     <url>/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/</url>
     <content><![CDATA[<h1 id="Declarative-Rendering-聲明式渲染"><a href="#Declarative-Rendering-聲明式渲染" class="headerlink" title="Declarative Rendering 聲明式渲染"></a>Declarative Rendering 聲明式渲染</h1><p>在 Vue3 我們常看到的是 Vue 單文件元件 (SFC)。SFC 是一個可重用的、獨立的程式碼區塊，它將相關的 HTML、CSS 和 JavaScript 封裝在一起，並寫在一個 <code>.vue</code> 文件中。</p>
@@ -498,36 +580,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [3] - Event Listeners 事件監聽器 | 學習筆記</title>
-    <url>/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</url>
-    <content><![CDATA[<p><strong>Event Listeners 事件監聽器</strong><br>在 Vue 中，我們可以使用 <code>v-on</code> 指令監聽 DOM 事件：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>由於 <code>v-on</code> 的使用頻率很高，Vue 提供了一個簡寫語法：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>在這裡，<code>increment</code> 是在 <code>&lt;script setup&gt;</code> 中定義的一個函式：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 定義響應式狀態</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">// 定義函式來更新狀態</span><br><span class="line">function increment() &#123;</span><br><span class="line">  // 更新組件的狀態</span><br><span class="line">  count.value++</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>在函式內，我們可以透過修改 <code>ref</code> 的值來更新組件的狀態。</p>
-<hr>
-<p>事件處理器也可以使用內聯表達式，並透過<strong>修飾符</strong>簡化常見任務。這些細節在<a href="https://vuejs.org/guide/essentials/event-handling.html">指南 - 事件處理</a>中有詳細說明。</p>
-<hr>
-<p>現在，我們可以試著自己實作 <code>increment</code> 函式，並使用 <code>v-on</code> 將它綁定到按鈕。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [4] - Form Bindings 表單綁定 | 學習筆記</title>
     <url>/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/</url>
     <content><![CDATA[<p><strong>Form Bindings 表單綁定</strong><br>使用 <code>v-bind</code> 和 <code>v-on</code> 結合，我們可以對表單輸入元素創建雙向綁定：</p>
@@ -554,6 +606,36 @@
 
 <p>HTML&#x2F;Composition 版本：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; createApp, ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> text = <span class="title function_">ref</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">onInput</span>(<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      text.<span class="property">value</span> = e.<span class="property">target</span>.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">      text,</span></span><br><span class="line"><span class="language-javascript">      onInput</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;).<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">:value</span>=<span class="string">&quot;text&quot;</span> @<span class="attr">input</span>=<span class="string">&quot;onInput&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;Type here&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; text &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [3] - Event Listeners 事件監聽器 | 學習筆記</title>
+    <url>/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</url>
+    <content><![CDATA[<p><strong>Event Listeners 事件監聽器</strong><br>在 Vue 中，我們可以使用 <code>v-on</code> 指令監聽 DOM 事件：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>由於 <code>v-on</code> 的使用頻率很高，Vue 提供了一個簡寫語法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在這裡，<code>increment</code> 是在 <code>&lt;script setup&gt;</code> 中定義的一個函式：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 定義響應式狀態</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">// 定義函式來更新狀態</span><br><span class="line">function increment() &#123;</span><br><span class="line">  // 更新組件的狀態</span><br><span class="line">  count.value++</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在函式內，我們可以透過修改 <code>ref</code> 的值來更新組件的狀態。</p>
+<hr>
+<p>事件處理器也可以使用內聯表達式，並透過<strong>修飾符</strong>簡化常見任務。這些細節在<a href="https://vuejs.org/guide/essentials/event-handling.html">指南 - 事件處理</a>中有詳細說明。</p>
+<hr>
+<p>現在，我們可以試著自己實作 <code>increment</code> 函式，並使用 <code>v-on</code> 將它綁定到按鈕。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>vue</tag>
         <tag>vue3</tag>

@@ -16,27 +16,6 @@
   </url>
   
   <url>
-    <loc>https://tech.kdchang.cc/2024/06/22/software-engineer-and-web-develement-skill-tree/</loc>
-    
-    <lastmod>2025-02-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.cc/2024/01/22/web-frontend-interview-question-list/</loc>
-    
-    <lastmod>2025-02-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.cc/2024/03/22/web-frontend-resources/</loc>
-    
-    <lastmod>2025-02-19</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://tech.kdchang.cc/about/</loc>
     
     <lastmod>2025-02-19</lastmod>
@@ -73,6 +52,13 @@
   
   <url>
     <loc>https://tech.kdchang.cc/2017/02/01/learning-notes-javascript-intro-tutorial/</loc>
+    
+    <lastmod>2025-02-19</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.cc/2018/02/01/learning-notes-sql-intro-tutorial/</loc>
     
     <lastmod>2025-02-19</lastmod>
     
@@ -121,14 +107,14 @@
   </url>
   
   <url>
-    <loc>https://tech.kdchang.cc/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</loc>
+    <loc>https://tech.kdchang.cc/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/</loc>
     
     <lastmod>2025-02-19</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tech.kdchang.cc/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/</loc>
+    <loc>https://tech.kdchang.cc/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</loc>
     
     <lastmod>2025-02-19</lastmod>
     
@@ -171,6 +157,27 @@
   
   <url>
     <loc>https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/</loc>
+    
+    <lastmod>2025-02-19</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.cc/2024/06/22/software-engineer-and-web-develement-skill-tree/</loc>
+    
+    <lastmod>2025-02-19</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.cc/2024/01/22/web-frontend-interview-question-list/</loc>
+    
+    <lastmod>2025-02-19</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.cc/2024/03/22/web-frontend-resources/</loc>
     
     <lastmod>2025-02-19</lastmod>
     
@@ -352,6 +359,16 @@
   
   <url>
     <loc>https://tech.kdchang.cc/tags/ECMAScript2015/</loc>
+    <lastmod>2025-02-19</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.cc/tags/SQL/</loc>
+    <lastmod>2025-02-19</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.cc/tags/%E8%B3%87%E6%96%99%E5%BA%AB/</loc>
     <lastmod>2025-02-19</lastmod>
   </url>
   
