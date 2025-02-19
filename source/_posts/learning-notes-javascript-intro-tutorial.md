@@ -20,7 +20,7 @@ ECMAScript 6 又稱 ECMAScript 2015，是 JavaScript 語言的新一代標準，
 
 以下介紹常用 ES6 入門語法：
 
-# 一、let & const 變數宣告
+## 一、let & const 變數宣告
 1. `let`：用於宣告變數，可重新賦值。
 ```javascript
 let name = 'John';
@@ -106,7 +106,7 @@ console.log(i);  // ReferenceError: i is not defined
 
 ---
 
-### 二、模板字串（Template Literals）
+## 二、模板字串（Template Literals）
 以前字串串變數要使用 `+`，現在可以使用反引號 (``) 定義字串，可插入變數。
 ```javascript
 const name = 'John';
@@ -116,7 +116,7 @@ console.log(`我叫 ${name}，今年 ${age} 歲`);
 
 ---
 
-### 三、箭頭函式（Arrow Functions）
+## 三、箭頭函式（Arrow Functions）
 1. 基本語法：
 ```javascript
 const add = (a, b) => {
@@ -253,7 +253,7 @@ setTimeout(function() {
 
 這樣就可以避免大部分 `this` 的混亂狀況！
 
-### 四、解構賦值（Destructuring）
+## 四、解構賦值（Destructuring）
 1. 陣列解構：
 ```javascript
 const arr = [1, 2, 3];
@@ -267,7 +267,7 @@ const { name, age } = person;
 
 ---
 
-### 五、展開運算符（Spread Operator）
+## 五、展開運算符（Spread Operator）
 1. 陣列展開：
 ```javascript
 const arr1 = [1, 2, 3];
@@ -281,7 +281,7 @@ const obj2 = { ...obj1, city: 'Taipei' };
 
 ---
 
-### 六、預設參數（Default Parameters）
+## 六、預設參數（Default Parameters）
 函式參數可設定預設值：
 ```javascript
 const greet = (name = '訪客') => {
