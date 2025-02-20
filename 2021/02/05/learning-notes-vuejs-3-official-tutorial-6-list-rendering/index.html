@@ -115,12 +115,12 @@
                     
 
                         
+                    
+
+                        
                         <li>
                             <a href="/about/">About</a>
                         </li>
-                        
-                    
-
                         
                     
 
@@ -200,14 +200,6 @@
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#vue" title="vue">vue</a>
-                        
-                          <a class="tag" href="/tags/#vue3" title="vue3">vue3</a>
-                        
-                          <a class="tag" href="/tags/#vue.js" title="vue.js">vue.js</a>
-                        
-                          <a class="tag" href="/tags/#vue.js 3" title="vue.js 3">vue.js 3</a>
-                        
                           <a class="tag" href="/tags/#前端" title="前端">前端</a>
                         
                           <a class="tag" href="/tags/#前端開發" title="前端開發">前端開發</a>
@@ -217,6 +209,14 @@
                           <a class="tag" href="/tags/#frontend" title="frontend">frontend</a>
                         
                           <a class="tag" href="/tags/#frontend engineer" title="frontend engineer">frontend engineer</a>
+                        
+                          <a class="tag" href="/tags/#vue" title="vue">vue</a>
+                        
+                          <a class="tag" href="/tags/#vue3" title="vue3">vue3</a>
+                        
+                          <a class="tag" href="/tags/#vue.js" title="vue.js">vue.js</a>
+                        
+                          <a class="tag" href="/tags/#vue.js 3" title="vue.js 3">vue.js 3</a>
                         
 
                     </div>
@@ -259,7 +259,7 @@
 </ol>
 <hr>
 <p>以下是一個簡單的待辦事項列表範例，您可以試著實現 <code>addTodo()</code> 和 <code>removeTodo()</code> 方法，使其正常運作！</p>
-<h3 id="範例程式碼："><a href="#範例程式碼：" class="headerlink" title="範例程式碼："></a>範例程式碼：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li v-for=&quot;todo in todos&quot; :key=&quot;todo.id&quot;&gt;</span><br><span class="line">        &#123;&#123; todo.text &#125;&#125;</span><br><span class="line">        &lt;button @click=&quot;removeTodo(todo.id)&quot;&gt;Remove&lt;/button&gt;</span><br><span class="line">      &lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;input v-model=&quot;newTodoText&quot; placeholder=&quot;Add a new todo&quot; /&gt;</span><br><span class="line">    &lt;button @click=&quot;addTodo&quot;&gt;Add Todo&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 定義待辦事項列表和新增的文字</span><br><span class="line">const todos = ref([</span><br><span class="line">  &#123; id: 1, text: &#x27;Learn Vue.js&#x27; &#125;,</span><br><span class="line">  &#123; id: 2, text: &#x27;Build a project&#x27; &#125;</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">const newTodoText = ref(&#x27;&#x27;)</span><br><span class="line"></span><br><span class="line">// 新增待辦事項</span><br><span class="line">function addTodo() &#123;</span><br><span class="line">  if (newTodoText.value.trim()) &#123;</span><br><span class="line">    todos.value.push(&#123;</span><br><span class="line">      id: Date.now(), // 使用當前時間作為唯一 ID</span><br><span class="line">      text: newTodoText.value.trim()</span><br><span class="line">    &#125;)</span><br><span class="line">    newTodoText.value = &#x27;&#x27; // 清空輸入框</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 移除待辦事項</span><br><span class="line">function removeTodo(id) &#123;</span><br><span class="line">  todos.value = todos.value.filter(todo =&gt; todo.id !== id)</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="範例程式碼："><a href="#範例程式碼：" class="headerlink" title="範例程式碼："></a>範例程式碼：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in todos&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;todo.id&quot;</span>&gt;</span></span><br><span class="line">        &#123;&#123; todo.text &#125;&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;removeTodo(todo.id)&quot;</span>&gt;</span>Remove<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;newTodoText&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;Add a new todo&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;addTodo&quot;</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 定義待辦事項列表和新增的文字</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todos = <span class="title function_">ref</span>([</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">text</span>: <span class="string">&#x27;Learn Vue.js&#x27;</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">text</span>: <span class="string">&#x27;Build a project&#x27;</span> &#125;</span></span><br><span class="line"><span class="language-javascript">])</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> newTodoText = <span class="title function_">ref</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 新增待辦事項</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">addTodo</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">if</span> (newTodoText.<span class="property">value</span>.<span class="title function_">trim</span>()) &#123;</span></span><br><span class="line"><span class="language-javascript">    todos.<span class="property">value</span>.<span class="title function_">push</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">id</span>: <span class="title class_">Date</span>.<span class="title function_">now</span>(), <span class="comment">// 使用當前時間作為唯一 ID</span></span></span><br><span class="line"><span class="language-javascript">      <span class="attr">text</span>: newTodoText.<span class="property">value</span>.<span class="title function_">trim</span>()</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">    newTodoText.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span> <span class="comment">// 清空輸入框</span></span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 移除待辦事項</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">removeTodo</span>(<span class="params">id</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span> = todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function"><span class="params">todo</span> =&gt;</span> todo.<span class="property">id</span> !== id)</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <hr>
 <p>更多關於 <code>v-for</code> 的詳細內容，請參閱官方<a target="_blank" rel="noopener" href="https://vuejs.org/guide/essentials/list.html">指南 - 列表渲染</a>。</p>
@@ -410,7 +410,7 @@
 
                 
                     <li>
-                        <a target="_blank" href="https://www.instagram.com/kdchang.cc">
+                        <a target="_blank" href="https://www.instagram.com/kd.chang.cc">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>

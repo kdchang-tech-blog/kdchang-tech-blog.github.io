@@ -6,7 +6,7 @@
   <link href="https://tech.kdchang.cc/atom.xml" rel="self"/>
   
   <link href="https://tech.kdchang.cc/"/>
-  <updated>2025-02-19T10:03:21.768Z</updated>
+  <updated>2025-02-20T04:59:08.396Z</updated>
   <id>https://tech.kdchang.cc/</id>
   
   <author>
@@ -17,11 +17,46 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Cookie 入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.cc/2025/01/01/learning-notes-cookie-intro-tutorial/"/>
+    <id>https://tech.kdchang.cc/2025/01/01/learning-notes-cookie-intro-tutorial/</id>
+    <published>2025-01-01T18:23:41.000Z</published>
+    <updated>2025-02-20T04:59:08.396Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;Cookie</summary>
+        
+      
+    
+    
+    
+    
+    <category term="javascript" scheme="https://tech.kdchang.cc/tags/javascript/"/>
+    
+    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    
+    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
+    
+    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
+    
+    <category term="cookie" scheme="https://tech.kdchang.cc/tags/cookie/"/>
+    
+  </entry>
+  
+  <entry>
     <title>軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</title>
     <link href="https://tech.kdchang.cc/2024/06/22/software-engineer-and-web-develement-skill-tree/"/>
     <id>https://tech.kdchang.cc/2024/06/22/software-engineer-and-web-develement-skill-tree/</id>
     <published>2024-06-22T03:33:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.397Z</updated>
     
     
       
@@ -52,7 +87,7 @@
     <link href="https://tech.kdchang.cc/2024/03/22/web-frontend-resources/"/>
     <id>https://tech.kdchang.cc/2024/03/22/web-frontend-resources/</id>
     <published>2024-03-22T03:33:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.397Z</updated>
     
     
       
@@ -88,7 +123,7 @@
     <link href="https://tech.kdchang.cc/2024/01/22/web-frontend-interview-question-list/"/>
     <id>https://tech.kdchang.cc/2024/01/22/web-frontend-interview-question-list/</id>
     <published>2024-01-22T03:33:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.397Z</updated>
     
     
       
@@ -123,7 +158,7 @@
     <link href="https://tech.kdchang.cc/2021/02/13/learning-notes-vuejs-3-official-tutorial-13-slots/"/>
     <id>https://tech.kdchang.cc/2021/02/13/learning-notes-vuejs-3-official-tutorial-13-slots/</id>
     <published>2021-02-13T18:23:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.396Z</updated>
     
     
       
@@ -137,14 +172,6 @@
     
     
     
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
     <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
@@ -155,6 +182,14 @@
     
     <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
     
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
   </entry>
   
   <entry>
@@ -162,7 +197,7 @@
     <link href="https://tech.kdchang.cc/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/"/>
     <id>https://tech.kdchang.cc/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/</id>
     <published>2021-02-11T18:23:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.396Z</updated>
     
     
       
@@ -176,14 +211,6 @@
     
     
     
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
     <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
@@ -194,6 +221,14 @@
     
     <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
     
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
   </entry>
   
   <entry>
@@ -201,7 +236,7 @@
     <link href="https://tech.kdchang.cc/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/"/>
     <id>https://tech.kdchang.cc/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/</id>
     <published>2021-02-10T18:23:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.396Z</updated>
     
     
       
@@ -215,14 +250,6 @@
     
     
     
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
     <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
@@ -233,6 +260,14 @@
     
     <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
     
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
   </entry>
   
   <entry>
@@ -240,7 +275,7 @@
     <link href="https://tech.kdchang.cc/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/"/>
     <id>https://tech.kdchang.cc/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/</id>
     <published>2021-02-09T18:23:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.396Z</updated>
     
     
       
@@ -254,14 +289,6 @@
     
     
     
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
     <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
@@ -272,6 +299,14 @@
     
     <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
     
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
   </entry>
   
   <entry>
@@ -279,7 +314,7 @@
     <link href="https://tech.kdchang.cc/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/"/>
     <id>https://tech.kdchang.cc/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/</id>
     <published>2021-02-08T18:23:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.397Z</updated>
     
     
       
@@ -293,14 +328,6 @@
     
     
     
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
     <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
@@ -311,6 +338,14 @@
     
     <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
     
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
   </entry>
   
   <entry>
@@ -318,7 +353,7 @@
     <link href="https://tech.kdchang.cc/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/"/>
     <id>https://tech.kdchang.cc/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/</id>
     <published>2021-02-07T18:23:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.396Z</updated>
     
     
       
@@ -332,14 +367,6 @@
     
     
     
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
     <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
@@ -350,6 +377,14 @@
     
     <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
     
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
   </entry>
   
   <entry>
@@ -357,7 +392,7 @@
     <link href="https://tech.kdchang.cc/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/"/>
     <id>https://tech.kdchang.cc/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/</id>
     <published>2021-02-06T18:23:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.396Z</updated>
     
     
       
@@ -371,14 +406,6 @@
     
     
     
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
     <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
@@ -389,6 +416,14 @@
     
     <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
     
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
   </entry>
   
   <entry>
@@ -396,7 +431,7 @@
     <link href="https://tech.kdchang.cc/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/"/>
     <id>https://tech.kdchang.cc/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/</id>
     <published>2021-02-05T18:23:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.396Z</updated>
     
     
       
@@ -411,14 +446,6 @@
     
     
     
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
     <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
@@ -429,6 +456,14 @@
     
     <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
     
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
   </entry>
   
   <entry>
@@ -436,7 +471,7 @@
     <link href="https://tech.kdchang.cc/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/"/>
     <id>https://tech.kdchang.cc/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/</id>
     <published>2021-02-04T18:23:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.396Z</updated>
     
     
       
@@ -451,14 +486,6 @@
     
     
     
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
     <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
@@ -469,6 +496,14 @@
     
     <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
     
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
   </entry>
   
   <entry>
@@ -476,7 +511,7 @@
     <link href="https://tech.kdchang.cc/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/"/>
     <id>https://tech.kdchang.cc/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/</id>
     <published>2021-02-03T18:23:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.396Z</updated>
     
     
       
@@ -491,14 +526,6 @@
     
     
     
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
     <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
@@ -509,6 +536,14 @@
     
     <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
     
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
   </entry>
   
   <entry>
@@ -516,7 +551,7 @@
     <link href="https://tech.kdchang.cc/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/"/>
     <id>https://tech.kdchang.cc/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</id>
     <published>2021-02-02T18:23:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.396Z</updated>
     
     
       
@@ -531,14 +566,6 @@
     
     
     
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
     <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
@@ -549,6 +576,14 @@
     
     <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
     
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
   </entry>
   
   <entry>
@@ -556,7 +591,7 @@
     <link href="https://tech.kdchang.cc/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/"/>
     <id>https://tech.kdchang.cc/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/</id>
     <published>2021-02-01T18:23:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.396Z</updated>
     
     
       
@@ -571,14 +606,6 @@
     
     
     
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
     <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
@@ -589,6 +616,14 @@
     
     <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
     
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
   </entry>
   
   <entry>
@@ -596,7 +631,7 @@
     <link href="https://tech.kdchang.cc/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/"/>
     <id>https://tech.kdchang.cc/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/</id>
     <published>2021-01-31T18:23:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.396Z</updated>
     
     
       
@@ -610,14 +645,6 @@
     
     
     
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
     <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
@@ -628,6 +655,14 @@
     
     <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
     
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    
   </entry>
   
   <entry>
@@ -635,7 +670,7 @@
     <link href="https://tech.kdchang.cc/2021/01/16/learning-notes-javascript-async-await/"/>
     <id>https://tech.kdchang.cc/2021/01/16/learning-notes-javascript-async-await/</id>
     <published>2021-01-16T03:33:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.396Z</updated>
     
     
       
@@ -649,6 +684,8 @@
     
     
     
+    <category term="javascript" scheme="https://tech.kdchang.cc/tags/javascript/"/>
+    
     <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
@@ -658,8 +695,6 @@
     <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
     
     <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
-    
-    <category term="javascript" scheme="https://tech.kdchang.cc/tags/javascript/"/>
     
     <category term="非同步" scheme="https://tech.kdchang.cc/tags/%E9%9D%9E%E5%90%8C%E6%AD%A5/"/>
     
@@ -676,7 +711,7 @@
     <link href="https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/"/>
     <id>https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/</id>
     <published>2020-11-16T03:33:41.000Z</published>
-    <updated>2025-02-19T10:03:21.768Z</updated>
+    <updated>2025-02-20T04:59:08.397Z</updated>
     
     
       
@@ -690,14 +725,6 @@
     
     
     
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
     <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
@@ -707,6 +734,14 @@
     <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
     
     <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
+    
+    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
+    
+    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
+    
+    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
     
     <category term="Options API" scheme="https://tech.kdchang.cc/tags/Options-API/"/>
     
@@ -719,7 +754,7 @@
     <link href="https://tech.kdchang.cc/2020/06/21/about-backend-engineer-10-keywords/"/>
     <id>https://tech.kdchang.cc/2020/06/21/about-backend-engineer-10-keywords/</id>
     <published>2020-06-21T02:12:43.000Z</published>
-    <updated>2025-02-19T10:03:21.767Z</updated>
+    <updated>2025-02-20T04:59:08.396Z</updated>
     
     
       
@@ -747,6 +782,8 @@
     
     <category term="軟體開發" scheme="https://tech.kdchang.cc/tags/%E8%BB%9F%E9%AB%94%E9%96%8B%E7%99%BC/"/>
     
+    <category term="Web" scheme="https://tech.kdchang.cc/tags/Web/"/>
+    
     <category term="backend" scheme="https://tech.kdchang.cc/tags/backend/"/>
     
     <category term="backend engineer" scheme="https://tech.kdchang.cc/tags/backend-engineer/"/>
@@ -758,55 +795,6 @@
     <category term="網頁後端工程師" scheme="https://tech.kdchang.cc/tags/%E7%B6%B2%E9%A0%81%E5%BE%8C%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/"/>
     
     <category term="後端工程師" scheme="https://tech.kdchang.cc/tags/%E5%BE%8C%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/"/>
-    
-    <category term="Web" scheme="https://tech.kdchang.cc/tags/Web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字</title>
-    <link href="https://tech.kdchang.cc/2020/06/13/about-frontend-engineer-10-keywords/"/>
-    <id>https://tech.kdchang.cc/2020/06/13/about-frontend-engineer-10-keywords/</id>
-    <published>2020-06-13T06:33:41.000Z</published>
-    <updated>2025-02-19T10:03:21.767Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;以下整理了前端工程師相關的 10</summary>
-        
-      
-    
-    
-    
-    
-    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
-    
-    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
-    
-    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
-    
-    <category term="開發者" scheme="https://tech.kdchang.cc/tags/%E9%96%8B%E7%99%BC%E8%80%85/"/>
-    
-    <category term="軟體工程師" scheme="https://tech.kdchang.cc/tags/%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB/"/>
-    
-    <category term="SWE" scheme="https://tech.kdchang.cc/tags/SWE/"/>
-    
-    <category term="Software Engineer" scheme="https://tech.kdchang.cc/tags/Software-Engineer/"/>
-    
-    <category term="Software" scheme="https://tech.kdchang.cc/tags/Software/"/>
-    
-    <category term="軟體開發" scheme="https://tech.kdchang.cc/tags/%E8%BB%9F%E9%AB%94%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="Web" scheme="https://tech.kdchang.cc/tags/Web/"/>
-    
-    <category term="網頁前端工程師" scheme="https://tech.kdchang.cc/tags/%E7%B6%B2%E9%A0%81%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/"/>
-    
-    <category term="前端工程師" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/"/>
     
   </entry>
   

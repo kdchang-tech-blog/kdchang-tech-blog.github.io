@@ -115,12 +115,12 @@
                     
 
                         
+                    
+
+                        
                         <li>
                             <a href="/about/">About</a>
                         </li>
-                        
-                    
-
                         
                     
 
@@ -284,20 +284,11 @@
 <h4 id="4-FULL-JOIN-部分資料庫支援"><a href="#4-FULL-JOIN-部分資料庫支援" class="headerlink" title="4. FULL JOIN (部分資料庫支援)"></a>4. FULL JOIN (部分資料庫支援)</h4><p>全外連接，返回兩個表中所有資料，無對應資料則顯示 NULL。(MySQL 不支援 FULL JOIN，需使用 UNION 模擬)</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">FULL</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
 
-<p>七、合併查詢 (UNION)</p>
-<ol>
-<li>UNION</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">30</span></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&lt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="七、合併查詢-UNION"><a href="#七、合併查詢-UNION" class="headerlink" title="七、合併查詢 (UNION)"></a>七、合併查詢 (UNION)</h2><h4 id="1-UNION"><a href="#1-UNION" class="headerlink" title="1. UNION"></a>1. UNION</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">30</span></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&lt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
 
-<p>說明：</p>
 <p>UNION 用於合併兩個或多個查詢的結果。<br>預設會去除重複資料。<br>欄位數量與型態須一致。</p>
-<ol start="2">
-<li>UNION ALL</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">30</span></span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&lt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="2-UNION-ALL"><a href="#2-UNION-ALL" class="headerlink" title="2. UNION ALL"></a>2. UNION ALL</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">30</span></span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&lt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
 
-<p>說明：</p>
 <p>與 UNION 類似，但不會去除重複資料。</p>
 <hr>
 <p>以上整理了 SQL 入門常見的基本語法，可以基本處理資料庫操作需求。</p>
@@ -448,7 +439,7 @@
 
                 
                     <li>
-                        <a target="_blank" href="https://www.instagram.com/kdchang.cc">
+                        <a target="_blank" href="https://www.instagram.com/kd.chang.cc">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
