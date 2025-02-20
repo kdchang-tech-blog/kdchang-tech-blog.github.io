@@ -172,9 +172,9 @@ FROM users
 FULL JOIN orders ON users.id = orders.user_id;
 ```
 
-七、合併查詢 (UNION)
+## 七、合併查詢 (UNION)
 
-1. UNION
+#### 1. UNION
 
 ```sql
 SELECT name, email FROM users WHERE age > 30
@@ -182,21 +182,17 @@ UNION
 SELECT name, email FROM users WHERE age < 20;
 ```
 
-說明：
-
 UNION 用於合併兩個或多個查詢的結果。
 預設會去除重複資料。
 欄位數量與型態須一致。
 
-2. UNION ALL
+#### 2. UNION ALL
 
 ```sql
 SELECT name, email FROM users WHERE age > 30
 UNION ALL
 SELECT name, email FROM users WHERE age < 20;
 ```
-
-說明：
 
 與 UNION 類似，但不會去除重複資料。
 

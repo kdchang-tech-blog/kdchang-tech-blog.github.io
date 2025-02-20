@@ -54,7 +54,7 @@ tags:
 
 ### 範例程式碼：
 
-```vue
+```html
 <template>
   <div>
     <ul>
