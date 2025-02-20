@@ -6,7 +6,7 @@
   <link href="https://tech.kdchang.cc/atom.xml" rel="self"/>
   
   <link href="https://tech.kdchang.cc/"/>
-  <updated>2025-02-20T04:59:08.396Z</updated>
+  <updated>2025-02-20T06:12:17.920Z</updated>
   <id>https://tech.kdchang.cc/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://tech.kdchang.cc/2025/01/01/learning-notes-cookie-intro-tutorial/"/>
     <id>https://tech.kdchang.cc/2025/01/01/learning-notes-cookie-intro-tutorial/</id>
     <published>2025-01-01T18:23:41.000Z</published>
-    <updated>2025-02-20T04:59:08.396Z</updated>
+    <updated>2025-02-20T06:12:17.920Z</updated>
     
     
       
@@ -56,7 +56,7 @@
     <link href="https://tech.kdchang.cc/2024/06/22/software-engineer-and-web-develement-skill-tree/"/>
     <id>https://tech.kdchang.cc/2024/06/22/software-engineer-and-web-develement-skill-tree/</id>
     <published>2024-06-22T03:33:41.000Z</published>
-    <updated>2025-02-20T04:59:08.397Z</updated>
+    <updated>2025-02-20T06:12:17.921Z</updated>
     
     
       
@@ -87,7 +87,7 @@
     <link href="https://tech.kdchang.cc/2024/03/22/web-frontend-resources/"/>
     <id>https://tech.kdchang.cc/2024/03/22/web-frontend-resources/</id>
     <published>2024-03-22T03:33:41.000Z</published>
-    <updated>2025-02-20T04:59:08.397Z</updated>
+    <updated>2025-02-20T06:12:17.921Z</updated>
     
     
       
@@ -123,7 +123,7 @@
     <link href="https://tech.kdchang.cc/2024/01/22/web-frontend-interview-question-list/"/>
     <id>https://tech.kdchang.cc/2024/01/22/web-frontend-interview-question-list/</id>
     <published>2024-01-22T03:33:41.000Z</published>
-    <updated>2025-02-20T04:59:08.397Z</updated>
+    <updated>2025-02-20T06:12:17.921Z</updated>
     
     
       
@@ -154,11 +154,38 @@
   </entry>
   
   <entry>
+    <title>Responsive Design 響應式設計入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.cc/2022/06/09/learning-notes-responsive-design-rwd/"/>
+    <id>https://tech.kdchang.cc/2022/06/09/learning-notes-responsive-design-rwd/</id>
+    <published>2022-06-09T18:23:41.000Z</published>
+    <updated>2025-02-20T06:12:17.920Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Responsive-Design-響應式設計入門教學筆記&quot;&gt;&lt;a href=&quot;#Responsive-Design-響應式設計入門教學筆記&quot; class=&quot;headerlink&quot; title=&quot;Responsive Design</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Responsive Design" scheme="https://tech.kdchang.cc/tags/Responsive-Design/"/>
+    
+    <category term="響應式設計" scheme="https://tech.kdchang.cc/tags/%E9%9F%BF%E6%87%89%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
+    
+    <category term="RWD" scheme="https://tech.kdchang.cc/tags/RWD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [13] - Slots 插槽 | 學習筆記</title>
     <link href="https://tech.kdchang.cc/2021/02/13/learning-notes-vuejs-3-official-tutorial-13-slots/"/>
     <id>https://tech.kdchang.cc/2021/02/13/learning-notes-vuejs-3-official-tutorial-13-slots/</id>
     <published>2021-02-13T18:23:41.000Z</published>
-    <updated>2025-02-20T04:59:08.396Z</updated>
+    <updated>2025-02-20T06:12:17.920Z</updated>
     
     
       
@@ -197,7 +224,7 @@
     <link href="https://tech.kdchang.cc/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/"/>
     <id>https://tech.kdchang.cc/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/</id>
     <published>2021-02-11T18:23:41.000Z</published>
-    <updated>2025-02-20T04:59:08.396Z</updated>
+    <updated>2025-02-20T06:12:17.920Z</updated>
     
     
       
@@ -236,7 +263,7 @@
     <link href="https://tech.kdchang.cc/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/"/>
     <id>https://tech.kdchang.cc/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/</id>
     <published>2021-02-10T18:23:41.000Z</published>
-    <updated>2025-02-20T04:59:08.396Z</updated>
+    <updated>2025-02-20T06:12:17.920Z</updated>
     
     
       
@@ -275,7 +302,7 @@
     <link href="https://tech.kdchang.cc/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/"/>
     <id>https://tech.kdchang.cc/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/</id>
     <published>2021-02-09T18:23:41.000Z</published>
-    <updated>2025-02-20T04:59:08.396Z</updated>
+    <updated>2025-02-20T06:12:17.920Z</updated>
     
     
       
@@ -314,7 +341,7 @@
     <link href="https://tech.kdchang.cc/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/"/>
     <id>https://tech.kdchang.cc/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/</id>
     <published>2021-02-08T18:23:41.000Z</published>
-    <updated>2025-02-20T04:59:08.397Z</updated>
+    <updated>2025-02-20T06:12:17.921Z</updated>
     
     
       
@@ -353,7 +380,7 @@
     <link href="https://tech.kdchang.cc/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/"/>
     <id>https://tech.kdchang.cc/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/</id>
     <published>2021-02-07T18:23:41.000Z</published>
-    <updated>2025-02-20T04:59:08.396Z</updated>
+    <updated>2025-02-20T06:12:17.921Z</updated>
     
     
       
@@ -392,7 +419,7 @@
     <link href="https://tech.kdchang.cc/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/"/>
     <id>https://tech.kdchang.cc/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/</id>
     <published>2021-02-06T18:23:41.000Z</published>
-    <updated>2025-02-20T04:59:08.396Z</updated>
+    <updated>2025-02-20T06:12:17.921Z</updated>
     
     
       
@@ -431,7 +458,7 @@
     <link href="https://tech.kdchang.cc/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/"/>
     <id>https://tech.kdchang.cc/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/</id>
     <published>2021-02-05T18:23:41.000Z</published>
-    <updated>2025-02-20T04:59:08.396Z</updated>
+    <updated>2025-02-20T06:12:17.921Z</updated>
     
     
       
@@ -471,7 +498,7 @@
     <link href="https://tech.kdchang.cc/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/"/>
     <id>https://tech.kdchang.cc/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/</id>
     <published>2021-02-04T18:23:41.000Z</published>
-    <updated>2025-02-20T04:59:08.396Z</updated>
+    <updated>2025-02-20T06:12:17.920Z</updated>
     
     
       
@@ -511,7 +538,7 @@
     <link href="https://tech.kdchang.cc/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/"/>
     <id>https://tech.kdchang.cc/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/</id>
     <published>2021-02-03T18:23:41.000Z</published>
-    <updated>2025-02-20T04:59:08.396Z</updated>
+    <updated>2025-02-20T06:12:17.920Z</updated>
     
     
       
@@ -551,7 +578,7 @@
     <link href="https://tech.kdchang.cc/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/"/>
     <id>https://tech.kdchang.cc/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</id>
     <published>2021-02-02T18:23:41.000Z</published>
-    <updated>2025-02-20T04:59:08.396Z</updated>
+    <updated>2025-02-20T06:12:17.920Z</updated>
     
     
       
@@ -591,7 +618,7 @@
     <link href="https://tech.kdchang.cc/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/"/>
     <id>https://tech.kdchang.cc/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/</id>
     <published>2021-02-01T18:23:41.000Z</published>
-    <updated>2025-02-20T04:59:08.396Z</updated>
+    <updated>2025-02-20T06:12:17.920Z</updated>
     
     
       
@@ -631,7 +658,7 @@
     <link href="https://tech.kdchang.cc/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/"/>
     <id>https://tech.kdchang.cc/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/</id>
     <published>2021-01-31T18:23:41.000Z</published>
-    <updated>2025-02-20T04:59:08.396Z</updated>
+    <updated>2025-02-20T06:12:17.920Z</updated>
     
     
       
@@ -670,7 +697,7 @@
     <link href="https://tech.kdchang.cc/2021/01/16/learning-notes-javascript-async-await/"/>
     <id>https://tech.kdchang.cc/2021/01/16/learning-notes-javascript-async-await/</id>
     <published>2021-01-16T03:33:41.000Z</published>
-    <updated>2025-02-20T04:59:08.396Z</updated>
+    <updated>2025-02-20T06:12:17.920Z</updated>
     
     
       
@@ -711,7 +738,7 @@
     <link href="https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/"/>
     <id>https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/</id>
     <published>2020-11-16T03:33:41.000Z</published>
-    <updated>2025-02-20T04:59:08.397Z</updated>
+    <updated>2025-02-20T06:12:17.921Z</updated>
     
     
       
@@ -746,55 +773,6 @@
     <category term="Options API" scheme="https://tech.kdchang.cc/tags/Options-API/"/>
     
     <category term="Composition API" scheme="https://tech.kdchang.cc/tags/Composition-API/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</title>
-    <link href="https://tech.kdchang.cc/2020/06/21/about-backend-engineer-10-keywords/"/>
-    <id>https://tech.kdchang.cc/2020/06/21/about-backend-engineer-10-keywords/</id>
-    <published>2020-06-21T02:12:43.000Z</published>
-    <updated>2025-02-20T04:59:08.396Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;以下整理了後端工程師相關的 10 個關鍵字，涵蓋技能、工具與工作方式：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Node.js &amp;#x2F; Python &amp;#x2F; Java &amp;#x2F; Ruby &amp;#x2F;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="開發者" scheme="https://tech.kdchang.cc/tags/%E9%96%8B%E7%99%BC%E8%80%85/"/>
-    
-    <category term="軟體工程師" scheme="https://tech.kdchang.cc/tags/%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB/"/>
-    
-    <category term="SWE" scheme="https://tech.kdchang.cc/tags/SWE/"/>
-    
-    <category term="Software Engineer" scheme="https://tech.kdchang.cc/tags/Software-Engineer/"/>
-    
-    <category term="Software" scheme="https://tech.kdchang.cc/tags/Software/"/>
-    
-    <category term="軟體開發" scheme="https://tech.kdchang.cc/tags/%E8%BB%9F%E9%AB%94%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="Web" scheme="https://tech.kdchang.cc/tags/Web/"/>
-    
-    <category term="backend" scheme="https://tech.kdchang.cc/tags/backend/"/>
-    
-    <category term="backend engineer" scheme="https://tech.kdchang.cc/tags/backend-engineer/"/>
-    
-    <category term="後端開發" scheme="https://tech.kdchang.cc/tags/%E5%BE%8C%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="後端工程" scheme="https://tech.kdchang.cc/tags/%E5%BE%8C%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
-    
-    <category term="網頁後端工程師" scheme="https://tech.kdchang.cc/tags/%E7%B6%B2%E9%A0%81%E5%BE%8C%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/"/>
-    
-    <category term="後端工程師" scheme="https://tech.kdchang.cc/tags/%E5%BE%8C%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/"/>
     
   </entry>
   
