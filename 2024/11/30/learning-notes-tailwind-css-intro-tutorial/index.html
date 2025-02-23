@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword"  content="軟體工程, 程式設計, 程式開發, frontend, backend, web, software, software engineer, JavaScript, Python">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/img/logo.ico">
+    <meta name="google-site-verification" content="cMTgiEFMM7gXpRMBbu_05Lnj0scwhDPCMvpfhQOpENI" />
+    <script src="/js/search.js"></script> 
+
+    
+    
+    
+       <script type="text/javascript">      
+         var search_path = "search.xml";
+       if (search_path.length == 0) {
+         search_path = "search.xml";
+       }
+       var path = "/" + search_path;
+         searchFunc(path, 'local-search-input', 'local-search-result');
+       </script>
+    
+    <title>
+        
+          Tailwind CSS 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+        
+    </title>
+
+    <link rel="canonical" href="https://tech.kdchang.cc/2024/11/30/learning-notes-tailwind-css-intro-tutorial/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/main.css?v=1">
+
+    <!-- og tag -->
+    <meta name="generator" content="KD's Tech Blog">
+    
+      <meta name="og:title" content="Tailwind CSS 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="Tailwind CSS 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+    
+    
+      <meta name="description" content="Hi 我是 KD Chang 張凱迪，我在這書寫我的程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+      <meta name="og:description" content="Hi 我是 KD Chang 張凱迪，我在這書寫我的程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+    
+    
+      <meta name="og:image" content="https://tech.kdchang.cc/img/logo.png">
+    
+    <meta name="og:type" content="website">
+    <!--Twitter Graph-->
+    <meta name="twitter:card" content="summary" />
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<link rel="alternate" href="/atom.xml" title="KD's Tech Blog" type="application/atom+xml">
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">KD&#39;s Tech Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/search/">Search</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    <li>
+                        <a href="/atom.xml">RSS</a>
+                    </li>                 
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/cover.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+
+                    <h1>Tailwind CSS 入門教學筆記 | 學習筆記</h1>
+                    <span class="meta">
+                        Posted by kdchang on
+                        2024-11-30
+                    </span>
+                    <br>
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
+                        
+                          <a class="tag" href="/tags/#前端開發" title="前端開發">前端開發</a>
+                        
+                          <a class="tag" href="/tags/#前端工程" title="前端工程">前端工程</a>
+                        
+                          <a class="tag" href="/tags/#frontend" title="frontend">frontend</a>
+                        
+                          <a class="tag" href="/tags/#frontend engineer" title="frontend engineer">frontend engineer</a>
+                        
+                          <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
+                        
+                          <a class="tag" href="/tags/#Tailwind CSS" title="Tailwind CSS">Tailwind CSS</a>
+                        
+                          <a class="tag" href="/tags/#Tailwind" title="Tailwind">Tailwind</a>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+                <br>
+                <div>
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.cc" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+                <br>
+                <div>
+                    <h1 id="一、什麼是-Tailwind-CSS？"><a href="#一、什麼是-Tailwind-CSS？" class="headerlink" title="一、什麼是 Tailwind CSS？"></a>一、什麼是 Tailwind CSS？</h1><p>Tailwind CSS 是一款以「<code>工具類別優先</code>」（<code>Utility-First</code>）為核心設計理念的 CSS 框架，與傳統的 CSS 框架（如 Bootstrap、Bulma）不同，它不提供預設的 UI 元件，而是提供大量的樣式工具類別，讓開發者可以快速組合來建構 UI，而不需要額外撰寫自訂 CSS。  </p>
+<p>相較於傳統 CSS 框架，Tailwind CSS 具有以下幾個主要優勢：  </p>
+<ol>
+<li><strong>開發效率高</strong>：只需使用<code>類別組合</code>即可完成設計，無需撰寫額外 CSS。  </li>
+<li><strong>高度可客製化</strong>：可以透過設定檔調整顏色、字型、間距等設計。  </li>
+<li><strong>內建響應式支援</strong>：透過 <code>sm: md: lg: xl:</code> 等前綴輕鬆定義不同裝置的樣式。  </li>
+<li><strong>一致性強</strong>：開發團隊可以統一使用 Tailwind CSS 定義的設計樣式，減少 UI 風格不一致的問題。  </li>
+<li><strong>效能優化</strong>：可透過 PurgeCSS 移除未使用的樣式，確保最小化 CSS 檔案大小，提高網站載入速度。</li>
+</ol>
+<hr>
+<h1 id="二、安裝-Tailwind-CSS"><a href="#二、安裝-Tailwind-CSS" class="headerlink" title="二、安裝 Tailwind CSS"></a>二、安裝 Tailwind CSS</h1><p>Tailwind CSS 可以透過多種方式安裝，以下介紹幾種常見的方法：  </p>
+<h3 id="1-使用-CDN（適合快速測試）"><a href="#1-使用-CDN（適合快速測試）" class="headerlink" title="1. 使用 CDN（適合快速測試）"></a>1. 使用 CDN（適合快速測試）</h3><p>如果只是想快速體驗 Tailwind CSS，可以直接在 HTML 檔案中加入以下 <code>&lt;link&gt;</code>：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>這種方式適合小型專案或測試 Tailwind CSS 的功能，但不適合正式開發，因為無法使用客製化設定。  </p>
+<h3 id="2-透過-npm-安裝（推薦方式）"><a href="#2-透過-npm-安裝（推薦方式）" class="headerlink" title="2. 透過 npm 安裝（推薦方式）"></a>2. 透過 npm 安裝（推薦方式）</h3><p>在正式開發環境中，建議使用 npm 或 yarn 來安裝 Tailwind CSS，以便進行客製化設定。  </p>
+<p><strong>安裝 Tailwind CSS</strong>：  </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -D tailwindcss postcss autoprefixer</span><br><span class="line">npx tailwindcss init -p</span><br></pre></td></tr></table></figure>
+
+<p>執行上述指令後，會在專案根目錄中產生 <code>tailwind.config.js</code> 設定檔，可用來調整 Tailwind 的預設樣式。  </p>
+<p><strong>設定 Tailwind CSS</strong>：  </p>
+<p>開啟 <code>tailwind.config.js</code>，找到 <code>content</code> 設定，確保 Tailwind 只處理專案內的相關檔案，例如：  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">content</span>: [<span class="string">&quot;./src/**/*.&#123;html,js,ts,jsx,tsx&#125;&quot;</span>],</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;&#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>這樣 Tailwind CSS 就只會掃描 <code>src</code> 資料夾內的 HTML、JavaScript 和 TypeScript 檔案，避免產生不必要的 CSS。  </p>
+<p><strong>引入 Tailwind 樣式</strong>：  </p>
+<p>在 <code>src/index.css</code> 或 <code>styles.css</code> 檔案中加入以下內容，讓 Tailwind CSS 套用基礎樣式：  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@tailwind</span> base;</span><br><span class="line"><span class="keyword">@tailwind</span> components;</span><br><span class="line"><span class="keyword">@tailwind</span> utilities;</span><br></pre></td></tr></table></figure>
+
+<p>最後，在開發環境中執行 Tailwind 編譯指令：  </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch</span><br></pre></td></tr></table></figure>
+
+<p>這會自動監聽檔案變化，並輸出 Tailwind CSS 的樣式到 <code>output.css</code>。  </p>
+<hr>
+<h1 id="三、Tailwind-CSS-常用類別"><a href="#三、Tailwind-CSS-常用類別" class="headerlink" title="三、Tailwind CSS 常用類別"></a>三、Tailwind CSS 常用類別</h1><p>Tailwind CSS 提供大量的工具類別，以下介紹幾個常用的類別和應用範例。  </p>
+<h3 id="1-文字樣式"><a href="#1-文字樣式" class="headerlink" title="1. 文字樣式"></a>1. 文字樣式</h3><p>Tailwind 允許透過類別來快速調整字體大小、顏色、行距等樣式，例如：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text-lg font-bold text-gray-700 leading-relaxed&quot;</span>&gt;</span></span><br><span class="line">  這是一段示範文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>其中：  </p>
+<ul>
+<li><code>text-lg</code>：字體大小  </li>
+<li><code>font-bold</code>：加粗  </li>
+<li><code>text-gray-700</code>：深灰色文字  </li>
+<li><code>leading-relaxed</code>：行距較寬</li>
+</ul>
+<h3 id="2-背景與邊框"><a href="#2-背景與邊框" class="headerlink" title="2. 背景與邊框"></a>2. 背景與邊框</h3><p>可以使用背景色與邊框樣式來設計 UI，示例如下：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-500 text-white p-4 rounded-lg shadow-lg&quot;</span>&gt;</span></span><br><span class="line">  Tailwind CSS 範例</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>bg-blue-500</code>：藍色背景  </li>
+<li><code>text-white</code>：白色文字  </li>
+<li><code>p-4</code>：內距 16px  </li>
+<li><code>rounded-lg</code>：圓角  </li>
+<li><code>shadow-lg</code>：大型陰影</li>
+</ul>
+<h3 id="3-Flexbox-佈局"><a href="#3-Flexbox-佈局" class="headerlink" title="3. Flexbox 佈局"></a>3. Flexbox 佈局</h3><p>Tailwind CSS 提供完整的 Flexbox 工具類別，讓開發者能夠快速進行佈局：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;flex items-center justify-between p-4 bg-gray-200&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>左側內容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>右側內容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>flex</code>：啟用 Flexbox  </li>
+<li><code>items-center</code>：垂直置中  </li>
+<li><code>justify-between</code>：左右對齊</li>
+</ul>
+<h3 id="4-Grid-佈局"><a href="#4-Grid-佈局" class="headerlink" title="4. Grid 佈局"></a>4. Grid 佈局</h3><p>使用 Grid 來建立多欄式佈局：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid grid-cols-3 gap-4&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-red-200 p-4&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-green-200 p-4&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-200 p-4&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>grid</code>：啟用 Grid  </li>
+<li><code>grid-cols-3</code>：建立三欄  </li>
+<li><code>gap-4</code>：欄間距</li>
+</ul>
+<h3 id="5-響應式設計"><a href="#5-響應式設計" class="headerlink" title="5. 響應式設計"></a>5. 響應式設計</h3><p>Tailwind 內建響應式前綴，適用於不同裝置：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;text-base md:text-lg lg:text-xl xl:text-2xl&quot;</span>&gt;</span></span><br><span class="line">  響應式字體大小</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>text-base</code>：手機（預設）  </li>
+<li><code>md:text-lg</code>：平板（<code>min-width: 768px</code>）  </li>
+<li><code>lg:text-xl</code>：筆電（<code>min-width: 1024px</code>）  </li>
+<li><code>xl:text-2xl</code>：桌機（<code>min-width: 1280px</code>）</li>
+</ul>
+<hr>
+<h1 id="四、Tailwind-CSS-進階功能"><a href="#四、Tailwind-CSS-進階功能" class="headerlink" title="四、Tailwind CSS 進階功能"></a>四、Tailwind CSS 進階功能</h1><h3 id="1-自訂樣式"><a href="#1-自訂樣式" class="headerlink" title="1. 自訂樣式"></a>1. 自訂樣式</h3><p>可以透過 <code>tailwind.config.js</code> 來擴充自訂樣式，例如新增顏色：  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;</span><br><span class="line">      <span class="attr">colors</span>: &#123;</span><br><span class="line">        <span class="attr">primary</span>: <span class="string">&quot;#1E40AF&quot;</span>,</span><br><span class="line">        <span class="attr">secondary</span>: <span class="string">&quot;#9333EA&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>這樣就可以在 HTML 中使用 <code>text-primary</code> 或 <code>bg-secondary</code> 來套用顏色。  </p>
+<h3 id="2-使用-apply-簡化樣式"><a href="#2-使用-apply-簡化樣式" class="headerlink" title="2. 使用 @apply 簡化樣式"></a>2. 使用 @apply 簡化樣式</h3><p>在 CSS 檔案中使用 <code>@apply</code> 來重複使用 Tailwind 類別：  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.btn</span> &#123;</span><br><span class="line">  <span class="keyword">@apply</span> bg-blue-<span class="number">500</span> text-white px-<span class="number">4</span> py-<span class="number">2</span> rounded;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然後在 HTML 中只需寫：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>按鈕<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="五、結語"><a href="#五、結語" class="headerlink" title="五、結語"></a>五、結語</h1><p>Tailwind CSS 透過工具類別的方式大幅提升開發效率，並提供響應式設計、靈活佈局與高度客製化的功能。對於前端開發者而言，熟悉 Tailwind CSS 可以讓 UI 設計更加直觀、高效，並減少對自訂 CSS 的依賴，進而提升開發維護性。</p>
+
+                </div>
+
+                <br>
+                <section>
+                    歡迎分享按讚給予支持和鼓勵！
+                    <div class="fb-like" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                </section>
+                <br>
+                <div>
+                    <div class="fb-page" data-href="https://www.facebook.com/tech.kdchang.cc" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/tech.kdchang.cc" class="fb-xfbml-parse-ignore"><a target="_blank" rel="noopener" href="https://www.facebook.com/tech.kdchang.cc">KD Chang（張凱迪）</a></blockquote></div>
+                </div>
+                <hr>
+                <div>
+                    <h3>Related Posts</h3>
+                    <div>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/01/learning-notes-nuxtjs-intro-tutorial/" title="Nuxt.js 入門教學筆記 | 學習筆記" rel="bookmark">Nuxt.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/" title="滾動視差（Parallax Scrolling）網頁設計入門教學筆記 | 學習筆記" rel="bookmark">滾動視差（Parallax Scrolling）網頁設計入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/02/learning-notes-typescript-intro-tutorial/" title="TypeScript 入門教學筆記 | 學習筆記" rel="bookmark">TypeScript 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/01/learning-notes-cookie-intro-tutorial/" title="Cookie 入門教學筆記 | 學習筆記" rel="bookmark">Cookie 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial copy/" title="JavaScript ES6 入門語法教學筆記 | 學習筆記" rel="bookmark">JavaScript ES6 入門語法教學筆記 | 學習筆記</a></h3></div></li></ul>
+                    </div>
+                </div>
+                <!-- Tags -->
+                <h3>Comments</h3>
+                <hr>
+                
+                <!-- disqus start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus end -->
+                
+
+            </div>
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "kdchang-tech-blog";
+    var disqus_identifier = "https://tech.kdchang.cc/2024/11/30/learning-notes-tailwind-css-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.cc/2024/11/30/learning-notes-tailwind-css-intro-tutorial/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5728979c6a10856b"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<!-- <script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script> -->
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+<script>
+   anchors.add('h1, h2, h3');
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<a id="scroll-to-top-button">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/kaidichang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/tech.kdchang.cc">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/kd.chang.cc">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kdchang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <hr>
+                <div class="copyright text-muted">
+                    Special thanks <a href="https://unsplash.com/@afgprogrammer" target="_blank">Mohammad Rahmani</a>、<a href="https://www.flickr.com/photos/derek-john-lee/14698093740/in/photolist-ooPzcj-r2kVt-ppV21v-brhFX3-wd3Qsy-cLiKEL-xDR92-28QCtA-29YFZZ-gzuZk-dqbhxt-9FwCBY-q57bEv-bVhZJr-dYxGXn-dxg9g7-8x7gjU-dzjMic-rQhf-9TMgJ3-mEsFjW-qbzd4p-q6cJvc-7zYttk-q2gE5S-bdb4G4-8ifmQN-eivVeg-9ZZFVz-aD6q6r-bnjfWh-qJAn2g-k22Ttf-n9Jhfj-kk4woh-sj43iz-5NYGUn-96wNhi-9ZZFz6-8DJkQf-4wQizw-3bzz8p-9yzTSd-xDQee-68Xwfp-7t5WPx-xDTM5-o5RPYA-kWihhy-7iHDEX" target="_blank">Derek</a>、<a href="https://www.flickr.com/photos/mashleymorgan/" target="_blank">mashleymorgan</a>、<a href="https://www.flickr.com/photos/mustafeez27/" target="_blank">mustafeez27</a>         
+                    and <a href="http://blog.kaijun.rocks" target="_blank">Kaijun</a>
+                    <br> 
+                    Copyright &copy; KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪 2025
+                    <hr>
+                    <!-- facebook follow -->
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.cc" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+<!-- Custom Main JavaScript -->
+<script src="/js/main.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://tech.kdchang.cc/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fb.js -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="X3eUifxc"></script>
+
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FN9X92SM77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FN9X92SM77');
+</script>
+
+
+
+	
+</body>
+
+</html>

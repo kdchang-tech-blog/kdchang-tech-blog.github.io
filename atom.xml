@@ -6,7 +6,7 @@
   <link href="https://tech.kdchang.cc/atom.xml" rel="self"/>
   
   <link href="https://tech.kdchang.cc/"/>
-  <updated>2025-02-20T06:12:17.920Z</updated>
+  <updated>2025-02-23T07:07:01.987Z</updated>
   <id>https://tech.kdchang.cc/</id>
   
   <author>
@@ -17,11 +17,186 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Git Flow 介紹與 GitHub Flow 介紹入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.cc/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/"/>
+    <id>https://tech.kdchang.cc/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</id>
+    <published>2024-12-04T18:23:41.000Z</published>
+    <updated>2025-02-23T07:07:01.987Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;在軟體開發中，版本控制是協作開發中至關重要的工具。Git</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Git Flow" scheme="https://tech.kdchang.cc/tags/Git-Flow/"/>
+    
+    <category term="Github Flow" scheme="https://tech.kdchang.cc/tags/Github-Flow/"/>
+    
+    <category term="Github" scheme="https://tech.kdchang.cc/tags/Github/"/>
+    
+    <category term="Git" scheme="https://tech.kdchang.cc/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>滾動視差（Parallax Scrolling）網頁設計入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.cc/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/"/>
+    <id>https://tech.kdchang.cc/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/</id>
+    <published>2024-12-03T18:23:41.000Z</published>
+    <updated>2025-02-23T07:07:01.987Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;一、什麼是滾動視差？&quot;&gt;&lt;a href=&quot;#一、什麼是滾動視差？&quot; class=&quot;headerlink&quot; title=&quot;一、什麼是滾動視差？&quot;&gt;&lt;/a&gt;一、什麼是滾動視差？&lt;/h1&gt;&lt;p&gt;滾動視差（&lt;code&gt;Parallax</summary>
+        
+      
+    
+    
+    
+    
+    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    
+    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
+    
+    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
+    
+    <category term="CSS" scheme="https://tech.kdchang.cc/tags/CSS/"/>
+    
+    <category term="typescript" scheme="https://tech.kdchang.cc/tags/typescript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TypeScript 入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.cc/2024/12/02/learning-notes-typescript-intro-tutorial/"/>
+    <id>https://tech.kdchang.cc/2024/12/02/learning-notes-typescript-intro-tutorial/</id>
+    <published>2024-12-02T18:23:41.000Z</published>
+    <updated>2025-02-23T07:07:01.987Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;一、什麼是-TypeScript？&quot;&gt;&lt;a href=&quot;#一、什麼是-TypeScript？&quot; class=&quot;headerlink&quot; title=&quot;一、什麼是 TypeScript？&quot;&gt;&lt;/a&gt;一、什麼是</summary>
+        
+      
+    
+    
+    
+    
+    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    
+    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
+    
+    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
+    
+    <category term="CSS" scheme="https://tech.kdchang.cc/tags/CSS/"/>
+    
+    <category term="typescript" scheme="https://tech.kdchang.cc/tags/typescript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nuxt.js 入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.cc/2024/12/01/learning-notes-nuxtjs-intro-tutorial/"/>
+    <id>https://tech.kdchang.cc/2024/12/01/learning-notes-nuxtjs-intro-tutorial/</id>
+    <published>2024-12-01T18:23:41.000Z</published>
+    <updated>2025-02-23T07:07:01.987Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;一、什麼是-Nuxt-js？&quot;&gt;&lt;a href=&quot;#一、什麼是-Nuxt-js？&quot; class=&quot;headerlink&quot; title=&quot;一、什麼是 Nuxt.js？&quot;&gt;&lt;/a&gt;一、什麼是 Nuxt.js？&lt;/h1&gt;&lt;p&gt;&lt;code&gt;Nuxt.js&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    
+    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
+    
+    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
+    
+    <category term="Nuxt" scheme="https://tech.kdchang.cc/tags/Nuxt/"/>
+    
+    <category term="CSS" scheme="https://tech.kdchang.cc/tags/CSS/"/>
+    
+    <category term="Nuxt.js" scheme="https://tech.kdchang.cc/tags/Nuxt-js/"/>
+    
+    <category term="Vue.js" scheme="https://tech.kdchang.cc/tags/Vue-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tailwind CSS 入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.cc/2024/11/30/learning-notes-tailwind-css-intro-tutorial/"/>
+    <id>https://tech.kdchang.cc/2024/11/30/learning-notes-tailwind-css-intro-tutorial/</id>
+    <published>2024-11-30T18:23:41.000Z</published>
+    <updated>2025-02-23T07:07:01.987Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;一、什麼是-Tailwind-CSS？&quot;&gt;&lt;a href=&quot;#一、什麼是-Tailwind-CSS？&quot; class=&quot;headerlink&quot; title=&quot;一、什麼是 Tailwind CSS？&quot;&gt;&lt;/a&gt;一、什麼是 Tailwind</summary>
+        
+      
+    
+    
+    
+    
+    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    
+    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
+    
+    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
+    
+    <category term="CSS" scheme="https://tech.kdchang.cc/tags/CSS/"/>
+    
+    <category term="Tailwind CSS" scheme="https://tech.kdchang.cc/tags/Tailwind-CSS/"/>
+    
+    <category term="Tailwind" scheme="https://tech.kdchang.cc/tags/Tailwind/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Cookie 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2025/01/01/learning-notes-cookie-intro-tutorial/"/>
-    <id>https://tech.kdchang.cc/2025/01/01/learning-notes-cookie-intro-tutorial/</id>
-    <published>2025-01-01T18:23:41.000Z</published>
-    <updated>2025-02-20T06:12:17.920Z</updated>
+    <link href="https://tech.kdchang.cc/2024/11/01/learning-notes-cookie-intro-tutorial/"/>
+    <id>https://tech.kdchang.cc/2024/11/01/learning-notes-cookie-intro-tutorial/</id>
+    <published>2024-11-01T18:23:41.000Z</published>
+    <updated>2025-02-23T07:07:01.987Z</updated>
     
     
       
@@ -56,7 +231,7 @@
     <link href="https://tech.kdchang.cc/2024/06/22/software-engineer-and-web-develement-skill-tree/"/>
     <id>https://tech.kdchang.cc/2024/06/22/software-engineer-and-web-develement-skill-tree/</id>
     <published>2024-06-22T03:33:41.000Z</published>
-    <updated>2025-02-20T06:12:17.921Z</updated>
+    <updated>2025-02-23T07:07:01.988Z</updated>
     
     
       
@@ -87,7 +262,7 @@
     <link href="https://tech.kdchang.cc/2024/03/22/web-frontend-resources/"/>
     <id>https://tech.kdchang.cc/2024/03/22/web-frontend-resources/</id>
     <published>2024-03-22T03:33:41.000Z</published>
-    <updated>2025-02-20T06:12:17.921Z</updated>
+    <updated>2025-02-23T07:07:01.988Z</updated>
     
     
       
@@ -123,7 +298,7 @@
     <link href="https://tech.kdchang.cc/2024/01/22/web-frontend-interview-question-list/"/>
     <id>https://tech.kdchang.cc/2024/01/22/web-frontend-interview-question-list/</id>
     <published>2024-01-22T03:33:41.000Z</published>
-    <updated>2025-02-20T06:12:17.921Z</updated>
+    <updated>2025-02-23T07:07:01.988Z</updated>
     
     
       
@@ -158,7 +333,7 @@
     <link href="https://tech.kdchang.cc/2022/06/09/learning-notes-responsive-design-rwd/"/>
     <id>https://tech.kdchang.cc/2022/06/09/learning-notes-responsive-design-rwd/</id>
     <published>2022-06-09T18:23:41.000Z</published>
-    <updated>2025-02-20T06:12:17.920Z</updated>
+    <updated>2025-02-23T07:07:01.987Z</updated>
     
     
       
@@ -185,7 +360,7 @@
     <link href="https://tech.kdchang.cc/2021/02/13/learning-notes-vuejs-3-official-tutorial-13-slots/"/>
     <id>https://tech.kdchang.cc/2021/02/13/learning-notes-vuejs-3-official-tutorial-13-slots/</id>
     <published>2021-02-13T18:23:41.000Z</published>
-    <updated>2025-02-20T06:12:17.920Z</updated>
+    <updated>2025-02-23T07:07:01.988Z</updated>
     
     
       
@@ -224,7 +399,7 @@
     <link href="https://tech.kdchang.cc/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/"/>
     <id>https://tech.kdchang.cc/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/</id>
     <published>2021-02-11T18:23:41.000Z</published>
-    <updated>2025-02-20T06:12:17.920Z</updated>
+    <updated>2025-02-23T07:07:01.988Z</updated>
     
     
       
@@ -263,7 +438,7 @@
     <link href="https://tech.kdchang.cc/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/"/>
     <id>https://tech.kdchang.cc/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/</id>
     <published>2021-02-10T18:23:41.000Z</published>
-    <updated>2025-02-20T06:12:17.920Z</updated>
+    <updated>2025-02-23T07:07:01.987Z</updated>
     
     
       
@@ -302,7 +477,7 @@
     <link href="https://tech.kdchang.cc/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/"/>
     <id>https://tech.kdchang.cc/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/</id>
     <published>2021-02-09T18:23:41.000Z</published>
-    <updated>2025-02-20T06:12:17.920Z</updated>
+    <updated>2025-02-23T07:07:01.987Z</updated>
     
     
       
@@ -341,7 +516,7 @@
     <link href="https://tech.kdchang.cc/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/"/>
     <id>https://tech.kdchang.cc/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/</id>
     <published>2021-02-08T18:23:41.000Z</published>
-    <updated>2025-02-20T06:12:17.921Z</updated>
+    <updated>2025-02-23T07:07:01.988Z</updated>
     
     
       
@@ -380,7 +555,7 @@
     <link href="https://tech.kdchang.cc/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/"/>
     <id>https://tech.kdchang.cc/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/</id>
     <published>2021-02-07T18:23:41.000Z</published>
-    <updated>2025-02-20T06:12:17.921Z</updated>
+    <updated>2025-02-23T07:07:01.988Z</updated>
     
     
       
@@ -419,7 +594,7 @@
     <link href="https://tech.kdchang.cc/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/"/>
     <id>https://tech.kdchang.cc/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/</id>
     <published>2021-02-06T18:23:41.000Z</published>
-    <updated>2025-02-20T06:12:17.921Z</updated>
+    <updated>2025-02-23T07:07:01.988Z</updated>
     
     
       
@@ -458,7 +633,7 @@
     <link href="https://tech.kdchang.cc/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/"/>
     <id>https://tech.kdchang.cc/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/</id>
     <published>2021-02-05T18:23:41.000Z</published>
-    <updated>2025-02-20T06:12:17.921Z</updated>
+    <updated>2025-02-23T07:07:01.988Z</updated>
     
     
       
@@ -498,7 +673,7 @@
     <link href="https://tech.kdchang.cc/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/"/>
     <id>https://tech.kdchang.cc/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/</id>
     <published>2021-02-04T18:23:41.000Z</published>
-    <updated>2025-02-20T06:12:17.920Z</updated>
+    <updated>2025-02-23T07:07:01.988Z</updated>
     
     
       
@@ -538,7 +713,7 @@
     <link href="https://tech.kdchang.cc/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/"/>
     <id>https://tech.kdchang.cc/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/</id>
     <published>2021-02-03T18:23:41.000Z</published>
-    <updated>2025-02-20T06:12:17.920Z</updated>
+    <updated>2025-02-23T07:07:01.988Z</updated>
     
     
       
@@ -570,209 +745,6 @@
     <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
     
     <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [3] - Event Listeners 事件監聽器 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/"/>
-    <id>https://tech.kdchang.cc/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</id>
-    <published>2021-02-02T18:23:41.000Z</published>
-    <updated>2025-02-20T06:12:17.920Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Event Listeners 事件監聽器&lt;/strong&gt;&lt;br&gt;在 Vue 中，我們可以使用 &lt;code&gt;v-on&lt;/code&gt; 指令監聽 DOM 事件：&lt;/p&gt;
-&lt;figure class=&quot;highlight</summary>
-        
-      
-    
-    
-    
-    
-    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
-    
-    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
-    
-    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
-    
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [2] - Attribute Bindings 屬性綁定 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/"/>
-    <id>https://tech.kdchang.cc/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/</id>
-    <published>2021-02-01T18:23:41.000Z</published>
-    <updated>2025-02-20T06:12:17.920Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Attribute Bindings 屬性綁定&lt;/strong&gt;&lt;br&gt;在 Vue 中，Mustache 語法只能用於文字插值。要將屬性綁定到動態值，我們需要使用 &lt;code&gt;v-bind&lt;/code&gt; 指令：&lt;/p&gt;
-&lt;figure</summary>
-        
-      
-    
-    
-    
-    
-    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
-    
-    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
-    
-    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
-    
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/"/>
-    <id>https://tech.kdchang.cc/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/</id>
-    <published>2021-01-31T18:23:41.000Z</published>
-    <updated>2025-02-20T06:12:17.920Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Declarative-Rendering-聲明式渲染&quot;&gt;&lt;a href=&quot;#Declarative-Rendering-聲明式渲染&quot; class=&quot;headerlink&quot; title=&quot;Declarative Rendering</summary>
-        
-      
-    
-    
-    
-    
-    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
-    
-    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
-    
-    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
-    
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>async/await 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2021/01/16/learning-notes-javascript-async-await/"/>
-    <id>https://tech.kdchang.cc/2021/01/16/learning-notes-javascript-async-await/</id>
-    <published>2021-01-16T03:33:41.000Z</published>
-    <updated>2025-02-20T06:12:17.920Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;code&gt;async&lt;/code&gt; 和 &lt;code&gt;await&lt;/code&gt; 是 JavaScript 中處理非同步操作的語法糖，它們使得非同步代碼更加易讀和易寫，避免了傳統回調函數（callback）或 &lt;code&gt;Promise&lt;/code&gt; 的</summary>
-        
-      
-    
-    
-    
-    
-    <category term="javascript" scheme="https://tech.kdchang.cc/tags/javascript/"/>
-    
-    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
-    
-    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
-    
-    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
-    
-    <category term="非同步" scheme="https://tech.kdchang.cc/tags/%E9%9D%9E%E5%90%8C%E6%AD%A5/"/>
-    
-    <category term="異步" scheme="https://tech.kdchang.cc/tags/%E7%95%B0%E6%AD%A5/"/>
-    
-    <category term="async/await" scheme="https://tech.kdchang.cc/tags/async-await/"/>
-    
-    <category term="fetch" scheme="https://tech.kdchang.cc/tags/fetch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue3 Options API 和 Composition API 風格差異教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/"/>
-    <id>https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/</id>
-    <published>2020-11-16T03:33:41.000Z</published>
-    <updated>2025-02-20T06:12:17.921Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;根據&lt;a</summary>
-        
-      
-    
-    
-    
-    
-    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
-    
-    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
-    
-    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
-    
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
-    
-    <category term="Options API" scheme="https://tech.kdchang.cc/tags/Options-API/"/>
-    
-    <category term="Composition API" scheme="https://tech.kdchang.cc/tags/Composition-API/"/>
     
   </entry>
   

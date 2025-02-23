@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword"  content="軟體工程, 程式設計, 程式開發, frontend, backend, web, software, software engineer, JavaScript, Python">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/img/logo.ico">
+    <meta name="google-site-verification" content="cMTgiEFMM7gXpRMBbu_05Lnj0scwhDPCMvpfhQOpENI" />
+    <script src="/js/search.js"></script> 
+
+    
+    
+    
+       <script type="text/javascript">      
+         var search_path = "search.xml";
+       if (search_path.length == 0) {
+         search_path = "search.xml";
+       }
+       var path = "/" + search_path;
+         searchFunc(path, 'local-search-input', 'local-search-result');
+       </script>
+    
+    <title>
+        
+          滾動視差（Parallax Scrolling）網頁設計入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+        
+    </title>
+
+    <link rel="canonical" href="https://tech.kdchang.cc/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/main.css?v=1">
+
+    <!-- og tag -->
+    <meta name="generator" content="KD's Tech Blog">
+    
+      <meta name="og:title" content="滾動視差（Parallax Scrolling）網頁設計入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="滾動視差（Parallax Scrolling）網頁設計入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+    
+    
+      <meta name="description" content="Hi 我是 KD Chang 張凱迪，我在這書寫我的程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+      <meta name="og:description" content="Hi 我是 KD Chang 張凱迪，我在這書寫我的程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+    
+    
+      <meta name="og:image" content="https://tech.kdchang.cc/img/logo.png">
+    
+    <meta name="og:type" content="website">
+    <!--Twitter Graph-->
+    <meta name="twitter:card" content="summary" />
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<link rel="alternate" href="/atom.xml" title="KD's Tech Blog" type="application/atom+xml">
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">KD&#39;s Tech Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/search/">Search</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    <li>
+                        <a href="/atom.xml">RSS</a>
+                    </li>                 
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/cover.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+
+                    <h1>滾動視差（Parallax Scrolling）網頁設計入門教學筆記 | 學習筆記</h1>
+                    <span class="meta">
+                        Posted by kdchang on
+                        2024-12-03
+                    </span>
+                    <br>
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
+                        
+                          <a class="tag" href="/tags/#前端開發" title="前端開發">前端開發</a>
+                        
+                          <a class="tag" href="/tags/#前端工程" title="前端工程">前端工程</a>
+                        
+                          <a class="tag" href="/tags/#frontend" title="frontend">frontend</a>
+                        
+                          <a class="tag" href="/tags/#frontend engineer" title="frontend engineer">frontend engineer</a>
+                        
+                          <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
+                        
+                          <a class="tag" href="/tags/#typescript" title="typescript">typescript</a>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+                <br>
+                <div>
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.cc" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+                <br>
+                <div>
+                    <h1 id="一、什麼是滾動視差？"><a href="#一、什麼是滾動視差？" class="headerlink" title="一、什麼是滾動視差？"></a>一、什麼是滾動視差？</h1><p>滾動視差（<code>Parallax Scrolling</code>）是一種前端網頁設計技術，透過不同層的背景與內容以不同的速度滾動，營造出立體感與動態視覺效果。這種技術常見於品牌網站、產品介紹頁面或作品展示頁面，能有效提升使用者的沉浸感與互動體驗。  </p>
+<h3 id="滾動視差的視覺效果"><a href="#滾動視差的視覺效果" class="headerlink" title="滾動視差的視覺效果"></a>滾動視差的視覺效果</h3><ol>
+<li><strong>背景與內容滾動速率不同</strong>：背景滾動速度較慢，前景滾動速度較快，模擬景深效果。  </li>
+<li><strong>多層次視覺變化</strong>：不同層的元素可以有獨立的滾動行為，增加動態感。  </li>
+<li><strong>創造故事性</strong>：透過滾動觸發不同場景，讓使用者體驗連貫的視覺敘事。</li>
+</ol>
+<hr>
+<h1 id="二、滾動視差的基本實作"><a href="#二、滾動視差的基本實作" class="headerlink" title="二、滾動視差的基本實作"></a>二、滾動視差的基本實作</h1><h3 id="1-使用純-CSS-來製作滾動視差"><a href="#1-使用純-CSS-來製作滾動視差" class="headerlink" title="1. 使用純 CSS 來製作滾動視差"></a>1. 使用純 CSS 來製作滾動視差</h3><p>CSS 提供了 <code>background-attachment: fixed;</code> 屬性，可以讓背景圖像保持固定位置，而前景內容繼續滾動，營造簡單的滾動視差效果。  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-TW&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>滾動視差示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">body</span>, <span class="selector-tag">html</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">padding</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-family</span>: Arial, sans-serif;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-class">.parallax</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">&#x27;parallax-background.jpg&#x27;</span>);</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">100vh</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-attachment</span>: fixed;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-position</span>: center;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-repeat</span>: no-repeat;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-size</span>: cover;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-class">.content</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">500px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: white;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">text-align</span>: center;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">padding</span>: <span class="number">50px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;parallax&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>滾動視差示例<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>這是一個簡單的滾動視差網頁，背景固定不動，前景內容滾動。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;parallax&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>這種方式雖然簡單，但無法實現更複雜的視差動畫效果。如果想要更進階的效果，通常需要搭配 JavaScript 或 CSS 變形（Transform）。</p>
+<hr>
+<h3 id="2-使用-CSS-transform-來實現滾動視差"><a href="#2-使用-CSS-transform-來實現滾動視差" class="headerlink" title="2. 使用 CSS transform 來實現滾動視差"></a>2. 使用 CSS <code>transform</code> 來實現滾動視差</h3><p>透過 <code>transform: translateZ()</code> 搭配 <code>perspective()</code>，可以製造出更立體的視差效果。  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.parallax-container</span> &#123;</span><br><span class="line">    <span class="attribute">perspective</span>: <span class="number">1px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="attribute">overflow-x</span>: hidden;</span><br><span class="line">    <span class="attribute">overflow-y</span>: auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.parallax-layer</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateZ</span>(-<span class="number">1px</span>) <span class="built_in">scale</span>(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這種方式可以讓不同層的元素有不同的滾動速率，達到更細緻的視覺效果。</p>
+<hr>
+<h1 id="三、使用-JavaScript-製作更靈活的滾動視差"><a href="#三、使用-JavaScript-製作更靈活的滾動視差" class="headerlink" title="三、使用 JavaScript 製作更靈活的滾動視差"></a>三、使用 JavaScript 製作更靈活的滾動視差</h1><p>雖然純 CSS 可以實現基本視差效果，但若要控制不同層級的滾動速度，或者添加額外動畫效果，就需要 JavaScript。  </p>
+<h3 id="1-簡單的-JavaScript-滾動視差"><a href="#1-簡單的-JavaScript-滾動視差" class="headerlink" title="1. 簡單的 JavaScript 滾動視差"></a>1. 簡單的 JavaScript 滾動視差</h3><p>使用 <code>window.scrollY</code> 來控制元素的 <code>transform</code> 屬性，使其隨滾動變化。  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-TW&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>JavaScript 滾動視差<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-family</span>: Arial, sans-serif;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="selector-class">.parallax</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">position</span>: relative;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">100vh</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">overflow</span>: hidden;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&#x27;parallax-background.jpg&#x27;</span>) center/cover no-repeat;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="selector-class">.text</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">top</span>: <span class="number">50%</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">left</span>: <span class="number">50%</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-size</span>: <span class="number">2rem</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">color</span>: white;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;parallax&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>滾動視差效果<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;scroll&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">let</span> scrollPosition = <span class="variable language_">window</span>.<span class="property">scrollY</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.parallax&#x27;</span>).<span class="property">style</span>.<span class="property">backgroundPositionY</span> = scrollPosition * <span class="number">0.5</span> + <span class="string">&#x27;px&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">        &#125;);</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在這個範例中，我們透過 JavaScript 讓背景圖片根據滾動位置改變 <code>backgroundPositionY</code>，從而達成視差效果。</p>
+<hr>
+<h3 id="2-使用第三方函式庫（如-ScrollMagic）"><a href="#2-使用第三方函式庫（如-ScrollMagic）" class="headerlink" title="2. 使用第三方函式庫（如 ScrollMagic）"></a>2. 使用第三方函式庫（如 ScrollMagic）</h3><p>如果想要更進階的視差效果，可以使用 <code>ScrollMagic</code> 這類 JavaScript 函式庫，來更精確地控制滾動動畫。  </p>
+<p>首先安裝 ScrollMagic：  </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install scrollmagic</span><br></pre></td></tr></table></figure>
+
+<p>然後在 JavaScript 中設定滾動觸發點：  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> controller = <span class="keyword">new</span> <span class="title class_">ScrollMagic</span>.<span class="title class_">Controller</span>();</span><br><span class="line"><span class="keyword">let</span> scene = <span class="keyword">new</span> <span class="title class_">ScrollMagic</span>.<span class="title class_">Scene</span>(&#123;</span><br><span class="line">    <span class="attr">triggerElement</span>: <span class="string">&#x27;.parallax&#x27;</span>,</span><br><span class="line">    <span class="attr">duration</span>: <span class="string">&#x27;100%&#x27;</span>,</span><br><span class="line">    <span class="attr">triggerHook</span>: <span class="number">0</span></span><br><span class="line">&#125;)</span><br><span class="line">.<span class="title function_">setTween</span>(<span class="string">&#x27;.parallax&#x27;</span>, &#123; <span class="attr">y</span>: <span class="string">&#x27;50%&#x27;</span>, <span class="attr">ease</span>: <span class="title class_">Linear</span>.<span class="property">easeNone</span> &#125;)</span><br><span class="line">.<span class="title function_">addTo</span>(controller);</span><br></pre></td></tr></table></figure>
+
+<p>這樣可以讓 <code>.parallax</code> 元素在滾動時逐漸移動，達成視差效果。</p>
+<hr>
+<h1 id="四、滾動視差的應用場景"><a href="#四、滾動視差的應用場景" class="headerlink" title="四、滾動視差的應用場景"></a>四、滾動視差的應用場景</h1><p>滾動視差可以應用於許多不同類型的網站，例如：  </p>
+<ol>
+<li><strong>品牌網站</strong>：用來展示產品特性與公司理念，提高視覺吸引力。  </li>
+<li><strong>作品集網站</strong>：適合攝影師、設計師，讓內容更具層次感。  </li>
+<li><strong>故事敘述頁面</strong>：用來製作互動式故事，讓用戶在滾動中探索內容。  </li>
+<li><strong>促銷與行銷頁面</strong>：讓特定區塊在滾動時突出，吸引目光。</li>
+</ol>
+<hr>
+<h1 id="五、滾動視差的優勢與缺點"><a href="#五、滾動視差的優勢與缺點" class="headerlink" title="五、滾動視差的優勢與缺點"></a>五、滾動視差的優勢與缺點</h1><h3 id="優勢"><a href="#優勢" class="headerlink" title="優勢"></a>優勢</h3><ul>
+<li>增強視覺吸引力，使網站更具互動性。  </li>
+<li>可提升品牌形象，讓內容更具故事性。  </li>
+<li>創造更流暢的使用者體驗，增加網站的停留時間。</li>
+</ul>
+<h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><ul>
+<li>過多視差效果可能會影響效能，導致頁面滾動不流暢。  </li>
+<li>可能對行動裝置不友善，需要額外的優化。  </li>
+<li>過度使用可能會影響可讀性，降低使用者體驗。</li>
+</ul>
+<hr>
+<h1 id="六、結論"><a href="#六、結論" class="headerlink" title="六、結論"></a>六、結論</h1><p>滾動視差是一種有效提升網站視覺吸引力的技術，適用於品牌展示、作品集與故事敘述類型的網站。透過 CSS 的 <code>background-attachment</code>，JavaScript 的 <code>scrollY</code>，或是使用函式庫如 <code>ScrollMagic</code>，都能實現不同程度的視差效果。  </p>
+<p>然而，使用時需注意效能與可讀性，確保不會影響使用者體驗。在實作時，建議先從簡單的 CSS 視差效果開始，逐步引入 JavaScript 或函式庫，根據需求選擇最佳實作方式。</p>
+
+                </div>
+
+                <br>
+                <section>
+                    歡迎分享按讚給予支持和鼓勵！
+                    <div class="fb-like" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                </section>
+                <br>
+                <div>
+                    <div class="fb-page" data-href="https://www.facebook.com/tech.kdchang.cc" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/tech.kdchang.cc" class="fb-xfbml-parse-ignore"><a target="_blank" rel="noopener" href="https://www.facebook.com/tech.kdchang.cc">KD Chang（張凱迪）</a></blockquote></div>
+                </div>
+                <hr>
+                <div>
+                    <h3>Related Posts</h3>
+                    <div>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/02/learning-notes-typescript-intro-tutorial/" title="TypeScript 入門教學筆記 | 學習筆記" rel="bookmark">TypeScript 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/01/learning-notes-nuxtjs-intro-tutorial/" title="Nuxt.js 入門教學筆記 | 學習筆記" rel="bookmark">Nuxt.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/30/learning-notes-tailwind-css-intro-tutorial/" title="Tailwind CSS 入門教學筆記 | 學習筆記" rel="bookmark">Tailwind CSS 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/01/learning-notes-cookie-intro-tutorial/" title="Cookie 入門教學筆記 | 學習筆記" rel="bookmark">Cookie 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial copy/" title="JavaScript ES6 入門語法教學筆記 | 學習筆記" rel="bookmark">JavaScript ES6 入門語法教學筆記 | 學習筆記</a></h3></div></li></ul>
+                    </div>
+                </div>
+                <!-- Tags -->
+                <h3>Comments</h3>
+                <hr>
+                
+                <!-- disqus start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus end -->
+                
+
+            </div>
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "kdchang-tech-blog";
+    var disqus_identifier = "https://tech.kdchang.cc/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.cc/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5728979c6a10856b"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<!-- <script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script> -->
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+<script>
+   anchors.add('h1, h2, h3');
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<a id="scroll-to-top-button">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/kaidichang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/tech.kdchang.cc">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/kd.chang.cc">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kdchang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <hr>
+                <div class="copyright text-muted">
+                    Special thanks <a href="https://unsplash.com/@afgprogrammer" target="_blank">Mohammad Rahmani</a>、<a href="https://www.flickr.com/photos/derek-john-lee/14698093740/in/photolist-ooPzcj-r2kVt-ppV21v-brhFX3-wd3Qsy-cLiKEL-xDR92-28QCtA-29YFZZ-gzuZk-dqbhxt-9FwCBY-q57bEv-bVhZJr-dYxGXn-dxg9g7-8x7gjU-dzjMic-rQhf-9TMgJ3-mEsFjW-qbzd4p-q6cJvc-7zYttk-q2gE5S-bdb4G4-8ifmQN-eivVeg-9ZZFVz-aD6q6r-bnjfWh-qJAn2g-k22Ttf-n9Jhfj-kk4woh-sj43iz-5NYGUn-96wNhi-9ZZFz6-8DJkQf-4wQizw-3bzz8p-9yzTSd-xDQee-68Xwfp-7t5WPx-xDTM5-o5RPYA-kWihhy-7iHDEX" target="_blank">Derek</a>、<a href="https://www.flickr.com/photos/mashleymorgan/" target="_blank">mashleymorgan</a>、<a href="https://www.flickr.com/photos/mustafeez27/" target="_blank">mustafeez27</a>         
+                    and <a href="http://blog.kaijun.rocks" target="_blank">Kaijun</a>
+                    <br> 
+                    Copyright &copy; KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪 2025
+                    <hr>
+                    <!-- facebook follow -->
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.cc" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+<!-- Custom Main JavaScript -->
+<script src="/js/main.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://tech.kdchang.cc/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fb.js -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="X3eUifxc"></script>
+
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FN9X92SM77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FN9X92SM77');
+</script>
+
+
+
+	
+</body>
+
+</html>
