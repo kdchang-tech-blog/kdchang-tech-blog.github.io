@@ -203,179 +203,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JavaScript ES6 入門語法教學筆記 | 學習筆記</title>
-    <url>/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial%20copy/</url>
-    <content><![CDATA[<p>ECMAScript 6 又稱 ECMAScript 2015，是 JavaScript 語言的新一代標準，讓 JavaScript 可以更容易撰寫大型複雜的應用程式並避免不必要的錯誤。</p>
-<p>以下介紹常用 ES6 入門語法：</p>
-<h2 id="一、let-amp-const-變數宣告"><a href="#一、let-amp-const-變數宣告" class="headerlink" title="一、let &amp; const 變數宣告"></a>一、let &amp; const 變數宣告</h2><ol>
-<li><p><code>let</code>：用於宣告變數，可重新賦值。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&#x27;John&#x27;</span>;</span><br><span class="line">name = <span class="string">&#x27;Mike&#x27;</span>;  <span class="comment">// 可以重新賦值</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>const</code>：用於宣告常數，賦值後不可更改。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> pi = <span class="number">3.14</span>;</span><br><span class="line">pi = <span class="number">3.1415</span>;  <span class="comment">// 會報錯</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>建議預設使用 <code>const</code>，僅需變更時使用 <code>let</code>。兩者作用域為 block scope</p>
-</blockquote>
-</li>
-</ol>
-<p>在 <strong>ES6</strong> 中，<code>let</code> 的 <strong>區塊作用域（Block Scope）</strong> 是它與舊有的 <code>var</code> 最大的不同之一。</p>
-<hr>
-<h3 id="什麼是-Block-Scope（區塊作用域）？"><a href="#什麼是-Block-Scope（區塊作用域）？" class="headerlink" title="什麼是 Block Scope（區塊作用域）？"></a>什麼是 <strong>Block Scope（區塊作用域）</strong>？</h3><ul>
-<li>使用 <code>let</code> 宣告的變數，只能在<strong>該程式區塊 <code>&#123;&#125;</code></strong> 內部存取。</li>
-<li>區塊作用域指的是任何用 <code>&#123;&#125;</code> 包起來的範圍，例如：<ul>
-<li><code>if</code>、<code>for</code>、<code>while</code> 等程式區塊。</li>
-<li>一般 <code>&#123;&#125;</code> 花括號內的區域。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="範例說明"><a href="#範例說明" class="headerlink" title="範例說明"></a>範例說明</h3><h4 id="1-let-在區塊內的作用範圍"><a href="#1-let-在區塊內的作用範圍" class="headerlink" title="1. let 在區塊內的作用範圍"></a>1. <code>let</code> 在區塊內的作用範圍</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> x = <span class="number">10</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(x);  <span class="comment">// 10</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x);  <span class="comment">// ReferenceError: x is not defined</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>x</code> 在 <code>&#123;&#125;</code> 區塊內宣告，僅在該區塊內有效。</li>
-<li>區塊外存取會出錯。</li>
-</ul>
-<hr>
-<h4 id="2-var-沒有區塊作用域（舊語法對比）"><a href="#2-var-沒有區塊作用域（舊語法對比）" class="headerlink" title="2. var 沒有區塊作用域（舊語法對比）"></a>2. <code>var</code> 沒有區塊作用域（舊語法對比）</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">var</span> y = <span class="number">20</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(y);  <span class="comment">// 20</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(y);  <span class="comment">// 20</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>var</code> 沒有區塊作用域，<code>y</code> 雖在 <code>&#123;&#125;</code> 內宣告，但可在區塊外存取。</li>
-</ul>
-<hr>
-<h4 id="3-for-迴圈中的-let"><a href="#3-for-迴圈中的-let" class="headerlink" title="3. for 迴圈中的 let"></a>3. <code>for</code> 迴圈中的 <code>let</code></h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(i);  <span class="comment">// 0, 1, 2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(i);  <span class="comment">// ReferenceError: i is not defined</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>i</code> 只在 <code>for</code> 迴圈內有效。</li>
-</ul>
-<hr>
-<h4 id="let-的區塊作用域優點"><a href="#let-的區塊作用域優點" class="headerlink" title="let 的區塊作用域優點"></a><code>let</code> 的區塊作用域優點</h4><ol>
-<li>避免變數污染：<code>let</code> 限制變數在區塊內，避免影響區塊外的程式碼。</li>
-<li>防止重複定義：同一區塊內不能重複宣告相同變數。<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> a = <span class="number">2</span>;  <span class="comment">// SyntaxError: Identifier &#x27;a&#x27; has already been declared</span></span><br></pre></td></tr></table></figure></li>
-<li>更安全、可預期的變數管理。</li>
-</ol>
-<hr>
-<h4 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h4><table>
-<thead>
-<tr>
-<th>關鍵字</th>
-<th>區塊作用域</th>
-<th>重複宣告</th>
-<th>提升（Hoisting）行為</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>let</code></td>
-<td>有</td>
-<td>不可</td>
-<td>提升但不初始化（TDZ）</td>
-</tr>
-<tr>
-<td><code>var</code></td>
-<td>無</td>
-<td>可</td>
-<td>提升並初始化 <code>undefined</code></td>
-</tr>
-</tbody></table>
-<p>**建議盡量用 <code>let</code> 和 <code>const</code>，避免使用 <code>var</code>**！<br>這樣可以減少潛在的 bug，也符合現代 JavaScript 開發的最佳實踐。</p>
-<hr>
-<h2 id="二、模板字串（Template-Literals）"><a href="#二、模板字串（Template-Literals）" class="headerlink" title="二、模板字串（Template Literals）"></a>二、模板字串（Template Literals）</h2><p>以前字串串變數要使用 <code>+</code>，現在可以使用反引號 (&#96;&#96;) 定義字串，可插入變數。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">&#x27;John&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> age = <span class="number">25</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`我叫 <span class="subst">$&#123;name&#125;</span>，今年 <span class="subst">$&#123;age&#125;</span> 歲`</span>);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="三、箭頭函式（Arrow-Functions）"><a href="#三、箭頭函式（Arrow-Functions）" class="headerlink" title="三、箭頭函式（Arrow Functions）"></a>三、箭頭函式（Arrow Functions）</h2><ol>
-<li>基本語法：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">add</span> = (<span class="params">a, b</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>簡寫形式：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">add</span> = (<span class="params">a, b</span>) =&gt; a + b;</span><br></pre></td></tr></table></figure></li>
-<li>單一參數可省略括號：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">square</span> = n =&gt; n * n;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>箭頭函式不會綁定自己的 <code>this</code>，繼承外層作用域的 <code>this</code>。</p>
-</blockquote>
-</li>
-</ol>
-<hr>
-<p>沒錯！這句話是 <strong>箭頭函式（Arrow Function）</strong> 很重要的特性之一，這裡幫你拆解得更清楚一點：</p>
-<hr>
-<h4 id="什麼是-this？"><a href="#什麼是-this？" class="headerlink" title="什麼是 this？"></a>什麼是 <code>this</code>？</h4><p><code>this</code> 代表<strong>函式執行時所屬的物件</strong>，依照函式被呼叫的方式不同，<code>this</code> 的值也會不同。</p>
-<p>例如：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">normalFunction</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">normalFunction</span>(); <span class="comment">// 在瀏覽器環境中，this 會是 window 物件</span></span><br></pre></td></tr></table></figure>
-
-<p>如果這個函式被某個物件呼叫：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>,</span><br><span class="line">  <span class="attr">sayHi</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">sayHi</span>(); <span class="comment">// John，this 指向 obj</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h4 id="箭頭函式的-this-特性"><a href="#箭頭函式的-this-特性" class="headerlink" title="箭頭函式的 this 特性"></a>箭頭函式的 <code>this</code> 特性</h4><p><strong>箭頭函式不會綁定自己的 <code>this</code>，它會「繼承外層作用域」的 <code>this</code>。</strong></p>
-<p>也就是說：</p>
-<ul>
-<li>傳統函式：<code>this</code> 依賴呼叫方式來決定。</li>
-<li>箭頭函式：<code>this</code> 取決於**箭頭函式宣告時所在的外層作用域的 <code>this</code>**。</li>
-</ul>
-<p>範例說明：</p>
-<h4 id="傳統函式-vs-箭頭函式"><a href="#傳統函式-vs-箭頭函式" class="headerlink" title="傳統函式 vs 箭頭函式"></a>傳統函式 vs 箭頭函式</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>,</span><br><span class="line">  <span class="attr">normalFunc</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>); <span class="comment">// this 指向 obj</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">arrowFunc</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>); <span class="comment">// this 指向外層（通常是 window 或 undefined）</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">normalFunc</span>(); <span class="comment">// John</span></span><br><span class="line">obj.<span class="title function_">arrowFunc</span>();  <span class="comment">// undefined（或瀏覽器中可能是 window.name）</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="常見應用場景：回呼函式（callback）中的-this"><a href="#常見應用場景：回呼函式（callback）中的-this" class="headerlink" title="常見應用場景：回呼函式（callback）中的 this"></a>常見應用場景：回呼函式（callback）中的 <code>this</code></h4><p>假設我們有一個計時器：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>,</span><br><span class="line">  <span class="attr">timer</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>); <span class="comment">// undefined 或 window.name</span></span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">timer</span>();</span><br></pre></td></tr></table></figure>
-<p>因為 setTimeout 裡的傳統函式，它的 <code>this</code> 在執行時會指向 <code>window</code>。</p>
-<p>若改用箭頭函式：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>,</span><br><span class="line">  <span class="attr">timer</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>); <span class="comment">// John</span></span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">timer</span>();</span><br></pre></td></tr></table></figure>
-<p>箭頭函式不會綁定自己的 <code>this</code>，會繼承 <code>timer</code> 函式的 <code>this</code>，因此會正確印出 <code>John</code>。</p>
-<hr>
-<h4 id="常見疑問"><a href="#常見疑問" class="headerlink" title="常見疑問"></a>常見疑問</h4><h5 id="為什麼箭頭函式不綁定自己的-this？"><a href="#為什麼箭頭函式不綁定自己的-this？" class="headerlink" title="為什麼箭頭函式不綁定自己的 this？"></a>為什麼箭頭函式不綁定自己的 <code>this</code>？</h5><p>主要是為了解決<strong>回呼函式中 <code>this</code> 易出錯的問題</strong>。</p>
-<p>以前會這樣解法：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> that = <span class="variable language_">this</span>; <span class="comment">// 變數 that 保存正確的 this</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(that.<span class="property">name</span>);</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
-<p>現在有箭頭函式，就不用這麼麻煩。</p>
-<hr>
-<h4 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h4><table>
-<thead>
-<tr>
-<th>類型</th>
-<th><code>this</code> 綁定方式</th>
-<th>一般用途</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>傳統函式 function</td>
-<td>執行時決定</td>
-<td>物件方法、建構函式</td>
-</tr>
-<tr>
-<td>箭頭函式 &#x3D;&gt;</td>
-<td>定義時決定</td>
-<td>callback 回呼函式、內部函式需要使用外部 <code>this</code> 的情境</td>
-</tr>
-</tbody></table>
-<hr>
-<p>總結：</p>
-<ul>
-<li><strong>一般物件方法用傳統函式。this 由呼叫的物件決定</strong></li>
-<li><strong>callback 回呼函式、內部函式用箭頭函式。</strong></li>
-</ul>
-<p>這樣就可以避免大部分 <code>this</code> 的混亂狀況！</p>
-<h2 id="四、解構賦值（Destructuring）"><a href="#四、解構賦值（Destructuring）" class="headerlink" title="四、解構賦值（Destructuring）"></a>四、解構賦值（Destructuring）</h2><ol>
-<li>陣列解構：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> [a, b, c] = arr;</span><br></pre></td></tr></table></figure></li>
-<li>物件解構：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123; <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>: <span class="number">25</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> &#123; name, age &#125; = person;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<hr>
-<h2 id="五、展開運算符（Spread-Operator）"><a href="#五、展開運算符（Spread-Operator）" class="headerlink" title="五、展開運算符（Spread Operator）"></a>五、展開運算符（Spread Operator）</h2><ol>
-<li>陣列展開：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = [...arr1, <span class="number">4</span>, <span class="number">5</span>];</span><br></pre></td></tr></table></figure></li>
-<li>物件展開：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>: <span class="number">25</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> obj2 = &#123; ...obj1, <span class="attr">city</span>: <span class="string">&#x27;Taipei&#x27;</span> &#125;;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<hr>
-<h2 id="六、預設參數（Default-Parameters）"><a href="#六、預設參數（Default-Parameters）" class="headerlink" title="六、預設參數（Default Parameters）"></a>六、預設參數（Default Parameters）</h2><p>函式參數可設定預設值：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">greet</span> = (<span class="params">name = <span class="string">&#x27;訪客&#x27;</span></span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>!`</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">greet</span>();         <span class="comment">// Hello, 訪客!</span></span><br><span class="line"><span class="title function_">greet</span>(<span class="string">&#x27;John&#x27;</span>);   <span class="comment">// Hello, John!</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>這些 ES6 基礎語法，是現代 JavaScript 開發的常用技巧，掌握這些概念能大幅提升程式撰寫效率。</p>
-]]></content>
-      <tags>
-        <tag>javascript</tag>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>ES6</tag>
-        <tag>ECMAScript</tag>
-        <tag>ECMAScript6</tag>
-        <tag>ECMAScript2015</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Cypress 測試入門教學筆記 | 學習筆記</title>
     <url>/2024/12/08/learning-notes-cypress-intro-tutorial/</url>
     <content><![CDATA[<h1 id="1-Cypress-基礎概念"><a href="#1-Cypress-基礎概念" class="headerlink" title="1. Cypress 基礎概念"></a>1. Cypress 基礎概念</h1><p><code>Cypress</code> 是一款現代化的前端自動化測試工具，主要用於測試 Web 應用程式，支援端對端（<code>E2E</code>）測試、<code>元件測試</code>等。</p>
@@ -563,6 +390,179 @@
       </tags>
   </entry>
   <entry>
+    <title>JavaScript ES6 入門語法教學筆記 | 學習筆記</title>
+    <url>/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial%20copy/</url>
+    <content><![CDATA[<p>ECMAScript 6 又稱 ECMAScript 2015，是 JavaScript 語言的新一代標準，讓 JavaScript 可以更容易撰寫大型複雜的應用程式並避免不必要的錯誤。</p>
+<p>以下介紹常用 ES6 入門語法：</p>
+<h2 id="一、let-amp-const-變數宣告"><a href="#一、let-amp-const-變數宣告" class="headerlink" title="一、let &amp; const 變數宣告"></a>一、let &amp; const 變數宣告</h2><ol>
+<li><p><code>let</code>：用於宣告變數，可重新賦值。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&#x27;John&#x27;</span>;</span><br><span class="line">name = <span class="string">&#x27;Mike&#x27;</span>;  <span class="comment">// 可以重新賦值</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>const</code>：用於宣告常數，賦值後不可更改。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> pi = <span class="number">3.14</span>;</span><br><span class="line">pi = <span class="number">3.1415</span>;  <span class="comment">// 會報錯</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>建議預設使用 <code>const</code>，僅需變更時使用 <code>let</code>。兩者作用域為 block scope</p>
+</blockquote>
+</li>
+</ol>
+<p>在 <strong>ES6</strong> 中，<code>let</code> 的 <strong>區塊作用域（Block Scope）</strong> 是它與舊有的 <code>var</code> 最大的不同之一。</p>
+<hr>
+<h3 id="什麼是-Block-Scope（區塊作用域）？"><a href="#什麼是-Block-Scope（區塊作用域）？" class="headerlink" title="什麼是 Block Scope（區塊作用域）？"></a>什麼是 <strong>Block Scope（區塊作用域）</strong>？</h3><ul>
+<li>使用 <code>let</code> 宣告的變數，只能在<strong>該程式區塊 <code>&#123;&#125;</code></strong> 內部存取。</li>
+<li>區塊作用域指的是任何用 <code>&#123;&#125;</code> 包起來的範圍，例如：<ul>
+<li><code>if</code>、<code>for</code>、<code>while</code> 等程式區塊。</li>
+<li>一般 <code>&#123;&#125;</code> 花括號內的區域。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="範例說明"><a href="#範例說明" class="headerlink" title="範例說明"></a>範例說明</h3><h4 id="1-let-在區塊內的作用範圍"><a href="#1-let-在區塊內的作用範圍" class="headerlink" title="1. let 在區塊內的作用範圍"></a>1. <code>let</code> 在區塊內的作用範圍</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> x = <span class="number">10</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(x);  <span class="comment">// 10</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x);  <span class="comment">// ReferenceError: x is not defined</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>x</code> 在 <code>&#123;&#125;</code> 區塊內宣告，僅在該區塊內有效。</li>
+<li>區塊外存取會出錯。</li>
+</ul>
+<hr>
+<h4 id="2-var-沒有區塊作用域（舊語法對比）"><a href="#2-var-沒有區塊作用域（舊語法對比）" class="headerlink" title="2. var 沒有區塊作用域（舊語法對比）"></a>2. <code>var</code> 沒有區塊作用域（舊語法對比）</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">var</span> y = <span class="number">20</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(y);  <span class="comment">// 20</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(y);  <span class="comment">// 20</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>var</code> 沒有區塊作用域，<code>y</code> 雖在 <code>&#123;&#125;</code> 內宣告，但可在區塊外存取。</li>
+</ul>
+<hr>
+<h4 id="3-for-迴圈中的-let"><a href="#3-for-迴圈中的-let" class="headerlink" title="3. for 迴圈中的 let"></a>3. <code>for</code> 迴圈中的 <code>let</code></h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(i);  <span class="comment">// 0, 1, 2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(i);  <span class="comment">// ReferenceError: i is not defined</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>i</code> 只在 <code>for</code> 迴圈內有效。</li>
+</ul>
+<hr>
+<h4 id="let-的區塊作用域優點"><a href="#let-的區塊作用域優點" class="headerlink" title="let 的區塊作用域優點"></a><code>let</code> 的區塊作用域優點</h4><ol>
+<li>避免變數污染：<code>let</code> 限制變數在區塊內，避免影響區塊外的程式碼。</li>
+<li>防止重複定義：同一區塊內不能重複宣告相同變數。<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> a = <span class="number">2</span>;  <span class="comment">// SyntaxError: Identifier &#x27;a&#x27; has already been declared</span></span><br></pre></td></tr></table></figure></li>
+<li>更安全、可預期的變數管理。</li>
+</ol>
+<hr>
+<h4 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h4><table>
+<thead>
+<tr>
+<th>關鍵字</th>
+<th>區塊作用域</th>
+<th>重複宣告</th>
+<th>提升（Hoisting）行為</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>let</code></td>
+<td>有</td>
+<td>不可</td>
+<td>提升但不初始化（TDZ）</td>
+</tr>
+<tr>
+<td><code>var</code></td>
+<td>無</td>
+<td>可</td>
+<td>提升並初始化 <code>undefined</code></td>
+</tr>
+</tbody></table>
+<p>**建議盡量用 <code>let</code> 和 <code>const</code>，避免使用 <code>var</code>**！<br>這樣可以減少潛在的 bug，也符合現代 JavaScript 開發的最佳實踐。</p>
+<hr>
+<h2 id="二、模板字串（Template-Literals）"><a href="#二、模板字串（Template-Literals）" class="headerlink" title="二、模板字串（Template Literals）"></a>二、模板字串（Template Literals）</h2><p>以前字串串變數要使用 <code>+</code>，現在可以使用反引號 (&#96;&#96;) 定義字串，可插入變數。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">&#x27;John&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> age = <span class="number">25</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`我叫 <span class="subst">$&#123;name&#125;</span>，今年 <span class="subst">$&#123;age&#125;</span> 歲`</span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="三、箭頭函式（Arrow-Functions）"><a href="#三、箭頭函式（Arrow-Functions）" class="headerlink" title="三、箭頭函式（Arrow Functions）"></a>三、箭頭函式（Arrow Functions）</h2><ol>
+<li>基本語法：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">add</span> = (<span class="params">a, b</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>簡寫形式：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">add</span> = (<span class="params">a, b</span>) =&gt; a + b;</span><br></pre></td></tr></table></figure></li>
+<li>單一參數可省略括號：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">square</span> = n =&gt; n * n;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>箭頭函式不會綁定自己的 <code>this</code>，繼承外層作用域的 <code>this</code>。</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<p>沒錯！這句話是 <strong>箭頭函式（Arrow Function）</strong> 很重要的特性之一，這裡幫你拆解得更清楚一點：</p>
+<hr>
+<h4 id="什麼是-this？"><a href="#什麼是-this？" class="headerlink" title="什麼是 this？"></a>什麼是 <code>this</code>？</h4><p><code>this</code> 代表<strong>函式執行時所屬的物件</strong>，依照函式被呼叫的方式不同，<code>this</code> 的值也會不同。</p>
+<p>例如：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">normalFunction</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">normalFunction</span>(); <span class="comment">// 在瀏覽器環境中，this 會是 window 物件</span></span><br></pre></td></tr></table></figure>
+
+<p>如果這個函式被某個物件呼叫：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>,</span><br><span class="line">  <span class="attr">sayHi</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">sayHi</span>(); <span class="comment">// John，this 指向 obj</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="箭頭函式的-this-特性"><a href="#箭頭函式的-this-特性" class="headerlink" title="箭頭函式的 this 特性"></a>箭頭函式的 <code>this</code> 特性</h4><p><strong>箭頭函式不會綁定自己的 <code>this</code>，它會「繼承外層作用域」的 <code>this</code>。</strong></p>
+<p>也就是說：</p>
+<ul>
+<li>傳統函式：<code>this</code> 依賴呼叫方式來決定。</li>
+<li>箭頭函式：<code>this</code> 取決於**箭頭函式宣告時所在的外層作用域的 <code>this</code>**。</li>
+</ul>
+<p>範例說明：</p>
+<h4 id="傳統函式-vs-箭頭函式"><a href="#傳統函式-vs-箭頭函式" class="headerlink" title="傳統函式 vs 箭頭函式"></a>傳統函式 vs 箭頭函式</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>,</span><br><span class="line">  <span class="attr">normalFunc</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>); <span class="comment">// this 指向 obj</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">arrowFunc</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>); <span class="comment">// this 指向外層（通常是 window 或 undefined）</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">normalFunc</span>(); <span class="comment">// John</span></span><br><span class="line">obj.<span class="title function_">arrowFunc</span>();  <span class="comment">// undefined（或瀏覽器中可能是 window.name）</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="常見應用場景：回呼函式（callback）中的-this"><a href="#常見應用場景：回呼函式（callback）中的-this" class="headerlink" title="常見應用場景：回呼函式（callback）中的 this"></a>常見應用場景：回呼函式（callback）中的 <code>this</code></h4><p>假設我們有一個計時器：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>,</span><br><span class="line">  <span class="attr">timer</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>); <span class="comment">// undefined 或 window.name</span></span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">timer</span>();</span><br></pre></td></tr></table></figure>
+<p>因為 setTimeout 裡的傳統函式，它的 <code>this</code> 在執行時會指向 <code>window</code>。</p>
+<p>若改用箭頭函式：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>,</span><br><span class="line">  <span class="attr">timer</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>); <span class="comment">// John</span></span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">timer</span>();</span><br></pre></td></tr></table></figure>
+<p>箭頭函式不會綁定自己的 <code>this</code>，會繼承 <code>timer</code> 函式的 <code>this</code>，因此會正確印出 <code>John</code>。</p>
+<hr>
+<h4 id="常見疑問"><a href="#常見疑問" class="headerlink" title="常見疑問"></a>常見疑問</h4><h5 id="為什麼箭頭函式不綁定自己的-this？"><a href="#為什麼箭頭函式不綁定自己的-this？" class="headerlink" title="為什麼箭頭函式不綁定自己的 this？"></a>為什麼箭頭函式不綁定自己的 <code>this</code>？</h5><p>主要是為了解決<strong>回呼函式中 <code>this</code> 易出錯的問題</strong>。</p>
+<p>以前會這樣解法：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> that = <span class="variable language_">this</span>; <span class="comment">// 變數 that 保存正確的 this</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(that.<span class="property">name</span>);</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<p>現在有箭頭函式，就不用這麼麻煩。</p>
+<hr>
+<h4 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h4><table>
+<thead>
+<tr>
+<th>類型</th>
+<th><code>this</code> 綁定方式</th>
+<th>一般用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>傳統函式 function</td>
+<td>執行時決定</td>
+<td>物件方法、建構函式</td>
+</tr>
+<tr>
+<td>箭頭函式 &#x3D;&gt;</td>
+<td>定義時決定</td>
+<td>callback 回呼函式、內部函式需要使用外部 <code>this</code> 的情境</td>
+</tr>
+</tbody></table>
+<hr>
+<p>總結：</p>
+<ul>
+<li><strong>一般物件方法用傳統函式。this 由呼叫的物件決定</strong></li>
+<li><strong>callback 回呼函式、內部函式用箭頭函式。</strong></li>
+</ul>
+<p>這樣就可以避免大部分 <code>this</code> 的混亂狀況！</p>
+<h2 id="四、解構賦值（Destructuring）"><a href="#四、解構賦值（Destructuring）" class="headerlink" title="四、解構賦值（Destructuring）"></a>四、解構賦值（Destructuring）</h2><ol>
+<li>陣列解構：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> [a, b, c] = arr;</span><br></pre></td></tr></table></figure></li>
+<li>物件解構：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123; <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>: <span class="number">25</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> &#123; name, age &#125; = person;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h2 id="五、展開運算符（Spread-Operator）"><a href="#五、展開運算符（Spread-Operator）" class="headerlink" title="五、展開運算符（Spread Operator）"></a>五、展開運算符（Spread Operator）</h2><ol>
+<li>陣列展開：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = [...arr1, <span class="number">4</span>, <span class="number">5</span>];</span><br></pre></td></tr></table></figure></li>
+<li>物件展開：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>: <span class="number">25</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> obj2 = &#123; ...obj1, <span class="attr">city</span>: <span class="string">&#x27;Taipei&#x27;</span> &#125;;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h2 id="六、預設參數（Default-Parameters）"><a href="#六、預設參數（Default-Parameters）" class="headerlink" title="六、預設參數（Default Parameters）"></a>六、預設參數（Default Parameters）</h2><p>函式參數可設定預設值：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">greet</span> = (<span class="params">name = <span class="string">&#x27;訪客&#x27;</span></span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>!`</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">greet</span>();         <span class="comment">// Hello, 訪客!</span></span><br><span class="line"><span class="title function_">greet</span>(<span class="string">&#x27;John&#x27;</span>);   <span class="comment">// Hello, John!</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>這些 ES6 基礎語法，是現代 JavaScript 開發的常用技巧，掌握這些概念能大幅提升程式撰寫效率。</p>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>ES6</tag>
+        <tag>ECMAScript</tag>
+        <tag>ECMAScript6</tag>
+        <tag>ECMAScript2015</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>async/await 入門教學筆記 | 學習筆記</title>
     <url>/2021/01/16/learning-notes-javascript-async-await/</url>
     <content><![CDATA[<p><code>async</code> 和 <code>await</code> 是 JavaScript 中處理非同步操作的語法糖，它們使得非同步代碼更加易讀和易寫，避免了傳統回調函數（callback）或 <code>Promise</code> 的 <code>.then()</code> 鏈式調用的冗長性。</p>
@@ -651,7 +651,7 @@
 ]]></content>
       <tags>
         <tag>Node.js</tag>
-        <tag>Noed</tag>
+        <tag>Node</tag>
         <tag>NodeJS</tag>
       </tags>
   </entry>
@@ -740,62 +740,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Responsive Design 響應式設計入門教學筆記 | 學習筆記</title>
-    <url>/2022/06/09/learning-notes-responsive-design-rwd/</url>
-    <content><![CDATA[<h2 id="Responsive-Design-響應式設計入門教學筆記"><a href="#Responsive-Design-響應式設計入門教學筆記" class="headerlink" title="Responsive Design 響應式設計入門教學筆記"></a>Responsive Design 響應式設計入門教學筆記</h2><h3 id="一、什麼是響應式設計"><a href="#一、什麼是響應式設計" class="headerlink" title="一、什麼是響應式設計"></a>一、什麼是響應式設計</h3><p>響應式設計 (Responsive Design) 是一種網頁設計方法，使網頁能夠根據不同裝置的螢幕尺寸與解析度，自動調整版面配置，以提供最佳的使用體驗。</p>
-<h3 id="二、響應式設計的重要概念"><a href="#二、響應式設計的重要概念" class="headerlink" title="二、響應式設計的重要概念"></a>二、響應式設計的重要概念</h3><h4 id="1-視圖-Viewport"><a href="#1-視圖-Viewport" class="headerlink" title="1. 視圖 (Viewport)"></a>1. 視圖 (Viewport)</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>這段程式碼放在 <head> 標籤內，能讓網頁根據不同裝置寬度調整顯示比例，是響應式設計的基本設定。</p>
-<h4 id="2-流動網格-Fluid-Grid"><a href="#2-流動網格-Fluid-Grid" class="headerlink" title="2. 流動網格 (Fluid Grid)"></a>2. 流動網格 (Fluid Grid)</h4><p>使用百分比 (%) 來設定元素的寬度，而非固定的像素 (px)，讓版面能隨螢幕大小調整。</p>
-<h4 id="3-彈性圖片-Flexible-Images"><a href="#3-彈性圖片-Flexible-Images" class="headerlink" title="3. 彈性圖片 (Flexible Images)"></a>3. 彈性圖片 (Flexible Images)</h4><p>圖片大小以百分比或 max-width 設定，避免圖片超出容器範圍。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-媒體查詢-Media-Queries"><a href="#4-媒體查詢-Media-Queries" class="headerlink" title="4. 媒體查詢 (Media Queries)"></a>4. 媒體查詢 (Media Queries)</h4><p>根據裝置螢幕大小套用不同的 CSS 樣式。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: lightgrey;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="三、常見的斷點-Breakpoints"><a href="#三、常見的斷點-Breakpoints" class="headerlink" title="三、常見的斷點 (Breakpoints)"></a>三、常見的斷點 (Breakpoints)</h3><p>以下為常見的螢幕寬度斷點，用來針對不同裝置設定樣式：</p>
-<table>
-<thead>
-<tr>
-<th>裝置類型</th>
-<th>斷點寬度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>手機</td>
-<td>0 - 576px</td>
-</tr>
-<tr>
-<td>平板</td>
-<td>577px - 768px</td>
-</tr>
-<tr>
-<td>小型桌面</td>
-<td>769px - 992px</td>
-</tr>
-<tr>
-<td>大型桌面</td>
-<td>993px 以上</td>
-</tr>
-</tbody></table>
-<h3 id="四、實作範例"><a href="#四、實作範例" class="headerlink" title="四、實作範例"></a>四、實作範例</h3><h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-Hant&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>響應式設計範例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>歡迎來到響應式設計範例<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>這是一個簡單的響應式網頁範例。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: Arial, sans-serif;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: lightblue;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">576px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="五、其他工具"><a href="#五、其他工具" class="headerlink" title="五、其他工具"></a>五、其他工具</h3><ol>
-<li>Bootstrap：內建響應式網格系統，方便快速開發響應式網頁。</li>
-<li>Flexbox：簡化版面排列的工具，適合處理彈性佈局。</li>
-<li>CSS Grid：強大的網格系統，用於建立複雜的版面。</li>
-</ol>
-<h3 id="六、結語"><a href="#六、結語" class="headerlink" title="六、結語"></a>六、結語</h3><p>響應式設計能提升使用者體驗，使網頁能適應不同裝置，有助於 SEO 表現，是現代網頁設計不可忽視的重要技能。</p>
-]]></content>
-      <tags>
-        <tag>Responsive Design</tag>
-        <tag>響應式設計</tag>
-        <tag>RWD</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>滾動視差（Parallax Scrolling）網頁設計入門教學筆記 | 學習筆記</title>
     <url>/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/</url>
     <content><![CDATA[<h1 id="一、什麼是滾動視差？"><a href="#一、什麼是滾動視差？" class="headerlink" title="一、什麼是滾動視差？"></a>一、什麼是滾動視差？</h1><p>滾動視差（<code>Parallax Scrolling</code>）是一種前端網頁設計技術，透過不同層的背景與內容以不同的速度滾動，營造出立體感與動態視覺效果。這種技術常見於品牌網站、產品介紹頁面或作品展示頁面，能有效提升使用者的沉浸感與互動體驗。  </p>
@@ -860,6 +804,62 @@
         <tag>frontend engineer</tag>
         <tag>CSS</tag>
         <tag>typescript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Responsive Design 響應式設計入門教學筆記 | 學習筆記</title>
+    <url>/2022/06/09/learning-notes-responsive-design-rwd/</url>
+    <content><![CDATA[<h2 id="Responsive-Design-響應式設計入門教學筆記"><a href="#Responsive-Design-響應式設計入門教學筆記" class="headerlink" title="Responsive Design 響應式設計入門教學筆記"></a>Responsive Design 響應式設計入門教學筆記</h2><h3 id="一、什麼是響應式設計"><a href="#一、什麼是響應式設計" class="headerlink" title="一、什麼是響應式設計"></a>一、什麼是響應式設計</h3><p>響應式設計 (Responsive Design) 是一種網頁設計方法，使網頁能夠根據不同裝置的螢幕尺寸與解析度，自動調整版面配置，以提供最佳的使用體驗。</p>
+<h3 id="二、響應式設計的重要概念"><a href="#二、響應式設計的重要概念" class="headerlink" title="二、響應式設計的重要概念"></a>二、響應式設計的重要概念</h3><h4 id="1-視圖-Viewport"><a href="#1-視圖-Viewport" class="headerlink" title="1. 視圖 (Viewport)"></a>1. 視圖 (Viewport)</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼放在 <head> 標籤內，能讓網頁根據不同裝置寬度調整顯示比例，是響應式設計的基本設定。</p>
+<h4 id="2-流動網格-Fluid-Grid"><a href="#2-流動網格-Fluid-Grid" class="headerlink" title="2. 流動網格 (Fluid Grid)"></a>2. 流動網格 (Fluid Grid)</h4><p>使用百分比 (%) 來設定元素的寬度，而非固定的像素 (px)，讓版面能隨螢幕大小調整。</p>
+<h4 id="3-彈性圖片-Flexible-Images"><a href="#3-彈性圖片-Flexible-Images" class="headerlink" title="3. 彈性圖片 (Flexible Images)"></a>3. 彈性圖片 (Flexible Images)</h4><p>圖片大小以百分比或 max-width 設定，避免圖片超出容器範圍。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-媒體查詢-Media-Queries"><a href="#4-媒體查詢-Media-Queries" class="headerlink" title="4. 媒體查詢 (Media Queries)"></a>4. 媒體查詢 (Media Queries)</h4><p>根據裝置螢幕大小套用不同的 CSS 樣式。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: lightgrey;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、常見的斷點-Breakpoints"><a href="#三、常見的斷點-Breakpoints" class="headerlink" title="三、常見的斷點 (Breakpoints)"></a>三、常見的斷點 (Breakpoints)</h3><p>以下為常見的螢幕寬度斷點，用來針對不同裝置設定樣式：</p>
+<table>
+<thead>
+<tr>
+<th>裝置類型</th>
+<th>斷點寬度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>手機</td>
+<td>0 - 576px</td>
+</tr>
+<tr>
+<td>平板</td>
+<td>577px - 768px</td>
+</tr>
+<tr>
+<td>小型桌面</td>
+<td>769px - 992px</td>
+</tr>
+<tr>
+<td>大型桌面</td>
+<td>993px 以上</td>
+</tr>
+</tbody></table>
+<h3 id="四、實作範例"><a href="#四、實作範例" class="headerlink" title="四、實作範例"></a>四、實作範例</h3><h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-Hant&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>響應式設計範例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>歡迎來到響應式設計範例<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>這是一個簡單的響應式網頁範例。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: Arial, sans-serif;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: lightblue;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">576px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="五、其他工具"><a href="#五、其他工具" class="headerlink" title="五、其他工具"></a>五、其他工具</h3><ol>
+<li>Bootstrap：內建響應式網格系統，方便快速開發響應式網頁。</li>
+<li>Flexbox：簡化版面排列的工具，適合處理彈性佈局。</li>
+<li>CSS Grid：強大的網格系統，用於建立複雜的版面。</li>
+</ol>
+<h3 id="六、結語"><a href="#六、結語" class="headerlink" title="六、結語"></a>六、結語</h3><p>響應式設計能提升使用者體驗，使網頁能適應不同裝置，有助於 SEO 表現，是現代網頁設計不可忽視的重要技能。</p>
+]]></content>
+      <tags>
+        <tag>Responsive Design</tag>
+        <tag>響應式設計</tag>
+        <tag>RWD</tag>
       </tags>
   </entry>
   <entry>
@@ -1304,33 +1304,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記</title>
-    <url>/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/</url>
-    <content><![CDATA[<h1 id="Components-元件"><a href="#Components-元件" class="headerlink" title="Components 元件"></a>Components 元件</h1><p>到目前為止，我們只使用了一個單一的元件。實際的 Vue 應用程式通常是由巢狀元件所組成的。</p>
-<p>父元件可以在其模板中渲染另一個元件作為子元件。要使用子元件，我們需要先匯入它：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>然後，我們可以在模板中使用該元件，如下所示：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<p>我們現在試試看將匯入子元件並將其渲染到模板中。</p>
-<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>A Child Component!<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記</title>
     <url>/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/</url>
     <content><![CDATA[<h1 id="Declarative-Rendering-聲明式渲染"><a href="#Declarative-Rendering-聲明式渲染" class="headerlink" title="Declarative Rendering 聲明式渲染"></a>Declarative Rendering 聲明式渲染</h1><p>在 Vue3 我們常看到的是 Vue 單文件元件 (SFC)。SFC 是一個可重用的、獨立的程式碼區塊，它將相關的 HTML、CSS 和 JavaScript 封裝在一起，並寫在一個 <code>.vue</code> 文件中。</p>
@@ -1357,6 +1330,91 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; reactive, ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> counter = <span class="title function_">reactive</span>(&#123; <span class="attr">count</span>: <span class="number">0</span> &#125;)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> message = <span class="title function_">ref</span>(<span class="string">&#x27;Hello World!&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Count is: &#123;&#123; counter.count &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Vue.js 3 提供了更好的性能、更靈活的 API 和更簡潔的開發體驗。無論是使用 Composition API 還是 Options API，都能快速上手並構建強大的前端應用。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue i18n 入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/13/learning-notes-vue-i18n-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="1-Vue-I18n-簡介"><a href="#1-Vue-I18n-簡介" class="headerlink" title="1. Vue I18n 簡介"></a>1. Vue I18n 簡介</h2><p>Vue i18n 是 Vue.js 的國際化（Internationalization）解決方案，可用於管理應用程式的多語系內容。當開發需要支援不同語言的應用時，Vue i18n 提供了一個高效的方式來處理翻譯、數字格式、日期格式等。</p>
+<h3 id="1-1-為何使用-Vue-I18n？"><a href="#1-1-為何使用-Vue-I18n？" class="headerlink" title="1.1 為何使用 Vue I18n？"></a>1.1 為何使用 Vue I18n？</h3><ul>
+<li><strong>動態切換語言</strong>：讓使用者能夠即時更改語言。</li>
+<li><strong>簡化多語系管理</strong>：集中化翻譯內容，方便維護。</li>
+<li><strong>格式化支援</strong>：內建日期、時間、數字等格式化功能。</li>
+</ul>
+<h2 id="2-安裝-Vue-I18n"><a href="#2-安裝-Vue-I18n" class="headerlink" title="2. 安裝 Vue I18n"></a>2. 安裝 Vue I18n</h2><p>Vue I18n 可透過 npm 安裝，適用於 Vue 3 應用。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install vue-i18n</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-設定-Vue-I18n"><a href="#3-設定-Vue-I18n" class="headerlink" title="3. 設定 Vue I18n"></a>3. 設定 Vue I18n</h2><p>在 Vue 3 中，可以使用 <code>createI18n</code> 來設定 Vue I18n：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createApp &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createI18n &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-i18n&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> messages = &#123;</span><br><span class="line">  <span class="attr">en</span>: &#123;</span><br><span class="line">    <span class="attr">welcome</span>: <span class="string">&#x27;Welcome to Vue I18n!&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">zh</span>: &#123;</span><br><span class="line">    <span class="attr">welcome</span>: <span class="string">&#x27;歡迎使用 Vue I18n！&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>, <span class="comment">// 預設語言</span></span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>, <span class="comment">// 備用語言</span></span><br><span class="line">  messages</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">createApp</span>(<span class="title class_">App</span>);</span><br><span class="line">app.<span class="title function_">use</span>(i18n);</span><br><span class="line">app.<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-在組件中使用-Vue-I18n"><a href="#4-在組件中使用-Vue-I18n" class="headerlink" title="4. 在組件中使用 Vue I18n"></a>4. 在組件中使用 Vue I18n</h2><h3 id="4-1-使用-t-方法"><a href="#4-1-使用-t-方法" class="headerlink" title="4.1 使用 $t 方法"></a>4.1 使用 <code>$t</code> 方法</h3><p>在 Vue 組件中，可以透過 <code>$t</code> 方法來取得翻譯內容。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;h1&gt;&#123;&#123; $t(&#x27;welcome&#x27;) &#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-切換語言"><a href="#4-2-切換語言" class="headerlink" title="4.2 切換語言"></a>4.2 切換語言</h3><p>可以透過 <code>this.$i18n.locale</code> 來更改語言：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button @click=&quot;changeLanguage(&#x27;en&#x27;)&quot;&gt;English&lt;/button&gt;</span><br><span class="line">    &lt;button @click=&quot;changeLanguage(&#x27;zh&#x27;)&quot;&gt;中文&lt;/button&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; $t(&#x27;welcome&#x27;) &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    changeLanguage(lang) &#123;</span><br><span class="line">      this.$i18n.locale = lang;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-使用外部-JSON-檔案管理翻譯內容"><a href="#5-使用外部-JSON-檔案管理翻譯內容" class="headerlink" title="5. 使用外部 JSON 檔案管理翻譯內容"></a>5. 使用外部 JSON 檔案管理翻譯內容</h2><p>當專案的翻譯內容較多時，建議將翻譯字串拆分成獨立的 JSON 檔案。</p>
+<p><strong>建立語言檔案：</strong></p>
+<p><code>locales/en.json</code></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;welcome&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Welcome to Vue I18n!&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>locales/zh.json</code></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;welcome&quot;</span><span class="punctuation">:</span> <span class="string">&quot;歡迎使用 Vue I18n！&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>修改 <code>i18n</code> 設定：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createI18n &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-i18n&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> en <span class="keyword">from</span> <span class="string">&#x27;./locales/en.json&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> zh <span class="keyword">from</span> <span class="string">&#x27;./locales/zh.json&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>,</span><br><span class="line">  <span class="attr">messages</span>: &#123; en, zh &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-插值與變數"><a href="#6-插值與變數" class="headerlink" title="6. 插值與變數"></a>6. 插值與變數</h2><p>Vue I18n 支援在翻譯字串中插入變數。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> messages = &#123;</span><br><span class="line">  <span class="attr">en</span>: &#123;</span><br><span class="line">    <span class="attr">greeting</span>: <span class="string">&#x27;Hello, &#123;name&#125;!&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">zh</span>: &#123;</span><br><span class="line">    <span class="attr">greeting</span>: <span class="string">&#x27;你好, &#123;name&#125;!&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在組件中使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123; $t(&#x27;greeting&#x27;, &#123; name: &#x27;John&#x27; &#125;) &#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-訊息格式化與日期、數字處理"><a href="#7-訊息格式化與日期、數字處理" class="headerlink" title="7. 訊息格式化與日期、數字處理"></a>7. 訊息格式化與日期、數字處理</h2><p>Vue I18n 內建 <code>numberFormats</code> 和 <code>datetimeFormats</code>，可用於格式化數字與日期。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>,</span><br><span class="line">  messages,</span><br><span class="line">  <span class="attr">numberFormats</span>: &#123;</span><br><span class="line">    <span class="attr">en</span>: &#123;</span><br><span class="line">      <span class="attr">currency</span>: &#123;</span><br><span class="line">        <span class="attr">style</span>: <span class="string">&#x27;currency&#x27;</span>, <span class="attr">currency</span>: <span class="string">&#x27;USD&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">zh</span>: &#123;</span><br><span class="line">      <span class="attr">currency</span>: &#123;</span><br><span class="line">        <span class="attr">style</span>: <span class="string">&#x27;currency&#x27;</span>, <span class="attr">currency</span>: <span class="string">&#x27;TWD&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>在組件中使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123; $n(1000, &#x27;currency&#x27;) &#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-延遲載入翻譯（Lazy-Loading）"><a href="#8-延遲載入翻譯（Lazy-Loading）" class="headerlink" title="8. 延遲載入翻譯（Lazy Loading）"></a>8. 延遲載入翻譯（Lazy Loading）</h2><p>當應用程式的語言檔案過多時，建議使用動態載入（Lazy Loading）來優化效能。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createI18n &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-i18n&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>,</span><br><span class="line">  <span class="attr">messages</span>: &#123;&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">loadLocaleMessages</span>(<span class="params">locale</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> messages = <span class="keyword">await</span> <span class="keyword">import</span>(<span class="string">`./locales/<span class="subst">$&#123;locale&#125;</span>.json`</span>);</span><br><span class="line">  i18n.<span class="property">global</span>.<span class="title function_">setLocaleMessage</span>(locale, messages.<span class="property">default</span>);</span><br><span class="line">  i18n.<span class="property">global</span>.<span class="property">locale</span> = locale;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-結論"><a href="#9-結論" class="headerlink" title="9. 結論"></a>9. 結論</h2><p>Vue I18n 是 Vue.js 中強大的國際化解決方案，透過 <code>$t</code> 方法、插值變數、外部 JSON 檔案管理，以及數字與日期格式化功能，可以讓開發者輕鬆實作多語系應用。本篇筆記介紹了 Vue I18n 的基本使用方式，進一步學習可研究動態載入、多語系 SEO 以及與 Vue Router 的結合。</p>
+]]></content>
+      <tags>
+        <tag>Vue</tag>
+        <tag>i18n</tag>
+        <tag>Vue i18n</tag>
+        <tag>多語系</tag>
+        <tag>多國語系</tag>
+        <tag>在地化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記</title>
+    <url>/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/</url>
+    <content><![CDATA[<h1 id="Components-元件"><a href="#Components-元件" class="headerlink" title="Components 元件"></a>Components 元件</h1><p>到目前為止，我們只使用了一個單一的元件。實際的 Vue 應用程式通常是由巢狀元件所組成的。</p>
+<p>父元件可以在其模板中渲染另一個元件作為子元件。要使用子元件，我們需要先匯入它：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>然後，我們可以在模板中使用該元件，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>我們現在試試看將匯入子元件並將其渲染到模板中。</p>
+<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>A Child Component!<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>前端</tag>
@@ -1544,6 +1602,37 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [5] - Conditional Rendering 表單綁定 | 學習筆記</title>
+    <url>/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/</url>
+    <content><![CDATA[<p><strong>Conditional Rendering 條件渲染</strong><br>在 Vue 中，我們可以使用 <code>v-if</code> 指令來條件式渲染元素：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>這個 <code>&lt;h1&gt;</code> 只有在 <code>awesome</code> 的值為真值時才會被渲染。如果 <code>awesome</code> 的值變為假值，它將從 DOM 中被移除。</p>
+<hr>
+<p>我們還可以使用 <code>v-else</code> 和 <code>v-else-if</code> 表示條件的其他分支：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>目前的範例同時顯示了兩個 <code>&lt;h1&gt;</code>，按鈕也沒有作用。請嘗試為 <code>&lt;h1&gt;</code> 添加 <code>v-if</code> 和 <code>v-else</code> 指令，並實作一個 <code>toggle()</code> 方法，使我們可以透過按鈕來切換顯示的內容。</p>
+<hr>
+<p>示例程式碼範例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;h1 v-if=&quot;awesome&quot;&gt;Vue is awesome!&lt;/h1&gt;</span><br><span class="line">  &lt;h1 v-else&gt;Oh no 😢&lt;/h1&gt;</span><br><span class="line">  &lt;button @click=&quot;toggle&quot;&gt;Toggle&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const awesome = ref(true)</span><br><span class="line"></span><br><span class="line">function toggle() &#123;</span><br><span class="line">  awesome.value = !awesome.value</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>更多關於 <code>v-if</code> 的詳細內容請參閱官方<a href="https://vuejs.org/guide/essentials/conditional.html">指南 - 條件渲染</a>。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> awesome = <span class="title function_">ref</span>(<span class="literal">true</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">toggle</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  awesome.<span class="property">value</span> = !awesome.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;toggle&quot;</span>&gt;</span>Toggle<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [6] - List Rendering 表單綁定 | 學習筆記</title>
     <url>/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/</url>
     <content><![CDATA[<p><strong>List Rendering 列表渲染</strong><br>我們可以使用 <code>v-for</code> 指令根據一個來源陣列來渲染元素列表：</p>
@@ -1568,37 +1657,6 @@
 <hr>
 <p>更多關於 <code>v-for</code> 的詳細內容，請參閱官方<a href="https://vuejs.org/guide/essentials/list.html">指南 - 列表渲染</a>。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// give each todo a unique id</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">let</span> id = <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> newTodo = <span class="title function_">ref</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todos = <span class="title function_">ref</span>([</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn HTML&#x27;</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn JavaScript&#x27;</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn Vue&#x27;</span> &#125;</span></span><br><span class="line"><span class="language-javascript">])</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">addTodo</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span>.<span class="title function_">push</span>(&#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: newTodo.<span class="property">value</span> &#125;)</span></span><br><span class="line"><span class="language-javascript">  newTodo.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">removeTodo</span>(<span class="params">todo</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span> = todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> t !== todo)</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">form</span> @<span class="attr">submit.prevent</span>=<span class="string">&quot;addTodo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;newTodo&quot;</span> <span class="attr">required</span> <span class="attr">placeholder</span>=<span class="string">&quot;new todo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in todos&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;todo.id&quot;</span>&gt;</span></span><br><span class="line">      &#123;&#123; todo.text &#125;&#125;</span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;removeTodo(todo)&quot;</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [5] - Conditional Rendering 表單綁定 | 學習筆記</title>
-    <url>/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/</url>
-    <content><![CDATA[<p><strong>Conditional Rendering 條件渲染</strong><br>在 Vue 中，我們可以使用 <code>v-if</code> 指令來條件式渲染元素：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>這個 <code>&lt;h1&gt;</code> 只有在 <code>awesome</code> 的值為真值時才會被渲染。如果 <code>awesome</code> 的值變為假值，它將從 DOM 中被移除。</p>
-<hr>
-<p>我們還可以使用 <code>v-else</code> 和 <code>v-else-if</code> 表示條件的其他分支：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>目前的範例同時顯示了兩個 <code>&lt;h1&gt;</code>，按鈕也沒有作用。請嘗試為 <code>&lt;h1&gt;</code> 添加 <code>v-if</code> 和 <code>v-else</code> 指令，並實作一個 <code>toggle()</code> 方法，使我們可以透過按鈕來切換顯示的內容。</p>
-<hr>
-<p>示例程式碼範例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;h1 v-if=&quot;awesome&quot;&gt;Vue is awesome!&lt;/h1&gt;</span><br><span class="line">  &lt;h1 v-else&gt;Oh no 😢&lt;/h1&gt;</span><br><span class="line">  &lt;button @click=&quot;toggle&quot;&gt;Toggle&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const awesome = ref(true)</span><br><span class="line"></span><br><span class="line">function toggle() &#123;</span><br><span class="line">  awesome.value = !awesome.value</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>更多關於 <code>v-if</code> 的詳細內容請參閱官方<a href="https://vuejs.org/guide/essentials/conditional.html">指南 - 條件渲染</a>。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> awesome = <span class="title function_">ref</span>(<span class="literal">true</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">toggle</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  awesome.<span class="property">value</span> = !awesome.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;toggle&quot;</span>&gt;</span>Toggle<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -1640,6 +1698,28 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [9] - Watchers 觀察者 | 學習筆記</title>
+    <url>/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/</url>
+    <content><![CDATA[<h1 id="Watchers-觀察者"><a href="#Watchers-觀察者" class="headerlink" title="Watchers 觀察者"></a>Watchers 觀察者</h1><p>有時我們可能需要以反應性的方式執行「Side-effect 副作用」，例如，當一個數值改變時將其記錄到控制台。我們可以使用觀察者來實現這一點：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="title function_">watch</span>(count, <span class="function">(<span class="params">newCount</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 是的，console.log() 是一種副作用</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`新的計數是：<span class="subst">$&#123;newCount&#125;</span>`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><code>watch()</code> 可以直接監視一個 <code>ref</code>，每當 <code>count</code> 的值改變時，回調函數就會被觸發。<code>watch()</code> 也可以監視其他類型的數據來源——更多細節請參閱指南：觀察者（Watchers）。</p>
+<p>比將訊息記錄到控制台更實用的例子，可能是當一個 ID 發生變化時，根據新 ID 獲取數據。我們的代碼目前是在元件掛載時，從一個模擬 API 獲取 <code>todos</code> 數據。此外，還有一個按鈕可以遞增應該被獲取的 <code>todo</code> ID。請嘗試實現一個觀察者，在按下按鈕時根據新 ID 獲取新的 <code>todo</code> 數據。</p>
+<p>參考範例：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoId = <span class="title function_">ref</span>(<span class="number">1</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoData = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchData</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="literal">null</span></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(</span></span><br><span class="line"><span class="language-javascript">    <span class="string">`https://jsonplaceholder.typicode.com/todos/<span class="subst">$&#123;todoId.value&#125;</span>`</span></span></span><br><span class="line"><span class="language-javascript">  )</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="keyword">await</span> res.<span class="title function_">json</span>()</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">fetchData</span>()</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">watch</span>(todoId, fetchData)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Todo id: &#123;&#123; todoId &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;todoId++&quot;</span> <span class="attr">:disabled</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Fetch next todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Loading...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">pre</span> <span class="attr">v-else</span>&gt;</span>&#123;&#123; todoData &#125;&#125;<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [8] - Lifecycle and Template Refs 生命週期與模板引用 | 學習筆記</title>
     <url>/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/</url>
     <content><![CDATA[<h2 id="Lifecycle-and-Template-Refs-生命週期與模板引用"><a href="#Lifecycle-and-Template-Refs-生命週期與模板引用" class="headerlink" title="Lifecycle and Template Refs 生命週期與模板引用"></a>Lifecycle and Template Refs 生命週期與模板引用</h2><p>到目前為止，Vue.js 透過響應式資料與聲明式渲染，幫助我們處理了所有的 DOM 更新。然而，無可避免地會有需要手動操作 DOM 的情況。</p>
@@ -1655,28 +1735,6 @@
 <h3 id="生命週期鉤子"><a href="#生命週期鉤子" class="headerlink" title="生命週期鉤子"></a>生命週期鉤子</h3><p>這稱為生命週期鉤子 (lifecycle hook)，它允許我們在元件生命週期的特定時間點註冊回呼函式。其他的生命週期鉤子還包括 <code>onUpdated</code> 和 <code>onUnmounted</code> 等。更多細節請參考官方文件 <a href="https://vuejs.org/guide/essentials/lifecycle.html">生命週期圖示</a>。</p>
 <h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>現在，我們可以嘗試添加一個 <code>onMounted</code> 鉤子，透過 <code>pElementRef.value</code> 訪問 <code>&lt;p&gt;</code> 元素，並對其進行一些直接的 DOM 操作（例如更改 <code>textContent</code>）。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> pElementRef = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  pElementRef.<span class="property">value</span>.<span class="property">textContent</span> = <span class="string">&#x27;mounted!&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">&quot;pElementRef&quot;</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [9] - Watchers 觀察者 | 學習筆記</title>
-    <url>/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/</url>
-    <content><![CDATA[<h1 id="Watchers-觀察者"><a href="#Watchers-觀察者" class="headerlink" title="Watchers 觀察者"></a>Watchers 觀察者</h1><p>有時我們可能需要以反應性的方式執行「Side-effect 副作用」，例如，當一個數值改變時將其記錄到控制台。我們可以使用觀察者來實現這一點：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="title function_">watch</span>(count, <span class="function">(<span class="params">newCount</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 是的，console.log() 是一種副作用</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`新的計數是：<span class="subst">$&#123;newCount&#125;</span>`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p><code>watch()</code> 可以直接監視一個 <code>ref</code>，每當 <code>count</code> 的值改變時，回調函數就會被觸發。<code>watch()</code> 也可以監視其他類型的數據來源——更多細節請參閱指南：觀察者（Watchers）。</p>
-<p>比將訊息記錄到控制台更實用的例子，可能是當一個 ID 發生變化時，根據新 ID 獲取數據。我們的代碼目前是在元件掛載時，從一個模擬 API 獲取 <code>todos</code> 數據。此外，還有一個按鈕可以遞增應該被獲取的 <code>todo</code> ID。請嘗試實現一個觀察者，在按下按鈕時根據新 ID 獲取新的 <code>todo</code> 數據。</p>
-<p>參考範例：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoId = <span class="title function_">ref</span>(<span class="number">1</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoData = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchData</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="literal">null</span></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(</span></span><br><span class="line"><span class="language-javascript">    <span class="string">`https://jsonplaceholder.typicode.com/todos/<span class="subst">$&#123;todoId.value&#125;</span>`</span></span></span><br><span class="line"><span class="language-javascript">  )</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="keyword">await</span> res.<span class="title function_">json</span>()</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">fetchData</span>()</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">watch</span>(todoId, fetchData)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Todo id: &#123;&#123; todoId &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;todoId++&quot;</span> <span class="attr">:disabled</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Fetch next todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Loading...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">pre</span> <span class="attr">v-else</span>&gt;</span>&#123;&#123; todoData &#125;&#125;<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -1782,8 +1840,8 @@
 ]]></content>
       <tags>
         <tag>Node.js</tag>
-        <tag>Noed</tag>
         <tag>NodeJS</tag>
+        <tag>WebSocket</tag>
       </tags>
   </entry>
   <entry>
