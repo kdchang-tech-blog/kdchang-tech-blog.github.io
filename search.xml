@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</title>
+    <url>/2020/06/21/about-backend-engineer-10-keywords/</url>
+    <content><![CDATA[<p>以下整理了後端工程師相關的 10 個關鍵字，涵蓋技能、工具與工作方式：</p>
+<ol>
+<li><p><strong>Node.js &#x2F; Python &#x2F; Java &#x2F; Ruby &#x2F; PHP</strong>：常見的後端程式語言，用於構建伺服器端應用程式。</p>
+</li>
+<li><p><strong>Database</strong>（資料庫）：包括 <strong>SQL（如 MySQL, PostgreSQL）</strong> 和 <strong>NoSQL（如 MongoDB, Redis）</strong> 的操作與優化。</p>
+</li>
+<li><p><strong>REST API &#x2F; GraphQL</strong>：設計與實現伺服器端 API 以支援前端資料請求。</p>
+</li>
+<li><p><strong>Authentication &amp; Authorization</strong>（認證與授權）：如 OAuth、JWT、Session，確保使用者安全與數據保護。</p>
+</li>
+<li><p><strong>Docker &#x2F; Kubernetes</strong>：容器化與編排工具，用於應用部署與資源管理。</p>
+</li>
+<li><p><strong>Cloud Services</strong>：如 AWS、Google Cloud、Microsoft Azure，支援應用程式的雲端部署與運行。</p>
+</li>
+<li><p><strong>Microservices</strong>（微服務架構）：設計可拆分且可獨立部署的服務模組。</p>
+</li>
+<li><p><strong>Message Queues</strong>（訊息佇列）：如 RabbitMQ、Kafka，用於分布式系統的非同步通訊。</p>
+</li>
+<li><p><strong>Version Control</strong>（版本控制）：如 Git &#x2F; GitHub，用於團隊協作與程式碼管理。</p>
+</li>
+<li><p><strong>Performance Optimization</strong>（效能優化）：針對伺服器與資料庫的效能調優，提升系統效率。</p>
+</li>
+</ol>
+<p>以上關鍵字為後端工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
+]]></content>
+      <tags>
+        <tag>開發者</tag>
+        <tag>軟體工程師</tag>
+        <tag>SWE</tag>
+        <tag>Software Engineer</tag>
+        <tag>Software</tag>
+        <tag>軟體開發</tag>
+        <tag>backend</tag>
+        <tag>backend engineer</tag>
+        <tag>後端開發</tag>
+        <tag>後端工程</tag>
+        <tag>網頁後端工程師</tag>
+        <tag>後端工程師</tag>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字</title>
     <url>/2020/06/13/about-frontend-engineer-10-keywords/</url>
     <content><![CDATA[<p>以下整理了前端工程師相關的 10 個關鍵字，涵蓋技能、工具與工作方式：</p>
@@ -39,53 +83,9 @@
         <tag>Software Engineer</tag>
         <tag>Software</tag>
         <tag>軟體開發</tag>
+        <tag>Web</tag>
         <tag>網頁前端工程師</tag>
         <tag>前端工程師</tag>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</title>
-    <url>/2020/06/21/about-backend-engineer-10-keywords/</url>
-    <content><![CDATA[<p>以下整理了後端工程師相關的 10 個關鍵字，涵蓋技能、工具與工作方式：</p>
-<ol>
-<li><p><strong>Node.js &#x2F; Python &#x2F; Java &#x2F; Ruby &#x2F; PHP</strong>：常見的後端程式語言，用於構建伺服器端應用程式。</p>
-</li>
-<li><p><strong>Database</strong>（資料庫）：包括 <strong>SQL（如 MySQL, PostgreSQL）</strong> 和 <strong>NoSQL（如 MongoDB, Redis）</strong> 的操作與優化。</p>
-</li>
-<li><p><strong>REST API &#x2F; GraphQL</strong>：設計與實現伺服器端 API 以支援前端資料請求。</p>
-</li>
-<li><p><strong>Authentication &amp; Authorization</strong>（認證與授權）：如 OAuth、JWT、Session，確保使用者安全與數據保護。</p>
-</li>
-<li><p><strong>Docker &#x2F; Kubernetes</strong>：容器化與編排工具，用於應用部署與資源管理。</p>
-</li>
-<li><p><strong>Cloud Services</strong>：如 AWS、Google Cloud、Microsoft Azure，支援應用程式的雲端部署與運行。</p>
-</li>
-<li><p><strong>Microservices</strong>（微服務架構）：設計可拆分且可獨立部署的服務模組。</p>
-</li>
-<li><p><strong>Message Queues</strong>（訊息佇列）：如 RabbitMQ、Kafka，用於分布式系統的非同步通訊。</p>
-</li>
-<li><p><strong>Version Control</strong>（版本控制）：如 Git &#x2F; GitHub，用於團隊協作與程式碼管理。</p>
-</li>
-<li><p><strong>Performance Optimization</strong>（效能優化）：針對伺服器與資料庫的效能調優，提升系統效率。</p>
-</li>
-</ol>
-<p>以上關鍵字為後端工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
-]]></content>
-      <tags>
-        <tag>開發者</tag>
-        <tag>軟體工程師</tag>
-        <tag>SWE</tag>
-        <tag>Software Engineer</tag>
-        <tag>Software</tag>
-        <tag>軟體開發</tag>
-        <tag>Web</tag>
-        <tag>backend</tag>
-        <tag>backend engineer</tag>
-        <tag>後端開發</tag>
-        <tag>後端工程</tag>
-        <tag>網頁後端工程師</tag>
-        <tag>後端工程師</tag>
       </tags>
   </entry>
   <entry>
@@ -251,7 +251,7 @@
 <li>更安全、可預期的變數管理。</li>
 </ol>
 <hr>
-<h4 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h4><table>
+<h4 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h4><table>
 <thead>
 <tr>
 <th>關鍵字</th>
@@ -320,7 +320,7 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> that = <span class="variable language_">this</span>; <span class="comment">// 變數 that 保存正確的 this</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(that.<span class="property">name</span>);</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
 <p>現在有箭頭函式，就不用這麼麻煩。</p>
 <hr>
-<h4 id="小結-1"><a href="#小結-1" class="headerlink" title="小結"></a>小結</h4><table>
+<h4 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h4><table>
 <thead>
 <tr>
 <th>類型</th>
@@ -436,25 +436,97 @@
       </tags>
   </entry>
   <entry>
+    <title>HTML &amp; CSS 切版入門教學筆記 | 學習筆記</title>
+    <url>/2024/07/01/learning-notes-html-css-layout-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="1-HTML-基礎概念"><a href="#1-HTML-基礎概念" class="headerlink" title="1. HTML 基礎概念"></a>1. HTML 基礎概念</h1><p>HTML（HyperText Markup Language）是網頁的基礎結構，透過標籤（Tag）定義不同的內容與結構。</p>
+<h3 id="1-1-常見標籤"><a href="#1-1-常見標籤" class="headerlink" title="1.1 常見標籤"></a>1.1 常見標籤</h3><ul>
+<li><code>&lt;!DOCTYPE html&gt;</code>：宣告 HTML 文件類型。</li>
+<li><code>&lt;html&gt;</code>：HTML 文件的根標籤。</li>
+<li><code>&lt;head&gt;</code>：包含頁面設定、SEO 資訊、CSS 連結等。</li>
+<li><code>&lt;title&gt;</code>：設定網頁標題。</li>
+<li><code>&lt;body&gt;</code>：放置頁面可見內容。</li>
+<li><code>&lt;h1&gt; ~ &lt;h6&gt;</code>：標題。</li>
+<li><code>&lt;p&gt;</code>：段落。</li>
+<li><code>&lt;a&gt;</code>：超連結。</li>
+<li><code>&lt;img&gt;</code>：圖片。</li>
+<li><code>&lt;ul&gt;</code>、<code>&lt;ol&gt;</code>、<code>&lt;li&gt;</code>：無序與有序列表。</li>
+<li><code>&lt;div&gt;</code>：區塊。</li>
+<li><code>&lt;span&gt;</code>：行內元素。</li>
+<li><code>&lt;table&gt;</code>、<code>&lt;tr&gt;</code>、<code>&lt;td&gt;</code>：表格。</li>
+</ul>
+<h3 id="1-2-HTML5-新增語意標籤"><a href="#1-2-HTML5-新增語意標籤" class="headerlink" title="1.2 HTML5 新增語意標籤"></a>1.2 HTML5 新增語意標籤</h3><ul>
+<li><code>&lt;header&gt;</code>：頁首。</li>
+<li><code>&lt;nav&gt;</code>：導航。</li>
+<li><code>&lt;section&gt;</code>：區段。</li>
+<li><code>&lt;article&gt;</code>：獨立內容。</li>
+<li><code>&lt;aside&gt;</code>：側邊欄。</li>
+<li><code>&lt;footer&gt;</code>：頁尾。</li>
+</ul>
+<h1 id="2-CSS-基礎概念"><a href="#2-CSS-基礎概念" class="headerlink" title="2. CSS 基礎概念"></a>2. CSS 基礎概念</h1><p>CSS（Cascading Style Sheets）用於設計與美化 HTML 元素。</p>
+<h3 id="2-1-CSS-引入方式"><a href="#2-1-CSS-引入方式" class="headerlink" title="2.1 CSS 引入方式"></a>2.1 CSS 引入方式</h3><ul>
+<li><strong>內嵌樣式（Inline Style）</strong>：直接寫在 HTML 標籤內，例如：<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color: red; font-size: 16px;&quot;</span>&gt;</span>這是一段文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>內部樣式（Internal Style）</strong>：寫在 <code>&lt;style&gt;</code> 標籤內，例如：<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: blue; <span class="attribute">font-size</span>: <span class="number">18px</span>; &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>外部樣式（External Style）</strong>：將 CSS 放入 <code>.css</code> 文件中，再用 <code>&lt;link&gt;</code> 連結，例如：<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;styles.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2-2-CSS-選擇器"><a href="#2-2-CSS-選擇器" class="headerlink" title="2.2 CSS 選擇器"></a>2.2 CSS 選擇器</h3><ul>
+<li><strong>標籤選擇器</strong>：影響所有相同標籤，例如：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: green; &#125;</span><br></pre></td></tr></table></figure></li>
+<li><strong>類別選擇器（Class）</strong>：適用於多個元素，例如：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123; <span class="attribute">background-color</span>: yellow; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span>內容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>ID 選擇器</strong>：適用於單一元素，例如：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#header</span> &#123; <span class="attribute">font-size</span>: <span class="number">24px</span>; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">&quot;header&quot;</span>&gt;</span>標題<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>後代選擇器</strong>：選擇特定層級內的元素，例如：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: blue; &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2-3-盒模型（Box-Model）"><a href="#2-3-盒模型（Box-Model）" class="headerlink" title="2.3 盒模型（Box Model）"></a>2.3 盒模型（Box Model）</h3><p>盒模型包含四個部分：</p>
+<ol>
+<li><strong>Content</strong>（內容區域）。</li>
+<li><strong>Padding</strong>（內距，內容與邊框之間的距離）。</li>
+<li><strong>Border</strong>（邊框）。</li>
+<li><strong>Margin</strong>（外距，與其他元素的距離）。</li>
+</ol>
+<p>範例：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid black;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-常見版型切版技巧"><a href="#3-常見版型切版技巧" class="headerlink" title="3. 常見版型切版技巧"></a>3. 常見版型切版技巧</h1><h3 id="3-1-Flexbox-佈局"><a href="#3-1-Flexbox-佈局" class="headerlink" title="3.1 Flexbox 佈局"></a>3.1 Flexbox 佈局</h3><p><code>Flexbox</code> 用於彈性排列子元素。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-Grid-佈局"><a href="#3-2-Grid-佈局" class="headerlink" title="3.2 Grid 佈局"></a>3.2 Grid 佈局</h3><p><code>Grid</code> 提供更強大的網格系統。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-響應式設計（RWD）"><a href="#3-3-響應式設計（RWD）" class="headerlink" title="3.3 響應式設計（RWD）"></a>3.3 響應式設計（RWD）</h3><p>使用 <code>@media</code> 來適應不同螢幕尺寸。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-實戰案例：基本網頁切版"><a href="#4-實戰案例：基本網頁切版" class="headerlink" title="4. 實戰案例：基本網頁切版"></a>4. 實戰案例：基本網頁切版</h1><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-TW&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>簡單網頁<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;styles.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的網站<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>首頁<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>關於<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>聯絡<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>這是一個簡單的 HTML &amp; CSS 切版示範。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: Arial, sans-serif;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">header</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">    <span class="attribute">max-width</span>: <span class="number">800px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: auto;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-總結"><a href="#5-總結" class="headerlink" title="5. 總結"></a>5. 總結</h1><p>透過學習 HTML 與 CSS，可以建立結構清晰、外觀美觀的網頁。建議多加練習不同的切版方式，如 Flexbox 和 Grid，並運用 RWD 技巧來提升適應性，讓網站在不同裝置上都能有良好的呈現效果。</p>
+]]></content>
+      <tags>
+        <tag>HTML</tag>
+        <tag>CSS</tag>
+        <tag>切版</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>async/await 入門教學筆記 | 學習筆記</title>
     <url>/2021/01/16/learning-notes-javascript-async-await/</url>
     <content><![CDATA[<p><code>async</code> 和 <code>await</code> 是 JavaScript 中處理非同步操作的語法糖，它們使得非同步代碼更加易讀和易寫，避免了傳統回調函數（callback）或 <code>Promise</code> 的 <code>.then()</code> 鏈式調用的冗長性。</p>
 <h3 id="1-async-關鍵字"><a href="#1-async-關鍵字" class="headerlink" title="1. async 關鍵字"></a>1. <code>async</code> 關鍵字</h3><p><code>async</code> 是一個關鍵字，用來標記一個函數為「非同步函數」。非同步函數會隱式地返回一個 <code>Promise</code>，並且在函數內部，你可以使用 <code>await</code> 來等待非同步操作的結果。</p>
-<h4 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">example</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 可以在這裡使用 await</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">example</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 可以在這裡使用 await</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>當你呼叫這個函數時，它會立即返回一個 <code>Promise</code>。如果函數內的代碼執行成功，這個 <code>Promise</code> 會被解析；如果有錯誤，<code>Promise</code> 會被拒絕。</p>
 <h3 id="2-await-關鍵字"><a href="#2-await-關鍵字" class="headerlink" title="2. await 關鍵字"></a>2. <code>await</code> 關鍵字</h3><p><code>await</code> 必須在 <code>async</code> 函數內部使用，它會讓 JavaScript 等待某個 <code>Promise</code> 完成並返回結果。<code>await</code> 會使得後續代碼暫停，直到 <code>Promise</code> 被解決或拒絕（解決是指成功完成操作，拒絕則是發生錯誤）。</p>
-<h4 id="語法：-1"><a href="#語法：-1" class="headerlink" title="語法："></a>語法：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> result = <span class="keyword">await</span> promise; <span class="comment">// 等待 Promise 完成並取得結果</span></span><br></pre></td></tr></table></figure>
+<h4 id="語法-1"><a href="#語法-1" class="headerlink" title="語法"></a>語法</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> result = <span class="keyword">await</span> promise; <span class="comment">// 等待 Promise 完成並取得結果</span></span><br></pre></td></tr></table></figure>
 
 <p>如果 <code>Promise</code> 解決（成功），<code>await</code> 會返回結果。如果 <code>Promise</code> 被拒絕（失敗），會拋出錯誤，這通常需要使用 <code>try...catch</code> 來處理。</p>
-<h3 id="範例："><a href="#範例：" class="headerlink" title="範例："></a>範例：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 模擬一個非同步操作</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fetchData</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(<span class="string">&quot;Data fetched!&quot;</span>);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 async/await</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getData</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Fetching data...&quot;</span>);</span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">await</span> <span class="title function_">fetchData</span>();  <span class="comment">// 等待 fetchData 完成</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(data);  <span class="comment">// 顯示結果</span></span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;Error:&quot;</span>, error);  <span class="comment">// 處理錯誤</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">getData</span>();  <span class="comment">// 呼叫 async 函數</span></span><br></pre></td></tr></table></figure>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 模擬一個非同步操作</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fetchData</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(<span class="string">&quot;Data fetched!&quot;</span>);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 async/await</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getData</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Fetching data...&quot;</span>);</span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">await</span> <span class="title function_">fetchData</span>();  <span class="comment">// 等待 fetchData 完成</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(data);  <span class="comment">// 顯示結果</span></span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;Error:&quot;</span>, error);  <span class="comment">// 處理錯誤</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">getData</span>();  <span class="comment">// 呼叫 async 函數</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="3-async-await-的特點："><a href="#3-async-await-的特點：" class="headerlink" title="3. async/await 的特點："></a>3. <code>async/await</code> 的特點：</h3><ul>
 <li><strong>簡化非同步代碼</strong>：<code>async/await</code> 讓非同步代碼的寫法更像是同步代碼，避免了回調函數的「Callback hell 回調地獄」。</li>
 <li><strong>錯誤處理</strong>：你可以使用 <code>try...catch</code> 塊來捕獲非同步操作中的錯誤，這使得錯誤處理比傳統的 <code>.catch()</code> 更加簡單直觀。</li>
 <li><strong>非阻塞執行</strong>：儘管代碼看起來是同步執行的，但非同步操作並不會阻塞主執行線程，其他代碼可以繼續執行。</li>
 </ul>
-<h3 id="小結："><a href="#小結：" class="headerlink" title="小結："></a>小結：</h3><ul>
+<h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><ul>
 <li><code>async</code> 將函數標記為非同步函數。</li>
 <li><code>await</code> 使代碼等待 <code>Promise</code> 的解決結果，並可以在 <code>async</code> 函數內使用。</li>
 <li>使用 <code>async/await</code> 可以使非同步代碼更加簡潔且易於理解。</li>
@@ -551,8 +623,8 @@
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
-        <tag>Nuxt</tag>
         <tag>CSS</tag>
+        <tag>Nuxt</tag>
         <tag>Nuxt.js</tag>
         <tag>Vue.js</tag>
       </tags>
@@ -678,6 +750,136 @@
         <tag>Responsive Design</tag>
         <tag>響應式設計</tag>
         <tag>RWD</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SASS 語法介紹入門教學筆記 | 學習筆記</title>
+    <url>/2024/06/30/learning-notes-sass-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="什麼是-SASS？"><a href="#什麼是-SASS？" class="headerlink" title="什麼是 SASS？"></a>什麼是 SASS？</h1><p><code>SASS</code>（Syntactically Awesome Style Sheets）是一種 CSS 預處理器，旨在提升 CSS 的功能性，讓開發者能夠以更加靈活和高效的方式編寫樣式表。它提供了許多比 CSS 更強大的功能，例如變數、巢狀規則、混合（mixins）、繼承等。SASS 語法有兩種主要形式：一種是較為常見的 SCSS（<code>Sassy CSS</code>），另一種則是 <code>SASS</code>，本文將主要介紹 SASS 語法。</p>
+<p>與 SCSS 不同，SASS 語法採用的是縮排語法，即不使用大括號和分號，而是利用縮排來結構化程式碼。這種語法更簡潔，對於習慣 Python 等語言的開發者來說，學習曲線較為平滑。</p>
+<h1 id="安裝與設置"><a href="#安裝與設置" class="headerlink" title="安裝與設置"></a>安裝與設置</h1><p>要開始使用 SASS，首先需要安裝 SASS 編譯器。最常見的安裝方式是透過 Node.js 的 npm（Node Package Manager）。請按照以下步驟進行安裝：</p>
+<ol>
+<li><p>確保已經安裝了 Node.js 和 npm。</p>
+</li>
+<li><p>打開終端機，並在專案資料夾中執行以下命令來安裝 SASS：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g sass</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安裝完成後，可以通過命令行執行 SASS 編譯命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sass input.sass output.css</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>這樣，<code>input.sass</code> 就會被編譯為標準的 <code>output.css</code> 檔案。</p>
+<h1 id="SASS-語法介紹"><a href="#SASS-語法介紹" class="headerlink" title="SASS 語法介紹"></a>SASS 語法介紹</h1><h3 id="1-變數（Variables）"><a href="#1-變數（Variables）" class="headerlink" title="1. 變數（Variables）"></a>1. 變數（Variables）</h3><p>SASS 的變數功能讓開發者可以將顏色、字體大小、間距等常用值儲存在變數中，這樣能夠提高樣式的可重用性，並讓程式碼更具維護性。在 SASS 中，變數以 <code>$</code> 符號開頭。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$primary-color: #3498db</span><br><span class="line">$font-size: 16px</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  font-size: $font-size</span><br><span class="line">  color: $primary-color</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了 <code>$primary-color</code> 和 <code>$font-size</code> 兩個變數，並將其應用於 <code>body</code> 樣式中。這樣，只需要修改變數的值，即可全局更新相應的樣式。</p>
+<h3 id="2-巢狀規則（Nesting）"><a href="#2-巢狀規則（Nesting）" class="headerlink" title="2. 巢狀規則（Nesting）"></a>2. 巢狀規則（Nesting）</h3><p>SASS 支援巢狀規則，這樣可以讓樣式更加結構化，並且簡化對於子元素樣式的編寫。SASS 使用縮排來表示層級關係，這一點與傳統的 CSS 需要寫出完整選擇器有所不同。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nav</span><br><span class="line">  background-color: #333</span><br><span class="line">  ul</span><br><span class="line">    list-style-type: none</span><br><span class="line">    padding: 0</span><br><span class="line">  li</span><br><span class="line">    display: inline-block</span><br><span class="line">  a</span><br><span class="line">    color: white</span><br><span class="line">    text-decoration: none</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼會被編譯為：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">list-style-type</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣的寫法可以避免寫重複的選擇器，並且清晰地表現出元素之間的層級結構。</p>
+<h3 id="3-混合（Mixins）"><a href="#3-混合（Mixins）" class="headerlink" title="3. 混合（Mixins）"></a>3. 混合（Mixins）</h3><p>混合是 SASS 中一個非常有用的功能，它可以將一段可重用的樣式封裝成一個混合，並且可以接受參數，實現樣式的動態應用。混合類似於函數，能夠在不同地方重複使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">=mixin border-radius($radius)</span><br><span class="line">  -webkit-border-radius: $radius</span><br><span class="line">  -moz-border-radius: $radius</span><br><span class="line">  border-radius: $radius</span><br><span class="line"></span><br><span class="line">.box</span><br><span class="line">  @include border-radius(10px)</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了一個名為 <code>border-radius</code> 的混合，接受一個 <code>$radius</code> 參數，用來設置元素的邊框圓角。然後，我們在 <code>.box</code> 中使用 <code>@include</code> 引入這個混合，並傳遞具體的參數。這樣，當需要改變邊框圓角的樣式時，只需要修改混合的參數，而不需要在多個地方重複編寫。</p>
+<h3 id="4-繼承（Inheritance）"><a href="#4-繼承（Inheritance）" class="headerlink" title="4. 繼承（Inheritance）"></a>4. 繼承（Inheritance）</h3><p>SASS 提供了繼承功能，使得一個選擇器可以繼承另一個選擇器的樣式。這有助於減少樣式重複，並保持程式碼的整潔性。SASS 使用 <code>@extend</code> 指令來實現繼承。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%button-base</span><br><span class="line">  padding: 10px 15px</span><br><span class="line">  background-color: #3498db</span><br><span class="line">  color: white</span><br><span class="line">  border: none</span><br><span class="line">  border-radius: 5px</span><br><span class="line"></span><br><span class="line">.button-primary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #1abc9c</span><br><span class="line"></span><br><span class="line">.button-secondary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #f39c12</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了一個 <code>%button-base</code> 共享樣式，然後讓 <code>.button-primary</code> 和 <code>.button-secondary</code> 繼承這些樣式，並根據需要進行自定義修改。使用繼承的方式可以減少代碼重複，提高樣式的可維護性。</p>
+<h3 id="5-條件語句（Conditionals）"><a href="#5-條件語句（Conditionals）" class="headerlink" title="5. 條件語句（Conditionals）"></a>5. 條件語句（Conditionals）</h3><p>SASS 支援條件語句，這讓我們可以根據某些條件選擇性地應用不同的樣式。這樣可以使樣式表更具動態性，根據不同情境調整顯示效果。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$theme: light</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  @if $theme == light</span><br><span class="line">    background-color: #fff</span><br><span class="line">    color: #333</span><br><span class="line">  @else</span><br><span class="line">    background-color: #333</span><br><span class="line">    color: #fff</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼中，根據變數 <code>$theme</code> 的值，條件地設定 <code>body</code> 的背景顏色和文字顏色。如果 <code>$theme</code> 為 <code>light</code>，則使用淺色背景和深色文字；否則，使用深色背景和淺色文字。</p>
+<h3 id="6-循環（Loops）"><a href="#6-循環（Loops）" class="headerlink" title="6. 循環（Loops）"></a>6. 循環（Loops）</h3><p>SASS 還支援循環語句，這在需要根據某些條件自動生成多個樣式時非常有用。SASS 的循環可以遍歷一個列表，並生成對應的樣式。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$colors: red, green, blue</span><br><span class="line"></span><br><span class="line">@each $color in $colors</span><br><span class="line">  .#&#123;$color&#125;-box</span><br><span class="line">    background-color: $color</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，<code>@each</code> 循環將遍歷 <code>$colors</code> 列表，並為每個顏色生成一個相應的類別 <code>.red-box</code>、<code>.green-box</code> 和 <code>.blue-box</code>，並將其背景顏色設置為對應的顏色。</p>
+<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>SASS 的 SASS 語法是一種簡潔且強大的 CSS 編寫方式，通過簡單的縮排結構，讓開發者能夠更有效率地編寫和維護樣式。SASS 提供的變數、巢狀規則、混合、繼承等功能，能夠使樣式更加模組化、動態化，並大大減少冗餘代碼。學會 SASS 語法後，你可以更靈活地處理大型專案中的 CSS，提升工作效率。如果你還沒有開始使用 SASS，不妨從這些基礎語法開始，體驗它帶來的便利。</p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>SASS</tag>
+        <tag>SCSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SCSS 介紹入門教學筆記 | 學習筆記</title>
+    <url>/2024/07/01/learning-notes-scss-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="一、SASS-是什麼？"><a href="#一、SASS-是什麼？" class="headerlink" title="一、SASS 是什麼？"></a>一、SASS 是什麼？</h1><p>SASS（Syntactically Awesome Stylesheets）是一種 CSS 預處理器（CSS Preprocessor），它擴展了 CSS 的功能，使樣式表更具可讀性、模組化和可維護性。SASS 允許使用變數、巢狀（Nesting）、混入（Mixin）、繼承（Extend）等進階特性，讓開發者能更有效率地管理 CSS。  </p>
+<p>SASS 有兩種語法：  </p>
+<ol>
+<li><strong>SCSS（Sassy CSS）</strong>：與傳統 CSS 語法相似，使用 <code>&#123;&#125;</code> 和 <code>;</code> 來區分樣式，擴展性強且相容 CSS。  </li>
+<li><strong>SASS（縮排語法）</strong>：省略 <code>&#123;&#125;</code> 和 <code>;</code>，使用縮排來表示層級關係，簡潔但較不常用。</li>
+</ol>
+<p>目前，SCSS 語法較受歡迎，因此本文主要以 SCSS 為主進行介紹。  </p>
+<hr>
+<h1 id="二、SASS-的優勢"><a href="#二、SASS-的優勢" class="headerlink" title="二、SASS 的優勢"></a>二、SASS 的優勢</h1><p>使用 SASS 的主要優勢包括：  </p>
+<ol>
+<li><strong>可維護性</strong>：透過模組化的結構管理樣式，避免冗長且難以維護的 CSS。  </li>
+<li><strong>變數（Variables）</strong>：可定義全站共用的變數，例如顏色、字體大小等，提高一致性。  </li>
+<li><strong>巢狀結構（Nesting）</strong>：讓樣式更具層次感，避免重複選擇器。  </li>
+<li><strong>混入（Mixin）</strong>：類似函式的概念，可重複使用樣式區塊，減少冗餘。  </li>
+<li><strong>繼承（Extend）</strong>：透過 <code>@extend</code> 共享樣式，減少重複編寫的代碼。  </li>
+<li><strong>函式（Functions）</strong>：內建函式如 <code>lighten()</code>、<code>darken()</code> 可動態調整顏色，提高設計靈活性。</li>
+</ol>
+<hr>
+<h1 id="三、安裝與使用-SASS"><a href="#三、安裝與使用-SASS" class="headerlink" title="三、安裝與使用 SASS"></a>三、安裝與使用 SASS</h1><h3 id="1-透過-npm-安裝"><a href="#1-透過-npm-安裝" class="headerlink" title="1. 透過 npm 安裝"></a>1. 透過 npm 安裝</h3><p>如果使用 Node.js，可透過 npm 安裝 SASS：  </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -g sass</span><br></pre></td></tr></table></figure>
+
+<p>安裝後，可使用以下指令將 SCSS 轉譯為 CSS：  </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sass input.scss output.css</span><br></pre></td></tr></table></figure>
+
+<p>可使用 <code>--watch</code> 讓 SASS 自動監聽檔案變化並即時編譯：  </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sass --watch input.scss:output.css</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-透過-CDN-使用"><a href="#2-透過-CDN-使用" class="headerlink" title="2. 透過 CDN 使用"></a>2. 透過 CDN 使用</h3><p>雖然 SASS 本身無法直接在瀏覽器運行，但可透過一些線上工具（如 CodePen）編寫 SCSS，並自動編譯成 CSS 進行預覽。  </p>
+<hr>
+<h1 id="四、SASS-基礎語法"><a href="#四、SASS-基礎語法" class="headerlink" title="四、SASS 基礎語法"></a>四、SASS 基礎語法</h1><h3 id="1-變數（Variables）"><a href="#1-變數（Variables）" class="headerlink" title="1. 變數（Variables）"></a>1. 變數（Variables）</h3><p>SASS 允許使用變數來存儲顏色、字體大小、間距等常數，使樣式更具一致性。  </p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="variable">$primary-color</span>: <span class="number">#3498db</span>;</span><br><span class="line"><span class="variable">$font-size</span>: <span class="number">16px</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="variable">$font-size</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-巢狀結構（Nesting）"><a href="#2-巢狀結構（Nesting）" class="headerlink" title="2. 巢狀結構（Nesting）"></a>2. 巢狀結構（Nesting）</h3><p>在 CSS 中，我們通常需要重複撰寫父選擇器，但在 SASS 中可直接巢狀編寫，提高可讀性。  </p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="selector-tag">ul</span> &#123;</span><br><span class="line">        <span class="attribute">list-style</span>: none;</span><br><span class="line">        <span class="selector-tag">li</span> &#123;</span><br><span class="line">            <span class="attribute">display</span>: inline-block;</span><br><span class="line">            <span class="selector-tag">a</span> &#123;</span><br><span class="line">                <span class="attribute">color</span>: white;</span><br><span class="line">                <span class="attribute">text-decoration</span>: none;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這段 SCSS 會編譯成以下 CSS：  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-混入（Mixin）"><a href="#3-混入（Mixin）" class="headerlink" title="3. 混入（Mixin）"></a>3. 混入（Mixin）</h3><p>Mixin 可定義可重複使用的樣式區塊，並可接受參數，使樣式更加靈活。  </p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> button-style(<span class="variable">$bg-color</span>) &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="variable">$bg-color</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.btn-primary</span> &#123;</span><br><span class="line">    <span class="keyword">@include</span> button-style(<span class="number">#3498db</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.btn-secondary</span> &#123;</span><br><span class="line">    <span class="keyword">@include</span> button-style(<span class="number">#2ecc71</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>編譯後的 CSS 為：  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.btn-primary</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#3498db</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.btn-secondary</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#2ecc71</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-繼承（Extend）"><a href="#4-繼承（Extend）" class="headerlink" title="4. 繼承（Extend）"></a>4. 繼承（Extend）</h3><p><code>@extend</code> 允許一個選擇器繼承另一個選擇器的樣式，避免重複撰寫代碼。  </p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.message</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">    <span class="keyword">@extend</span> .message;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#2ecc71</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error</span> &#123;</span><br><span class="line">    <span class="keyword">@extend</span> .message;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#e74c3c</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>編譯後的 CSS：  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.message</span>, <span class="selector-class">.success</span>, <span class="selector-class">.error</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#2ecc71</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#e74c3c</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-運算與函式"><a href="#5-運算與函式" class="headerlink" title="5. 運算與函式"></a>5. 運算與函式</h3><p>SASS 允許在樣式中進行運算，使數值調整更加靈活。  </p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="variable">$base-size</span>: <span class="number">16px</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="variable">$base-size</span> * <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h2</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="variable">$base-size</span> * <span class="number">1.5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此外，SASS 內建許多函式，例如 <code>darken()</code>、<code>lighten()</code> 可用來調整顏色：  </p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="variable">$primary-color</span>: <span class="number">#3498db</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">button</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">    &amp;<span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">        <span class="attribute">background</span>: <span class="built_in">darken</span>(<span class="variable">$primary-color</span>, <span class="number">10%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>編譯後的 CSS：  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">button</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#3498db</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">button</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#217dbb</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="五、SASS-進階技巧"><a href="#五、SASS-進階技巧" class="headerlink" title="五、SASS 進階技巧"></a>五、SASS 進階技巧</h1><h3 id="1-分割檔案"><a href="#1-分割檔案" class="headerlink" title="1. 分割檔案"></a>1. 分割檔案</h3><p>SASS 允許將樣式拆分成多個檔案，並透過 <code>@import</code> 或 <code>@use</code> 來管理，提升可維護性。  </p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// _variables.scss</span></span><br><span class="line"><span class="variable">$primary-color</span>: <span class="number">#3498db</span>;</span><br><span class="line"><span class="variable">$font-size</span>: <span class="number">16px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.scss</span></span><br><span class="line"><span class="keyword">@import</span> <span class="string">&#x27;variables&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="variable">$font-size</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-使用-use"><a href="#2-使用-use" class="headerlink" title="2. 使用 @use"></a>2. 使用 <code>@use</code></h3><p><code>@use</code> 是 <code>@import</code> 的改進版，能避免變數命名衝突，推薦使用：  </p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@use</span> <span class="string">&#x27;variables&#x27;</span> as v;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: v.<span class="variable">$primary-color</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: v.<span class="variable">$font-size</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="六、結論"><a href="#六、結論" class="headerlink" title="六、結論"></a>六、結論</h1><p>SASS 是一種強大的 CSS 預處理器，它提供變數、巢狀、Mixin、繼承等功能，使樣式管理更加高效與模組化。透過 SASS，開發者可以撰寫更具結構性、可讀性和可維護性的 CSS。  </p>
+<p>對於前端開發者來說，掌握 SASS 不僅能提升開發效率，還能讓專案的樣式管理更加清晰。在實際專案中，建議將樣式模組化，並善用變數與 Mixin，以確保程式碼的可重用性與一致性。</p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>SASS</tag>
+        <tag>SCSS</tag>
       </tags>
   </entry>
   <entry>
@@ -1328,28 +1530,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [9] - Watchers 觀察者 | 學習筆記</title>
-    <url>/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/</url>
-    <content><![CDATA[<h1 id="Watchers-觀察者"><a href="#Watchers-觀察者" class="headerlink" title="Watchers 觀察者"></a>Watchers 觀察者</h1><p>有時我們可能需要以反應性的方式執行「Side-effect 副作用」，例如，當一個數值改變時將其記錄到控制台。我們可以使用觀察者來實現這一點：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="title function_">watch</span>(count, <span class="function">(<span class="params">newCount</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 是的，console.log() 是一種副作用</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`新的計數是：<span class="subst">$&#123;newCount&#125;</span>`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p><code>watch()</code> 可以直接監視一個 <code>ref</code>，每當 <code>count</code> 的值改變時，回調函數就會被觸發。<code>watch()</code> 也可以監視其他類型的數據來源——更多細節請參閱指南：觀察者（Watchers）。</p>
-<p>比將訊息記錄到控制台更實用的例子，可能是當一個 ID 發生變化時，根據新 ID 獲取數據。我們的代碼目前是在元件掛載時，從一個模擬 API 獲取 <code>todos</code> 數據。此外，還有一個按鈕可以遞增應該被獲取的 <code>todo</code> ID。請嘗試實現一個觀察者，在按下按鈕時根據新 ID 獲取新的 <code>todo</code> 數據。</p>
-<p>參考範例：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoId = <span class="title function_">ref</span>(<span class="number">1</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoData = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchData</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="literal">null</span></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(</span></span><br><span class="line"><span class="language-javascript">    <span class="string">`https://jsonplaceholder.typicode.com/todos/<span class="subst">$&#123;todoId.value&#125;</span>`</span></span></span><br><span class="line"><span class="language-javascript">  )</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="keyword">await</span> res.<span class="title function_">json</span>()</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">fetchData</span>()</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">watch</span>(todoId, fetchData)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Todo id: &#123;&#123; todoId &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;todoId++&quot;</span> <span class="attr">:disabled</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Fetch next todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Loading...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">pre</span> <span class="attr">v-else</span>&gt;</span>&#123;&#123; todoData &#125;&#125;<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [8] - Lifecycle and Template Refs 生命週期與模板引用 | 學習筆記</title>
     <url>/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/</url>
     <content><![CDATA[<h2 id="Lifecycle-and-Template-Refs-生命週期與模板引用"><a href="#Lifecycle-and-Template-Refs-生命週期與模板引用" class="headerlink" title="Lifecycle and Template Refs 生命週期與模板引用"></a>Lifecycle and Template Refs 生命週期與模板引用</h2><p>到目前為止，Vue.js 透過響應式資料與聲明式渲染，幫助我們處理了所有的 DOM 更新。然而，無可避免地會有需要手動操作 DOM 的情況。</p>
@@ -1365,6 +1545,28 @@
 <h3 id="生命週期鉤子"><a href="#生命週期鉤子" class="headerlink" title="生命週期鉤子"></a>生命週期鉤子</h3><p>這稱為生命週期鉤子 (lifecycle hook)，它允許我們在元件生命週期的特定時間點註冊回呼函式。其他的生命週期鉤子還包括 <code>onUpdated</code> 和 <code>onUnmounted</code> 等。更多細節請參考官方文件 <a href="https://vuejs.org/guide/essentials/lifecycle.html">生命週期圖示</a>。</p>
 <h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>現在，我們可以嘗試添加一個 <code>onMounted</code> 鉤子，透過 <code>pElementRef.value</code> 訪問 <code>&lt;p&gt;</code> 元素，並對其進行一些直接的 DOM 操作（例如更改 <code>textContent</code>）。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> pElementRef = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  pElementRef.<span class="property">value</span>.<span class="property">textContent</span> = <span class="string">&#x27;mounted!&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">&quot;pElementRef&quot;</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [9] - Watchers 觀察者 | 學習筆記</title>
+    <url>/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/</url>
+    <content><![CDATA[<h1 id="Watchers-觀察者"><a href="#Watchers-觀察者" class="headerlink" title="Watchers 觀察者"></a>Watchers 觀察者</h1><p>有時我們可能需要以反應性的方式執行「Side-effect 副作用」，例如，當一個數值改變時將其記錄到控制台。我們可以使用觀察者來實現這一點：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="title function_">watch</span>(count, <span class="function">(<span class="params">newCount</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 是的，console.log() 是一種副作用</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`新的計數是：<span class="subst">$&#123;newCount&#125;</span>`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><code>watch()</code> 可以直接監視一個 <code>ref</code>，每當 <code>count</code> 的值改變時，回調函數就會被觸發。<code>watch()</code> 也可以監視其他類型的數據來源——更多細節請參閱指南：觀察者（Watchers）。</p>
+<p>比將訊息記錄到控制台更實用的例子，可能是當一個 ID 發生變化時，根據新 ID 獲取數據。我們的代碼目前是在元件掛載時，從一個模擬 API 獲取 <code>todos</code> 數據。此外，還有一個按鈕可以遞增應該被獲取的 <code>todo</code> ID。請嘗試實現一個觀察者，在按下按鈕時根據新 ID 獲取新的 <code>todo</code> 數據。</p>
+<p>參考範例：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoId = <span class="title function_">ref</span>(<span class="number">1</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoData = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchData</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="literal">null</span></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(</span></span><br><span class="line"><span class="language-javascript">    <span class="string">`https://jsonplaceholder.typicode.com/todos/<span class="subst">$&#123;todoId.value&#125;</span>`</span></span></span><br><span class="line"><span class="language-javascript">  )</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="keyword">await</span> res.<span class="title function_">json</span>()</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">fetchData</span>()</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">watch</span>(todoId, fetchData)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Todo id: &#123;&#123; todoId &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;todoId++&quot;</span> <span class="attr">:disabled</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Fetch next todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Loading...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">pre</span> <span class="attr">v-else</span>&gt;</span>&#123;&#123; todoData &#125;&#125;<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
