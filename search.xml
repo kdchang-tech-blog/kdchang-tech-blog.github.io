@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</title>
+    <url>/2020/06/21/about-backend-engineer-10-keywords/</url>
+    <content><![CDATA[<p>以下整理了後端工程師相關的 10 個關鍵字，涵蓋技能、工具與工作方式：</p>
+<ol>
+<li><p><strong>Node.js &#x2F; Python &#x2F; Java &#x2F; Ruby &#x2F; PHP</strong>：常見的後端程式語言，用於構建伺服器端應用程式。</p>
+</li>
+<li><p><strong>Database</strong>（資料庫）：包括 <strong>SQL（如 MySQL, PostgreSQL）</strong> 和 <strong>NoSQL（如 MongoDB, Redis）</strong> 的操作與優化。</p>
+</li>
+<li><p><strong>REST API &#x2F; GraphQL</strong>：設計與實現伺服器端 API 以支援前端資料請求。</p>
+</li>
+<li><p><strong>Authentication &amp; Authorization</strong>（認證與授權）：如 OAuth、JWT、Session，確保使用者安全與數據保護。</p>
+</li>
+<li><p><strong>Docker &#x2F; Kubernetes</strong>：容器化與編排工具，用於應用部署與資源管理。</p>
+</li>
+<li><p><strong>Cloud Services</strong>：如 AWS、Google Cloud、Microsoft Azure，支援應用程式的雲端部署與運行。</p>
+</li>
+<li><p><strong>Microservices</strong>（微服務架構）：設計可拆分且可獨立部署的服務模組。</p>
+</li>
+<li><p><strong>Message Queues</strong>（訊息佇列）：如 RabbitMQ、Kafka，用於分布式系統的非同步通訊。</p>
+</li>
+<li><p><strong>Version Control</strong>（版本控制）：如 Git &#x2F; GitHub，用於團隊協作與程式碼管理。</p>
+</li>
+<li><p><strong>Performance Optimization</strong>（效能優化）：針對伺服器與資料庫的效能調優，提升系統效率。</p>
+</li>
+</ol>
+<p>以上關鍵字為後端工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
+]]></content>
+      <tags>
+        <tag>開發者</tag>
+        <tag>軟體工程師</tag>
+        <tag>SWE</tag>
+        <tag>Software Engineer</tag>
+        <tag>Software</tag>
+        <tag>軟體開發</tag>
+        <tag>backend</tag>
+        <tag>backend engineer</tag>
+        <tag>後端開發</tag>
+        <tag>後端工程</tag>
+        <tag>網頁後端工程師</tag>
+        <tag>後端工程師</tag>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字</title>
     <url>/2020/06/13/about-frontend-engineer-10-keywords/</url>
     <content><![CDATA[<p>以下整理了前端工程師相關的 10 個關鍵字，涵蓋技能、工具與工作方式：</p>
@@ -39,53 +83,9 @@
         <tag>Software Engineer</tag>
         <tag>Software</tag>
         <tag>軟體開發</tag>
+        <tag>Web</tag>
         <tag>網頁前端工程師</tag>
         <tag>前端工程師</tag>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</title>
-    <url>/2020/06/21/about-backend-engineer-10-keywords/</url>
-    <content><![CDATA[<p>以下整理了後端工程師相關的 10 個關鍵字，涵蓋技能、工具與工作方式：</p>
-<ol>
-<li><p><strong>Node.js &#x2F; Python &#x2F; Java &#x2F; Ruby &#x2F; PHP</strong>：常見的後端程式語言，用於構建伺服器端應用程式。</p>
-</li>
-<li><p><strong>Database</strong>（資料庫）：包括 <strong>SQL（如 MySQL, PostgreSQL）</strong> 和 <strong>NoSQL（如 MongoDB, Redis）</strong> 的操作與優化。</p>
-</li>
-<li><p><strong>REST API &#x2F; GraphQL</strong>：設計與實現伺服器端 API 以支援前端資料請求。</p>
-</li>
-<li><p><strong>Authentication &amp; Authorization</strong>（認證與授權）：如 OAuth、JWT、Session，確保使用者安全與數據保護。</p>
-</li>
-<li><p><strong>Docker &#x2F; Kubernetes</strong>：容器化與編排工具，用於應用部署與資源管理。</p>
-</li>
-<li><p><strong>Cloud Services</strong>：如 AWS、Google Cloud、Microsoft Azure，支援應用程式的雲端部署與運行。</p>
-</li>
-<li><p><strong>Microservices</strong>（微服務架構）：設計可拆分且可獨立部署的服務模組。</p>
-</li>
-<li><p><strong>Message Queues</strong>（訊息佇列）：如 RabbitMQ、Kafka，用於分布式系統的非同步通訊。</p>
-</li>
-<li><p><strong>Version Control</strong>（版本控制）：如 Git &#x2F; GitHub，用於團隊協作與程式碼管理。</p>
-</li>
-<li><p><strong>Performance Optimization</strong>（效能優化）：針對伺服器與資料庫的效能調優，提升系統效率。</p>
-</li>
-</ol>
-<p>以上關鍵字為後端工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
-]]></content>
-      <tags>
-        <tag>開發者</tag>
-        <tag>軟體工程師</tag>
-        <tag>SWE</tag>
-        <tag>Software Engineer</tag>
-        <tag>Software</tag>
-        <tag>軟體開發</tag>
-        <tag>Web</tag>
-        <tag>backend</tag>
-        <tag>backend engineer</tag>
-        <tag>後端開發</tag>
-        <tag>後端工程</tag>
-        <tag>網頁後端工程師</tag>
-        <tag>後端工程師</tag>
       </tags>
   </entry>
   <entry>
@@ -113,61 +113,6 @@
         <tag>Software Engineer</tag>
         <tag>Software</tag>
         <tag>軟體開發</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Cypress 測試入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/08/learning-notes-cypress-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="1-Cypress-基礎概念"><a href="#1-Cypress-基礎概念" class="headerlink" title="1. Cypress 基礎概念"></a>1. Cypress 基礎概念</h1><p><code>Cypress</code> 是一款現代化的前端自動化測試工具，主要用於測試 Web 應用程式，支援端對端（<code>E2E</code>）測試、<code>元件測試</code>等。</p>
-<h3 id="1-1-為何選擇-Cypress？"><a href="#1-1-為何選擇-Cypress？" class="headerlink" title="1.1 為何選擇 Cypress？"></a>1.1 為何選擇 Cypress？</h3><ul>
-<li>簡單易用，直接運行於瀏覽器。</li>
-<li>提供即時回饋，方便 Debug。</li>
-<li>內建等待機制，避免手動處理異步問題。</li>
-<li>支援截圖與錄影，方便測試分析。</li>
-</ul>
-<h1 id="2-安裝與設定"><a href="#2-安裝與設定" class="headerlink" title="2. 安裝與設定"></a>2. 安裝與設定</h1><h3 id="2-1-安裝-Cypress"><a href="#2-1-安裝-Cypress" class="headerlink" title="2.1 安裝 Cypress"></a>2.1 安裝 Cypress</h3><p>使用 npm 或 yarn 安裝 Cypress：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install cypress --save-dev</span><br></pre></td></tr></table></figure>
-<p>或</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add cypress --dev</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-2-執行-Cypress"><a href="#2-2-執行-Cypress" class="headerlink" title="2.2 執行 Cypress"></a>2.2 執行 Cypress</h3><p>安裝完成後，可以使用以下指令開啟 Cypress GUI：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx cypress open</span><br></pre></td></tr></table></figure>
-<p>或直接執行測試：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx cypress run</span><br></pre></td></tr></table></figure>
-
-<h1 id="3-撰寫-Cypress-測試"><a href="#3-撰寫-Cypress-測試" class="headerlink" title="3. 撰寫 Cypress 測試"></a>3. 撰寫 Cypress 測試</h1><h3 id="3-1-建立測試檔案"><a href="#3-1-建立測試檔案" class="headerlink" title="3.1 建立測試檔案"></a>3.1 建立測試檔案</h3><p>Cypress 預設的測試檔案放置於 <code>cypress/e2e/</code> 目錄下，例如：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cypress/e2e/sample_spec.cy.js</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-基本測試範例"><a href="#3-2-基本測試範例" class="headerlink" title="3.2 基本測試範例"></a>3.2 基本測試範例</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">describe</span>(<span class="string">&#x27;My First Test&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="title function_">it</span>(<span class="string">&#x27;Visits the app&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    cy.<span class="title function_">visit</span>(<span class="string">&#x27;https://example.cypress.io&#x27;</span>);</span><br><span class="line">    cy.<span class="title function_">contains</span>(<span class="string">&#x27;type&#x27;</span>).<span class="title function_">click</span>();</span><br><span class="line">    cy.<span class="title function_">url</span>().<span class="title function_">should</span>(<span class="string">&#x27;include&#x27;</span>, <span class="string">&#x27;/commands/actions&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-選擇器與操作"><a href="#3-3-選擇器與操作" class="headerlink" title="3.3 選擇器與操作"></a>3.3 選擇器與操作</h3><p>Cypress 提供多種選擇器來查找元素，例如：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;button&#x27;</span>).<span class="title function_">click</span>(); <span class="comment">// 透過標籤名稱選擇</span></span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;.btn-primary&#x27;</span>).<span class="title function_">click</span>(); <span class="comment">// 透過 class 選擇</span></span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;#submit-btn&#x27;</span>).<span class="title function_">click</span>(); <span class="comment">// 透過 ID 選擇</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-4-斷言（Assertions）"><a href="#3-4-斷言（Assertions）" class="headerlink" title="3.4 斷言（Assertions）"></a>3.4 斷言（Assertions）</h3><p>使用 <code>.should()</code> 進行斷言，例如：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;.success-message&#x27;</span>).<span class="title function_">should</span>(<span class="string">&#x27;be.visible&#x27;</span>);</span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;h1&#x27;</span>).<span class="title function_">should</span>(<span class="string">&#x27;have.text&#x27;</span>, <span class="string">&#x27;Welcome&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h1 id="4-進階功能"><a href="#4-進階功能" class="headerlink" title="4. 進階功能"></a>4. 進階功能</h1><h3 id="4-1-錯誤處理與偵錯"><a href="#4-1-錯誤處理與偵錯" class="headerlink" title="4.1 錯誤處理與偵錯"></a>4.1 錯誤處理與偵錯</h3><p>Cypress 提供 <code>cy.pause()</code> 和 <code>cy.debug()</code> 來幫助偵錯：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;button&#x27;</span>).<span class="title function_">click</span>();</span><br><span class="line">cy.<span class="title function_">pause</span>(); <span class="comment">// 測試暫停</span></span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;.result&#x27;</span>).<span class="title function_">should</span>(<span class="string">&#x27;be.visible&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-假資料與-API-模擬（Mock-API）"><a href="#4-2-假資料與-API-模擬（Mock-API）" class="headerlink" title="4.2 假資料與 API 模擬（Mock API）"></a>4.2 假資料與 API 模擬（Mock API）</h3><p>可以使用 <code>cy.intercept()</code> 攔截 API 請求，例如：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">intercept</span>(<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;/api/user&#x27;</span>, &#123; <span class="attr">name</span>: <span class="string">&#x27;John Doe&#x27;</span> &#125;).<span class="title function_">as</span>(<span class="string">&#x27;getUser&#x27;</span>);</span><br><span class="line">cy.<span class="title function_">visit</span>(<span class="string">&#x27;/profile&#x27;</span>);</span><br><span class="line">cy.<span class="title function_">wait</span>(<span class="string">&#x27;@getUser&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-3-自訂命令"><a href="#4-3-自訂命令" class="headerlink" title="4.3 自訂命令"></a>4.3 自訂命令</h3><p>可以在 <code>cypress/support/commands.js</code> 內定義自訂命令，例如：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Cypress</span>.<span class="property">Commands</span>.<span class="title function_">add</span>(<span class="string">&#x27;login&#x27;</span>, <span class="function">(<span class="params">email, password</span>) =&gt;</span> &#123;</span><br><span class="line">  cy.<span class="title function_">get</span>(<span class="string">&#x27;#email&#x27;</span>).<span class="title function_">type</span>(email);</span><br><span class="line">  cy.<span class="title function_">get</span>(<span class="string">&#x27;#password&#x27;</span>).<span class="title function_">type</span>(password);</span><br><span class="line">  cy.<span class="title function_">get</span>(<span class="string">&#x27;button[type=&quot;submit&quot;]&#x27;</span>).<span class="title function_">click</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>然後在測試中使用：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">login</span>(<span class="string">&#x27;test@example.com&#x27;</span>, <span class="string">&#x27;password123&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h1 id="5-CI-x2F-CD-整合"><a href="#5-CI-x2F-CD-整合" class="headerlink" title="5. CI&#x2F;CD 整合"></a>5. CI&#x2F;CD 整合</h1><p>Cypress 可以與 CI&#x2F;CD 工具整合，如 GitHub Actions 或 GitLab CI&#x2F;CD。</p>
-<h3 id="5-1-GitHub-Actions-設定範例"><a href="#5-1-GitHub-Actions-設定範例" class="headerlink" title="5.1 GitHub Actions 設定範例"></a>5.1 GitHub Actions 設定範例</h3><p>在 <code>.github/workflows/cypress.yml</code> 中新增：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Cypress</span> <span class="string">Tests</span></span><br><span class="line"><span class="attr">on:</span> [<span class="string">push</span>, <span class="string">pull_request</span>]</span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">cypress-run:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">repository</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">dependencies</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Run</span> <span class="string">Cypress</span> <span class="string">tests</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npx</span> <span class="string">cypress</span> <span class="string">run</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h1><p>透過 Cypress，可以輕鬆進行 Web 應用的測試，提高開發效率與穩定性。建議多練習不同測試場景，如表單驗證、API 測試與 RWD 測試，以熟悉 Cypress 強大的測試能力。</p>
-]]></content>
-      <tags>
-        <tag>Cypress</tag>
-        <tag>測試</tag>
-        <tag>E2E</tag>
-        <tag>QA</tag>
       </tags>
   </entry>
   <entry>
@@ -255,6 +200,169 @@
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
         <tag>cookie</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flexbox 網頁排版技巧入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/14/learning-notes-css-flexbox-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h2><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
+<h3 id="1-1-為何使用-Flexbox？"><a href="#1-1-為何使用-Flexbox？" class="headerlink" title="1.1 為何使用 Flexbox？"></a>1.1 為何使用 Flexbox？</h3><ul>
+<li><strong>彈性調整</strong>：元素可根據可用空間動態調整大小。</li>
+<li><strong>簡化佈局</strong>：減少對 <code>float</code>、<code>inline-block</code> 及 <code>position</code> 依賴。</li>
+<li><strong>更好的對齊方式</strong>：內建強大的對齊與分佈控制。</li>
+</ul>
+<h2 id="2-Flexbox-基本概念"><a href="#2-Flexbox-基本概念" class="headerlink" title="2. Flexbox 基本概念"></a>2. Flexbox 基本概念</h2><p>Flexbox 佈局的核心概念是 <strong>容器（container）</strong> 和 <strong>子項目（items）</strong>。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一旦對容器使用 <code>display: flex</code>，其內部的子元素將自動變成 Flex 子項目，並受 Flex 佈局影響。</p>
+<h2 id="3-Flex-容器屬性"><a href="#3-Flex-容器屬性" class="headerlink" title="3. Flex 容器屬性"></a>3. Flex 容器屬性</h2><h3 id="3-1-flex-direction"><a href="#3-1-flex-direction" class="headerlink" title="3.1 flex-direction"></a>3.1 <code>flex-direction</code></h3><p>決定主軸（main axis）方向。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row; <span class="comment">/* 預設值，水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse; <span class="comment">/* 反向水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column; <span class="comment">/* 垂直排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse; <span class="comment">/* 反向垂直排列 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-justify-content"><a href="#3-2-justify-content" class="headerlink" title="3.2 justify-content"></a>3.2 <code>justify-content</code></h3><p>控制子項目在主軸上的對齊方式。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start; <span class="comment">/* 預設，從左到右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end; <span class="comment">/* 靠右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: center; <span class="comment">/* 置中排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-between; <span class="comment">/* 兩端對齊，間距平均分布 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-around; <span class="comment">/* 子項目兩側有相等的間距 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-evenly; <span class="comment">/* 所有間距均等 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-align-items"><a href="#3-3-align-items" class="headerlink" title="3.3 align-items"></a>3.3 <code>align-items</code></h3><p>控制子項目在交叉軸（cross axis）上的對齊方式。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start; <span class="comment">/* 靠起始位置對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: flex-end; <span class="comment">/* 靠末端對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: center; <span class="comment">/* 垂直置中對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: stretch; <span class="comment">/* 預設，撐滿高度 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: baseline; <span class="comment">/* 依據文本基線對齊 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-align-content"><a href="#3-4-align-content" class="headerlink" title="3.4 align-content"></a>3.4 <code>align-content</code></h3><p>適用於多行佈局，控制多行之間的間距。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-end;</span><br><span class="line">  <span class="attribute">align-content</span>: center;</span><br><span class="line">  <span class="attribute">align-content</span>: space-between;</span><br><span class="line">  <span class="attribute">align-content</span>: space-around;</span><br><span class="line">  <span class="attribute">align-content</span>: space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-Flex-子項目屬性"><a href="#4-Flex-子項目屬性" class="headerlink" title="4. Flex 子項目屬性"></a>4. Flex 子項目屬性</h2><h3 id="4-1-flex-grow"><a href="#4-1-flex-grow" class="headerlink" title="4.1 flex-grow"></a>4.1 <code>flex-grow</code></h3><p>設定子項目如何分配多餘空間。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-grow</span>: <span class="number">1</span>; <span class="comment">/* 所有子項目平均分配空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-flex-shrink"><a href="#4-2-flex-shrink" class="headerlink" title="4.2 flex-shrink"></a>4.2 <code>flex-shrink</code></h3><p>控制子項目如何縮小。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-shrink</span>: <span class="number">0</span>; <span class="comment">/* 防止縮小 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-flex-basis"><a href="#4-3-flex-basis" class="headerlink" title="4.3 flex-basis"></a>4.3 <code>flex-basis</code></h3><p>設定子項目的初始大小。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-basis</span>: <span class="number">200px</span>; <span class="comment">/* 設定初始寬度或高度 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-4-flex"><a href="#4-4-flex" class="headerlink" title="4.4 flex"></a>4.4 <code>flex</code></h3><p>綜合 <code>flex-grow</code>、<code>flex-shrink</code> 和 <code>flex-basis</code>。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span> <span class="number">1</span> <span class="number">100px</span>; <span class="comment">/* grow, shrink, basis */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-Flexbox-常見佈局範例"><a href="#5-Flexbox-常見佈局範例" class="headerlink" title="5. Flexbox 常見佈局範例"></a>5. Flexbox 常見佈局範例</h2><h3 id="5-1-水平置中"><a href="#5-1-水平置中" class="headerlink" title="5.1 水平置中"></a>5.1 水平置中</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-等寬三欄佈局"><a href="#5-2-等寬三欄佈局" class="headerlink" title="5.2 等寬三欄佈局"></a>5.2 等寬三欄佈局</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-兩欄固定-自適應"><a href="#5-3-兩欄固定-自適應" class="headerlink" title="5.3 兩欄固定 + 自適應"></a>5.3 兩欄固定 + 自適應</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">200px</span>; <span class="comment">/* 固定 200px */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>; <span class="comment">/* 佔滿剩餘空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-結論"><a href="#6-結論" class="headerlink" title="6. 結論"></a>6. 結論</h2><p>Flexbox 是一種強大且直觀的 CSS 佈局方式，能夠解決傳統排版難題，使開發者能夠輕鬆實現響應式佈局與對齊方式。本篇筆記介紹了 Flexbox 的基本屬性及常見佈局範例，進一步學習可以研究 CSS Grid 和更進階的排版技巧。</p>
+]]></content>
+      <tags>
+        <tag>Flexbox</tag>
+        <tag>css</tag>
+        <tag>排版</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cypress 測試入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/08/learning-notes-cypress-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="1-Cypress-基礎概念"><a href="#1-Cypress-基礎概念" class="headerlink" title="1. Cypress 基礎概念"></a>1. Cypress 基礎概念</h1><p><code>Cypress</code> 是一款現代化的前端自動化測試工具，主要用於測試 Web 應用程式，支援端對端（<code>E2E</code>）測試、<code>元件測試</code>等。</p>
+<h3 id="1-1-為何選擇-Cypress？"><a href="#1-1-為何選擇-Cypress？" class="headerlink" title="1.1 為何選擇 Cypress？"></a>1.1 為何選擇 Cypress？</h3><ul>
+<li>簡單易用，直接運行於瀏覽器。</li>
+<li>提供即時回饋，方便 Debug。</li>
+<li>內建等待機制，避免手動處理異步問題。</li>
+<li>支援截圖與錄影，方便測試分析。</li>
+</ul>
+<h1 id="2-安裝與設定"><a href="#2-安裝與設定" class="headerlink" title="2. 安裝與設定"></a>2. 安裝與設定</h1><h3 id="2-1-安裝-Cypress"><a href="#2-1-安裝-Cypress" class="headerlink" title="2.1 安裝 Cypress"></a>2.1 安裝 Cypress</h3><p>使用 npm 或 yarn 安裝 Cypress：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install cypress --save-dev</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add cypress --dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-執行-Cypress"><a href="#2-2-執行-Cypress" class="headerlink" title="2.2 執行 Cypress"></a>2.2 執行 Cypress</h3><p>安裝完成後，可以使用以下指令開啟 Cypress GUI：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx cypress open</span><br></pre></td></tr></table></figure>
+<p>或直接執行測試：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx cypress run</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-撰寫-Cypress-測試"><a href="#3-撰寫-Cypress-測試" class="headerlink" title="3. 撰寫 Cypress 測試"></a>3. 撰寫 Cypress 測試</h1><h3 id="3-1-建立測試檔案"><a href="#3-1-建立測試檔案" class="headerlink" title="3.1 建立測試檔案"></a>3.1 建立測試檔案</h3><p>Cypress 預設的測試檔案放置於 <code>cypress/e2e/</code> 目錄下，例如：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cypress/e2e/sample_spec.cy.js</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-基本測試範例"><a href="#3-2-基本測試範例" class="headerlink" title="3.2 基本測試範例"></a>3.2 基本測試範例</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">describe</span>(<span class="string">&#x27;My First Test&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="title function_">it</span>(<span class="string">&#x27;Visits the app&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    cy.<span class="title function_">visit</span>(<span class="string">&#x27;https://example.cypress.io&#x27;</span>);</span><br><span class="line">    cy.<span class="title function_">contains</span>(<span class="string">&#x27;type&#x27;</span>).<span class="title function_">click</span>();</span><br><span class="line">    cy.<span class="title function_">url</span>().<span class="title function_">should</span>(<span class="string">&#x27;include&#x27;</span>, <span class="string">&#x27;/commands/actions&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-選擇器與操作"><a href="#3-3-選擇器與操作" class="headerlink" title="3.3 選擇器與操作"></a>3.3 選擇器與操作</h3><p>Cypress 提供多種選擇器來查找元素，例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;button&#x27;</span>).<span class="title function_">click</span>(); <span class="comment">// 透過標籤名稱選擇</span></span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;.btn-primary&#x27;</span>).<span class="title function_">click</span>(); <span class="comment">// 透過 class 選擇</span></span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;#submit-btn&#x27;</span>).<span class="title function_">click</span>(); <span class="comment">// 透過 ID 選擇</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-斷言（Assertions）"><a href="#3-4-斷言（Assertions）" class="headerlink" title="3.4 斷言（Assertions）"></a>3.4 斷言（Assertions）</h3><p>使用 <code>.should()</code> 進行斷言，例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;.success-message&#x27;</span>).<span class="title function_">should</span>(<span class="string">&#x27;be.visible&#x27;</span>);</span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;h1&#x27;</span>).<span class="title function_">should</span>(<span class="string">&#x27;have.text&#x27;</span>, <span class="string">&#x27;Welcome&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-進階功能"><a href="#4-進階功能" class="headerlink" title="4. 進階功能"></a>4. 進階功能</h1><h3 id="4-1-錯誤處理與偵錯"><a href="#4-1-錯誤處理與偵錯" class="headerlink" title="4.1 錯誤處理與偵錯"></a>4.1 錯誤處理與偵錯</h3><p>Cypress 提供 <code>cy.pause()</code> 和 <code>cy.debug()</code> 來幫助偵錯：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;button&#x27;</span>).<span class="title function_">click</span>();</span><br><span class="line">cy.<span class="title function_">pause</span>(); <span class="comment">// 測試暫停</span></span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;.result&#x27;</span>).<span class="title function_">should</span>(<span class="string">&#x27;be.visible&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-假資料與-API-模擬（Mock-API）"><a href="#4-2-假資料與-API-模擬（Mock-API）" class="headerlink" title="4.2 假資料與 API 模擬（Mock API）"></a>4.2 假資料與 API 模擬（Mock API）</h3><p>可以使用 <code>cy.intercept()</code> 攔截 API 請求，例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">intercept</span>(<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;/api/user&#x27;</span>, &#123; <span class="attr">name</span>: <span class="string">&#x27;John Doe&#x27;</span> &#125;).<span class="title function_">as</span>(<span class="string">&#x27;getUser&#x27;</span>);</span><br><span class="line">cy.<span class="title function_">visit</span>(<span class="string">&#x27;/profile&#x27;</span>);</span><br><span class="line">cy.<span class="title function_">wait</span>(<span class="string">&#x27;@getUser&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-自訂命令"><a href="#4-3-自訂命令" class="headerlink" title="4.3 自訂命令"></a>4.3 自訂命令</h3><p>可以在 <code>cypress/support/commands.js</code> 內定義自訂命令，例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Cypress</span>.<span class="property">Commands</span>.<span class="title function_">add</span>(<span class="string">&#x27;login&#x27;</span>, <span class="function">(<span class="params">email, password</span>) =&gt;</span> &#123;</span><br><span class="line">  cy.<span class="title function_">get</span>(<span class="string">&#x27;#email&#x27;</span>).<span class="title function_">type</span>(email);</span><br><span class="line">  cy.<span class="title function_">get</span>(<span class="string">&#x27;#password&#x27;</span>).<span class="title function_">type</span>(password);</span><br><span class="line">  cy.<span class="title function_">get</span>(<span class="string">&#x27;button[type=&quot;submit&quot;]&#x27;</span>).<span class="title function_">click</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>然後在測試中使用：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">login</span>(<span class="string">&#x27;test@example.com&#x27;</span>, <span class="string">&#x27;password123&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-CI-x2F-CD-整合"><a href="#5-CI-x2F-CD-整合" class="headerlink" title="5. CI&#x2F;CD 整合"></a>5. CI&#x2F;CD 整合</h1><p>Cypress 可以與 CI&#x2F;CD 工具整合，如 GitHub Actions 或 GitLab CI&#x2F;CD。</p>
+<h3 id="5-1-GitHub-Actions-設定範例"><a href="#5-1-GitHub-Actions-設定範例" class="headerlink" title="5.1 GitHub Actions 設定範例"></a>5.1 GitHub Actions 設定範例</h3><p>在 <code>.github/workflows/cypress.yml</code> 中新增：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Cypress</span> <span class="string">Tests</span></span><br><span class="line"><span class="attr">on:</span> [<span class="string">push</span>, <span class="string">pull_request</span>]</span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">cypress-run:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">repository</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">dependencies</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Run</span> <span class="string">Cypress</span> <span class="string">tests</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npx</span> <span class="string">cypress</span> <span class="string">run</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h1><p>透過 Cypress，可以輕鬆進行 Web 應用的測試，提高開發效率與穩定性。建議多練習不同測試場景，如表單驗證、API 測試與 RWD 測試，以熟悉 Cypress 強大的測試能力。</p>
+]]></content>
+      <tags>
+        <tag>Cypress</tag>
+        <tag>測試</tag>
+        <tag>E2E</tag>
+        <tag>QA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Grid 網頁排版技巧入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/15/learning-notes-css-grid-intro-tutorial/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在現今網頁設計中，排版的結構與呈現方式對於用戶體驗至關重要。隨著網頁設計的演進，CSS <code>Grid</code> 成為了最強大且靈活的排版工具之一。透過 CSS Grid，你可以輕鬆創建複雜的佈局，並且適應不同設備的需求。本文將介紹 CSS Grid 的基本概念與使用技巧，幫助你迅速掌握如何在網頁設計中使用 Grid。</p>
+<h4 id="1-什麼是-CSS-Grid？"><a href="#1-什麼是-CSS-Grid？" class="headerlink" title="1. 什麼是 CSS Grid？"></a>1. 什麼是 CSS Grid？</h4><p>CSS Grid Layout（簡稱 Grid）是 CSS3 的一個強大功能，允許開發者以列和行的方式來設計網頁佈局。它使得網頁設計更加直觀和靈活，不再需要依賴浮動（float）或定位（position）等老舊技巧，簡化了許多複雜的布局問題。</p>
+<p>Grid 是由「<code>容器</code>」和「<code>項目</code>」兩部分組成。容器定義了網格的結構，而項目則是容器內部的元素。你可以在容器內輕鬆地將項目放置在指定的網格區域中，從而創建各種排版樣式。</p>
+<h4 id="2-CSS-Grid-的基本語法"><a href="#2-CSS-Grid-的基本語法" class="headerlink" title="2. CSS Grid 的基本語法"></a>2. CSS Grid 的基本語法</h4><p>在使用 CSS Grid 時，首先需要定義一個容器元素並啟用 Grid 布局。這樣，容器內的子元素將成為 Grid 項目。以下是基本的設置步驟：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: auto;</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>display: grid;</code> 啟用容器的 Grid 布局。</li>
+<li><code>grid-template-columns: repeat(3, 1fr);</code> 設定三列，每列的寬度為等比例（<code>1fr</code>）。<code>1fr</code> 代表容器寬度的 1&#x2F;3。</li>
+<li><code>grid-template-rows: auto;</code> 使得行的高度根據內容自動調整。</li>
+<li><code>gap: 10px;</code> 定義網格項目之間的間距。</li>
+</ul>
+<h4 id="3-定義-Grid-容器的列和行"><a href="#3-定義-Grid-容器的列和行" class="headerlink" title="3. 定義 Grid 容器的列和行"></a>3. 定義 Grid 容器的列和行</h4><p>你可以使用 <code>grid-template-columns</code> 和 <code>grid-template-rows</code> 來設置容器內列和行的數量、大小及比例。</p>
+<h5 id="定義列"><a href="#定義列" class="headerlink" title="定義列"></a>定義列</h5><p>例如，若想創建四列的佈局，可以這樣寫：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> <span class="number">300px</span> <span class="number">400px</span> <span class="number">1</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這裡，我們設置了四列的寬度，前三列有固定的像素寬度，最後一列使用 <code>1fr</code>，即佔據剩餘的可用空間。</p>
+<h5 id="定義行"><a href="#定義行" class="headerlink" title="定義行"></a>定義行</h5><p>類似地，你可以設置行的大小。若要讓每一行的高度根據內容自動調整，可以使用：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">100px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這表示網格容器有兩行，第一行的高度固定為 100px，第二行的高度將根據內容自動調整。</p>
+<h4 id="4-放置-Grid-項目"><a href="#4-放置-Grid-項目" class="headerlink" title="4. 放置 Grid 項目"></a>4. 放置 Grid 項目</h4><p>Grid 容器的子元素會自動成為 Grid 項目。你可以使用 <code>grid-column</code> 和 <code>grid-row</code> 屬性來指定某個項目占據的列與行。</p>
+<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span> / <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這表示 <code>.item1</code> 元素會從第 1 列跨越到第 3 列，占據第一行。</p>
+<ul>
+<li><code>grid-column: 1 / 3;</code> 表示該元素會從第 1 列起，跨越兩列，直到第 3 列結束。</li>
+<li><code>grid-row: 1;</code> 表示該元素位於第 1 行。</li>
+</ul>
+<h4 id="5-使用-fr-單位設置比例"><a href="#5-使用-fr-單位設置比例" class="headerlink" title="5. 使用 fr 單位設置比例"></a>5. 使用 <code>fr</code> 單位設置比例</h4><p>CSS Grid 中最重要的單位之一是 <code>fr</code>（fraction，分數），它讓你可以設定元素在可用空間中所佔比例。</p>
+<p>假設你有三列，且希望第一列占 1 部分，第二列占 2 部分，第三列占 3 部分：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr <span class="number">3</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣會將總寬度分成六等份，其中第一列占 1 份，第二列占 2 份，第三列占 3 份。這樣的佈局適合於動態響應式設計。</p>
+<h4 id="6-設置間距"><a href="#6-設置間距" class="headerlink" title="6. 設置間距"></a>6. 設置間距</h4><p>除了 <code>gap</code> 屬性，你還可以為列與行的間距分別設置不同的值：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span> <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這裡，<code>gap: 10px 20px;</code> 的第一個數值設定了行之間的間距為 10px，第二個數值設定了列之間的間距為 20px。</p>
+<h4 id="7-嵌套-Grid"><a href="#7-嵌套-Grid" class="headerlink" title="7. 嵌套 Grid"></a>7. 嵌套 Grid</h4><p>Grid 允許你在網格項目內再次使用 Grid 佈局，這樣可以創建更複雜的排版結構。例如，假設你在某個項目內再創建一個小的網格：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在這個範例中，<code>.item1</code> 是一個 Grid 項目，它內部再次使用 Grid 排版，定義兩列，其中第一列占據 1 部分，第二列占據 2 部分。</p>
+<h4 id="8-響應式設計"><a href="#8-響應式設計" class="headerlink" title="8. 響應式設計"></a>8. 響應式設計</h4><p>Grid 讓你輕鬆應對不同設備的佈局需求。你可以使用媒體查詢來調整 Grid 排版。例如：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">4</span>, <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">2</span>, <span class="number">1</span>fr);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">480px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼會根據螢幕寬度變化調整容器的列數：在寬度大於 768px 時顯示四列，在寬度小於 768px 時顯示兩列，在寬度小於 480px 時顯示單列。</p>
+<h4 id="9-小結"><a href="#9-小結" class="headerlink" title="9. 小結"></a>9. 小結</h4><p>CSS Grid 為現代網頁設計提供了一個簡單、強大且靈活的排版解決方案。它不僅能夠解決過去使用浮動或定位方法無法達成的複雜佈局，還能輕鬆適應響應式設計的需求。掌握 CSS Grid，你將能夠更高效地創建現代化的網頁佈局，提升設計的精確度與可維護性。希望本文的介紹能幫助你快速入門並將這項技術應用到你的項目中。</p>
+]]></content>
+      <tags>
+        <tag>css</tag>
+        <tag>排版</tag>
+        <tag>Grid</tag>
       </tags>
   </entry>
   <entry>
@@ -863,6 +971,57 @@
       </tags>
   </entry>
   <entry>
+    <title>SASS 語法介紹入門教學筆記 | 學習筆記</title>
+    <url>/2024/06/30/learning-notes-sass-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="什麼是-SASS？"><a href="#什麼是-SASS？" class="headerlink" title="什麼是 SASS？"></a>什麼是 SASS？</h1><p><code>SASS</code>（Syntactically Awesome Style Sheets）是一種 CSS 預處理器，旨在提升 CSS 的功能性，讓開發者能夠以更加靈活和高效的方式編寫樣式表。它提供了許多比 CSS 更強大的功能，例如變數、巢狀規則、混合（mixins）、繼承等。SASS 語法有兩種主要形式：一種是較為常見的 SCSS（<code>Sassy CSS</code>），另一種則是 <code>SASS</code>，本文將主要介紹 SASS 語法。</p>
+<p>與 SCSS 不同，SASS 語法採用的是縮排語法，即不使用大括號和分號，而是利用縮排來結構化程式碼。這種語法更簡潔，對於習慣 Python 等語言的開發者來說，學習曲線較為平滑。</p>
+<h1 id="安裝與設置"><a href="#安裝與設置" class="headerlink" title="安裝與設置"></a>安裝與設置</h1><p>要開始使用 SASS，首先需要安裝 SASS 編譯器。最常見的安裝方式是透過 Node.js 的 npm（Node Package Manager）。請按照以下步驟進行安裝：</p>
+<ol>
+<li><p>確保已經安裝了 Node.js 和 npm。</p>
+</li>
+<li><p>打開終端機，並在專案資料夾中執行以下命令來安裝 SASS：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g sass</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安裝完成後，可以通過命令行執行 SASS 編譯命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sass input.sass output.css</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>這樣，<code>input.sass</code> 就會被編譯為標準的 <code>output.css</code> 檔案。</p>
+<h1 id="SASS-語法介紹"><a href="#SASS-語法介紹" class="headerlink" title="SASS 語法介紹"></a>SASS 語法介紹</h1><h3 id="1-變數（Variables）"><a href="#1-變數（Variables）" class="headerlink" title="1. 變數（Variables）"></a>1. 變數（Variables）</h3><p>SASS 的變數功能讓開發者可以將顏色、字體大小、間距等常用值儲存在變數中，這樣能夠提高樣式的可重用性，並讓程式碼更具維護性。在 SASS 中，變數以 <code>$</code> 符號開頭。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$primary-color: #3498db</span><br><span class="line">$font-size: 16px</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  font-size: $font-size</span><br><span class="line">  color: $primary-color</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了 <code>$primary-color</code> 和 <code>$font-size</code> 兩個變數，並將其應用於 <code>body</code> 樣式中。這樣，只需要修改變數的值，即可全局更新相應的樣式。</p>
+<h3 id="2-巢狀規則（Nesting）"><a href="#2-巢狀規則（Nesting）" class="headerlink" title="2. 巢狀規則（Nesting）"></a>2. 巢狀規則（Nesting）</h3><p>SASS 支援巢狀規則，這樣可以讓樣式更加結構化，並且簡化對於子元素樣式的編寫。SASS 使用縮排來表示層級關係，這一點與傳統的 CSS 需要寫出完整選擇器有所不同。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nav</span><br><span class="line">  background-color: #333</span><br><span class="line">  ul</span><br><span class="line">    list-style-type: none</span><br><span class="line">    padding: 0</span><br><span class="line">  li</span><br><span class="line">    display: inline-block</span><br><span class="line">  a</span><br><span class="line">    color: white</span><br><span class="line">    text-decoration: none</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼會被編譯為：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">list-style-type</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣的寫法可以避免寫重複的選擇器，並且清晰地表現出元素之間的層級結構。</p>
+<h3 id="3-混合（Mixins）"><a href="#3-混合（Mixins）" class="headerlink" title="3. 混合（Mixins）"></a>3. 混合（Mixins）</h3><p>混合是 SASS 中一個非常有用的功能，它可以將一段可重用的樣式封裝成一個混合，並且可以接受參數，實現樣式的動態應用。混合類似於函數，能夠在不同地方重複使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">=mixin border-radius($radius)</span><br><span class="line">  -webkit-border-radius: $radius</span><br><span class="line">  -moz-border-radius: $radius</span><br><span class="line">  border-radius: $radius</span><br><span class="line"></span><br><span class="line">.box</span><br><span class="line">  @include border-radius(10px)</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了一個名為 <code>border-radius</code> 的混合，接受一個 <code>$radius</code> 參數，用來設置元素的邊框圓角。然後，我們在 <code>.box</code> 中使用 <code>@include</code> 引入這個混合，並傳遞具體的參數。這樣，當需要改變邊框圓角的樣式時，只需要修改混合的參數，而不需要在多個地方重複編寫。</p>
+<h3 id="4-繼承（Inheritance）"><a href="#4-繼承（Inheritance）" class="headerlink" title="4. 繼承（Inheritance）"></a>4. 繼承（Inheritance）</h3><p>SASS 提供了繼承功能，使得一個選擇器可以繼承另一個選擇器的樣式。這有助於減少樣式重複，並保持程式碼的整潔性。SASS 使用 <code>@extend</code> 指令來實現繼承。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%button-base</span><br><span class="line">  padding: 10px 15px</span><br><span class="line">  background-color: #3498db</span><br><span class="line">  color: white</span><br><span class="line">  border: none</span><br><span class="line">  border-radius: 5px</span><br><span class="line"></span><br><span class="line">.button-primary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #1abc9c</span><br><span class="line"></span><br><span class="line">.button-secondary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #f39c12</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了一個 <code>%button-base</code> 共享樣式，然後讓 <code>.button-primary</code> 和 <code>.button-secondary</code> 繼承這些樣式，並根據需要進行自定義修改。使用繼承的方式可以減少代碼重複，提高樣式的可維護性。</p>
+<h3 id="5-條件語句（Conditionals）"><a href="#5-條件語句（Conditionals）" class="headerlink" title="5. 條件語句（Conditionals）"></a>5. 條件語句（Conditionals）</h3><p>SASS 支援條件語句，這讓我們可以根據某些條件選擇性地應用不同的樣式。這樣可以使樣式表更具動態性，根據不同情境調整顯示效果。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$theme: light</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  @if $theme == light</span><br><span class="line">    background-color: #fff</span><br><span class="line">    color: #333</span><br><span class="line">  @else</span><br><span class="line">    background-color: #333</span><br><span class="line">    color: #fff</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼中，根據變數 <code>$theme</code> 的值，條件地設定 <code>body</code> 的背景顏色和文字顏色。如果 <code>$theme</code> 為 <code>light</code>，則使用淺色背景和深色文字；否則，使用深色背景和淺色文字。</p>
+<h3 id="6-循環（Loops）"><a href="#6-循環（Loops）" class="headerlink" title="6. 循環（Loops）"></a>6. 循環（Loops）</h3><p>SASS 還支援循環語句，這在需要根據某些條件自動生成多個樣式時非常有用。SASS 的循環可以遍歷一個列表，並生成對應的樣式。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$colors: red, green, blue</span><br><span class="line"></span><br><span class="line">@each $color in $colors</span><br><span class="line">  .#&#123;$color&#125;-box</span><br><span class="line">    background-color: $color</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，<code>@each</code> 循環將遍歷 <code>$colors</code> 列表，並為每個顏色生成一個相應的類別 <code>.red-box</code>、<code>.green-box</code> 和 <code>.blue-box</code>，並將其背景顏色設置為對應的顏色。</p>
+<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>SASS 的 SASS 語法是一種簡潔且強大的 CSS 編寫方式，通過簡單的縮排結構，讓開發者能夠更有效率地編寫和維護樣式。SASS 提供的變數、巢狀規則、混合、繼承等功能，能夠使樣式更加模組化、動態化，並大大減少冗餘代碼。學會 SASS 語法後，你可以更靈活地處理大型專案中的 CSS，提升工作效率。如果你還沒有開始使用 SASS，不妨從這些基礎語法開始，體驗它帶來的便利。</p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>SASS</tag>
+        <tag>SCSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SCSS 介紹入門教學筆記 | 學習筆記</title>
     <url>/2024/07/01/learning-notes-scss-intro-tutorial/</url>
     <content><![CDATA[<h1 id="一、SASS-是什麼？"><a href="#一、SASS-是什麼？" class="headerlink" title="一、SASS 是什麼？"></a>一、SASS 是什麼？</h1><p>SASS（Syntactically Awesome Stylesheets）是一種 CSS 預處理器（CSS Preprocessor），它擴展了 CSS 的功能，使樣式表更具可讀性、模組化和可維護性。SASS 允許使用變數、巢狀（Nesting）、混入（Mixin）、繼承（Extend）等進階特性，讓開發者能更有效率地管理 CSS。  </p>
@@ -934,57 +1093,6 @@
 <hr>
 <h1 id="六、結論"><a href="#六、結論" class="headerlink" title="六、結論"></a>六、結論</h1><p>SASS 是一種強大的 CSS 預處理器，它提供變數、巢狀、Mixin、繼承等功能，使樣式管理更加高效與模組化。透過 SASS，開發者可以撰寫更具結構性、可讀性和可維護性的 CSS。  </p>
 <p>對於前端開發者來說，掌握 SASS 不僅能提升開發效率，還能讓專案的樣式管理更加清晰。在實際專案中，建議將樣式模組化，並善用變數與 Mixin，以確保程式碼的可重用性與一致性。</p>
-]]></content>
-      <tags>
-        <tag>CSS</tag>
-        <tag>SASS</tag>
-        <tag>SCSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SASS 語法介紹入門教學筆記 | 學習筆記</title>
-    <url>/2024/06/30/learning-notes-sass-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="什麼是-SASS？"><a href="#什麼是-SASS？" class="headerlink" title="什麼是 SASS？"></a>什麼是 SASS？</h1><p><code>SASS</code>（Syntactically Awesome Style Sheets）是一種 CSS 預處理器，旨在提升 CSS 的功能性，讓開發者能夠以更加靈活和高效的方式編寫樣式表。它提供了許多比 CSS 更強大的功能，例如變數、巢狀規則、混合（mixins）、繼承等。SASS 語法有兩種主要形式：一種是較為常見的 SCSS（<code>Sassy CSS</code>），另一種則是 <code>SASS</code>，本文將主要介紹 SASS 語法。</p>
-<p>與 SCSS 不同，SASS 語法採用的是縮排語法，即不使用大括號和分號，而是利用縮排來結構化程式碼。這種語法更簡潔，對於習慣 Python 等語言的開發者來說，學習曲線較為平滑。</p>
-<h1 id="安裝與設置"><a href="#安裝與設置" class="headerlink" title="安裝與設置"></a>安裝與設置</h1><p>要開始使用 SASS，首先需要安裝 SASS 編譯器。最常見的安裝方式是透過 Node.js 的 npm（Node Package Manager）。請按照以下步驟進行安裝：</p>
-<ol>
-<li><p>確保已經安裝了 Node.js 和 npm。</p>
-</li>
-<li><p>打開終端機，並在專案資料夾中執行以下命令來安裝 SASS：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g sass</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安裝完成後，可以通過命令行執行 SASS 編譯命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sass input.sass output.css</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>這樣，<code>input.sass</code> 就會被編譯為標準的 <code>output.css</code> 檔案。</p>
-<h1 id="SASS-語法介紹"><a href="#SASS-語法介紹" class="headerlink" title="SASS 語法介紹"></a>SASS 語法介紹</h1><h3 id="1-變數（Variables）"><a href="#1-變數（Variables）" class="headerlink" title="1. 變數（Variables）"></a>1. 變數（Variables）</h3><p>SASS 的變數功能讓開發者可以將顏色、字體大小、間距等常用值儲存在變數中，這樣能夠提高樣式的可重用性，並讓程式碼更具維護性。在 SASS 中，變數以 <code>$</code> 符號開頭。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$primary-color: #3498db</span><br><span class="line">$font-size: 16px</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  font-size: $font-size</span><br><span class="line">  color: $primary-color</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，我們定義了 <code>$primary-color</code> 和 <code>$font-size</code> 兩個變數，並將其應用於 <code>body</code> 樣式中。這樣，只需要修改變數的值，即可全局更新相應的樣式。</p>
-<h3 id="2-巢狀規則（Nesting）"><a href="#2-巢狀規則（Nesting）" class="headerlink" title="2. 巢狀規則（Nesting）"></a>2. 巢狀規則（Nesting）</h3><p>SASS 支援巢狀規則，這樣可以讓樣式更加結構化，並且簡化對於子元素樣式的編寫。SASS 使用縮排來表示層級關係，這一點與傳統的 CSS 需要寫出完整選擇器有所不同。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nav</span><br><span class="line">  background-color: #333</span><br><span class="line">  ul</span><br><span class="line">    list-style-type: none</span><br><span class="line">    padding: 0</span><br><span class="line">  li</span><br><span class="line">    display: inline-block</span><br><span class="line">  a</span><br><span class="line">    color: white</span><br><span class="line">    text-decoration: none</span><br></pre></td></tr></table></figure>
-
-<p>這段程式碼會被編譯為：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">list-style-type</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這樣的寫法可以避免寫重複的選擇器，並且清晰地表現出元素之間的層級結構。</p>
-<h3 id="3-混合（Mixins）"><a href="#3-混合（Mixins）" class="headerlink" title="3. 混合（Mixins）"></a>3. 混合（Mixins）</h3><p>混合是 SASS 中一個非常有用的功能，它可以將一段可重用的樣式封裝成一個混合，並且可以接受參數，實現樣式的動態應用。混合類似於函數，能夠在不同地方重複使用。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">=mixin border-radius($radius)</span><br><span class="line">  -webkit-border-radius: $radius</span><br><span class="line">  -moz-border-radius: $radius</span><br><span class="line">  border-radius: $radius</span><br><span class="line"></span><br><span class="line">.box</span><br><span class="line">  @include border-radius(10px)</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，我們定義了一個名為 <code>border-radius</code> 的混合，接受一個 <code>$radius</code> 參數，用來設置元素的邊框圓角。然後，我們在 <code>.box</code> 中使用 <code>@include</code> 引入這個混合，並傳遞具體的參數。這樣，當需要改變邊框圓角的樣式時，只需要修改混合的參數，而不需要在多個地方重複編寫。</p>
-<h3 id="4-繼承（Inheritance）"><a href="#4-繼承（Inheritance）" class="headerlink" title="4. 繼承（Inheritance）"></a>4. 繼承（Inheritance）</h3><p>SASS 提供了繼承功能，使得一個選擇器可以繼承另一個選擇器的樣式。這有助於減少樣式重複，並保持程式碼的整潔性。SASS 使用 <code>@extend</code> 指令來實現繼承。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%button-base</span><br><span class="line">  padding: 10px 15px</span><br><span class="line">  background-color: #3498db</span><br><span class="line">  color: white</span><br><span class="line">  border: none</span><br><span class="line">  border-radius: 5px</span><br><span class="line"></span><br><span class="line">.button-primary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #1abc9c</span><br><span class="line"></span><br><span class="line">.button-secondary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #f39c12</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，我們定義了一個 <code>%button-base</code> 共享樣式，然後讓 <code>.button-primary</code> 和 <code>.button-secondary</code> 繼承這些樣式，並根據需要進行自定義修改。使用繼承的方式可以減少代碼重複，提高樣式的可維護性。</p>
-<h3 id="5-條件語句（Conditionals）"><a href="#5-條件語句（Conditionals）" class="headerlink" title="5. 條件語句（Conditionals）"></a>5. 條件語句（Conditionals）</h3><p>SASS 支援條件語句，這讓我們可以根據某些條件選擇性地應用不同的樣式。這樣可以使樣式表更具動態性，根據不同情境調整顯示效果。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$theme: light</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  @if $theme == light</span><br><span class="line">    background-color: #fff</span><br><span class="line">    color: #333</span><br><span class="line">  @else</span><br><span class="line">    background-color: #333</span><br><span class="line">    color: #fff</span><br></pre></td></tr></table></figure>
-
-<p>這段程式碼中，根據變數 <code>$theme</code> 的值，條件地設定 <code>body</code> 的背景顏色和文字顏色。如果 <code>$theme</code> 為 <code>light</code>，則使用淺色背景和深色文字；否則，使用深色背景和淺色文字。</p>
-<h3 id="6-循環（Loops）"><a href="#6-循環（Loops）" class="headerlink" title="6. 循環（Loops）"></a>6. 循環（Loops）</h3><p>SASS 還支援循環語句，這在需要根據某些條件自動生成多個樣式時非常有用。SASS 的循環可以遍歷一個列表，並生成對應的樣式。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$colors: red, green, blue</span><br><span class="line"></span><br><span class="line">@each $color in $colors</span><br><span class="line">  .#&#123;$color&#125;-box</span><br><span class="line">    background-color: $color</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，<code>@each</code> 循環將遍歷 <code>$colors</code> 列表，並為每個顏色生成一個相應的類別 <code>.red-box</code>、<code>.green-box</code> 和 <code>.blue-box</code>，並將其背景顏色設置為對應的顏色。</p>
-<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>SASS 的 SASS 語法是一種簡潔且強大的 CSS 編寫方式，通過簡單的縮排結構，讓開發者能夠更有效率地編寫和維護樣式。SASS 提供的變數、巢狀規則、混合、繼承等功能，能夠使樣式更加模組化、動態化，並大大減少冗餘代碼。學會 SASS 語法後，你可以更靈活地處理大型專案中的 CSS，提升工作效率。如果你還沒有開始使用 SASS，不妨從這些基礎語法開始，體驗它帶來的便利。</p>
 ]]></content>
       <tags>
         <tag>CSS</tag>
@@ -1402,6 +1510,33 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記</title>
+    <url>/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/</url>
+    <content><![CDATA[<h1 id="Components-元件"><a href="#Components-元件" class="headerlink" title="Components 元件"></a>Components 元件</h1><p>到目前為止，我們只使用了一個單一的元件。實際的 Vue 應用程式通常是由巢狀元件所組成的。</p>
+<p>父元件可以在其模板中渲染另一個元件作為子元件。要使用子元件，我們需要先匯入它：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>然後，我們可以在模板中使用該元件，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>我們現在試試看將匯入子元件並將其渲染到模板中。</p>
+<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>A Child Component!<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記</title>
     <url>/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/</url>
     <content><![CDATA[<h1 id="Props-屬性"><a href="#Props-屬性" class="headerlink" title="Props 屬性"></a>Props 屬性</h1><p>子元件可以透過 Props 接收來自父元件的輸入。首先，子元件需要宣告它所接收的 Props：</p>
@@ -1452,33 +1587,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記</title>
-    <url>/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/</url>
-    <content><![CDATA[<h1 id="Components-元件"><a href="#Components-元件" class="headerlink" title="Components 元件"></a>Components 元件</h1><p>到目前為止，我們只使用了一個單一的元件。實際的 Vue 應用程式通常是由巢狀元件所組成的。</p>
-<p>父元件可以在其模板中渲染另一個元件作為子元件。要使用子元件，我們需要先匯入它：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>然後，我們可以在模板中使用該元件，如下所示：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<p>我們現在試試看將匯入子元件並將其渲染到模板中。</p>
-<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>A Child Component!<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [13] - Slots 插槽 | 學習筆記</title>
     <url>/2021/02/13/learning-notes-vuejs-3-official-tutorial-13-slots/</url>
     <content><![CDATA[<h1 id="Slots-插槽"><a href="#Slots-插槽" class="headerlink" title="Slots 插槽"></a>Slots 插槽</h1><p>除了透過 Props 傳遞資料外，父元件還可以透過插槽將模板片段傳遞給子元件：</p>
@@ -1494,6 +1602,32 @@
 <figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> msg = <span class="title function_">ref</span>(<span class="string">&#x27;from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span>&gt;</span>Message: &#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">ChildComp</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> msg = <span class="title function_">ref</span>(<span class="string">&#x27;from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span>&gt;</span>Message: &#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">ChildComp</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [2] - Attribute Bindings 屬性綁定 | 學習筆記</title>
+    <url>/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/</url>
+    <content><![CDATA[<p><strong>Attribute Bindings 屬性綁定</strong><br>在 Vue 中，Mustache 語法只能用於文字插值。要將屬性綁定到動態值，我們需要使用 <code>v-bind</code> 指令：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">&quot;dynamicId&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>指令是一種特殊的屬性，以 <code>v-</code> 前綴開頭，屬於 Vue 的模板語法的一部分。與文字插值類似，指令的值是 JavaScript 表達式，可以訪問組件的狀態。有關 <code>v-bind</code> 和指令語法的完整細節，請參閱官方說明<a href="https://vuejs.org/guide/essentials/template-syntax.html">指南 - 模板語法</a>。</p>
+<p>冒號之後的部分（<code>:id</code>）是指令的「參數」。在這裡，元素的 <code>id</code> 屬性將與組件狀態中的 <code>dynamicId</code> 屬性同步。</p>
+<p>由於 <code>v-bind</code> 的使用頻率很高，Vue 提供了專用的簡寫語法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">:id</span>=<span class="string">&quot;dynamicId&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>我們可以試著將動態類名綁定到 <code>&lt;h1&gt;</code>，使用 <code>titleClass</code> 的 <code>ref</code> 作為值。如果綁定正確，文字應該會變成紅色！</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> titleClass = <span class="title function_">ref</span>(<span class="string">&#x27;title&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">:class</span>=<span class="string">&quot;titleClass&quot;</span>&gt;</span>Make me red<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> <span class="comment">&lt;!-- add dynamic class binding here --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.title</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -1524,32 +1658,6 @@
 <hr>
 <p>現在，我們可以試著自己實作 <code>increment</code> 函式，並使用 <code>v-on</code> 將它綁定到按鈕。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [2] - Attribute Bindings 屬性綁定 | 學習筆記</title>
-    <url>/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/</url>
-    <content><![CDATA[<p><strong>Attribute Bindings 屬性綁定</strong><br>在 Vue 中，Mustache 語法只能用於文字插值。要將屬性綁定到動態值，我們需要使用 <code>v-bind</code> 指令：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">&quot;dynamicId&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>指令是一種特殊的屬性，以 <code>v-</code> 前綴開頭，屬於 Vue 的模板語法的一部分。與文字插值類似，指令的值是 JavaScript 表達式，可以訪問組件的狀態。有關 <code>v-bind</code> 和指令語法的完整細節，請參閱官方說明<a href="https://vuejs.org/guide/essentials/template-syntax.html">指南 - 模板語法</a>。</p>
-<p>冒號之後的部分（<code>:id</code>）是指令的「參數」。在這裡，元素的 <code>id</code> 屬性將與組件狀態中的 <code>dynamicId</code> 屬性同步。</p>
-<p>由於 <code>v-bind</code> 的使用頻率很高，Vue 提供了專用的簡寫語法：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">:id</span>=<span class="string">&quot;dynamicId&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>我們可以試著將動態類名綁定到 <code>&lt;h1&gt;</code>，使用 <code>titleClass</code> 的 <code>ref</code> 作為值。如果綁定正確，文字應該會變成紅色！</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> titleClass = <span class="title function_">ref</span>(<span class="string">&#x27;title&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">:class</span>=<span class="string">&quot;titleClass&quot;</span>&gt;</span>Make me red<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> <span class="comment">&lt;!-- add dynamic class binding here --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.title</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
