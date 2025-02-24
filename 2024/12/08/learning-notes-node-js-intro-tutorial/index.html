@@ -26,11 +26,11 @@
     
     <title>
         
-          Vue3 Options API 和 Composition API 風格差異教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          Node.js 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/">
+    <link rel="canonical" href="https://tech.kdchang.cc/2024/12/08/learning-notes-node-js-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="Vue3 Options API 和 Composition API 風格差異教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="Vue3 Options API 和 Composition API 風格差異教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="Node.js 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="Node.js 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="Hi 我是 KD Chang 張凱迪，我在這書寫我的程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -192,35 +192,19 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>Vue3 Options API 和 Composition API 風格差異教學筆記 | 學習筆記</h1>
+                    <h1>Node.js 入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2020-11-16
+                        2024-12-08
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
+                          <a class="tag" href="/tags/#Node.js" title="Node.js">Node.js</a>
                         
-                          <a class="tag" href="/tags/#前端開發" title="前端開發">前端開發</a>
+                          <a class="tag" href="/tags/#Noed" title="Noed">Noed</a>
                         
-                          <a class="tag" href="/tags/#前端工程" title="前端工程">前端工程</a>
-                        
-                          <a class="tag" href="/tags/#frontend" title="frontend">frontend</a>
-                        
-                          <a class="tag" href="/tags/#frontend engineer" title="frontend engineer">frontend engineer</a>
-                        
-                          <a class="tag" href="/tags/#vue" title="vue">vue</a>
-                        
-                          <a class="tag" href="/tags/#vue3" title="vue3">vue3</a>
-                        
-                          <a class="tag" href="/tags/#vue.js" title="vue.js">vue.js</a>
-                        
-                          <a class="tag" href="/tags/#vue.js 3" title="vue.js 3">vue.js 3</a>
-                        
-                          <a class="tag" href="/tags/#Options API" title="Options API">Options API</a>
-                        
-                          <a class="tag" href="/tags/#Composition API" title="Composition API">Composition API</a>
+                          <a class="tag" href="/tags/#NodeJS" title="NodeJS">NodeJS</a>
                         
 
                     </div>
@@ -246,42 +230,51 @@
                 </div>
                 <br>
                 <div>
-                    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>根據<a target="_blank" rel="noopener" href="https://vuejs.org/guide/introduction.html#api-styles">官方文件的說明</a>，一般來說 Vue 元件可以用兩種不同的 API 風格來撰寫：<strong>Options API</strong> 和 <strong>Composition API</strong>。</p>
-<hr>
-<h1 id="Options-API"><a href="#Options-API" class="headerlink" title="Options API"></a><strong>Options API</strong></h1><p>使用 Options API 時，我們透過一個包含 <code>data</code>、<code>methods</code> 和 <code>mounted</code> 等選項的物件來定義元件邏輯。選項中定義的屬性會在函式內透過 <code>this</code> 曝露，<code>this</code> 指向的是元件實例。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 從 data() 返回的屬性成為響應式狀態，</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 並會透過 `this` 曝露。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">count</span>: <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// Methods 是變更狀態並觸發更新的函式，</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 可作為模板中的事件處理程序綁定。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">this</span>.<span class="property">count</span>++</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 生命週期鉤子會在組件的不同階段被調用。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 此函式會在組件掛載時調用。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`初始計數值為 <span class="subst">$&#123;<span class="variable language_">this</span>.count&#125;</span>。`</span>)</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+                    <h1 id="1-Node-js-簡介"><a href="#1-Node-js-簡介" class="headerlink" title="1. Node.js 簡介"></a>1. Node.js 簡介</h1><p>Node.js 是一個基於 Chrome V8 JavaScript 引擎的運行環境，可讓開發者使用 JavaScript 來撰寫後端程式。它適合用於構建高效能、非同步的網路應用。</p>
+<h3 id="1-1-為何選擇-Node-js？"><a href="#1-1-為何選擇-Node-js？" class="headerlink" title="1.1 為何選擇 Node.js？"></a>1.1 為何選擇 Node.js？</h3><ul>
+<li><strong>非同步 &amp; 事件驅動</strong>：適合 I&#x2F;O 密集型應用，如 Web 伺服器。</li>
+<li><strong>單一語言開發</strong>：可用 JavaScript 同時開發前端與後端。</li>
+<li><strong>強大的生態系統</strong>：擁有豐富的 NPM（Node Package Manager）套件。</li>
+<li><strong>高效能</strong>：基於 V8 引擎，運行速度快。</li>
+</ul>
+<h1 id="2-安裝與環境設定"><a href="#2-安裝與環境設定" class="headerlink" title="2. 安裝與環境設定"></a>2. 安裝與環境設定</h1><h3 id="2-1-安裝-Node-js"><a href="#2-1-安裝-Node-js" class="headerlink" title="2.1 安裝 Node.js"></a>2.1 安裝 Node.js</h3><p>從 <a target="_blank" rel="noopener" href="https://nodejs.org/">Node.js 官方網站</a> 下載並安裝 LTS 版本。</p>
+<h3 id="2-2-檢查安裝是否成功"><a href="#2-2-檢查安裝是否成功" class="headerlink" title="2.2 檢查安裝是否成功"></a>2.2 檢查安裝是否成功</h3><p>安裝完成後，在終端機輸入以下指令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>應該會顯示 Node.js 和 npm（Node 套件管理工具）的版本號。</p>
+<h1 id="3-基本應用程式"><a href="#3-基本應用程式" class="headerlink" title="3. 基本應用程式"></a>3. 基本應用程式</h1><h3 id="3-1-建立第一個-Node-js-應用"><a href="#3-1-建立第一個-Node-js-應用" class="headerlink" title="3.1 建立第一個 Node.js 應用"></a>3.1 建立第一個 Node.js 應用</h3><p>新建一個 <code>app.js</code> 檔案，並輸入：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello, Node.js!&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>然後在終端機執行：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">node app.js</span><br></pre></td></tr></table></figure>
+<p>應該會輸出：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hello, Node.js!</span><br></pre></td></tr></table></figure>
 
-<hr>
-<h1 id="Composition-API"><a href="#Composition-API" class="headerlink" title="Composition API"></a><strong>Composition API</strong></h1><p>使用 Composition API 時，我們透過導入的 API 函式來定義組件邏輯。在單文件組件 (SFC) 中，Composition API 通常搭配 <code>&lt;script setup&gt;</code> 使用。<code>setup</code> 屬性是一個提示，它讓 Vue 執行編譯時轉換，從而減少樣板代碼。舉例來說，在 <code>&lt;script setup&gt;</code> 中宣告的導入、第一層變數和函式可直接用於模板中。</p>
-<p>以下是相同的組件，模板保持不變，但改用 Composition API 和 <code>&lt;script setup&gt;</code>：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 響應式狀態</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 改變狀態並觸發更新的函式</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 生命週期鉤子</span></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`初始計數值為 <span class="subst">$&#123;count.value&#125;</span>。`</span>)</span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-2-建立簡單的-HTTP-伺服器"><a href="#3-2-建立簡單的-HTTP-伺服器" class="headerlink" title="3.2 建立簡單的 HTTP 伺服器"></a>3.2 建立簡單的 HTTP 伺服器</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = http.<span class="title function_">createServer</span>(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">writeHead</span>(<span class="number">200</span>, &#123; <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;text/plain&#x27;</span> &#125;);</span><br><span class="line">  res.<span class="title function_">end</span>(<span class="string">&#x27;Hello, World!&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">3000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Server running at http://localhost:3000&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>執行後，開啟瀏覽器並訪問 <code>http://localhost:3000</code>，應該會看到 <code>Hello, World!</code>。</p>
+<h1 id="4-Node-js-模組"><a href="#4-Node-js-模組" class="headerlink" title="4. Node.js 模組"></a>4. Node.js 模組</h1><h3 id="4-1-內建模組"><a href="#4-1-內建模組" class="headerlink" title="4.1 內建模組"></a>4.1 內建模組</h3><p>Node.js 提供許多內建模組，例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>); <span class="comment">// 檔案系統</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>); <span class="comment">// 路徑處理</span></span><br><span class="line"><span class="keyword">const</span> os = <span class="built_in">require</span>(<span class="string">&#x27;os&#x27;</span>); <span class="comment">// 作業系統資訊</span></span><br></pre></td></tr></table></figure>
 
-<hr>
-<h1 id="該選擇哪種風格？"><a href="#該選擇哪種風格？" class="headerlink" title="該選擇哪種風格？"></a><strong>該選擇哪種風格？</strong></h1><p>這兩種 API 風格都能滿足常見的使用場景。它們是基於相同底層系統的不同介面。實際上，<strong>Options API 是基於 Composition API 實現的</strong>！Vue 的核心概念和知識在兩種風格中是共通的。</p>
-<ol>
-<li><p><strong>Options API</strong>  </p>
-<ul>
-<li>圍繞「組件實例」（如範例中的 <code>this</code>）進行設計，對於來自 OOP 語言背景的使用者，這種風格通常更符合以類為基礎的思維模型。</li>
-<li>初學者友好，通過選項分組的方式隱藏了響應式細節，簡化程式碼組織。</li>
-</ul>
-</li>
-<li><p><strong>Composition API</strong>  </p>
-<ul>
-<li>在函式作用域中直接宣告響應式狀態變數，並透過組合多個函式來管理複雜性。</li>
-<li>更加靈活，但需要對 Vue 的響應式機制有深入理解才能有效使用。</li>
-<li>適合組織和重用邏輯的更強大模式。</li>
-</ul>
-</li>
-</ol>
-<h1 id="學習上的建議"><a href="#學習上的建議" class="headerlink" title="學習上的建議"></a><strong>學習上的建議</strong></h1><ul>
-<li><strong>新手學習</strong>：選擇對您來說更容易理解的風格。大多數核心概念在兩種風格中是共通的，您之後可以再學習另一種風格。  </li>
-<li><strong>生產使用</strong>：  <ul>
-<li>如果不使用建構工具，或計畫主要用於低複雜度場景（如漸進式增強），建議使用 <code>Options API</code>。  </li>
-<li>如果計畫使用 Vue 構建完整應用，建議使用 <strong>Composition API + 單文件組件</strong>。</li>
-</ul>
-</li>
-</ul>
-<p>在學習階段，我們也不需要僅限於某一種風格。可以根據適合的情境使用適合的 API 風格。</p>
+<h3 id="4-2-NPM-套件管理"><a href="#4-2-NPM-套件管理" class="headerlink" title="4.2 NPM 套件管理"></a>4.2 NPM 套件管理</h3><p>安裝 Express 框架：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install express</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-Express-入門"><a href="#5-Express-入門" class="headerlink" title="5. Express 入門"></a>5. Express 入門</h1><h3 id="5-1-建立簡單的-Express-伺服器"><a href="#5-1-建立簡單的-Express-伺服器" class="headerlink" title="5.1 建立簡單的 Express 伺服器"></a>5.1 建立簡單的 Express 伺服器</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">send</span>(<span class="string">&#x27;Hello, Express!&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">3000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Server is running on http://localhost:3000&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="6-讀取與寫入檔案"><a href="#6-讀取與寫入檔案" class="headerlink" title="6. 讀取與寫入檔案"></a>6. 讀取與寫入檔案</h1><h3 id="6-1-讀取檔案"><a href="#6-1-讀取檔案" class="headerlink" title="6.1 讀取檔案"></a>6.1 讀取檔案</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"></span><br><span class="line">fs.<span class="title function_">readFile</span>(<span class="string">&#x27;example.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="function">(<span class="params">err, data</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-2-寫入檔案"><a href="#6-2-寫入檔案" class="headerlink" title="6.2 寫入檔案"></a>6.2 寫入檔案</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.<span class="title function_">writeFile</span>(<span class="string">&#x27;output.txt&#x27;</span>, <span class="string">&#x27;Hello, Node.js!&#x27;</span>, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;File has been saved!&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="7-連接-MongoDB-資料庫"><a href="#7-連接-MongoDB-資料庫" class="headerlink" title="7. 連接 MongoDB 資料庫"></a>7. 連接 MongoDB 資料庫</h1><h3 id="7-1-安裝-MongoDB-驅動"><a href="#7-1-安裝-MongoDB-驅動" class="headerlink" title="7.1 安裝 MongoDB 驅動"></a>7.1 安裝 MongoDB 驅動</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install mongoose</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-2-連接-MongoDB"><a href="#7-2-連接-MongoDB" class="headerlink" title="7.2 連接 MongoDB"></a>7.2 連接 MongoDB</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">&#x27;mongoose&#x27;</span>);</span><br><span class="line"></span><br><span class="line">mongoose.<span class="title function_">connect</span>(<span class="string">&#x27;mongodb://localhost:27017/testDB&#x27;</span>, &#123; <span class="attr">useNewUrlParser</span>: <span class="literal">true</span>, <span class="attr">useUnifiedTopology</span>: <span class="literal">true</span> &#125;)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Connected to MongoDB&#x27;</span>))</span><br><span class="line">  .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">error</span>(err));</span><br></pre></td></tr></table></figure>
+
+<h1 id="8-部署-Node-js-應用"><a href="#8-部署-Node-js-應用" class="headerlink" title="8. 部署 Node.js 應用"></a>8. 部署 Node.js 應用</h1><h3 id="8-1-使用-PM2-管理應用"><a href="#8-1-使用-PM2-管理應用" class="headerlink" title="8.1 使用 PM2 管理應用"></a>8.1 使用 PM2 管理應用</h3><p>安裝 PM2：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -g pm2</span><br></pre></td></tr></table></figure>
+<p>啟動應用：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pm2 start app.js</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-2-使用-Docker-部署"><a href="#8-2-使用-Docker-部署" class="headerlink" title="8.2 使用 Docker 部署"></a>8.2 使用 Docker 部署</h3><p>建立 <code>Dockerfile</code>：</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">FROM</span> node:<span class="number">14</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /app</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> package.json .</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> npm install</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> . .</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;node&quot;</span>, <span class="string">&quot;app.js&quot;</span>]</span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">3000</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="9-結論"><a href="#9-結論" class="headerlink" title="9. 結論"></a>9. 結論</h1><p>透過這篇入門筆記，初學者可以快速掌握 Node.js 的基礎概念與實作技巧，包含 HTTP 伺服器、檔案操作、資料庫連接等。建議進一步學習異步程式設計、RESTful API、WebSocket 以及雲端部署技術，以提升開發能力。</p>
 
                 </div>
 
@@ -298,7 +291,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/" title="Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/" title="Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/" title="Vue.js 3 官方入門語法教學筆記 [12] - Emits 事件傳遞 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [12] - Emits 事件傳遞 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/" title="Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/13/learning-notes-vuejs-3-official-tutorial-13-slots/" title="Vue.js 3 官方入門語法教學筆記 [13] - Slots 插槽 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [13] - Slots 插槽 | 學習筆記</a></h3></div></li></ul>
+                        
                     </div>
                 </div>
                 <!-- Tags -->
@@ -334,8 +327,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/";
-    var disqus_url = "https://tech.kdchang.cc/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/";
+    var disqus_identifier = "https://tech.kdchang.cc/2024/12/08/learning-notes-node-js-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.cc/2024/12/08/learning-notes-node-js-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

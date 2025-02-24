@@ -203,6 +203,61 @@
       </tags>
   </entry>
   <entry>
+    <title>Cypress 測試入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/08/learning-notes-cypress-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="1-Cypress-基礎概念"><a href="#1-Cypress-基礎概念" class="headerlink" title="1. Cypress 基礎概念"></a>1. Cypress 基礎概念</h1><p><code>Cypress</code> 是一款現代化的前端自動化測試工具，主要用於測試 Web 應用程式，支援端對端（<code>E2E</code>）測試、<code>元件測試</code>等。</p>
+<h3 id="1-1-為何選擇-Cypress？"><a href="#1-1-為何選擇-Cypress？" class="headerlink" title="1.1 為何選擇 Cypress？"></a>1.1 為何選擇 Cypress？</h3><ul>
+<li>簡單易用，直接運行於瀏覽器。</li>
+<li>提供即時回饋，方便 Debug。</li>
+<li>內建等待機制，避免手動處理異步問題。</li>
+<li>支援截圖與錄影，方便測試分析。</li>
+</ul>
+<h1 id="2-安裝與設定"><a href="#2-安裝與設定" class="headerlink" title="2. 安裝與設定"></a>2. 安裝與設定</h1><h3 id="2-1-安裝-Cypress"><a href="#2-1-安裝-Cypress" class="headerlink" title="2.1 安裝 Cypress"></a>2.1 安裝 Cypress</h3><p>使用 npm 或 yarn 安裝 Cypress：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install cypress --save-dev</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add cypress --dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-執行-Cypress"><a href="#2-2-執行-Cypress" class="headerlink" title="2.2 執行 Cypress"></a>2.2 執行 Cypress</h3><p>安裝完成後，可以使用以下指令開啟 Cypress GUI：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx cypress open</span><br></pre></td></tr></table></figure>
+<p>或直接執行測試：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx cypress run</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-撰寫-Cypress-測試"><a href="#3-撰寫-Cypress-測試" class="headerlink" title="3. 撰寫 Cypress 測試"></a>3. 撰寫 Cypress 測試</h1><h3 id="3-1-建立測試檔案"><a href="#3-1-建立測試檔案" class="headerlink" title="3.1 建立測試檔案"></a>3.1 建立測試檔案</h3><p>Cypress 預設的測試檔案放置於 <code>cypress/e2e/</code> 目錄下，例如：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cypress/e2e/sample_spec.cy.js</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-基本測試範例"><a href="#3-2-基本測試範例" class="headerlink" title="3.2 基本測試範例"></a>3.2 基本測試範例</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">describe</span>(<span class="string">&#x27;My First Test&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="title function_">it</span>(<span class="string">&#x27;Visits the app&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    cy.<span class="title function_">visit</span>(<span class="string">&#x27;https://example.cypress.io&#x27;</span>);</span><br><span class="line">    cy.<span class="title function_">contains</span>(<span class="string">&#x27;type&#x27;</span>).<span class="title function_">click</span>();</span><br><span class="line">    cy.<span class="title function_">url</span>().<span class="title function_">should</span>(<span class="string">&#x27;include&#x27;</span>, <span class="string">&#x27;/commands/actions&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-選擇器與操作"><a href="#3-3-選擇器與操作" class="headerlink" title="3.3 選擇器與操作"></a>3.3 選擇器與操作</h3><p>Cypress 提供多種選擇器來查找元素，例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;button&#x27;</span>).<span class="title function_">click</span>(); <span class="comment">// 透過標籤名稱選擇</span></span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;.btn-primary&#x27;</span>).<span class="title function_">click</span>(); <span class="comment">// 透過 class 選擇</span></span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;#submit-btn&#x27;</span>).<span class="title function_">click</span>(); <span class="comment">// 透過 ID 選擇</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-斷言（Assertions）"><a href="#3-4-斷言（Assertions）" class="headerlink" title="3.4 斷言（Assertions）"></a>3.4 斷言（Assertions）</h3><p>使用 <code>.should()</code> 進行斷言，例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;.success-message&#x27;</span>).<span class="title function_">should</span>(<span class="string">&#x27;be.visible&#x27;</span>);</span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;h1&#x27;</span>).<span class="title function_">should</span>(<span class="string">&#x27;have.text&#x27;</span>, <span class="string">&#x27;Welcome&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-進階功能"><a href="#4-進階功能" class="headerlink" title="4. 進階功能"></a>4. 進階功能</h1><h3 id="4-1-錯誤處理與偵錯"><a href="#4-1-錯誤處理與偵錯" class="headerlink" title="4.1 錯誤處理與偵錯"></a>4.1 錯誤處理與偵錯</h3><p>Cypress 提供 <code>cy.pause()</code> 和 <code>cy.debug()</code> 來幫助偵錯：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;button&#x27;</span>).<span class="title function_">click</span>();</span><br><span class="line">cy.<span class="title function_">pause</span>(); <span class="comment">// 測試暫停</span></span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;.result&#x27;</span>).<span class="title function_">should</span>(<span class="string">&#x27;be.visible&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-假資料與-API-模擬（Mock-API）"><a href="#4-2-假資料與-API-模擬（Mock-API）" class="headerlink" title="4.2 假資料與 API 模擬（Mock API）"></a>4.2 假資料與 API 模擬（Mock API）</h3><p>可以使用 <code>cy.intercept()</code> 攔截 API 請求，例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">intercept</span>(<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;/api/user&#x27;</span>, &#123; <span class="attr">name</span>: <span class="string">&#x27;John Doe&#x27;</span> &#125;).<span class="title function_">as</span>(<span class="string">&#x27;getUser&#x27;</span>);</span><br><span class="line">cy.<span class="title function_">visit</span>(<span class="string">&#x27;/profile&#x27;</span>);</span><br><span class="line">cy.<span class="title function_">wait</span>(<span class="string">&#x27;@getUser&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-自訂命令"><a href="#4-3-自訂命令" class="headerlink" title="4.3 自訂命令"></a>4.3 自訂命令</h3><p>可以在 <code>cypress/support/commands.js</code> 內定義自訂命令，例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Cypress</span>.<span class="property">Commands</span>.<span class="title function_">add</span>(<span class="string">&#x27;login&#x27;</span>, <span class="function">(<span class="params">email, password</span>) =&gt;</span> &#123;</span><br><span class="line">  cy.<span class="title function_">get</span>(<span class="string">&#x27;#email&#x27;</span>).<span class="title function_">type</span>(email);</span><br><span class="line">  cy.<span class="title function_">get</span>(<span class="string">&#x27;#password&#x27;</span>).<span class="title function_">type</span>(password);</span><br><span class="line">  cy.<span class="title function_">get</span>(<span class="string">&#x27;button[type=&quot;submit&quot;]&#x27;</span>).<span class="title function_">click</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>然後在測試中使用：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">login</span>(<span class="string">&#x27;test@example.com&#x27;</span>, <span class="string">&#x27;password123&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-CI-x2F-CD-整合"><a href="#5-CI-x2F-CD-整合" class="headerlink" title="5. CI&#x2F;CD 整合"></a>5. CI&#x2F;CD 整合</h1><p>Cypress 可以與 CI&#x2F;CD 工具整合，如 GitHub Actions 或 GitLab CI&#x2F;CD。</p>
+<h3 id="5-1-GitHub-Actions-設定範例"><a href="#5-1-GitHub-Actions-設定範例" class="headerlink" title="5.1 GitHub Actions 設定範例"></a>5.1 GitHub Actions 設定範例</h3><p>在 <code>.github/workflows/cypress.yml</code> 中新增：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Cypress</span> <span class="string">Tests</span></span><br><span class="line"><span class="attr">on:</span> [<span class="string">push</span>, <span class="string">pull_request</span>]</span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">cypress-run:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">repository</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">dependencies</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Run</span> <span class="string">Cypress</span> <span class="string">tests</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npx</span> <span class="string">cypress</span> <span class="string">run</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h1><p>透過 Cypress，可以輕鬆進行 Web 應用的測試，提高開發效率與穩定性。建議多練習不同測試場景，如表單驗證、API 測試與 RWD 測試，以熟悉 Cypress 強大的測試能力。</p>
+]]></content>
+      <tags>
+        <tag>Cypress</tag>
+        <tag>測試</tag>
+        <tag>E2E</tag>
+        <tag>QA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript ES6 入門語法教學筆記 | 學習筆記</title>
     <url>/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial%20copy/</url>
     <content><![CDATA[<p>ECMAScript 6 又稱 ECMAScript 2015，是 JavaScript 語言的新一代標準，讓 JavaScript 可以更容易撰寫大型複雜的應用程式並避免不必要的錯誤。</p>
@@ -543,6 +598,61 @@
         <tag>異步</tag>
         <tag>async/await</tag>
         <tag>fetch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Node.js 入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/08/learning-notes-node-js-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="1-Node-js-簡介"><a href="#1-Node-js-簡介" class="headerlink" title="1. Node.js 簡介"></a>1. Node.js 簡介</h1><p>Node.js 是一個基於 Chrome V8 JavaScript 引擎的運行環境，可讓開發者使用 JavaScript 來撰寫後端程式。它適合用於構建高效能、非同步的網路應用。</p>
+<h3 id="1-1-為何選擇-Node-js？"><a href="#1-1-為何選擇-Node-js？" class="headerlink" title="1.1 為何選擇 Node.js？"></a>1.1 為何選擇 Node.js？</h3><ul>
+<li><strong>非同步 &amp; 事件驅動</strong>：適合 I&#x2F;O 密集型應用，如 Web 伺服器。</li>
+<li><strong>單一語言開發</strong>：可用 JavaScript 同時開發前端與後端。</li>
+<li><strong>強大的生態系統</strong>：擁有豐富的 NPM（Node Package Manager）套件。</li>
+<li><strong>高效能</strong>：基於 V8 引擎，運行速度快。</li>
+</ul>
+<h1 id="2-安裝與環境設定"><a href="#2-安裝與環境設定" class="headerlink" title="2. 安裝與環境設定"></a>2. 安裝與環境設定</h1><h3 id="2-1-安裝-Node-js"><a href="#2-1-安裝-Node-js" class="headerlink" title="2.1 安裝 Node.js"></a>2.1 安裝 Node.js</h3><p>從 <a href="https://nodejs.org/">Node.js 官方網站</a> 下載並安裝 LTS 版本。</p>
+<h3 id="2-2-檢查安裝是否成功"><a href="#2-2-檢查安裝是否成功" class="headerlink" title="2.2 檢查安裝是否成功"></a>2.2 檢查安裝是否成功</h3><p>安裝完成後，在終端機輸入以下指令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>應該會顯示 Node.js 和 npm（Node 套件管理工具）的版本號。</p>
+<h1 id="3-基本應用程式"><a href="#3-基本應用程式" class="headerlink" title="3. 基本應用程式"></a>3. 基本應用程式</h1><h3 id="3-1-建立第一個-Node-js-應用"><a href="#3-1-建立第一個-Node-js-應用" class="headerlink" title="3.1 建立第一個 Node.js 應用"></a>3.1 建立第一個 Node.js 應用</h3><p>新建一個 <code>app.js</code> 檔案，並輸入：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello, Node.js!&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>然後在終端機執行：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">node app.js</span><br></pre></td></tr></table></figure>
+<p>應該會輸出：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hello, Node.js!</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-建立簡單的-HTTP-伺服器"><a href="#3-2-建立簡單的-HTTP-伺服器" class="headerlink" title="3.2 建立簡單的 HTTP 伺服器"></a>3.2 建立簡單的 HTTP 伺服器</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = http.<span class="title function_">createServer</span>(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">writeHead</span>(<span class="number">200</span>, &#123; <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;text/plain&#x27;</span> &#125;);</span><br><span class="line">  res.<span class="title function_">end</span>(<span class="string">&#x27;Hello, World!&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">3000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Server running at http://localhost:3000&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>執行後，開啟瀏覽器並訪問 <code>http://localhost:3000</code>，應該會看到 <code>Hello, World!</code>。</p>
+<h1 id="4-Node-js-模組"><a href="#4-Node-js-模組" class="headerlink" title="4. Node.js 模組"></a>4. Node.js 模組</h1><h3 id="4-1-內建模組"><a href="#4-1-內建模組" class="headerlink" title="4.1 內建模組"></a>4.1 內建模組</h3><p>Node.js 提供許多內建模組，例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>); <span class="comment">// 檔案系統</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>); <span class="comment">// 路徑處理</span></span><br><span class="line"><span class="keyword">const</span> os = <span class="built_in">require</span>(<span class="string">&#x27;os&#x27;</span>); <span class="comment">// 作業系統資訊</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-NPM-套件管理"><a href="#4-2-NPM-套件管理" class="headerlink" title="4.2 NPM 套件管理"></a>4.2 NPM 套件管理</h3><p>安裝 Express 框架：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install express</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-Express-入門"><a href="#5-Express-入門" class="headerlink" title="5. Express 入門"></a>5. Express 入門</h1><h3 id="5-1-建立簡單的-Express-伺服器"><a href="#5-1-建立簡單的-Express-伺服器" class="headerlink" title="5.1 建立簡單的 Express 伺服器"></a>5.1 建立簡單的 Express 伺服器</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">send</span>(<span class="string">&#x27;Hello, Express!&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">3000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Server is running on http://localhost:3000&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="6-讀取與寫入檔案"><a href="#6-讀取與寫入檔案" class="headerlink" title="6. 讀取與寫入檔案"></a>6. 讀取與寫入檔案</h1><h3 id="6-1-讀取檔案"><a href="#6-1-讀取檔案" class="headerlink" title="6.1 讀取檔案"></a>6.1 讀取檔案</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"></span><br><span class="line">fs.<span class="title function_">readFile</span>(<span class="string">&#x27;example.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="function">(<span class="params">err, data</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-2-寫入檔案"><a href="#6-2-寫入檔案" class="headerlink" title="6.2 寫入檔案"></a>6.2 寫入檔案</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.<span class="title function_">writeFile</span>(<span class="string">&#x27;output.txt&#x27;</span>, <span class="string">&#x27;Hello, Node.js!&#x27;</span>, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;File has been saved!&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="7-連接-MongoDB-資料庫"><a href="#7-連接-MongoDB-資料庫" class="headerlink" title="7. 連接 MongoDB 資料庫"></a>7. 連接 MongoDB 資料庫</h1><h3 id="7-1-安裝-MongoDB-驅動"><a href="#7-1-安裝-MongoDB-驅動" class="headerlink" title="7.1 安裝 MongoDB 驅動"></a>7.1 安裝 MongoDB 驅動</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install mongoose</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-2-連接-MongoDB"><a href="#7-2-連接-MongoDB" class="headerlink" title="7.2 連接 MongoDB"></a>7.2 連接 MongoDB</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">&#x27;mongoose&#x27;</span>);</span><br><span class="line"></span><br><span class="line">mongoose.<span class="title function_">connect</span>(<span class="string">&#x27;mongodb://localhost:27017/testDB&#x27;</span>, &#123; <span class="attr">useNewUrlParser</span>: <span class="literal">true</span>, <span class="attr">useUnifiedTopology</span>: <span class="literal">true</span> &#125;)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Connected to MongoDB&#x27;</span>))</span><br><span class="line">  .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">error</span>(err));</span><br></pre></td></tr></table></figure>
+
+<h1 id="8-部署-Node-js-應用"><a href="#8-部署-Node-js-應用" class="headerlink" title="8. 部署 Node.js 應用"></a>8. 部署 Node.js 應用</h1><h3 id="8-1-使用-PM2-管理應用"><a href="#8-1-使用-PM2-管理應用" class="headerlink" title="8.1 使用 PM2 管理應用"></a>8.1 使用 PM2 管理應用</h3><p>安裝 PM2：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -g pm2</span><br></pre></td></tr></table></figure>
+<p>啟動應用：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pm2 start app.js</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-2-使用-Docker-部署"><a href="#8-2-使用-Docker-部署" class="headerlink" title="8.2 使用 Docker 部署"></a>8.2 使用 Docker 部署</h3><p>建立 <code>Dockerfile</code>：</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">FROM</span> node:<span class="number">14</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /app</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> package.json .</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> npm install</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> . .</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;node&quot;</span>, <span class="string">&quot;app.js&quot;</span>]</span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">3000</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="9-結論"><a href="#9-結論" class="headerlink" title="9. 結論"></a>9. 結論</h1><p>透過這篇入門筆記，初學者可以快速掌握 Node.js 的基礎概念與實作技巧，包含 HTTP 伺服器、檔案操作、資料庫連接等。建議進一步學習異步程式設計、RESTful API、WebSocket 以及雲端部署技術，以提升開發能力。</p>
+]]></content>
+      <tags>
+        <tag>Node.js</tag>
+        <tag>Noed</tag>
+        <tag>NodeJS</tag>
       </tags>
   </entry>
   <entry>
@@ -1234,33 +1344,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記</title>
-    <url>/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/</url>
-    <content><![CDATA[<h1 id="Components-元件"><a href="#Components-元件" class="headerlink" title="Components 元件"></a>Components 元件</h1><p>到目前為止，我們只使用了一個單一的元件。實際的 Vue 應用程式通常是由巢狀元件所組成的。</p>
-<p>父元件可以在其模板中渲染另一個元件作為子元件。要使用子元件，我們需要先匯入它：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>然後，我們可以在模板中使用該元件，如下所示：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<p>我們現在試試看將匯入子元件並將其渲染到模板中。</p>
-<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>A Child Component!<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記</title>
     <url>/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/</url>
     <content><![CDATA[<h1 id="Props-屬性"><a href="#Props-屬性" class="headerlink" title="Props 屬性"></a>Props 屬性</h1><p>子元件可以透過 Props 接收來自父元件的輸入。首先，子元件需要宣告它所接收的 Props：</p>
@@ -1297,6 +1380,33 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp @response=&quot;(msg) =&gt; childMsg = msg&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
 
 <p>現在我們在編輯器中試試看吧！</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記</title>
+    <url>/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/</url>
+    <content><![CDATA[<h1 id="Components-元件"><a href="#Components-元件" class="headerlink" title="Components 元件"></a>Components 元件</h1><p>到目前為止，我們只使用了一個單一的元件。實際的 Vue 應用程式通常是由巢狀元件所組成的。</p>
+<p>父元件可以在其模板中渲染另一個元件作為子元件。要使用子元件，我們需要先匯入它：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>然後，我們可以在模板中使用該元件，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>我們現在試試看將匯入子元件並將其渲染到模板中。</p>
+<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>A Child Component!<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>前端</tag>
