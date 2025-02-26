@@ -1,27 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>KD&#39;s Tech Blog</title>
-  <icon>https://tech.kdchang.cc/logo.png</icon>
+  <icon>https://tech.kdchang.net/logo.png</icon>
   <subtitle>Hi, 我是 KD Chang 張凱迪，我在這書寫我的程式設計技術筆記 | KD&#39;s 技術部落格</subtitle>
-  <link href="https://tech.kdchang.cc/atom.xml" rel="self"/>
+  <link href="https://tech.kdchang.net/atom.xml" rel="self"/>
   
-  <link href="https://tech.kdchang.cc/"/>
-  <updated>2025-02-24T10:49:06.830Z</updated>
-  <id>https://tech.kdchang.cc/</id>
+  <link href="https://tech.kdchang.net/"/>
+  <updated>2025-02-26T03:56:40.252Z</updated>
+  <id>https://tech.kdchang.net/</id>
   
   <author>
     <name>張凱迪（KD Chang）</name>
-    <email>kdchang.cc@gmail.com</email>
+    <email>kdchang.net@gmail.com</email>
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>10 key terms related to backend engineering</title>
+    <link href="https://tech.kdchang.net/2025/01/21/en/about-backend-engineer-10-keywords/"/>
+    <id>https://tech.kdchang.net/2025/01/21/en/about-backend-engineer-10-keywords/</id>
+    <published>2025-01-21T02:12:43.000Z</published>
+    <updated>2025-02-26T03:56:40.252Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Here are 10 key terms related to backend engineering, covering essential skills, tools, and work methodologies: </summary>
+        
+      
+    
+    
+    
+    
+    <category term="SWE" scheme="https://tech.kdchang.net/tags/SWE/"/>
+    
+    <category term="Software Engineer" scheme="https://tech.kdchang.net/tags/Software-Engineer/"/>
+    
+    <category term="Software" scheme="https://tech.kdchang.net/tags/Software/"/>
+    
+    <category term="backend" scheme="https://tech.kdchang.net/tags/backend/"/>
+    
+    <category term="backend engineer" scheme="https://tech.kdchang.net/tags/backend-engineer/"/>
+    
+    <category term="Web" scheme="https://tech.kdchang.net/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Cypress 測試入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2024/12/08/learning-notes-cypress-intro-tutorial/"/>
-    <id>https://tech.kdchang.cc/2024/12/08/learning-notes-cypress-intro-tutorial/</id>
+    <link href="https://tech.kdchang.net/2024/12/08/learning-notes-cypress-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/08/learning-notes-cypress-intro-tutorial/</id>
     <published>2024-12-08T18:23:41.000Z</published>
-    <updated>2025-02-24T10:49:06.830Z</updated>
+    <updated>2025-02-26T03:56:40.252Z</updated>
     
     
       
@@ -35,22 +68,22 @@
     
     
     
-    <category term="Cypress" scheme="https://tech.kdchang.cc/tags/Cypress/"/>
+    <category term="Cypress" scheme="https://tech.kdchang.net/tags/Cypress/"/>
     
-    <category term="測試" scheme="https://tech.kdchang.cc/tags/%E6%B8%AC%E8%A9%A6/"/>
+    <category term="測試" scheme="https://tech.kdchang.net/tags/%E6%B8%AC%E8%A9%A6/"/>
     
-    <category term="E2E" scheme="https://tech.kdchang.cc/tags/E2E/"/>
+    <category term="E2E" scheme="https://tech.kdchang.net/tags/E2E/"/>
     
-    <category term="QA" scheme="https://tech.kdchang.cc/tags/QA/"/>
+    <category term="QA" scheme="https://tech.kdchang.net/tags/QA/"/>
     
   </entry>
   
   <entry>
     <title>Node.js 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2024/12/08/learning-notes-node-js-intro-tutorial/"/>
-    <id>https://tech.kdchang.cc/2024/12/08/learning-notes-node-js-intro-tutorial/</id>
+    <link href="https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial/</id>
     <published>2024-12-08T18:23:41.000Z</published>
-    <updated>2025-02-24T10:49:06.831Z</updated>
+    <updated>2025-02-26T03:56:40.252Z</updated>
     
     
       
@@ -64,20 +97,20 @@
     
     
     
-    <category term="Node.js" scheme="https://tech.kdchang.cc/tags/Node-js/"/>
+    <category term="Node.js" scheme="https://tech.kdchang.net/tags/Node-js/"/>
     
-    <category term="Node" scheme="https://tech.kdchang.cc/tags/Node/"/>
+    <category term="Node" scheme="https://tech.kdchang.net/tags/Node/"/>
     
-    <category term="NodeJS" scheme="https://tech.kdchang.cc/tags/NodeJS/"/>
+    <category term="NodeJS" scheme="https://tech.kdchang.net/tags/NodeJS/"/>
     
   </entry>
   
   <entry>
     <title>Git Flow 介紹與 GitHub Flow 介紹入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/"/>
-    <id>https://tech.kdchang.cc/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</id>
+    <link href="https://tech.kdchang.net/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</id>
     <published>2024-12-04T18:23:41.000Z</published>
-    <updated>2025-02-24T10:49:06.830Z</updated>
+    <updated>2025-02-26T03:56:40.252Z</updated>
     
     
       
@@ -91,22 +124,22 @@
     
     
     
-    <category term="Git Flow" scheme="https://tech.kdchang.cc/tags/Git-Flow/"/>
+    <category term="Git Flow" scheme="https://tech.kdchang.net/tags/Git-Flow/"/>
     
-    <category term="Github Flow" scheme="https://tech.kdchang.cc/tags/Github-Flow/"/>
+    <category term="Github Flow" scheme="https://tech.kdchang.net/tags/Github-Flow/"/>
     
-    <category term="Github" scheme="https://tech.kdchang.cc/tags/Github/"/>
+    <category term="Github" scheme="https://tech.kdchang.net/tags/Github/"/>
     
-    <category term="Git" scheme="https://tech.kdchang.cc/tags/Git/"/>
+    <category term="Git" scheme="https://tech.kdchang.net/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>滾動視差（Parallax Scrolling）網頁設計入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/"/>
-    <id>https://tech.kdchang.cc/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/</id>
+    <link href="https://tech.kdchang.net/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/</id>
     <published>2024-12-03T18:23:41.000Z</published>
-    <updated>2025-02-24T10:49:06.831Z</updated>
+    <updated>2025-02-26T03:56:40.252Z</updated>
     
     
       
@@ -120,28 +153,28 @@
     
     
     
-    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF/"/>
     
-    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    <category term="前端開發" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
     
-    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    <category term="前端工程" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
     
-    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
+    <category term="frontend" scheme="https://tech.kdchang.net/tags/frontend/"/>
     
-    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
+    <category term="frontend engineer" scheme="https://tech.kdchang.net/tags/frontend-engineer/"/>
     
-    <category term="CSS" scheme="https://tech.kdchang.cc/tags/CSS/"/>
+    <category term="CSS" scheme="https://tech.kdchang.net/tags/CSS/"/>
     
-    <category term="typescript" scheme="https://tech.kdchang.cc/tags/typescript/"/>
+    <category term="typescript" scheme="https://tech.kdchang.net/tags/typescript/"/>
     
   </entry>
   
   <entry>
     <title>TypeScript 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2024/12/02/learning-notes-typescript-intro-tutorial/"/>
-    <id>https://tech.kdchang.cc/2024/12/02/learning-notes-typescript-intro-tutorial/</id>
+    <link href="https://tech.kdchang.net/2024/12/02/learning-notes-typescript-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/02/learning-notes-typescript-intro-tutorial/</id>
     <published>2024-12-02T18:23:41.000Z</published>
-    <updated>2025-02-24T10:49:06.831Z</updated>
+    <updated>2025-02-26T03:56:40.253Z</updated>
     
     
       
@@ -155,28 +188,28 @@
     
     
     
-    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF/"/>
     
-    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    <category term="前端開發" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
     
-    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    <category term="前端工程" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
     
-    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
+    <category term="frontend" scheme="https://tech.kdchang.net/tags/frontend/"/>
     
-    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
+    <category term="frontend engineer" scheme="https://tech.kdchang.net/tags/frontend-engineer/"/>
     
-    <category term="CSS" scheme="https://tech.kdchang.cc/tags/CSS/"/>
+    <category term="CSS" scheme="https://tech.kdchang.net/tags/CSS/"/>
     
-    <category term="typescript" scheme="https://tech.kdchang.cc/tags/typescript/"/>
+    <category term="typescript" scheme="https://tech.kdchang.net/tags/typescript/"/>
     
   </entry>
   
   <entry>
     <title>Nuxt.js 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2024/12/01/learning-notes-nuxtjs-intro-tutorial/"/>
-    <id>https://tech.kdchang.cc/2024/12/01/learning-notes-nuxtjs-intro-tutorial/</id>
+    <link href="https://tech.kdchang.net/2024/12/01/learning-notes-nuxtjs-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/01/learning-notes-nuxtjs-intro-tutorial/</id>
     <published>2024-12-01T18:23:41.000Z</published>
-    <updated>2025-02-24T10:49:06.831Z</updated>
+    <updated>2025-02-26T03:56:40.252Z</updated>
     
     
       
@@ -190,32 +223,32 @@
     
     
     
-    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF/"/>
     
-    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    <category term="前端開發" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
     
-    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    <category term="前端工程" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
     
-    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
+    <category term="frontend" scheme="https://tech.kdchang.net/tags/frontend/"/>
     
-    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
+    <category term="frontend engineer" scheme="https://tech.kdchang.net/tags/frontend-engineer/"/>
     
-    <category term="CSS" scheme="https://tech.kdchang.cc/tags/CSS/"/>
+    <category term="CSS" scheme="https://tech.kdchang.net/tags/CSS/"/>
     
-    <category term="Nuxt" scheme="https://tech.kdchang.cc/tags/Nuxt/"/>
+    <category term="Nuxt" scheme="https://tech.kdchang.net/tags/Nuxt/"/>
     
-    <category term="Nuxt.js" scheme="https://tech.kdchang.cc/tags/Nuxt-js/"/>
+    <category term="Nuxt.js" scheme="https://tech.kdchang.net/tags/Nuxt-js/"/>
     
-    <category term="Vue.js" scheme="https://tech.kdchang.cc/tags/Vue-js/"/>
+    <category term="Vue.js" scheme="https://tech.kdchang.net/tags/Vue-js/"/>
     
   </entry>
   
   <entry>
     <title>Tailwind CSS 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2024/11/30/learning-notes-tailwind-css-intro-tutorial/"/>
-    <id>https://tech.kdchang.cc/2024/11/30/learning-notes-tailwind-css-intro-tutorial/</id>
+    <link href="https://tech.kdchang.net/2024/11/30/learning-notes-tailwind-css-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/11/30/learning-notes-tailwind-css-intro-tutorial/</id>
     <published>2024-11-30T18:23:41.000Z</published>
-    <updated>2025-02-24T10:49:06.831Z</updated>
+    <updated>2025-02-26T03:56:40.253Z</updated>
     
     
       
@@ -229,30 +262,30 @@
     
     
     
-    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF/"/>
     
-    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    <category term="前端開發" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
     
-    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    <category term="前端工程" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
     
-    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
+    <category term="frontend" scheme="https://tech.kdchang.net/tags/frontend/"/>
     
-    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
+    <category term="frontend engineer" scheme="https://tech.kdchang.net/tags/frontend-engineer/"/>
     
-    <category term="CSS" scheme="https://tech.kdchang.cc/tags/CSS/"/>
+    <category term="CSS" scheme="https://tech.kdchang.net/tags/CSS/"/>
     
-    <category term="Tailwind CSS" scheme="https://tech.kdchang.cc/tags/Tailwind-CSS/"/>
+    <category term="Tailwind CSS" scheme="https://tech.kdchang.net/tags/Tailwind-CSS/"/>
     
-    <category term="Tailwind" scheme="https://tech.kdchang.cc/tags/Tailwind/"/>
+    <category term="Tailwind" scheme="https://tech.kdchang.net/tags/Tailwind/"/>
     
   </entry>
   
   <entry>
     <title>Grid 網頁排版技巧入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2024/11/15/learning-notes-css-grid-intro-tutorial/"/>
-    <id>https://tech.kdchang.cc/2024/11/15/learning-notes-css-grid-intro-tutorial/</id>
+    <link href="https://tech.kdchang.net/2024/11/15/learning-notes-css-grid-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/11/15/learning-notes-css-grid-intro-tutorial/</id>
     <published>2024-11-15T18:23:41.000Z</published>
-    <updated>2025-02-24T10:49:06.830Z</updated>
+    <updated>2025-02-26T03:56:40.252Z</updated>
     
     
       
@@ -266,20 +299,20 @@
     
     
     
-    <category term="css" scheme="https://tech.kdchang.cc/tags/css/"/>
+    <category term="css" scheme="https://tech.kdchang.net/tags/css/"/>
     
-    <category term="排版" scheme="https://tech.kdchang.cc/tags/%E6%8E%92%E7%89%88/"/>
+    <category term="排版" scheme="https://tech.kdchang.net/tags/%E6%8E%92%E7%89%88/"/>
     
-    <category term="Grid" scheme="https://tech.kdchang.cc/tags/Grid/"/>
+    <category term="Grid" scheme="https://tech.kdchang.net/tags/Grid/"/>
     
   </entry>
   
   <entry>
     <title>Flexbox 網頁排版技巧入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2024/11/14/learning-notes-css-flexbox-intro-tutorial/"/>
-    <id>https://tech.kdchang.cc/2024/11/14/learning-notes-css-flexbox-intro-tutorial/</id>
+    <link href="https://tech.kdchang.net/2024/11/14/learning-notes-css-flexbox-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/11/14/learning-notes-css-flexbox-intro-tutorial/</id>
     <published>2024-11-14T18:23:41.000Z</published>
-    <updated>2025-02-24T10:49:06.830Z</updated>
+    <updated>2025-02-26T03:56:40.252Z</updated>
     
     
       
@@ -293,20 +326,20 @@
     
     
     
-    <category term="Flexbox" scheme="https://tech.kdchang.cc/tags/Flexbox/"/>
+    <category term="Flexbox" scheme="https://tech.kdchang.net/tags/Flexbox/"/>
     
-    <category term="css" scheme="https://tech.kdchang.cc/tags/css/"/>
+    <category term="css" scheme="https://tech.kdchang.net/tags/css/"/>
     
-    <category term="排版" scheme="https://tech.kdchang.cc/tags/%E6%8E%92%E7%89%88/"/>
+    <category term="排版" scheme="https://tech.kdchang.net/tags/%E6%8E%92%E7%89%88/"/>
     
   </entry>
   
   <entry>
     <title>Vue i18n 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2024/11/13/learning-notes-vue-i18n-intro-tutorial/"/>
-    <id>https://tech.kdchang.cc/2024/11/13/learning-notes-vue-i18n-intro-tutorial/</id>
+    <link href="https://tech.kdchang.net/2024/11/13/learning-notes-vue-i18n-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/11/13/learning-notes-vue-i18n-intro-tutorial/</id>
     <published>2024-11-13T18:23:41.000Z</published>
-    <updated>2025-02-24T10:49:06.831Z</updated>
+    <updated>2025-02-26T03:56:40.253Z</updated>
     
     
       
@@ -320,26 +353,26 @@
     
     
     
-    <category term="Vue" scheme="https://tech.kdchang.cc/tags/Vue/"/>
+    <category term="Vue" scheme="https://tech.kdchang.net/tags/Vue/"/>
     
-    <category term="i18n" scheme="https://tech.kdchang.cc/tags/i18n/"/>
+    <category term="i18n" scheme="https://tech.kdchang.net/tags/i18n/"/>
     
-    <category term="Vue i18n" scheme="https://tech.kdchang.cc/tags/Vue-i18n/"/>
+    <category term="Vue i18n" scheme="https://tech.kdchang.net/tags/Vue-i18n/"/>
     
-    <category term="多語系" scheme="https://tech.kdchang.cc/tags/%E5%A4%9A%E8%AA%9E%E7%B3%BB/"/>
+    <category term="多語系" scheme="https://tech.kdchang.net/tags/%E5%A4%9A%E8%AA%9E%E7%B3%BB/"/>
     
-    <category term="多國語系" scheme="https://tech.kdchang.cc/tags/%E5%A4%9A%E5%9C%8B%E8%AA%9E%E7%B3%BB/"/>
+    <category term="多國語系" scheme="https://tech.kdchang.net/tags/%E5%A4%9A%E5%9C%8B%E8%AA%9E%E7%B3%BB/"/>
     
-    <category term="在地化" scheme="https://tech.kdchang.cc/tags/%E5%9C%A8%E5%9C%B0%E5%8C%96/"/>
+    <category term="在地化" scheme="https://tech.kdchang.net/tags/%E5%9C%A8%E5%9C%B0%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>Cookie 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2024/11/01/learning-notes-cookie-intro-tutorial/"/>
-    <id>https://tech.kdchang.cc/2024/11/01/learning-notes-cookie-intro-tutorial/</id>
+    <link href="https://tech.kdchang.net/2024/11/01/learning-notes-cookie-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/11/01/learning-notes-cookie-intro-tutorial/</id>
     <published>2024-11-01T18:23:41.000Z</published>
-    <updated>2025-02-24T10:49:06.830Z</updated>
+    <updated>2025-02-26T03:56:40.252Z</updated>
     
     
       
@@ -353,28 +386,28 @@
     
     
     
-    <category term="javascript" scheme="https://tech.kdchang.cc/tags/javascript/"/>
+    <category term="javascript" scheme="https://tech.kdchang.net/tags/javascript/"/>
     
-    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF/"/>
     
-    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    <category term="前端開發" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
     
-    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    <category term="前端工程" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
     
-    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
+    <category term="frontend" scheme="https://tech.kdchang.net/tags/frontend/"/>
     
-    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
+    <category term="frontend engineer" scheme="https://tech.kdchang.net/tags/frontend-engineer/"/>
     
-    <category term="cookie" scheme="https://tech.kdchang.cc/tags/cookie/"/>
+    <category term="cookie" scheme="https://tech.kdchang.net/tags/cookie/"/>
     
   </entry>
   
   <entry>
     <title>WebSocket 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2024/07/10/learning-notes-websocket-intro-tutorial/"/>
-    <id>https://tech.kdchang.cc/2024/07/10/learning-notes-websocket-intro-tutorial/</id>
+    <link href="https://tech.kdchang.net/2024/07/10/learning-notes-websocket-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/07/10/learning-notes-websocket-intro-tutorial/</id>
     <published>2024-07-10T18:23:41.000Z</published>
-    <updated>2025-02-24T10:49:06.832Z</updated>
+    <updated>2025-02-26T03:56:40.253Z</updated>
     
     
       
@@ -388,20 +421,20 @@
     
     
     
-    <category term="Node.js" scheme="https://tech.kdchang.cc/tags/Node-js/"/>
+    <category term="Node.js" scheme="https://tech.kdchang.net/tags/Node-js/"/>
     
-    <category term="NodeJS" scheme="https://tech.kdchang.cc/tags/NodeJS/"/>
+    <category term="NodeJS" scheme="https://tech.kdchang.net/tags/NodeJS/"/>
     
-    <category term="WebSocket" scheme="https://tech.kdchang.cc/tags/WebSocket/"/>
+    <category term="WebSocket" scheme="https://tech.kdchang.net/tags/WebSocket/"/>
     
   </entry>
   
   <entry>
     <title>HTML &amp; CSS 切版入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2024/07/01/learning-notes-html-css-layout-intro-tutorial/"/>
-    <id>https://tech.kdchang.cc/2024/07/01/learning-notes-html-css-layout-intro-tutorial/</id>
+    <link href="https://tech.kdchang.net/2024/07/01/learning-notes-html-css-layout-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/07/01/learning-notes-html-css-layout-intro-tutorial/</id>
     <published>2024-07-01T18:23:41.000Z</published>
-    <updated>2025-02-24T10:49:06.830Z</updated>
+    <updated>2025-02-26T03:56:40.252Z</updated>
     
     
       
@@ -415,20 +448,20 @@
     
     
     
-    <category term="HTML" scheme="https://tech.kdchang.cc/tags/HTML/"/>
+    <category term="HTML" scheme="https://tech.kdchang.net/tags/HTML/"/>
     
-    <category term="CSS" scheme="https://tech.kdchang.cc/tags/CSS/"/>
+    <category term="CSS" scheme="https://tech.kdchang.net/tags/CSS/"/>
     
-    <category term="切版" scheme="https://tech.kdchang.cc/tags/%E5%88%87%E7%89%88/"/>
+    <category term="切版" scheme="https://tech.kdchang.net/tags/%E5%88%87%E7%89%88/"/>
     
   </entry>
   
   <entry>
     <title>SCSS 介紹入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2024/07/01/learning-notes-scss-intro-tutorial/"/>
-    <id>https://tech.kdchang.cc/2024/07/01/learning-notes-scss-intro-tutorial/</id>
+    <link href="https://tech.kdchang.net/2024/07/01/learning-notes-scss-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/07/01/learning-notes-scss-intro-tutorial/</id>
     <published>2024-07-01T18:23:41.000Z</published>
-    <updated>2025-02-24T10:49:06.831Z</updated>
+    <updated>2025-02-26T03:56:40.253Z</updated>
     
     
       
@@ -442,20 +475,20 @@
     
     
     
-    <category term="CSS" scheme="https://tech.kdchang.cc/tags/CSS/"/>
+    <category term="CSS" scheme="https://tech.kdchang.net/tags/CSS/"/>
     
-    <category term="SASS" scheme="https://tech.kdchang.cc/tags/SASS/"/>
+    <category term="SASS" scheme="https://tech.kdchang.net/tags/SASS/"/>
     
-    <category term="SCSS" scheme="https://tech.kdchang.cc/tags/SCSS/"/>
+    <category term="SCSS" scheme="https://tech.kdchang.net/tags/SCSS/"/>
     
   </entry>
   
   <entry>
     <title>SASS 語法介紹入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2024/06/30/learning-notes-sass-intro-tutorial/"/>
-    <id>https://tech.kdchang.cc/2024/06/30/learning-notes-sass-intro-tutorial/</id>
+    <link href="https://tech.kdchang.net/2024/06/30/learning-notes-sass-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/06/30/learning-notes-sass-intro-tutorial/</id>
     <published>2024-06-30T18:23:41.000Z</published>
-    <updated>2025-02-24T10:49:06.831Z</updated>
+    <updated>2025-02-26T03:56:40.253Z</updated>
     
     
       
@@ -469,20 +502,20 @@
     
     
     
-    <category term="CSS" scheme="https://tech.kdchang.cc/tags/CSS/"/>
+    <category term="CSS" scheme="https://tech.kdchang.net/tags/CSS/"/>
     
-    <category term="SASS" scheme="https://tech.kdchang.cc/tags/SASS/"/>
+    <category term="SASS" scheme="https://tech.kdchang.net/tags/SASS/"/>
     
-    <category term="SCSS" scheme="https://tech.kdchang.cc/tags/SCSS/"/>
+    <category term="SCSS" scheme="https://tech.kdchang.net/tags/SCSS/"/>
     
   </entry>
   
   <entry>
     <title>軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</title>
-    <link href="https://tech.kdchang.cc/2024/06/22/software-engineer-and-web-develement-skill-tree/"/>
-    <id>https://tech.kdchang.cc/2024/06/22/software-engineer-and-web-develement-skill-tree/</id>
+    <link href="https://tech.kdchang.net/2024/06/22/software-engineer-and-web-develement-skill-tree/"/>
+    <id>https://tech.kdchang.net/2024/06/22/software-engineer-and-web-develement-skill-tree/</id>
     <published>2024-06-22T03:33:41.000Z</published>
-    <updated>2025-02-24T10:49:06.832Z</updated>
+    <updated>2025-02-26T03:56:40.253Z</updated>
     
     
       
@@ -496,24 +529,24 @@
     
     
     
-    <category term="Software Engineer" scheme="https://tech.kdchang.cc/tags/Software-Engineer/"/>
+    <category term="Software Engineer" scheme="https://tech.kdchang.net/tags/Software-Engineer/"/>
     
-    <category term="Frontend Roadmap" scheme="https://tech.kdchang.cc/tags/Frontend-Roadmap/"/>
+    <category term="Frontend Roadmap" scheme="https://tech.kdchang.net/tags/Frontend-Roadmap/"/>
     
-    <category term="Backend Roadmap" scheme="https://tech.kdchang.cc/tags/Backend-Roadmap/"/>
+    <category term="Backend Roadmap" scheme="https://tech.kdchang.net/tags/Backend-Roadmap/"/>
     
-    <category term="DevOps" scheme="https://tech.kdchang.cc/tags/DevOps/"/>
+    <category term="DevOps" scheme="https://tech.kdchang.net/tags/DevOps/"/>
     
-    <category term="Full Stack" scheme="https://tech.kdchang.cc/tags/Full-Stack/"/>
+    <category term="Full Stack" scheme="https://tech.kdchang.net/tags/Full-Stack/"/>
     
   </entry>
   
   <entry>
     <title>常見 Web Frontend 前端工程師學習資源和工具</title>
-    <link href="https://tech.kdchang.cc/2024/03/22/web-frontend-resources/"/>
-    <id>https://tech.kdchang.cc/2024/03/22/web-frontend-resources/</id>
+    <link href="https://tech.kdchang.net/2024/03/22/web-frontend-resources/"/>
+    <id>https://tech.kdchang.net/2024/03/22/web-frontend-resources/</id>
     <published>2024-03-22T03:33:41.000Z</published>
-    <updated>2025-02-24T10:49:06.832Z</updated>
+    <updated>2025-02-26T03:56:40.254Z</updated>
     
     
       
@@ -528,28 +561,28 @@
     
     
     
-    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    <category term="前端工程" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
     
-    <category term="Software Engineer" scheme="https://tech.kdchang.cc/tags/Software-Engineer/"/>
+    <category term="Software Engineer" scheme="https://tech.kdchang.net/tags/Software-Engineer/"/>
     
-    <category term="前端工程師" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/"/>
+    <category term="前端工程師" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/"/>
     
-    <category term="Frontend Roadmap" scheme="https://tech.kdchang.cc/tags/Frontend-Roadmap/"/>
+    <category term="Frontend Roadmap" scheme="https://tech.kdchang.net/tags/Frontend-Roadmap/"/>
     
-    <category term="前端面試" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%A9%A6/"/>
+    <category term="前端面試" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%A9%A6/"/>
     
-    <category term="interview question" scheme="https://tech.kdchang.cc/tags/interview-question/"/>
+    <category term="interview question" scheme="https://tech.kdchang.net/tags/interview-question/"/>
     
-    <category term="interview" scheme="https://tech.kdchang.cc/tags/interview/"/>
+    <category term="interview" scheme="https://tech.kdchang.net/tags/interview/"/>
     
   </entry>
   
   <entry>
     <title>常見 Web Frontend 前端工程師面試準備題目清單</title>
-    <link href="https://tech.kdchang.cc/2024/01/22/web-frontend-interview-question-list/"/>
-    <id>https://tech.kdchang.cc/2024/01/22/web-frontend-interview-question-list/</id>
+    <link href="https://tech.kdchang.net/2024/01/22/web-frontend-interview-question-list/"/>
+    <id>https://tech.kdchang.net/2024/01/22/web-frontend-interview-question-list/</id>
     <published>2024-01-22T03:33:41.000Z</published>
-    <updated>2025-02-24T10:49:06.832Z</updated>
+    <updated>2025-02-26T03:56:40.254Z</updated>
     
     
       
@@ -563,28 +596,28 @@
     
     
     
-    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    <category term="前端工程" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
     
-    <category term="Software Engineer" scheme="https://tech.kdchang.cc/tags/Software-Engineer/"/>
+    <category term="Software Engineer" scheme="https://tech.kdchang.net/tags/Software-Engineer/"/>
     
-    <category term="前端工程師" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/"/>
+    <category term="前端工程師" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/"/>
     
-    <category term="Frontend Roadmap" scheme="https://tech.kdchang.cc/tags/Frontend-Roadmap/"/>
+    <category term="Frontend Roadmap" scheme="https://tech.kdchang.net/tags/Frontend-Roadmap/"/>
     
-    <category term="前端面試" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%A9%A6/"/>
+    <category term="前端面試" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%A9%A6/"/>
     
-    <category term="interview question" scheme="https://tech.kdchang.cc/tags/interview-question/"/>
+    <category term="interview question" scheme="https://tech.kdchang.net/tags/interview-question/"/>
     
-    <category term="interview" scheme="https://tech.kdchang.cc/tags/interview/"/>
+    <category term="interview" scheme="https://tech.kdchang.net/tags/interview/"/>
     
   </entry>
   
   <entry>
     <title>Responsive Design 響應式設計入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2022/06/09/learning-notes-responsive-design-rwd/"/>
-    <id>https://tech.kdchang.cc/2022/06/09/learning-notes-responsive-design-rwd/</id>
+    <link href="https://tech.kdchang.net/2022/06/09/learning-notes-responsive-design-rwd/"/>
+    <id>https://tech.kdchang.net/2022/06/09/learning-notes-responsive-design-rwd/</id>
     <published>2022-06-09T18:23:41.000Z</published>
-    <updated>2025-02-24T10:49:06.831Z</updated>
+    <updated>2025-02-26T03:56:40.253Z</updated>
     
     
       
@@ -598,50 +631,11 @@
     
     
     
-    <category term="Responsive Design" scheme="https://tech.kdchang.cc/tags/Responsive-Design/"/>
+    <category term="Responsive Design" scheme="https://tech.kdchang.net/tags/Responsive-Design/"/>
     
-    <category term="響應式設計" scheme="https://tech.kdchang.cc/tags/%E9%9F%BF%E6%87%89%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
+    <category term="響應式設計" scheme="https://tech.kdchang.net/tags/%E9%9F%BF%E6%87%89%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
     
-    <category term="RWD" scheme="https://tech.kdchang.cc/tags/RWD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [13] - Slots 插槽 | 學習筆記</title>
-    <link href="https://tech.kdchang.cc/2021/02/13/learning-notes-vuejs-3-official-tutorial-13-slots/"/>
-    <id>https://tech.kdchang.cc/2021/02/13/learning-notes-vuejs-3-official-tutorial-13-slots/</id>
-    <published>2021-02-13T18:23:41.000Z</published>
-    <updated>2025-02-24T10:49:06.831Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Slots-插槽&quot;&gt;&lt;a href=&quot;#Slots-插槽&quot; class=&quot;headerlink&quot; title=&quot;Slots 插槽&quot;&gt;&lt;/a&gt;Slots 插槽&lt;/h1&gt;&lt;p&gt;除了透過 Props</summary>
-        
-      
-    
-    
-    
-    
-    <category term="前端" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="前端開發" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="前端工程" scheme="https://tech.kdchang.cc/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
-    
-    <category term="frontend" scheme="https://tech.kdchang.cc/tags/frontend/"/>
-    
-    <category term="frontend engineer" scheme="https://tech.kdchang.cc/tags/frontend-engineer/"/>
-    
-    <category term="vue" scheme="https://tech.kdchang.cc/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.cc/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.cc/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.cc/tags/vue-js-3/"/>
+    <category term="RWD" scheme="https://tech.kdchang.net/tags/RWD/"/>
     
   </entry>
   

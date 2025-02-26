@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://tech.kdchang.cc/sitemap.xml
+Sitemap: https://tech.kdchang.net/sitemap.xml
