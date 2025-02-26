@@ -113,7 +113,7 @@ author: kdchang
 	CSS 是負責前端的外觀樣式，隨著技術演進，有些開發者會使用 CSS 預處理器（Preprocessor）進行開發，建構方便維護和高效率的 CSS 開發環境，例如：Sass/LESS。但記得真正使用要轉譯成 CSS。
 
 	延伸閱讀：
-	[Sass/SCSS 簡明入門教學](http://tech.kdchang.cc/2016/10/11/sass-scss-tutorial-introduction/)
+	[Sass/SCSS 簡明入門教學](http://tech.kdchang.net/2016/10/11/sass-scss-tutorial-introduction/)
 
 5. Gulp/Grunt
 	`Gulp` 是一個前端任務工具自動化管理工具（Task Runner）。隨著前端工程的發展，我們在開發前端應用程式時有許多工作是必須重複進行，例如：打包文件、uglify、將 LESS 轉譯成一般的 CSS 的檔案，轉譯 ES6 語法等工作。若是使用一般手動的方式，往往會造成效率的低下，所以透過像是 [Grunt](http://gruntjs.com/)、Gulp 這類的 Task Runner 不但可以提昇效率，也可以更方便管理這些任務。由於 Gulp 是透過 pipeline 方式來處理檔案，在使用上比起 Grunt 的方式直觀許多，所以這邊我們主要討論的是 Gulp。

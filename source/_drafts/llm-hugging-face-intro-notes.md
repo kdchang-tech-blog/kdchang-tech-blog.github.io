@@ -2,7 +2,7 @@
 title: Hugging Face 開源 AI 模型平台入門教學
 date: 2024-05-22 11:33:41
 author: kdchang
-cover: https://tech.kdchang.cc/img/posts/i-am-scrum-master.png
+cover: https://tech.kdchang.net/img/posts/i-am-scrum-master.png
 tags: 
     - 生成式 AI
     - GenAI
