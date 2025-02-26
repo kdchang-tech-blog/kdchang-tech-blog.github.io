@@ -6,12 +6,14 @@
 title: KD's Tech Blog
 subtitle: Hi, 我是 KD Chang 張凱迪，我在這書寫我的程式設計技術筆記 | KD's 技術部落格
 author: 張凱迪（KD Chang）
-language: zh-TW
+language:
+  - zh-TW
+  - en
 timezone: Asia/Taipei
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://tech.kdchang.cc
+url: https://tech.kdchang.net
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -23,7 +25,7 @@ pretty_urls:
 # Site settings
 SEOTitle: KD's Tech Blog 技術部落格 | KD Chang 張凱迪
 header-img: img/cover.jpg
-email: kdchang.cc@gmail.com
+email: kdchang.net@gmail.com
 description: "Hi 我是 KD Chang 張凱迪，我在這書寫我的程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！"
 keyword: "軟體工程, 程式設計, 程式開發, frontend, backend, web, software, software engineer, JavaScript, Python"
 
@@ -35,7 +37,7 @@ keyword: "軟體工程, 程式設計, 程式開發, frontend, backend, web, soft
 github_username:    kdchang
 twitter_username:   kaidichang
 instagram_username:   kd.chang.cc
-facebook_username:  tech.kdchang.cc
+facebook_username:  tech.kdchang.net
 # linkedin_username: kaidichang
 
 # Build settings
@@ -50,7 +52,7 @@ disqus_username: kdchang-tech-blog
 # ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 # Google Analytics 4
 ga_track_id: G-FN9X92SM77           # Format: UA-xxxxxx-xx
-ga_domain: tech.kdchang.cc
+ga_domain: tech.kdchang.net
 
 
 # Sidebar settings
@@ -68,7 +70,7 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 friends: [
     {
         title: "KD Chang's Blog",
-        href: "https://www.kdchang.cc"
+        href: "https://www.kdchang.net"
     },
     {
         title: "聽出職場軟實力 Podcast",
@@ -170,7 +172,7 @@ robotstxt:
   useragent: "*"
   disallow: ''
   sitemap: 
-    - https://tech.kdchang.cc/sitemap.xml
+    - https://tech.kdchang.net/sitemap.xml
   baidusitemap: 
     - /baidusitemap.xml
 
@@ -227,3 +229,12 @@ feed:
 include:
   .nojekyll
   CNAME
+
+index_generator:
+  per_page: 10
+  order_by: -date
+  i18n_dir: :lang
+
+menu:
+  zh-tw: /
+  en: /en/
