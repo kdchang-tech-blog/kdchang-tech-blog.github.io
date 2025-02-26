@@ -1245,6 +1245,114 @@
       </tags>
   </entry>
   <entry>
+    <title>Tailwind CSS 入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/30/learning-notes-tailwind-css-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="一、什麼是-Tailwind-CSS？"><a href="#一、什麼是-Tailwind-CSS？" class="headerlink" title="一、什麼是 Tailwind CSS？"></a>一、什麼是 Tailwind CSS？</h1><p>Tailwind CSS 是一款以「<code>工具類別優先</code>」（<code>Utility-First</code>）為核心設計理念的 CSS 框架，與傳統的 CSS 框架（如 Bootstrap、Bulma）不同，它不提供預設的 UI 元件，而是提供大量的樣式工具類別，讓開發者可以快速組合來建構 UI，而不需要額外撰寫自訂 CSS。  </p>
+<p>相較於傳統 CSS 框架，Tailwind CSS 具有以下幾個主要優勢：  </p>
+<ol>
+<li><strong>開發效率高</strong>：只需使用<code>類別組合</code>即可完成設計，無需撰寫額外 CSS。  </li>
+<li><strong>高度可客製化</strong>：可以透過設定檔調整顏色、字型、間距等設計。  </li>
+<li><strong>內建響應式支援</strong>：透過 <code>sm: md: lg: xl:</code> 等前綴輕鬆定義不同裝置的樣式。  </li>
+<li><strong>一致性強</strong>：開發團隊可以統一使用 Tailwind CSS 定義的設計樣式，減少 UI 風格不一致的問題。  </li>
+<li><strong>效能優化</strong>：可透過 PurgeCSS 移除未使用的樣式，確保最小化 CSS 檔案大小，提高網站載入速度。</li>
+</ol>
+<hr>
+<h1 id="二、安裝-Tailwind-CSS"><a href="#二、安裝-Tailwind-CSS" class="headerlink" title="二、安裝 Tailwind CSS"></a>二、安裝 Tailwind CSS</h1><p>Tailwind CSS 可以透過多種方式安裝，以下介紹幾種常見的方法：  </p>
+<h3 id="1-使用-CDN（適合快速測試）"><a href="#1-使用-CDN（適合快速測試）" class="headerlink" title="1. 使用 CDN（適合快速測試）"></a>1. 使用 CDN（適合快速測試）</h3><p>如果只是想快速體驗 Tailwind CSS，可以直接在 HTML 檔案中加入以下 <code>&lt;link&gt;</code>：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>這種方式適合小型專案或測試 Tailwind CSS 的功能，但不適合正式開發，因為無法使用客製化設定。  </p>
+<h3 id="2-透過-npm-安裝（推薦方式）"><a href="#2-透過-npm-安裝（推薦方式）" class="headerlink" title="2. 透過 npm 安裝（推薦方式）"></a>2. 透過 npm 安裝（推薦方式）</h3><p>在正式開發環境中，建議使用 npm 或 yarn 來安裝 Tailwind CSS，以便進行客製化設定。  </p>
+<p><strong>安裝 Tailwind CSS</strong>：  </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -D tailwindcss postcss autoprefixer</span><br><span class="line">npx tailwindcss init -p</span><br></pre></td></tr></table></figure>
+
+<p>執行上述指令後，會在專案根目錄中產生 <code>tailwind.config.js</code> 設定檔，可用來調整 Tailwind 的預設樣式。  </p>
+<p><strong>設定 Tailwind CSS</strong>：  </p>
+<p>開啟 <code>tailwind.config.js</code>，找到 <code>content</code> 設定，確保 Tailwind 只處理專案內的相關檔案，例如：  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">content</span>: [<span class="string">&quot;./src/**/*.&#123;html,js,ts,jsx,tsx&#125;&quot;</span>],</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;&#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>這樣 Tailwind CSS 就只會掃描 <code>src</code> 資料夾內的 HTML、JavaScript 和 TypeScript 檔案，避免產生不必要的 CSS。  </p>
+<p><strong>引入 Tailwind 樣式</strong>：  </p>
+<p>在 <code>src/index.css</code> 或 <code>styles.css</code> 檔案中加入以下內容，讓 Tailwind CSS 套用基礎樣式：  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@tailwind</span> base;</span><br><span class="line"><span class="keyword">@tailwind</span> components;</span><br><span class="line"><span class="keyword">@tailwind</span> utilities;</span><br></pre></td></tr></table></figure>
+
+<p>最後，在開發環境中執行 Tailwind 編譯指令：  </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch</span><br></pre></td></tr></table></figure>
+
+<p>這會自動監聽檔案變化，並輸出 Tailwind CSS 的樣式到 <code>output.css</code>。  </p>
+<hr>
+<h1 id="三、Tailwind-CSS-常用類別"><a href="#三、Tailwind-CSS-常用類別" class="headerlink" title="三、Tailwind CSS 常用類別"></a>三、Tailwind CSS 常用類別</h1><p>Tailwind CSS 提供大量的工具類別，以下介紹幾個常用的類別和應用範例。  </p>
+<h3 id="1-文字樣式"><a href="#1-文字樣式" class="headerlink" title="1. 文字樣式"></a>1. 文字樣式</h3><p>Tailwind 允許透過類別來快速調整字體大小、顏色、行距等樣式，例如：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text-lg font-bold text-gray-700 leading-relaxed&quot;</span>&gt;</span></span><br><span class="line">  這是一段示範文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>其中：  </p>
+<ul>
+<li><code>text-lg</code>：字體大小  </li>
+<li><code>font-bold</code>：加粗  </li>
+<li><code>text-gray-700</code>：深灰色文字  </li>
+<li><code>leading-relaxed</code>：行距較寬</li>
+</ul>
+<h3 id="2-背景與邊框"><a href="#2-背景與邊框" class="headerlink" title="2. 背景與邊框"></a>2. 背景與邊框</h3><p>可以使用背景色與邊框樣式來設計 UI，示例如下：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-500 text-white p-4 rounded-lg shadow-lg&quot;</span>&gt;</span></span><br><span class="line">  Tailwind CSS 範例</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>bg-blue-500</code>：藍色背景  </li>
+<li><code>text-white</code>：白色文字  </li>
+<li><code>p-4</code>：內距 16px  </li>
+<li><code>rounded-lg</code>：圓角  </li>
+<li><code>shadow-lg</code>：大型陰影</li>
+</ul>
+<h3 id="3-Flexbox-佈局"><a href="#3-Flexbox-佈局" class="headerlink" title="3. Flexbox 佈局"></a>3. Flexbox 佈局</h3><p>Tailwind CSS 提供完整的 Flexbox 工具類別，讓開發者能夠快速進行佈局：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;flex items-center justify-between p-4 bg-gray-200&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>左側內容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>右側內容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>flex</code>：啟用 Flexbox  </li>
+<li><code>items-center</code>：垂直置中  </li>
+<li><code>justify-between</code>：左右對齊</li>
+</ul>
+<h3 id="4-Grid-佈局"><a href="#4-Grid-佈局" class="headerlink" title="4. Grid 佈局"></a>4. Grid 佈局</h3><p>使用 Grid 來建立多欄式佈局：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid grid-cols-3 gap-4&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-red-200 p-4&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-green-200 p-4&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-200 p-4&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>grid</code>：啟用 Grid  </li>
+<li><code>grid-cols-3</code>：建立三欄  </li>
+<li><code>gap-4</code>：欄間距</li>
+</ul>
+<h3 id="5-響應式設計"><a href="#5-響應式設計" class="headerlink" title="5. 響應式設計"></a>5. 響應式設計</h3><p>Tailwind 內建響應式前綴，適用於不同裝置：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;text-base md:text-lg lg:text-xl xl:text-2xl&quot;</span>&gt;</span></span><br><span class="line">  響應式字體大小</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>text-base</code>：手機（預設）  </li>
+<li><code>md:text-lg</code>：平板（<code>min-width: 768px</code>）  </li>
+<li><code>lg:text-xl</code>：筆電（<code>min-width: 1024px</code>）  </li>
+<li><code>xl:text-2xl</code>：桌機（<code>min-width: 1280px</code>）</li>
+</ul>
+<hr>
+<h1 id="四、Tailwind-CSS-進階功能"><a href="#四、Tailwind-CSS-進階功能" class="headerlink" title="四、Tailwind CSS 進階功能"></a>四、Tailwind CSS 進階功能</h1><h3 id="1-自訂樣式"><a href="#1-自訂樣式" class="headerlink" title="1. 自訂樣式"></a>1. 自訂樣式</h3><p>可以透過 <code>tailwind.config.js</code> 來擴充自訂樣式，例如新增顏色：  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;</span><br><span class="line">      <span class="attr">colors</span>: &#123;</span><br><span class="line">        <span class="attr">primary</span>: <span class="string">&quot;#1E40AF&quot;</span>,</span><br><span class="line">        <span class="attr">secondary</span>: <span class="string">&quot;#9333EA&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>這樣就可以在 HTML 中使用 <code>text-primary</code> 或 <code>bg-secondary</code> 來套用顏色。  </p>
+<h3 id="2-使用-apply-簡化樣式"><a href="#2-使用-apply-簡化樣式" class="headerlink" title="2. 使用 @apply 簡化樣式"></a>2. 使用 @apply 簡化樣式</h3><p>在 CSS 檔案中使用 <code>@apply</code> 來重複使用 Tailwind 類別：  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.btn</span> &#123;</span><br><span class="line">  <span class="keyword">@apply</span> bg-blue-<span class="number">500</span> text-white px-<span class="number">4</span> py-<span class="number">2</span> rounded;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然後在 HTML 中只需寫：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>按鈕<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="五、結語"><a href="#五、結語" class="headerlink" title="五、結語"></a>五、結語</h1><p>Tailwind CSS 透過工具類別的方式大幅提升開發效率，並提供響應式設計、靈活佈局與高度客製化的功能。對於前端開發者而言，熟悉 Tailwind CSS 可以讓 UI 設計更加直觀、高效，並減少對自訂 CSS 的依賴，進而提升開發維護性。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>CSS</tag>
+        <tag>Tailwind CSS</tag>
+        <tag>Tailwind</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TypeScript 入門教學筆記 | 學習筆記</title>
     <url>/2024/12/02/learning-notes-typescript-intro-tutorial/</url>
     <content><![CDATA[<h1 id="一、什麼是-TypeScript？"><a href="#一、什麼是-TypeScript？" class="headerlink" title="一、什麼是 TypeScript？"></a>一、什麼是 TypeScript？</h1><p>TypeScript 是由 Microsoft 開發的 JavaScript 超集（Superset），提供靜態型別檢查（Static Type Checking），讓開發者在編譯時發現錯誤，提升程式碼的可靠性與可維護性。TypeScript 會被編譯為標準 JavaScript，並可以運行於任何支援 JavaScript 的環境，例如瀏覽器或 Node.js。  </p>
@@ -1372,114 +1480,6 @@
         <tag>frontend engineer</tag>
         <tag>CSS</tag>
         <tag>typescript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tailwind CSS 入門教學筆記 | 學習筆記</title>
-    <url>/2024/11/30/learning-notes-tailwind-css-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="一、什麼是-Tailwind-CSS？"><a href="#一、什麼是-Tailwind-CSS？" class="headerlink" title="一、什麼是 Tailwind CSS？"></a>一、什麼是 Tailwind CSS？</h1><p>Tailwind CSS 是一款以「<code>工具類別優先</code>」（<code>Utility-First</code>）為核心設計理念的 CSS 框架，與傳統的 CSS 框架（如 Bootstrap、Bulma）不同，它不提供預設的 UI 元件，而是提供大量的樣式工具類別，讓開發者可以快速組合來建構 UI，而不需要額外撰寫自訂 CSS。  </p>
-<p>相較於傳統 CSS 框架，Tailwind CSS 具有以下幾個主要優勢：  </p>
-<ol>
-<li><strong>開發效率高</strong>：只需使用<code>類別組合</code>即可完成設計，無需撰寫額外 CSS。  </li>
-<li><strong>高度可客製化</strong>：可以透過設定檔調整顏色、字型、間距等設計。  </li>
-<li><strong>內建響應式支援</strong>：透過 <code>sm: md: lg: xl:</code> 等前綴輕鬆定義不同裝置的樣式。  </li>
-<li><strong>一致性強</strong>：開發團隊可以統一使用 Tailwind CSS 定義的設計樣式，減少 UI 風格不一致的問題。  </li>
-<li><strong>效能優化</strong>：可透過 PurgeCSS 移除未使用的樣式，確保最小化 CSS 檔案大小，提高網站載入速度。</li>
-</ol>
-<hr>
-<h1 id="二、安裝-Tailwind-CSS"><a href="#二、安裝-Tailwind-CSS" class="headerlink" title="二、安裝 Tailwind CSS"></a>二、安裝 Tailwind CSS</h1><p>Tailwind CSS 可以透過多種方式安裝，以下介紹幾種常見的方法：  </p>
-<h3 id="1-使用-CDN（適合快速測試）"><a href="#1-使用-CDN（適合快速測試）" class="headerlink" title="1. 使用 CDN（適合快速測試）"></a>1. 使用 CDN（適合快速測試）</h3><p>如果只是想快速體驗 Tailwind CSS，可以直接在 HTML 檔案中加入以下 <code>&lt;link&gt;</code>：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>這種方式適合小型專案或測試 Tailwind CSS 的功能，但不適合正式開發，因為無法使用客製化設定。  </p>
-<h3 id="2-透過-npm-安裝（推薦方式）"><a href="#2-透過-npm-安裝（推薦方式）" class="headerlink" title="2. 透過 npm 安裝（推薦方式）"></a>2. 透過 npm 安裝（推薦方式）</h3><p>在正式開發環境中，建議使用 npm 或 yarn 來安裝 Tailwind CSS，以便進行客製化設定。  </p>
-<p><strong>安裝 Tailwind CSS</strong>：  </p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -D tailwindcss postcss autoprefixer</span><br><span class="line">npx tailwindcss init -p</span><br></pre></td></tr></table></figure>
-
-<p>執行上述指令後，會在專案根目錄中產生 <code>tailwind.config.js</code> 設定檔，可用來調整 Tailwind 的預設樣式。  </p>
-<p><strong>設定 Tailwind CSS</strong>：  </p>
-<p>開啟 <code>tailwind.config.js</code>，找到 <code>content</code> 設定，確保 Tailwind 只處理專案內的相關檔案，例如：  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">content</span>: [<span class="string">&quot;./src/**/*.&#123;html,js,ts,jsx,tsx&#125;&quot;</span>],</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;&#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>這樣 Tailwind CSS 就只會掃描 <code>src</code> 資料夾內的 HTML、JavaScript 和 TypeScript 檔案，避免產生不必要的 CSS。  </p>
-<p><strong>引入 Tailwind 樣式</strong>：  </p>
-<p>在 <code>src/index.css</code> 或 <code>styles.css</code> 檔案中加入以下內容，讓 Tailwind CSS 套用基礎樣式：  </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@tailwind</span> base;</span><br><span class="line"><span class="keyword">@tailwind</span> components;</span><br><span class="line"><span class="keyword">@tailwind</span> utilities;</span><br></pre></td></tr></table></figure>
-
-<p>最後，在開發環境中執行 Tailwind 編譯指令：  </p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch</span><br></pre></td></tr></table></figure>
-
-<p>這會自動監聽檔案變化，並輸出 Tailwind CSS 的樣式到 <code>output.css</code>。  </p>
-<hr>
-<h1 id="三、Tailwind-CSS-常用類別"><a href="#三、Tailwind-CSS-常用類別" class="headerlink" title="三、Tailwind CSS 常用類別"></a>三、Tailwind CSS 常用類別</h1><p>Tailwind CSS 提供大量的工具類別，以下介紹幾個常用的類別和應用範例。  </p>
-<h3 id="1-文字樣式"><a href="#1-文字樣式" class="headerlink" title="1. 文字樣式"></a>1. 文字樣式</h3><p>Tailwind 允許透過類別來快速調整字體大小、顏色、行距等樣式，例如：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text-lg font-bold text-gray-700 leading-relaxed&quot;</span>&gt;</span></span><br><span class="line">  這是一段示範文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>其中：  </p>
-<ul>
-<li><code>text-lg</code>：字體大小  </li>
-<li><code>font-bold</code>：加粗  </li>
-<li><code>text-gray-700</code>：深灰色文字  </li>
-<li><code>leading-relaxed</code>：行距較寬</li>
-</ul>
-<h3 id="2-背景與邊框"><a href="#2-背景與邊框" class="headerlink" title="2. 背景與邊框"></a>2. 背景與邊框</h3><p>可以使用背景色與邊框樣式來設計 UI，示例如下：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-500 text-white p-4 rounded-lg shadow-lg&quot;</span>&gt;</span></span><br><span class="line">  Tailwind CSS 範例</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>bg-blue-500</code>：藍色背景  </li>
-<li><code>text-white</code>：白色文字  </li>
-<li><code>p-4</code>：內距 16px  </li>
-<li><code>rounded-lg</code>：圓角  </li>
-<li><code>shadow-lg</code>：大型陰影</li>
-</ul>
-<h3 id="3-Flexbox-佈局"><a href="#3-Flexbox-佈局" class="headerlink" title="3. Flexbox 佈局"></a>3. Flexbox 佈局</h3><p>Tailwind CSS 提供完整的 Flexbox 工具類別，讓開發者能夠快速進行佈局：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;flex items-center justify-between p-4 bg-gray-200&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>左側內容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>右側內容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>flex</code>：啟用 Flexbox  </li>
-<li><code>items-center</code>：垂直置中  </li>
-<li><code>justify-between</code>：左右對齊</li>
-</ul>
-<h3 id="4-Grid-佈局"><a href="#4-Grid-佈局" class="headerlink" title="4. Grid 佈局"></a>4. Grid 佈局</h3><p>使用 Grid 來建立多欄式佈局：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid grid-cols-3 gap-4&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-red-200 p-4&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-green-200 p-4&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-200 p-4&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>grid</code>：啟用 Grid  </li>
-<li><code>grid-cols-3</code>：建立三欄  </li>
-<li><code>gap-4</code>：欄間距</li>
-</ul>
-<h3 id="5-響應式設計"><a href="#5-響應式設計" class="headerlink" title="5. 響應式設計"></a>5. 響應式設計</h3><p>Tailwind 內建響應式前綴，適用於不同裝置：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;text-base md:text-lg lg:text-xl xl:text-2xl&quot;</span>&gt;</span></span><br><span class="line">  響應式字體大小</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>text-base</code>：手機（預設）  </li>
-<li><code>md:text-lg</code>：平板（<code>min-width: 768px</code>）  </li>
-<li><code>lg:text-xl</code>：筆電（<code>min-width: 1024px</code>）  </li>
-<li><code>xl:text-2xl</code>：桌機（<code>min-width: 1280px</code>）</li>
-</ul>
-<hr>
-<h1 id="四、Tailwind-CSS-進階功能"><a href="#四、Tailwind-CSS-進階功能" class="headerlink" title="四、Tailwind CSS 進階功能"></a>四、Tailwind CSS 進階功能</h1><h3 id="1-自訂樣式"><a href="#1-自訂樣式" class="headerlink" title="1. 自訂樣式"></a>1. 自訂樣式</h3><p>可以透過 <code>tailwind.config.js</code> 來擴充自訂樣式，例如新增顏色：  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;</span><br><span class="line">      <span class="attr">colors</span>: &#123;</span><br><span class="line">        <span class="attr">primary</span>: <span class="string">&quot;#1E40AF&quot;</span>,</span><br><span class="line">        <span class="attr">secondary</span>: <span class="string">&quot;#9333EA&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>這樣就可以在 HTML 中使用 <code>text-primary</code> 或 <code>bg-secondary</code> 來套用顏色。  </p>
-<h3 id="2-使用-apply-簡化樣式"><a href="#2-使用-apply-簡化樣式" class="headerlink" title="2. 使用 @apply 簡化樣式"></a>2. 使用 @apply 簡化樣式</h3><p>在 CSS 檔案中使用 <code>@apply</code> 來重複使用 Tailwind 類別：  </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.btn</span> &#123;</span><br><span class="line">  <span class="keyword">@apply</span> bg-blue-<span class="number">500</span> text-white px-<span class="number">4</span> py-<span class="number">2</span> rounded;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然後在 HTML 中只需寫：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>按鈕<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="五、結語"><a href="#五、結語" class="headerlink" title="五、結語"></a>五、結語</h1><p>Tailwind CSS 透過工具類別的方式大幅提升開發效率，並提供響應式設計、靈活佈局與高度客製化的功能。對於前端開發者而言，熟悉 Tailwind CSS 可以讓 UI 設計更加直觀、高效，並減少對自訂 CSS 的依賴，進而提升開發維護性。</p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>CSS</tag>
-        <tag>Tailwind CSS</tag>
-        <tag>Tailwind</tag>
       </tags>
   </entry>
   <entry>
@@ -2024,63 +2024,6 @@
       </tags>
   </entry>
   <entry>
-    <title>軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</title>
-    <url>/2024/06/22/software-engineer-and-web-develement-skill-tree/</url>
-    <content><![CDATA[<h1 id="前端工程"><a href="#前端工程" class="headerlink" title="前端工程"></a>前端工程</h1><p><a href="https://roadmap.sh/frontend">Frontend Roadmap</a> &#x2F; <a href="https://roadmap.sh/frontend?r=frontend-beginner">Frontend Beginner Roadmap</a></p>
-<ol>
-<li><input checked="" disabled="" type="checkbox"> HTML</li>
-<li><input disabled="" type="checkbox"> CSS</li>
-<li><input disabled="" type="checkbox"> JavaScript</li>
-<li><input disabled="" type="checkbox"> Version Control Systems&#x2F;Git&#x2F;Github</li>
-<li><input disabled="" type="checkbox"> npm</li>
-<li><input disabled="" type="checkbox"> Vue</li>
-<li><input disabled="" type="checkbox"> React</li>
-<li><input disabled="" type="checkbox"> Angular</li>
-<li><input disabled="" type="checkbox"> Tailwind</li>
-<li><input disabled="" type="checkbox"> Vitest</li>
-<li><input disabled="" type="checkbox"> Cypress</li>
-<li><input disabled="" type="checkbox"> TypeScript</li>
-<li><input disabled="" type="checkbox"> PWA</li>
-<li><input disabled="" type="checkbox"> SASS&#x2F;LESS&#x2F;PostCSS</li>
-</ol>
-<h1 id="後端"><a href="#後端" class="headerlink" title="後端"></a>後端</h1><p><a href="https://roadmap.sh/backend">Backend Roadmap</a> &#x2F; <a href="https://roadmap.sh/backend?r=backend-beginner">Backend Beginner Roadmap</a></p>
-<h1 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h1><p><a href="https://roadmap.sh/devops">DevOps Roadmap</a> &#x2F; <a href="https://roadmap.sh/devops?r=devops-beginner">DevOps Beginner Roadmap</a></p>
-<h1 id="全端"><a href="#全端" class="headerlink" title="全端"></a>全端</h1><p><a href="https://roadmap.sh/full-stack">Full Stack Roadmap</a></p>
-<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
-<li><a href="https://github.com/kamranahmedse/developer-roadmap?tab=readme-ov-file">github developer-roadmap</a></li>
-<li><a href="https://hackmd.io/@were1122was/BkUpHXuAq">N+1 Queries 效能問題</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Software Engineer</tag>
-        <tag>Frontend Roadmap</tag>
-        <tag>Backend Roadmap</tag>
-        <tag>DevOps</tag>
-        <tag>Full Stack</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常見 Web Frontend 前端工程師學習資源和工具</title>
-    <url>/2024/03/22/web-frontend-resources/</url>
-    <content><![CDATA[<h1 id="學習資源"><a href="#學習資源" class="headerlink" title="學習資源"></a>學習資源</h1><ol>
-<li><a href="https://frontendmasters.com/guides/front-end-handbook/2024/">前端開發大全手冊：The Front End Developer&#x2F;Engineer Handbook 2024</a></li>
-<li><a href="https://100dayscss.com/">100 天 CSS 練習挑戰</a></li>
-<li><a href="https://javascript30.com/">javascript30</a></li>
-<li><a href="https://www.greatfrontend.com/">greatfrontend</a></li>
-<li><a href="https://www.thisweb.dev/post/front-end-beginner-guide">零基礎一年轉職前端工程師：完整路徑、心得、資源全公開</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>前端工程</tag>
-        <tag>Software Engineer</tag>
-        <tag>前端工程師</tag>
-        <tag>Frontend Roadmap</tag>
-        <tag>前端面試</tag>
-        <tag>interview question</tag>
-        <tag>interview</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>常見 Web Frontend 前端工程師面試準備題目清單</title>
     <url>/2024/01/22/web-frontend-interview-question-list/</url>
     <content><![CDATA[<h1 id="前端工程面試準備清單"><a href="#前端工程面試準備清單" class="headerlink" title="前端工程面試準備清單"></a>前端工程面試準備清單</h1><ol>
@@ -2345,6 +2288,63 @@
 <li><a href="https://medium.com/@Ching810/2024%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%A9%A6%E6%8A%80%E8%A1%93%E8%80%83%E5%AF%A6%E6%88%B0%E5%88%86%E4%BA%AB-js%E7%AF%87-387ed332d12b">前端面試技術考實戰分享-JS篇</a></li>
 <li><a href="https://www.1111.com.tw/1000w/fanshome/discussTopic.asp?cat=FANS&id=233847">QNAP&#x2F;雷技&#x2F;Yahoo&#x2F;Synology-前端工程師-面試經驗分享</a></li>
 <li><a href="https://medium.com/hannah-lin/2024-%E8%B3%87%E6%B7%B1%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB%E9%9D%A2%E8%A9%A6%E5%BF%83%E5%BE%97-3cc0f718e78f">2024 資深前端工程師面試心得</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>前端工程</tag>
+        <tag>Software Engineer</tag>
+        <tag>前端工程師</tag>
+        <tag>Frontend Roadmap</tag>
+        <tag>前端面試</tag>
+        <tag>interview question</tag>
+        <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</title>
+    <url>/2024/06/22/software-engineer-and-web-develement-skill-tree/</url>
+    <content><![CDATA[<h1 id="前端工程"><a href="#前端工程" class="headerlink" title="前端工程"></a>前端工程</h1><p><a href="https://roadmap.sh/frontend">Frontend Roadmap</a> &#x2F; <a href="https://roadmap.sh/frontend?r=frontend-beginner">Frontend Beginner Roadmap</a></p>
+<ol>
+<li><input checked="" disabled="" type="checkbox"> HTML</li>
+<li><input disabled="" type="checkbox"> CSS</li>
+<li><input disabled="" type="checkbox"> JavaScript</li>
+<li><input disabled="" type="checkbox"> Version Control Systems&#x2F;Git&#x2F;Github</li>
+<li><input disabled="" type="checkbox"> npm</li>
+<li><input disabled="" type="checkbox"> Vue</li>
+<li><input disabled="" type="checkbox"> React</li>
+<li><input disabled="" type="checkbox"> Angular</li>
+<li><input disabled="" type="checkbox"> Tailwind</li>
+<li><input disabled="" type="checkbox"> Vitest</li>
+<li><input disabled="" type="checkbox"> Cypress</li>
+<li><input disabled="" type="checkbox"> TypeScript</li>
+<li><input disabled="" type="checkbox"> PWA</li>
+<li><input disabled="" type="checkbox"> SASS&#x2F;LESS&#x2F;PostCSS</li>
+</ol>
+<h1 id="後端"><a href="#後端" class="headerlink" title="後端"></a>後端</h1><p><a href="https://roadmap.sh/backend">Backend Roadmap</a> &#x2F; <a href="https://roadmap.sh/backend?r=backend-beginner">Backend Beginner Roadmap</a></p>
+<h1 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h1><p><a href="https://roadmap.sh/devops">DevOps Roadmap</a> &#x2F; <a href="https://roadmap.sh/devops?r=devops-beginner">DevOps Beginner Roadmap</a></p>
+<h1 id="全端"><a href="#全端" class="headerlink" title="全端"></a>全端</h1><p><a href="https://roadmap.sh/full-stack">Full Stack Roadmap</a></p>
+<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
+<li><a href="https://github.com/kamranahmedse/developer-roadmap?tab=readme-ov-file">github developer-roadmap</a></li>
+<li><a href="https://hackmd.io/@were1122was/BkUpHXuAq">N+1 Queries 效能問題</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Software Engineer</tag>
+        <tag>Frontend Roadmap</tag>
+        <tag>Backend Roadmap</tag>
+        <tag>DevOps</tag>
+        <tag>Full Stack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常見 Web Frontend 前端工程師學習資源和工具</title>
+    <url>/2024/03/22/web-frontend-resources/</url>
+    <content><![CDATA[<h1 id="學習資源"><a href="#學習資源" class="headerlink" title="學習資源"></a>學習資源</h1><ol>
+<li><a href="https://frontendmasters.com/guides/front-end-handbook/2024/">前端開發大全手冊：The Front End Developer&#x2F;Engineer Handbook 2024</a></li>
+<li><a href="https://100dayscss.com/">100 天 CSS 練習挑戰</a></li>
+<li><a href="https://javascript30.com/">javascript30</a></li>
+<li><a href="https://www.greatfrontend.com/">greatfrontend</a></li>
+<li><a href="https://www.thisweb.dev/post/front-end-beginner-guide">零基礎一年轉職前端工程師：完整路徑、心得、資源全公開</a></li>
 </ol>
 ]]></content>
       <tags>
