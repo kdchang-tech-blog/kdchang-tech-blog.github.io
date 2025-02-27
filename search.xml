@@ -193,12 +193,12 @@
 <h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>這些分類會依需求搭配使用，例如一個「<code>必要性第一方暫時性 Cookie</code>」可能用於維護<code>登入和操作狀態</code>；一個「<code>第三方廣告追蹤永久性 Cookie</code>」則可能用於<code>跨網站顯示個人化廣告</code>。</p>
 ]]></content>
       <tags>
+        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
-        <tag>javascript</tag>
         <tag>cookie</tag>
       </tags>
   </entry>
@@ -251,6 +251,61 @@
         <tag>Flexbox</tag>
         <tag>css</tag>
         <tag>排版</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cypress 測試入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/08/learning-notes-cypress-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="1-Cypress-基礎概念"><a href="#1-Cypress-基礎概念" class="headerlink" title="1. Cypress 基礎概念"></a>1. Cypress 基礎概念</h1><p><code>Cypress</code> 是一款現代化的前端自動化測試工具，主要用於測試 Web 應用程式，支援端對端（<code>E2E</code>）測試、<code>元件測試</code>等。</p>
+<h3 id="1-1-為何選擇-Cypress？"><a href="#1-1-為何選擇-Cypress？" class="headerlink" title="1.1 為何選擇 Cypress？"></a>1.1 為何選擇 Cypress？</h3><ul>
+<li>簡單易用，直接運行於瀏覽器。</li>
+<li>提供即時回饋，方便 Debug。</li>
+<li>內建等待機制，避免手動處理異步問題。</li>
+<li>支援截圖與錄影，方便測試分析。</li>
+</ul>
+<h1 id="2-安裝與設定"><a href="#2-安裝與設定" class="headerlink" title="2. 安裝與設定"></a>2. 安裝與設定</h1><h3 id="2-1-安裝-Cypress"><a href="#2-1-安裝-Cypress" class="headerlink" title="2.1 安裝 Cypress"></a>2.1 安裝 Cypress</h3><p>使用 npm 或 yarn 安裝 Cypress：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install cypress --save-dev</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add cypress --dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-執行-Cypress"><a href="#2-2-執行-Cypress" class="headerlink" title="2.2 執行 Cypress"></a>2.2 執行 Cypress</h3><p>安裝完成後，可以使用以下指令開啟 Cypress GUI：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx cypress open</span><br></pre></td></tr></table></figure>
+<p>或直接執行測試：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx cypress run</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-撰寫-Cypress-測試"><a href="#3-撰寫-Cypress-測試" class="headerlink" title="3. 撰寫 Cypress 測試"></a>3. 撰寫 Cypress 測試</h1><h3 id="3-1-建立測試檔案"><a href="#3-1-建立測試檔案" class="headerlink" title="3.1 建立測試檔案"></a>3.1 建立測試檔案</h3><p>Cypress 預設的測試檔案放置於 <code>cypress/e2e/</code> 目錄下，例如：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cypress/e2e/sample_spec.cy.js</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-基本測試範例"><a href="#3-2-基本測試範例" class="headerlink" title="3.2 基本測試範例"></a>3.2 基本測試範例</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">describe</span>(<span class="string">&#x27;My First Test&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="title function_">it</span>(<span class="string">&#x27;Visits the app&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    cy.<span class="title function_">visit</span>(<span class="string">&#x27;https://example.cypress.io&#x27;</span>);</span><br><span class="line">    cy.<span class="title function_">contains</span>(<span class="string">&#x27;type&#x27;</span>).<span class="title function_">click</span>();</span><br><span class="line">    cy.<span class="title function_">url</span>().<span class="title function_">should</span>(<span class="string">&#x27;include&#x27;</span>, <span class="string">&#x27;/commands/actions&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-選擇器與操作"><a href="#3-3-選擇器與操作" class="headerlink" title="3.3 選擇器與操作"></a>3.3 選擇器與操作</h3><p>Cypress 提供多種選擇器來查找元素，例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;button&#x27;</span>).<span class="title function_">click</span>(); <span class="comment">// 透過標籤名稱選擇</span></span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;.btn-primary&#x27;</span>).<span class="title function_">click</span>(); <span class="comment">// 透過 class 選擇</span></span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;#submit-btn&#x27;</span>).<span class="title function_">click</span>(); <span class="comment">// 透過 ID 選擇</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-斷言（Assertions）"><a href="#3-4-斷言（Assertions）" class="headerlink" title="3.4 斷言（Assertions）"></a>3.4 斷言（Assertions）</h3><p>使用 <code>.should()</code> 進行斷言，例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;.success-message&#x27;</span>).<span class="title function_">should</span>(<span class="string">&#x27;be.visible&#x27;</span>);</span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;h1&#x27;</span>).<span class="title function_">should</span>(<span class="string">&#x27;have.text&#x27;</span>, <span class="string">&#x27;Welcome&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-進階功能"><a href="#4-進階功能" class="headerlink" title="4. 進階功能"></a>4. 進階功能</h1><h3 id="4-1-錯誤處理與偵錯"><a href="#4-1-錯誤處理與偵錯" class="headerlink" title="4.1 錯誤處理與偵錯"></a>4.1 錯誤處理與偵錯</h3><p>Cypress 提供 <code>cy.pause()</code> 和 <code>cy.debug()</code> 來幫助偵錯：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;button&#x27;</span>).<span class="title function_">click</span>();</span><br><span class="line">cy.<span class="title function_">pause</span>(); <span class="comment">// 測試暫停</span></span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;.result&#x27;</span>).<span class="title function_">should</span>(<span class="string">&#x27;be.visible&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-假資料與-API-模擬（Mock-API）"><a href="#4-2-假資料與-API-模擬（Mock-API）" class="headerlink" title="4.2 假資料與 API 模擬（Mock API）"></a>4.2 假資料與 API 模擬（Mock API）</h3><p>可以使用 <code>cy.intercept()</code> 攔截 API 請求，例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">intercept</span>(<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;/api/user&#x27;</span>, &#123; <span class="attr">name</span>: <span class="string">&#x27;John Doe&#x27;</span> &#125;).<span class="title function_">as</span>(<span class="string">&#x27;getUser&#x27;</span>);</span><br><span class="line">cy.<span class="title function_">visit</span>(<span class="string">&#x27;/profile&#x27;</span>);</span><br><span class="line">cy.<span class="title function_">wait</span>(<span class="string">&#x27;@getUser&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-自訂命令"><a href="#4-3-自訂命令" class="headerlink" title="4.3 自訂命令"></a>4.3 自訂命令</h3><p>可以在 <code>cypress/support/commands.js</code> 內定義自訂命令，例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Cypress</span>.<span class="property">Commands</span>.<span class="title function_">add</span>(<span class="string">&#x27;login&#x27;</span>, <span class="function">(<span class="params">email, password</span>) =&gt;</span> &#123;</span><br><span class="line">  cy.<span class="title function_">get</span>(<span class="string">&#x27;#email&#x27;</span>).<span class="title function_">type</span>(email);</span><br><span class="line">  cy.<span class="title function_">get</span>(<span class="string">&#x27;#password&#x27;</span>).<span class="title function_">type</span>(password);</span><br><span class="line">  cy.<span class="title function_">get</span>(<span class="string">&#x27;button[type=&quot;submit&quot;]&#x27;</span>).<span class="title function_">click</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>然後在測試中使用：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">login</span>(<span class="string">&#x27;test@example.com&#x27;</span>, <span class="string">&#x27;password123&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-CI-x2F-CD-整合"><a href="#5-CI-x2F-CD-整合" class="headerlink" title="5. CI&#x2F;CD 整合"></a>5. CI&#x2F;CD 整合</h1><p>Cypress 可以與 CI&#x2F;CD 工具整合，如 GitHub Actions 或 GitLab CI&#x2F;CD。</p>
+<h3 id="5-1-GitHub-Actions-設定範例"><a href="#5-1-GitHub-Actions-設定範例" class="headerlink" title="5.1 GitHub Actions 設定範例"></a>5.1 GitHub Actions 設定範例</h3><p>在 <code>.github/workflows/cypress.yml</code> 中新增：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Cypress</span> <span class="string">Tests</span></span><br><span class="line"><span class="attr">on:</span> [<span class="string">push</span>, <span class="string">pull_request</span>]</span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">cypress-run:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">repository</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">dependencies</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Run</span> <span class="string">Cypress</span> <span class="string">tests</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npx</span> <span class="string">cypress</span> <span class="string">run</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h1><p>透過 Cypress，可以輕鬆進行 Web 應用的測試，提高開發效率與穩定性。建議多練習不同測試場景，如表單驗證、API 測試與 RWD 測試，以熟悉 Cypress 強大的測試能力。</p>
+]]></content>
+      <tags>
+        <tag>Cypress</tag>
+        <tag>測試</tag>
+        <tag>E2E</tag>
+        <tag>QA</tag>
       </tags>
   </entry>
   <entry>
@@ -308,61 +363,6 @@
         <tag>css</tag>
         <tag>排版</tag>
         <tag>Grid</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Cypress 測試入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/08/learning-notes-cypress-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="1-Cypress-基礎概念"><a href="#1-Cypress-基礎概念" class="headerlink" title="1. Cypress 基礎概念"></a>1. Cypress 基礎概念</h1><p><code>Cypress</code> 是一款現代化的前端自動化測試工具，主要用於測試 Web 應用程式，支援端對端（<code>E2E</code>）測試、<code>元件測試</code>等。</p>
-<h3 id="1-1-為何選擇-Cypress？"><a href="#1-1-為何選擇-Cypress？" class="headerlink" title="1.1 為何選擇 Cypress？"></a>1.1 為何選擇 Cypress？</h3><ul>
-<li>簡單易用，直接運行於瀏覽器。</li>
-<li>提供即時回饋，方便 Debug。</li>
-<li>內建等待機制，避免手動處理異步問題。</li>
-<li>支援截圖與錄影，方便測試分析。</li>
-</ul>
-<h1 id="2-安裝與設定"><a href="#2-安裝與設定" class="headerlink" title="2. 安裝與設定"></a>2. 安裝與設定</h1><h3 id="2-1-安裝-Cypress"><a href="#2-1-安裝-Cypress" class="headerlink" title="2.1 安裝 Cypress"></a>2.1 安裝 Cypress</h3><p>使用 npm 或 yarn 安裝 Cypress：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install cypress --save-dev</span><br></pre></td></tr></table></figure>
-<p>或</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add cypress --dev</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-2-執行-Cypress"><a href="#2-2-執行-Cypress" class="headerlink" title="2.2 執行 Cypress"></a>2.2 執行 Cypress</h3><p>安裝完成後，可以使用以下指令開啟 Cypress GUI：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx cypress open</span><br></pre></td></tr></table></figure>
-<p>或直接執行測試：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx cypress run</span><br></pre></td></tr></table></figure>
-
-<h1 id="3-撰寫-Cypress-測試"><a href="#3-撰寫-Cypress-測試" class="headerlink" title="3. 撰寫 Cypress 測試"></a>3. 撰寫 Cypress 測試</h1><h3 id="3-1-建立測試檔案"><a href="#3-1-建立測試檔案" class="headerlink" title="3.1 建立測試檔案"></a>3.1 建立測試檔案</h3><p>Cypress 預設的測試檔案放置於 <code>cypress/e2e/</code> 目錄下，例如：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cypress/e2e/sample_spec.cy.js</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-基本測試範例"><a href="#3-2-基本測試範例" class="headerlink" title="3.2 基本測試範例"></a>3.2 基本測試範例</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">describe</span>(<span class="string">&#x27;My First Test&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="title function_">it</span>(<span class="string">&#x27;Visits the app&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    cy.<span class="title function_">visit</span>(<span class="string">&#x27;https://example.cypress.io&#x27;</span>);</span><br><span class="line">    cy.<span class="title function_">contains</span>(<span class="string">&#x27;type&#x27;</span>).<span class="title function_">click</span>();</span><br><span class="line">    cy.<span class="title function_">url</span>().<span class="title function_">should</span>(<span class="string">&#x27;include&#x27;</span>, <span class="string">&#x27;/commands/actions&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-選擇器與操作"><a href="#3-3-選擇器與操作" class="headerlink" title="3.3 選擇器與操作"></a>3.3 選擇器與操作</h3><p>Cypress 提供多種選擇器來查找元素，例如：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;button&#x27;</span>).<span class="title function_">click</span>(); <span class="comment">// 透過標籤名稱選擇</span></span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;.btn-primary&#x27;</span>).<span class="title function_">click</span>(); <span class="comment">// 透過 class 選擇</span></span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;#submit-btn&#x27;</span>).<span class="title function_">click</span>(); <span class="comment">// 透過 ID 選擇</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-4-斷言（Assertions）"><a href="#3-4-斷言（Assertions）" class="headerlink" title="3.4 斷言（Assertions）"></a>3.4 斷言（Assertions）</h3><p>使用 <code>.should()</code> 進行斷言，例如：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;.success-message&#x27;</span>).<span class="title function_">should</span>(<span class="string">&#x27;be.visible&#x27;</span>);</span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;h1&#x27;</span>).<span class="title function_">should</span>(<span class="string">&#x27;have.text&#x27;</span>, <span class="string">&#x27;Welcome&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h1 id="4-進階功能"><a href="#4-進階功能" class="headerlink" title="4. 進階功能"></a>4. 進階功能</h1><h3 id="4-1-錯誤處理與偵錯"><a href="#4-1-錯誤處理與偵錯" class="headerlink" title="4.1 錯誤處理與偵錯"></a>4.1 錯誤處理與偵錯</h3><p>Cypress 提供 <code>cy.pause()</code> 和 <code>cy.debug()</code> 來幫助偵錯：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;button&#x27;</span>).<span class="title function_">click</span>();</span><br><span class="line">cy.<span class="title function_">pause</span>(); <span class="comment">// 測試暫停</span></span><br><span class="line">cy.<span class="title function_">get</span>(<span class="string">&#x27;.result&#x27;</span>).<span class="title function_">should</span>(<span class="string">&#x27;be.visible&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-假資料與-API-模擬（Mock-API）"><a href="#4-2-假資料與-API-模擬（Mock-API）" class="headerlink" title="4.2 假資料與 API 模擬（Mock API）"></a>4.2 假資料與 API 模擬（Mock API）</h3><p>可以使用 <code>cy.intercept()</code> 攔截 API 請求，例如：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">intercept</span>(<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;/api/user&#x27;</span>, &#123; <span class="attr">name</span>: <span class="string">&#x27;John Doe&#x27;</span> &#125;).<span class="title function_">as</span>(<span class="string">&#x27;getUser&#x27;</span>);</span><br><span class="line">cy.<span class="title function_">visit</span>(<span class="string">&#x27;/profile&#x27;</span>);</span><br><span class="line">cy.<span class="title function_">wait</span>(<span class="string">&#x27;@getUser&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-3-自訂命令"><a href="#4-3-自訂命令" class="headerlink" title="4.3 自訂命令"></a>4.3 自訂命令</h3><p>可以在 <code>cypress/support/commands.js</code> 內定義自訂命令，例如：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Cypress</span>.<span class="property">Commands</span>.<span class="title function_">add</span>(<span class="string">&#x27;login&#x27;</span>, <span class="function">(<span class="params">email, password</span>) =&gt;</span> &#123;</span><br><span class="line">  cy.<span class="title function_">get</span>(<span class="string">&#x27;#email&#x27;</span>).<span class="title function_">type</span>(email);</span><br><span class="line">  cy.<span class="title function_">get</span>(<span class="string">&#x27;#password&#x27;</span>).<span class="title function_">type</span>(password);</span><br><span class="line">  cy.<span class="title function_">get</span>(<span class="string">&#x27;button[type=&quot;submit&quot;]&#x27;</span>).<span class="title function_">click</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>然後在測試中使用：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cy.<span class="title function_">login</span>(<span class="string">&#x27;test@example.com&#x27;</span>, <span class="string">&#x27;password123&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h1 id="5-CI-x2F-CD-整合"><a href="#5-CI-x2F-CD-整合" class="headerlink" title="5. CI&#x2F;CD 整合"></a>5. CI&#x2F;CD 整合</h1><p>Cypress 可以與 CI&#x2F;CD 工具整合，如 GitHub Actions 或 GitLab CI&#x2F;CD。</p>
-<h3 id="5-1-GitHub-Actions-設定範例"><a href="#5-1-GitHub-Actions-設定範例" class="headerlink" title="5.1 GitHub Actions 設定範例"></a>5.1 GitHub Actions 設定範例</h3><p>在 <code>.github/workflows/cypress.yml</code> 中新增：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Cypress</span> <span class="string">Tests</span></span><br><span class="line"><span class="attr">on:</span> [<span class="string">push</span>, <span class="string">pull_request</span>]</span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">cypress-run:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">repository</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">dependencies</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Run</span> <span class="string">Cypress</span> <span class="string">tests</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npx</span> <span class="string">cypress</span> <span class="string">run</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h1><p>透過 Cypress，可以輕鬆進行 Web 應用的測試，提高開發效率與穩定性。建議多練習不同測試場景，如表單驗證、API 測試與 RWD 測試，以熟悉 Cypress 強大的測試能力。</p>
-]]></content>
-      <tags>
-        <tag>Cypress</tag>
-        <tag>測試</tag>
-        <tag>E2E</tag>
-        <tag>QA</tag>
       </tags>
   </entry>
   <entry>
@@ -526,12 +526,12 @@
 <p>這些 ES6 基礎語法，是現代 JavaScript 開發的常用技巧，掌握這些概念能大幅提升程式撰寫效率。</p>
 ]]></content>
       <tags>
+        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
-        <tag>javascript</tag>
         <tag>ES6</tag>
         <tag>ECMAScript</tag>
         <tag>ECMAScript6</tag>
@@ -696,12 +696,12 @@
 </ul>
 ]]></content>
       <tags>
+        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
-        <tag>javascript</tag>
         <tag>非同步</tag>
         <tag>異步</tag>
         <tag>async/await</tag>
@@ -1042,85 +1042,6 @@
       </tags>
   </entry>
   <entry>
-    <title>SCSS 介紹入門教學筆記 | 學習筆記</title>
-    <url>/2023/07/01/learning-notes-scss-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="一、SASS-是什麼？"><a href="#一、SASS-是什麼？" class="headerlink" title="一、SASS 是什麼？"></a>一、SASS 是什麼？</h1><p>SASS（Syntactically Awesome Stylesheets）是一種 CSS 預處理器（CSS Preprocessor），它擴展了 CSS 的功能，使樣式表更具可讀性、模組化和可維護性。SASS 允許使用變數、巢狀（Nesting）、混入（Mixin）、繼承（Extend）等進階特性，讓開發者能更有效率地管理 CSS。  </p>
-<p>SASS 有兩種語法：  </p>
-<ol>
-<li><strong>SCSS（Sassy CSS）</strong>：與傳統 CSS 語法相似，使用 <code>&#123;&#125;</code> 和 <code>;</code> 來區分樣式，擴展性強且相容 CSS。  </li>
-<li><strong>SASS（縮排語法）</strong>：省略 <code>&#123;&#125;</code> 和 <code>;</code>，使用縮排來表示層級關係，簡潔但較不常用。</li>
-</ol>
-<p>目前，SCSS 語法較受歡迎，因此本文主要以 SCSS 為主進行介紹。  </p>
-<hr>
-<h1 id="二、SASS-的優勢"><a href="#二、SASS-的優勢" class="headerlink" title="二、SASS 的優勢"></a>二、SASS 的優勢</h1><p>使用 SASS 的主要優勢包括：  </p>
-<ol>
-<li><strong>可維護性</strong>：透過模組化的結構管理樣式，避免冗長且難以維護的 CSS。  </li>
-<li><strong>變數（Variables）</strong>：可定義全站共用的變數，例如顏色、字體大小等，提高一致性。  </li>
-<li><strong>巢狀結構（Nesting）</strong>：讓樣式更具層次感，避免重複選擇器。  </li>
-<li><strong>混入（Mixin）</strong>：類似函式的概念，可重複使用樣式區塊，減少冗餘。  </li>
-<li><strong>繼承（Extend）</strong>：透過 <code>@extend</code> 共享樣式，減少重複編寫的代碼。  </li>
-<li><strong>函式（Functions）</strong>：內建函式如 <code>lighten()</code>、<code>darken()</code> 可動態調整顏色，提高設計靈活性。</li>
-</ol>
-<hr>
-<h1 id="三、安裝與使用-SASS"><a href="#三、安裝與使用-SASS" class="headerlink" title="三、安裝與使用 SASS"></a>三、安裝與使用 SASS</h1><h3 id="1-透過-npm-安裝"><a href="#1-透過-npm-安裝" class="headerlink" title="1. 透過 npm 安裝"></a>1. 透過 npm 安裝</h3><p>如果使用 Node.js，可透過 npm 安裝 SASS：  </p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -g sass</span><br></pre></td></tr></table></figure>
-
-<p>安裝後，可使用以下指令將 SCSS 轉譯為 CSS：  </p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sass input.scss output.css</span><br></pre></td></tr></table></figure>
-
-<p>可使用 <code>--watch</code> 讓 SASS 自動監聽檔案變化並即時編譯：  </p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sass --watch input.scss:output.css</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-透過-CDN-使用"><a href="#2-透過-CDN-使用" class="headerlink" title="2. 透過 CDN 使用"></a>2. 透過 CDN 使用</h3><p>雖然 SASS 本身無法直接在瀏覽器運行，但可透過一些線上工具（如 CodePen）編寫 SCSS，並自動編譯成 CSS 進行預覽。  </p>
-<hr>
-<h1 id="四、SASS-基礎語法"><a href="#四、SASS-基礎語法" class="headerlink" title="四、SASS 基礎語法"></a>四、SASS 基礎語法</h1><h3 id="1-變數（Variables）"><a href="#1-變數（Variables）" class="headerlink" title="1. 變數（Variables）"></a>1. 變數（Variables）</h3><p>SASS 允許使用變數來存儲顏色、字體大小、間距等常數，使樣式更具一致性。  </p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="variable">$primary-color</span>: <span class="number">#3498db</span>;</span><br><span class="line"><span class="variable">$font-size</span>: <span class="number">16px</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="variable">$font-size</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-巢狀結構（Nesting）"><a href="#2-巢狀結構（Nesting）" class="headerlink" title="2. 巢狀結構（Nesting）"></a>2. 巢狀結構（Nesting）</h3><p>在 CSS 中，我們通常需要重複撰寫父選擇器，但在 SASS 中可直接巢狀編寫，提高可讀性。  </p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="selector-tag">ul</span> &#123;</span><br><span class="line">        <span class="attribute">list-style</span>: none;</span><br><span class="line">        <span class="selector-tag">li</span> &#123;</span><br><span class="line">            <span class="attribute">display</span>: inline-block;</span><br><span class="line">            <span class="selector-tag">a</span> &#123;</span><br><span class="line">                <span class="attribute">color</span>: white;</span><br><span class="line">                <span class="attribute">text-decoration</span>: none;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這段 SCSS 會編譯成以下 CSS：  </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-混入（Mixin）"><a href="#3-混入（Mixin）" class="headerlink" title="3. 混入（Mixin）"></a>3. 混入（Mixin）</h3><p>Mixin 可定義可重複使用的樣式區塊，並可接受參數，使樣式更加靈活。  </p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> button-style(<span class="variable">$bg-color</span>) &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="variable">$bg-color</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.btn-primary</span> &#123;</span><br><span class="line">    <span class="keyword">@include</span> button-style(<span class="number">#3498db</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.btn-secondary</span> &#123;</span><br><span class="line">    <span class="keyword">@include</span> button-style(<span class="number">#2ecc71</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>編譯後的 CSS 為：  </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.btn-primary</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#3498db</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.btn-secondary</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#2ecc71</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-繼承（Extend）"><a href="#4-繼承（Extend）" class="headerlink" title="4. 繼承（Extend）"></a>4. 繼承（Extend）</h3><p><code>@extend</code> 允許一個選擇器繼承另一個選擇器的樣式，避免重複撰寫代碼。  </p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.message</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">    <span class="keyword">@extend</span> .message;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#2ecc71</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error</span> &#123;</span><br><span class="line">    <span class="keyword">@extend</span> .message;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#e74c3c</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>編譯後的 CSS：  </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.message</span>, <span class="selector-class">.success</span>, <span class="selector-class">.error</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#2ecc71</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#e74c3c</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-運算與函式"><a href="#5-運算與函式" class="headerlink" title="5. 運算與函式"></a>5. 運算與函式</h3><p>SASS 允許在樣式中進行運算，使數值調整更加靈活。  </p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="variable">$base-size</span>: <span class="number">16px</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="variable">$base-size</span> * <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h2</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="variable">$base-size</span> * <span class="number">1.5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>此外，SASS 內建許多函式，例如 <code>darken()</code>、<code>lighten()</code> 可用來調整顏色：  </p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="variable">$primary-color</span>: <span class="number">#3498db</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">button</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">    &amp;<span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">        <span class="attribute">background</span>: <span class="built_in">darken</span>(<span class="variable">$primary-color</span>, <span class="number">10%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>編譯後的 CSS：  </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">button</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#3498db</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">button</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#217dbb</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="五、SASS-進階技巧"><a href="#五、SASS-進階技巧" class="headerlink" title="五、SASS 進階技巧"></a>五、SASS 進階技巧</h1><h3 id="1-分割檔案"><a href="#1-分割檔案" class="headerlink" title="1. 分割檔案"></a>1. 分割檔案</h3><p>SASS 允許將樣式拆分成多個檔案，並透過 <code>@import</code> 或 <code>@use</code> 來管理，提升可維護性。  </p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// _variables.scss</span></span><br><span class="line"><span class="variable">$primary-color</span>: <span class="number">#3498db</span>;</span><br><span class="line"><span class="variable">$font-size</span>: <span class="number">16px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.scss</span></span><br><span class="line"><span class="keyword">@import</span> <span class="string">&#x27;variables&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="variable">$font-size</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-使用-use"><a href="#2-使用-use" class="headerlink" title="2. 使用 @use"></a>2. 使用 <code>@use</code></h3><p><code>@use</code> 是 <code>@import</code> 的改進版，能避免變數命名衝突，推薦使用：  </p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@use</span> <span class="string">&#x27;variables&#x27;</span> as v;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: v.<span class="variable">$primary-color</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: v.<span class="variable">$font-size</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="六、結論"><a href="#六、結論" class="headerlink" title="六、結論"></a>六、結論</h1><p>SASS 是一種強大的 CSS 預處理器，它提供變數、巢狀、Mixin、繼承等功能，使樣式管理更加高效與模組化。透過 SASS，開發者可以撰寫更具結構性、可讀性和可維護性的 CSS。  </p>
-<p>對於前端開發者來說，掌握 SASS 不僅能提升開發效率，還能讓專案的樣式管理更加清晰。在實際專案中，建議將樣式模組化，並善用變數與 Mixin，以確保程式碼的可重用性與一致性。</p>
-]]></content>
-      <tags>
-        <tag>CSS</tag>
-        <tag>SASS</tag>
-        <tag>SCSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SASS 語法介紹入門教學筆記 | 學習筆記</title>
     <url>/2024/06/30/learning-notes-sass-intro-tutorial/</url>
     <content><![CDATA[<h1 id="什麼是-SASS？"><a href="#什麼是-SASS？" class="headerlink" title="什麼是 SASS？"></a>什麼是 SASS？</h1><p><code>SASS</code>（Syntactically Awesome Style Sheets）是一種 CSS 預處理器，旨在提升 CSS 的功能性，讓開發者能夠以更加靈活和高效的方式編寫樣式表。它提供了許多比 CSS 更強大的功能，例如變數、巢狀規則、混合（mixins）、繼承等。SASS 語法有兩種主要形式：一種是較為常見的 SCSS（<code>Sassy CSS</code>），另一種則是 <code>SASS</code>，本文將主要介紹 SASS 語法。</p>
@@ -1353,6 +1274,85 @@
       </tags>
   </entry>
   <entry>
+    <title>SCSS 介紹入門教學筆記 | 學習筆記</title>
+    <url>/2023/07/01/learning-notes-scss-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="一、SASS-是什麼？"><a href="#一、SASS-是什麼？" class="headerlink" title="一、SASS 是什麼？"></a>一、SASS 是什麼？</h1><p>SASS（Syntactically Awesome Stylesheets）是一種 CSS 預處理器（CSS Preprocessor），它擴展了 CSS 的功能，使樣式表更具可讀性、模組化和可維護性。SASS 允許使用變數、巢狀（Nesting）、混入（Mixin）、繼承（Extend）等進階特性，讓開發者能更有效率地管理 CSS。  </p>
+<p>SASS 有兩種語法：  </p>
+<ol>
+<li><strong>SCSS（Sassy CSS）</strong>：與傳統 CSS 語法相似，使用 <code>&#123;&#125;</code> 和 <code>;</code> 來區分樣式，擴展性強且相容 CSS。  </li>
+<li><strong>SASS（縮排語法）</strong>：省略 <code>&#123;&#125;</code> 和 <code>;</code>，使用縮排來表示層級關係，簡潔但較不常用。</li>
+</ol>
+<p>目前，SCSS 語法較受歡迎，因此本文主要以 SCSS 為主進行介紹。  </p>
+<hr>
+<h1 id="二、SASS-的優勢"><a href="#二、SASS-的優勢" class="headerlink" title="二、SASS 的優勢"></a>二、SASS 的優勢</h1><p>使用 SASS 的主要優勢包括：  </p>
+<ol>
+<li><strong>可維護性</strong>：透過模組化的結構管理樣式，避免冗長且難以維護的 CSS。  </li>
+<li><strong>變數（Variables）</strong>：可定義全站共用的變數，例如顏色、字體大小等，提高一致性。  </li>
+<li><strong>巢狀結構（Nesting）</strong>：讓樣式更具層次感，避免重複選擇器。  </li>
+<li><strong>混入（Mixin）</strong>：類似函式的概念，可重複使用樣式區塊，減少冗餘。  </li>
+<li><strong>繼承（Extend）</strong>：透過 <code>@extend</code> 共享樣式，減少重複編寫的代碼。  </li>
+<li><strong>函式（Functions）</strong>：內建函式如 <code>lighten()</code>、<code>darken()</code> 可動態調整顏色，提高設計靈活性。</li>
+</ol>
+<hr>
+<h1 id="三、安裝與使用-SASS"><a href="#三、安裝與使用-SASS" class="headerlink" title="三、安裝與使用 SASS"></a>三、安裝與使用 SASS</h1><h3 id="1-透過-npm-安裝"><a href="#1-透過-npm-安裝" class="headerlink" title="1. 透過 npm 安裝"></a>1. 透過 npm 安裝</h3><p>如果使用 Node.js，可透過 npm 安裝 SASS：  </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -g sass</span><br></pre></td></tr></table></figure>
+
+<p>安裝後，可使用以下指令將 SCSS 轉譯為 CSS：  </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sass input.scss output.css</span><br></pre></td></tr></table></figure>
+
+<p>可使用 <code>--watch</code> 讓 SASS 自動監聽檔案變化並即時編譯：  </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sass --watch input.scss:output.css</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-透過-CDN-使用"><a href="#2-透過-CDN-使用" class="headerlink" title="2. 透過 CDN 使用"></a>2. 透過 CDN 使用</h3><p>雖然 SASS 本身無法直接在瀏覽器運行，但可透過一些線上工具（如 CodePen）編寫 SCSS，並自動編譯成 CSS 進行預覽。  </p>
+<hr>
+<h1 id="四、SASS-基礎語法"><a href="#四、SASS-基礎語法" class="headerlink" title="四、SASS 基礎語法"></a>四、SASS 基礎語法</h1><h3 id="1-變數（Variables）"><a href="#1-變數（Variables）" class="headerlink" title="1. 變數（Variables）"></a>1. 變數（Variables）</h3><p>SASS 允許使用變數來存儲顏色、字體大小、間距等常數，使樣式更具一致性。  </p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="variable">$primary-color</span>: <span class="number">#3498db</span>;</span><br><span class="line"><span class="variable">$font-size</span>: <span class="number">16px</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="variable">$font-size</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-巢狀結構（Nesting）"><a href="#2-巢狀結構（Nesting）" class="headerlink" title="2. 巢狀結構（Nesting）"></a>2. 巢狀結構（Nesting）</h3><p>在 CSS 中，我們通常需要重複撰寫父選擇器，但在 SASS 中可直接巢狀編寫，提高可讀性。  </p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="selector-tag">ul</span> &#123;</span><br><span class="line">        <span class="attribute">list-style</span>: none;</span><br><span class="line">        <span class="selector-tag">li</span> &#123;</span><br><span class="line">            <span class="attribute">display</span>: inline-block;</span><br><span class="line">            <span class="selector-tag">a</span> &#123;</span><br><span class="line">                <span class="attribute">color</span>: white;</span><br><span class="line">                <span class="attribute">text-decoration</span>: none;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這段 SCSS 會編譯成以下 CSS：  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-混入（Mixin）"><a href="#3-混入（Mixin）" class="headerlink" title="3. 混入（Mixin）"></a>3. 混入（Mixin）</h3><p>Mixin 可定義可重複使用的樣式區塊，並可接受參數，使樣式更加靈活。  </p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> button-style(<span class="variable">$bg-color</span>) &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="variable">$bg-color</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.btn-primary</span> &#123;</span><br><span class="line">    <span class="keyword">@include</span> button-style(<span class="number">#3498db</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.btn-secondary</span> &#123;</span><br><span class="line">    <span class="keyword">@include</span> button-style(<span class="number">#2ecc71</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>編譯後的 CSS 為：  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.btn-primary</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#3498db</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.btn-secondary</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#2ecc71</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-繼承（Extend）"><a href="#4-繼承（Extend）" class="headerlink" title="4. 繼承（Extend）"></a>4. 繼承（Extend）</h3><p><code>@extend</code> 允許一個選擇器繼承另一個選擇器的樣式，避免重複撰寫代碼。  </p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.message</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">    <span class="keyword">@extend</span> .message;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#2ecc71</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error</span> &#123;</span><br><span class="line">    <span class="keyword">@extend</span> .message;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#e74c3c</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>編譯後的 CSS：  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.message</span>, <span class="selector-class">.success</span>, <span class="selector-class">.error</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.success</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#2ecc71</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#e74c3c</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-運算與函式"><a href="#5-運算與函式" class="headerlink" title="5. 運算與函式"></a>5. 運算與函式</h3><p>SASS 允許在樣式中進行運算，使數值調整更加靈活。  </p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="variable">$base-size</span>: <span class="number">16px</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="variable">$base-size</span> * <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h2</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="variable">$base-size</span> * <span class="number">1.5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此外，SASS 內建許多函式，例如 <code>darken()</code>、<code>lighten()</code> 可用來調整顏色：  </p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="variable">$primary-color</span>: <span class="number">#3498db</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">button</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">    &amp;<span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">        <span class="attribute">background</span>: <span class="built_in">darken</span>(<span class="variable">$primary-color</span>, <span class="number">10%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>編譯後的 CSS：  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">button</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#3498db</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">button</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#217dbb</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="五、SASS-進階技巧"><a href="#五、SASS-進階技巧" class="headerlink" title="五、SASS 進階技巧"></a>五、SASS 進階技巧</h1><h3 id="1-分割檔案"><a href="#1-分割檔案" class="headerlink" title="1. 分割檔案"></a>1. 分割檔案</h3><p>SASS 允許將樣式拆分成多個檔案，並透過 <code>@import</code> 或 <code>@use</code> 來管理，提升可維護性。  </p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// _variables.scss</span></span><br><span class="line"><span class="variable">$primary-color</span>: <span class="number">#3498db</span>;</span><br><span class="line"><span class="variable">$font-size</span>: <span class="number">16px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.scss</span></span><br><span class="line"><span class="keyword">@import</span> <span class="string">&#x27;variables&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="variable">$font-size</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-使用-use"><a href="#2-使用-use" class="headerlink" title="2. 使用 @use"></a>2. 使用 <code>@use</code></h3><p><code>@use</code> 是 <code>@import</code> 的改進版，能避免變數命名衝突，推薦使用：  </p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@use</span> <span class="string">&#x27;variables&#x27;</span> as v;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: v.<span class="variable">$primary-color</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: v.<span class="variable">$font-size</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="六、結論"><a href="#六、結論" class="headerlink" title="六、結論"></a>六、結論</h1><p>SASS 是一種強大的 CSS 預處理器，它提供變數、巢狀、Mixin、繼承等功能，使樣式管理更加高效與模組化。透過 SASS，開發者可以撰寫更具結構性、可讀性和可維護性的 CSS。  </p>
+<p>對於前端開發者來說，掌握 SASS 不僅能提升開發效率，還能讓專案的樣式管理更加清晰。在實際專案中，建議將樣式模組化，並善用變數與 Mixin，以確保程式碼的可重用性與一致性。</p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>SASS</tag>
+        <tag>SCSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TypeScript 入門教學筆記 | 學習筆記</title>
     <url>/2024/12/02/learning-notes-typescript-intro-tutorial/</url>
     <content><![CDATA[<h1 id="一、什麼是-TypeScript？"><a href="#一、什麼是-TypeScript？" class="headerlink" title="一、什麼是 TypeScript？"></a>一、什麼是 TypeScript？</h1><p>TypeScript 是由 Microsoft 開發的 JavaScript 超集（Superset），提供靜態型別檢查（Static Type Checking），讓開發者在編譯時發現錯誤，提升程式碼的可靠性與可維護性。TypeScript 會被編譯為標準 JavaScript，並可以運行於任何支援 JavaScript 的環境，例如瀏覽器或 Node.js。  </p>
@@ -1569,15 +1569,15 @@
 <h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Vue.js 3 提供了更好的性能、更靈活的 API 和更簡潔的開發體驗。無論是使用 Composition API 還是 Options API，都能快速上手並構建強大的前端應用。</p>
 ]]></content>
       <tags>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -1596,15 +1596,15 @@
 <figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>A Child Component!<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -1622,15 +1622,15 @@
 
 <figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> props = <span class="title function_">defineProps</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="attr">msg</span>: <span class="title class_">String</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123; msg || &#x27;No props passed yet&#x27; &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -1646,15 +1646,15 @@
 <p>現在我們在編輯器中試試看吧！</p>
 ]]></content>
       <tags>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -1674,15 +1674,15 @@
 
 <figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> msg = <span class="title function_">ref</span>(<span class="string">&#x27;from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span>&gt;</span>Message: &#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">ChildComp</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -1700,15 +1700,15 @@
 <p>我們可以試著將動態類名綁定到 <code>&lt;h1&gt;</code>，使用 <code>titleClass</code> 的 <code>ref</code> 作為值。如果綁定正確，文字應該會變成紅色！</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> titleClass = <span class="title function_">ref</span>(<span class="string">&#x27;title&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">:class</span>=<span class="string">&quot;titleClass&quot;</span>&gt;</span>Make me red<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> <span class="comment">&lt;!-- add dynamic class binding here --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.title</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -1730,15 +1730,15 @@
 <p>現在，我們可以試著自己實作 <code>increment</code> 函式，並使用 <code>v-on</code> 將它綁定到按鈕。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -1769,15 +1769,15 @@
 <p>HTML&#x2F;Composition 版本：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; createApp, ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> text = <span class="title function_">ref</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">onInput</span>(<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      text.<span class="property">value</span> = e.<span class="property">target</span>.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">      text,</span></span><br><span class="line"><span class="language-javascript">      onInput</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;).<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">:value</span>=<span class="string">&quot;text&quot;</span> @<span class="attr">input</span>=<span class="string">&quot;onInput&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;Type here&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; text &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -1800,15 +1800,15 @@
 <p>更多關於 <code>v-if</code> 的詳細內容請參閱官方<a href="https://vuejs.org/guide/essentials/conditional.html">指南 - 條件渲染</a>。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> awesome = <span class="title function_">ref</span>(<span class="literal">true</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">toggle</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  awesome.<span class="property">value</span> = !awesome.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;toggle&quot;</span>&gt;</span>Toggle<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -1837,15 +1837,15 @@
 <p>更多關於 <code>v-for</code> 的詳細內容，請參閱官方<a href="https://vuejs.org/guide/essentials/list.html">指南 - 列表渲染</a>。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// give each todo a unique id</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">let</span> id = <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> newTodo = <span class="title function_">ref</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todos = <span class="title function_">ref</span>([</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn HTML&#x27;</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn JavaScript&#x27;</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn Vue&#x27;</span> &#125;</span></span><br><span class="line"><span class="language-javascript">])</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">addTodo</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span>.<span class="title function_">push</span>(&#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: newTodo.<span class="property">value</span> &#125;)</span></span><br><span class="line"><span class="language-javascript">  newTodo.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">removeTodo</span>(<span class="params">todo</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span> = todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> t !== todo)</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">form</span> @<span class="attr">submit.prevent</span>=<span class="string">&quot;addTodo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;newTodo&quot;</span> <span class="attr">required</span> <span class="attr">placeholder</span>=<span class="string">&quot;new todo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in todos&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;todo.id&quot;</span>&gt;</span></span><br><span class="line">      &#123;&#123; todo.text &#125;&#125;</span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;removeTodo(todo)&quot;</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -1865,15 +1865,15 @@
 <p>現在，嘗試新增一個 <code>filteredTodos</code> 計算屬性，並實現其計算邏輯！如果實現正確，當隱藏已完成項目時，勾選一個待辦項目應會立即將其隱藏。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, computed &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">let</span> id = <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> newTodo = <span class="title function_">ref</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> hideCompleted = <span class="title function_">ref</span>(<span class="literal">false</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todos = <span class="title function_">ref</span>([</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn HTML&#x27;</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn JavaScript&#x27;</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn Vue&#x27;</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;</span></span><br><span class="line"><span class="language-javascript">])</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> filteredTodos = <span class="title function_">computed</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">return</span> hideCompleted.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">    ? todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> !t.<span class="property">done</span>)</span></span><br><span class="line"><span class="language-javascript">    : todos.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">addTodo</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span>.<span class="title function_">push</span>(&#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: newTodo.<span class="property">value</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;)</span></span><br><span class="line"><span class="language-javascript">  newTodo.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">removeTodo</span>(<span class="params">todo</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span> = todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> t !== todo)</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">form</span> @<span class="attr">submit.prevent</span>=<span class="string">&quot;addTodo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;newTodo&quot;</span> <span class="attr">required</span> <span class="attr">placeholder</span>=<span class="string">&quot;new todo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in filteredTodos&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;todo.id&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;todo.done&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">:class</span>=<span class="string">&quot;&#123; done: todo.done &#125;&quot;</span>&gt;</span>&#123;&#123; todo.text &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;removeTodo(todo)&quot;</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;hideCompleted = !hideCompleted&quot;</span>&gt;</span></span><br><span class="line">    &#123;&#123; hideCompleted ? &#x27;Show all&#x27; : &#x27;Hide completed&#x27; &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.done</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">text-decoration</span>: line-through;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -1893,15 +1893,15 @@
 <h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>現在，我們可以嘗試添加一個 <code>onMounted</code> 鉤子，透過 <code>pElementRef.value</code> 訪問 <code>&lt;p&gt;</code> 元素，並對其進行一些直接的 DOM 操作（例如更改 <code>textContent</code>）。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> pElementRef = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  pElementRef.<span class="property">value</span>.<span class="property">textContent</span> = <span class="string">&#x27;mounted!&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">&quot;pElementRef&quot;</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -1915,69 +1915,15 @@
 <p>參考範例：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoId = <span class="title function_">ref</span>(<span class="number">1</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoData = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchData</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="literal">null</span></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(</span></span><br><span class="line"><span class="language-javascript">    <span class="string">`https://jsonplaceholder.typicode.com/todos/<span class="subst">$&#123;todoId.value&#125;</span>`</span></span></span><br><span class="line"><span class="language-javascript">  )</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="keyword">await</span> res.<span class="title function_">json</span>()</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">fetchData</span>()</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">watch</span>(todoId, fetchData)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Todo id: &#123;&#123; todoId &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;todoId++&quot;</span> <span class="attr">:disabled</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Fetch next todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Loading...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">pre</span> <span class="attr">v-else</span>&gt;</span>&#123;&#123; todoData &#125;&#125;<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue3 Options API 和 Composition API 風格差異教學筆記 | 學習筆記</title>
-    <url>/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>根據<a href="https://vuejs.org/guide/introduction.html#api-styles">官方文件的說明</a>，一般來說 Vue 元件可以用兩種不同的 API 風格來撰寫：<strong>Options API</strong> 和 <strong>Composition API</strong>。</p>
-<hr>
-<h1 id="Options-API"><a href="#Options-API" class="headerlink" title="Options API"></a><strong>Options API</strong></h1><p>使用 Options API 時，我們透過一個包含 <code>data</code>、<code>methods</code> 和 <code>mounted</code> 等選項的物件來定義元件邏輯。選項中定義的屬性會在函式內透過 <code>this</code> 曝露，<code>this</code> 指向的是元件實例。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 從 data() 返回的屬性成為響應式狀態，</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 並會透過 `this` 曝露。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">count</span>: <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// Methods 是變更狀態並觸發更新的函式，</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 可作為模板中的事件處理程序綁定。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">this</span>.<span class="property">count</span>++</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 生命週期鉤子會在組件的不同階段被調用。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 此函式會在組件掛載時調用。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`初始計數值為 <span class="subst">$&#123;<span class="variable language_">this</span>.count&#125;</span>。`</span>)</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="Composition-API"><a href="#Composition-API" class="headerlink" title="Composition API"></a><strong>Composition API</strong></h1><p>使用 Composition API 時，我們透過導入的 API 函式來定義組件邏輯。在單文件組件 (SFC) 中，Composition API 通常搭配 <code>&lt;script setup&gt;</code> 使用。<code>setup</code> 屬性是一個提示，它讓 Vue 執行編譯時轉換，從而減少樣板代碼。舉例來說，在 <code>&lt;script setup&gt;</code> 中宣告的導入、第一層變數和函式可直接用於模板中。</p>
-<p>以下是相同的組件，模板保持不變，但改用 Composition API 和 <code>&lt;script setup&gt;</code>：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 響應式狀態</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 改變狀態並觸發更新的函式</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 生命週期鉤子</span></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`初始計數值為 <span class="subst">$&#123;count.value&#125;</span>。`</span>)</span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="該選擇哪種風格？"><a href="#該選擇哪種風格？" class="headerlink" title="該選擇哪種風格？"></a><strong>該選擇哪種風格？</strong></h1><p>這兩種 API 風格都能滿足常見的使用場景。它們是基於相同底層系統的不同介面。實際上，<strong>Options API 是基於 Composition API 實現的</strong>！Vue 的核心概念和知識在兩種風格中是共通的。</p>
-<ol>
-<li><p><strong>Options API</strong>  </p>
-<ul>
-<li>圍繞「組件實例」（如範例中的 <code>this</code>）進行設計，對於來自 OOP 語言背景的使用者，這種風格通常更符合以類為基礎的思維模型。</li>
-<li>初學者友好，通過選項分組的方式隱藏了響應式細節，簡化程式碼組織。</li>
-</ul>
-</li>
-<li><p><strong>Composition API</strong>  </p>
-<ul>
-<li>在函式作用域中直接宣告響應式狀態變數，並透過組合多個函式來管理複雜性。</li>
-<li>更加靈活，但需要對 Vue 的響應式機制有深入理解才能有效使用。</li>
-<li>適合組織和重用邏輯的更強大模式。</li>
-</ul>
-</li>
-</ol>
-<h1 id="學習上的建議"><a href="#學習上的建議" class="headerlink" title="學習上的建議"></a><strong>學習上的建議</strong></h1><ul>
-<li><strong>新手學習</strong>：選擇對您來說更容易理解的風格。大多數核心概念在兩種風格中是共通的，您之後可以再學習另一種風格。  </li>
-<li><strong>生產使用</strong>：  <ul>
-<li>如果不使用建構工具，或計畫主要用於低複雜度場景（如漸進式增強），建議使用 <code>Options API</code>。  </li>
-<li>如果計畫使用 Vue 構建完整應用，建議使用 <strong>Composition API + 單文件組件</strong>。</li>
-</ul>
-</li>
-</ul>
-<p>在學習階段，我們也不需要僅限於某一種風格。可以根據適合的情境使用適合的 API 風格。</p>
-]]></content>
-      <tags>
         <tag>vue</tag>
         <tag>vue3</tag>
         <tag>vue.js</tag>
         <tag>vue.js 3</tag>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>Options API</tag>
-        <tag>Composition API</tag>
       </tags>
   </entry>
   <entry>
@@ -2021,6 +1967,60 @@
         <tag>Node.js</tag>
         <tag>NodeJS</tag>
         <tag>WebSocket</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue3 Options API 和 Composition API 風格差異教學筆記 | 學習筆記</title>
+    <url>/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>根據<a href="https://vuejs.org/guide/introduction.html#api-styles">官方文件的說明</a>，一般來說 Vue 元件可以用兩種不同的 API 風格來撰寫：<strong>Options API</strong> 和 <strong>Composition API</strong>。</p>
+<hr>
+<h1 id="Options-API"><a href="#Options-API" class="headerlink" title="Options API"></a><strong>Options API</strong></h1><p>使用 Options API 時，我們透過一個包含 <code>data</code>、<code>methods</code> 和 <code>mounted</code> 等選項的物件來定義元件邏輯。選項中定義的屬性會在函式內透過 <code>this</code> 曝露，<code>this</code> 指向的是元件實例。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 從 data() 返回的屬性成為響應式狀態，</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 並會透過 `this` 曝露。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">count</span>: <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// Methods 是變更狀態並觸發更新的函式，</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 可作為模板中的事件處理程序綁定。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">this</span>.<span class="property">count</span>++</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 生命週期鉤子會在組件的不同階段被調用。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 此函式會在組件掛載時調用。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`初始計數值為 <span class="subst">$&#123;<span class="variable language_">this</span>.count&#125;</span>。`</span>)</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="Composition-API"><a href="#Composition-API" class="headerlink" title="Composition API"></a><strong>Composition API</strong></h1><p>使用 Composition API 時，我們透過導入的 API 函式來定義組件邏輯。在單文件組件 (SFC) 中，Composition API 通常搭配 <code>&lt;script setup&gt;</code> 使用。<code>setup</code> 屬性是一個提示，它讓 Vue 執行編譯時轉換，從而減少樣板代碼。舉例來說，在 <code>&lt;script setup&gt;</code> 中宣告的導入、第一層變數和函式可直接用於模板中。</p>
+<p>以下是相同的組件，模板保持不變，但改用 Composition API 和 <code>&lt;script setup&gt;</code>：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 響應式狀態</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 改變狀態並觸發更新的函式</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 生命週期鉤子</span></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`初始計數值為 <span class="subst">$&#123;count.value&#125;</span>。`</span>)</span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="該選擇哪種風格？"><a href="#該選擇哪種風格？" class="headerlink" title="該選擇哪種風格？"></a><strong>該選擇哪種風格？</strong></h1><p>這兩種 API 風格都能滿足常見的使用場景。它們是基於相同底層系統的不同介面。實際上，<strong>Options API 是基於 Composition API 實現的</strong>！Vue 的核心概念和知識在兩種風格中是共通的。</p>
+<ol>
+<li><p><strong>Options API</strong>  </p>
+<ul>
+<li>圍繞「組件實例」（如範例中的 <code>this</code>）進行設計，對於來自 OOP 語言背景的使用者，這種風格通常更符合以類為基礎的思維模型。</li>
+<li>初學者友好，通過選項分組的方式隱藏了響應式細節，簡化程式碼組織。</li>
+</ul>
+</li>
+<li><p><strong>Composition API</strong>  </p>
+<ul>
+<li>在函式作用域中直接宣告響應式狀態變數，並透過組合多個函式來管理複雜性。</li>
+<li>更加靈活，但需要對 Vue 的響應式機制有深入理解才能有效使用。</li>
+<li>適合組織和重用邏輯的更強大模式。</li>
+</ul>
+</li>
+</ol>
+<h1 id="學習上的建議"><a href="#學習上的建議" class="headerlink" title="學習上的建議"></a><strong>學習上的建議</strong></h1><ul>
+<li><strong>新手學習</strong>：選擇對您來說更容易理解的風格。大多數核心概念在兩種風格中是共通的，您之後可以再學習另一種風格。  </li>
+<li><strong>生產使用</strong>：  <ul>
+<li>如果不使用建構工具，或計畫主要用於低複雜度場景（如漸進式增強），建議使用 <code>Options API</code>。  </li>
+<li>如果計畫使用 Vue 構建完整應用，建議使用 <strong>Composition API + 單文件組件</strong>。</li>
+</ul>
+</li>
+</ul>
+<p>在學習階段，我們也不需要僅限於某一種風格。可以根據適合的情境使用適合的 API 風格。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+        <tag>Options API</tag>
+        <tag>Composition API</tag>
       </tags>
   </entry>
   <entry>
