@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</title>
+    <url>/2020/06/21/about-backend-engineer-10-keywords/</url>
+    <content><![CDATA[<p>以下整理了後端工程師相關的 10 個關鍵字，涵蓋技能、工具與工作方式：</p>
+<ol>
+<li><p><strong>Node.js &#x2F; Python &#x2F; Java &#x2F; Ruby &#x2F; PHP</strong>：常見的後端程式語言，用於構建伺服器端應用程式。</p>
+</li>
+<li><p><strong>Database</strong>（資料庫）：包括 <strong>SQL（如 MySQL, PostgreSQL）</strong> 和 <strong>NoSQL（如 MongoDB, Redis）</strong> 的操作與優化。</p>
+</li>
+<li><p><strong>REST API &#x2F; GraphQL</strong>：設計與實現伺服器端 API 以支援前端資料請求。</p>
+</li>
+<li><p><strong>Authentication &amp; Authorization</strong>（認證與授權）：如 OAuth、JWT、Session，確保使用者安全與數據保護。</p>
+</li>
+<li><p><strong>Docker &#x2F; Kubernetes</strong>：容器化與編排工具，用於應用部署與資源管理。</p>
+</li>
+<li><p><strong>Cloud Services</strong>：如 AWS、Google Cloud、Microsoft Azure，支援應用程式的雲端部署與運行。</p>
+</li>
+<li><p><strong>Microservices</strong>（微服務架構）：設計可拆分且可獨立部署的服務模組。</p>
+</li>
+<li><p><strong>Message Queues</strong>（訊息佇列）：如 RabbitMQ、Kafka，用於分布式系統的非同步通訊。</p>
+</li>
+<li><p><strong>Version Control</strong>（版本控制）：如 Git &#x2F; GitHub，用於團隊協作與程式碼管理。</p>
+</li>
+<li><p><strong>Performance Optimization</strong>（效能優化）：針對伺服器與資料庫的效能調優，提升系統效率。</p>
+</li>
+</ol>
+<p>以上關鍵字為後端工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
+]]></content>
+      <tags>
+        <tag>開發者</tag>
+        <tag>軟體工程師</tag>
+        <tag>SWE</tag>
+        <tag>Software Engineer</tag>
+        <tag>Software</tag>
+        <tag>軟體開發</tag>
+        <tag>backend</tag>
+        <tag>backend engineer</tag>
+        <tag>後端開發</tag>
+        <tag>後端工程</tag>
+        <tag>網頁後端工程師</tag>
+        <tag>後端工程師</tag>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字</title>
     <url>/2020/06/13/about-frontend-engineer-10-keywords/</url>
     <content><![CDATA[<p>以下整理了前端工程師相關的 10 個關鍵字，涵蓋技能、工具與工作方式：</p>
@@ -39,53 +83,9 @@
         <tag>Software Engineer</tag>
         <tag>Software</tag>
         <tag>軟體開發</tag>
+        <tag>Web</tag>
         <tag>網頁前端工程師</tag>
         <tag>前端工程師</tag>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</title>
-    <url>/2020/06/21/about-backend-engineer-10-keywords/</url>
-    <content><![CDATA[<p>以下整理了後端工程師相關的 10 個關鍵字，涵蓋技能、工具與工作方式：</p>
-<ol>
-<li><p><strong>Node.js &#x2F; Python &#x2F; Java &#x2F; Ruby &#x2F; PHP</strong>：常見的後端程式語言，用於構建伺服器端應用程式。</p>
-</li>
-<li><p><strong>Database</strong>（資料庫）：包括 <strong>SQL（如 MySQL, PostgreSQL）</strong> 和 <strong>NoSQL（如 MongoDB, Redis）</strong> 的操作與優化。</p>
-</li>
-<li><p><strong>REST API &#x2F; GraphQL</strong>：設計與實現伺服器端 API 以支援前端資料請求。</p>
-</li>
-<li><p><strong>Authentication &amp; Authorization</strong>（認證與授權）：如 OAuth、JWT、Session，確保使用者安全與數據保護。</p>
-</li>
-<li><p><strong>Docker &#x2F; Kubernetes</strong>：容器化與編排工具，用於應用部署與資源管理。</p>
-</li>
-<li><p><strong>Cloud Services</strong>：如 AWS、Google Cloud、Microsoft Azure，支援應用程式的雲端部署與運行。</p>
-</li>
-<li><p><strong>Microservices</strong>（微服務架構）：設計可拆分且可獨立部署的服務模組。</p>
-</li>
-<li><p><strong>Message Queues</strong>（訊息佇列）：如 RabbitMQ、Kafka，用於分布式系統的非同步通訊。</p>
-</li>
-<li><p><strong>Version Control</strong>（版本控制）：如 Git &#x2F; GitHub，用於團隊協作與程式碼管理。</p>
-</li>
-<li><p><strong>Performance Optimization</strong>（效能優化）：針對伺服器與資料庫的效能調優，提升系統效率。</p>
-</li>
-</ol>
-<p>以上關鍵字為後端工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
-]]></content>
-      <tags>
-        <tag>開發者</tag>
-        <tag>軟體工程師</tag>
-        <tag>SWE</tag>
-        <tag>Software Engineer</tag>
-        <tag>Software</tag>
-        <tag>軟體開發</tag>
-        <tag>Web</tag>
-        <tag>backend</tag>
-        <tag>backend engineer</tag>
-        <tag>後端開發</tag>
-        <tag>後端工程</tag>
-        <tag>網頁後端工程師</tag>
-        <tag>後端工程師</tag>
       </tags>
   </entry>
   <entry>
@@ -2389,9 +2389,9 @@
         <tag>SWE</tag>
         <tag>Software Engineer</tag>
         <tag>Software</tag>
-        <tag>Web</tag>
         <tag>backend</tag>
         <tag>backend engineer</tag>
+        <tag>Web</tag>
       </tags>
   </entry>
 </search>
