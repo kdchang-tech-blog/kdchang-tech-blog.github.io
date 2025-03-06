@@ -26,11 +26,11 @@
     
     <title>
         
-          軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap） - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          React Redux 介紹入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/06/22/software-engineer-and-web-develement-skill-tree/">
+    <link rel="canonical" href="https://tech.kdchang.net/2024/12/14/learning-notes-react-redux-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap） - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap） - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="React Redux 介紹入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="React Redux 介紹入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -192,23 +192,19 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</h1>
+                    <h1>React Redux 介紹入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2024-06-22
+                        2024-12-14
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#Software Engineer" title="Software Engineer">Software Engineer</a>
+                          <a class="tag" href="/tags/#react" title="react">react</a>
                         
-                          <a class="tag" href="/tags/#Frontend Roadmap" title="Frontend Roadmap">Frontend Roadmap</a>
+                          <a class="tag" href="/tags/#Redux？" title="Redux？">Redux？</a>
                         
-                          <a class="tag" href="/tags/#Backend Roadmap" title="Backend Roadmap">Backend Roadmap</a>
-                        
-                          <a class="tag" href="/tags/#DevOps" title="DevOps">DevOps</a>
-                        
-                          <a class="tag" href="/tags/#Full Stack" title="Full Stack">Full Stack</a>
+                          <a class="tag" href="/tags/#React Redux？" title="React Redux？">React Redux？</a>
                         
 
                     </div>
@@ -234,30 +230,62 @@
                 </div>
                 <br>
                 <div>
-                    <h1 id="前端工程"><a href="#前端工程" class="headerlink" title="前端工程"></a>前端工程</h1><p><a target="_blank" rel="noopener" href="https://roadmap.sh/frontend">Frontend Roadmap</a> &#x2F; <a target="_blank" rel="noopener" href="https://roadmap.sh/frontend?r=frontend-beginner">Frontend Beginner Roadmap</a></p>
+                    <h4 id="1-什麼是-Redux？"><a href="#1-什麼是-Redux？" class="headerlink" title="1. 什麼是 Redux？"></a>1. 什麼是 Redux？</h4><p><code>Redux</code> 是 JavaScript 應用程式的狀態管理工具，最常與 React 搭配使用。它提供一個單一的全域狀態樹，使應用程式的狀態變更更可預測、可測試、可維護。Redux 遵循 <strong>單向數據流</strong> 和 <strong>不可變狀態</strong> 的概念，適合管理大型應用的複雜狀態。  </p>
+<hr>
+<h4 id="2-Redux-核心概念"><a href="#2-Redux-核心概念" class="headerlink" title="2. Redux 核心概念"></a>2. Redux 核心概念</h4><p>Redux 的運作基礎主要由三個部分組成：  </p>
 <ol>
-<li><input checked="" disabled="" type="checkbox"> HTML</li>
-<li><input disabled="" type="checkbox"> CSS</li>
-<li><input disabled="" type="checkbox"> JavaScript</li>
-<li><input disabled="" type="checkbox"> Version Control Systems&#x2F;Git&#x2F;Github</li>
-<li><input disabled="" type="checkbox"> npm</li>
-<li><input disabled="" type="checkbox"> Vue</li>
-<li><input disabled="" type="checkbox"> React</li>
-<li><input disabled="" type="checkbox"> Angular</li>
-<li><input disabled="" type="checkbox"> Tailwind</li>
-<li><input disabled="" type="checkbox"> Vitest</li>
-<li><input disabled="" type="checkbox"> Cypress</li>
-<li><input disabled="" type="checkbox"> TypeScript</li>
-<li><input disabled="" type="checkbox"> PWA</li>
-<li><input disabled="" type="checkbox"> SASS&#x2F;LESS&#x2F;PostCSS</li>
+<li><strong>Store（存儲狀態的地方）</strong>  <ul>
+<li>整個應用程式的狀態存儲在單一的 Store 中。</li>
+</ul>
+</li>
+<li><strong>Action（動作）</strong>  <ul>
+<li>Action 是一個 JavaScript 物件，描述了「發生了什麼事」。通常包含 <code>type</code> 屬性來表明事件類型，並可能包含 <code>payload</code> 傳遞額外數據。</li>
+</ul>
+</li>
+<li><strong>Reducer（狀態變更邏輯）</strong>  <ul>
+<li>Reducer 是一個純函式，接收當前狀態與 Action，根據 Action 類型來決定如何更新狀態。</li>
+</ul>
+</li>
 </ol>
-<h1 id="後端"><a href="#後端" class="headerlink" title="後端"></a>後端</h1><p><a target="_blank" rel="noopener" href="https://roadmap.sh/backend">Backend Roadmap</a> &#x2F; <a target="_blank" rel="noopener" href="https://roadmap.sh/backend?r=backend-beginner">Backend Beginner Roadmap</a></p>
-<h1 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h1><p><a target="_blank" rel="noopener" href="https://roadmap.sh/devops">DevOps Roadmap</a> &#x2F; <a target="_blank" rel="noopener" href="https://roadmap.sh/devops?r=devops-beginner">DevOps Beginner Roadmap</a></p>
-<h1 id="全端"><a href="#全端" class="headerlink" title="全端"></a>全端</h1><p><a target="_blank" rel="noopener" href="https://roadmap.sh/full-stack">Full Stack Roadmap</a></p>
-<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
-<li><a target="_blank" rel="noopener" href="https://github.com/kamranahmedse/developer-roadmap?tab=readme-ov-file">github developer-roadmap</a></li>
-<li><a target="_blank" rel="noopener" href="https://hackmd.io/@were1122was/BkUpHXuAq">N+1 Queries 效能問題</a></li>
-</ol>
+<hr>
+<h4 id="3-安裝-Redux-和-React-Redux"><a href="#3-安裝-Redux-和-React-Redux" class="headerlink" title="3. 安裝 Redux 和 React-Redux"></a>3. 安裝 Redux 和 React-Redux</h4><p>在 React 專案中安裝 Redux 及 React-Redux：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install @reduxjs/toolkit react-redux</span><br></pre></td></tr></table></figure>
+
+<p>Redux Toolkit（RTK）是官方推薦的 Redux 工具包，它提供更簡潔、易用的 API 來簡化 Redux 使用。  </p>
+<hr>
+<h4 id="4-創建-Redux-Store"><a href="#4-創建-Redux-Store" class="headerlink" title="4. 創建 Redux Store"></a>4. 創建 Redux Store</h4><p>在 <code>store.js</code> 檔案中，使用 <code>configureStore</code> 創建 Store：  </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; configureStore &#125; <span class="keyword">from</span> <span class="string">&quot;@reduxjs/toolkit&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> counterReducer <span class="keyword">from</span> <span class="string">&quot;./counterSlice&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">configureStore</span>(&#123;</span><br><span class="line">  <span class="attr">reducer</span>: &#123;</span><br><span class="line">    <span class="attr">counter</span>: counterReducer,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span><br></pre></td></tr></table></figure>
+
+<p>在這裡，我們將 <code>counterReducer</code> 設定為 <code>counter</code> 這個 slice 的 reducer。</p>
+<hr>
+<h4 id="5-創建-Slice（Reducer-Action）"><a href="#5-創建-Slice（Reducer-Action）" class="headerlink" title="5. 創建 Slice（Reducer + Action）"></a>5. 創建 Slice（Reducer + Action）</h4><p>在 <code>counterSlice.js</code> 檔案中，使用 <code>createSlice</code> 定義 <code>counter</code> 相關的狀態與 reducer：  </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createSlice &#125; <span class="keyword">from</span> <span class="string">&quot;@reduxjs/toolkit&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> counterSlice = <span class="title function_">createSlice</span>(&#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;counter&quot;</span>,</span><br><span class="line">  <span class="attr">initialState</span>: &#123; <span class="attr">value</span>: <span class="number">0</span> &#125;,</span><br><span class="line">  <span class="attr">reducers</span>: &#123;</span><br><span class="line">    <span class="attr">increment</span>: <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">value</span> += <span class="number">1</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">decrement</span>: <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">value</span> -= <span class="number">1</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">incrementByAmount</span>: <span class="function">(<span class="params">state, action</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">value</span> += action.<span class="property">payload</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> &#123; increment, decrement, incrementByAmount &#125; = counterSlice.<span class="property">actions</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> counterSlice.<span class="property">reducer</span>;</span><br></pre></td></tr></table></figure>
+
+<p>這裡的 <code>createSlice</code> 幫助我們：  </p>
+<ul>
+<li>定義狀態的初始值（<code>initialState</code>）  </li>
+<li>自動生成 <code>reducer</code>  </li>
+<li>自動產生對應的 Action</li>
+</ul>
+<hr>
+<h4 id="6-設置-Store-提供給-React"><a href="#6-設置-Store-提供給-React" class="headerlink" title="6. 設置 Store 提供給 React"></a>6. 設置 Store 提供給 React</h4><p>在 <code>index.js</code> 檔案中使用 <code>Provider</code> 讓整個 React 應用可以存取 Redux Store：  </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&quot;react-dom&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Provider</span> &#125; <span class="keyword">from</span> <span class="string">&quot;react-redux&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&quot;./store&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&quot;./App&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">App</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">Provider</span>&gt;</span></span>,</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;root&quot;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>這樣 <code>App</code> 及其所有子元件都可以存取 Redux Store。</p>
+<hr>
+<h4 id="7-在-React-組件中使用-Redux"><a href="#7-在-React-組件中使用-Redux" class="headerlink" title="7. 在 React 組件中使用 Redux"></a>7. 在 React 組件中使用 Redux</h4><p>在 <code>Counter.js</code> 中使用 Redux Store 來讀取與修改 <code>counter</code> 的值：  </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useSelector, useDispatch &#125; <span class="keyword">from</span> <span class="string">&quot;react-redux&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; increment, decrement, incrementByAmount &#125; <span class="keyword">from</span> <span class="string">&quot;./counterSlice&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Counter</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> count = <span class="title function_">useSelector</span>(<span class="function">(<span class="params">state</span>) =&gt;</span> state.<span class="property">counter</span>.<span class="property">value</span>);</span><br><span class="line">  <span class="keyword">const</span> dispatch = <span class="title function_">useDispatch</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>計數器：&#123;count&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> dispatch(increment())&#125;&gt;增加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> dispatch(decrement())&#125;&gt;減少<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> dispatch(incrementByAmount(5))&#125;&gt;增加 5<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Counter</span>;</span><br></pre></td></tr></table></figure>
+
+<p>在這個範例中：  </p>
+<ul>
+<li><code>useSelector(state =&gt; state.counter.value)</code> 取得 Store 內的 <code>counter</code> 值。  </li>
+<li><code>useDispatch()</code> 取得 Redux 的 <code>dispatch</code> 函式，發送 Action 來更新狀態。  </li>
+<li>點擊按鈕時，對應的 Action 會發送給 Reducer，修改狀態。</li>
+</ul>
+<hr>
+<h4 id="8-使用-Redux-DevTools-進行除錯"><a href="#8-使用-Redux-DevTools-進行除錯" class="headerlink" title="8. 使用 Redux DevTools 進行除錯"></a>8. 使用 Redux DevTools 進行除錯</h4><p>Redux Toolkit 內建支援 Redux DevTools，可以在瀏覽器中查看 Redux 狀態變更的歷史紀錄，方便除錯。安裝 <a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd">Redux DevTools</a>，並開啟瀏覽器的 <code>Redux</code> 分頁來觀察 Action 和 State 變化。</p>
+<hr>
+<h4 id="9-總結"><a href="#9-總結" class="headerlink" title="9. 總結"></a>9. 總結</h4><p>Redux 提供了一個強大的狀態管理方式，適合中大型應用。在 Redux Toolkit 的幫助下，開發 Redux 應用變得更加直觀與簡潔。本篇介紹了 Redux 的基本概念，並透過實際範例展示如何在 React 中整合 Redux。如果你的應用狀態複雜，需要跨組件共享，Redux 會是很好的選擇。</p>
 
                 </div>
 
@@ -274,7 +302,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/22/web-frontend-interview-question-list/" title="常見 Web Frontend 前端工程師面試準備題目清單" rel="bookmark">常見 Web Frontend 前端工程師面試準備題目清單</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/03/22/web-frontend-resources/" title="常見 Web Frontend 前端工程師學習資源和工具" rel="bookmark">常見 Web Frontend 前端工程師學習資源和工具</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/06/21/about-backend-engineer-10-keywords/" title="關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字" rel="bookmark">關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/06/13/about-frontend-engineer-10-keywords/" title="關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字" rel="bookmark">關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2015/01/22/about-software-engineer-10-keywords/" title="關於軟體工程師 Software Engineer 的 10 個關鍵字" rel="bookmark">關於軟體工程師 Software Engineer 的 10 個關鍵字</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/13/learning-notes-jsx-intro-tutorial/" title="JSX 入門教學筆記 | 學習筆記" rel="bookmark">JSX 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -310,8 +338,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/06/22/software-engineer-and-web-develement-skill-tree/";
-    var disqus_url = "https://tech.kdchang.net/2024/06/22/software-engineer-and-web-develement-skill-tree/";
+    var disqus_identifier = "https://tech.kdchang.net/2024/12/14/learning-notes-react-redux-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2024/12/14/learning-notes-react-redux-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
