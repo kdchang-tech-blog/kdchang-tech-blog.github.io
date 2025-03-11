@@ -1,0 +1,43 @@
+---
+title: 常見 Web 網頁開發工具和資源整理
+date: 2024-03-22 11:33:41
+author: kdchang
+tags: 
+    - Frontend Roadmap
+    - Software Engineer
+    - 前端工程師
+    - 前端工程
+    - 網頁開發
+    - 網站開發
+    - 網站開發工具
+    - 學習資源
+
+---
+
+以下彙整常見 Web 網頁開發工具和資源整理
+
+## VS Code 套件
+1. emmet
+2. Live Server
+3. material design icon
+
+## 假文字
+1. [中文亂數假文產生器 Chinese Lorem Ipsum](https://pinkylam.me/generator/chinese-lorem-ipsum/)
+2. [英文 Lorem Ipsum](https://www.lipsum.com/)
+
+## 假圖
+1. [Fake images please?](https://fakeimg.pl/)
+2. [Picsum photos](https://picsum.photos/)
+
+## 影片
+1. [Free Creative Commons Zero Videos](https://www.pexels.com/search/videos/creative%20commons%20zero/)
+
+## CSS 文件
+1. [css-tricks](https://css-tricks.com/)
+
+## CSS Reset
+1. [A Modern CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/)
+2. [CSS Tools: Reset CSS](https://meyerweb.com/eric/tools/css/reset/)
+
+## Git
+1. [Learn Git Branching](https://learngitbranching.js.org/)

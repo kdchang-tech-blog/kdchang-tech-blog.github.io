@@ -1,11 +1,11 @@
 ---
 title: React Redux 介紹入門教學筆記 | 學習筆記
-date: 2024-12-15 02:23:41
+date: 2024-12-13 02:23:41
 author: kdchang
 tags: 
     - react
-    - Redux？
-    - React Redux？
+    - Redux
+    - React Redux
 
 ---
 
