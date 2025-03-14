@@ -22,6 +22,20 @@ tags:
 3. Material Icon Theme
 4. Babel JavaScript
 5. Prettier
+6. CodeSnap
+7. JavaScript code snippets
+8. Peacock
+9. TODO Highlight
+10. Code Runner
+11. Live Share
+12. Color Highlight
+
+## Chrome 瀏覽器擴充套件
+1. Responsive Viewer
+2. HTML5 Outliner
+3. ColorZilla
+4. Fonts Ninja
+5. Check My Links
 
 ## 假文字
 1. [中文亂數假文產生器 Chinese Lorem Ipsum](https://pinkylam.me/generator/chinese-lorem-ipsum/)
