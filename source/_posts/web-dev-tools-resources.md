@@ -14,12 +14,14 @@ tags:
 
 ---
 
-以下彙整常見 Web 網頁開發工具和資源整理
+以下彙整常見 Web 網頁開發工具和資源整理：
 
 ## VS Code 套件
 1. emmet
 2. Live Server
-3. material design icon
+3. Material Icon Theme
+4. Babel JavaScript
+5. Prettier
 
 ## 假文字
 1. [中文亂數假文產生器 Chinese Lorem Ipsum](https://pinkylam.me/generator/chinese-lorem-ipsum/)
