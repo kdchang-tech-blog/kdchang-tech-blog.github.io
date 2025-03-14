@@ -26,11 +26,11 @@
     
     <title>
         
-          常見 Web 網頁開發工具和資源整理 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          JavaScript Hoisting 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/03/22/web-dev-tools/">
+    <link rel="canonical" href="https://tech.kdchang.net/2021/12/15/learning-notes-javascript-hoisting-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="常見 Web 網頁開發工具和資源整理 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="常見 Web 網頁開發工具和資源整理 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="JavaScript Hoisting 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="JavaScript Hoisting 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -192,29 +192,21 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>常見 Web 網頁開發工具和資源整理</h1>
+                    <h1>JavaScript Hoisting 入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2024-03-22
+                        2021-12-15
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#前端工程" title="前端工程">前端工程</a>
+                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
                         
-                          <a class="tag" href="/tags/#Software Engineer" title="Software Engineer">Software Engineer</a>
+                          <a class="tag" href="/tags/#JS" title="JS">JS</a>
                         
-                          <a class="tag" href="/tags/#前端工程師" title="前端工程師">前端工程師</a>
+                          <a class="tag" href="/tags/#Hoisting" title="Hoisting">Hoisting</a>
                         
-                          <a class="tag" href="/tags/#Frontend Roadmap" title="Frontend Roadmap">Frontend Roadmap</a>
-                        
-                          <a class="tag" href="/tags/#網頁開發" title="網頁開發">網頁開發</a>
-                        
-                          <a class="tag" href="/tags/#網站開發" title="網站開發">網站開發</a>
-                        
-                          <a class="tag" href="/tags/#網站開發工具" title="網站開發工具">網站開發工具</a>
-                        
-                          <a class="tag" href="/tags/#學習資源" title="學習資源">學習資源</a>
+                          <a class="tag" href="/tags/#變數提升" title="變數提升">變數提升</a>
                         
 
                     </div>
@@ -240,32 +232,101 @@
                 </div>
                 <br>
                 <div>
-                    <p>以下彙整常見 Web 網頁開發工具和資源整理</p>
-<h2 id="VS-Code-套件"><a href="#VS-Code-套件" class="headerlink" title="VS Code 套件"></a>VS Code 套件</h2><ol>
-<li>emmet</li>
-<li>Live Server</li>
-<li>material design icon</li>
+                    <h2 id="1-什麼是-Hoisting？"><a href="#1-什麼是-Hoisting？" class="headerlink" title="1. 什麼是 Hoisting？"></a>1. 什麼是 Hoisting？</h2><p>Hoisting（提升）是 JavaScript 中的一種行為，它允許變數與函式在執行時被提升到作用域的頂部，這表示你可以在宣告之前使用它們，而不會發生錯誤。「<code>建立期</code>」（<code>Creation Phase</code>）和「<code>執行期</code>」（<code>Execution Phase</code>），建立期主要為定義變數名稱，執行期為執行程式和指定賦值。</p>
+<p>在 JavaScript 中，Hoisting 影響兩種類型的宣告：</p>
+<ol>
+<li><strong>變數宣告（var, let, const）</strong></li>
+<li><strong>函式宣告（Function Declaration）</strong></li>
 </ol>
-<h2 id="假文字"><a href="#假文字" class="headerlink" title="假文字"></a>假文字</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://pinkylam.me/generator/chinese-lorem-ipsum/">中文亂數假文產生器 Chinese Lorem Ipsum</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.lipsum.com/">英文 Lorem Ipsum</a></li>
+<h2 id="2-變數-Hoisting"><a href="#2-變數-Hoisting" class="headerlink" title="2. 變數 Hoisting"></a>2. 變數 Hoisting</h2><h3 id="2-1-使用-var-的-Hoisting"><a href="#2-1-使用-var-的-Hoisting" class="headerlink" title="2.1 使用 var 的 Hoisting"></a>2.1 使用 <code>var</code> 的 Hoisting</h3><p><code>var</code> 宣告的變數會被提升，但不會初始化，這表示變數本身會被提升到作用域頂端，但其值不會。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a); <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+
+<p>上述程式碼等同於：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line">a = <span class="number">10</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+
+<p>在 Hoisting 過程中，變數 <code>a</code> 被提升（Hoist）到了作用域的頂部，但它的值 <code>10</code> 並沒有一起提升，因此第一次 <code>console.log(a);</code> 會輸出 <code>undefined</code>。</p>
+<h3 id="2-2-使用-let-和-const-的-Hoisting"><a href="#2-2-使用-let-和-const-的-Hoisting" class="headerlink" title="2.2 使用 let 和 const 的 Hoisting"></a>2.2 使用 <code>let</code> 和 <code>const</code> 的 Hoisting</h3><p><code>let</code> 和 <code>const</code> 也會被提升，但它們不會自動初始化，因此在變數宣告之前存取會導致 <code>ReferenceError</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b); <span class="comment">// ReferenceError: Cannot access &#x27;b&#x27; before initialization</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
+<p>等同於：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> b;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b); <span class="comment">// ReferenceError</span></span><br><span class="line">b = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
+<p><code>let</code> 和 <code>const</code> 變數存在「暫時性死區（Temporal Dead Zone, TDZ）」，這表示變數在初始化之前無法被存取。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(c); <span class="comment">// ReferenceError</span></span><br><span class="line"><span class="keyword">const</span> c = <span class="number">30</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-總結變數-Hoisting"><a href="#2-3-總結變數-Hoisting" class="headerlink" title="2.3 總結變數 Hoisting"></a>2.3 總結變數 Hoisting</h3><table>
+<thead>
+<tr>
+<th>宣告方式</th>
+<th>是否 Hoisting</th>
+<th>是否初始化</th>
+<th>TDZ 存在</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>var</code></td>
+<td>是</td>
+<td><code>undefined</code></td>
+<td>否</td>
+</tr>
+<tr>
+<td><code>let</code></td>
+<td>是</td>
+<td>無</td>
+<td>是</td>
+</tr>
+<tr>
+<td><code>const</code></td>
+<td>是</td>
+<td>無</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<h2 id="3-函式-Hoisting"><a href="#3-函式-Hoisting" class="headerlink" title="3. 函式 Hoisting"></a>3. 函式 Hoisting</h2><h3 id="3-1-Function-Declaration（函式宣告）"><a href="#3-1-Function-Declaration（函式宣告）" class="headerlink" title="3.1 Function Declaration（函式宣告）"></a>3.1 Function Declaration（函式宣告）</h3><p>函式宣告（<code>function foo() &#123;&#125;</code>）會完整 Hoisting，因此可以在定義之前調用。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">hello</span>(); <span class="comment">// Hello, world!</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">hello</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hello, world!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在執行時，JavaScript 會將函式整個提升到作用域頂部，因此 <code>hello()</code> 可以在函式宣告前執行。</p>
+<p>等同於：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hello</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hello, world!&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">hello</span>(); <span class="comment">// Hello, world!</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-Function-Expression（函式表達式）"><a href="#3-2-Function-Expression（函式表達式）" class="headerlink" title="3.2 Function Expression（函式表達式）"></a>3.2 Function Expression（函式表達式）</h3><p>使用 <code>var</code> 宣告的函式表達式（Function Expression）僅會提升變數，但不會提升函式內容，因此無法在宣告前調用。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(sayHi); <span class="comment">// undefined</span></span><br><span class="line"><span class="title function_">sayHi</span>(); <span class="comment">// TypeError: sayHi is not a function</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sayHi = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hi!&quot;</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>上述程式碼等同於：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> sayHi;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(sayHi); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line">sayHi = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hi!&quot;</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>因為 <code>sayHi</code> 在 Hoisting 時只被提升變數，但未初始化，因此 <code>console.log(sayHi);</code> 顯示 <code>undefined</code>，並且 <code>sayHi();</code> 會導致 <code>TypeError</code>。</p>
+<h3 id="3-3-使用-let-和-const-的-Function-Expression"><a href="#3-3-使用-let-和-const-的-Function-Expression" class="headerlink" title="3.3 使用 let 和 const 的 Function Expression"></a>3.3 使用 <code>let</code> 和 <code>const</code> 的 Function Expression</h3><p>若函式表達式使用 <code>let</code> 或 <code>const</code>，則變數仍然會被提升，但會受到暫時性死區（TDZ）影響，因此在初始化前使用會導致 <code>ReferenceError</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(sayHello); <span class="comment">// ReferenceError: Cannot access &#x27;sayHello&#x27; before initialization</span></span><br><span class="line"><span class="keyword">let</span> sayHello = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hello!&quot;</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-結論與最佳實踐"><a href="#4-結論與最佳實踐" class="headerlink" title="4. 結論與最佳實踐"></a>4. 結論與最佳實踐</h2><h3 id="4-1-總結-Hoisting-行為"><a href="#4-1-總結-Hoisting-行為" class="headerlink" title="4.1 總結 Hoisting 行為"></a>4.1 總結 Hoisting 行為</h3><ol>
+<li><strong>變數宣告</strong>：<ul>
+<li><code>var</code> 會被提升並初始化為 <code>undefined</code>。</li>
+<li><code>let</code> 和 <code>const</code> 會被提升，但不會初始化（存在 TDZ）。</li>
+</ul>
+</li>
+<li><strong>函式宣告</strong>：<ul>
+<li><code>function</code> 會完整提升，可以在宣告前調用。</li>
+<li><code>var</code> 宣告的函式表達式只提升變數，無法在宣告前調用。</li>
+<li><code>let</code> 和 <code>const</code> 宣告的函式表達式受 TDZ 影響，無法在宣告前使用。</li>
+</ul>
+</li>
 </ol>
-<h2 id="假圖"><a href="#假圖" class="headerlink" title="假圖"></a>假圖</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://fakeimg.pl/">Fake images please?</a></li>
-<li><a target="_blank" rel="noopener" href="https://picsum.photos/">Picsum photos</a></li>
-</ol>
-<h2 id="影片"><a href="#影片" class="headerlink" title="影片"></a>影片</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://www.pexels.com/search/videos/creative%20commons%20zero/">Free Creative Commons Zero Videos</a></li>
-</ol>
-<h2 id="CSS-文件"><a href="#CSS-文件" class="headerlink" title="CSS 文件"></a>CSS 文件</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://css-tricks.com/">css-tricks</a></li>
-</ol>
-<h2 id="CSS-Reset"><a href="#CSS-Reset" class="headerlink" title="CSS Reset"></a>CSS Reset</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://www.joshwcomeau.com/css/custom-css-reset/">A Modern CSS Reset</a></li>
-<li><a target="_blank" rel="noopener" href="https://meyerweb.com/eric/tools/css/reset/">CSS Tools: Reset CSS</a></li>
-</ol>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://learngitbranching.js.org/">Learn Git Branching</a></li>
+<h3 id="4-2-最佳實踐"><a href="#4-2-最佳實踐" class="headerlink" title="4.2 最佳實踐"></a>4.2 最佳實踐</h3><ul>
+<li>**避免使用 <code>var</code>**，改用 <code>let</code> 或 <code>const</code>。</li>
+<li><strong>函式表達式應在使用前宣告</strong>，避免 <code>undefined</code> 或 <code>ReferenceError</code>。</li>
+<li><strong>將所有變數與函式宣告放在作用域的開頭</strong>，可減少 Hoisting 帶來的困惑。</li>
+</ul>
+<h3 id="4-3-最佳實踐範例"><a href="#4-3-最佳實踐範例" class="headerlink" title="4.3 最佳實踐範例"></a>4.3 最佳實踐範例</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 正確做法：將變數與函式宣告放在最上方</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">greet</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hello, world!&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">greet</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sayHi = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hi!&quot;</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title function_">sayHi</span>();</span><br></pre></td></tr></table></figure>
+
+<p>這樣可以確保程式碼易於理解，並避免因 Hoisting 造成的問題。</p>
+<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
+<li><a target="_blank" rel="noopener" href="https://medium.com/itsems-frontend/javascript-execution-context-and-call-stack-e36e7f77152e">[JavaScript] Javascript 的執行環境 (Execution context) 與堆疊 (Stack)</a></li>
+<li><a target="_blank" rel="noopener" href="https://realnewbie.com/coding/javascript/javascript-event-loop/">初學者指南：深入了解 JavaScript 中的 Event Loop（事件循環）</a></li>
+<li><a target="_blank" rel="noopener" href="https://realnewbie.com/coding/javascript/javascript-call-stack/">初學者指南：深入了解 JavaScript 的 Call Stack（呼叫堆疊）</a></li>
+<li><a target="_blank" rel="noopener" href="https://realnewbie.com/coding/javascript/javascript-execution-context/">初學者指南：深入了解 JavaScript 的執行環境（Execution Context）</a></li>
+<li><a target="_blank" rel="noopener" href="https://realnewbie.com/coding/javascript/javascript-creation-phase-execution-phase/">初學者指南：深入了解 JavaScript 的建立期與執行期</a></li>
+<li><a target="_blank" rel="noopener" href="https://realnewbie.com/coding/javascript/javascript-variable-function-creation-phase-execution-phase-difference/">初學者指南：深入了解 JavaScript 中函式與變數的建立期與執行期差異</a></li>
 </ol>
 
                 </div>
@@ -283,7 +344,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/22/web-frontend-interview-question-list/" title="常見 Web Frontend 前端工程師面試準備題目清單" rel="bookmark">常見 Web Frontend 前端工程師面試準備題目清單</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/03/22/web-frontend-resources/" title="常見 Web Frontend 前端工程師學習資源和工具" rel="bookmark">常見 Web Frontend 前端工程師學習資源和工具</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/06/13/about-frontend-engineer-10-keywords/" title="關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字" rel="bookmark">關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/06/22/software-engineer-and-web-develement-skill-tree/" title="軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）" rel="bookmark">軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/01/learning-notes-cookie-intro-tutorial/" title="Cookie 入門教學筆記 | 學習筆記" rel="bookmark">Cookie 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/12/14/learning-notes-javascript-intro-tutorial/" title="JavaScript 入門教學筆記 | 學習筆記" rel="bookmark">JavaScript 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -319,8 +380,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/03/22/web-dev-tools/";
-    var disqus_url = "https://tech.kdchang.net/2024/03/22/web-dev-tools/";
+    var disqus_identifier = "https://tech.kdchang.net/2021/12/15/learning-notes-javascript-hoisting-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2021/12/15/learning-notes-javascript-hoisting-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
