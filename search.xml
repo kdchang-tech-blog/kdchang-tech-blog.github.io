@@ -254,6 +254,153 @@
       </tags>
   </entry>
   <entry>
+    <title>CSS font-size 單位介紹入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/14/learning-notes-css-font-size-intro-tutorial/</url>
+    <content><![CDATA[<p>在 CSS 中，<code>px</code>、<code>rem</code>、<code>em</code> 和 <code>vh</code> 都可以用來設定 <code>font-size</code>，但它們的用途和適用場景不同。以下是詳細解析與使用建議：</p>
+<hr>
+<h3 id="1️-px（像素，固定單位）"><a href="#1️-px（像素，固定單位）" class="headerlink" title="1️. px（像素，固定單位）"></a>1️. <strong><code>px</code>（像素，固定單位）</strong></h3><h4 id="特性"><a href="#特性" class="headerlink" title="特性"></a><strong>特性</strong></h4><ul>
+<li>絕對單位，與螢幕解析度無關。</li>
+<li>不會受父元素影響，設定多少就是多少。</li>
+</ul>
+<h4 id="適用場景"><a href="#適用場景" class="headerlink" title="適用場景"></a><strong>適用場景</strong></h4><p>精確控制字體大小，例如：</p>
+<ul>
+<li><strong>Logo、按鈕字體</strong></li>
+<li><strong>小型 UI 元素（如標籤、提示訊息）</strong></li>
+<li><strong>避免字體大小變動的情境</strong></li>
+</ul>
+<h4 id="範例"><a href="#範例" class="headerlink" title="範例"></a><strong>範例</strong></h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-size</span>: <span class="number">32px</span>; &#125;  <span class="comment">/* 確保標題大小為 32px */</span></span><br><span class="line"><span class="selector-tag">button</span> &#123; <span class="attribute">font-size</span>: <span class="number">14px</span>; &#125;  <span class="comment">/* UI 按鈕文字固定 14px */</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>何時避免？</strong></p>
+<ul>
+<li>不利於 <strong>響應式設計</strong>，無法根據使用者的設定（如無障礙放大字體）自適應。</li>
+</ul>
+<hr>
+<h3 id="2️-rem（Root-EM，根元素相對單位）"><a href="#2️-rem（Root-EM，根元素相對單位）" class="headerlink" title="2️. rem（Root EM，根元素相對單位）"></a>2️. <strong><code>rem</code>（Root EM，根元素相對單位）</strong></h3><h4 id="特性-1"><a href="#特性-1" class="headerlink" title="特性"></a><strong>特性</strong></h4><ul>
+<li>參照 <strong><code>html</code> 根元素</strong> 的 <code>font-size</code> 來計算。</li>
+<li>預設 <code>html</code> 的 <code>font-size</code> 為 <code>16px</code>（可透過 <code>html &#123; font-size: 10px; &#125;</code> 調整）。</li>
+<li>可用於全站統一調整字體大小。</li>
+</ul>
+<h4 id="適用場景-1"><a href="#適用場景-1" class="headerlink" title="適用場景"></a><strong>適用場景</strong></h4><p><strong>全站一致字體設計</strong>，方便調整：</p>
+<ul>
+<li><strong>段落、標題（H1-H6）</strong></li>
+<li><strong>文章內容</strong></li>
+<li><strong>大部分標準排版</strong></li>
+</ul>
+<h4 id="範例-1"><a href="#範例-1" class="headerlink" title="範例"></a><strong>範例</strong></h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">html</span> &#123; <span class="attribute">font-size</span>: <span class="number">16px</span>; &#125;  <span class="comment">/* 設定根元素大小 */</span></span><br><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>: <span class="number">1.5rem</span>; &#125;  <span class="comment">/* 16px * 1.5 = 24px */</span></span><br></pre></td></tr></table></figure>
+<p>只要改變 <code>html</code> 的 <code>font-size</code>，所有 <code>rem</code> 設定的字體大小都會一起調整。</p>
+<p><strong>何時避免？</strong></p>
+<ul>
+<li><strong>局部組件內縮放時</strong>，可能需要用 <code>em</code> 而不是 <code>rem</code>。</li>
+</ul>
+<hr>
+<h3 id="3️-em（相對單位）"><a href="#3️-em（相對單位）" class="headerlink" title="3️. em（相對單位）"></a>3️. <strong><code>em</code>（相對單位）</strong></h3><h4 id="特性-2"><a href="#特性-2" class="headerlink" title="特性"></a><strong>特性</strong></h4><ul>
+<li>相對於 <strong>父元素的 <code>font-size</code></strong> 來計算。</li>
+<li>父層字體大小變大，子層 <code>em</code> 設定的大小也會跟著變。</li>
+</ul>
+<h4 id="適用場景-2"><a href="#適用場景-2" class="headerlink" title="適用場景"></a><strong>適用場景</strong></h4><p><strong>組件內部的字體調整</strong>，適用於：</p>
+<ul>
+<li><strong>按鈕、卡片、區塊內的標題</strong></li>
+<li><strong>排版時要根據父層調整的字體</strong></li>
+<li><strong>不同區域需要稍微變大的字體</strong></li>
+</ul>
+<h4 id="範例-2"><a href="#範例-2" class="headerlink" title="範例"></a><strong>範例</strong></h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123; <span class="attribute">font-size</span>: <span class="number">20px</span>; &#125;  <span class="comment">/* 設定父層大小 */</span></span><br><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>: <span class="number">1.2em</span>; &#125;  <span class="comment">/* 20px * 1.2 = 24px */</span></span><br></pre></td></tr></table></figure>
+<p>當 <code>.container</code> <code>font-size</code> 改變時，內部 <code>p</code> 的大小也會跟著變。</p>
+<p><strong>何時避免？</strong></p>
+<ul>
+<li>多層 <code>em</code> 巢狀結構時，字體大小可能會變得難以控制。</li>
+</ul>
+<hr>
+<h3 id="4️-vh（視窗高度單位）"><a href="#4️-vh（視窗高度單位）" class="headerlink" title="4️. vh（視窗高度單位）"></a>4️. <strong><code>vh</code>（視窗高度單位）</strong></h3><h4 id="特性-3"><a href="#特性-3" class="headerlink" title="特性"></a><strong>特性</strong></h4><ul>
+<li><code>1vh</code> 代表 **視窗高度的 1%**。</li>
+<li><strong>適合動態字體大小</strong>，可以讓字體隨視窗大小變化。</li>
+</ul>
+<h4 id="適用場景-3"><a href="#適用場景-3" class="headerlink" title="適用場景"></a><strong>適用場景</strong></h4><p><strong>全螢幕標題或 Hero 文字</strong>：</p>
+<ul>
+<li><strong>首頁橫幅標題</strong></li>
+<li><strong>全螢幕展示頁面</strong></li>
+<li><strong>需隨裝置變化的動態字體</strong></li>
+</ul>
+<h4 id="範例-3"><a href="#範例-3" class="headerlink" title="範例"></a><strong>範例</strong></h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-size</span>: <span class="number">10vh</span>; &#125;  <span class="comment">/* 視窗高度的 10% */</span></span><br></pre></td></tr></table></figure>
+<p>當視窗縮小，字體會自動變小。</p>
+<p><strong>何時避免？</strong></p>
+<ul>
+<li>文字變化太大時，可能導致小螢幕閱讀困難。</li>
+</ul>
+<hr>
+<h2 id="如何選擇？"><a href="#如何選擇？" class="headerlink" title="如何選擇？"></a><strong>如何選擇？</strong></h2><table>
+<thead>
+<tr>
+<th>單位</th>
+<th>依據</th>
+<th>優點</th>
+<th>缺點</th>
+<th>適用場景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>px</code></td>
+<td>固定大小</td>
+<td>精確控制、不變動</td>
+<td>無法適應不同裝置</td>
+<td>Logo、按鈕、小 UI 元件</td>
+</tr>
+<tr>
+<td><code>rem</code></td>
+<td>根元素大小</td>
+<td>可全站統一調整</td>
+<td>父層無影響，局部調整時需考慮</td>
+<td>文章內容、標題、標準排版</td>
+</tr>
+<tr>
+<td><code>em</code></td>
+<td>父層大小</td>
+<td>組件內可相對調整</td>
+<td>巢狀結構時較難控制</td>
+<td>按鈕、卡片區塊內標題</td>
+</tr>
+<tr>
+<td><code>vh</code></td>
+<td>視窗高度</td>
+<td>可隨視窗變化</td>
+<td>小螢幕可能太小、大螢幕可能過大</td>
+<td>全螢幕標題、動態字體</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="最佳實踐"><a href="#最佳實踐" class="headerlink" title="最佳實踐"></a><strong>最佳實踐</strong></h2><p><strong>一般網站內容</strong></p>
+<ul>
+<li>使用 <code>rem</code> 設定主字體，確保一致性：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">html</span> &#123; <span class="attribute">font-size</span>: <span class="number">16px</span>; &#125;  </span><br><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>: <span class="number">1rem</span>; &#125;  <span class="comment">/* 16px */</span></span><br><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-size</span>: <span class="number">2rem</span>; &#125;  <span class="comment">/* 32px */</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>局部 UI 組件</strong></p>
+<ul>
+<li>使用 <code>em</code>，確保字體相對變化：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.button</span> &#123; <span class="attribute">font-size</span>: <span class="number">1em</span>; &#125;  <span class="comment">/* 依據父層大小 */</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>全螢幕標題</strong></p>
+<ul>
+<li>使用 <code>vh</code>，確保字體適應畫面：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.hero-title</span> &#123; <span class="attribute">font-size</span>: <span class="number">8vh</span>; &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>特殊 UI（固定大小）</strong></p>
+<ul>
+<li>使用 <code>px</code>，避免字體縮放：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.logo</span> &#123; <span class="attribute">font-size</span>: <span class="number">24px</span>; &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a><strong>總結</strong></h3><ul>
+<li><strong>固定字體</strong> → <code>px</code></li>
+<li><strong>全站一致性</strong> → <code>rem</code></li>
+<li><strong>組件內相對縮放</strong> → <code>em</code></li>
+<li><strong>視窗自適應</strong> → <code>vh</code></li>
+</ul>
+<p>若有特定的設計需求或專案需求，可以再根據需求細調合適的單位。</p>
+]]></content>
+      <tags>
+        <tag>font-size</tag>
+        <tag>px</tag>
+        <tag>rem</tag>
+        <tag>em</tag>
+        <tag>vh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Grid 網頁排版技巧入門教學筆記 | 學習筆記</title>
     <url>/2024/11/15/learning-notes-css-grid-intro-tutorial/</url>
     <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在現今網頁設計中，排版的結構與呈現方式對於用戶體驗至關重要。隨著網頁設計的演進，CSS <code>Grid</code> 成為了最強大且靈活的排版工具之一。透過 CSS Grid，你可以輕鬆創建複雜的佈局，並且適應不同設備的需求。本文將介紹 CSS Grid 的基本概念與使用技巧，幫助你迅速掌握如何在網頁設計中使用 Grid。</p>
@@ -308,6 +455,79 @@
         <tag>css</tag>
         <tag>排版</tag>
         <tag>Grid</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS 權重（Specificity）入門教學筆記 | 學習筆記</title>
+    <url>/2021/12/15/learning-notes-css-specificity-tutorial/</url>
+    <content><![CDATA[<h4 id="1-什麼是-CSS-權重？"><a href="#1-什麼是-CSS-權重？" class="headerlink" title="1. 什麼是 CSS 權重？"></a>1. 什麼是 CSS 權重？</h4><p>CSS 權重（Specificity）是指當多個選擇器同時作用於同一個元素時，瀏覽器決定應用哪條 CSS 規則的優先級機制。不同選擇器具有不同的權重，權重高的樣式會覆蓋權重低的樣式。  </p>
+<hr>
+<h4 id="2-CSS-權重的計算方式"><a href="#2-CSS-權重的計算方式" class="headerlink" title="2. CSS 權重的計算方式"></a>2. CSS 權重的計算方式</h4><p>CSS 權重由四個部分組成，從高到低分別是：  </p>
+<ol>
+<li><strong>行內樣式（Inline Styles）</strong></li>
+<li><strong>ID 選擇器（ID Selectors）</strong></li>
+<li><strong>類別、偽類與屬性選擇器（Class, Pseudo-classes, Attribute Selectors）</strong></li>
+<li><strong>元素與偽元素選擇器（Element, Pseudo-elements）</strong></li>
+</ol>
+<p>每種類型的選擇器都有固定的權重值，計算時以「數值」方式比較：</p>
+<table>
+<thead>
+<tr>
+<th>選擇器類型</th>
+<th>權重值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>行內樣式（<code>style=&quot;&quot;</code>）</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>ID 選擇器（<code>#id</code>）</td>
+<td>100</td>
+</tr>
+<tr>
+<td>類別選擇器（<code>.class</code>）、偽類（<code>:hover</code>）、屬性選擇器（<code>[type=&quot;text&quot;]</code>）</td>
+<td>10</td>
+</tr>
+<tr>
+<td>元素選擇器（<code>div</code>、<code>p</code>）、偽元素（<code>::before</code>、<code>::after</code>）</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="3-權重計算範例"><a href="#3-權重計算範例" class="headerlink" title="3. 權重計算範例"></a>3. 權重計算範例</h4><h5 id="3-1-元素選擇器-vs-類別選擇器"><a href="#3-1-元素選擇器-vs-類別選擇器" class="headerlink" title="3.1 元素選擇器 vs. 類別選擇器"></a>3.1 元素選擇器 vs. 類別選擇器</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue; <span class="comment">/* 權重 1 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red; <span class="comment">/* 權重 10 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>這段文字應該是紅色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>結果：</strong> <code>.text</code> 的權重為 10，比 <code>p</code> 的權重 1 高，因此文字顯示為紅色。</p>
+<hr>
+<h5 id="3-2-類別-vs-ID-選擇器"><a href="#3-2-類別-vs-ID-選擇器" class="headerlink" title="3.2 類別 vs. ID 選擇器"></a>3.2 類別 vs. ID 選擇器</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red; <span class="comment">/* 權重 10 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#main</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green; <span class="comment">/* 權重 100 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;main&quot;</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>這段文字應該是綠色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>結果：</strong> <code>#main</code> 的權重 100 高於 <code>.text</code> 的 10，因此文字顯示為綠色。</p>
+<hr>
+<h5 id="3-3-屬性選擇器與偽類"><a href="#3-3-屬性選擇器與偽類" class="headerlink" title="3.3 屬性選擇器與偽類"></a>3.3 屬性選擇器與偽類</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: black; <span class="comment">/* 權重 1 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue; <span class="comment">/* 權重 10 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[title]</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red; <span class="comment">/* 權重 10 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">title</span>=<span class="string">&quot;Example&quot;</span>&gt;</span>這段文字會是紅色，滑鼠懸停時變藍色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>結果：</strong> <code>p[title]</code> 與 <code>p:hover</code> 權重相同（10），但 <code>p:hover</code> 只在滑鼠懸停時生效，因此預設為紅色，懸停時變藍色。</p>
+<hr>
+<h4 id="4-多個選擇器組合計算"><a href="#4-多個選擇器組合計算" class="headerlink" title="4. 多個選擇器組合計算"></a>4. 多個選擇器組合計算</h4><p>當一個 CSS 規則包含多種選擇器時，其權重會累加計算。</p>
+<h5 id="4-1-複合選擇器"><a href="#4-1-複合選擇器" class="headerlink" title="4.1 複合選擇器"></a>4.1 複合選擇器</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue; <span class="comment">/* 權重 2 (div=1 + p=1) */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> <span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red; <span class="comment">/* 權重 11 (div=1 + .text=10) */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#container</span> <span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green; <span class="comment">/* 權重 110 (#container=100 + .text=10) */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>這段文字應該是綠色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>結果：</strong> <code>#container .text</code> 的權重 110 高於 <code>div .text</code>（11）和 <code>div p</code>（2），所以文字顯示為綠色。</p>
+<hr>
+<h5 id="4-2-important-覆蓋權重"><a href="#4-2-important-覆蓋權重" class="headerlink" title="4.2 !important 覆蓋權重"></a>4.2 !important 覆蓋權重</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#main</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;main&quot;</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>這段文字應該是紅色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>結果：</strong> 即使 <code>#main</code> 的權重較高，<code>!important</code> 仍然強制覆蓋樣式，使文字變紅。</p>
+<hr>
+<h4 id="5-權重衝突的解決策略"><a href="#5-權重衝突的解決策略" class="headerlink" title="5. 權重衝突的解決策略"></a>5. 權重衝突的解決策略</h4><ol>
+<li><strong>避免使用 <code>!important</code>，除非是必要的</strong></li>
+<li><strong>使用更具體的選擇器</strong></li>
+<li><strong>組織 CSS 層級結構</strong></li>
+<li><strong>使用適當的 CSS 預處理器（如 SCSS、LESS）</strong></li>
+</ol>
+<hr>
+<h4 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h4><p>理解 CSS 權重是撰寫高效、可維護樣式表的關鍵。透過計算選擇器的權重，可以精確控制樣式的優先級，避免不必要的覆蓋問題，提升開發效率。</p>
+]]></content>
+      <tags>
+        <tag>css</tag>
+        <tag>stylesheet</tag>
       </tags>
   </entry>
   <entry>
@@ -391,79 +611,6 @@
 <p>當螢幕寬度小於 600px 時，背景變為淺灰色。</p>
 <hr>
 <h4 id="7-總結"><a href="#7-總結" class="headerlink" title="7. 總結"></a>7. 總結</h4><p>本篇筆記介紹了 CSS 的基本概念，包括選擇器、樣式屬性、盒模型與佈局技巧。熟練 CSS 之後，可以進一步學習 Flexbox、Grid、動畫（Animation）等進階技術，並與 JavaScript 結合，打造互動性更高的網頁。實際練習與製作小型專案是學習 CSS 的最佳方式。</p>
-]]></content>
-      <tags>
-        <tag>css</tag>
-        <tag>stylesheet</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS 權重（Specificity）入門教學筆記 | 學習筆記</title>
-    <url>/2021/12/15/learning-notes-css-specificity-tutorial/</url>
-    <content><![CDATA[<h4 id="1-什麼是-CSS-權重？"><a href="#1-什麼是-CSS-權重？" class="headerlink" title="1. 什麼是 CSS 權重？"></a>1. 什麼是 CSS 權重？</h4><p>CSS 權重（Specificity）是指當多個選擇器同時作用於同一個元素時，瀏覽器決定應用哪條 CSS 規則的優先級機制。不同選擇器具有不同的權重，權重高的樣式會覆蓋權重低的樣式。  </p>
-<hr>
-<h4 id="2-CSS-權重的計算方式"><a href="#2-CSS-權重的計算方式" class="headerlink" title="2. CSS 權重的計算方式"></a>2. CSS 權重的計算方式</h4><p>CSS 權重由四個部分組成，從高到低分別是：  </p>
-<ol>
-<li><strong>行內樣式（Inline Styles）</strong></li>
-<li><strong>ID 選擇器（ID Selectors）</strong></li>
-<li><strong>類別、偽類與屬性選擇器（Class, Pseudo-classes, Attribute Selectors）</strong></li>
-<li><strong>元素與偽元素選擇器（Element, Pseudo-elements）</strong></li>
-</ol>
-<p>每種類型的選擇器都有固定的權重值，計算時以「數值」方式比較：</p>
-<table>
-<thead>
-<tr>
-<th>選擇器類型</th>
-<th>權重值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>行內樣式（<code>style=&quot;&quot;</code>）</td>
-<td>1000</td>
-</tr>
-<tr>
-<td>ID 選擇器（<code>#id</code>）</td>
-<td>100</td>
-</tr>
-<tr>
-<td>類別選擇器（<code>.class</code>）、偽類（<code>:hover</code>）、屬性選擇器（<code>[type=&quot;text&quot;]</code>）</td>
-<td>10</td>
-</tr>
-<tr>
-<td>元素選擇器（<code>div</code>、<code>p</code>）、偽元素（<code>::before</code>、<code>::after</code>）</td>
-<td>1</td>
-</tr>
-</tbody></table>
-<hr>
-<h4 id="3-權重計算範例"><a href="#3-權重計算範例" class="headerlink" title="3. 權重計算範例"></a>3. 權重計算範例</h4><h5 id="3-1-元素選擇器-vs-類別選擇器"><a href="#3-1-元素選擇器-vs-類別選擇器" class="headerlink" title="3.1 元素選擇器 vs. 類別選擇器"></a>3.1 元素選擇器 vs. 類別選擇器</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue; <span class="comment">/* 權重 1 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red; <span class="comment">/* 權重 10 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>這段文字應該是紅色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>結果：</strong> <code>.text</code> 的權重為 10，比 <code>p</code> 的權重 1 高，因此文字顯示為紅色。</p>
-<hr>
-<h5 id="3-2-類別-vs-ID-選擇器"><a href="#3-2-類別-vs-ID-選擇器" class="headerlink" title="3.2 類別 vs. ID 選擇器"></a>3.2 類別 vs. ID 選擇器</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red; <span class="comment">/* 權重 10 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#main</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green; <span class="comment">/* 權重 100 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;main&quot;</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>這段文字應該是綠色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>結果：</strong> <code>#main</code> 的權重 100 高於 <code>.text</code> 的 10，因此文字顯示為綠色。</p>
-<hr>
-<h5 id="3-3-屬性選擇器與偽類"><a href="#3-3-屬性選擇器與偽類" class="headerlink" title="3.3 屬性選擇器與偽類"></a>3.3 屬性選擇器與偽類</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: black; <span class="comment">/* 權重 1 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue; <span class="comment">/* 權重 10 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[title]</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red; <span class="comment">/* 權重 10 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">title</span>=<span class="string">&quot;Example&quot;</span>&gt;</span>這段文字會是紅色，滑鼠懸停時變藍色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>結果：</strong> <code>p[title]</code> 與 <code>p:hover</code> 權重相同（10），但 <code>p:hover</code> 只在滑鼠懸停時生效，因此預設為紅色，懸停時變藍色。</p>
-<hr>
-<h4 id="4-多個選擇器組合計算"><a href="#4-多個選擇器組合計算" class="headerlink" title="4. 多個選擇器組合計算"></a>4. 多個選擇器組合計算</h4><p>當一個 CSS 規則包含多種選擇器時，其權重會累加計算。</p>
-<h5 id="4-1-複合選擇器"><a href="#4-1-複合選擇器" class="headerlink" title="4.1 複合選擇器"></a>4.1 複合選擇器</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue; <span class="comment">/* 權重 2 (div=1 + p=1) */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> <span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red; <span class="comment">/* 權重 11 (div=1 + .text=10) */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#container</span> <span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green; <span class="comment">/* 權重 110 (#container=100 + .text=10) */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>這段文字應該是綠色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>結果：</strong> <code>#container .text</code> 的權重 110 高於 <code>div .text</code>（11）和 <code>div p</code>（2），所以文字顯示為綠色。</p>
-<hr>
-<h5 id="4-2-important-覆蓋權重"><a href="#4-2-important-覆蓋權重" class="headerlink" title="4.2 !important 覆蓋權重"></a>4.2 !important 覆蓋權重</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#main</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;main&quot;</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>這段文字應該是紅色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>結果：</strong> 即使 <code>#main</code> 的權重較高，<code>!important</code> 仍然強制覆蓋樣式，使文字變紅。</p>
-<hr>
-<h4 id="5-權重衝突的解決策略"><a href="#5-權重衝突的解決策略" class="headerlink" title="5. 權重衝突的解決策略"></a>5. 權重衝突的解決策略</h4><ol>
-<li><strong>避免使用 <code>!important</code>，除非是必要的</strong></li>
-<li><strong>使用更具體的選擇器</strong></li>
-<li><strong>組織 CSS 層級結構</strong></li>
-<li><strong>使用適當的 CSS 預處理器（如 SCSS、LESS）</strong></li>
-</ol>
-<hr>
-<h4 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h4><p>理解 CSS 權重是撰寫高效、可維護樣式表的關鍵。透過計算選擇器的權重，可以精確控制樣式的優先級，避免不必要的覆蓋問題，提升開發效率。</p>
 ]]></content>
       <tags>
         <tag>css</tag>
@@ -589,6 +736,66 @@
         <tag>測試</tag>
         <tag>E2E</tag>
         <tag>QA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git Flow 介紹與 GitHub Flow 介紹入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在軟體開發中，版本控制是協作開發中至關重要的工具。Git 作為當前最受歡迎的版本控制系統，其強大的分支管理和版本控制功能，使得開發團隊能夠高效地進行協作。兩種常見的 Git 工作流是 Git Flow 和 GitHub Flow，這些工作流提供了清晰的分支管理策略，讓團隊可以更加有序地開發和部署代碼。本文將介紹 Git Flow 和 GitHub Flow 的基本概念、使用方法，以及它們之間的區別。</p>
+<h1 id="一、Git-Flow-介紹"><a href="#一、Git-Flow-介紹" class="headerlink" title="一、Git Flow 介紹"></a>一、Git Flow 介紹</h1><p>Git Flow 是一個基於 Git 的分支管理模型，主要由 Vincent Driessen 提出，旨在幫助開發團隊實現規範化的分支管理，並對不同開發階段的代碼進行有效的管理。Git Flow 工作流適合需要頻繁發布新版本的項目，並且開發流程中包含多個階段，如開發、測試、發佈等。其工作流程通常包含以下幾個核心分支：</p>
+<h4 id="1-1-主要分支"><a href="#1-1-主要分支" class="headerlink" title="1.1 主要分支"></a>1.1 主要分支</h4><ol>
+<li><p><strong>master 分支</strong>：<br><code>master</code> 分支是 Git Flow 中的核心分支，所有穩定的代碼都應該存在於此。每當一個新版本的代碼準備好發佈時，都會從 <code>develop</code> 分支合併到 <code>master</code>，並標記相應的版本號。這個分支通常只包含穩定的代碼，並且代表了隨時可以部署的代碼。</p>
+</li>
+<li><p><strong>develop 分支</strong>：<br><code>develop</code> 分支用於開發中的代碼。所有的功能開發都應該從這個分支進行，並且當開發完成後，合併回 <code>develop</code>。這個分支是整個項目的集成區，開發人員應該從 <code>develop</code> 分支開始開發新功能。</p>
+</li>
+</ol>
+<h4 id="1-2-輔助分支"><a href="#1-2-輔助分支" class="headerlink" title="1.2 輔助分支"></a>1.2 輔助分支</h4><ol>
+<li><p><strong>feature 分支</strong>：<br><code>feature</code> 分支用於開發新的功能。每個新功能都應該從 <code>develop</code> 分支創建一個新的 <code>feature</code> 分支，並且在功能開發完成後，將該分支合併回 <code>develop</code> 分支。<code>feature</code> 分支的命名通常為 <code>feature/&lt;功能名稱&gt;</code>。</p>
+</li>
+<li><p><strong>release 分支</strong>：<br>當 <code>develop</code> 分支上的代碼準備好進入測試階段時，會創建一個 <code>release</code> 分支。這個分支用來準備最終的發佈版本。在 <code>release</code> 分支上進行的主要工作包括 bug 修復、文檔編寫等，確保最終版本的穩定性。當測試完成並且代碼準備發佈時，<code>release</code> 分支會被合併到 <code>master</code> 和 <code>develop</code> 分支。</p>
+</li>
+<li><p><strong>hotfix 分支</strong>：<br><code>hotfix</code> 分支用於修復已經發佈到 <code>master</code> 分支的緊急錯誤。當發佈的版本發現重大問題時，可以立即從 <code>master</code> 分支創建 <code>hotfix</code> 分支，進行修復後，將其合併回 <code>master</code> 和 <code>develop</code> 分支。</p>
+</li>
+</ol>
+<h4 id="1-3-Git-Flow-的流程"><a href="#1-3-Git-Flow-的流程" class="headerlink" title="1.3 Git Flow 的流程"></a>1.3 Git Flow 的流程</h4><p>Git Flow 的流程大致如下：</p>
+<ul>
+<li>開發新功能時，從 <code>develop</code> 分支創建 <code>feature</code> 分支。</li>
+<li>當 <code>feature</code> 分支開發完成後，合併回 <code>develop</code> 分支。</li>
+<li>當代碼達到穩定版本，創建 <code>release</code> 分支，進行測試和 bug 修復。</li>
+<li>測試完成後，將 <code>release</code> 分支合併回 <code>master</code> 和 <code>develop</code> 分支，並標註版本。</li>
+<li>若發現緊急錯誤，從 <code>master</code> 分支創建 <code>hotfix</code> 分支，進行修復並合併回 <code>master</code> 和 <code>develop</code>。</li>
+</ul>
+<h1 id="二、GitHub-Flow-介紹"><a href="#二、GitHub-Flow-介紹" class="headerlink" title="二、GitHub Flow 介紹"></a>二、GitHub Flow 介紹</h1><p>GitHub Flow 是 GitHub 提出的另一種工作流，主要針對快速迭代和持續集成的開發模式。與 Git Flow 複雜的分支管理相比，GitHub Flow 更加簡單和輕量，適合需要快速交付和頻繁部署的團隊。GitHub Flow 主要有以下幾個步驟：</p>
+<h4 id="2-1-GitHub-Flow-的基本流程"><a href="#2-1-GitHub-Flow-的基本流程" class="headerlink" title="2.1 GitHub Flow 的基本流程"></a>2.1 GitHub Flow 的基本流程</h4><ol>
+<li><p><strong>創建分支</strong>：<br>每當開始一個新功能或修復一個 bug 時，都應該從 <code>main</code> 分支創建一個新的分支。這個分支通常用來開發新的特性或修復某個問題。</p>
+</li>
+<li><p><strong>開發與提交</strong>：<br>在新創建的分支上進行開發，並定期將代碼提交到遠程倉庫。這些提交應該是增量的，便於代碼審查和測試。</p>
+</li>
+<li><p><strong>發送 Pull Request</strong>：<br>當開發完成後，將自己的分支提交為 Pull Request（PR），並請求團隊成員進行代碼審查。PR 是 GitHub Flow 中的關鍵步驟，能夠確保代碼的質量和協作。</p>
+</li>
+<li><p><strong>代碼審查與測試</strong>：<br>團隊成員進行代碼審查，確保代碼的質量和功能正確性。GitHub Flow 推崇頻繁的測試和集成，因此在 Pull Request 發送後，通常會自動觸發 CI（持續集成）測試，檢查代碼是否有錯誤。</p>
+</li>
+<li><p><strong>合併分支</strong>：<br>經過代碼審查和測試後，Pull Request 被批准，並將代碼合併到 <code>main</code> 分支。此時，新的代碼版本已經可以進行部署。</p>
+</li>
+<li><p><strong>部署與發佈</strong>：<br>GitHub Flow 的一大優勢是可以實現持續部署。當代碼合併到 <code>main</code> 分支後，可以立即部署到生產環境，快速交付新版本。</p>
+</li>
+</ol>
+<h4 id="2-2-GitHub-Flow-的特點"><a href="#2-2-GitHub-Flow-的特點" class="headerlink" title="2.2 GitHub Flow 的特點"></a>2.2 GitHub Flow 的特點</h4><p>GitHub Flow 的流程非常簡單，沒有像 Git Flow 那樣的複雜分支結構，適合小型和中型的項目。它的優點在於快速迭代和持續交付，並且便於團隊成員協作。GitHub Flow 更加強調分支管理的簡化，並且強調測試和部署的自動化。</p>
+<h1 id="三、Git-Flow-與-GitHub-Flow-的比較"><a href="#三、Git-Flow-與-GitHub-Flow-的比較" class="headerlink" title="三、Git Flow 與 GitHub Flow 的比較"></a>三、Git Flow 與 GitHub Flow 的比較</h1><ul>
+<li><p><strong>分支結構</strong>：<br>Git Flow 有多個分支（<code>master</code>、<code>develop</code>、<code>feature</code>、<code>release</code>、<code>hotfix</code>），適用於需要穩定版本發佈的團隊。而 GitHub Flow 只有 <code>main</code> 分支和特性分支，適用於快速迭代和持續集成的開發模式。</p>
+</li>
+<li><p><strong>適用場景</strong>：<br>Git Flow 更適合複雜的開發流程，尤其是有多個版本和發佈周期的項目。GitHub Flow 更適合快速迭代的小型或中型項目，尤其是需要頻繁部署和交付的團隊。</p>
+</li>
+<li><p><strong>流程複雜度</strong>：<br>Git Flow 的流程較為繁瑣，對於小型團隊來說可能會顯得過於複雜。GitHub Flow 流程簡單，適合希望保持敏捷和快速交付的團隊。</p>
+</li>
+</ul>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>Git Flow 和 GitHub Flow 各有優缺點，適用的場景也有所不同。選擇哪一種工作流，應根據團隊的規模、項目的複雜度以及發佈頻率來決定。對於需要穩定發佈和多版本管理的項目，Git Flow 是一個更好的選擇。而對於需要快速迭代和頻繁部署的小型項目，GitHub Flow 則是一個更簡單有效的選擇。</p>
+]]></content>
+      <tags>
+        <tag>Git Flow</tag>
+        <tag>Github Flow</tag>
+        <tag>Github</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -762,66 +969,6 @@
         <tag>ECMAScript</tag>
         <tag>ECMAScript6</tag>
         <tag>ECMAScript2015</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git Flow 介紹與 GitHub Flow 介紹入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在軟體開發中，版本控制是協作開發中至關重要的工具。Git 作為當前最受歡迎的版本控制系統，其強大的分支管理和版本控制功能，使得開發團隊能夠高效地進行協作。兩種常見的 Git 工作流是 Git Flow 和 GitHub Flow，這些工作流提供了清晰的分支管理策略，讓團隊可以更加有序地開發和部署代碼。本文將介紹 Git Flow 和 GitHub Flow 的基本概念、使用方法，以及它們之間的區別。</p>
-<h1 id="一、Git-Flow-介紹"><a href="#一、Git-Flow-介紹" class="headerlink" title="一、Git Flow 介紹"></a>一、Git Flow 介紹</h1><p>Git Flow 是一個基於 Git 的分支管理模型，主要由 Vincent Driessen 提出，旨在幫助開發團隊實現規範化的分支管理，並對不同開發階段的代碼進行有效的管理。Git Flow 工作流適合需要頻繁發布新版本的項目，並且開發流程中包含多個階段，如開發、測試、發佈等。其工作流程通常包含以下幾個核心分支：</p>
-<h4 id="1-1-主要分支"><a href="#1-1-主要分支" class="headerlink" title="1.1 主要分支"></a>1.1 主要分支</h4><ol>
-<li><p><strong>master 分支</strong>：<br><code>master</code> 分支是 Git Flow 中的核心分支，所有穩定的代碼都應該存在於此。每當一個新版本的代碼準備好發佈時，都會從 <code>develop</code> 分支合併到 <code>master</code>，並標記相應的版本號。這個分支通常只包含穩定的代碼，並且代表了隨時可以部署的代碼。</p>
-</li>
-<li><p><strong>develop 分支</strong>：<br><code>develop</code> 分支用於開發中的代碼。所有的功能開發都應該從這個分支進行，並且當開發完成後，合併回 <code>develop</code>。這個分支是整個項目的集成區，開發人員應該從 <code>develop</code> 分支開始開發新功能。</p>
-</li>
-</ol>
-<h4 id="1-2-輔助分支"><a href="#1-2-輔助分支" class="headerlink" title="1.2 輔助分支"></a>1.2 輔助分支</h4><ol>
-<li><p><strong>feature 分支</strong>：<br><code>feature</code> 分支用於開發新的功能。每個新功能都應該從 <code>develop</code> 分支創建一個新的 <code>feature</code> 分支，並且在功能開發完成後，將該分支合併回 <code>develop</code> 分支。<code>feature</code> 分支的命名通常為 <code>feature/&lt;功能名稱&gt;</code>。</p>
-</li>
-<li><p><strong>release 分支</strong>：<br>當 <code>develop</code> 分支上的代碼準備好進入測試階段時，會創建一個 <code>release</code> 分支。這個分支用來準備最終的發佈版本。在 <code>release</code> 分支上進行的主要工作包括 bug 修復、文檔編寫等，確保最終版本的穩定性。當測試完成並且代碼準備發佈時，<code>release</code> 分支會被合併到 <code>master</code> 和 <code>develop</code> 分支。</p>
-</li>
-<li><p><strong>hotfix 分支</strong>：<br><code>hotfix</code> 分支用於修復已經發佈到 <code>master</code> 分支的緊急錯誤。當發佈的版本發現重大問題時，可以立即從 <code>master</code> 分支創建 <code>hotfix</code> 分支，進行修復後，將其合併回 <code>master</code> 和 <code>develop</code> 分支。</p>
-</li>
-</ol>
-<h4 id="1-3-Git-Flow-的流程"><a href="#1-3-Git-Flow-的流程" class="headerlink" title="1.3 Git Flow 的流程"></a>1.3 Git Flow 的流程</h4><p>Git Flow 的流程大致如下：</p>
-<ul>
-<li>開發新功能時，從 <code>develop</code> 分支創建 <code>feature</code> 分支。</li>
-<li>當 <code>feature</code> 分支開發完成後，合併回 <code>develop</code> 分支。</li>
-<li>當代碼達到穩定版本，創建 <code>release</code> 分支，進行測試和 bug 修復。</li>
-<li>測試完成後，將 <code>release</code> 分支合併回 <code>master</code> 和 <code>develop</code> 分支，並標註版本。</li>
-<li>若發現緊急錯誤，從 <code>master</code> 分支創建 <code>hotfix</code> 分支，進行修復並合併回 <code>master</code> 和 <code>develop</code>。</li>
-</ul>
-<h1 id="二、GitHub-Flow-介紹"><a href="#二、GitHub-Flow-介紹" class="headerlink" title="二、GitHub Flow 介紹"></a>二、GitHub Flow 介紹</h1><p>GitHub Flow 是 GitHub 提出的另一種工作流，主要針對快速迭代和持續集成的開發模式。與 Git Flow 複雜的分支管理相比，GitHub Flow 更加簡單和輕量，適合需要快速交付和頻繁部署的團隊。GitHub Flow 主要有以下幾個步驟：</p>
-<h4 id="2-1-GitHub-Flow-的基本流程"><a href="#2-1-GitHub-Flow-的基本流程" class="headerlink" title="2.1 GitHub Flow 的基本流程"></a>2.1 GitHub Flow 的基本流程</h4><ol>
-<li><p><strong>創建分支</strong>：<br>每當開始一個新功能或修復一個 bug 時，都應該從 <code>main</code> 分支創建一個新的分支。這個分支通常用來開發新的特性或修復某個問題。</p>
-</li>
-<li><p><strong>開發與提交</strong>：<br>在新創建的分支上進行開發，並定期將代碼提交到遠程倉庫。這些提交應該是增量的，便於代碼審查和測試。</p>
-</li>
-<li><p><strong>發送 Pull Request</strong>：<br>當開發完成後，將自己的分支提交為 Pull Request（PR），並請求團隊成員進行代碼審查。PR 是 GitHub Flow 中的關鍵步驟，能夠確保代碼的質量和協作。</p>
-</li>
-<li><p><strong>代碼審查與測試</strong>：<br>團隊成員進行代碼審查，確保代碼的質量和功能正確性。GitHub Flow 推崇頻繁的測試和集成，因此在 Pull Request 發送後，通常會自動觸發 CI（持續集成）測試，檢查代碼是否有錯誤。</p>
-</li>
-<li><p><strong>合併分支</strong>：<br>經過代碼審查和測試後，Pull Request 被批准，並將代碼合併到 <code>main</code> 分支。此時，新的代碼版本已經可以進行部署。</p>
-</li>
-<li><p><strong>部署與發佈</strong>：<br>GitHub Flow 的一大優勢是可以實現持續部署。當代碼合併到 <code>main</code> 分支後，可以立即部署到生產環境，快速交付新版本。</p>
-</li>
-</ol>
-<h4 id="2-2-GitHub-Flow-的特點"><a href="#2-2-GitHub-Flow-的特點" class="headerlink" title="2.2 GitHub Flow 的特點"></a>2.2 GitHub Flow 的特點</h4><p>GitHub Flow 的流程非常簡單，沒有像 Git Flow 那樣的複雜分支結構，適合小型和中型的項目。它的優點在於快速迭代和持續交付，並且便於團隊成員協作。GitHub Flow 更加強調分支管理的簡化，並且強調測試和部署的自動化。</p>
-<h1 id="三、Git-Flow-與-GitHub-Flow-的比較"><a href="#三、Git-Flow-與-GitHub-Flow-的比較" class="headerlink" title="三、Git Flow 與 GitHub Flow 的比較"></a>三、Git Flow 與 GitHub Flow 的比較</h1><ul>
-<li><p><strong>分支結構</strong>：<br>Git Flow 有多個分支（<code>master</code>、<code>develop</code>、<code>feature</code>、<code>release</code>、<code>hotfix</code>），適用於需要穩定版本發佈的團隊。而 GitHub Flow 只有 <code>main</code> 分支和特性分支，適用於快速迭代和持續集成的開發模式。</p>
-</li>
-<li><p><strong>適用場景</strong>：<br>Git Flow 更適合複雜的開發流程，尤其是有多個版本和發佈周期的項目。GitHub Flow 更適合快速迭代的小型或中型項目，尤其是需要頻繁部署和交付的團隊。</p>
-</li>
-<li><p><strong>流程複雜度</strong>：<br>Git Flow 的流程較為繁瑣，對於小型團隊來說可能會顯得過於複雜。GitHub Flow 流程簡單，適合希望保持敏捷和快速交付的團隊。</p>
-</li>
-</ul>
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>Git Flow 和 GitHub Flow 各有優缺點，適用的場景也有所不同。選擇哪一種工作流，應根據團隊的規模、項目的複雜度以及發佈頻率來決定。對於需要穩定發佈和多版本管理的項目，Git Flow 是一個更好的選擇。而對於需要快速迭代和頻繁部署的小型項目，GitHub Flow 則是一個更簡單有效的選擇。</p>
-]]></content>
-      <tags>
-        <tag>Git Flow</tag>
-        <tag>Github Flow</tag>
-        <tag>Github</tag>
-        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -1006,6 +1153,79 @@
         <tag>異步</tag>
         <tag>async/await</tag>
         <tag>fetch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript Call Stack 入門教學筆記 | 學習筆記</title>
+    <url>/2021/01/16/learning-notes-javascript-call-stack-intro-tutorial/</url>
+    <content><![CDATA[<p>在 <code>JavaScript</code> 開發中，理解 <strong>Call Stack（呼叫堆疊）</strong> 是掌握執行流程與錯誤除錯的關鍵概念之一。它決定了程式碼執行的順序，也與同步與非同步行為密切相關。本文將深入介紹 Call Stack 的基本原理，並透過實際範例幫助你理解它的運作方式。</p>
+<hr>
+<h2 id="1-什麼是-Call-Stack？"><a href="#1-什麼是-Call-Stack？" class="headerlink" title="1. 什麼是 Call Stack？"></a><strong>1. 什麼是 Call Stack？</strong></h2><p>Call Stack 是 JavaScript 引擎用來<strong>管理函式呼叫的結構</strong>，它遵循 <strong>LIFO（Last In, First Out，後進先出）</strong> 原則。當一個函式被呼叫時，它會被推入（push）堆疊頂部，當函式執行完畢後，會從堆疊中彈出（pop）。</p>
+<p>JavaScript 是<strong>單執行緒（single-threaded）</strong>的語言，這代表它一次只能執行一件事。Call Stack 便是 JavaScript 用來管理同步程式碼執行順序的機制。</p>
+<hr>
+<h2 id="2-Call-Stack-運作原理"><a href="#2-Call-Stack-運作原理" class="headerlink" title="2. Call Stack 運作原理"></a><strong>2. Call Stack 運作原理</strong></h2><p>讓我們用一個簡單的範例來說明 Call Stack 的運作方式：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">first</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;First function start&quot;</span>);</span><br><span class="line">    <span class="title function_">second</span>();</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;First function end&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">second</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Second function start&quot;</span>);</span><br><span class="line">    <span class="title function_">third</span>();</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Second function end&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">third</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Third function&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">first</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="執行步驟"><a href="#執行步驟" class="headerlink" title="執行步驟"></a><strong>執行步驟</strong></h3><ol>
+<li><code>first()</code> 被呼叫，推入 Call Stack。</li>
+<li><code>first()</code> 內部呼叫 <code>second()</code>，<code>second()</code> 推入 Call Stack。</li>
+<li><code>second()</code> 內部呼叫 <code>third()</code>，<code>third()</code> 推入 Call Stack。</li>
+<li><code>third()</code> 執行 <code>console.log(&quot;Third function&quot;)</code>，然後執行完畢並從 Call Stack 移除。</li>
+<li><code>second()</code> 繼續執行 <code>console.log(&quot;Second function end&quot;)</code>，執行完畢並從 Call Stack 移除。</li>
+<li><code>first()</code> 繼續執行 <code>console.log(&quot;First function end&quot;)</code>，執行完畢並從 Call Stack 移除。</li>
+<li>Call Stack 清空，程式執行結束。</li>
+</ol>
+<h3 id="執行輸出"><a href="#執行輸出" class="headerlink" title="執行輸出"></a><strong>執行輸出</strong></h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">First function start</span><br><span class="line">Second function start</span><br><span class="line">Third function</span><br><span class="line">Second function end</span><br><span class="line">First function end</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="3-Call-Stack-與錯誤訊息"><a href="#3-Call-Stack-與錯誤訊息" class="headerlink" title="3. Call Stack 與錯誤訊息"></a><strong>3. Call Stack 與錯誤訊息</strong></h2><p>如果函式之間發生無窮遞迴，Call Stack 會不斷推入函式，最終導致 <code>Maximum call stack size exceeded</code> 錯誤。</p>
+<h3 id="範例：遞迴導致-Stack-Overflow"><a href="#範例：遞迴導致-Stack-Overflow" class="headerlink" title="範例：遞迴導致 Stack Overflow"></a><strong>範例：遞迴導致 Stack Overflow</strong></h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">recursiveFunction</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">recursiveFunction</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">recursiveFunction</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="錯誤訊息"><a href="#錯誤訊息" class="headerlink" title="錯誤訊息"></a><strong>錯誤訊息</strong></h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Uncaught RangeError: Maximum call stack size exceeded</span><br></pre></td></tr></table></figure>
+<p>這是因為 <code>recursiveFunction()</code> 不斷呼叫自己，導致 Call Stack 無法清空，最終超過瀏覽器設定的堆疊大小。</p>
+<hr>
+<h2 id="4-Call-Stack-與非同步"><a href="#4-Call-Stack-與非同步" class="headerlink" title="4. Call Stack 與非同步"></a><strong>4. Call Stack 與非同步</strong></h2><p>JavaScript 本質上是單執行緒的語言，但它透過 <strong>Event Loop（事件迴圈）</strong> 來處理非同步程式碼，例如 <code>setTimeout</code>、<code>fetch</code> 等。</p>
+<h3 id="範例：setTimeout-與-Call-Stack"><a href="#範例：setTimeout-與-Call-Stack" class="headerlink" title="範例：setTimeout 與 Call Stack"></a><strong>範例：setTimeout 與 Call Stack</strong></h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Start&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Inside setTimeout&quot;</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;End&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="執行輸出-1"><a href="#執行輸出-1" class="headerlink" title="執行輸出"></a><strong>執行輸出</strong></h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Start</span><br><span class="line">End</span><br><span class="line">Inside setTimeout</span><br></pre></td></tr></table></figure>
+
+<h3 id="執行流程解析"><a href="#執行流程解析" class="headerlink" title="執行流程解析"></a><strong>執行流程解析</strong></h3><ol>
+<li><code>console.log(&quot;Start&quot;)</code> 直接執行，輸出 <code>Start</code>。</li>
+<li><code>setTimeout</code> 被呼叫，但它是非同步函式，會被放入 <strong>Web API（瀏覽器環境）</strong>，不會影響 Call Stack。</li>
+<li><code>console.log(&quot;End&quot;)</code> 直接執行，輸出 <code>End</code>。</li>
+<li>當 Call Stack 清空後，事件迴圈（Event Loop）會將 <code>setTimeout</code> 內的回呼函式放入 Call Stack，執行 <code>console.log(&quot;Inside setTimeout&quot;)</code>。</li>
+</ol>
+<p>這說明了 Call Stack 只負責同步程式碼，非同步程式碼會透過 Web API 與 Event Loop 處理。</p>
+<hr>
+<h2 id="5-使用開發者工具檢查-Call-Stack"><a href="#5-使用開發者工具檢查-Call-Stack" class="headerlink" title="5. 使用開發者工具檢查 Call Stack"></a><strong>5. 使用開發者工具檢查 Call Stack</strong></h2><p>大多數現代瀏覽器（如 Chrome、Firefox）都內建開發者工具，可用來觀察 Call Stack。</p>
+<h3 id="如何使用-Chrome-DevTools"><a href="#如何使用-Chrome-DevTools" class="headerlink" title="如何使用 Chrome DevTools"></a><strong>如何使用 Chrome DevTools</strong></h3><ol>
+<li>開啟 Chrome 瀏覽器，按 <code>F12</code> 或 <code>Ctrl + Shift + I</code>（Mac 使用 <code>Cmd + Option + I</code>）。</li>
+<li>進入 <strong>Sources</strong> 面板。</li>
+<li>設置 <strong>斷點（breakpoint）</strong> 在 JavaScript 代碼內的某行。</li>
+<li>重新載入頁面，當程式執行到該行時會暫停。</li>
+<li>在右側 <strong>Call Stack 面板</strong> 中查看目前堆疊狀態。</li>
+</ol>
+<p>這個工具能幫助開發者更直觀地理解 Call Stack 的運作方式。</p>
+<hr>
+<h2 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a><strong>6. 總結</strong></h2><p>Call Stack 是 JavaScript 引擎管理函式執行順序的核心機制，掌握它的運作原理對於理解 JavaScript 的同步與非同步行為至關重要。總結要點如下：</p>
+<ol>
+<li><strong>Call Stack 採用 LIFO（後進先出）原則</strong>，函式執行時會推入堆疊，結束後會移除。</li>
+<li><strong>過多遞迴可能導致 Stack Overflow</strong>，應確保遞迴函式有適當的終止條件。</li>
+<li><strong>JavaScript 是單執行緒的語言</strong>，但透過 Web API 和 Event Loop 可處理非同步操作。</li>
+<li><strong>開發者工具能幫助分析 Call Stack</strong>，對於除錯非常有幫助。</li>
+</ol>
+<p>透過理解 Call Stack 的運作，開發者可以更有效地編寫、優化與除錯 JavaScript 程式碼。</p>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>非同步</tag>
+        <tag>異步</tag>
+        <tag>Call Stack</tag>
       </tags>
   </entry>
   <entry>
@@ -1513,6 +1733,61 @@
         <tag>frontend engineer</tag>
         <tag>CSS</tag>
         <tag>typescript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>React 與 Next.js 入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/16/learning-notes-react-nextjs-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="1-React-簡介"><a href="#1-React-簡介" class="headerlink" title="1. React 簡介"></a>1. React 簡介</h2><p>React 是由 Facebook（現 Meta）開發的 JavaScript 前端函式庫，主要用於構建 UI 元件。它採用組件化開發方式，並透過 Virtual DOM 提升效能。</p>
+<h2 id="2-Next-js-簡介"><a href="#2-Next-js-簡介" class="headerlink" title="2. Next.js 簡介"></a>2. Next.js 簡介</h2><p>Next.js 是一個基於 React 的框架，提供伺服器端渲染（SSR）、靜態網站生成（SSG）等功能，讓開發者能夠更輕鬆地開發 SEO 友好的應用程式。</p>
+<h2 id="3-安裝-Next-js"><a href="#3-安裝-Next-js" class="headerlink" title="3. 安裝 Next.js"></a>3. 安裝 Next.js</h2><p>使用 <code>create-next-app</code> 初始化 Next.js 專案：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx create-next-app@latest my-next-app</span><br><span class="line"><span class="built_in">cd</span> my-next-app</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+
+<p>這將會啟動開發伺服器，預設運行於 <code>http://localhost:3000</code>。</p>
+<h2 id="4-Next-js-核心概念"><a href="#4-Next-js-核心概念" class="headerlink" title="4. Next.js 核心概念"></a>4. Next.js 核心概念</h2><h3 id="4-1-頁面（Pages）"><a href="#4-1-頁面（Pages）" class="headerlink" title="4.1 頁面（Pages）"></a>4.1 頁面（Pages）</h3><p>Next.js 使用 <code>pages/</code> 目錄來定義路由，每個 <code>.js</code> 或 <code>.tsx</code> 文件會自動成為一個頁面。</p>
+<p>範例：<code>pages/index.js</code></p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Home</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>歡迎來到 Next.js！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>新增 <code>pages/about.js</code>：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">About</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>關於我們<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>瀏覽 <code>/</code> 會載入 <code>index.js</code>，瀏覽 <code>/about</code> 會載入 <code>about.js</code>。</p>
+<h3 id="4-2-Link-與導航"><a href="#4-2-Link-與導航" class="headerlink" title="4.2 Link 與導航"></a>4.2 Link 與導航</h3><p>使用 <code>next/link</code> 來建立導航連結：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Link</span> <span class="keyword">from</span> <span class="string">&#x27;next/link&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Navbar</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">nav</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Link</span> <span class="attr">href</span>=<span class="string">&quot;/&quot;</span>&gt;</span>首頁<span class="tag">&lt;/<span class="name">Link</span>&gt;</span> | <span class="tag">&lt;<span class="name">Link</span> <span class="attr">href</span>=<span class="string">&quot;/about&quot;</span>&gt;</span>關於<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-頁面中的-props"><a href="#4-3-頁面中的-props" class="headerlink" title="4.3 頁面中的 props"></a>4.3 頁面中的 props</h3><p>Next.js 支援 <code>getServerSideProps</code>（伺服器端渲染）和 <code>getStaticProps</code>（靜態生成）。</p>
+<h4 id="伺服器端渲染（SSR）"><a href="#伺服器端渲染（SSR）" class="headerlink" title="伺服器端渲染（SSR）"></a>伺服器端渲染（SSR）</h4><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getServerSideProps</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&#x27;https://api.example.com/data&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">await</span> res.<span class="title function_">json</span>();</span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">props</span>: &#123; data &#125; &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Page</span>(<span class="params">&#123; data &#125;</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">pre</span>&gt;</span>&#123;JSON.stringify(data, null, 2)&#125;<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="靜態生成（SSG）"><a href="#靜態生成（SSG）" class="headerlink" title="靜態生成（SSG）"></a>靜態生成（SSG）</h4><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getStaticProps</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&#x27;https://api.example.com/data&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">await</span> res.<span class="title function_">json</span>();</span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">props</span>: &#123; data &#125; &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Page</span>(<span class="params">&#123; data &#125;</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">pre</span>&gt;</span>&#123;JSON.stringify(data, null, 2)&#125;<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-API-路由（API-Routes）"><a href="#5-API-路由（API-Routes）" class="headerlink" title="5. API 路由（API Routes）"></a>5. API 路由（API Routes）</h2><p>在 <code>pages/api/</code> 目錄下建立 API 端點。</p>
+<p>範例：<code>pages/api/hello.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">handler</span>(<span class="params">req, res</span>) &#123;</span><br><span class="line">    res.<span class="title function_">status</span>(<span class="number">200</span>).<span class="title function_">json</span>(&#123; <span class="attr">message</span>: <span class="string">&#x27;Hello, API!&#x27;</span> &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>請求 <code>/api/hello</code> 會返回 JSON 資料。</p>
+<h2 id="6-使用全域狀態管理（React-Context）"><a href="#6-使用全域狀態管理（React-Context）" class="headerlink" title="6. 使用全域狀態管理（React Context）"></a>6. 使用全域狀態管理（React Context）</h2><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createContext, useContext, useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">ThemeContext</span> = <span class="title function_">createContext</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">ThemeProvider</span>(<span class="params">&#123; children &#125;</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> [theme, setTheme] = <span class="title function_">useState</span>(<span class="string">&#x27;light&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">ThemeContext.Provider</span> <span class="attr">value</span>=<span class="string">&#123;&#123;</span> <span class="attr">theme</span>, <span class="attr">setTheme</span> &#125;&#125;&gt;</span></span></span><br><span class="line"><span class="language-xml">            &#123;children&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">ThemeContext.Provider</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">useTheme</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">useContext</span>(<span class="title class_">ThemeContext</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>_app.js</code> 中使用 Provider：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">ThemeProvider</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;../context/ThemeContext&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">MyApp</span>(<span class="params">&#123; Component, pageProps &#125;</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">ThemeProvider</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Component</span> &#123;<span class="attr">...pageProps</span>&#125; /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">ThemeProvider</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在元件中存取狀態：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useTheme &#125; <span class="keyword">from</span> <span class="string">&#x27;../context/ThemeContext&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">ThemeToggle</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; theme, setTheme &#125; = <span class="title function_">useTheme</span>();</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setTheme(theme === &#x27;light&#x27; ? &#x27;dark&#x27; : &#x27;light&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">            切換主題（目前：&#123;theme&#125;）</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-總結"><a href="#7-總結" class="headerlink" title="7. 總結"></a>7. 總結</h2><p>Next.js 提供了比 React 更豐富的功能，如內建路由、伺服器端渲染（SSR）和 API 路由，適合開發高效能與 SEO 友好的網站。熟悉這些核心概念後，你可以更輕鬆地構建現代化的前端應用程式。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+        <tag>Options API</tag>
+        <tag>Composition API</tag>
+        <tag>Pinia</tag>
       </tags>
   </entry>
   <entry>
@@ -2613,34 +2888,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [8] - Lifecycle and Template Refs 生命週期與模板引用 | 學習筆記</title>
-    <url>/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/</url>
-    <content><![CDATA[<h2 id="Lifecycle-and-Template-Refs-生命週期與模板引用"><a href="#Lifecycle-and-Template-Refs-生命週期與模板引用" class="headerlink" title="Lifecycle and Template Refs 生命週期與模板引用"></a>Lifecycle and Template Refs 生命週期與模板引用</h2><p>到目前為止，Vue.js 透過響應式資料與聲明式渲染，幫助我們處理了所有的 DOM 更新。然而，無可避免地會有需要手動操作 DOM 的情況。</p>
-<p>我們可以使用特殊的 <code>ref</code> 屬性來請求模板引用 (template ref)，也就是模板中某個元素的引用：</p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">&quot;pElementRef&quot;</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="定義引用"><a href="#定義引用" class="headerlink" title="定義引用"></a>定義引用</h3><p>為了訪問這個引用，我們需要宣告一個名稱匹配的 <code>ref</code>：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> pElementRef = <span class="title function_">ref</span>(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
-<p>請注意，這個 <code>ref</code> 在初始化時會是 <code>null</code>，因為當 <code>&lt;script setup&gt;</code> 被執行時，對應的 DOM 元素還不存在。模板引用只有在元件掛載 (mounted) 後才能被訪問。</p>
-<h3 id="在掛載後執行程式碼"><a href="#在掛載後執行程式碼" class="headerlink" title="在掛載後執行程式碼"></a>在掛載後執行程式碼</h3><p>我們可以使用 <code>onMounted()</code> 函式在掛載後執行程式碼：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 元件已掛載完成</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="生命週期鉤子"><a href="#生命週期鉤子" class="headerlink" title="生命週期鉤子"></a>生命週期鉤子</h3><p>這稱為生命週期鉤子 (lifecycle hook)，它允許我們在元件生命週期的特定時間點註冊回呼函式。其他的生命週期鉤子還包括 <code>onUpdated</code> 和 <code>onUnmounted</code> 等。更多細節請參考官方文件 <a href="https://vuejs.org/guide/essentials/lifecycle.html">生命週期圖示</a>。</p>
-<h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>現在，我們可以嘗試添加一個 <code>onMounted</code> 鉤子，透過 <code>pElementRef.value</code> 訪問 <code>&lt;p&gt;</code> 元素，並對其進行一些直接的 DOM 操作（例如更改 <code>textContent</code>）。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> pElementRef = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  pElementRef.<span class="property">value</span>.<span class="property">textContent</span> = <span class="string">&#x27;mounted!&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">&quot;pElementRef&quot;</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [7] - Computed Property 計算屬性 | 學習筆記</title>
     <url>/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/</url>
     <content><![CDATA[<h1 id="Computed-Property-計算屬性"><a href="#Computed-Property-計算屬性" class="headerlink" title="Computed Property 計算屬性"></a>Computed Property 計算屬性</h1><p>讓我們在前一個待辦清單的範例基礎上繼續改進。這裡，我們已經為每個待辦項目新增了切換功能 (toggle)，這是透過在每個待辦物件中新增一個 <code>done</code> 屬性，並使用 <code>v-model</code> 綁定到核取方塊來實現的：</p>
@@ -2656,6 +2903,34 @@
 <p>計算屬性會自動追蹤其計算邏輯中使用的其他響應式數據作為依賴項目。它會快取計算結果，並在其依賴項目改變時自動更新。</p>
 <p>現在，嘗試新增一個 <code>filteredTodos</code> 計算屬性，並實現其計算邏輯！如果實現正確，當隱藏已完成項目時，勾選一個待辦項目應會立即將其隱藏。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, computed &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">let</span> id = <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> newTodo = <span class="title function_">ref</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> hideCompleted = <span class="title function_">ref</span>(<span class="literal">false</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todos = <span class="title function_">ref</span>([</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn HTML&#x27;</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn JavaScript&#x27;</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn Vue&#x27;</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;</span></span><br><span class="line"><span class="language-javascript">])</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> filteredTodos = <span class="title function_">computed</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">return</span> hideCompleted.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">    ? todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> !t.<span class="property">done</span>)</span></span><br><span class="line"><span class="language-javascript">    : todos.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">addTodo</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span>.<span class="title function_">push</span>(&#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: newTodo.<span class="property">value</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;)</span></span><br><span class="line"><span class="language-javascript">  newTodo.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">removeTodo</span>(<span class="params">todo</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span> = todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> t !== todo)</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">form</span> @<span class="attr">submit.prevent</span>=<span class="string">&quot;addTodo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;newTodo&quot;</span> <span class="attr">required</span> <span class="attr">placeholder</span>=<span class="string">&quot;new todo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in filteredTodos&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;todo.id&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;todo.done&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">:class</span>=<span class="string">&quot;&#123; done: todo.done &#125;&quot;</span>&gt;</span>&#123;&#123; todo.text &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;removeTodo(todo)&quot;</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;hideCompleted = !hideCompleted&quot;</span>&gt;</span></span><br><span class="line">    &#123;&#123; hideCompleted ? &#x27;Show all&#x27; : &#x27;Hide completed&#x27; &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.done</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">text-decoration</span>: line-through;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [8] - Lifecycle and Template Refs 生命週期與模板引用 | 學習筆記</title>
+    <url>/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/</url>
+    <content><![CDATA[<h2 id="Lifecycle-and-Template-Refs-生命週期與模板引用"><a href="#Lifecycle-and-Template-Refs-生命週期與模板引用" class="headerlink" title="Lifecycle and Template Refs 生命週期與模板引用"></a>Lifecycle and Template Refs 生命週期與模板引用</h2><p>到目前為止，Vue.js 透過響應式資料與聲明式渲染，幫助我們處理了所有的 DOM 更新。然而，無可避免地會有需要手動操作 DOM 的情況。</p>
+<p>我們可以使用特殊的 <code>ref</code> 屬性來請求模板引用 (template ref)，也就是模板中某個元素的引用：</p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">&quot;pElementRef&quot;</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="定義引用"><a href="#定義引用" class="headerlink" title="定義引用"></a>定義引用</h3><p>為了訪問這個引用，我們需要宣告一個名稱匹配的 <code>ref</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> pElementRef = <span class="title function_">ref</span>(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+<p>請注意，這個 <code>ref</code> 在初始化時會是 <code>null</code>，因為當 <code>&lt;script setup&gt;</code> 被執行時，對應的 DOM 元素還不存在。模板引用只有在元件掛載 (mounted) 後才能被訪問。</p>
+<h3 id="在掛載後執行程式碼"><a href="#在掛載後執行程式碼" class="headerlink" title="在掛載後執行程式碼"></a>在掛載後執行程式碼</h3><p>我們可以使用 <code>onMounted()</code> 函式在掛載後執行程式碼：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 元件已掛載完成</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="生命週期鉤子"><a href="#生命週期鉤子" class="headerlink" title="生命週期鉤子"></a>生命週期鉤子</h3><p>這稱為生命週期鉤子 (lifecycle hook)，它允許我們在元件生命週期的特定時間點註冊回呼函式。其他的生命週期鉤子還包括 <code>onUpdated</code> 和 <code>onUnmounted</code> 等。更多細節請參考官方文件 <a href="https://vuejs.org/guide/essentials/lifecycle.html">生命週期圖示</a>。</p>
+<h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>現在，我們可以嘗試添加一個 <code>onMounted</code> 鉤子，透過 <code>pElementRef.value</code> 訪問 <code>&lt;p&gt;</code> 元素，並對其進行一些直接的 DOM 操作（例如更改 <code>textContent</code>）。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> pElementRef = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  pElementRef.<span class="property">value</span>.<span class="property">textContent</span> = <span class="string">&#x27;mounted!&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">&quot;pElementRef&quot;</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -2824,50 +3099,6 @@
       </tags>
   </entry>
   <entry>
-    <title>常見 Web 網頁開發工具和資源整理</title>
-    <url>/2024/03/22/web-dev-tools-resources/</url>
-    <content><![CDATA[<p>以下彙整常見 Web 網頁開發工具和資源整理：</p>
-<h2 id="VS-Code-套件"><a href="#VS-Code-套件" class="headerlink" title="VS Code 套件"></a>VS Code 套件</h2><ol>
-<li>emmet</li>
-<li>Live Server</li>
-<li>Material Icon Theme</li>
-<li>Babel JavaScript</li>
-<li>Prettier</li>
-</ol>
-<h2 id="假文字"><a href="#假文字" class="headerlink" title="假文字"></a>假文字</h2><ol>
-<li><a href="https://pinkylam.me/generator/chinese-lorem-ipsum/">中文亂數假文產生器 Chinese Lorem Ipsum</a></li>
-<li><a href="https://www.lipsum.com/">英文 Lorem Ipsum</a></li>
-</ol>
-<h2 id="假圖"><a href="#假圖" class="headerlink" title="假圖"></a>假圖</h2><ol>
-<li><a href="https://fakeimg.pl/">Fake images please?</a></li>
-<li><a href="https://picsum.photos/">Picsum photos</a></li>
-</ol>
-<h2 id="影片"><a href="#影片" class="headerlink" title="影片"></a>影片</h2><ol>
-<li><a href="https://www.pexels.com/search/videos/creative%20commons%20zero/">Free Creative Commons Zero Videos</a></li>
-</ol>
-<h2 id="CSS-文件"><a href="#CSS-文件" class="headerlink" title="CSS 文件"></a>CSS 文件</h2><ol>
-<li><a href="https://css-tricks.com/">css-tricks</a></li>
-</ol>
-<h2 id="CSS-Reset"><a href="#CSS-Reset" class="headerlink" title="CSS Reset"></a>CSS Reset</h2><ol>
-<li><a href="https://www.joshwcomeau.com/css/custom-css-reset/">A Modern CSS Reset</a></li>
-<li><a href="https://meyerweb.com/eric/tools/css/reset/">CSS Tools: Reset CSS</a></li>
-</ol>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><ol>
-<li><a href="https://learngitbranching.js.org/">Learn Git Branching</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>前端工程</tag>
-        <tag>Software Engineer</tag>
-        <tag>前端工程師</tag>
-        <tag>Frontend Roadmap</tag>
-        <tag>網頁開發</tag>
-        <tag>網站開發</tag>
-        <tag>網站開發工具</tag>
-        <tag>學習資源</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>常見軟體工程師技術面試資源整理</title>
     <url>/2023/03/22/software-engineer-technical-interview-resources/</url>
     <content><![CDATA[<p>以下彙整常見 Web 網頁開發工具和資源整理：</p>
@@ -2895,6 +3126,68 @@
         <tag>學習資源</tag>
         <tag>技術面試</tag>
         <tag>軟體工程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常見 Web 網頁開發工具和資源整理</title>
+    <url>/2024/03/22/web-dev-tools-resources/</url>
+    <content><![CDATA[<p>以下彙整常見 Web 網頁開發工具和資源整理：</p>
+<h2 id="VS-Code-套件"><a href="#VS-Code-套件" class="headerlink" title="VS Code 套件"></a>VS Code 套件</h2><ol>
+<li>emmet</li>
+<li>Live Server</li>
+<li>Material Icon Theme</li>
+<li>Babel JavaScript</li>
+<li>Prettier</li>
+<li>CodeSnap</li>
+<li>JavaScript code snippets</li>
+<li>Peacock</li>
+<li>TODO Highlight</li>
+<li>Code Runner</li>
+<li>Live Share</li>
+<li>Color Highlight</li>
+</ol>
+<h2 id="Chrome-瀏覽器擴充套件"><a href="#Chrome-瀏覽器擴充套件" class="headerlink" title="Chrome 瀏覽器擴充套件"></a>Chrome 瀏覽器擴充套件</h2><ol>
+<li>Responsive Viewer</li>
+<li>HTML5 Outliner</li>
+<li>ColorZilla</li>
+<li>Fonts Ninja</li>
+<li>Check My Links</li>
+</ol>
+<h2 id="假文字"><a href="#假文字" class="headerlink" title="假文字"></a>假文字</h2><ol>
+<li><a href="https://pinkylam.me/generator/chinese-lorem-ipsum/">中文亂數假文產生器 Chinese Lorem Ipsum</a></li>
+<li><a href="https://www.lipsum.com/">英文 Lorem Ipsum</a></li>
+</ol>
+<h2 id="假圖"><a href="#假圖" class="headerlink" title="假圖"></a>假圖</h2><ol>
+<li><a href="https://fakeimg.pl/">Fake images please?</a></li>
+<li><a href="https://picsum.photos/">Picsum photos</a></li>
+</ol>
+<h2 id="影片"><a href="#影片" class="headerlink" title="影片"></a>影片</h2><ol>
+<li><a href="https://www.pexels.com/search/videos/creative%20commons%20zero/">Free Creative Commons Zero Videos</a></li>
+</ol>
+<h2 id="CSS-文件"><a href="#CSS-文件" class="headerlink" title="CSS 文件"></a>CSS 文件</h2><ol>
+<li><a href="https://css-tricks.com/">css-tricks</a></li>
+</ol>
+<h2 id="CSS-Reset"><a href="#CSS-Reset" class="headerlink" title="CSS Reset"></a>CSS Reset</h2><ol>
+<li><a href="https://www.joshwcomeau.com/css/custom-css-reset/">A Modern CSS Reset</a></li>
+<li><a href="https://meyerweb.com/eric/tools/css/reset/">CSS Tools: Reset CSS</a></li>
+</ol>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><ol>
+<li><a href="https://learngitbranching.js.org/">Learn Git Branching</a></li>
+</ol>
+<h2 id="CSS-練習"><a href="#CSS-練習" class="headerlink" title="CSS 練習"></a>CSS 練習</h2><ol>
+<li><a href="https://flukeout.github.io/">CSS Dinner</a></li>
+<li><a href="https://flexboxfroggy.com/">Flexbox Froggy</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>前端工程</tag>
+        <tag>Software Engineer</tag>
+        <tag>前端工程師</tag>
+        <tag>Frontend Roadmap</tag>
+        <tag>網頁開發</tag>
+        <tag>網站開發</tag>
+        <tag>網站開發工具</tag>
+        <tag>學習資源</tag>
       </tags>
   </entry>
   <entry>
@@ -3162,6 +3455,7 @@
 <li><a href="https://medium.com/@Ching810/2024%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%A9%A6%E6%8A%80%E8%A1%93%E8%80%83%E5%AF%A6%E6%88%B0%E5%88%86%E4%BA%AB-js%E7%AF%87-387ed332d12b">前端面試技術考實戰分享-JS篇</a></li>
 <li><a href="https://www.1111.com.tw/1000w/fanshome/discussTopic.asp?cat=FANS&id=233847">QNAP&#x2F;雷技&#x2F;Yahoo&#x2F;Synology-前端工程師-面試經驗分享</a></li>
 <li><a href="https://medium.com/hannah-lin/2024-%E8%B3%87%E6%B7%B1%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB%E9%9D%A2%E8%A9%A6%E5%BF%83%E5%BE%97-3cc0f718e78f">2024 資深前端工程師面試心得</a></li>
+<li><a href="https://github.com/lydiahallie/javascript-questions">JavaScript Questions</a></li>
 </ol>
 ]]></content>
       <tags>
