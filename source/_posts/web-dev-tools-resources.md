@@ -57,3 +57,7 @@ tags:
 
 ## Git
 1. [Learn Git Branching](https://learngitbranching.js.org/)
+
+## CSS 練習
+1. [CSS Dinner](https://flukeout.github.io/)
+2. [Flexbox Froggy](https://flexboxfroggy.com/)

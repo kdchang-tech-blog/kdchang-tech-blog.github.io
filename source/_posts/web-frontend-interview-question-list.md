@@ -325,3 +325,4 @@ JavaScript 提供了 4 種主要方法處理非同步操作：
 8. [前端面試技術考實戰分享-JS篇](https://medium.com/@Ching810/2024%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%A9%A6%E6%8A%80%E8%A1%93%E8%80%83%E5%AF%A6%E6%88%B0%E5%88%86%E4%BA%AB-js%E7%AF%87-387ed332d12b)
 9. [QNAP/雷技/Yahoo/Synology-前端工程師-面試經驗分享](https://www.1111.com.tw/1000w/fanshome/discussTopic.asp?cat=FANS&id=233847)
 10. [2024 資深前端工程師面試心得](https://medium.com/hannah-lin/2024-%E8%B3%87%E6%B7%B1%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB%E9%9D%A2%E8%A9%A6%E5%BF%83%E5%BE%97-3cc0f718e78f)
+11. [JavaScript Questions](https://github.com/lydiahallie/javascript-questions)
