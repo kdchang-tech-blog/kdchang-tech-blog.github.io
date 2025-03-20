@@ -1,5 +1,5 @@
 ---
-title: 常見 Web 網頁開發工具和資源整理
+title: 常見 Web 網頁開發工具和學習資源整理
 date: 2024-03-22 11:33:41
 author: kdchang
 tags: 
@@ -58,6 +58,9 @@ tags:
 ## Git
 1. [Learn Git Branching](https://learngitbranching.js.org/)
 
-## CSS 練習
+## CSS 選擇器練習
 1. [CSS Dinner](https://flukeout.github.io/)
-2. [Flexbox Froggy](https://flexboxfroggy.com/)
+
+## CSS 排版練習
+1. [Flexbox Froggy](https://flexboxfroggy.com/)
+2. [CSS Grid Garden](https://cssgridgarden.com/)
