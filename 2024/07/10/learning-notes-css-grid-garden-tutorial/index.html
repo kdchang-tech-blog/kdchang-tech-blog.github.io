@@ -26,11 +26,11 @@
     
     <title>
         
-          Flexbox 網頁排版技巧入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          Grid Garden 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/11/14/learning-notes-css-flexbox-intro-tutorial/">
+    <link rel="canonical" href="https://tech.kdchang.net/2024/07/10/learning-notes-css-grid-garden-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="Flexbox 網頁排版技巧入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="Flexbox 網頁排版技巧入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="Grid Garden 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="Grid Garden 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -192,19 +192,19 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>Flexbox 網頁排版技巧入門教學筆記 | 學習筆記</h1>
+                    <h1>Grid Garden 入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2024-11-14
+                        2024-07-10
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#Flexbox" title="Flexbox">Flexbox</a>
+                          <a class="tag" href="/tags/#Grid Garden" title="Grid Garden">Grid Garden</a>
                         
-                          <a class="tag" href="/tags/#css" title="css">css</a>
+                          <a class="tag" href="/tags/#Grid" title="Grid">Grid</a>
                         
-                          <a class="tag" href="/tags/#排版" title="排版">排版</a>
+                          <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
                         
 
                     </div>
@@ -230,47 +230,11 @@
                 </div>
                 <br>
                 <div>
-                    <h2 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h2><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
-<h3 id="1-1-為何使用-Flexbox？"><a href="#1-1-為何使用-Flexbox？" class="headerlink" title="1.1 為何使用 Flexbox？"></a>1.1 為何使用 Flexbox？</h3><ul>
-<li><strong>彈性調整</strong>：元素可根據可用空間動態調整大小。</li>
-<li><strong>簡化佈局</strong>：減少對 <code>float</code>、<code>inline-block</code> 及 <code>position</code> 依賴。</li>
-<li><strong>更好的對齊方式</strong>：內建強大的對齊與分佈控制。</li>
-</ul>
-<h2 id="2-Flexbox-基本概念"><a href="#2-Flexbox-基本概念" class="headerlink" title="2. Flexbox 基本概念"></a>2. Flexbox 基本概念</h2><p>Flexbox 佈局的核心概念是 <strong>容器（container）</strong> 和 <strong>子項目（items）</strong>。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>一旦對容器使用 <code>display: flex</code>，其內部的子元素將自動變成 Flex 子項目，並受 Flex 佈局影響。</p>
-<h2 id="3-Flex-容器屬性"><a href="#3-Flex-容器屬性" class="headerlink" title="3. Flex 容器屬性"></a>3. Flex 容器屬性</h2><h3 id="3-1-flex-direction"><a href="#3-1-flex-direction" class="headerlink" title="3.1 flex-direction"></a>3.1 <code>flex-direction</code></h3><p>決定主軸（main axis）方向。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row; <span class="comment">/* 預設值，水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse; <span class="comment">/* 反向水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column; <span class="comment">/* 垂直排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse; <span class="comment">/* 反向垂直排列 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-justify-content"><a href="#3-2-justify-content" class="headerlink" title="3.2 justify-content"></a>3.2 <code>justify-content</code></h3><p>控制子項目在主軸上的對齊方式。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start; <span class="comment">/* 預設，從左到右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end; <span class="comment">/* 靠右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: center; <span class="comment">/* 置中排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-between; <span class="comment">/* 兩端對齊，間距平均分布 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-around; <span class="comment">/* 子項目兩側有相等的間距 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-evenly; <span class="comment">/* 所有間距均等 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-align-items"><a href="#3-3-align-items" class="headerlink" title="3.3 align-items"></a>3.3 <code>align-items</code></h3><p>控制子項目在交叉軸（cross axis）上的對齊方式。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start; <span class="comment">/* 靠起始位置對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: flex-end; <span class="comment">/* 靠末端對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: center; <span class="comment">/* 垂直置中對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: stretch; <span class="comment">/* 預設，撐滿高度 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: baseline; <span class="comment">/* 依據文本基線對齊 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-4-align-content"><a href="#3-4-align-content" class="headerlink" title="3.4 align-content"></a>3.4 <code>align-content</code></h3><p>適用於多行佈局，控制多行之間的間距。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-end;</span><br><span class="line">  <span class="attribute">align-content</span>: center;</span><br><span class="line">  <span class="attribute">align-content</span>: space-between;</span><br><span class="line">  <span class="attribute">align-content</span>: space-around;</span><br><span class="line">  <span class="attribute">align-content</span>: space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-Flex-子項目屬性"><a href="#4-Flex-子項目屬性" class="headerlink" title="4. Flex 子項目屬性"></a>4. Flex 子項目屬性</h2><h3 id="4-1-flex-grow"><a href="#4-1-flex-grow" class="headerlink" title="4.1 flex-grow"></a>4.1 <code>flex-grow</code></h3><p>設定子項目如何分配多餘空間。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-grow</span>: <span class="number">1</span>; <span class="comment">/* 所有子項目平均分配空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-flex-shrink"><a href="#4-2-flex-shrink" class="headerlink" title="4.2 flex-shrink"></a>4.2 <code>flex-shrink</code></h3><p>控制子項目如何縮小。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-shrink</span>: <span class="number">0</span>; <span class="comment">/* 防止縮小 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-3-flex-basis"><a href="#4-3-flex-basis" class="headerlink" title="4.3 flex-basis"></a>4.3 <code>flex-basis</code></h3><p>設定子項目的初始大小。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-basis</span>: <span class="number">200px</span>; <span class="comment">/* 設定初始寬度或高度 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-4-flex"><a href="#4-4-flex" class="headerlink" title="4.4 flex"></a>4.4 <code>flex</code></h3><p>綜合 <code>flex-grow</code>、<code>flex-shrink</code> 和 <code>flex-basis</code>。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span> <span class="number">1</span> <span class="number">100px</span>; <span class="comment">/* grow, shrink, basis */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-Flexbox-常見佈局範例"><a href="#5-Flexbox-常見佈局範例" class="headerlink" title="5. Flexbox 常見佈局範例"></a>5. Flexbox 常見佈局範例</h2><h3 id="5-1-水平置中"><a href="#5-1-水平置中" class="headerlink" title="5.1 水平置中"></a>5.1 水平置中</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-2-等寬三欄佈局"><a href="#5-2-等寬三欄佈局" class="headerlink" title="5.2 等寬三欄佈局"></a>5.2 等寬三欄佈局</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-3-兩欄固定-自適應"><a href="#5-3-兩欄固定-自適應" class="headerlink" title="5.3 兩欄固定 + 自適應"></a>5.3 兩欄固定 + 自適應</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">200px</span>; <span class="comment">/* 固定 200px */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>; <span class="comment">/* 佔滿剩餘空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-結論"><a href="#6-結論" class="headerlink" title="6. 結論"></a>6. 結論</h2><p>Flexbox 是一種強大且直觀的 CSS 佈局方式，能夠解決傳統排版難題，使開發者能夠輕鬆實現響應式佈局與對齊方式。本篇筆記介紹了 Flexbox 的基本屬性及常見佈局範例，進一步學習可以研究 CSS Grid 和更進階的排版技巧。</p>
+                    <h1 id="1-Grid-簡介"><a href="#1-Grid-簡介" class="headerlink" title="1. Grid 簡介"></a>1. Grid 簡介</h1><p><code>Grid</code>（Grid Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
+<p>Grid Garden 透過花圃澆花遊戲化方式去介紹 Grid 使用方式</p>
+<h2 id="Level-1"><a href="#Level-1" class="headerlink" title="Level 1"></a>Level 1</h2><p>Welcome to Grid Garden, where you write CSS code to grow your carrot garden! Water only the areas that have carrots by using the grid-column-start property.</p>
+<p>For example, grid-column-start: 3; will water the area starting at the 3rd vertical grid line, which is another way of saying the 3rd vertical border from the left in the grid.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
                 </div>
 
@@ -287,7 +251,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/15/learning-notes-css-grid-intro-tutorial/" title="Grid 網頁排版技巧入門教學筆記 | 學習筆記" rel="bookmark">Grid 網頁排版技巧入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/07/10/learning-notes-css-flexbox-froggy-tutorial/" title="Flexbox Froggy 入門教學筆記 | 學習筆記" rel="bookmark">Flexbox Froggy 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/12/14/learning-notes-css-intro-tutorial/" title="CSS 入門教學筆記 | 學習筆記" rel="bookmark">CSS 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/12/15/learning-notes-css-specificity-tutorial/" title="CSS 權重（Specificity）入門教學筆記 | 學習筆記" rel="bookmark">CSS 權重（Specificity）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/12/14/learning-notes-css-stacking-context-intro-tutorial/" title="CSS Stacking Context 入門教學筆記 | 學習筆記" rel="bookmark">CSS Stacking Context 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/07/10/learning-notes-css-flexbox-align-items-align-content-garden-tutorial/" title="CSS Flexbox align-items 和 align-content 入門教學筆記 | 學習筆記" rel="bookmark">CSS Flexbox align-items 和 align-content 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/15/learning-notes-css-grid-intro-tutorial/" title="Grid 網頁排版技巧入門教學筆記 | 學習筆記" rel="bookmark">Grid 網頁排版技巧入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/07/10/learning-notes-css-flexbox-froggy-tutorial/" title="Flexbox Froggy 入門教學筆記 | 學習筆記" rel="bookmark">Flexbox Froggy 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/07/01/learning-notes-html-css-layout-intro-tutorial/" title="HTML & CSS 切版入門教學筆記 | 學習筆記" rel="bookmark">HTML & CSS 切版入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/05/31/learning-notes-less-intro-tutorial/" title="LESS 入門教學筆記 | 學習筆記" rel="bookmark">LESS 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -323,8 +287,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/11/14/learning-notes-css-flexbox-intro-tutorial/";
-    var disqus_url = "https://tech.kdchang.net/2024/11/14/learning-notes-css-flexbox-intro-tutorial/";
+    var disqus_identifier = "https://tech.kdchang.net/2024/07/10/learning-notes-css-grid-garden-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2024/07/10/learning-notes-css-grid-garden-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
