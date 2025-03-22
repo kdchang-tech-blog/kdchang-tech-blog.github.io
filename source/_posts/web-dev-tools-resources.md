@@ -64,3 +64,6 @@ tags:
 ## CSS 排版練習
 1. [Flexbox Froggy](https://flexboxfroggy.com/)
 2. [CSS Grid Garden](https://cssgridgarden.com/)
+
+# API
+1. [{JSON} Placeholder Free fake and reliable API for testing and prototyping.](https://jsonplaceholder.typicode.com/)
