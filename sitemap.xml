@@ -16,6 +16,76 @@
   </url>
   
   <url>
+    <loc>https://tech.kdchang.net/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/2024/07/10/learning-notes-websocket-intro-tutorial/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/2024/06/22/software-engineer-and-web-develement-skill-tree/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/2023/03/22/software-engineer-technical-interview-resources/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/2024/03/22/web-dev-tools-resources/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://tech.kdchang.net/2024/01/22/web-frontend-interview-question-list/</loc>
     
     <lastmod>2025-03-28</lastmod>
@@ -38,6 +108,62 @@
   
   <url>
     <loc>https://tech.kdchang.net/books/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/2023/05/31/learning-notes-less-intro-tutorial/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/2024/12/01/learning-notes-nuxtjs-intro-tutorial/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/2024/11/16/learning-notes-react-nextjs-intro-tutorial/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/2024/12/12/learning-notes-react-redux-intro-tutorial/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/2024/12/13/learning-notes-regex-intro-tutorial/</loc>
+    
+    <lastmod>2025-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/2022/06/09/learning-notes-responsive-design-rwd/</loc>
     
     <lastmod>2025-03-28</lastmod>
     
@@ -142,70 +268,56 @@
   </url>
   
   <url>
-    <loc>https://tech.kdchang.net/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/</loc>
+    <loc>https://tech.kdchang.net/2021/12/15/learning-notes-css-specificity-tutorial/</loc>
     
     <lastmod>2025-03-28</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tech.kdchang.net/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/</loc>
+    <loc>https://tech.kdchang.net/2021/12/14/learning-notes-css-stacking-context-intro-tutorial/</loc>
     
     <lastmod>2025-03-28</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tech.kdchang.net/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/</loc>
+    <loc>https://tech.kdchang.net/2024/12/08/learning-notes-cypress-intro-tutorial/</loc>
     
     <lastmod>2025-03-28</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tech.kdchang.net/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/</loc>
+    <loc>https://tech.kdchang.net/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial%20copy/</loc>
     
     <lastmod>2025-03-28</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tech.kdchang.net/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/</loc>
+    <loc>https://tech.kdchang.net/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</loc>
     
     <lastmod>2025-03-28</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tech.kdchang.net/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/</loc>
+    <loc>https://tech.kdchang.net/2024/07/01/learning-notes-html-css-layout-intro-tutorial/</loc>
     
     <lastmod>2025-03-28</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tech.kdchang.net/2024/06/22/software-engineer-and-web-develement-skill-tree/</loc>
+    <loc>https://tech.kdchang.net/2021/12/13/learning-notes-html-intro-tutorial/</loc>
     
     <lastmod>2025-03-28</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tech.kdchang.net/2024/07/10/learning-notes-websocket-intro-tutorial/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/2023/03/22/software-engineer-technical-interview-resources/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/2024/03/22/web-dev-tools-resources/</loc>
+    <loc>https://tech.kdchang.net/2021/01/16/learning-notes-javascript-arrow-function-this-intro-tutorial/</loc>
     
     <lastmod>2025-03-28</lastmod>
     
@@ -289,56 +401,7 @@
   </url>
   
   <url>
-    <loc>https://tech.kdchang.net/2023/05/31/learning-notes-less-intro-tutorial/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/2024/12/01/learning-notes-nuxtjs-intro-tutorial/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/2024/11/16/learning-notes-react-nextjs-intro-tutorial/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/2024/12/12/learning-notes-react-redux-intro-tutorial/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/2024/12/13/learning-notes-regex-intro-tutorial/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/2022/06/09/learning-notes-responsive-design-rwd/</loc>
+    <loc>https://tech.kdchang.net/2020/06/21/about-backend-engineer-10-keywords/</loc>
     
     <lastmod>2025-03-28</lastmod>
     
@@ -415,70 +478,7 @@
   </url>
   
   <url>
-    <loc>https://tech.kdchang.net/2021/12/15/learning-notes-css-specificity-tutorial/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/2021/12/14/learning-notes-css-stacking-context-intro-tutorial/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/2024/12/08/learning-notes-cypress-intro-tutorial/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial%20copy/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/2024/07/01/learning-notes-html-css-layout-intro-tutorial/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/2021/12/13/learning-notes-html-intro-tutorial/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/2021/01/16/learning-notes-javascript-arrow-function-this-intro-tutorial/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://tech.kdchang.net/2024/01/21/en/about-backend-engineer-10-keywords/</loc>
-    
-    <lastmod>2025-03-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/2020/06/21/about-backend-engineer-10-keywords/</loc>
     
     <lastmod>2025-03-28</lastmod>
     
@@ -834,6 +834,16 @@
   </url>
   
   <url>
+    <loc>https://tech.kdchang.net/tags/CommonJS%EF%BC%88CJS%EF%BC%89/</loc>
+    <lastmod>2025-03-28</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tech.kdchang.net/tags/Asynchronous-Module-Definition%EF%BC%88AMD%EF%BC%89/</loc>
+    <lastmod>2025-03-28</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tech.kdchang.net/tags/JavaScript/</loc>
     <lastmod>2025-03-28</lastmod>
   </url>
@@ -1039,6 +1049,11 @@
   </url>
   
   <url>
+    <loc>https://tech.kdchang.net/tags/WebSocket/</loc>
+    <lastmod>2025-03-28</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tech.kdchang.net/tags/Frontend-Roadmap/</loc>
     <lastmod>2025-03-28</lastmod>
   </url>
@@ -1055,11 +1070,6 @@
   
   <url>
     <loc>https://tech.kdchang.net/tags/Full-Stack/</loc>
-    <lastmod>2025-03-28</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tech.kdchang.net/tags/WebSocket/</loc>
     <lastmod>2025-03-28</lastmod>
   </url>
   

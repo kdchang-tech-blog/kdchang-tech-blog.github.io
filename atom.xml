@@ -6,7 +6,7 @@
   <link href="https://tech.kdchang.net/atom.xml" rel="self"/>
   
   <link href="https://tech.kdchang.net/"/>
-  <updated>2025-03-28T07:56:48.196Z</updated>
+  <updated>2025-03-28T07:58:55.674Z</updated>
   <id>https://tech.kdchang.net/</id>
   
   <author>
@@ -17,18 +17,18 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>JavaScript CommonJS/AMD 模組（Module）入門教學筆記 | 學習筆記</title>
+    <title>JavaScript 模組系統：CommonJS 與 AMD 入門教學 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-javascript-commonjs-amd-module-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-javascript-commonjs-amd-module-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-03-28T07:56:48.196Z</updated>
+    <updated>2025-03-28T07:58:55.674Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;1-什麼是-JavaScript-模組？&quot;&gt;&lt;a href=&quot;#1-什麼是-JavaScript-模組？&quot; class=&quot;headerlink&quot; title=&quot;1. 什麼是 JavaScript 模組？&quot;&gt;&lt;/a&gt;&lt;strong&gt;1. 什麼是</summary>
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在 JavaScript</summary>
         
       
     
@@ -51,6 +51,10 @@
     
     <category term="module" scheme="https://tech.kdchang.net/tags/module/"/>
     
+    <category term="CommonJS（CJS）" scheme="https://tech.kdchang.net/tags/CommonJS%EF%BC%88CJS%EF%BC%89/"/>
+    
+    <category term="Asynchronous Module Definition（AMD）" scheme="https://tech.kdchang.net/tags/Asynchronous-Module-Definition%EF%BC%88AMD%EF%BC%89/"/>
+    
   </entry>
   
   <entry>
@@ -58,7 +62,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-javascript-es-module-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-javascript-es-module-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-03-28T07:56:48.196Z</updated>
+    <updated>2025-03-28T07:58:55.674Z</updated>
     
     
       
@@ -95,7 +99,7 @@
     <link href="https://tech.kdchang.net/2024/12/14/learning-notes-css-font-size-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/14/learning-notes-css-font-size-intro-tutorial/</id>
     <published>2024-12-14T18:23:41.000Z</published>
-    <updated>2025-03-28T07:56:48.195Z</updated>
+    <updated>2025-03-28T07:58:55.673Z</updated>
     
     
       
@@ -126,7 +130,7 @@
     <link href="https://tech.kdchang.net/2024/12/13/learning-notes-jsx-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/13/learning-notes-jsx-intro-tutorial/</id>
     <published>2024-12-13T18:23:41.000Z</published>
-    <updated>2025-03-28T07:56:48.196Z</updated>
+    <updated>2025-03-28T07:58:55.674Z</updated>
     
     
       
@@ -151,7 +155,7 @@
     <link href="https://tech.kdchang.net/2024/12/13/learning-notes-regex-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/13/learning-notes-regex-intro-tutorial/</id>
     <published>2024-12-13T18:23:41.000Z</published>
-    <updated>2025-03-28T07:56:48.196Z</updated>
+    <updated>2025-03-28T07:58:55.675Z</updated>
     
     
       
@@ -180,7 +184,7 @@
     <link href="https://tech.kdchang.net/2024/12/12/learning-notes-react-redux-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/12/learning-notes-react-redux-intro-tutorial/</id>
     <published>2024-12-12T18:23:41.000Z</published>
-    <updated>2025-03-28T07:56:48.196Z</updated>
+    <updated>2025-03-28T07:58:55.675Z</updated>
     
     
       
@@ -207,7 +211,7 @@
     <link href="https://tech.kdchang.net/2024/12/08/learning-notes-cypress-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/08/learning-notes-cypress-intro-tutorial/</id>
     <published>2024-12-08T18:23:41.000Z</published>
-    <updated>2025-03-28T07:56:48.195Z</updated>
+    <updated>2025-03-28T07:58:55.674Z</updated>
     
     
       
@@ -236,7 +240,7 @@
     <link href="https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial/</id>
     <published>2024-12-08T18:23:41.000Z</published>
-    <updated>2025-03-28T07:56:48.196Z</updated>
+    <updated>2025-03-28T07:58:55.675Z</updated>
     
     
       
@@ -263,7 +267,7 @@
     <link href="https://tech.kdchang.net/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</id>
     <published>2024-12-04T18:23:41.000Z</published>
-    <updated>2025-03-28T07:56:48.195Z</updated>
+    <updated>2025-03-28T07:58:55.674Z</updated>
     
     
       
@@ -292,7 +296,7 @@
     <link href="https://tech.kdchang.net/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/</id>
     <published>2024-12-03T18:23:41.000Z</published>
-    <updated>2025-03-28T07:56:48.196Z</updated>
+    <updated>2025-03-28T07:58:55.675Z</updated>
     
     
       
@@ -327,7 +331,7 @@
     <link href="https://tech.kdchang.net/2024/12/02/learning-notes-typescript-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/02/learning-notes-typescript-intro-tutorial/</id>
     <published>2024-12-02T18:23:41.000Z</published>
-    <updated>2025-03-28T07:56:48.197Z</updated>
+    <updated>2025-03-28T07:58:55.675Z</updated>
     
     
       
@@ -362,7 +366,7 @@
     <link href="https://tech.kdchang.net/2024/12/01/learning-notes-nuxtjs-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/01/learning-notes-nuxtjs-intro-tutorial/</id>
     <published>2024-12-01T18:23:41.000Z</published>
-    <updated>2025-03-28T07:56:48.196Z</updated>
+    <updated>2025-03-28T07:58:55.675Z</updated>
     
     
       
@@ -401,7 +405,7 @@
     <link href="https://tech.kdchang.net/2024/11/30/learning-notes-tailwind-css-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/11/30/learning-notes-tailwind-css-intro-tutorial/</id>
     <published>2024-11-30T18:23:41.000Z</published>
-    <updated>2025-03-28T07:56:48.197Z</updated>
+    <updated>2025-03-28T07:58:55.675Z</updated>
     
     
       
@@ -438,7 +442,7 @@
     <link href="https://tech.kdchang.net/2024/11/16/learning-notes-react-nextjs-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/11/16/learning-notes-react-nextjs-intro-tutorial/</id>
     <published>2024-11-16T03:33:41.000Z</published>
-    <updated>2025-03-28T07:56:48.196Z</updated>
+    <updated>2025-03-28T07:58:55.675Z</updated>
     
     
       
@@ -483,7 +487,7 @@
     <link href="https://tech.kdchang.net/2024/11/15/learning-notes-css-grid-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/11/15/learning-notes-css-grid-intro-tutorial/</id>
     <published>2024-11-15T18:23:41.000Z</published>
-    <updated>2025-03-28T07:56:48.195Z</updated>
+    <updated>2025-03-28T07:58:55.673Z</updated>
     
     
       
@@ -510,7 +514,7 @@
     <link href="https://tech.kdchang.net/2024/11/14/learning-notes-css-flexbox-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/11/14/learning-notes-css-flexbox-intro-tutorial/</id>
     <published>2024-11-14T18:23:41.000Z</published>
-    <updated>2025-03-28T07:56:48.195Z</updated>
+    <updated>2025-03-28T07:58:55.673Z</updated>
     
     
       
@@ -537,7 +541,7 @@
     <link href="https://tech.kdchang.net/2024/11/13/learning-notes-vue-i18n-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/11/13/learning-notes-vue-i18n-intro-tutorial/</id>
     <published>2024-11-13T18:23:41.000Z</published>
-    <updated>2025-03-28T07:56:48.197Z</updated>
+    <updated>2025-03-28T07:58:55.675Z</updated>
     
     
       
@@ -570,7 +574,7 @@
     <link href="https://tech.kdchang.net/2024/11/01/learning-notes-cookie-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/11/01/learning-notes-cookie-intro-tutorial/</id>
     <published>2024-11-01T18:23:41.000Z</published>
-    <updated>2025-03-28T07:56:48.195Z</updated>
+    <updated>2025-03-28T07:58:55.673Z</updated>
     
     
       
@@ -605,7 +609,7 @@
     <link href="https://tech.kdchang.net/2024/07/10/learning-notes-css-flexbox-align-items-align-content-garden-tutorial/"/>
     <id>https://tech.kdchang.net/2024/07/10/learning-notes-css-flexbox-align-items-align-content-garden-tutorial/</id>
     <published>2024-07-10T18:23:41.000Z</published>
-    <updated>2025-03-28T07:56:48.195Z</updated>
+    <updated>2025-03-28T07:58:55.673Z</updated>
     
     
       
@@ -636,7 +640,7 @@
     <link href="https://tech.kdchang.net/2024/07/10/learning-notes-css-flexbox-froggy-tutorial/"/>
     <id>https://tech.kdchang.net/2024/07/10/learning-notes-css-flexbox-froggy-tutorial/</id>
     <published>2024-07-10T18:23:41.000Z</published>
-    <updated>2025-03-28T07:56:48.195Z</updated>
+    <updated>2025-03-28T07:58:55.673Z</updated>
     
     
       

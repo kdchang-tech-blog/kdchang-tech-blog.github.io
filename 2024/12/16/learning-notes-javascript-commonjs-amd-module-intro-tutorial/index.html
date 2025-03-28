@@ -26,7 +26,7 @@
     
     <title>
         
-          JavaScript CommonJS/AMD 模組（Module）入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          JavaScript 模組系統：CommonJS 與 AMD 入門教學 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="JavaScript CommonJS/AMD 模組（Module）入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="JavaScript CommonJS/AMD 模組（Module）入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="JavaScript 模組系統：CommonJS 與 AMD 入門教學 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="JavaScript 模組系統：CommonJS 與 AMD 入門教學 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -126,6 +126,13 @@
 
                         
                         <li>
+                            <a href="/books/">Books</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
                             <a href="/search/">Search</a>
                         </li>
                         
@@ -134,13 +141,6 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/books/">Books</a>
                         </li>
                         
                     
@@ -199,7 +199,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>JavaScript CommonJS/AMD 模組（Module）入門教學筆記 | 學習筆記</h1>
+                    <h1>JavaScript 模組系統：CommonJS 與 AMD 入門教學 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
                         2024-12-16
@@ -222,6 +222,10 @@
                           <a class="tag" href="/tags/#模組" title="模組">模組</a>
                         
                           <a class="tag" href="/tags/#module" title="module">module</a>
+                        
+                          <a class="tag" href="/tags/#CommonJS（CJS）" title="CommonJS（CJS）">CommonJS（CJS）</a>
+                        
+                          <a class="tag" href="/tags/#Asynchronous Module Definition（AMD）" title="Asynchronous Module Definition（AMD）">Asynchronous Module Definition（AMD）</a>
                         
 
                     </div>
@@ -247,131 +251,74 @@
                 </div>
                 <br>
                 <div>
-                    <h2 id="1-什麼是-JavaScript-模組？"><a href="#1-什麼是-JavaScript-模組？" class="headerlink" title="1. 什麼是 JavaScript 模組？"></a><strong>1. 什麼是 JavaScript 模組？</strong></h2><p>JavaScript 模組（Module）是一種<strong>將程式碼拆分成多個獨立文件</strong>，並在不同文件間共享和管理程式碼的方式。透過模組化的設計，可以讓程式碼更具結構性、可讀性與可維護性。</p>
-<p>在 ES6（ECMAScript 2015）之前，JavaScript 主要透過 <strong>IIFE（立即執行函式）、CommonJS 或 AMD</strong> 來模組化程式碼。而 ES6 之後，JavaScript 原生支援 <strong>ES Modules（ESM）</strong>，提供 <code>import</code> 和 <code>export</code> 來管理模組。</p>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 JavaScript 早期，所有程式碼通常寫在單一文件中，這樣的方式在小型專案中或許可行，但當應用程式變得更大、更複雜時，這種結構會導致管理困難。因此，模組化的概念被引入，允許開發者將程式碼拆分成可重複使用的獨立部分，提高可維護性與擴展性。  </p>
+<p>在 ES6 標準推出之前，JavaScript 主要依賴 <strong>CommonJS（CJS）</strong> 和 <strong>Asynchronous Module Definition（AMD）</strong> 來實現模組化。這兩種模組系統有不同的設計理念與應用場景，以下將詳細介紹其特性與實作方式。</p>
 <hr>
-<h2 id="2-為什麼需要模組？"><a href="#2-為什麼需要模組？" class="headerlink" title="2. 為什麼需要模組？"></a><strong>2. 為什麼需要模組？</strong></h2><ol>
-<li><strong>避免全域變數污染</strong>  <ul>
-<li>模組能夠封裝變數，避免不同程式碼區塊互相影響。</li>
-</ul>
-</li>
-<li><strong>提高可維護性</strong>  <ul>
-<li>讓程式碼結構更清晰，拆分不同的功能至獨立文件中。</li>
-</ul>
-</li>
-<li><strong>支援程式碼重用</strong>  <ul>
-<li>可在多個專案中共享相同的模組，避免重複開發。</li>
-</ul>
-</li>
-<li><strong>支援延遲載入（Lazy Loading）</strong>  <ul>
-<li>透過動態 <code>import()</code>，按需載入模組，提高效能。</li>
-</ul>
-</li>
-</ol>
+<h2 id="1-CommonJS（CJS）——-Node-js-的標準模組系統"><a href="#1-CommonJS（CJS）——-Node-js-的標準模組系統" class="headerlink" title="1. CommonJS（CJS）—— Node.js 的標準模組系統"></a><strong>1. CommonJS（CJS）—— Node.js 的標準模組系統</strong></h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a><strong>概述</strong></h3><p><strong>CommonJS</strong> 由 <strong>Node.js</strong> 所採用，主要用於伺服器端開發。它的核心概念是 <strong>同步載入（Synchronous Loading）</strong>，這意味著模組在執行時會逐步載入，而不是並行載入。  </p>
+<p>CommonJS 主要透過 <code>require()</code> 來載入模組，並使用 <code>module.exports</code> 或 <code>exports</code> 來匯出模組內容。</p>
+<h3 id="CommonJS-語法"><a href="#CommonJS-語法" class="headerlink" title="CommonJS 語法"></a><strong>CommonJS 語法</strong></h3><h4 id="1-定義模組（匯出）"><a href="#1-定義模組（匯出）" class="headerlink" title="(1) 定義模組（匯出）"></a><strong>(1) 定義模組（匯出）</strong></h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// math.js</span></span><br><span class="line"><span class="keyword">const</span> pi = <span class="number">3.14159</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">subtract</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> a - b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匯出模組</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    pi,</span><br><span class="line">    add,</span><br><span class="line">    subtract</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-使用模組（載入）"><a href="#2-使用模組（載入）" class="headerlink" title="(2) 使用模組（載入）"></a><strong>(2) 使用模組（載入）</strong></h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">const</span> math = <span class="built_in">require</span>(<span class="string">&#x27;./math&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(math.<span class="property">pi</span>); <span class="comment">// 3.14159</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(math.<span class="title function_">add</span>(<span class="number">10</span>, <span class="number">5</span>)); <span class="comment">// 15</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(math.<span class="title function_">subtract</span>(<span class="number">20</span>, <span class="number">8</span>)); <span class="comment">// 12</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="CommonJS-特點"><a href="#CommonJS-特點" class="headerlink" title="CommonJS 特點"></a><strong>CommonJS 特點</strong></h3><p>✅ <strong>適用於伺服器端（Node.js）</strong>，可輕鬆管理模組與依賴。<br>✅ <strong>簡單直覺的 <code>require()</code> 和 <code>module.exports</code> 語法</strong>。<br>✅ <strong>支援循環依賴（Circular Dependencies）</strong>，當兩個模組互相依賴時，仍能正確解析。<br>❌ <strong>同步載入（Synchronous Loading）</strong>，不適合瀏覽器端，因為會阻塞執行緒，影響頁面效能。<br>❌ <strong>不支援瀏覽器環境</strong>，需使用 Webpack 或 Browserify 來轉換為瀏覽器可用的程式碼。  </p>
 <hr>
-<h2 id="3-ES6-模組語法"><a href="#3-ES6-模組語法" class="headerlink" title="3. ES6 模組語法"></a><strong>3. ES6 模組語法</strong></h2><p>在 ES6 中，我們主要使用 <code>export</code> 和 <code>import</code> 來定義和載入模組。</p>
-<h3 id="1-export-的使用"><a href="#1-export-的使用" class="headerlink" title="(1) export 的使用"></a><strong>(1) <code>export</code> 的使用</strong></h3><h4 id="命名匯出（Named-Export）"><a href="#命名匯出（Named-Export）" class="headerlink" title="命名匯出（Named Export）"></a><strong>命名匯出（Named Export）</strong></h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// math.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> pi = <span class="number">3.14159</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">subtract</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> a - b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-AMD（Asynchronous-Module-Definition）——-適用於瀏覽器的模組系統"><a href="#2-AMD（Asynchronous-Module-Definition）——-適用於瀏覽器的模組系統" class="headerlink" title="2. AMD（Asynchronous Module Definition）—— 適用於瀏覽器的模組系統"></a><strong>2. AMD（Asynchronous Module Definition）—— 適用於瀏覽器的模組系統</strong></h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a><strong>概述</strong></h3><p><strong>AMD</strong> 是專為 <strong>瀏覽器環境</strong> 設計的模組系統，解決了 CommonJS 無法在前端環境直接運作的問題。AMD 的關鍵特點是 <strong>非同步載入（Asynchronous Loading）</strong>，允許模組在需要時才載入，避免影響頁面效能。  </p>
+<p>AMD 主要使用 <strong><code>define()</code></strong> 來定義模組，**<code>require()</code>** 來載入模組。</p>
+<h3 id="AMD-語法"><a href="#AMD-語法" class="headerlink" title="AMD 語法"></a><strong>AMD 語法</strong></h3><h4 id="1-定義模組（匯出）-1"><a href="#1-定義模組（匯出）-1" class="headerlink" title="(1) 定義模組（匯出）"></a><strong>(1) 定義模組（匯出）</strong></h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// math.js</span></span><br><span class="line"><span class="title function_">define</span>([], <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> pi = <span class="number">3.14159</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">subtract</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> a - b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        pi,</span><br><span class="line">        add,</span><br><span class="line">        subtract</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h4 id="預設匯出（Default-Export）"><a href="#預設匯出（Default-Export）" class="headerlink" title="預設匯出（Default Export）"></a><strong>預設匯出（Default Export）</strong></h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// greeting.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">sayHello</span>(<span class="params">name</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>!`</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-使用模組（載入）-1"><a href="#2-使用模組（載入）-1" class="headerlink" title="(2) 使用模組（載入）"></a><strong>(2) 使用模組（載入）</strong></h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="built_in">require</span>([<span class="string">&#x27;math&#x27;</span>], <span class="keyword">function</span> (<span class="params">math</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(math.<span class="property">pi</span>); <span class="comment">// 3.14159</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(math.<span class="title function_">add</span>(<span class="number">5</span>, <span class="number">6</span>)); <span class="comment">// 11</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-import-的使用"><a href="#2-import-的使用" class="headerlink" title="(2) import 的使用"></a><strong>(2) <code>import</code> 的使用</strong></h3><h4 id="匯入命名匯出"><a href="#匯入命名匯出" class="headerlink" title="匯入命名匯出"></a><strong>匯入命名匯出</strong></h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; pi, add, subtract &#125; <span class="keyword">from</span> <span class="string">&quot;./math.js&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(pi); <span class="comment">// 3.14159</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">add</span>(<span class="number">5</span>, <span class="number">3</span>)); <span class="comment">// 8</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">subtract</span>(<span class="number">10</span>, <span class="number">4</span>)); <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="匯入預設匯出"><a href="#匯入預設匯出" class="headerlink" title="匯入預設匯出"></a><strong>匯入預設匯出</strong></h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> sayHello <span class="keyword">from</span> <span class="string">&quot;./greeting.js&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sayHello</span>(<span class="string">&quot;Alice&quot;</span>)); <span class="comment">// &quot;Hello, Alice!&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="匯入所有模組內容"><a href="#匯入所有模組內容" class="headerlink" title="匯入所有模組內容"></a><strong>匯入所有模組內容</strong></h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> math <span class="keyword">from</span> <span class="string">&quot;./math.js&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(math.<span class="property">pi</span>); <span class="comment">// 3.14159</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(math.<span class="title function_">add</span>(<span class="number">2</span>, <span class="number">3</span>)); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="使用-as-重新命名"><a href="#使用-as-重新命名" class="headerlink" title="使用 as 重新命名"></a><strong>使用 <code>as</code> 重新命名</strong></h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; add <span class="keyword">as</span> sum, subtract <span class="keyword">as</span> minus &#125; <span class="keyword">from</span> <span class="string">&quot;./math.js&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sum</span>(<span class="number">10</span>, <span class="number">5</span>)); <span class="comment">// 15</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">minus</span>(<span class="number">10</span>, <span class="number">5</span>)); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
-
+<h3 id="AMD-特點"><a href="#AMD-特點" class="headerlink" title="AMD 特點"></a><strong>AMD 特點</strong></h3><p>✅ <strong>適用於瀏覽器環境</strong>，支援非同步載入，提高效能。<br>✅ <strong>使用 <code>define()</code> 與 <code>require()</code> 來管理模組，能夠載入多個依賴。</strong><br>✅ <strong>非同步執行，適合大型應用程式，減少載入時間。</strong><br>❌ <strong>語法較繁瑣</strong>，比 CommonJS 需要更多設定。<br>❌ <strong>需要 RequireJS 來執行</strong>，瀏覽器無法直接支援 AMD。  </p>
 <hr>
-<h2 id="4-ES-模組的特性"><a href="#4-ES-模組的特性" class="headerlink" title="4. ES 模組的特性"></a><strong>4. ES 模組的特性</strong></h2><ol>
-<li><p><strong>靜態解析（Static Analysis）</strong></p>
-<ul>
-<li><code>import</code> 和 <code>export</code> <strong>必須在頂層作用域</strong>，不能在條件語句或函式內部。</li>
-<li>在編譯時（compile time）解析模組，而不是執行時（runtime）。</li>
-</ul>
-</li>
-<li><p><strong>模組作用域</strong></p>
-<ul>
-<li>每個模組都有自己的作用域，變數不會污染全域作用域。</li>
-</ul>
-</li>
-<li><p><strong>自動使用嚴格模式（Strict Mode）</strong></p>
-<ul>
-<li>ES6 模組內部自動啟用 <code>&quot;use strict&quot;</code>，無需手動指定。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="5-動態載入模組"><a href="#5-動態載入模組" class="headerlink" title="5. 動態載入模組"></a><strong>5. 動態載入模組</strong></h2><p>有時候我們希望在特定條件下載入模組，而不是在程式開始時就載入所有模組。這時可以使用 <strong><code>import()</code></strong> 來動態載入。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">import</span>(<span class="string">&quot;./math.js&quot;</span>).<span class="title function_">then</span>(<span class="function">(<span class="params">math</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(math.<span class="title function_">add</span>(<span class="number">5</span>, <span class="number">10</span>)); <span class="comment">// 15</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>import()</code> 回傳一個 Promise，當模組載入完成後執行回調函式。</li>
-<li>這種方式適合懶加載（Lazy Loading）與條件性載入。</li>
-</ul>
-<hr>
-<h2 id="6-var、let-在模組中的行為"><a href="#6-var、let-在模組中的行為" class="headerlink" title="6. var、let 在模組中的行為"></a><strong>6. <code>var</code>、<code>let</code> 在模組中的行為</strong></h2><p>在模組內，變數 <code>var</code> 仍然會被提升（Hoisting），但 <code>let</code> 和 <code>const</code> 具有區塊作用域。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// module.js</span></span><br><span class="line"><span class="keyword">var</span> globalVar = <span class="string">&quot;I am global&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> localVar = <span class="string">&quot;I am local&quot;</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;./module.js&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(globalVar); <span class="comment">// &quot;I am global&quot; （因為 var 會提升到全域）</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(localVar); <span class="comment">// ReferenceError: localVar is not defined</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="7-在瀏覽器與-Node-js-環境使用-ES-模組"><a href="#7-在瀏覽器與-Node-js-環境使用-ES-模組" class="headerlink" title="7. 在瀏覽器與 Node.js 環境使用 ES 模組"></a><strong>7. 在瀏覽器與 Node.js 環境使用 ES 模組</strong></h2><h3 id="1-瀏覽器"><a href="#1-瀏覽器" class="headerlink" title="(1) 瀏覽器"></a><strong>(1) 瀏覽器</strong></h3><p>在 HTML 文件中，使用 <code>&lt;script type=&quot;module&quot;&gt;</code> 來載入 ES6 模組。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">import</span> &#123; add &#125; <span class="keyword">from</span> <span class="string">&quot;./math.js&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">add</span>(<span class="number">10</span>, <span class="number">5</span>));</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-Node-js"><a href="#2-Node-js" class="headerlink" title="(2) Node.js"></a><strong>(2) Node.js</strong></h3><p>Node.js 14+ 版本支援 ES 模組，但需要：</p>
-<ul>
-<li>檔案副檔名改為 <code>.mjs</code></li>
-<li>在 <code>package.json</code> 設定 <code>&quot;type&quot;: &quot;module&quot;</code></li>
-</ul>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;module&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// math.mjs</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">multiply</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.mjs</span></span><br><span class="line"><span class="keyword">import</span> &#123; multiply &#125; <span class="keyword">from</span> <span class="string">&quot;./math.mjs&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">multiply</span>(<span class="number">4</span>, <span class="number">5</span>)); <span class="comment">// 20</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="8-模組引入方式整理"><a href="#8-模組引入方式整理" class="headerlink" title="8. 模組引入方式整理"></a><strong>8. 模組引入方式整理</strong></h2><table>
+<h2 id="3-CommonJS-vs-AMD-vs-ES-Modules（ESM）"><a href="#3-CommonJS-vs-AMD-vs-ES-Modules（ESM）" class="headerlink" title="3. CommonJS vs AMD vs ES Modules（ESM）"></a><strong>3. CommonJS vs AMD vs ES Modules（ESM）</strong></h2><table>
 <thead>
 <tr>
-<th><strong>環境</strong></th>
-<th><strong>引入方式</strong></th>
+<th><strong>特性</strong></th>
+<th><strong>CommonJS（CJS）</strong></th>
+<th><strong>AMD</strong></th>
+<th><strong>ES Modules（ESM）</strong></th>
 </tr>
 </thead>
 <tbody><tr>
-<td>瀏覽器（ESM）</td>
-<td><code>&lt;script type=&quot;module&quot;&gt;</code></td>
+<td><strong>適用環境</strong></td>
+<td>Node.js</td>
+<td>瀏覽器</td>
+<td>瀏覽器 &amp; Node.js</td>
 </tr>
 <tr>
-<td>Node.js（ESM）</td>
-<td><code>import &#123; foo &#125; from &#39;./module.mjs&#39;</code></td>
+<td><strong>載入方式</strong></td>
+<td><code>require()</code></td>
+<td><code>require()</code></td>
+<td><code>import/export</code></td>
 </tr>
 <tr>
-<td>Node.js（CommonJS）</td>
-<td><code>const foo = require(&#39;./module.js&#39;)</code></td>
+<td><strong>同步&#x2F;非同步</strong></td>
+<td>同步（Synchronous）</td>
+<td>非同步（Asynchronous）</td>
+<td>靜態解析（Static）</td>
 </tr>
 <tr>
-<td>動態載入（Lazy Load）</td>
-<td><code>import(&#39;./module.js&#39;).then(...)</code></td>
+<td><strong>優勢</strong></td>
+<td>簡單易用，適合伺服器端</td>
+<td>適用瀏覽器，非同步載入</td>
+<td>現代標準，支援 Tree Shaking</td>
 </tr>
 <tr>
-<td>重新命名</td>
-<td><code>import &#123; foo as newFoo &#125; from &#39;./module.js&#39;</code></td>
-</tr>
-<tr>
-<td>匯入所有內容</td>
-<td><code>import * as mod from &#39;./module.js&#39;</code></td>
+<td><strong>限制</strong></td>
+<td>不適合瀏覽器</td>
+<td>需要 RequireJS</td>
+<td>需要 ES6 瀏覽器或 Node.js 12+</td>
 </tr>
 </tbody></table>
 <hr>
-<h2 id="9-結論"><a href="#9-結論" class="headerlink" title="9. 結論"></a><strong>9. 結論</strong></h2><ol>
-<li><strong>ES 模組是 JavaScript 原生模組系統</strong>，使用 <code>import</code> 和 <code>export</code> 來管理程式碼。</li>
-<li><strong>模組有助於提升可讀性與可維護性</strong>，避免全域變數污染。</li>
-<li><strong>動態載入（import()）可以優化效能</strong>，適合延遲載入模組。</li>
-<li><strong>瀏覽器與 Node.js 都支援 ES6 模組</strong>，但 Node.js 需要 <code>.mjs</code> 或 <code>package.json</code> 設定 <code>&quot;type&quot;: &quot;module&quot;</code>。</li>
-<li><strong>模組可以透過不同方式引入</strong>，根據環境選擇適合的方法。</li>
-</ol>
-<p>掌握 JavaScript 模組的概念，能夠讓你更有效地開發與維護大型專案。</p>
+<h2 id="4-CommonJS-與-AMD-的使用時機"><a href="#4-CommonJS-與-AMD-的使用時機" class="headerlink" title="4. CommonJS 與 AMD 的使用時機"></a><strong>4. CommonJS 與 AMD 的使用時機</strong></h2><ul>
+<li><strong>當開發伺服器端應用程式時，建議使用 CommonJS</strong>，因為它與 Node.js 相容性最佳。  </li>
+<li><strong>當開發前端應用時，AMD 是一種選擇，但目前更推薦使用 ES Modules（ESM）</strong>。  </li>
+<li><strong>現代 JavaScript 建議使用 ES Modules（import&#x2F;export），因為它已經成為標準</strong>，並且同時支援瀏覽器與 Node.js 環境。</li>
+</ul>
+<hr>
+<h2 id="5-結論"><a href="#5-結論" class="headerlink" title="5. 結論"></a><strong>5. 結論</strong></h2><p>在 JavaScript 模組化的歷史發展中，<strong>CommonJS</strong> 被廣泛用於 <strong>伺服器端</strong>，而 <strong>AMD</strong> 則主要針對 <strong>瀏覽器環境</strong> 設計。隨著 ES6 的 <strong>ES Modules</strong>（ESM）標準化，許多開發者已經轉向 <strong>ESM</strong>，因為它在語法上更直覺，並且可以同時適用於前端與後端。  </p>
+<p>雖然 CommonJS 和 AMD 仍然在某些專案中使用，但未來趨勢將逐漸轉向 ES Modules。因此，對於新專案，建議 <strong>優先使用 ES Modules（import&#x2F;export）</strong>，而對於舊專案或特定環境（如 Node.js 早期版本），仍可能需要使用 CommonJS 或 AMD。</p>
 
                 </div>
 
