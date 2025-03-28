@@ -126,6 +126,13 @@
 
                         
                         <li>
+                            <a href="/search/">Search</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
                             <a href="/tags/">Tags</a>
                         </li>
                         
@@ -133,7 +140,7 @@
 
                         
                         <li>
-                            <a href="/search/">Search</a>
+                            <a href="/books/">Books</a>
                         </li>
                         
                     
@@ -258,7 +265,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Bob&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p.<span class="property">name</span>); <span class="comment">// &quot;Bob&quot;</span></span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="5-箭頭函式-Arrow-Function"><a href="#5-箭頭函式-Arrow-Function" class="headerlink" title="5. 箭頭函式 (Arrow Function)"></a>5. <strong>箭頭函式 (Arrow Function)</strong></h2><p>箭頭函式中的 <code>this</code> <strong>不會</strong> 指向它自己的執行環境，而是繼承自外層作用域：</p>
+<h2 id="5-箭頭函式-Arrow-Function"><a href="#5-箭頭函式-Arrow-Function" class="headerlink" title="5. 箭頭函式 (Arrow Function)"></a>5. <strong>箭頭函式 (Arrow Function)</strong></h2><p>箭頭函式中的 <code>this</code> <strong>不會</strong> 指向它自己的執行環境，而是繼承自外層函式的作用域：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Charlie&quot;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">arrowFunc</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">arrowFunc</span>();</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// &quot;Charlie&quot; (this 繼承自 obj)</span></span><br></pre></td></tr></table></figure>
 
 <hr>
@@ -309,7 +316,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/01/learning-notes-cookie-intro-tutorial/" title="Cookie 入門教學筆記 | 學習筆記" rel="bookmark">Cookie 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial copy/" title="JavaScript ES6 入門語法教學筆記 | 學習筆記" rel="bookmark">JavaScript ES6 入門語法教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-async-await/" title="async/await 入門教學筆記 | 學習筆記" rel="bookmark">async/await 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-call-stack-intro-tutorial/" title="JavaScript Call Stack 入門教學筆記 | 學習筆記" rel="bookmark">JavaScript Call Stack 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/" title="滾動視差（Parallax Scrolling）網頁設計入門教學筆記 | 學習筆記" rel="bookmark">滾動視差（Parallax Scrolling）網頁設計入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-arrow-function-this-intro-tutorial/" title="JavaScript 箭頭函式 (Arrow Function）入門教學筆記 | 學習筆記" rel="bookmark">JavaScript 箭頭函式 (Arrow Function）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-object-oriented-programming-intro-tutorial/" title="JavaScript 物件導向（Object-oriented programming）入門教學筆記 | 學習筆記" rel="bookmark">JavaScript 物件導向（Object-oriented programming）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/01/learning-notes-cookie-intro-tutorial/" title="Cookie 入門教學筆記 | 學習筆記" rel="bookmark">Cookie 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial copy/" title="JavaScript ES6 入門語法教學筆記 | 學習筆記" rel="bookmark">JavaScript ES6 入門語法教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-async-await/" title="async/await 入門教學筆記 | 學習筆記" rel="bookmark">async/await 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
