@@ -1,5 +1,5 @@
 ---
-title: JavaScript CommonJS/AMD 模組（Module）入門教學筆記 | 學習筆記
+title: JavaScript 模組系統：CommonJS 與 AMD 入門教學 | 學習筆記
 date: 2024-12-16 11:33:41
 author: kdchang
 tags: 
@@ -10,193 +10,138 @@ tags:
     - javascript
     - 模組
     - module
+    - CommonJS（CJS）
+    - Asynchronous Module Definition（AMD）
     - frontend engineer
 
 ---
 
-## **1. 什麼是 JavaScript 模組？**
-JavaScript 模組（Module）是一種**將程式碼拆分成多個獨立文件**，並在不同文件間共享和管理程式碼的方式。透過模組化的設計，可以讓程式碼更具結構性、可讀性與可維護性。
+## 前言
 
-在 ES6（ECMAScript 2015）之前，JavaScript 主要透過 **IIFE（立即執行函式）、CommonJS 或 AMD** 來模組化程式碼。而 ES6 之後，JavaScript 原生支援 **ES Modules（ESM）**，提供 `import` 和 `export` 來管理模組。
+在 JavaScript 早期，所有程式碼通常寫在單一文件中，這樣的方式在小型專案中或許可行，但當應用程式變得更大、更複雜時，這種結構會導致管理困難。因此，模組化的概念被引入，允許開發者將程式碼拆分成可重複使用的獨立部分，提高可維護性與擴展性。  
 
----
-
-## **2. 為什麼需要模組？**
-1. **避免全域變數污染**  
-   - 模組能夠封裝變數，避免不同程式碼區塊互相影響。
-2. **提高可維護性**  
-   - 讓程式碼結構更清晰，拆分不同的功能至獨立文件中。
-3. **支援程式碼重用**  
-   - 可在多個專案中共享相同的模組，避免重複開發。
-4. **支援延遲載入（Lazy Loading）**  
-   - 透過動態 `import()`，按需載入模組，提高效能。
+在 ES6 標準推出之前，JavaScript 主要依賴 **CommonJS（CJS）** 和 **Asynchronous Module Definition（AMD）** 來實現模組化。這兩種模組系統有不同的設計理念與應用場景，以下將詳細介紹其特性與實作方式。
 
 ---
 
-## **3. ES6 模組語法**
-在 ES6 中，我們主要使用 `export` 和 `import` 來定義和載入模組。
+## **1. CommonJS（CJS）—— Node.js 的標準模組系統**  
 
-### **(1) `export` 的使用**
-#### **命名匯出（Named Export）**
+### **概述**  
+**CommonJS** 由 **Node.js** 所採用，主要用於伺服器端開發。它的核心概念是 **同步載入（Synchronous Loading）**，這意味著模組在執行時會逐步載入，而不是並行載入。  
+
+CommonJS 主要透過 `require()` 來載入模組，並使用 `module.exports` 或 `exports` 來匯出模組內容。
+
+### **CommonJS 語法**  
+
+#### **(1) 定義模組（匯出）**
 ```js
 // math.js
-export const pi = 3.14159;
-export function add(a, b) {
+const pi = 3.14159;
+
+function add(a, b) {
     return a + b;
 }
-export function subtract(a, b) {
+
+function subtract(a, b) {
     return a - b;
 }
+
+// 匯出模組
+module.exports = {
+    pi,
+    add,
+    subtract
+};
 ```
 
-#### **預設匯出（Default Export）**
-```js
-// greeting.js
-export default function sayHello(name) {
-    return `Hello, ${name}!`;
-}
-```
-
-### **(2) `import` 的使用**
-#### **匯入命名匯出**
+#### **(2) 使用模組（載入）**
 ```js
 // main.js
-import { pi, add, subtract } from "./math.js";
-
-console.log(pi); // 3.14159
-console.log(add(5, 3)); // 8
-console.log(subtract(10, 4)); // 6
-```
-
-#### **匯入預設匯出**
-```js
-// main.js
-import sayHello from "./greeting.js";
-
-console.log(sayHello("Alice")); // "Hello, Alice!"
-```
-
-#### **匯入所有模組內容**
-```js
-// main.js
-import * as math from "./math.js";
+const math = require('./math');
 
 console.log(math.pi); // 3.14159
-console.log(math.add(2, 3)); // 5
+console.log(math.add(10, 5)); // 15
+console.log(math.subtract(20, 8)); // 12
 ```
 
-#### **使用 `as` 重新命名**
-```js
-import { add as sum, subtract as minus } from "./math.js";
-
-console.log(sum(10, 5)); // 15
-console.log(minus(10, 5)); // 5
-```
+### **CommonJS 特點**
+✅ **適用於伺服器端（Node.js）**，可輕鬆管理模組與依賴。  
+✅ **簡單直覺的 `require()` 和 `module.exports` 語法**。  
+✅ **支援循環依賴（Circular Dependencies）**，當兩個模組互相依賴時，仍能正確解析。  
+❌ **同步載入（Synchronous Loading）**，不適合瀏覽器端，因為會阻塞執行緒，影響頁面效能。  
+❌ **不支援瀏覽器環境**，需使用 Webpack 或 Browserify 來轉換為瀏覽器可用的程式碼。  
 
 ---
 
-## **4. ES 模組的特性**
-1. **靜態解析（Static Analysis）**
-   - `import` 和 `export` **必須在頂層作用域**，不能在條件語句或函式內部。
-   - 在編譯時（compile time）解析模組，而不是執行時（runtime）。
+## **2. AMD（Asynchronous Module Definition）—— 適用於瀏覽器的模組系統**  
 
-2. **模組作用域**
-   - 每個模組都有自己的作用域，變數不會污染全域作用域。
+### **概述**  
+**AMD** 是專為 **瀏覽器環境** 設計的模組系統，解決了 CommonJS 無法在前端環境直接運作的問題。AMD 的關鍵特點是 **非同步載入（Asynchronous Loading）**，允許模組在需要時才載入，避免影響頁面效能。  
 
-3. **自動使用嚴格模式（Strict Mode）**
-   - ES6 模組內部自動啟用 `"use strict"`，無需手動指定。
+AMD 主要使用 **`define()`** 來定義模組，**`require()`** 來載入模組。
 
----
+### **AMD 語法**  
 
-## **5. 動態載入模組**
-有時候我們希望在特定條件下載入模組，而不是在程式開始時就載入所有模組。這時可以使用 **`import()`** 來動態載入。
-
+#### **(1) 定義模組（匯出）**
 ```js
-if (true) {
-    import("./math.js").then((math) => {
-        console.log(math.add(5, 10)); // 15
-    });
-}
+// math.js
+define([], function () {
+    const pi = 3.14159;
+
+    function add(a, b) {
+        return a + b;
+    }
+
+    function subtract(a, b) {
+        return a - b;
+    }
+
+    return {
+        pi,
+        add,
+        subtract
+    };
+});
 ```
 
-- `import()` 回傳一個 Promise，當模組載入完成後執行回調函式。
-- 這種方式適合懶加載（Lazy Loading）與條件性載入。
-
----
-
-## **6. `var`、`let` 在模組中的行為**
-在模組內，變數 `var` 仍然會被提升（Hoisting），但 `let` 和 `const` 具有區塊作用域。
-
-```js
-// module.js
-var globalVar = "I am global";
-let localVar = "I am local";
-```
-
+#### **(2) 使用模組（載入）**
 ```js
 // main.js
-import "./module.js";
-
-console.log(globalVar); // "I am global" （因為 var 會提升到全域）
-console.log(localVar); // ReferenceError: localVar is not defined
+require(['math'], function (math) {
+    console.log(math.pi); // 3.14159
+    console.log(math.add(5, 6)); // 11
+});
 ```
+
+### **AMD 特點**
+✅ **適用於瀏覽器環境**，支援非同步載入，提高效能。  
+✅ **使用 `define()` 與 `require()` 來管理模組，能夠載入多個依賴。**  
+✅ **非同步執行，適合大型應用程式，減少載入時間。**  
+❌ **語法較繁瑣**，比 CommonJS 需要更多設定。  
+❌ **需要 RequireJS 來執行**，瀏覽器無法直接支援 AMD。  
 
 ---
 
-## **7. 在瀏覽器與 Node.js 環境使用 ES 模組**
-### **(1) 瀏覽器**
-在 HTML 文件中，使用 `<script type="module">` 來載入 ES6 模組。
+## **3. CommonJS vs AMD vs ES Modules（ESM）**  
 
-```html
-<script type="module">
-    import { add } from "./math.js";
-    console.log(add(10, 5));
-</script>
-```
-
-### **(2) Node.js**
-Node.js 14+ 版本支援 ES 模組，但需要：
-- 檔案副檔名改為 `.mjs`
-- 在 `package.json` 設定 `"type": "module"`
-
-```json
-{
-  "type": "module"
-}
-```
-
-```js
-// math.mjs
-export function multiply(a, b) {
-    return a * b;
-}
-```
-
-```js
-// main.mjs
-import { multiply } from "./math.mjs";
-console.log(multiply(4, 5)); // 20
-```
+| **特性**       | **CommonJS（CJS）** | **AMD** | **ES Modules（ESM）** |
+|--------------|----------------|------|----------------|
+| **適用環境** | Node.js        | 瀏覽器 | 瀏覽器 & Node.js |
+| **載入方式**  | `require()`    | `require()` | `import/export` |
+| **同步/非同步** | 同步（Synchronous） | 非同步（Asynchronous） | 靜態解析（Static） |
+| **優勢**     | 簡單易用，適合伺服器端 | 適用瀏覽器，非同步載入 | 現代標準，支援 Tree Shaking |
+| **限制**     | 不適合瀏覽器 | 需要 RequireJS | 需要 ES6 瀏覽器或 Node.js 12+ |
 
 ---
 
-## **8. 模組引入方式整理**
-| **環境**   | **引入方式** |
-|------------|------------|
-| 瀏覽器（ESM） | `<script type="module">` |
-| Node.js（ESM） | `import { foo } from './module.mjs'` |
-| Node.js（CommonJS） | `const foo = require('./module.js')` |
-| 動態載入（Lazy Load） | `import('./module.js').then(...)` |
-| 重新命名 | `import { foo as newFoo } from './module.js'` |
-| 匯入所有內容 | `import * as mod from './module.js'` |
+## **4. CommonJS 與 AMD 的使用時機**
+- **當開發伺服器端應用程式時，建議使用 CommonJS**，因為它與 Node.js 相容性最佳。  
+- **當開發前端應用時，AMD 是一種選擇，但目前更推薦使用 ES Modules（ESM）**。  
+- **現代 JavaScript 建議使用 ES Modules（import/export），因為它已經成為標準**，並且同時支援瀏覽器與 Node.js 環境。
 
 ---
 
-## **9. 結論**
-1. **ES 模組是 JavaScript 原生模組系統**，使用 `import` 和 `export` 來管理程式碼。
-2. **模組有助於提升可讀性與可維護性**，避免全域變數污染。
-3. **動態載入（import()）可以優化效能**，適合延遲載入模組。
-4. **瀏覽器與 Node.js 都支援 ES6 模組**，但 Node.js 需要 `.mjs` 或 `package.json` 設定 `"type": "module"`。
-5. **模組可以透過不同方式引入**，根據環境選擇適合的方法。
+## **5. 結論**
+在 JavaScript 模組化的歷史發展中，**CommonJS** 被廣泛用於 **伺服器端**，而 **AMD** 則主要針對 **瀏覽器環境** 設計。隨著 ES6 的 **ES Modules**（ESM）標準化，許多開發者已經轉向 **ESM**，因為它在語法上更直覺，並且可以同時適用於前端與後端。  
 
-掌握 JavaScript 模組的概念，能夠讓你更有效地開發與維護大型專案。
+雖然 CommonJS 和 AMD 仍然在某些專案中使用，但未來趨勢將逐漸轉向 ES Modules。因此，對於新專案，建議 **優先使用 ES Modules（import/export）**，而對於舊專案或特定環境（如 Node.js 早期版本），仍可能需要使用 CommonJS 或 AMD。
