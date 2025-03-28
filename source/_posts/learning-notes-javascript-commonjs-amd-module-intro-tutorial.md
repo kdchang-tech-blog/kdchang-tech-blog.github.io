@@ -1,5 +1,5 @@
 ---
-title: JavaScript 模組（Module）入門教學筆記 | 學習筆記
+title: JavaScript CommonJS/AMD 模組（Module）入門教學筆記 | 學習筆記
 date: 2024-12-16 11:33:41
 author: kdchang
 tags: 
