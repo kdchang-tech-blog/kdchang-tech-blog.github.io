@@ -28,5 +28,9 @@ tags:
 ## 常見程式題目
 1. [JavaScript Questions](https://github.com/lydiahallie/javascript-questions)
 
+## 系統設計
+1. [最完整的系統設計面試題](https://www.explainthis.io/zh-hant/swe-questions/system-design)
+2. [後端工程師面試考什麼 - 系統設計(system design)心法篇](https://myapollo.com.tw/blog/interview-question-system-design-introduction/)
+
 ## 參考文件
 1. [【Day 13】什麼是工程師的技術面試？為什麼技術面試看的不只是技術？](https://ithelp.ithome.com.tw/articles/10244809?sc=rss.iron)

@@ -73,7 +73,8 @@ console.log(p.name); // "Bob"
 ---
 
 ## 5. **箭頭函式 (Arrow Function)**
-箭頭函式中的 `this` **不會** 指向它自己的執行環境，而是繼承自外層作用域：
+箭頭函式中的 `this` **不會** 指向它自己的執行環境，而是繼承自外層函式的作用域：
+
 ```js
 const obj = {
   name: "Charlie",
