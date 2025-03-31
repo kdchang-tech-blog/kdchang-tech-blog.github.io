@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword"  content="軟體工程, 程式設計, 程式開發, frontend, backend, web, software, software engineer, JavaScript, Python">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/img/logo.ico">
+    <meta name="google-site-verification" content="cMTgiEFMM7gXpRMBbu_05Lnj0scwhDPCMvpfhQOpENI" />
+    <script src="/js/search.js"></script> 
+
+    
+    
+    
+       <script type="text/javascript">      
+         var search_path = "search.xml";
+       if (search_path.length == 0) {
+         search_path = "search.xml";
+       }
+       var path = "/" + search_path;
+         searchFunc(path, 'local-search-input', 'local-search-result');
+       </script>
+    
+    <title>
+        
+          HTTP/2 介紹與入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+        
+    </title>
+
+    <link rel="canonical" href="https://tech.kdchang.net/2024/12/16/learning-notes-http2-intro-tutorial/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/main.css?v=1">
+
+    <!-- og tag -->
+    <meta name="generator" content="KD's Tech Blog">
+    
+      <meta name="og:title" content="HTTP/2 介紹與入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="HTTP/2 介紹與入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+    
+    
+      <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+      <meta name="og:description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+    
+    
+      <meta name="og:image" content="https://tech.kdchang.net/img/logo.png">
+    
+    <meta name="og:type" content="website">
+    <!--Twitter Graph-->
+    <meta name="twitter:card" content="summary" />
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<link rel="alternate" href="/atom.xml" title="KD's Tech Blog" type="application/atom+xml">
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">KD&#39;s Tech Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/books/">Books</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/search/">Search</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    <li>
+                        <a href="/atom.xml">RSS</a>
+                    </li>                 
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/cover.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+
+                    <h1>HTTP/2 介紹與入門教學筆記 | 學習筆記</h1>
+                    <span class="meta">
+                        Posted by kdchang on
+                        2024-12-16
+                    </span>
+                    <br>
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                        
+                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
+                        
+                          <a class="tag" href="/tags/#前端開發" title="前端開發">前端開發</a>
+                        
+                          <a class="tag" href="/tags/#前端工程" title="前端工程">前端工程</a>
+                        
+                          <a class="tag" href="/tags/#frontend" title="frontend">frontend</a>
+                        
+                          <a class="tag" href="/tags/#HTTP/1" title="HTTP/1">HTTP/1</a>
+                        
+                          <a class="tag" href="/tags/#HTTP" title="HTTP">HTTP</a>
+                        
+                          <a class="tag" href="/tags/#HTTP/2" title="HTTP/2">HTTP/2</a>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+                <br>
+                <div>
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.net" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+                <br>
+                <div>
+                    <h2 id="1-HTTP-x2F-2-簡介"><a href="#1-HTTP-x2F-2-簡介" class="headerlink" title="1. HTTP&#x2F;2 簡介"></a>1. HTTP&#x2F;2 簡介</h2><p>HTTP&#x2F;2 是 HTTP&#x2F;1.1 的後繼版本，由 IETF HTTP 工作小組開發，並於 2015 年 5 月成為正式標準（RFC 7540）。HTTP&#x2F;2 的主要目標是提高 Web 的性能，減少延遲，並優化資源的傳輸方式。</p>
+<h2 id="2-HTTP-x2F-2-的核心特性"><a href="#2-HTTP-x2F-2-的核心特性" class="headerlink" title="2. HTTP&#x2F;2 的核心特性"></a>2. HTTP&#x2F;2 的核心特性</h2><h3 id="2-1-二進制分幀層（Binary-Framing-Layer）"><a href="#2-1-二進制分幀層（Binary-Framing-Layer）" class="headerlink" title="2.1 二進制分幀層（Binary Framing Layer）"></a>2.1 二進制分幀層（Binary Framing Layer）</h3><p>HTTP&#x2F;2 以二進制格式進行數據傳輸，而非 HTTP&#x2F;1.1 的純文字格式。這使得解析和處理更高效，減少了協議的開銷。</p>
+<h3 id="2-2-多路徑傳輸（Multiplexing）"><a href="#2-2-多路徑傳輸（Multiplexing）" class="headerlink" title="2.2 多路徑傳輸（Multiplexing）"></a>2.2 多路徑傳輸（Multiplexing）</h3><p>在 HTTP&#x2F;1.1 中，一個 TCP 連線同時只能處理一個請求，導致「線頭阻塞」問題。HTTP&#x2F;2 允許在單個 TCP 連線中並行傳輸多個請求與回應，顯著提高效率。</p>
+<h3 id="2-3-流量控制與優先權（Stream-Prioritization）"><a href="#2-3-流量控制與優先權（Stream-Prioritization）" class="headerlink" title="2.3 流量控制與優先權（Stream Prioritization）"></a>2.3 流量控制與優先權（Stream Prioritization）</h3><p>HTTP&#x2F;2 允許客戶端為請求設定優先級，讓重要的資源（如 CSS、JS）優先傳輸，提高頁面載入速度。</p>
+<h3 id="2-4-頭部壓縮（Header-Compression）"><a href="#2-4-頭部壓縮（Header-Compression）" class="headerlink" title="2.4 頭部壓縮（Header Compression）"></a>2.4 頭部壓縮（Header Compression）</h3><p>HTTP&#x2F;2 使用 HPACK 壓縮技術來減少 HTTP 標頭的大小，避免 HTTP&#x2F;1.1 中重複傳輸 Cookie、User-Agent 等大量標頭資訊的問題。</p>
+<h3 id="2-5-伺服器推送（Server-Push）"><a href="#2-5-伺服器推送（Server-Push）" class="headerlink" title="2.5 伺服器推送（Server Push）"></a>2.5 伺服器推送（Server Push）</h3><p>伺服器可以主動推送客戶端尚未請求的資源，例如 HTML 請求回應時，伺服器可同時推送 CSS、JavaScript 檔案，減少額外的請求時間。</p>
+<h2 id="3-HTTP-x2F-2-與-HTTP-x2F-1-1-的比較"><a href="#3-HTTP-x2F-2-與-HTTP-x2F-1-1-的比較" class="headerlink" title="3. HTTP&#x2F;2 與 HTTP&#x2F;1.1 的比較"></a>3. HTTP&#x2F;2 與 HTTP&#x2F;1.1 的比較</h2><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>HTTP&#x2F;1.1</th>
+<th>HTTP&#x2F;2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>資料格式</td>
+<td>純文字</td>
+<td>二進制</td>
+</tr>
+<tr>
+<td>多路復用</td>
+<td>不支援</td>
+<td>支援</td>
+</tr>
+<tr>
+<td>流量控制</td>
+<td>無</td>
+<td>有</td>
+</tr>
+<tr>
+<td>頭部壓縮</td>
+<td>無</td>
+<td>HPACK</td>
+</tr>
+<tr>
+<td>伺服器推送</td>
+<td>無</td>
+<td>有</td>
+</tr>
+</tbody></table>
+<h2 id="4-HTTP-x2F-2-的使用與設定"><a href="#4-HTTP-x2F-2-的使用與設定" class="headerlink" title="4. HTTP&#x2F;2 的使用與設定"></a>4. HTTP&#x2F;2 的使用與設定</h2><h3 id="4-1-瀏覽器支援"><a href="#4-1-瀏覽器支援" class="headerlink" title="4.1 瀏覽器支援"></a>4.1 瀏覽器支援</h3><p>現代主流瀏覽器（Chrome、Firefox、Edge、Safari）皆支援 HTTP&#x2F;2，但通常需要搭配 HTTPS 使用。</p>
+<h3 id="4-2-伺服器支援"><a href="#4-2-伺服器支援" class="headerlink" title="4.2 伺服器支援"></a>4.2 伺服器支援</h3><p>常見的 Web 伺服器如 Nginx、Apache、LiteSpeed 都已支援 HTTP&#x2F;2，但需進行適當的設定。</p>
+<h4 id="4-2-1-在-Nginx-啟用-HTTP-x2F-2"><a href="#4-2-1-在-Nginx-啟用-HTTP-x2F-2" class="headerlink" title="4.2.1 在 Nginx 啟用 HTTP&#x2F;2"></a>4.2.1 在 Nginx 啟用 HTTP&#x2F;2</h4><p>若要在 Nginx 中啟用 HTTP&#x2F;2，需要確保已安裝支援 HTTP&#x2F;2 的 Nginx 版本（1.9.5 以上）並修改設定檔：</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">443</span> ssl http2;</span><br><span class="line">    <span class="attribute">server_name</span> example.com;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">ssl_certificate</span> /etc/nginx/ssl/cert.pem;</span><br><span class="line">    <span class="attribute">ssl_certificate_key</span> /etc/nginx/ssl/cert.key;</span><br><span class="line"></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">root</span> /var/www/html;</span><br><span class="line">        <span class="attribute">index</span> index.html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>listen</code> 指令中加入 <code>http2</code> 即可啟用 HTTP&#x2F;2。</p>
+<h4 id="4-2-2-在-Apache-啟用-HTTP-x2F-2"><a href="#4-2-2-在-Apache-啟用-HTTP-x2F-2" class="headerlink" title="4.2.2 在 Apache 啟用 HTTP&#x2F;2"></a>4.2.2 在 Apache 啟用 HTTP&#x2F;2</h4><p>Apache 2.4.17 以上版本支援 HTTP&#x2F;2，需要啟用 <code>mod_http2</code> 模組。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">a2enmod http2</span><br><span class="line">systemctl restart apache2</span><br></pre></td></tr></table></figure>
+
+<p>接著，在 VirtualHost 設定中加入：</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="section">&lt;VirtualHost *<span class="number">:443</span>&gt;</span></span><br><span class="line">    <span class="attribute">Protocols</span> h2 http/<span class="number">1</span>.<span class="number">1</span></span><br><span class="line">    <span class="attribute">DocumentRoot</span> /var/www/html</span><br><span class="line">    <span class="attribute">ServerName</span> example.com</span><br><span class="line"><span class="section">&lt;/VirtualHost&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-HTTP-x2F-2-客戶端測試"><a href="#5-HTTP-x2F-2-客戶端測試" class="headerlink" title="5. HTTP&#x2F;2 客戶端測試"></a>5. HTTP&#x2F;2 客戶端測試</h2><p>可以使用 <code>curl</code> 測試 HTTP&#x2F;2 是否正常運作：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -I --http2 https://example.com</span><br></pre></td></tr></table></figure>
+
+<p>若顯示 <code>HTTP/2 200</code>，則表示伺服器已成功支援 HTTP&#x2F;2。</p>
+<h2 id="6-HTTP-x2F-2-的實際應用"><a href="#6-HTTP-x2F-2-的實際應用" class="headerlink" title="6. HTTP&#x2F;2 的實際應用"></a>6. HTTP&#x2F;2 的實際應用</h2><h3 id="6-1-使用-HTTP-x2F-2-Server-Push"><a href="#6-1-使用-HTTP-x2F-2-Server-Push" class="headerlink" title="6.1 使用 HTTP&#x2F;2 Server Push"></a>6.1 使用 HTTP&#x2F;2 Server Push</h3><p>在 HTTP&#x2F;2 中，可以使用 <code>Link</code> 標頭來主動推送資源。例如，在 Nginx 配置中加入：</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">location</span> / &#123;</span><br><span class="line">    <span class="attribute">add_header</span> Link <span class="string">&quot;&lt;/style.css&gt;; rel=preload; as=style&quot;</span>;</span><br><span class="line">    <span class="attribute">add_header</span> Link <span class="string">&quot;&lt;/script.js&gt;; rel=preload; as=script&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣當客戶端請求 <code>index.html</code> 時，伺服器會自動推送 <code>style.css</code> 和 <code>script.js</code>，減少 HTTP 請求數量。</p>
+<h3 id="6-2-透過瀏覽器-DevTools-觀察-HTTP-x2F-2"><a href="#6-2-透過瀏覽器-DevTools-觀察-HTTP-x2F-2" class="headerlink" title="6.2 透過瀏覽器 DevTools 觀察 HTTP&#x2F;2"></a>6.2 透過瀏覽器 DevTools 觀察 HTTP&#x2F;2</h3><p>打開 Chrome 開發者工具（F12） → <code>Network</code> 分頁，查看 <code>Protocol</code> 欄位，若顯示 <code>h2</code>，則表示該請求使用了 HTTP&#x2F;2。</p>
+<h2 id="7-總結"><a href="#7-總結" class="headerlink" title="7. 總結"></a>7. 總結</h2><p>HTTP&#x2F;2 改進了 HTTP&#x2F;1.1 的多項限制，透過多路徑傳輸、頭部壓縮與伺服器推送提高了 Web 效能。現代瀏覽器與伺服器已廣泛支援 HTTP&#x2F;2，建議在新專案中啟用 HTTP&#x2F;2，以提升用戶體驗與網站速度。</p>
+
+                </div>
+
+                <br>
+                <section>
+                    歡迎分享按讚給予支持和鼓勵！
+                    <div class="fb-like" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                </section>
+                <br>
+                <div>
+                    <div class="fb-page" data-href="https://www.facebook.com/tech.kdchang.net" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/tech.kdchang.net" class="fb-xfbml-parse-ignore"><a target="_blank" rel="noopener" href="https://www.facebook.com/tech.kdchang.net">KD Chang（張凱迪）</a></blockquote></div>
+                </div>
+                <hr>
+                <div>
+                    <h3>Related Posts</h3>
+                    <div>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/10/16/learning-notes-alpinejs-intro-tutorial/" title="Alpine.js 入門教學筆記 | 學習筆記" rel="bookmark">Alpine.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/01/learning-notes-cookie-intro-tutorial/" title="Cookie 入門教學筆記 | 學習筆記" rel="bookmark">Cookie 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial copy/" title="JavaScript ES6 入門語法教學筆記 | 學習筆記" rel="bookmark">JavaScript ES6 入門語法教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-arrow-function-this-intro-tutorial/" title="JavaScript 箭頭函式 (Arrow Function）入門教學筆記 | 學習筆記" rel="bookmark">JavaScript 箭頭函式 (Arrow Function）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-async-await/" title="async/await 入門教學筆記 | 學習筆記" rel="bookmark">async/await 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                    </div>
+                </div>
+                <!-- Tags -->
+                <h3>Comments</h3>
+                <hr>
+                
+                <!-- disqus start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus end -->
+                
+
+            </div>
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "kdchang-tech-blog";
+    var disqus_identifier = "https://tech.kdchang.net/2024/12/16/learning-notes-http2-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2024/12/16/learning-notes-http2-intro-tutorial/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5728979c6a10856b"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<!-- <script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script> -->
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+<script>
+   anchors.add('h1, h2, h3');
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<a id="scroll-to-top-button">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/kaidichang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/tech.kdchang.net">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/kdchang_net">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kdchang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <hr>
+                <div class="copyright text-muted">
+                    Special thanks <a href="https://unsplash.com/@afgprogrammer" target="_blank">Mohammad Rahmani</a>、<a href="https://www.flickr.com/photos/derek-john-lee/14698093740/in/photolist-ooPzcj-r2kVt-ppV21v-brhFX3-wd3Qsy-cLiKEL-xDR92-28QCtA-29YFZZ-gzuZk-dqbhxt-9FwCBY-q57bEv-bVhZJr-dYxGXn-dxg9g7-8x7gjU-dzjMic-rQhf-9TMgJ3-mEsFjW-qbzd4p-q6cJvc-7zYttk-q2gE5S-bdb4G4-8ifmQN-eivVeg-9ZZFVz-aD6q6r-bnjfWh-qJAn2g-k22Ttf-n9Jhfj-kk4woh-sj43iz-5NYGUn-96wNhi-9ZZFz6-8DJkQf-4wQizw-3bzz8p-9yzTSd-xDQee-68Xwfp-7t5WPx-xDTM5-o5RPYA-kWihhy-7iHDEX" target="_blank">Derek</a>、<a href="https://www.flickr.com/photos/mashleymorgan/" target="_blank">mashleymorgan</a>、<a href="https://www.flickr.com/photos/mustafeez27/" target="_blank">mustafeez27</a>         
+                    and <a href="http://blog.kaijun.rocks" target="_blank">Kaijun</a>
+                    <br> 
+                    Copyright &copy; KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪 2025
+                    <hr>
+                    <!-- facebook follow -->
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.net" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+<!-- Custom Main JavaScript -->
+<script src="/js/main.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://tech.kdchang.net/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fb.js -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="X3eUifxc"></script>
+
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FN9X92SM77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FN9X92SM77');
+</script>
+
+
+
+	
+</body>
+
+</html>

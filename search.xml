@@ -116,6 +116,69 @@
       </tags>
   </entry>
   <entry>
+    <title>Alpine.js 入門教學筆記 | 學習筆記</title>
+    <url>/2024/10/16/learning-notes-alpinejs-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="1-什麼是-Alpine-js？"><a href="#1-什麼是-Alpine-js？" class="headerlink" title="1. 什麼是 Alpine.js？"></a>1. 什麼是 Alpine.js？</h2><p><code>Alpine.js</code> 是一個輕量級的 JavaScript 框架，專為增強 HTML 標記而設計。它的語法靈感來自 Vue.js，但更加簡潔，適用於需要簡單互動的網頁。</p>
+<p>它的主要特點包括：</p>
+<ul>
+<li>使用 HTML 屬性直接定義行為</li>
+<li>不需要額外的構建工具</li>
+<li>易於學習和使用</li>
+<li>與其他框架（如 Vue、React）兼容</li>
+</ul>
+<h2 id="2-安裝與引入"><a href="#2-安裝與引入" class="headerlink" title="2. 安裝與引入"></a>2. 安裝與引入</h2><p>使用 Alpine.js 最簡單的方法是透過 CDN 引入。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-TW&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Alpine.js 入門<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Alpine.js 教學<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-基本語法與應用"><a href="#3-基本語法與應用" class="headerlink" title="3. 基本語法與應用"></a>3. 基本語法與應用</h2><h3 id="3-1-x-data"><a href="#3-1-x-data" class="headerlink" title="3.1 x-data"></a>3.1 x-data</h3><p><code>x-data</code> 屬性用於定義 Alpine.js 的組件狀態。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">x-data</span>=<span class="string">&quot;&#123; message: &#x27;Hello, Alpine!&#x27; &#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">x-text</span>=<span class="string">&quot;message&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼會顯示 <code>Hello, Alpine!</code>，並且 <code>x-text</code> 會自動更新內容。</p>
+<h3 id="3-2-x-bind"><a href="#3-2-x-bind" class="headerlink" title="3.2 x-bind"></a>3.2 x-bind</h3><p><code>x-bind</code> 允許綁定 HTML 屬性。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">x-data</span>=<span class="string">&quot;&#123; color: &#x27;red&#x27; &#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">x-bind:style</span>=<span class="string">&quot;&#x27;color: &#x27; + color&quot;</span>&gt;</span>這是一段紅色文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-x-on"><a href="#3-3-x-on" class="headerlink" title="3.3 x-on"></a>3.3 x-on</h3><p><code>x-on</code> 用於事件監聽，例如點擊事件。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">x-data</span>=<span class="string">&quot;&#123; count: 0 &#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">x-on:click</span>=<span class="string">&quot;count++&quot;</span>&gt;</span>增加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>計數：<span class="tag">&lt;<span class="name">span</span> <span class="attr">x-text</span>=<span class="string">&quot;count&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-x-model"><a href="#3-4-x-model" class="headerlink" title="3.4 x-model"></a>3.4 x-model</h3><p><code>x-model</code> 允許雙向綁定表單元素。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">x-data</span>=<span class="string">&quot;&#123; name: &#x27;&#x27; &#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">x-model</span>=<span class="string">&quot;name&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;輸入你的名字&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>你好，<span class="tag">&lt;<span class="name">span</span> <span class="attr">x-text</span>=<span class="string">&quot;name&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-x-show"><a href="#3-5-x-show" class="headerlink" title="3.5 x-show"></a>3.5 x-show</h3><p><code>x-show</code> 控制元素顯示或隱藏。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">x-data</span>=<span class="string">&quot;&#123; isVisible: true &#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">x-on:click</span>=<span class="string">&quot;isVisible = !isVisible&quot;</span>&gt;</span>切換顯示<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">x-show</span>=<span class="string">&quot;isVisible&quot;</span>&gt;</span>這段文字可以顯示或隱藏<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-6-x-if"><a href="#3-6-x-if" class="headerlink" title="3.6 x-if"></a>3.6 x-if</h3><p><code>x-if</code> 會動態新增或移除元素（比 <code>x-show</code> 更影響 DOM）。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">x-data</span>=<span class="string">&quot;&#123; isVisible: true &#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">x-on:click</span>=<span class="string">&quot;isVisible = !isVisible&quot;</span>&gt;</span>切換<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">x-if</span>=<span class="string">&quot;isVisible&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>這是一段可動態新增或刪除的文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-7-x-for"><a href="#3-7-x-for" class="headerlink" title="3.7 x-for"></a>3.7 x-for</h3><p><code>x-for</code> 用於迭代陣列。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">x-data</span>=<span class="string">&quot;&#123; items: [&#x27;蘋果&#x27;, &#x27;香蕉&#x27;, &#x27;橘子&#x27;] &#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">template</span> <span class="attr">x-for</span>=<span class="string">&quot;item in items&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">x-text</span>=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-8-計時器與非同步操作"><a href="#3-8-計時器與非同步操作" class="headerlink" title="3.8 計時器與非同步操作"></a>3.8 計時器與非同步操作</h3><p>Alpine.js 支援 <code>setTimeout</code> 和 <code>fetch</code> 等 JavaScript 方法。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">x-data</span>=<span class="string">&quot;&#123;</span></span></span><br><span class="line"><span class="string"><span class="tag">    message: &#x27;載入中...&#x27;,</span></span></span><br><span class="line"><span class="string"><span class="tag">    async fetchData() &#123;</span></span></span><br><span class="line"><span class="string"><span class="tag">        let response = await fetch(&#x27;https://jsonplaceholder.typicode.com/todos/1&#x27;);</span></span></span><br><span class="line"><span class="string"><span class="tag">        let data = await response.json();</span></span></span><br><span class="line"><span class="string"><span class="tag">        this.message = data.title;</span></span></span><br><span class="line"><span class="string"><span class="tag">    &#125;</span></span></span><br><span class="line"><span class="string"><span class="tag">&#125;&quot;</span> <span class="attr">x-init</span>=<span class="string">&quot;fetchData&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">x-text</span>=<span class="string">&quot;message&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-Alpine-js-與-Tailwind-CSS"><a href="#4-Alpine-js-與-Tailwind-CSS" class="headerlink" title="4. Alpine.js 與 Tailwind CSS"></a>4. Alpine.js 與 Tailwind CSS</h2><p>Alpine.js 常與 Tailwind CSS 搭配使用，打造簡潔的 UI。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">x-data</span>=<span class="string">&quot;&#123; open: false &#125;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;p-5&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">x-on:click</span>=<span class="string">&quot;open = !open&quot;</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-500 text-white px-4 py-2 rounded&quot;</span>&gt;</span></span><br><span class="line">        切換選單</span><br><span class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">x-show</span>=<span class="string">&quot;open&quot;</span> <span class="attr">class</span>=<span class="string">&quot;mt-2 border p-2&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>選單 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>選單 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>選單 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-Alpine-js-進階應用"><a href="#5-Alpine-js-進階應用" class="headerlink" title="5. Alpine.js 進階應用"></a>5. Alpine.js 進階應用</h2><h3 id="5-1-Alpine-store"><a href="#5-1-Alpine-store" class="headerlink" title="5.1 Alpine.store"></a>5.1 Alpine.store</h3><p><code>Alpine.store</code> 可用於全域狀態管理。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;alpine:init&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title class_">Alpine</span>.<span class="title function_">store</span>(<span class="string">&#x27;app&#x27;</span>, &#123; <span class="attr">count</span>: <span class="number">0</span> &#125;);</span></span><br><span class="line"><span class="language-javascript">    &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">x-data</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">x-on:click</span>=<span class="string">&quot;$store.app.count++&quot;</span>&gt;</span>增加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>計數：<span class="tag">&lt;<span class="name">span</span> <span class="attr">x-text</span>=<span class="string">&quot;$store.app.count&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-Alpine-plugin"><a href="#5-2-Alpine-plugin" class="headerlink" title="5.2 Alpine.plugin"></a>5.2 Alpine.plugin</h3><p>Alpine.js 提供外掛支援，例如 <code>persist</code>（本地儲存）。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.x.x/dist/cdn.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;alpine:init&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title class_">Alpine</span>.<span class="title function_">plugin</span>(<span class="title class_">Alpine</span>.<span class="property">persist</span>);</span></span><br><span class="line"><span class="language-javascript">    &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">x-data</span>=<span class="string">&quot;&#123; count: $persist(0) &#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">x-on:click</span>=<span class="string">&quot;count++&quot;</span>&gt;</span>增加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>計數：<span class="tag">&lt;<span class="name">span</span> <span class="attr">x-text</span>=<span class="string">&quot;count&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h2><p>Alpine.js 是一個靈活且輕量的框架，適合用於簡單互動需求，如表單驗證、選單切換、即時更新內容等。它不需要複雜的配置，能夠快速增強靜態 HTML 頁面。</p>
+<p>如果你的專案需要更強大的功能，可以考慮與 Vue.js 或 React 搭配，或在更大規模的應用中使用其他框架。</p>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>模組</tag>
+        <tag>Alpine</tag>
+        <tag>Alpine.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Cookie 入門教學筆記 | 學習筆記</title>
     <url>/2024/11/01/learning-notes-cookie-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Cookie 是一種儲存在使用者瀏覽器上的小型文字檔案，用於保存使用者的狀態或資訊。常見用途包含：</p>
@@ -1478,6 +1541,83 @@
       </tags>
   </entry>
   <entry>
+    <title>HTTP/2 介紹與入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/16/learning-notes-http2-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="1-HTTP-x2F-2-簡介"><a href="#1-HTTP-x2F-2-簡介" class="headerlink" title="1. HTTP&#x2F;2 簡介"></a>1. HTTP&#x2F;2 簡介</h2><p>HTTP&#x2F;2 是 HTTP&#x2F;1.1 的後繼版本，由 IETF HTTP 工作小組開發，並於 2015 年 5 月成為正式標準（RFC 7540）。HTTP&#x2F;2 的主要目標是提高 Web 的性能，減少延遲，並優化資源的傳輸方式。</p>
+<h2 id="2-HTTP-x2F-2-的核心特性"><a href="#2-HTTP-x2F-2-的核心特性" class="headerlink" title="2. HTTP&#x2F;2 的核心特性"></a>2. HTTP&#x2F;2 的核心特性</h2><h3 id="2-1-二進制分幀層（Binary-Framing-Layer）"><a href="#2-1-二進制分幀層（Binary-Framing-Layer）" class="headerlink" title="2.1 二進制分幀層（Binary Framing Layer）"></a>2.1 二進制分幀層（Binary Framing Layer）</h3><p>HTTP&#x2F;2 以二進制格式進行數據傳輸，而非 HTTP&#x2F;1.1 的純文字格式。這使得解析和處理更高效，減少了協議的開銷。</p>
+<h3 id="2-2-多路徑傳輸（Multiplexing）"><a href="#2-2-多路徑傳輸（Multiplexing）" class="headerlink" title="2.2 多路徑傳輸（Multiplexing）"></a>2.2 多路徑傳輸（Multiplexing）</h3><p>在 HTTP&#x2F;1.1 中，一個 TCP 連線同時只能處理一個請求，導致「線頭阻塞」問題。HTTP&#x2F;2 允許在單個 TCP 連線中並行傳輸多個請求與回應，顯著提高效率。</p>
+<h3 id="2-3-流量控制與優先權（Stream-Prioritization）"><a href="#2-3-流量控制與優先權（Stream-Prioritization）" class="headerlink" title="2.3 流量控制與優先權（Stream Prioritization）"></a>2.3 流量控制與優先權（Stream Prioritization）</h3><p>HTTP&#x2F;2 允許客戶端為請求設定優先級，讓重要的資源（如 CSS、JS）優先傳輸，提高頁面載入速度。</p>
+<h3 id="2-4-頭部壓縮（Header-Compression）"><a href="#2-4-頭部壓縮（Header-Compression）" class="headerlink" title="2.4 頭部壓縮（Header Compression）"></a>2.4 頭部壓縮（Header Compression）</h3><p>HTTP&#x2F;2 使用 HPACK 壓縮技術來減少 HTTP 標頭的大小，避免 HTTP&#x2F;1.1 中重複傳輸 Cookie、User-Agent 等大量標頭資訊的問題。</p>
+<h3 id="2-5-伺服器推送（Server-Push）"><a href="#2-5-伺服器推送（Server-Push）" class="headerlink" title="2.5 伺服器推送（Server Push）"></a>2.5 伺服器推送（Server Push）</h3><p>伺服器可以主動推送客戶端尚未請求的資源，例如 HTML 請求回應時，伺服器可同時推送 CSS、JavaScript 檔案，減少額外的請求時間。</p>
+<h2 id="3-HTTP-x2F-2-與-HTTP-x2F-1-1-的比較"><a href="#3-HTTP-x2F-2-與-HTTP-x2F-1-1-的比較" class="headerlink" title="3. HTTP&#x2F;2 與 HTTP&#x2F;1.1 的比較"></a>3. HTTP&#x2F;2 與 HTTP&#x2F;1.1 的比較</h2><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>HTTP&#x2F;1.1</th>
+<th>HTTP&#x2F;2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>資料格式</td>
+<td>純文字</td>
+<td>二進制</td>
+</tr>
+<tr>
+<td>多路復用</td>
+<td>不支援</td>
+<td>支援</td>
+</tr>
+<tr>
+<td>流量控制</td>
+<td>無</td>
+<td>有</td>
+</tr>
+<tr>
+<td>頭部壓縮</td>
+<td>無</td>
+<td>HPACK</td>
+</tr>
+<tr>
+<td>伺服器推送</td>
+<td>無</td>
+<td>有</td>
+</tr>
+</tbody></table>
+<h2 id="4-HTTP-x2F-2-的使用與設定"><a href="#4-HTTP-x2F-2-的使用與設定" class="headerlink" title="4. HTTP&#x2F;2 的使用與設定"></a>4. HTTP&#x2F;2 的使用與設定</h2><h3 id="4-1-瀏覽器支援"><a href="#4-1-瀏覽器支援" class="headerlink" title="4.1 瀏覽器支援"></a>4.1 瀏覽器支援</h3><p>現代主流瀏覽器（Chrome、Firefox、Edge、Safari）皆支援 HTTP&#x2F;2，但通常需要搭配 HTTPS 使用。</p>
+<h3 id="4-2-伺服器支援"><a href="#4-2-伺服器支援" class="headerlink" title="4.2 伺服器支援"></a>4.2 伺服器支援</h3><p>常見的 Web 伺服器如 Nginx、Apache、LiteSpeed 都已支援 HTTP&#x2F;2，但需進行適當的設定。</p>
+<h4 id="4-2-1-在-Nginx-啟用-HTTP-x2F-2"><a href="#4-2-1-在-Nginx-啟用-HTTP-x2F-2" class="headerlink" title="4.2.1 在 Nginx 啟用 HTTP&#x2F;2"></a>4.2.1 在 Nginx 啟用 HTTP&#x2F;2</h4><p>若要在 Nginx 中啟用 HTTP&#x2F;2，需要確保已安裝支援 HTTP&#x2F;2 的 Nginx 版本（1.9.5 以上）並修改設定檔：</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">443</span> ssl http2;</span><br><span class="line">    <span class="attribute">server_name</span> example.com;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">ssl_certificate</span> /etc/nginx/ssl/cert.pem;</span><br><span class="line">    <span class="attribute">ssl_certificate_key</span> /etc/nginx/ssl/cert.key;</span><br><span class="line"></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">root</span> /var/www/html;</span><br><span class="line">        <span class="attribute">index</span> index.html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>listen</code> 指令中加入 <code>http2</code> 即可啟用 HTTP&#x2F;2。</p>
+<h4 id="4-2-2-在-Apache-啟用-HTTP-x2F-2"><a href="#4-2-2-在-Apache-啟用-HTTP-x2F-2" class="headerlink" title="4.2.2 在 Apache 啟用 HTTP&#x2F;2"></a>4.2.2 在 Apache 啟用 HTTP&#x2F;2</h4><p>Apache 2.4.17 以上版本支援 HTTP&#x2F;2，需要啟用 <code>mod_http2</code> 模組。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">a2enmod http2</span><br><span class="line">systemctl restart apache2</span><br></pre></td></tr></table></figure>
+
+<p>接著，在 VirtualHost 設定中加入：</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="section">&lt;VirtualHost *<span class="number">:443</span>&gt;</span></span><br><span class="line">    <span class="attribute">Protocols</span> h2 http/<span class="number">1</span>.<span class="number">1</span></span><br><span class="line">    <span class="attribute">DocumentRoot</span> /var/www/html</span><br><span class="line">    <span class="attribute">ServerName</span> example.com</span><br><span class="line"><span class="section">&lt;/VirtualHost&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-HTTP-x2F-2-客戶端測試"><a href="#5-HTTP-x2F-2-客戶端測試" class="headerlink" title="5. HTTP&#x2F;2 客戶端測試"></a>5. HTTP&#x2F;2 客戶端測試</h2><p>可以使用 <code>curl</code> 測試 HTTP&#x2F;2 是否正常運作：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -I --http2 https://example.com</span><br></pre></td></tr></table></figure>
+
+<p>若顯示 <code>HTTP/2 200</code>，則表示伺服器已成功支援 HTTP&#x2F;2。</p>
+<h2 id="6-HTTP-x2F-2-的實際應用"><a href="#6-HTTP-x2F-2-的實際應用" class="headerlink" title="6. HTTP&#x2F;2 的實際應用"></a>6. HTTP&#x2F;2 的實際應用</h2><h3 id="6-1-使用-HTTP-x2F-2-Server-Push"><a href="#6-1-使用-HTTP-x2F-2-Server-Push" class="headerlink" title="6.1 使用 HTTP&#x2F;2 Server Push"></a>6.1 使用 HTTP&#x2F;2 Server Push</h3><p>在 HTTP&#x2F;2 中，可以使用 <code>Link</code> 標頭來主動推送資源。例如，在 Nginx 配置中加入：</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">location</span> / &#123;</span><br><span class="line">    <span class="attribute">add_header</span> Link <span class="string">&quot;&lt;/style.css&gt;; rel=preload; as=style&quot;</span>;</span><br><span class="line">    <span class="attribute">add_header</span> Link <span class="string">&quot;&lt;/script.js&gt;; rel=preload; as=script&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣當客戶端請求 <code>index.html</code> 時，伺服器會自動推送 <code>style.css</code> 和 <code>script.js</code>，減少 HTTP 請求數量。</p>
+<h3 id="6-2-透過瀏覽器-DevTools-觀察-HTTP-x2F-2"><a href="#6-2-透過瀏覽器-DevTools-觀察-HTTP-x2F-2" class="headerlink" title="6.2 透過瀏覽器 DevTools 觀察 HTTP&#x2F;2"></a>6.2 透過瀏覽器 DevTools 觀察 HTTP&#x2F;2</h3><p>打開 Chrome 開發者工具（F12） → <code>Network</code> 分頁，查看 <code>Protocol</code> 欄位，若顯示 <code>h2</code>，則表示該請求使用了 HTTP&#x2F;2。</p>
+<h2 id="7-總結"><a href="#7-總結" class="headerlink" title="7. 總結"></a>7. 總結</h2><p>HTTP&#x2F;2 改進了 HTTP&#x2F;1.1 的多項限制，透過多路徑傳輸、頭部壓縮與伺服器推送提高了 Web 效能。現代瀏覽器與伺服器已廣泛支援 HTTP&#x2F;2，建議在新專案中啟用 HTTP&#x2F;2，以提升用戶體驗與網站速度。</p>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>HTTP/1</tag>
+        <tag>HTTP</tag>
+        <tag>HTTP/2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript 箭頭函式 (Arrow Function）入門教學筆記 | 學習筆記</title>
     <url>/2021/01/16/learning-notes-javascript-arrow-function-this-intro-tutorial/</url>
     <content><![CDATA[<p>在 JavaScript 的 <strong>箭頭函式 (Arrow Function, <code>=&gt;</code>)</strong> 中，<code>this</code> 的行為與傳統的 <strong>函式表達式 (Function Expression)</strong> 不同，主要特點如下：</p>
@@ -1702,7 +1842,8 @@
 
 <h4 id="2-使用模組（載入）"><a href="#2-使用模組（載入）" class="headerlink" title="(2) 使用模組（載入）"></a><strong>(2) 使用模組（載入）</strong></h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">const</span> math = <span class="built_in">require</span>(<span class="string">&#x27;./math&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(math.<span class="property">pi</span>); <span class="comment">// 3.14159</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(math.<span class="title function_">add</span>(<span class="number">10</span>, <span class="number">5</span>)); <span class="comment">// 15</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(math.<span class="title function_">subtract</span>(<span class="number">20</span>, <span class="number">8</span>)); <span class="comment">// 12</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="CommonJS-特點"><a href="#CommonJS-特點" class="headerlink" title="CommonJS 特點"></a><strong>CommonJS 特點</strong></h3><p>✅ <strong>適用於伺服器端（Node.js）</strong>，可輕鬆管理模組與依賴。<br>✅ <strong>簡單直覺的 <code>require()</code> 和 <code>module.exports</code> 語法</strong>。<br>✅ <strong>支援循環依賴（Circular Dependencies）</strong>，當兩個模組互相依賴時，仍能正確解析。<br>❌ <strong>同步載入（Synchronous Loading）</strong>，不適合瀏覽器端，因為會阻塞執行緒，影響頁面效能。<br>❌ <strong>不支援瀏覽器環境</strong>，需使用 Webpack 或 Browserify 來轉換為瀏覽器可用的程式碼。  </p>
+<h3 id="CommonJS-特點"><a href="#CommonJS-特點" class="headerlink" title="CommonJS 特點"></a><strong>CommonJS 特點</strong></h3><p>優點：<br><strong>適用於伺服器端（Node.js）</strong>，可輕鬆管理模組與依賴。<br><strong>簡單直覺的 <code>require()</code> 和 <code>module.exports</code> 語法</strong>。<br><strong>支援循環依賴（Circular Dependencies）</strong>，當兩個模組互相依賴時，仍能正確解析。  </p>
+<p>缺點：<br><strong>同步載入（Synchronous Loading）</strong>，不適合瀏覽器端，因為會阻塞執行緒，影響頁面效能。<br><strong>不支援瀏覽器環境</strong>，需使用 Webpack 或 Browserify 來轉換為瀏覽器可用的程式碼。  </p>
 <hr>
 <h2 id="2-AMD（Asynchronous-Module-Definition）——-適用於瀏覽器的模組系統"><a href="#2-AMD（Asynchronous-Module-Definition）——-適用於瀏覽器的模組系統" class="headerlink" title="2. AMD（Asynchronous Module Definition）—— 適用於瀏覽器的模組系統"></a><strong>2. AMD（Asynchronous Module Definition）—— 適用於瀏覽器的模組系統</strong></h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a><strong>概述</strong></h3><p><strong>AMD</strong> 是專為 <strong>瀏覽器環境</strong> 設計的模組系統，解決了 CommonJS 無法在前端環境直接運作的問題。AMD 的關鍵特點是 <strong>非同步載入（Asynchronous Loading）</strong>，允許模組在需要時才載入，避免影響頁面效能。  </p>
 <p>AMD 主要使用 <strong><code>define()</code></strong> 來定義模組，**<code>require()</code>** 來載入模組。</p>
@@ -1710,7 +1851,8 @@
 
 <h4 id="2-使用模組（載入）-1"><a href="#2-使用模組（載入）-1" class="headerlink" title="(2) 使用模組（載入）"></a><strong>(2) 使用模組（載入）</strong></h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="built_in">require</span>([<span class="string">&#x27;math&#x27;</span>], <span class="keyword">function</span> (<span class="params">math</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(math.<span class="property">pi</span>); <span class="comment">// 3.14159</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(math.<span class="title function_">add</span>(<span class="number">5</span>, <span class="number">6</span>)); <span class="comment">// 11</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h3 id="AMD-特點"><a href="#AMD-特點" class="headerlink" title="AMD 特點"></a><strong>AMD 特點</strong></h3><p>✅ <strong>適用於瀏覽器環境</strong>，支援非同步載入，提高效能。<br>✅ <strong>使用 <code>define()</code> 與 <code>require()</code> 來管理模組，能夠載入多個依賴。</strong><br>✅ <strong>非同步執行，適合大型應用程式，減少載入時間。</strong><br>❌ <strong>語法較繁瑣</strong>，比 CommonJS 需要更多設定。<br>❌ <strong>需要 RequireJS 來執行</strong>，瀏覽器無法直接支援 AMD。  </p>
+<h3 id="AMD-特點"><a href="#AMD-特點" class="headerlink" title="AMD 特點"></a><strong>AMD 特點</strong></h3><p>優點：<br><strong>適用於瀏覽器環境</strong>，支援非同步載入，提高效能。<br><strong>使用 <code>define()</code> 與 <code>require()</code> 來管理模組，能夠載入多個依賴。</strong><br><strong>非同步執行，適合大型應用程式，減少載入時間。</strong>  </p>
+<p>缺點：<br><strong>語法較繁瑣</strong>，比 CommonJS 需要更多設定。<br><strong>需要 RequireJS 來執行</strong>，瀏覽器無法直接支援 AMD。  </p>
 <hr>
 <h2 id="3-CommonJS-vs-AMD-vs-ES-Modules（ESM）"><a href="#3-CommonJS-vs-AMD-vs-ES-Modules（ESM）" class="headerlink" title="3. CommonJS vs AMD vs ES Modules（ESM）"></a><strong>3. CommonJS vs AMD vs ES Modules（ESM）</strong></h2><table>
 <thead>
@@ -2612,6 +2754,82 @@
         <tag>Node.js</tag>
         <tag>Node</tag>
         <tag>NodeJS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Node.js Express.js 入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/16/learning-notes-nodejs-expressjs-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="1-簡介"><a href="#1-簡介" class="headerlink" title="1. 簡介"></a>1. 簡介</h2><p>Express.js 是一個基於 Node.js 的 Web 應用框架，提供簡潔且靈活的 API，適用於建立伺服器端應用程式。它可以用來開發 RESTful API、Web 應用或後端服務。</p>
+<h3 id="為什麼選擇-Express-js？"><a href="#為什麼選擇-Express-js？" class="headerlink" title="為什麼選擇 Express.js？"></a>為什麼選擇 Express.js？</h3><ul>
+<li>輕量且易於學習</li>
+<li>擴展性高</li>
+<li>內建強大的中介軟體（Middleware）系統</li>
+<li>支援各種範本引擎（例如：EJS, Pug）</li>
+</ul>
+<h2 id="2-安裝與專案初始化"><a href="#2-安裝與專案初始化" class="headerlink" title="2. 安裝與專案初始化"></a>2. 安裝與專案初始化</h2><h3 id="安裝-Node-js"><a href="#安裝-Node-js" class="headerlink" title="安裝 Node.js"></a>安裝 Node.js</h3><p>在開始使用 Express.js 之前，請先安裝 <a href="https://nodejs.org/">Node.js</a>。</p>
+<h3 id="初始化專案"><a href="#初始化專案" class="headerlink" title="初始化專案"></a>初始化專案</h3><p>建立一個新的專案資料夾，然後執行以下指令來初始化 Node.js 專案：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> express-app</span><br><span class="line"><span class="built_in">cd</span> express-app</span><br><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
+
+<h3 id="安裝-Express-js"><a href="#安裝-Express-js" class="headerlink" title="安裝 Express.js"></a>安裝 Express.js</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install express</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-建立第一個-Express-伺服器"><a href="#3-建立第一個-Express-伺服器" class="headerlink" title="3. 建立第一個 Express 伺服器"></a>3. 建立第一個 Express 伺服器</h2><p>建立 <code>server.js</code> 檔案，並加入以下程式碼：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span>;</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">send</span>(<span class="string">&#x27;Hello, Express!&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(port, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Server is running at http://localhost:<span class="subst">$&#123;port&#125;</span>`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="啟動伺服器"><a href="#啟動伺服器" class="headerlink" title="啟動伺服器"></a>啟動伺服器</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">node server.js</span><br></pre></td></tr></table></figure>
+<p>然後在瀏覽器打開 <code>http://localhost:3000/</code>，應該可以看到 **Hello, Express!**。</p>
+<h2 id="4-中介軟體（Middleware）"><a href="#4-中介軟體（Middleware）" class="headerlink" title="4. 中介軟體（Middleware）"></a>4. 中介軟體（Middleware）</h2><p>Express 提供 <strong>Middleware</strong>，可用來處理請求與回應，例如：解析請求體、驗證請求等。</p>
+<h3 id="使用-express-json-解析-JSON"><a href="#使用-express-json-解析-JSON" class="headerlink" title="使用 express.json() 解析 JSON"></a>使用 <code>express.json()</code> 解析 JSON</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">json</span>());</span><br></pre></td></tr></table></figure>
+
+<h3 id="建立自訂中介軟體"><a href="#建立自訂中介軟體" class="headerlink" title="建立自訂中介軟體"></a>建立自訂中介軟體</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">use</span>(<span class="function">(<span class="params">req, res, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;req.method&#125;</span> <span class="subst">$&#123;req.url&#125;</span>`</span>);</span><br><span class="line">  <span class="title function_">next</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-路由（Routing）"><a href="#5-路由（Routing）" class="headerlink" title="5. 路由（Routing）"></a>5. 路由（Routing）</h2><p>Express 允許定義不同的 HTTP 方法對應不同的路由。</p>
+<h3 id="GET-路由"><a href="#GET-路由" class="headerlink" title="GET 路由"></a>GET 路由</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/api/users&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">json</span>([&#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span> &#125;, &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">&#x27;Bob&#x27;</span> &#125;]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="POST-路由"><a href="#POST-路由" class="headerlink" title="POST 路由"></a>POST 路由</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/api/users&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> newUser = req.<span class="property">body</span>;</span><br><span class="line">  res.<span class="title function_">status</span>(<span class="number">201</span>).<span class="title function_">json</span>(newUser);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="參數化路由"><a href="#參數化路由" class="headerlink" title="參數化路由"></a>參數化路由</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/api/users/:id&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> userId = req.<span class="property">params</span>.<span class="property">id</span>;</span><br><span class="line">  res.<span class="title function_">json</span>(&#123; <span class="attr">id</span>: userId, <span class="attr">name</span>: <span class="string">`User <span class="subst">$&#123;userId&#125;</span>`</span> &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-靜態檔案服務"><a href="#6-靜態檔案服務" class="headerlink" title="6. 靜態檔案服務"></a>6. 靜態檔案服務</h2><p>Express 可用來提供靜態檔案，例如 HTML、CSS、JavaScript。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">static</span>(<span class="string">&#x27;public&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<p>然後在 <code>public/index.html</code> 中放入 HTML，即可直接透過 <code>http://localhost:3000/index.html</code> 存取。</p>
+<h2 id="7-錯誤處理"><a href="#7-錯誤處理" class="headerlink" title="7. 錯誤處理"></a>7. 錯誤處理</h2><p>Express 提供錯誤處理中介軟體，可用來處理應用中的錯誤。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">use</span>(<span class="function">(<span class="params">err, req, res, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">error</span>(err.<span class="property">stack</span>);</span><br><span class="line">  res.<span class="title function_">status</span>(<span class="number">500</span>).<span class="title function_">json</span>(&#123; <span class="attr">message</span>: <span class="string">&#x27;Something went wrong!&#x27;</span> &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-整合-MongoDB"><a href="#8-整合-MongoDB" class="headerlink" title="8. 整合 MongoDB"></a>8. 整合 MongoDB</h2><p>可以使用 <code>mongoose</code> 來與 MongoDB 互動。</p>
+<h3 id="安裝-mongoose"><a href="#安裝-mongoose" class="headerlink" title="安裝 mongoose"></a>安裝 <code>mongoose</code></h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install mongoose</span><br></pre></td></tr></table></figure>
+
+<h3 id="連接-MongoDB"><a href="#連接-MongoDB" class="headerlink" title="連接 MongoDB"></a>連接 MongoDB</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">&#x27;mongoose&#x27;</span>);</span><br><span class="line"></span><br><span class="line">mongoose.<span class="title function_">connect</span>(<span class="string">&#x27;mongodb://localhost:27017/mydatabase&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">useNewUrlParser</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">useUnifiedTopology</span>: <span class="literal">true</span></span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Connected to MongoDB&#x27;</span>);</span><br><span class="line">&#125;).<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;MongoDB connection error:&#x27;</span>, err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-部署-Express-應用"><a href="#9-部署-Express-應用" class="headerlink" title="9. 部署 Express 應用"></a>9. 部署 Express 應用</h2><p>可以使用 <strong>PM2</strong> 來管理 Express 伺服器。</p>
+<h3 id="安裝-PM2"><a href="#安裝-PM2" class="headerlink" title="安裝 PM2"></a>安裝 PM2</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -g pm2</span><br></pre></td></tr></table></figure>
+
+<h3 id="啟動應用"><a href="#啟動應用" class="headerlink" title="啟動應用"></a>啟動應用</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pm2 start server.js --name express-app</span><br></pre></td></tr></table></figure>
+
+<h2 id="10-總結"><a href="#10-總結" class="headerlink" title="10. 總結"></a>10. 總結</h2><p>透過這篇筆記，你已經學會：</p>
+<ol>
+<li>安裝與初始化 Express.js</li>
+<li>建立基本 Web 伺服器</li>
+<li>使用中介軟體與路由</li>
+<li>提供靜態檔案</li>
+<li>錯誤處理</li>
+<li>整合 MongoDB</li>
+<li>部署 Express 應用</li>
+</ol>
+<p>這些概念是 Express.js 開發的基礎，熟練後可以進一步學習 JWT 認證、WebSocket、GraphQL 等進階技術！</p>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>模組</tag>
+        <tag>nodejs</tag>
+        <tag>mongoose</tag>
+        <tag>MongoDB</tag>
+        <tag>Express.js</tag>
       </tags>
   </entry>
   <entry>
@@ -3850,37 +4068,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [5] - Conditional Rendering 表單綁定 | 學習筆記</title>
-    <url>/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/</url>
-    <content><![CDATA[<p><strong>Conditional Rendering 條件渲染</strong><br>在 Vue 中，我們可以使用 <code>v-if</code> 指令來條件式渲染元素：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>這個 <code>&lt;h1&gt;</code> 只有在 <code>awesome</code> 的值為真值時才會被渲染。如果 <code>awesome</code> 的值變為假值，它將從 DOM 中被移除。</p>
-<hr>
-<p>我們還可以使用 <code>v-else</code> 和 <code>v-else-if</code> 表示條件的其他分支：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>目前的範例同時顯示了兩個 <code>&lt;h1&gt;</code>，按鈕也沒有作用。請嘗試為 <code>&lt;h1&gt;</code> 添加 <code>v-if</code> 和 <code>v-else</code> 指令，並實作一個 <code>toggle()</code> 方法，使我們可以透過按鈕來切換顯示的內容。</p>
-<hr>
-<p>示例程式碼範例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;h1 v-if=&quot;awesome&quot;&gt;Vue is awesome!&lt;/h1&gt;</span><br><span class="line">  &lt;h1 v-else&gt;Oh no 😢&lt;/h1&gt;</span><br><span class="line">  &lt;button @click=&quot;toggle&quot;&gt;Toggle&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const awesome = ref(true)</span><br><span class="line"></span><br><span class="line">function toggle() &#123;</span><br><span class="line">  awesome.value = !awesome.value</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>更多關於 <code>v-if</code> 的詳細內容請參閱官方<a href="https://vuejs.org/guide/essentials/conditional.html">指南 - 條件渲染</a>。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> awesome = <span class="title function_">ref</span>(<span class="literal">true</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">toggle</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  awesome.<span class="property">value</span> = !awesome.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;toggle&quot;</span>&gt;</span>Toggle<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [6] - List Rendering 表單綁定 | 學習筆記</title>
     <url>/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/</url>
     <content><![CDATA[<p><strong>List Rendering 列表渲染</strong><br>我們可以使用 <code>v-for</code> 指令根據一個來源陣列來渲染元素列表：</p>
@@ -3905,6 +4092,37 @@
 <hr>
 <p>更多關於 <code>v-for</code> 的詳細內容，請參閱官方<a href="https://vuejs.org/guide/essentials/list.html">指南 - 列表渲染</a>。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// give each todo a unique id</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">let</span> id = <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> newTodo = <span class="title function_">ref</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todos = <span class="title function_">ref</span>([</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn HTML&#x27;</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn JavaScript&#x27;</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn Vue&#x27;</span> &#125;</span></span><br><span class="line"><span class="language-javascript">])</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">addTodo</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span>.<span class="title function_">push</span>(&#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: newTodo.<span class="property">value</span> &#125;)</span></span><br><span class="line"><span class="language-javascript">  newTodo.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">removeTodo</span>(<span class="params">todo</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span> = todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> t !== todo)</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">form</span> @<span class="attr">submit.prevent</span>=<span class="string">&quot;addTodo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;newTodo&quot;</span> <span class="attr">required</span> <span class="attr">placeholder</span>=<span class="string">&quot;new todo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in todos&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;todo.id&quot;</span>&gt;</span></span><br><span class="line">      &#123;&#123; todo.text &#125;&#125;</span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;removeTodo(todo)&quot;</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [5] - Conditional Rendering 表單綁定 | 學習筆記</title>
+    <url>/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/</url>
+    <content><![CDATA[<p><strong>Conditional Rendering 條件渲染</strong><br>在 Vue 中，我們可以使用 <code>v-if</code> 指令來條件式渲染元素：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>這個 <code>&lt;h1&gt;</code> 只有在 <code>awesome</code> 的值為真值時才會被渲染。如果 <code>awesome</code> 的值變為假值，它將從 DOM 中被移除。</p>
+<hr>
+<p>我們還可以使用 <code>v-else</code> 和 <code>v-else-if</code> 表示條件的其他分支：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>目前的範例同時顯示了兩個 <code>&lt;h1&gt;</code>，按鈕也沒有作用。請嘗試為 <code>&lt;h1&gt;</code> 添加 <code>v-if</code> 和 <code>v-else</code> 指令，並實作一個 <code>toggle()</code> 方法，使我們可以透過按鈕來切換顯示的內容。</p>
+<hr>
+<p>示例程式碼範例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;h1 v-if=&quot;awesome&quot;&gt;Vue is awesome!&lt;/h1&gt;</span><br><span class="line">  &lt;h1 v-else&gt;Oh no 😢&lt;/h1&gt;</span><br><span class="line">  &lt;button @click=&quot;toggle&quot;&gt;Toggle&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const awesome = ref(true)</span><br><span class="line"></span><br><span class="line">function toggle() &#123;</span><br><span class="line">  awesome.value = !awesome.value</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>更多關於 <code>v-if</code> 的詳細內容請參閱官方<a href="https://vuejs.org/guide/essentials/conditional.html">指南 - 條件渲染</a>。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> awesome = <span class="title function_">ref</span>(<span class="literal">true</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">toggle</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  awesome.<span class="property">value</span> = !awesome.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;toggle&quot;</span>&gt;</span>Toggle<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
