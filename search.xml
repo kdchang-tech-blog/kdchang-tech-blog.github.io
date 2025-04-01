@@ -389,6 +389,57 @@
       </tags>
   </entry>
   <entry>
+    <title>Flexbox 網頁排版技巧入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/14/learning-notes-css-flexbox-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h2><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
+<h3 id="1-1-為何使用-Flexbox？"><a href="#1-1-為何使用-Flexbox？" class="headerlink" title="1.1 為何使用 Flexbox？"></a>1.1 為何使用 Flexbox？</h3><ul>
+<li><strong>彈性調整</strong>：元素可根據可用空間動態調整大小。</li>
+<li><strong>簡化佈局</strong>：減少對 <code>float</code>、<code>inline-block</code> 及 <code>position</code> 依賴。</li>
+<li><strong>更好的對齊方式</strong>：內建強大的對齊與分佈控制。</li>
+</ul>
+<h2 id="2-Flexbox-基本概念"><a href="#2-Flexbox-基本概念" class="headerlink" title="2. Flexbox 基本概念"></a>2. Flexbox 基本概念</h2><p>Flexbox 佈局的核心概念是 <strong>容器（container）</strong> 和 <strong>子項目（items）</strong>。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一旦對容器使用 <code>display: flex</code>，其內部的子元素將自動變成 Flex 子項目，並受 Flex 佈局影響。</p>
+<h2 id="3-Flex-容器屬性"><a href="#3-Flex-容器屬性" class="headerlink" title="3. Flex 容器屬性"></a>3. Flex 容器屬性</h2><h3 id="3-1-flex-direction"><a href="#3-1-flex-direction" class="headerlink" title="3.1 flex-direction"></a>3.1 <code>flex-direction</code></h3><p>決定主軸（main axis）方向。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row; <span class="comment">/* 預設值，水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse; <span class="comment">/* 反向水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column; <span class="comment">/* 垂直排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse; <span class="comment">/* 反向垂直排列 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-justify-content"><a href="#3-2-justify-content" class="headerlink" title="3.2 justify-content"></a>3.2 <code>justify-content</code></h3><p>控制子項目在主軸上的對齊方式。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start; <span class="comment">/* 預設，從左到右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end; <span class="comment">/* 靠右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: center; <span class="comment">/* 置中排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-between; <span class="comment">/* 兩端對齊，間距平均分布 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-around; <span class="comment">/* 子項目兩側有相等的間距 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-evenly; <span class="comment">/* 所有間距均等 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-align-items"><a href="#3-3-align-items" class="headerlink" title="3.3 align-items"></a>3.3 <code>align-items</code></h3><p>控制子項目在交叉軸（cross axis）上的對齊方式。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start; <span class="comment">/* 靠起始位置對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: flex-end; <span class="comment">/* 靠末端對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: center; <span class="comment">/* 垂直置中對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: stretch; <span class="comment">/* 預設，撐滿高度 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: baseline; <span class="comment">/* 依據文本基線對齊 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-align-content"><a href="#3-4-align-content" class="headerlink" title="3.4 align-content"></a>3.4 <code>align-content</code></h3><p>適用於多行佈局，控制多行之間的間距。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-end;</span><br><span class="line">  <span class="attribute">align-content</span>: center;</span><br><span class="line">  <span class="attribute">align-content</span>: space-between;</span><br><span class="line">  <span class="attribute">align-content</span>: space-around;</span><br><span class="line">  <span class="attribute">align-content</span>: space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-Flex-子項目屬性"><a href="#4-Flex-子項目屬性" class="headerlink" title="4. Flex 子項目屬性"></a>4. Flex 子項目屬性</h2><h3 id="4-1-flex-grow"><a href="#4-1-flex-grow" class="headerlink" title="4.1 flex-grow"></a>4.1 <code>flex-grow</code></h3><p>設定子項目如何分配多餘空間。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-grow</span>: <span class="number">1</span>; <span class="comment">/* 所有子項目平均分配空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-flex-shrink"><a href="#4-2-flex-shrink" class="headerlink" title="4.2 flex-shrink"></a>4.2 <code>flex-shrink</code></h3><p>控制子項目如何縮小。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-shrink</span>: <span class="number">0</span>; <span class="comment">/* 防止縮小 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-flex-basis"><a href="#4-3-flex-basis" class="headerlink" title="4.3 flex-basis"></a>4.3 <code>flex-basis</code></h3><p>設定子項目的初始大小。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-basis</span>: <span class="number">200px</span>; <span class="comment">/* 設定初始寬度或高度 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-4-flex"><a href="#4-4-flex" class="headerlink" title="4.4 flex"></a>4.4 <code>flex</code></h3><p>綜合 <code>flex-grow</code>、<code>flex-shrink</code> 和 <code>flex-basis</code>。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span> <span class="number">1</span> <span class="number">100px</span>; <span class="comment">/* grow, shrink, basis */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-Flexbox-常見佈局範例"><a href="#5-Flexbox-常見佈局範例" class="headerlink" title="5. Flexbox 常見佈局範例"></a>5. Flexbox 常見佈局範例</h2><h3 id="5-1-水平置中"><a href="#5-1-水平置中" class="headerlink" title="5.1 水平置中"></a>5.1 水平置中</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-等寬三欄佈局"><a href="#5-2-等寬三欄佈局" class="headerlink" title="5.2 等寬三欄佈局"></a>5.2 等寬三欄佈局</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-兩欄固定-自適應"><a href="#5-3-兩欄固定-自適應" class="headerlink" title="5.3 兩欄固定 + 自適應"></a>5.3 兩欄固定 + 自適應</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">200px</span>; <span class="comment">/* 固定 200px */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>; <span class="comment">/* 佔滿剩餘空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-結論"><a href="#6-結論" class="headerlink" title="6. 結論"></a>6. 結論</h2><p>Flexbox 是一種強大且直觀的 CSS 佈局方式，能夠解決傳統排版難題，使開發者能夠輕鬆實現響應式佈局與對齊方式。本篇筆記介紹了 Flexbox 的基本屬性及常見佈局範例，進一步學習可以研究 CSS Grid 和更進階的排版技巧。</p>
+]]></content>
+      <tags>
+        <tag>Flexbox</tag>
+        <tag>css</tag>
+        <tag>排版</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Flexbox Froggy 入門教學筆記 | 學習筆記</title>
     <url>/2024/07/10/learning-notes-css-flexbox-froggy-tutorial/</url>
     <content><![CDATA[<h1 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h1><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
@@ -500,59 +551,8 @@
 ]]></content>
       <tags>
         <tag>CSS</tag>
+        <tag>Flexbox</tag>
         <tag>Flexbox Froggy</tag>
-        <tag>Flexbox</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Flexbox 網頁排版技巧入門教學筆記 | 學習筆記</title>
-    <url>/2024/11/14/learning-notes-css-flexbox-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h2><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
-<h3 id="1-1-為何使用-Flexbox？"><a href="#1-1-為何使用-Flexbox？" class="headerlink" title="1.1 為何使用 Flexbox？"></a>1.1 為何使用 Flexbox？</h3><ul>
-<li><strong>彈性調整</strong>：元素可根據可用空間動態調整大小。</li>
-<li><strong>簡化佈局</strong>：減少對 <code>float</code>、<code>inline-block</code> 及 <code>position</code> 依賴。</li>
-<li><strong>更好的對齊方式</strong>：內建強大的對齊與分佈控制。</li>
-</ul>
-<h2 id="2-Flexbox-基本概念"><a href="#2-Flexbox-基本概念" class="headerlink" title="2. Flexbox 基本概念"></a>2. Flexbox 基本概念</h2><p>Flexbox 佈局的核心概念是 <strong>容器（container）</strong> 和 <strong>子項目（items）</strong>。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>一旦對容器使用 <code>display: flex</code>，其內部的子元素將自動變成 Flex 子項目，並受 Flex 佈局影響。</p>
-<h2 id="3-Flex-容器屬性"><a href="#3-Flex-容器屬性" class="headerlink" title="3. Flex 容器屬性"></a>3. Flex 容器屬性</h2><h3 id="3-1-flex-direction"><a href="#3-1-flex-direction" class="headerlink" title="3.1 flex-direction"></a>3.1 <code>flex-direction</code></h3><p>決定主軸（main axis）方向。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row; <span class="comment">/* 預設值，水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse; <span class="comment">/* 反向水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column; <span class="comment">/* 垂直排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse; <span class="comment">/* 反向垂直排列 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-justify-content"><a href="#3-2-justify-content" class="headerlink" title="3.2 justify-content"></a>3.2 <code>justify-content</code></h3><p>控制子項目在主軸上的對齊方式。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start; <span class="comment">/* 預設，從左到右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end; <span class="comment">/* 靠右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: center; <span class="comment">/* 置中排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-between; <span class="comment">/* 兩端對齊，間距平均分布 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-around; <span class="comment">/* 子項目兩側有相等的間距 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-evenly; <span class="comment">/* 所有間距均等 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-align-items"><a href="#3-3-align-items" class="headerlink" title="3.3 align-items"></a>3.3 <code>align-items</code></h3><p>控制子項目在交叉軸（cross axis）上的對齊方式。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start; <span class="comment">/* 靠起始位置對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: flex-end; <span class="comment">/* 靠末端對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: center; <span class="comment">/* 垂直置中對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: stretch; <span class="comment">/* 預設，撐滿高度 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: baseline; <span class="comment">/* 依據文本基線對齊 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-4-align-content"><a href="#3-4-align-content" class="headerlink" title="3.4 align-content"></a>3.4 <code>align-content</code></h3><p>適用於多行佈局，控制多行之間的間距。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-end;</span><br><span class="line">  <span class="attribute">align-content</span>: center;</span><br><span class="line">  <span class="attribute">align-content</span>: space-between;</span><br><span class="line">  <span class="attribute">align-content</span>: space-around;</span><br><span class="line">  <span class="attribute">align-content</span>: space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-Flex-子項目屬性"><a href="#4-Flex-子項目屬性" class="headerlink" title="4. Flex 子項目屬性"></a>4. Flex 子項目屬性</h2><h3 id="4-1-flex-grow"><a href="#4-1-flex-grow" class="headerlink" title="4.1 flex-grow"></a>4.1 <code>flex-grow</code></h3><p>設定子項目如何分配多餘空間。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-grow</span>: <span class="number">1</span>; <span class="comment">/* 所有子項目平均分配空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-flex-shrink"><a href="#4-2-flex-shrink" class="headerlink" title="4.2 flex-shrink"></a>4.2 <code>flex-shrink</code></h3><p>控制子項目如何縮小。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-shrink</span>: <span class="number">0</span>; <span class="comment">/* 防止縮小 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-3-flex-basis"><a href="#4-3-flex-basis" class="headerlink" title="4.3 flex-basis"></a>4.3 <code>flex-basis</code></h3><p>設定子項目的初始大小。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-basis</span>: <span class="number">200px</span>; <span class="comment">/* 設定初始寬度或高度 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-4-flex"><a href="#4-4-flex" class="headerlink" title="4.4 flex"></a>4.4 <code>flex</code></h3><p>綜合 <code>flex-grow</code>、<code>flex-shrink</code> 和 <code>flex-basis</code>。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span> <span class="number">1</span> <span class="number">100px</span>; <span class="comment">/* grow, shrink, basis */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-Flexbox-常見佈局範例"><a href="#5-Flexbox-常見佈局範例" class="headerlink" title="5. Flexbox 常見佈局範例"></a>5. Flexbox 常見佈局範例</h2><h3 id="5-1-水平置中"><a href="#5-1-水平置中" class="headerlink" title="5.1 水平置中"></a>5.1 水平置中</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-2-等寬三欄佈局"><a href="#5-2-等寬三欄佈局" class="headerlink" title="5.2 等寬三欄佈局"></a>5.2 等寬三欄佈局</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-3-兩欄固定-自適應"><a href="#5-3-兩欄固定-自適應" class="headerlink" title="5.3 兩欄固定 + 自適應"></a>5.3 兩欄固定 + 自適應</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">200px</span>; <span class="comment">/* 固定 200px */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>; <span class="comment">/* 佔滿剩餘空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-結論"><a href="#6-結論" class="headerlink" title="6. 結論"></a>6. 結論</h2><p>Flexbox 是一種強大且直觀的 CSS 佈局方式，能夠解決傳統排版難題，使開發者能夠輕鬆實現響應式佈局與對齊方式。本篇筆記介紹了 Flexbox 的基本屬性及常見佈局範例，進一步學習可以研究 CSS Grid 和更進階的排版技巧。</p>
-]]></content>
-      <tags>
-        <tag>Flexbox</tag>
-        <tag>css</tag>
-        <tag>排版</tag>
       </tags>
   </entry>
   <entry>
@@ -703,63 +703,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Grid 網頁排版技巧入門教學筆記 | 學習筆記</title>
-    <url>/2024/11/15/learning-notes-css-grid-intro-tutorial/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在現今網頁設計中，排版的結構與呈現方式對於用戶體驗至關重要。隨著網頁設計的演進，CSS <code>Grid</code> 成為了最強大且靈活的排版工具之一。透過 CSS Grid，你可以輕鬆創建複雜的佈局，並且適應不同設備的需求。本文將介紹 CSS Grid 的基本概念與使用技巧，幫助你迅速掌握如何在網頁設計中使用 Grid。</p>
-<h4 id="1-什麼是-CSS-Grid？"><a href="#1-什麼是-CSS-Grid？" class="headerlink" title="1. 什麼是 CSS Grid？"></a>1. 什麼是 CSS Grid？</h4><p>CSS Grid Layout（簡稱 Grid）是 CSS3 的一個強大功能，允許開發者以列和行的方式來設計網頁佈局。它使得網頁設計更加直觀和靈活，不再需要依賴浮動（float）或定位（position）等老舊技巧，簡化了許多複雜的布局問題。</p>
-<p>Grid 是由「<code>容器</code>」和「<code>項目</code>」兩部分組成。容器定義了網格的結構，而項目則是容器內部的元素。你可以在容器內輕鬆地將項目放置在指定的網格區域中，從而創建各種排版樣式。</p>
-<h4 id="2-CSS-Grid-的基本語法"><a href="#2-CSS-Grid-的基本語法" class="headerlink" title="2. CSS Grid 的基本語法"></a>2. CSS Grid 的基本語法</h4><p>在使用 CSS Grid 時，首先需要定義一個容器元素並啟用 Grid 布局。這樣，容器內的子元素將成為 Grid 項目。以下是基本的設置步驟：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: auto;</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>display: grid;</code> 啟用容器的 Grid 布局。</li>
-<li><code>grid-template-columns: repeat(3, 1fr);</code> 設定三列，每列的寬度為等比例（<code>1fr</code>）。<code>1fr</code> 代表容器寬度的 1&#x2F;3。</li>
-<li><code>grid-template-rows: auto;</code> 使得行的高度根據內容自動調整。</li>
-<li><code>gap: 10px;</code> 定義網格項目之間的間距。</li>
-</ul>
-<h4 id="3-定義-Grid-容器的列和行"><a href="#3-定義-Grid-容器的列和行" class="headerlink" title="3. 定義 Grid 容器的列和行"></a>3. 定義 Grid 容器的列和行</h4><p>你可以使用 <code>grid-template-columns</code> 和 <code>grid-template-rows</code> 來設置容器內列和行的數量、大小及比例。</p>
-<h5 id="定義列"><a href="#定義列" class="headerlink" title="定義列"></a>定義列</h5><p>例如，若想創建四列的佈局，可以這樣寫：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> <span class="number">300px</span> <span class="number">400px</span> <span class="number">1</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這裡，我們設置了四列的寬度，前三列有固定的像素寬度，最後一列使用 <code>1fr</code>，即佔據剩餘的可用空間。</p>
-<h5 id="定義行"><a href="#定義行" class="headerlink" title="定義行"></a>定義行</h5><p>類似地，你可以設置行的大小。若要讓每一行的高度根據內容自動調整，可以使用：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">100px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這表示網格容器有兩行，第一行的高度固定為 100px，第二行的高度將根據內容自動調整。</p>
-<h4 id="4-放置-Grid-項目"><a href="#4-放置-Grid-項目" class="headerlink" title="4. 放置 Grid 項目"></a>4. 放置 Grid 項目</h4><p>Grid 容器的子元素會自動成為 Grid 項目。你可以使用 <code>grid-column</code> 和 <code>grid-row</code> 屬性來指定某個項目占據的列與行。</p>
-<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span> / <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這表示 <code>.item1</code> 元素會從第 1 列跨越到第 3 列，占據第一行。</p>
-<ul>
-<li><code>grid-column: 1 / 3;</code> 表示該元素會從第 1 列起，跨越兩列，直到第 3 列結束。</li>
-<li><code>grid-row: 1;</code> 表示該元素位於第 1 行。</li>
-</ul>
-<h4 id="5-使用-fr-單位設置比例"><a href="#5-使用-fr-單位設置比例" class="headerlink" title="5. 使用 fr 單位設置比例"></a>5. 使用 <code>fr</code> 單位設置比例</h4><p>CSS Grid 中最重要的單位之一是 <code>fr</code>（fraction，分數），它讓你可以設定元素在可用空間中所佔比例。</p>
-<p>假設你有三列，且希望第一列占 1 部分，第二列占 2 部分，第三列占 3 部分：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr <span class="number">3</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這樣會將總寬度分成六等份，其中第一列占 1 份，第二列占 2 份，第三列占 3 份。這樣的佈局適合於動態響應式設計。</p>
-<h4 id="6-設置間距"><a href="#6-設置間距" class="headerlink" title="6. 設置間距"></a>6. 設置間距</h4><p>除了 <code>gap</code> 屬性，你還可以為列與行的間距分別設置不同的值：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span> <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這裡，<code>gap: 10px 20px;</code> 的第一個數值設定了行之間的間距為 10px，第二個數值設定了列之間的間距為 20px。</p>
-<h4 id="7-嵌套-Grid"><a href="#7-嵌套-Grid" class="headerlink" title="7. 嵌套 Grid"></a>7. 嵌套 Grid</h4><p>Grid 允許你在網格項目內再次使用 Grid 佈局，這樣可以創建更複雜的排版結構。例如，假設你在某個項目內再創建一個小的網格：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在這個範例中，<code>.item1</code> 是一個 Grid 項目，它內部再次使用 Grid 排版，定義兩列，其中第一列占據 1 部分，第二列占據 2 部分。</p>
-<h4 id="8-響應式設計"><a href="#8-響應式設計" class="headerlink" title="8. 響應式設計"></a>8. 響應式設計</h4><p>Grid 讓你輕鬆應對不同設備的佈局需求。你可以使用媒體查詢來調整 Grid 排版。例如：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">4</span>, <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">2</span>, <span class="number">1</span>fr);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">480px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這段程式碼會根據螢幕寬度變化調整容器的列數：在寬度大於 768px 時顯示四列，在寬度小於 768px 時顯示兩列，在寬度小於 480px 時顯示單列。</p>
-<h4 id="9-小結"><a href="#9-小結" class="headerlink" title="9. 小結"></a>9. 小結</h4><p>CSS Grid 為現代網頁設計提供了一個簡單、強大且靈活的排版解決方案。它不僅能夠解決過去使用浮動或定位方法無法達成的複雜佈局，還能輕鬆適應響應式設計的需求。掌握 CSS Grid，你將能夠更高效地創建現代化的網頁佈局，提升設計的精確度與可維護性。希望本文的介紹能幫助你快速入門並將這項技術應用到你的項目中。</p>
-]]></content>
-      <tags>
-        <tag>Grid</tag>
-        <tag>css</tag>
-        <tag>排版</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Grid Garden 入門教學筆記 | 學習筆記</title>
     <url>/2024/07/10/learning-notes-css-grid-garden-tutorial/</url>
     <content><![CDATA[<h1 id="1-Grid-簡介"><a href="#1-Grid-簡介" class="headerlink" title="1. Grid 簡介"></a>1. Grid 簡介</h1><p><code>Grid</code>（Grid Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
@@ -878,6 +821,63 @@
         <tag>Grid Garden</tag>
         <tag>Grid</tag>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Grid 網頁排版技巧入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/15/learning-notes-css-grid-intro-tutorial/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在現今網頁設計中，排版的結構與呈現方式對於用戶體驗至關重要。隨著網頁設計的演進，CSS <code>Grid</code> 成為了最強大且靈活的排版工具之一。透過 CSS Grid，你可以輕鬆創建複雜的佈局，並且適應不同設備的需求。本文將介紹 CSS Grid 的基本概念與使用技巧，幫助你迅速掌握如何在網頁設計中使用 Grid。</p>
+<h4 id="1-什麼是-CSS-Grid？"><a href="#1-什麼是-CSS-Grid？" class="headerlink" title="1. 什麼是 CSS Grid？"></a>1. 什麼是 CSS Grid？</h4><p>CSS Grid Layout（簡稱 Grid）是 CSS3 的一個強大功能，允許開發者以列和行的方式來設計網頁佈局。它使得網頁設計更加直觀和靈活，不再需要依賴浮動（float）或定位（position）等老舊技巧，簡化了許多複雜的布局問題。</p>
+<p>Grid 是由「<code>容器</code>」和「<code>項目</code>」兩部分組成。容器定義了網格的結構，而項目則是容器內部的元素。你可以在容器內輕鬆地將項目放置在指定的網格區域中，從而創建各種排版樣式。</p>
+<h4 id="2-CSS-Grid-的基本語法"><a href="#2-CSS-Grid-的基本語法" class="headerlink" title="2. CSS Grid 的基本語法"></a>2. CSS Grid 的基本語法</h4><p>在使用 CSS Grid 時，首先需要定義一個容器元素並啟用 Grid 布局。這樣，容器內的子元素將成為 Grid 項目。以下是基本的設置步驟：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: auto;</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>display: grid;</code> 啟用容器的 Grid 布局。</li>
+<li><code>grid-template-columns: repeat(3, 1fr);</code> 設定三列，每列的寬度為等比例（<code>1fr</code>）。<code>1fr</code> 代表容器寬度的 1&#x2F;3。</li>
+<li><code>grid-template-rows: auto;</code> 使得行的高度根據內容自動調整。</li>
+<li><code>gap: 10px;</code> 定義網格項目之間的間距。</li>
+</ul>
+<h4 id="3-定義-Grid-容器的列和行"><a href="#3-定義-Grid-容器的列和行" class="headerlink" title="3. 定義 Grid 容器的列和行"></a>3. 定義 Grid 容器的列和行</h4><p>你可以使用 <code>grid-template-columns</code> 和 <code>grid-template-rows</code> 來設置容器內列和行的數量、大小及比例。</p>
+<h5 id="定義列"><a href="#定義列" class="headerlink" title="定義列"></a>定義列</h5><p>例如，若想創建四列的佈局，可以這樣寫：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> <span class="number">300px</span> <span class="number">400px</span> <span class="number">1</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這裡，我們設置了四列的寬度，前三列有固定的像素寬度，最後一列使用 <code>1fr</code>，即佔據剩餘的可用空間。</p>
+<h5 id="定義行"><a href="#定義行" class="headerlink" title="定義行"></a>定義行</h5><p>類似地，你可以設置行的大小。若要讓每一行的高度根據內容自動調整，可以使用：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">100px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這表示網格容器有兩行，第一行的高度固定為 100px，第二行的高度將根據內容自動調整。</p>
+<h4 id="4-放置-Grid-項目"><a href="#4-放置-Grid-項目" class="headerlink" title="4. 放置 Grid 項目"></a>4. 放置 Grid 項目</h4><p>Grid 容器的子元素會自動成為 Grid 項目。你可以使用 <code>grid-column</code> 和 <code>grid-row</code> 屬性來指定某個項目占據的列與行。</p>
+<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span> / <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這表示 <code>.item1</code> 元素會從第 1 列跨越到第 3 列，占據第一行。</p>
+<ul>
+<li><code>grid-column: 1 / 3;</code> 表示該元素會從第 1 列起，跨越兩列，直到第 3 列結束。</li>
+<li><code>grid-row: 1;</code> 表示該元素位於第 1 行。</li>
+</ul>
+<h4 id="5-使用-fr-單位設置比例"><a href="#5-使用-fr-單位設置比例" class="headerlink" title="5. 使用 fr 單位設置比例"></a>5. 使用 <code>fr</code> 單位設置比例</h4><p>CSS Grid 中最重要的單位之一是 <code>fr</code>（fraction，分數），它讓你可以設定元素在可用空間中所佔比例。</p>
+<p>假設你有三列，且希望第一列占 1 部分，第二列占 2 部分，第三列占 3 部分：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr <span class="number">3</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣會將總寬度分成六等份，其中第一列占 1 份，第二列占 2 份，第三列占 3 份。這樣的佈局適合於動態響應式設計。</p>
+<h4 id="6-設置間距"><a href="#6-設置間距" class="headerlink" title="6. 設置間距"></a>6. 設置間距</h4><p>除了 <code>gap</code> 屬性，你還可以為列與行的間距分別設置不同的值：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span> <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這裡，<code>gap: 10px 20px;</code> 的第一個數值設定了行之間的間距為 10px，第二個數值設定了列之間的間距為 20px。</p>
+<h4 id="7-嵌套-Grid"><a href="#7-嵌套-Grid" class="headerlink" title="7. 嵌套 Grid"></a>7. 嵌套 Grid</h4><p>Grid 允許你在網格項目內再次使用 Grid 佈局，這樣可以創建更複雜的排版結構。例如，假設你在某個項目內再創建一個小的網格：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在這個範例中，<code>.item1</code> 是一個 Grid 項目，它內部再次使用 Grid 排版，定義兩列，其中第一列占據 1 部分，第二列占據 2 部分。</p>
+<h4 id="8-響應式設計"><a href="#8-響應式設計" class="headerlink" title="8. 響應式設計"></a>8. 響應式設計</h4><p>Grid 讓你輕鬆應對不同設備的佈局需求。你可以使用媒體查詢來調整 Grid 排版。例如：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">4</span>, <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">2</span>, <span class="number">1</span>fr);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">480px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼會根據螢幕寬度變化調整容器的列數：在寬度大於 768px 時顯示四列，在寬度小於 768px 時顯示兩列，在寬度小於 480px 時顯示單列。</p>
+<h4 id="9-小結"><a href="#9-小結" class="headerlink" title="9. 小結"></a>9. 小結</h4><p>CSS Grid 為現代網頁設計提供了一個簡單、強大且靈活的排版解決方案。它不僅能夠解決過去使用浮動或定位方法無法達成的複雜佈局，還能輕鬆適應響應式設計的需求。掌握 CSS Grid，你將能夠更高效地創建現代化的網頁佈局，提升設計的精確度與可維護性。希望本文的介紹能幫助你快速入門並將這項技術應用到你的項目中。</p>
+]]></content>
+      <tags>
+        <tag>Grid</tag>
+        <tag>css</tag>
+        <tag>排版</tag>
       </tags>
   </entry>
   <entry>
@@ -1041,72 +1041,6 @@
       </tags>
   </entry>
   <entry>
-    <title>CSS Stacking Context 入門教學筆記 | 學習筆記</title>
-    <url>/2021/12/14/learning-notes-css-stacking-context-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在網頁開發中，當多個 HTML 元素重疊時，決定它們顯示順序的機制稱為 <strong>Stacking Context（堆疊上下文）</strong>。這是一個重要概念，影響 <code>z-index</code> 的行為，並決定元素在畫面上的排列順序。</p>
-<hr>
-<h2 id="1-什麼是-Stacking-Context"><a href="#1-什麼是-Stacking-Context" class="headerlink" title="1. 什麼是 Stacking Context"></a><strong>1. 什麼是 Stacking Context</strong></h2><p><strong>Stacking Context</strong> 是一個獨立的層級空間，內部的元素會依照特定規則進行排序，但不會影響外部的層級。當一個元素建立了 Stacking Context，裡面的元素只會與其內部其他元素比較 <code>z-index</code>，而不會與外部的 <code>z-index</code> 直接互動。</p>
-<hr>
-<h2 id="2-Stacking-Context-的建立方式"><a href="#2-Stacking-Context-的建立方式" class="headerlink" title="2. Stacking Context 的建立方式"></a><strong>2. Stacking Context 的建立方式</strong></h2><p>某些 CSS 屬性和條件會觸發 Stacking Context 的建立，以下是常見的觸發方式：</p>
-<h3 id="2-1-根元素-lt-html-gt"><a href="#2-1-根元素-lt-html-gt" class="headerlink" title="2.1 根元素 (&lt;html&gt;)"></a><strong>2.1 根元素 (<code>&lt;html&gt;</code>)</strong></h3><p>HTML 的根元素 (<code>&lt;html&gt;</code>) 本身是一個 Stacking Context，所有的元素都在這個上下文中運作。</p>
-<h3 id="2-2-z-index-非-auto-並且-position-為-relative、absolute-或-fixed"><a href="#2-2-z-index-非-auto-並且-position-為-relative、absolute-或-fixed" class="headerlink" title="2.2 z-index 非 auto 並且 position 為 relative、absolute 或 fixed"></a><strong>2.2 <code>z-index</code> 非 <code>auto</code> 並且 <code>position</code> 為 <code>relative</code>、<code>absolute</code> 或 <code>fixed</code></strong></h3><p>當 <code>position</code> 為 <code>relative</code>、<code>absolute</code> 或 <code>fixed</code>，且 <code>z-index</code> 設定為非 <code>auto</code> 時，該元素會創建新的 Stacking Context。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">10</span>; <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-3-opacity-小於-1"><a href="#2-3-opacity-小於-1" class="headerlink" title="2.3 opacity 小於 1"></a><strong>2.3 <code>opacity</code> 小於 1</strong></h3><p>任何 <code>opacity</code> 設定小於 <code>1</code>（但大於 <code>0</code>）的元素都會建立新的 Stacking Context。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.transparent-box</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0.9</span>; <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-4-transform、filter、clip-path、perspective-不為-none"><a href="#2-4-transform、filter、clip-path、perspective-不為-none" class="headerlink" title="2.4 transform、filter、clip-path、perspective 不為 none"></a><strong>2.4 <code>transform</code>、<code>filter</code>、<code>clip-path</code>、<code>perspective</code> 不為 <code>none</code></strong></h3><p>只要元素應用了 <code>transform</code>（例如 <code>scale</code>、<code>rotate</code>）、<code>filter</code> 或 <code>clip-path</code>，它就會建立新的 Stacking Context。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.transformed-box</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">50px</span>); <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-5-will-change-設定特定值"><a href="#2-5-will-change-設定特定值" class="headerlink" title="2.5 will-change 設定特定值"></a><strong>2.5 <code>will-change</code> 設定特定值</strong></h3><p>如果 <code>will-change</code> 被設定為 <code>transform</code>、<code>opacity</code>、<code>filter</code> 這類的屬性，該元素會創建新的 Stacking Context。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.optimized-box</span> &#123;</span><br><span class="line">    <span class="attribute">will-change</span>: transform; <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="3-Stacking-Context-的影響"><a href="#3-Stacking-Context-的影響" class="headerlink" title="3. Stacking Context 的影響"></a><strong>3. Stacking Context 的影響</strong></h2><h3 id="3-1-z-index-影響範圍"><a href="#3-1-z-index-影響範圍" class="headerlink" title="3.1 z-index 影響範圍"></a><strong>3.1 <code>z-index</code> 影響範圍</strong></h3><p>如果某個元素在新的 Stacking Context 中，即使它的 <code>z-index</code> 設定得很高，也不會超過它所在的 Stacking Context。這意味著：</p>
-<ul>
-<li>內部 <code>z-index</code> 的值 <strong>只在該 Stacking Context 內比較</strong>。</li>
-<li>外部的元素如果 <code>z-index</code> 更高，仍然可能覆蓋內部 Stacking Context 內的元素。</li>
-</ul>
-<h3 id="範例：z-index-失效的情境"><a href="#範例：z-index-失效的情境" class="headerlink" title="範例：z-index 失效的情境"></a><strong>範例：z-index 失效的情境</strong></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;parent&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;child&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;outside&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">10</span>; <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">9999</span>; <span class="comment">/* 只在 .parent 內生效 */</span></span><br><span class="line">    <span class="attribute">background</span>: red;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.outside</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">20</span>;</span><br><span class="line">    <span class="attribute">background</span>: blue;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>結果：</strong></p>
-<ul>
-<li><code>.child</code> 的 <code>z-index: 9999</code> 只在 <code>.parent</code> 內生效。</li>
-<li><code>.outside</code> 的 <code>z-index: 20</code> 屬於 <code>html</code> 根 Stacking Context，所以 <code>.outside</code> 會蓋住 <code>.child</code>。</li>
-</ul>
-<hr>
-<h2 id="4-如何-Debug-Stacking-Context"><a href="#4-如何-Debug-Stacking-Context" class="headerlink" title="4. 如何 Debug Stacking Context"></a><strong>4. 如何 Debug Stacking Context</strong></h2><p>當 <code>z-index</code> 沒有如預期運作時，可以用以下方式檢查：</p>
-<h3 id="4-1-使用開發者工具"><a href="#4-1-使用開發者工具" class="headerlink" title="4.1 使用開發者工具"></a><strong>4.1 使用開發者工具</strong></h3><ul>
-<li>在 <strong>Chrome 開發者工具</strong>（F12）內，檢查 <code>z-index</code> 的層級。</li>
-<li>在「Elements」面板檢查 <code>z-index</code> 及是否有 <code>opacity</code>、<code>transform</code> 等影響屬性。</li>
-</ul>
-<h3 id="4-2-確保-Stacking-Context"><a href="#4-2-確保-Stacking-Context" class="headerlink" title="4.2 確保 Stacking Context"></a><strong>4.2 確保 Stacking Context</strong></h3><p>如果發現 <code>z-index</code> 設定沒有影響，可以：</p>
-<ol>
-<li>確認父元素是否創建了新的 Stacking Context。</li>
-<li>嘗試移除 <code>transform</code>、<code>opacity</code> 或 <code>filter</code>，看看是否影響 <code>z-index</code>。</li>
-</ol>
-<hr>
-<h2 id="5-Stacking-Context-的應用場景"><a href="#5-Stacking-Context-的應用場景" class="headerlink" title="5. Stacking Context 的應用場景"></a><strong>5. Stacking Context 的應用場景</strong></h2><h3 id="5-1-固定導覽列與內容遮罩"><a href="#5-1-固定導覽列與內容遮罩" class="headerlink" title="5.1 固定導覽列與內容遮罩"></a><strong>5.1 固定導覽列與內容遮罩</strong></h3><p>當 <code>position: fixed</code> 的導覽列無法覆蓋其他元素時，可以確保它擁有較高 <code>z-index</code>，並避免它被無意創建的 Stacking Context 影響。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.navbar</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">background</span>: black;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">1000</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-2-Modal（模態視窗）"><a href="#5-2-Modal（模態視窗）" class="headerlink" title="5.2 Modal（模態視窗）"></a><strong>5.2 Modal（模態視窗）</strong></h3><p>確保 <code>modal</code> 的 <code>z-index</code> 高於其他元素，並避免 <code>opacity</code> 或 <code>transform</code> 影響 <code>z-index</code>。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.modal</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">2000</span>;</span><br><span class="line">    <span class="attribute">background</span>: white;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">4px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.3</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a><strong>6. 總結</strong></h2><ul>
-<li><strong>Stacking Context</strong> 影響 <code>z-index</code> 的作用範圍，讓 <code>z-index</code> 不總是依照數值大小決定順序。</li>
-<li>多種 CSS 屬性（如 <code>opacity</code>、<code>transform</code>）會創建 Stacking Context，可能影響層級渲染結果。</li>
-<li><strong>在開發時，應注意哪些元素創建了 Stacking Context，以確保 <code>z-index</code> 如預期運作</strong>。</li>
-</ul>
-<p>透過以上概念與技巧，可以更靈活地管理 HTML 元素的層級關係，確保視覺效果正確。</p>
-]]></content>
-      <tags>
-        <tag>css</tag>
-        <tag>stylesheet</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS transform 入門教學筆記 | 學習筆記</title>
     <url>/2021/12/13/learning-notes-css-transform-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>CSS <code>transform</code> 屬性是一個強大的工具，可以用來對 HTML 元素進行旋轉、縮放、移動及傾斜等變換，而不會影響其他元素的佈局。這使得 <code>transform</code> 非常適合用來建立動畫效果、視覺調整以及 UI 微調。</p>
@@ -1180,6 +1114,72 @@
         <tag>css</tag>
         <tag>html</tag>
         <tag>transform</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS Stacking Context 入門教學筆記 | 學習筆記</title>
+    <url>/2021/12/14/learning-notes-css-stacking-context-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在網頁開發中，當多個 HTML 元素重疊時，決定它們顯示順序的機制稱為 <strong>Stacking Context（堆疊上下文）</strong>。這是一個重要概念，影響 <code>z-index</code> 的行為，並決定元素在畫面上的排列順序。</p>
+<hr>
+<h2 id="1-什麼是-Stacking-Context"><a href="#1-什麼是-Stacking-Context" class="headerlink" title="1. 什麼是 Stacking Context"></a><strong>1. 什麼是 Stacking Context</strong></h2><p><strong>Stacking Context</strong> 是一個獨立的層級空間，內部的元素會依照特定規則進行排序，但不會影響外部的層級。當一個元素建立了 Stacking Context，裡面的元素只會與其內部其他元素比較 <code>z-index</code>，而不會與外部的 <code>z-index</code> 直接互動。</p>
+<hr>
+<h2 id="2-Stacking-Context-的建立方式"><a href="#2-Stacking-Context-的建立方式" class="headerlink" title="2. Stacking Context 的建立方式"></a><strong>2. Stacking Context 的建立方式</strong></h2><p>某些 CSS 屬性和條件會觸發 Stacking Context 的建立，以下是常見的觸發方式：</p>
+<h3 id="2-1-根元素-lt-html-gt"><a href="#2-1-根元素-lt-html-gt" class="headerlink" title="2.1 根元素 (&lt;html&gt;)"></a><strong>2.1 根元素 (<code>&lt;html&gt;</code>)</strong></h3><p>HTML 的根元素 (<code>&lt;html&gt;</code>) 本身是一個 Stacking Context，所有的元素都在這個上下文中運作。</p>
+<h3 id="2-2-z-index-非-auto-並且-position-為-relative、absolute-或-fixed"><a href="#2-2-z-index-非-auto-並且-position-為-relative、absolute-或-fixed" class="headerlink" title="2.2 z-index 非 auto 並且 position 為 relative、absolute 或 fixed"></a><strong>2.2 <code>z-index</code> 非 <code>auto</code> 並且 <code>position</code> 為 <code>relative</code>、<code>absolute</code> 或 <code>fixed</code></strong></h3><p>當 <code>position</code> 為 <code>relative</code>、<code>absolute</code> 或 <code>fixed</code>，且 <code>z-index</code> 設定為非 <code>auto</code> 時，該元素會創建新的 Stacking Context。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">10</span>; <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-opacity-小於-1"><a href="#2-3-opacity-小於-1" class="headerlink" title="2.3 opacity 小於 1"></a><strong>2.3 <code>opacity</code> 小於 1</strong></h3><p>任何 <code>opacity</code> 設定小於 <code>1</code>（但大於 <code>0</code>）的元素都會建立新的 Stacking Context。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.transparent-box</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0.9</span>; <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4-transform、filter、clip-path、perspective-不為-none"><a href="#2-4-transform、filter、clip-path、perspective-不為-none" class="headerlink" title="2.4 transform、filter、clip-path、perspective 不為 none"></a><strong>2.4 <code>transform</code>、<code>filter</code>、<code>clip-path</code>、<code>perspective</code> 不為 <code>none</code></strong></h3><p>只要元素應用了 <code>transform</code>（例如 <code>scale</code>、<code>rotate</code>）、<code>filter</code> 或 <code>clip-path</code>，它就會建立新的 Stacking Context。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.transformed-box</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">50px</span>); <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-5-will-change-設定特定值"><a href="#2-5-will-change-設定特定值" class="headerlink" title="2.5 will-change 設定特定值"></a><strong>2.5 <code>will-change</code> 設定特定值</strong></h3><p>如果 <code>will-change</code> 被設定為 <code>transform</code>、<code>opacity</code>、<code>filter</code> 這類的屬性，該元素會創建新的 Stacking Context。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.optimized-box</span> &#123;</span><br><span class="line">    <span class="attribute">will-change</span>: transform; <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="3-Stacking-Context-的影響"><a href="#3-Stacking-Context-的影響" class="headerlink" title="3. Stacking Context 的影響"></a><strong>3. Stacking Context 的影響</strong></h2><h3 id="3-1-z-index-影響範圍"><a href="#3-1-z-index-影響範圍" class="headerlink" title="3.1 z-index 影響範圍"></a><strong>3.1 <code>z-index</code> 影響範圍</strong></h3><p>如果某個元素在新的 Stacking Context 中，即使它的 <code>z-index</code> 設定得很高，也不會超過它所在的 Stacking Context。這意味著：</p>
+<ul>
+<li>內部 <code>z-index</code> 的值 <strong>只在該 Stacking Context 內比較</strong>。</li>
+<li>外部的元素如果 <code>z-index</code> 更高，仍然可能覆蓋內部 Stacking Context 內的元素。</li>
+</ul>
+<h3 id="範例：z-index-失效的情境"><a href="#範例：z-index-失效的情境" class="headerlink" title="範例：z-index 失效的情境"></a><strong>範例：z-index 失效的情境</strong></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;parent&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;child&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;outside&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">10</span>; <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">9999</span>; <span class="comment">/* 只在 .parent 內生效 */</span></span><br><span class="line">    <span class="attribute">background</span>: red;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.outside</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">20</span>;</span><br><span class="line">    <span class="attribute">background</span>: blue;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>結果：</strong></p>
+<ul>
+<li><code>.child</code> 的 <code>z-index: 9999</code> 只在 <code>.parent</code> 內生效。</li>
+<li><code>.outside</code> 的 <code>z-index: 20</code> 屬於 <code>html</code> 根 Stacking Context，所以 <code>.outside</code> 會蓋住 <code>.child</code>。</li>
+</ul>
+<hr>
+<h2 id="4-如何-Debug-Stacking-Context"><a href="#4-如何-Debug-Stacking-Context" class="headerlink" title="4. 如何 Debug Stacking Context"></a><strong>4. 如何 Debug Stacking Context</strong></h2><p>當 <code>z-index</code> 沒有如預期運作時，可以用以下方式檢查：</p>
+<h3 id="4-1-使用開發者工具"><a href="#4-1-使用開發者工具" class="headerlink" title="4.1 使用開發者工具"></a><strong>4.1 使用開發者工具</strong></h3><ul>
+<li>在 <strong>Chrome 開發者工具</strong>（F12）內，檢查 <code>z-index</code> 的層級。</li>
+<li>在「Elements」面板檢查 <code>z-index</code> 及是否有 <code>opacity</code>、<code>transform</code> 等影響屬性。</li>
+</ul>
+<h3 id="4-2-確保-Stacking-Context"><a href="#4-2-確保-Stacking-Context" class="headerlink" title="4.2 確保 Stacking Context"></a><strong>4.2 確保 Stacking Context</strong></h3><p>如果發現 <code>z-index</code> 設定沒有影響，可以：</p>
+<ol>
+<li>確認父元素是否創建了新的 Stacking Context。</li>
+<li>嘗試移除 <code>transform</code>、<code>opacity</code> 或 <code>filter</code>，看看是否影響 <code>z-index</code>。</li>
+</ol>
+<hr>
+<h2 id="5-Stacking-Context-的應用場景"><a href="#5-Stacking-Context-的應用場景" class="headerlink" title="5. Stacking Context 的應用場景"></a><strong>5. Stacking Context 的應用場景</strong></h2><h3 id="5-1-固定導覽列與內容遮罩"><a href="#5-1-固定導覽列與內容遮罩" class="headerlink" title="5.1 固定導覽列與內容遮罩"></a><strong>5.1 固定導覽列與內容遮罩</strong></h3><p>當 <code>position: fixed</code> 的導覽列無法覆蓋其他元素時，可以確保它擁有較高 <code>z-index</code>，並避免它被無意創建的 Stacking Context 影響。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.navbar</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">background</span>: black;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">1000</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-Modal（模態視窗）"><a href="#5-2-Modal（模態視窗）" class="headerlink" title="5.2 Modal（模態視窗）"></a><strong>5.2 Modal（模態視窗）</strong></h3><p>確保 <code>modal</code> 的 <code>z-index</code> 高於其他元素，並避免 <code>opacity</code> 或 <code>transform</code> 影響 <code>z-index</code>。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.modal</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">2000</span>;</span><br><span class="line">    <span class="attribute">background</span>: white;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">4px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.3</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a><strong>6. 總結</strong></h2><ul>
+<li><strong>Stacking Context</strong> 影響 <code>z-index</code> 的作用範圍，讓 <code>z-index</code> 不總是依照數值大小決定順序。</li>
+<li>多種 CSS 屬性（如 <code>opacity</code>、<code>transform</code>）會創建 Stacking Context，可能影響層級渲染結果。</li>
+<li><strong>在開發時，應注意哪些元素創建了 Stacking Context，以確保 <code>z-index</code> 如預期運作</strong>。</li>
+</ul>
+<p>透過以上概念與技巧，可以更靈活地管理 HTML 元素的層級關係，確保視覺效果正確。</p>
+]]></content>
+      <tags>
+        <tag>css</tag>
+        <tag>stylesheet</tag>
       </tags>
   </entry>
   <entry>
@@ -1470,6 +1470,50 @@
         <tag>ECMAScript</tag>
         <tag>ECMAScript6</tag>
         <tag>ECMAScript2015</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Emotion CSS 入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/30/learning-notes-emotion-css-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="1-Emotion-CSS-簡介"><a href="#1-Emotion-CSS-簡介" class="headerlink" title="1. Emotion CSS 簡介"></a>1. Emotion CSS 簡介</h2><p>Emotion 是一款強大的 CSS-in-JS 解決方案，提供高效能且靈活的樣式管理方式，適用於 React 應用。Emotion 支援兩種主要的使用方式：</p>
+<ol>
+<li><strong>CSS Prop</strong>（使用 JSX 內嵌樣式）</li>
+<li><strong>styled API</strong>（使用 <code>styled</code> 函式創建元件）</li>
+</ol>
+<h2 id="2-安裝-Emotion"><a href="#2-安裝-Emotion" class="headerlink" title="2. 安裝 Emotion"></a>2. 安裝 Emotion</h2><p>使用 npm 或 yarn 安裝 Emotion 核心套件：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install @emotion/react @emotion/styled</span><br></pre></td></tr></table></figure>
+
+<p>如果專案使用 Babel，建議安裝 Emotion 的 Babel 插件來提高效能：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install --save-dev @emotion/babel-plugin</span><br></pre></td></tr></table></figure>
+
+<p>並在 <code>.babelrc</code> 中添加：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;plugins&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;@emotion&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-CSS-Prop-用法"><a href="#3-CSS-Prop-用法" class="headerlink" title="3. CSS Prop 用法"></a>3. CSS Prop 用法</h2><p>CSS Prop 允許你直接在 JSX 中定義 CSS 樣式。</p>
+<h3 id="基本範例"><a href="#基本範例" class="headerlink" title="基本範例"></a>基本範例</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">/** <span class="doctag">@jsxImportSource</span> <span class="doctag">@emotion</span>/react */</span></span><br><span class="line"><span class="keyword">import</span> &#123; css &#125; <span class="keyword">from</span> <span class="string">&#x27;@emotion/react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> style = css`<span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: lightblue;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span></span><br><span class="line"><span class="language-css">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">css</span>=<span class="string">&#123;style&#125;</span>&gt;</span>Hello, Emotion!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="傳遞-props-變更樣式"><a href="#傳遞-props-變更樣式" class="headerlink" title="傳遞 props 變更樣式"></a>傳遞 props 變更樣式</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">dynamicStyle</span> = (<span class="params">color</span>) =&gt; css`<span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: </span><span class="subst">$&#123;color&#125;</span><span class="language-css">;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span></span><br><span class="line"><span class="language-css">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params">&#123; color = <span class="string">&#x27;lightblue&#x27;</span> &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">css</span>=<span class="string">&#123;dynamicStyle(color)&#125;</span>&gt;</span>Dynamic Emotion<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-styled-API-用法"><a href="#4-styled-API-用法" class="headerlink" title="4. styled API 用法"></a>4. styled API 用法</h2><p><code>styled</code> API 讓我們能夠創建具備 CSS 樣式的 React 元件。</p>
+<h3 id="基本範例-1"><a href="#基本範例-1" class="headerlink" title="基本範例"></a>基本範例</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> styled <span class="keyword">from</span> <span class="string">&#x27;@emotion/styled&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Button</span> = styled.<span class="property">button</span><span class="string">`</span></span><br><span class="line"><span class="string">  background-color: #3498db;</span></span><br><span class="line"><span class="string">  color: white;</span></span><br><span class="line"><span class="string">  padding: 10px 20px;</span></span><br><span class="line"><span class="string">  border: none;</span></span><br><span class="line"><span class="string">  border-radius: 5px;</span></span><br><span class="line"><span class="string">  cursor: pointer;</span></span><br><span class="line"><span class="string">  &amp;:hover &#123;</span></span><br><span class="line"><span class="string">    background-color: #2980b9;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Button</span>&gt;</span>Click Me<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="傳遞-props-變更樣式-1"><a href="#傳遞-props-變更樣式-1" class="headerlink" title="傳遞 props 變更樣式"></a>傳遞 props 變更樣式</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Button</span> = styled.<span class="property">button</span><span class="string">`</span></span><br><span class="line"><span class="string">  background-color: <span class="subst">$&#123;(props) =&gt; props.bg || <span class="string">&#x27;#3498db&#x27;</span>&#125;</span>;</span></span><br><span class="line"><span class="string">  color: <span class="subst">$&#123;(props) =&gt; props.color || <span class="string">&#x27;white&#x27;</span>&#125;</span>;</span></span><br><span class="line"><span class="string">  padding: 10px 20px;</span></span><br><span class="line"><span class="string">  border: none;</span></span><br><span class="line"><span class="string">  border-radius: 5px;</span></span><br><span class="line"><span class="string">  cursor: pointer;</span></span><br><span class="line"><span class="string">  &amp;:hover &#123;</span></span><br><span class="line"><span class="string">    background-color: <span class="subst">$&#123;(props) =&gt; (props.bg ? darken(<span class="number">0.1</span>, props.bg) : <span class="string">&#x27;#2980b9&#x27;</span>)&#125;</span>;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Button</span> <span class="attr">bg</span>=<span class="string">&quot;tomato&quot;</span>&gt;</span>Custom Button<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-全域樣式與-Theme"><a href="#5-全域樣式與-Theme" class="headerlink" title="5. 全域樣式與 Theme"></a>5. 全域樣式與 Theme</h2><h3 id="使用-Global-樣式"><a href="#使用-Global-樣式" class="headerlink" title="使用 Global 樣式"></a>使用 Global 樣式</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Global</span>, css &#125; <span class="keyword">from</span> <span class="string">&#x27;@emotion/react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> globalStyles = css`<span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">font-family</span>: Arial, sans-serif;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Global</span> <span class="attr">styles</span>=<span class="string">&#123;globalStyles&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello, Global Emotion!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-Theme"><a href="#使用-Theme" class="headerlink" title="使用 Theme"></a>使用 Theme</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">ThemeProvider</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@emotion/react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> styled <span class="keyword">from</span> <span class="string">&#x27;@emotion/styled&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> theme = &#123;</span><br><span class="line">  <span class="attr">colors</span>: &#123;</span><br><span class="line">    <span class="attr">primary</span>: <span class="string">&#x27;#3498db&#x27;</span>,</span><br><span class="line">    <span class="attr">secondary</span>: <span class="string">&#x27;#2ecc71&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">ThemedButton</span> = styled.<span class="property">button</span><span class="string">`</span></span><br><span class="line"><span class="string">  background-color: <span class="subst">$&#123;(props) =&gt; props.theme.colors.primary&#125;</span>;</span></span><br><span class="line"><span class="string">  color: white;</span></span><br><span class="line"><span class="string">  padding: 10px 20px;</span></span><br><span class="line"><span class="string">  border-radius: 5px;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">ThemeProvider</span> <span class="attr">theme</span>=<span class="string">&#123;theme&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">ThemedButton</span>&gt;</span>Themed Button<span class="tag">&lt;/<span class="name">ThemedButton</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">ThemeProvider</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h2><p>Emotion 是一款靈活且高效的 CSS-in-JS 解決方案，適用於 React 應用。它提供 <code>css</code> prop 以及 <code>styled</code> API 來幫助開發者管理樣式，並支援全域樣式與主題設定。這篇教學筆記涵蓋了基礎概念與常見用法，希望對你的開發過程有所幫助。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>CSS</tag>
+        <tag>Emotion CSS</tag>
+        <tag>styled</tag>
       </tags>
   </entry>
   <entry>
@@ -2468,6 +2512,75 @@
       </tags>
   </entry>
   <entry>
+    <title>JavaScript this 入門教學筆記 | 學習筆記</title>
+    <url>/2021/01/16/learning-notes-javascript-this-intro-tutorial/</url>
+    <content><![CDATA[<p>在 JavaScript 中，<code>this</code> 是一個關鍵字，它的值會根據執行環境的不同而改變。以下是 <code>this</code> 在不同情境下的行為：</p>
+<hr>
+<h2 id="1-全域環境-Global-Context"><a href="#1-全域環境-Global-Context" class="headerlink" title="1. 全域環境 (Global Context)"></a>1. <strong>全域環境 (Global Context)</strong></h2><p>在瀏覽器中，<code>this</code> 預設指向 <code>window</code> 物件：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 在瀏覽器中，this 指向 window</span></span><br></pre></td></tr></table></figure>
+<p>在 Node.js 環境下，<code>this</code> 則指向 <code>global</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 在 Node.js 中，this 指向 global</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="2-函式內部-Function-Context"><a href="#2-函式內部-Function-Context" class="headerlink" title="2. 函式內部 (Function Context)"></a>2. <strong>函式內部 (Function Context)</strong></h2><p>在一般函式中，<code>this</code> 的值取決於是否使用 <code>&quot;use strict&quot;</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">showThis</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">showThis</span>(); <span class="comment">// 在非嚴格模式下，this 指向 window (瀏覽器) 或 global (Node.js)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">showStrictThis</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">showStrictThis</span>(); <span class="comment">// 在嚴格模式下，this 變成 undefined</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="3-物件方法-Object-Method"><a href="#3-物件方法-Object-Method" class="headerlink" title="3. 物件方法 (Object Method)"></a>3. <strong>物件方法 (Object Method)</strong></h2><p>當 <code>this</code> 被用在物件的方法內，它指向該物件：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Alice&quot;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// &quot;Alice&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="4-建構函式-Constructor-Function"><a href="#4-建構函式-Constructor-Function" class="headerlink" title="4. 建構函式 (Constructor Function)"></a>4. <strong>建構函式 (Constructor Function)</strong></h2><p>在建構函式中，<code>this</code> 會指向新建立的物件：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Bob&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p.<span class="property">name</span>); <span class="comment">// &quot;Bob&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-箭頭函式-Arrow-Function"><a href="#5-箭頭函式-Arrow-Function" class="headerlink" title="5. 箭頭函式 (Arrow Function)"></a>5. <strong>箭頭函式 (Arrow Function)</strong></h2><p>箭頭函式中的 <code>this</code> <strong>不會</strong> 指向它自己的執行環境，而是繼承自外層函式的作用域：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Charlie&quot;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">arrowFunc</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">arrowFunc</span>();</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// &quot;Charlie&quot; (this 繼承自 obj)</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="6-setTimeout-和-setInterval"><a href="#6-setTimeout-和-setInterval" class="headerlink" title="6. setTimeout 和 setInterval"></a>6. <strong>setTimeout 和 setInterval</strong></h2><p>在 <code>setTimeout</code> 或 <code>setInterval</code> 內，一般函式的 <code>this</code> 預設指向 <code>window</code> (瀏覽器) 或 <code>global</code> (Node.js)：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;David&quot;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// undefined，因為 this 指向 window/global</span></span><br></pre></td></tr></table></figure>
+<p>解法：改用箭頭函式：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;David&quot;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// &quot;David&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="7-事件處理器-Event-Handler"><a href="#7-事件處理器-Event-Handler" class="headerlink" title="7. 事件處理器 (Event Handler)"></a>7. <strong>事件處理器 (Event Handler)</strong></h2><p>在事件處理函式中，<code>this</code> 指向觸發事件的元素：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 指向 &lt;button&gt; 元素</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>如果改用箭頭函式，<code>this</code> 會指向外部作用域：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 指向 window</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="8-call、apply-和-bind"><a href="#8-call、apply-和-bind" class="headerlink" title="8. call、apply 和 bind"></a>8. <strong>call、apply 和 bind</strong></h2><p>可以使用 <code>call()</code>、<code>apply()</code> 和 <code>bind()</code> 來改變 <code>this</code> 指向：</p>
+<h3 id="call"><a href="#call" class="headerlink" title="call()"></a><strong>call()</strong></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">greet</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> person = &#123; <span class="attr">name</span>: <span class="string">&quot;Eve&quot;</span> &#125;;</span><br><span class="line">greet.<span class="title function_">call</span>(person); <span class="comment">// &quot;Eve&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="apply"><a href="#apply" class="headerlink" title="apply()"></a><strong>apply()</strong></h3><p><code>apply()</code> 與 <code>call()</code> 類似，但參數是以陣列方式傳入：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">introduce</span>(<span class="params">age, city</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> is <span class="subst">$&#123;age&#125;</span> years old and lives in <span class="subst">$&#123;city&#125;</span>.`</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> person = &#123; <span class="attr">name</span>: <span class="string">&quot;Frank&quot;</span> &#125;;</span><br><span class="line">introduce.<span class="title function_">apply</span>(person, [<span class="number">25</span>, <span class="string">&quot;Taipei&quot;</span>]);</span><br></pre></td></tr></table></figure>
+
+<h3 id="bind"><a href="#bind" class="headerlink" title="bind()"></a><strong>bind()</strong></h3><p><code>bind()</code> 會回傳一個新的函式，永久綁定 <code>this</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> boundFunc = greet.<span class="title function_">bind</span>(person);</span><br><span class="line"><span class="title function_">boundFunc</span>(); <span class="comment">// &quot;Eve&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><ul>
+<li><strong>全域環境</strong>：<code>this</code> 在瀏覽器中指向 <code>window</code>，在 Node.js 指向 <code>global</code></li>
+<li><strong>普通函式</strong>：嚴格模式下 <code>this</code> 為 <code>undefined</code>，否則指向 <code>window</code></li>
+<li><strong>物件方法</strong>：<code>this</code> 指向該物件</li>
+<li><strong>建構函式</strong>：<code>this</code> 指向新建立的物件</li>
+<li><strong>箭頭函式</strong>：<code>this</code> 繼承外部作用域</li>
+<li><strong>事件處理器</strong>：普通函式 <code>this</code> 指向事件元素，箭頭函式 <code>this</code> 指向外部作用域</li>
+<li><strong><code>call</code>、<code>apply</code>、<code>bind</code></strong> 可顯式設定 <code>this</code></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>this</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript 物件導向（Object-oriented programming）入門教學筆記 | 學習筆記</title>
     <url>/2021/01/16/learning-notes-javascript-object-oriented-programming-intro-tutorial/</url>
     <content><![CDATA[<h2 id="1-物件導向與-new-關鍵字"><a href="#1-物件導向與-new-關鍵字" class="headerlink" title="1. 物件導向與 new 關鍵字"></a>1. 物件導向與 <code>new</code> 關鍵字</h2><p>JavaScript 是基於 <strong>原型 (Prototype)</strong> 的物件導向語言，而非典型的 <strong>類別 (Class)</strong> 為基礎的語言。但 ES6 之後，JavaScript 引入了 <code>class</code> 語法，使其更接近傳統的物件導向語言，如 Java 或 C++。</p>
@@ -2573,75 +2686,6 @@
         <tag>this</tag>
         <tag>OOP</tag>
         <tag>Object-oriented programming</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaScript this 入門教學筆記 | 學習筆記</title>
-    <url>/2021/01/16/learning-notes-javascript-this-intro-tutorial/</url>
-    <content><![CDATA[<p>在 JavaScript 中，<code>this</code> 是一個關鍵字，它的值會根據執行環境的不同而改變。以下是 <code>this</code> 在不同情境下的行為：</p>
-<hr>
-<h2 id="1-全域環境-Global-Context"><a href="#1-全域環境-Global-Context" class="headerlink" title="1. 全域環境 (Global Context)"></a>1. <strong>全域環境 (Global Context)</strong></h2><p>在瀏覽器中，<code>this</code> 預設指向 <code>window</code> 物件：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 在瀏覽器中，this 指向 window</span></span><br></pre></td></tr></table></figure>
-<p>在 Node.js 環境下，<code>this</code> 則指向 <code>global</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 在 Node.js 中，this 指向 global</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="2-函式內部-Function-Context"><a href="#2-函式內部-Function-Context" class="headerlink" title="2. 函式內部 (Function Context)"></a>2. <strong>函式內部 (Function Context)</strong></h2><p>在一般函式中，<code>this</code> 的值取決於是否使用 <code>&quot;use strict&quot;</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">showThis</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">showThis</span>(); <span class="comment">// 在非嚴格模式下，this 指向 window (瀏覽器) 或 global (Node.js)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">showStrictThis</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">showStrictThis</span>(); <span class="comment">// 在嚴格模式下，this 變成 undefined</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="3-物件方法-Object-Method"><a href="#3-物件方法-Object-Method" class="headerlink" title="3. 物件方法 (Object Method)"></a>3. <strong>物件方法 (Object Method)</strong></h2><p>當 <code>this</code> 被用在物件的方法內，它指向該物件：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Alice&quot;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// &quot;Alice&quot;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="4-建構函式-Constructor-Function"><a href="#4-建構函式-Constructor-Function" class="headerlink" title="4. 建構函式 (Constructor Function)"></a>4. <strong>建構函式 (Constructor Function)</strong></h2><p>在建構函式中，<code>this</code> 會指向新建立的物件：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Bob&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p.<span class="property">name</span>); <span class="comment">// &quot;Bob&quot;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="5-箭頭函式-Arrow-Function"><a href="#5-箭頭函式-Arrow-Function" class="headerlink" title="5. 箭頭函式 (Arrow Function)"></a>5. <strong>箭頭函式 (Arrow Function)</strong></h2><p>箭頭函式中的 <code>this</code> <strong>不會</strong> 指向它自己的執行環境，而是繼承自外層函式的作用域：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Charlie&quot;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">arrowFunc</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">arrowFunc</span>();</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// &quot;Charlie&quot; (this 繼承自 obj)</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="6-setTimeout-和-setInterval"><a href="#6-setTimeout-和-setInterval" class="headerlink" title="6. setTimeout 和 setInterval"></a>6. <strong>setTimeout 和 setInterval</strong></h2><p>在 <code>setTimeout</code> 或 <code>setInterval</code> 內，一般函式的 <code>this</code> 預設指向 <code>window</code> (瀏覽器) 或 <code>global</code> (Node.js)：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;David&quot;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// undefined，因為 this 指向 window/global</span></span><br></pre></td></tr></table></figure>
-<p>解法：改用箭頭函式：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;David&quot;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// &quot;David&quot;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="7-事件處理器-Event-Handler"><a href="#7-事件處理器-Event-Handler" class="headerlink" title="7. 事件處理器 (Event Handler)"></a>7. <strong>事件處理器 (Event Handler)</strong></h2><p>在事件處理函式中，<code>this</code> 指向觸發事件的元素：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 指向 &lt;button&gt; 元素</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>如果改用箭頭函式，<code>this</code> 會指向外部作用域：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 指向 window</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="8-call、apply-和-bind"><a href="#8-call、apply-和-bind" class="headerlink" title="8. call、apply 和 bind"></a>8. <strong>call、apply 和 bind</strong></h2><p>可以使用 <code>call()</code>、<code>apply()</code> 和 <code>bind()</code> 來改變 <code>this</code> 指向：</p>
-<h3 id="call"><a href="#call" class="headerlink" title="call()"></a><strong>call()</strong></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">greet</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> person = &#123; <span class="attr">name</span>: <span class="string">&quot;Eve&quot;</span> &#125;;</span><br><span class="line">greet.<span class="title function_">call</span>(person); <span class="comment">// &quot;Eve&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="apply"><a href="#apply" class="headerlink" title="apply()"></a><strong>apply()</strong></h3><p><code>apply()</code> 與 <code>call()</code> 類似，但參數是以陣列方式傳入：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">introduce</span>(<span class="params">age, city</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> is <span class="subst">$&#123;age&#125;</span> years old and lives in <span class="subst">$&#123;city&#125;</span>.`</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> person = &#123; <span class="attr">name</span>: <span class="string">&quot;Frank&quot;</span> &#125;;</span><br><span class="line">introduce.<span class="title function_">apply</span>(person, [<span class="number">25</span>, <span class="string">&quot;Taipei&quot;</span>]);</span><br></pre></td></tr></table></figure>
-
-<h3 id="bind"><a href="#bind" class="headerlink" title="bind()"></a><strong>bind()</strong></h3><p><code>bind()</code> 會回傳一個新的函式，永久綁定 <code>this</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> boundFunc = greet.<span class="title function_">bind</span>(person);</span><br><span class="line"><span class="title function_">boundFunc</span>(); <span class="comment">// &quot;Eve&quot;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><ul>
-<li><strong>全域環境</strong>：<code>this</code> 在瀏覽器中指向 <code>window</code>，在 Node.js 指向 <code>global</code></li>
-<li><strong>普通函式</strong>：嚴格模式下 <code>this</code> 為 <code>undefined</code>，否則指向 <code>window</code></li>
-<li><strong>物件方法</strong>：<code>this</code> 指向該物件</li>
-<li><strong>建構函式</strong>：<code>this</code> 指向新建立的物件</li>
-<li><strong>箭頭函式</strong>：<code>this</code> 繼承外部作用域</li>
-<li><strong>事件處理器</strong>：普通函式 <code>this</code> 指向事件元素，箭頭函式 <code>this</code> 指向外部作用域</li>
-<li><strong><code>call</code>、<code>apply</code>、<code>bind</code></strong> 可顯式設定 <code>this</code></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>javascript</tag>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>this</tag>
       </tags>
   </entry>
   <entry>
@@ -3766,7 +3810,7 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>按鈕<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <hr>
-<h1 id="五、結語"><a href="#五、結語" class="headerlink" title="五、結語"></a>五、結語</h1><p>Tailwind CSS 透過工具類別的方式大幅提升開發效率，並提供響應式設計、靈活佈局與高度客製化的功能。對於前端開發者而言，熟悉 Tailwind CSS 可以讓 UI 設計更加直觀、高效，並減少對自訂 CSS 的依賴，進而提升開發維護性。</p>
+<h1 id="五、總結"><a href="#五、總結" class="headerlink" title="五、總結"></a>五、總結</h1><p>Tailwind CSS 透過工具類別的方式大幅提升開發效率，並提供響應式設計、靈活佈局與高度客製化的功能。對於前端開發者而言，熟悉 Tailwind CSS 可以讓 UI 設計更加直觀、高效，並減少對自訂 CSS 的依賴，進而提升開發維護性。</p>
 ]]></content>
       <tags>
         <tag>前端</tag>
@@ -4035,19 +4079,17 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記</title>
-    <url>/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/</url>
-    <content><![CDATA[<h1 id="Props-屬性"><a href="#Props-屬性" class="headerlink" title="Props 屬性"></a>Props 屬性</h1><p>子元件可以透過 Props 接收來自父元件的輸入。首先，子元件需要宣告它所接收的 Props：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- ChildComp.vue --&gt;</span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const props = defineProps(&#123;</span><br><span class="line">  msg: String</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+    <title>Vue.js 3 官方入門語法教學筆記 [12] - Emits 事件傳遞 | 學習筆記</title>
+    <url>/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/</url>
+    <content><![CDATA[<h1 id="Emits-事件傳遞"><a href="#Emits-事件傳遞" class="headerlink" title="Emits 事件傳遞"></a>Emits 事件傳遞</h1><p>除了接收 Props 之外，子元件也可以向父元件觸發事件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">// 宣告要觸發的事件</span><br><span class="line">const emit = defineEmits([&#x27;response&#x27;])</span><br><span class="line"></span><br><span class="line">// 觸發事件並傳遞參數</span><br><span class="line">emit(&#x27;response&#x27;, &#x27;hello from child&#x27;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<p>注意，<code>defineProps()</code> 是一個編譯時的巨集，不需要額外匯入。一旦宣告後，<code>msg</code> Prop 就可以在子元件的模板中使用，也可以透過 <code>defineProps()</code> 返回的物件在 JavaScript 中存取。</p>
-<p>父元件可以像設定屬性一樣，將 Prop 傳遞給子元件。若要傳遞動態值，也可以使用 <code>v-bind</code> 語法：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp :msg=&quot;greeting&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p><code>emit()</code> 的第一個參數是事件名稱，任何額外的參數都會傳遞給事件監聽器。</p>
+<p>父元件可以使用 <code>v-on</code> 來監聽子元件觸發的事件——如下範例中，處理函式接收來自子元件 <code>emit</code> 的額外參數，並將其賦值給本地狀態：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp @response=&quot;(msg) =&gt; childMsg = msg&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
 
-<p>我們現在在編輯器中試試看吧！</p>
-<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> greeting = <span class="title function_">ref</span>(<span class="string">&#x27;Hello from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> <span class="attr">:msg</span>=<span class="string">&quot;greeting&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> props = <span class="title function_">defineProps</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="attr">msg</span>: <span class="title class_">String</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123; msg || &#x27;No props passed yet&#x27; &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+<p>現在我們在編輯器中試試看吧！</p>
+]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -4061,17 +4103,19 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [12] - Emits 事件傳遞 | 學習筆記</title>
-    <url>/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/</url>
-    <content><![CDATA[<h1 id="Emits-事件傳遞"><a href="#Emits-事件傳遞" class="headerlink" title="Emits 事件傳遞"></a>Emits 事件傳遞</h1><p>除了接收 Props 之外，子元件也可以向父元件觸發事件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">// 宣告要觸發的事件</span><br><span class="line">const emit = defineEmits([&#x27;response&#x27;])</span><br><span class="line"></span><br><span class="line">// 觸發事件並傳遞參數</span><br><span class="line">emit(&#x27;response&#x27;, &#x27;hello from child&#x27;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+    <title>Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記</title>
+    <url>/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/</url>
+    <content><![CDATA[<h1 id="Props-屬性"><a href="#Props-屬性" class="headerlink" title="Props 屬性"></a>Props 屬性</h1><p>子元件可以透過 Props 接收來自父元件的輸入。首先，子元件需要宣告它所接收的 Props：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- ChildComp.vue --&gt;</span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const props = defineProps(&#123;</span><br><span class="line">  msg: String</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<p><code>emit()</code> 的第一個參數是事件名稱，任何額外的參數都會傳遞給事件監聽器。</p>
-<p>父元件可以使用 <code>v-on</code> 來監聽子元件觸發的事件——如下範例中，處理函式接收來自子元件 <code>emit</code> 的額外參數，並將其賦值給本地狀態：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp @response=&quot;(msg) =&gt; childMsg = msg&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p>注意，<code>defineProps()</code> 是一個編譯時的巨集，不需要額外匯入。一旦宣告後，<code>msg</code> Prop 就可以在子元件的模板中使用，也可以透過 <code>defineProps()</code> 返回的物件在 JavaScript 中存取。</p>
+<p>父元件可以像設定屬性一樣，將 Prop 傳遞給子元件。若要傳遞動態值，也可以使用 <code>v-bind</code> 語法：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp :msg=&quot;greeting&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
 
-<p>現在我們在編輯器中試試看吧！</p>
-]]></content>
+<p>我們現在在編輯器中試試看吧！</p>
+<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> greeting = <span class="title function_">ref</span>(<span class="string">&#x27;Hello from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> <span class="attr">:msg</span>=<span class="string">&quot;greeting&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> props = <span class="title function_">defineProps</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="attr">msg</span>: <span class="title class_">String</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123; msg || &#x27;No props passed yet&#x27; &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -4408,77 +4452,6 @@
       </tags>
   </entry>
   <entry>
-    <title>常見軟體工程師技術面試資源整理</title>
-    <url>/2023/03/22/software-engineer-technical-interview-resources/</url>
-    <content><![CDATA[<p>以下彙整常見 Web 網頁開發工具和資源整理：</p>
-<h2 id="程式解題網站"><a href="#程式解題網站" class="headerlink" title="程式解題網站"></a>程式解題網站</h2><ol>
-<li><a href="https://coderbyte.com/developers">coderbyte</a></li>
-<li><a href="https://www.codility.com/">codility</a></li>
-<li><a href="https://www.hackerrank.com/">hackerrank</a></li>
-<li><a href="https://leetcode.com/">leetcode</a></li>
-<li><a href="https://www.codewars.com/">codewars</a></li>
-</ol>
-<h2 id="常見程式題目"><a href="#常見程式題目" class="headerlink" title="常見程式題目"></a>常見程式題目</h2><ol>
-<li><a href="https://github.com/lydiahallie/javascript-questions">JavaScript Questions</a></li>
-</ol>
-<h2 id="系統設計"><a href="#系統設計" class="headerlink" title="系統設計"></a>系統設計</h2><ol>
-<li><a href="https://www.explainthis.io/zh-hant/swe-questions/system-design">最完整的系統設計面試題</a></li>
-<li><a href="https://myapollo.com.tw/blog/interview-question-system-design-introduction/">後端工程師面試考什麼 - 系統設計(system design)心法篇</a></li>
-</ol>
-<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
-<li><a href="https://ithelp.ithome.com.tw/articles/10244809?sc=rss.iron">【Day 13】什麼是工程師的技術面試？為什麼技術面試看的不只是技術？</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>前端工程</tag>
-        <tag>Software Engineer</tag>
-        <tag>前端工程師</tag>
-        <tag>Frontend Roadmap</tag>
-        <tag>網頁開發</tag>
-        <tag>網站開發</tag>
-        <tag>網站開發工具</tag>
-        <tag>學習資源</tag>
-        <tag>技術面試</tag>
-        <tag>軟體工程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</title>
-    <url>/2024/06/22/software-engineer-and-web-develement-skill-tree/</url>
-    <content><![CDATA[<h1 id="前端工程"><a href="#前端工程" class="headerlink" title="前端工程"></a>前端工程</h1><p><a href="https://roadmap.sh/frontend">Frontend Roadmap</a> &#x2F; <a href="https://roadmap.sh/frontend?r=frontend-beginner">Frontend Beginner Roadmap</a></p>
-<ol>
-<li><input checked="" disabled="" type="checkbox"> HTML</li>
-<li><input disabled="" type="checkbox"> CSS</li>
-<li><input disabled="" type="checkbox"> JavaScript</li>
-<li><input disabled="" type="checkbox"> Version Control Systems&#x2F;Git&#x2F;Github</li>
-<li><input disabled="" type="checkbox"> npm</li>
-<li><input disabled="" type="checkbox"> Vue</li>
-<li><input disabled="" type="checkbox"> React</li>
-<li><input disabled="" type="checkbox"> Angular</li>
-<li><input disabled="" type="checkbox"> Tailwind</li>
-<li><input disabled="" type="checkbox"> Vitest</li>
-<li><input disabled="" type="checkbox"> Cypress</li>
-<li><input disabled="" type="checkbox"> TypeScript</li>
-<li><input disabled="" type="checkbox"> PWA</li>
-<li><input disabled="" type="checkbox"> SASS&#x2F;LESS&#x2F;PostCSS</li>
-</ol>
-<h1 id="後端"><a href="#後端" class="headerlink" title="後端"></a>後端</h1><p><a href="https://roadmap.sh/backend">Backend Roadmap</a> &#x2F; <a href="https://roadmap.sh/backend?r=backend-beginner">Backend Beginner Roadmap</a></p>
-<h1 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h1><p><a href="https://roadmap.sh/devops">DevOps Roadmap</a> &#x2F; <a href="https://roadmap.sh/devops?r=devops-beginner">DevOps Beginner Roadmap</a></p>
-<h1 id="全端"><a href="#全端" class="headerlink" title="全端"></a>全端</h1><p><a href="https://roadmap.sh/full-stack">Full Stack Roadmap</a></p>
-<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
-<li><a href="https://github.com/kamranahmedse/developer-roadmap?tab=readme-ov-file">github developer-roadmap</a></li>
-<li><a href="https://hackmd.io/@were1122was/BkUpHXuAq">N+1 Queries 效能問題</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Software Engineer</tag>
-        <tag>Frontend Roadmap</tag>
-        <tag>Backend Roadmap</tag>
-        <tag>DevOps</tag>
-        <tag>Full Stack</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>WebSocket 入門教學筆記 | 學習筆記</title>
     <url>/2024/07/10/learning-notes-websocket-intro-tutorial/</url>
     <content><![CDATA[<h1 id="1-WebSocket-簡介"><a href="#1-WebSocket-簡介" class="headerlink" title="1. WebSocket 簡介"></a>1. WebSocket 簡介</h1><p><code>WebSocket</code> 是一種全雙工通訊協議，允許伺服器與客戶端建立持久連線，並在兩者之間即時傳輸數據。相較於傳統的 HTTP 請求-回應模式，WebSocket 提供了更低延遲的通訊方式。</p>
@@ -4519,6 +4492,77 @@
         <tag>Node.js</tag>
         <tag>NodeJS</tag>
         <tag>WebSocket</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</title>
+    <url>/2024/06/22/software-engineer-and-web-develement-skill-tree/</url>
+    <content><![CDATA[<h1 id="前端工程"><a href="#前端工程" class="headerlink" title="前端工程"></a>前端工程</h1><p><a href="https://roadmap.sh/frontend">Frontend Roadmap</a> &#x2F; <a href="https://roadmap.sh/frontend?r=frontend-beginner">Frontend Beginner Roadmap</a></p>
+<ol>
+<li><input checked="" disabled="" type="checkbox"> HTML</li>
+<li><input disabled="" type="checkbox"> CSS</li>
+<li><input disabled="" type="checkbox"> JavaScript</li>
+<li><input disabled="" type="checkbox"> Version Control Systems&#x2F;Git&#x2F;Github</li>
+<li><input disabled="" type="checkbox"> npm</li>
+<li><input disabled="" type="checkbox"> Vue</li>
+<li><input disabled="" type="checkbox"> React</li>
+<li><input disabled="" type="checkbox"> Angular</li>
+<li><input disabled="" type="checkbox"> Tailwind</li>
+<li><input disabled="" type="checkbox"> Vitest</li>
+<li><input disabled="" type="checkbox"> Cypress</li>
+<li><input disabled="" type="checkbox"> TypeScript</li>
+<li><input disabled="" type="checkbox"> PWA</li>
+<li><input disabled="" type="checkbox"> SASS&#x2F;LESS&#x2F;PostCSS</li>
+</ol>
+<h1 id="後端"><a href="#後端" class="headerlink" title="後端"></a>後端</h1><p><a href="https://roadmap.sh/backend">Backend Roadmap</a> &#x2F; <a href="https://roadmap.sh/backend?r=backend-beginner">Backend Beginner Roadmap</a></p>
+<h1 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h1><p><a href="https://roadmap.sh/devops">DevOps Roadmap</a> &#x2F; <a href="https://roadmap.sh/devops?r=devops-beginner">DevOps Beginner Roadmap</a></p>
+<h1 id="全端"><a href="#全端" class="headerlink" title="全端"></a>全端</h1><p><a href="https://roadmap.sh/full-stack">Full Stack Roadmap</a></p>
+<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
+<li><a href="https://github.com/kamranahmedse/developer-roadmap?tab=readme-ov-file">github developer-roadmap</a></li>
+<li><a href="https://hackmd.io/@were1122was/BkUpHXuAq">N+1 Queries 效能問題</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Software Engineer</tag>
+        <tag>Frontend Roadmap</tag>
+        <tag>Backend Roadmap</tag>
+        <tag>DevOps</tag>
+        <tag>Full Stack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常見軟體工程師技術面試資源整理</title>
+    <url>/2023/03/22/software-engineer-technical-interview-resources/</url>
+    <content><![CDATA[<p>以下彙整常見 Web 網頁開發工具和資源整理：</p>
+<h2 id="程式解題網站"><a href="#程式解題網站" class="headerlink" title="程式解題網站"></a>程式解題網站</h2><ol>
+<li><a href="https://coderbyte.com/developers">coderbyte</a></li>
+<li><a href="https://www.codility.com/">codility</a></li>
+<li><a href="https://www.hackerrank.com/">hackerrank</a></li>
+<li><a href="https://leetcode.com/">leetcode</a></li>
+<li><a href="https://www.codewars.com/">codewars</a></li>
+</ol>
+<h2 id="常見程式題目"><a href="#常見程式題目" class="headerlink" title="常見程式題目"></a>常見程式題目</h2><ol>
+<li><a href="https://github.com/lydiahallie/javascript-questions">JavaScript Questions</a></li>
+</ol>
+<h2 id="系統設計"><a href="#系統設計" class="headerlink" title="系統設計"></a>系統設計</h2><ol>
+<li><a href="https://www.explainthis.io/zh-hant/swe-questions/system-design">最完整的系統設計面試題</a></li>
+<li><a href="https://myapollo.com.tw/blog/interview-question-system-design-introduction/">後端工程師面試考什麼 - 系統設計(system design)心法篇</a></li>
+</ol>
+<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
+<li><a href="https://ithelp.ithome.com.tw/articles/10244809?sc=rss.iron">【Day 13】什麼是工程師的技術面試？為什麼技術面試看的不只是技術？</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>前端工程</tag>
+        <tag>Software Engineer</tag>
+        <tag>前端工程師</tag>
+        <tag>Frontend Roadmap</tag>
+        <tag>網頁開發</tag>
+        <tag>網站開發</tag>
+        <tag>網站開發工具</tag>
+        <tag>學習資源</tag>
+        <tag>技術面試</tag>
+        <tag>軟體工程</tag>
       </tags>
   </entry>
   <entry>
