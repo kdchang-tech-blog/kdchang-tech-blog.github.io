@@ -26,11 +26,11 @@
     
     <title>
         
-          關於軟體工程師 Software Engineer 的 10 個關鍵字 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          CSS transform 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2015/01/22/about-software-engineer-10-keywords/">
+    <link rel="canonical" href="https://tech.kdchang.net/2021/12/13/learning-notes-css-transform-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="關於軟體工程師 Software Engineer 的 10 個關鍵字 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="關於軟體工程師 Software Engineer 的 10 個關鍵字 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="CSS transform 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="CSS transform 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,25 +199,27 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>關於軟體工程師 Software Engineer 的 10 個關鍵字</h1>
+                    <h1>CSS transform 入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2015-01-22
+                        2021-12-13
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#開發者" title="開發者">開發者</a>
+                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
                         
-                          <a class="tag" href="/tags/#軟體工程師" title="軟體工程師">軟體工程師</a>
+                          <a class="tag" href="/tags/#前端開發" title="前端開發">前端開發</a>
                         
-                          <a class="tag" href="/tags/#SWE" title="SWE">SWE</a>
+                          <a class="tag" href="/tags/#前端工程" title="前端工程">前端工程</a>
                         
-                          <a class="tag" href="/tags/#Software Engineer" title="Software Engineer">Software Engineer</a>
+                          <a class="tag" href="/tags/#frontend" title="frontend">frontend</a>
                         
-                          <a class="tag" href="/tags/#Software" title="Software">Software</a>
+                          <a class="tag" href="/tags/#css" title="css">css</a>
                         
-                          <a class="tag" href="/tags/#軟體開發" title="軟體開發">軟體開發</a>
+                          <a class="tag" href="/tags/#html" title="html">html</a>
+                        
+                          <a class="tag" href="/tags/#transform" title="transform">transform</a>
                         
 
                     </div>
@@ -243,20 +245,68 @@
                 </div>
                 <br>
                 <div>
-                    <p>以下整理了軟體工程師相關的十個關鍵字，涵蓋技能、工具與工作方式：</p>
-<ol>
-<li><strong>程式語言 (Programming Language)</strong> - 如 Python、Java、C++、JavaScript 等。  </li>
-<li><strong>版本控制 (Version Control)</strong> - 例如 Git、GitHub（平台）、GitLab（平台）。  </li>
-<li><strong>測試 (Testing)</strong> - 單元測試 (Unit Testing)、整合測試 (Integration Testing)。  </li>
-<li><strong>敏捷開發 (Agile Development)</strong> - Scrum、Kanban 等工作方法。  </li>
-<li><strong>架構設計和系統設計 (Architecture Design、System Design)</strong> - 微服務 (Microservices)、單體架構 (Monolithic Architecture)。  </li>
-<li><strong>資料庫 (Database)</strong> - SQL、NoSQL (如 MongoDB)。  </li>
-<li><strong>雲端運算 (Cloud Computing)</strong> - AWS、Azure、Google Cloud。  </li>
-<li><strong>DevOps</strong> - CI&#x2F;CD、自動化部署 (Automation Deployment)。  </li>
-<li><strong>演算法 (Algorithm)</strong> - 演算法、資料結構、問題解決能力。  </li>
-<li><strong>團隊合作 (Collaboration)</strong> - 跨部門溝通、工具 (如 JIRA、Confluence)。</li>
-</ol>
-<p>以上關鍵字為軟體工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>CSS <code>transform</code> 屬性是一個強大的工具，可以用來對 HTML 元素進行旋轉、縮放、移動及傾斜等變換，而不會影響其他元素的佈局。這使得 <code>transform</code> 非常適合用來建立動畫效果、視覺調整以及 UI 微調。</p>
+<h2 id="1-transform-基礎概念"><a href="#1-transform-基礎概念" class="headerlink" title="1. transform 基礎概念"></a>1. <code>transform</code> 基礎概念</h2><p><code>transform</code> 屬性可以接受一個或多個變換函數，使元素在不影響文檔流的情況下進行變換。這些變換主要包含：</p>
+<ul>
+<li><strong>平移 (translate)</strong></li>
+<li><strong>縮放 (scale)</strong></li>
+<li><strong>旋轉 (rotate)</strong></li>
+<li><strong>傾斜 (skew)</strong></li>
+<li><strong>矩陣變換 (matrix)</strong></li>
+</ul>
+<h2 id="2-transform-常見屬性"><a href="#2-transform-常見屬性" class="headerlink" title="2. transform 常見屬性"></a>2. <code>transform</code> 常見屬性</h2><h3 id="2-1-平移-translate"><a href="#2-1-平移-translate" class="headerlink" title="2.1 平移 (translate)"></a>2.1 平移 (<code>translate</code>)</h3><p><code>translate(x, y)</code> 用於移動元素的 X 軸與 Y 軸位置。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(<span class="number">50px</span>, <span class="number">100px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此範例將 <code>.box</code> 元素向右移動 50px，向下移動 100px。</p>
+<h4 id="單軸平移"><a href="#單軸平移" class="headerlink" title="單軸平移"></a>單軸平移</h4><ul>
+<li><code>translateX(50px)</code>：僅在 X 軸移動 50px。</li>
+<li><code>translateY(100px)</code>：僅在 Y 軸移動 100px。</li>
+</ul>
+<h3 id="2-2-縮放-scale"><a href="#2-2-縮放-scale" class="headerlink" title="2.2 縮放 (scale)"></a>2.2 縮放 (<code>scale</code>)</h3><p><code>scale(x, y)</code> 用於縮放元素。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.5</span>, <span class="number">0.5</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此範例將 <code>.box</code> 元素的寬度放大 1.5 倍，高度縮小為原來的一半。</p>
+<h4 id="單軸縮放"><a href="#單軸縮放" class="headerlink" title="單軸縮放"></a>單軸縮放</h4><ul>
+<li><code>scaleX(2)</code>：寬度變為 2 倍。</li>
+<li><code>scaleY(0.5)</code>：高度變為 0.5 倍。</li>
+</ul>
+<h3 id="2-3-旋轉-rotate"><a href="#2-3-旋轉-rotate" class="headerlink" title="2.3 旋轉 (rotate)"></a>2.3 旋轉 (<code>rotate</code>)</h3><p><code>rotate(angle)</code> 用於旋轉元素。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">45deg</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此範例將 <code>.box</code> 元素順時針旋轉 45 度。</p>
+<h3 id="2-4-傾斜-skew"><a href="#2-4-傾斜-skew" class="headerlink" title="2.4 傾斜 (skew)"></a>2.4 傾斜 (<code>skew</code>)</h3><p><code>skew(x-angle, y-angle)</code> 用於使元素傾斜。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">skew</span>(<span class="number">30deg</span>, <span class="number">10deg</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此範例將 <code>.box</code> 在 X 軸方向傾斜 30 度，在 Y 軸方向傾斜 10 度。</p>
+<h4 id="單軸傾斜"><a href="#單軸傾斜" class="headerlink" title="單軸傾斜"></a>單軸傾斜</h4><ul>
+<li><code>skewX(15deg)</code>：僅在 X 軸傾斜 15 度。</li>
+<li><code>skewY(25deg)</code>：僅在 Y 軸傾斜 25 度。</li>
+</ul>
+<h3 id="2-5-矩陣變換-matrix"><a href="#2-5-矩陣變換-matrix" class="headerlink" title="2.5 矩陣變換 (matrix)"></a>2.5 矩陣變換 (<code>matrix</code>)</h3><p><code>matrix(a, b, c, d, e, f)</code> 是一個綜合性變換函數，允許透過 6 個參數來同時應用縮放、旋轉、傾斜與位移。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">matrix</span>(<span class="number">1</span>, <span class="number">0.5</span>, <span class="number">0.5</span>, <span class="number">1</span>, <span class="number">50</span>, <span class="number">100</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>這樣的矩陣表示：</p>
+<ul>
+<li><code>1</code>：X 軸縮放。</li>
+<li><code>0.5</code>：X 軸傾斜。</li>
+<li><code>0.5</code>：Y 軸傾斜。</li>
+<li><code>1</code>：Y 軸縮放。</li>
+<li><code>50</code>：X 軸位移。</li>
+<li><code>100</code>：Y 軸位移。</li>
+</ul>
+<h2 id="3-transform-的應用範例"><a href="#3-transform-的應用範例" class="headerlink" title="3. transform 的應用範例"></a>3. <code>transform</code> 的應用範例</h2><h3 id="3-1-建立簡單的-hover-效果"><a href="#3-1-建立簡單的-hover-效果" class="headerlink" title="3.1 建立簡單的 hover 效果"></a>3.1 建立簡單的 hover 效果</h3><p>利用 <code>transform</code>，可以輕鬆製作滑鼠懸停的動畫效果，例如按鈕放大效果：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#3498db</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">transition</span>: transform <span class="number">0.3s</span> ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.button</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-圖片翻轉效果"><a href="#3-2-圖片翻轉效果" class="headerlink" title="3.2 圖片翻轉效果"></a>3.2 圖片翻轉效果</h3><p>使用 <code>rotateY(180deg)</code> 來製作翻轉效果，常用於卡片翻轉動畫。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.card</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: lightgray;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotateY</span>(<span class="number">0deg</span>);</span><br><span class="line">    <span class="attribute">transition</span>: transform <span class="number">0.5s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.card</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotateY</span>(<span class="number">180deg</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-旋轉動畫"><a href="#3-3-旋轉動畫" class="headerlink" title="3.3 旋轉動畫"></a>3.3 旋轉動畫</h3><p>結合 <code>@keyframes</code> 和 <code>transform</code>，可以製作無限旋轉動畫。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> spin &#123;</span><br><span class="line">    <span class="selector-tag">from</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-tag">to</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.spinner</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    <span class="attribute">animation</span>: spin <span class="number">2s</span> linear infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-transform-origin-的應用"><a href="#4-transform-origin-的應用" class="headerlink" title="4. transform-origin 的應用"></a>4. <code>transform-origin</code> 的應用</h2><p><code>transform-origin</code> 屬性用於指定變換的基準點，預設值為 <code>50% 50%</code>（元素中心）。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">transform-origin</span>: top left;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">45deg</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此範例中，元素將以左上角為旋轉點，而非默認的中心點。</p>
+<h2 id="5-perspective-與-3D-變換"><a href="#5-perspective-與-3D-變換" class="headerlink" title="5. perspective 與 3D 變換"></a>5. <code>perspective</code> 與 3D 變換</h2><p>當使用 3D 變換（如 <code>rotateX</code>、<code>rotateY</code>）時，可使用 <code>perspective</code> 來模擬景深效果。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">perspective</span>: <span class="number">500px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotateY</span>(<span class="number">45deg</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此範例讓 <code>.box</code> 具有 3D 透視效果，使其看起來更真實。</p>
+<h2 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h2><p>CSS <code>transform</code> 是一個靈活且強大的屬性，可以用來製作動畫、視覺調整及增強 UI 體驗。透過 <code>translate</code>、<code>scale</code>、<code>rotate</code>、<code>skew</code> 等函數，你可以輕鬆地操控元素的外觀，讓你的網頁更具吸引力。</p>
 
                 </div>
 
@@ -273,7 +323,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/06/21/about-backend-engineer-10-keywords/" title="關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字" rel="bookmark">關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/06/13/about-frontend-engineer-10-keywords/" title="關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字" rel="bookmark">關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/21/en/about-backend-engineer-10-keywords/" title="10 key terms related to backend engineering" rel="bookmark">10 key terms related to backend engineering</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/03/22/software-engineer-technical-interview-resources/" title="常見軟體工程師技術面試資源整理" rel="bookmark">常見軟體工程師技術面試資源整理</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/06/22/software-engineer-and-web-develement-skill-tree/" title="軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）" rel="bookmark">軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2022/12/13/learning-notes-css-transition-intro-tutorial/" title="CSS transition 入門教學筆記 | 學習筆記" rel="bookmark">CSS transition 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/12/13/learning-notes-html-intro-tutorial/" title="HTML 入門教學筆記 | 學習筆記" rel="bookmark">HTML 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/10/16/learning-notes-alpinejs-intro-tutorial/" title="Alpine.js 入門教學筆記 | 學習筆記" rel="bookmark">Alpine.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/01/learning-notes-cookie-intro-tutorial/" title="Cookie 入門教學筆記 | 學習筆記" rel="bookmark">Cookie 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial copy/" title="JavaScript ES6 入門語法教學筆記 | 學習筆記" rel="bookmark">JavaScript ES6 入門語法教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -309,8 +359,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2015/01/22/about-software-engineer-10-keywords/";
-    var disqus_url = "https://tech.kdchang.net/2015/01/22/about-software-engineer-10-keywords/";
+    var disqus_identifier = "https://tech.kdchang.net/2021/12/13/learning-notes-css-transform-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2021/12/13/learning-notes-css-transform-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

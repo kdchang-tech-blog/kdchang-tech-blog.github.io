@@ -26,11 +26,11 @@
     
     <title>
         
-          關於軟體工程師 Software Engineer 的 10 個關鍵字 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          CSS transition 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2015/01/22/about-software-engineer-10-keywords/">
+    <link rel="canonical" href="https://tech.kdchang.net/2022/12/13/learning-notes-css-transition-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="關於軟體工程師 Software Engineer 的 10 個關鍵字 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="關於軟體工程師 Software Engineer 的 10 個關鍵字 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="CSS transition 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="CSS transition 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,25 +199,27 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>關於軟體工程師 Software Engineer 的 10 個關鍵字</h1>
+                    <h1>CSS transition 入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2015-01-22
+                        2022-12-13
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#開發者" title="開發者">開發者</a>
+                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
                         
-                          <a class="tag" href="/tags/#軟體工程師" title="軟體工程師">軟體工程師</a>
+                          <a class="tag" href="/tags/#前端開發" title="前端開發">前端開發</a>
                         
-                          <a class="tag" href="/tags/#SWE" title="SWE">SWE</a>
+                          <a class="tag" href="/tags/#前端工程" title="前端工程">前端工程</a>
                         
-                          <a class="tag" href="/tags/#Software Engineer" title="Software Engineer">Software Engineer</a>
+                          <a class="tag" href="/tags/#frontend" title="frontend">frontend</a>
                         
-                          <a class="tag" href="/tags/#Software" title="Software">Software</a>
+                          <a class="tag" href="/tags/#css" title="css">css</a>
                         
-                          <a class="tag" href="/tags/#軟體開發" title="軟體開發">軟體開發</a>
+                          <a class="tag" href="/tags/#html" title="html">html</a>
+                        
+                          <a class="tag" href="/tags/#transition" title="transition">transition</a>
                         
 
                     </div>
@@ -243,20 +245,54 @@
                 </div>
                 <br>
                 <div>
-                    <p>以下整理了軟體工程師相關的十個關鍵字，涵蓋技能、工具與工作方式：</p>
-<ol>
-<li><strong>程式語言 (Programming Language)</strong> - 如 Python、Java、C++、JavaScript 等。  </li>
-<li><strong>版本控制 (Version Control)</strong> - 例如 Git、GitHub（平台）、GitLab（平台）。  </li>
-<li><strong>測試 (Testing)</strong> - 單元測試 (Unit Testing)、整合測試 (Integration Testing)。  </li>
-<li><strong>敏捷開發 (Agile Development)</strong> - Scrum、Kanban 等工作方法。  </li>
-<li><strong>架構設計和系統設計 (Architecture Design、System Design)</strong> - 微服務 (Microservices)、單體架構 (Monolithic Architecture)。  </li>
-<li><strong>資料庫 (Database)</strong> - SQL、NoSQL (如 MongoDB)。  </li>
-<li><strong>雲端運算 (Cloud Computing)</strong> - AWS、Azure、Google Cloud。  </li>
-<li><strong>DevOps</strong> - CI&#x2F;CD、自動化部署 (Automation Deployment)。  </li>
-<li><strong>演算法 (Algorithm)</strong> - 演算法、資料結構、問題解決能力。  </li>
-<li><strong>團隊合作 (Collaboration)</strong> - 跨部門溝通、工具 (如 JIRA、Confluence)。</li>
-</ol>
-<p>以上關鍵字為軟體工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>CSS <code>transition</code> 屬性允許元素在狀態變化時產生平滑的動畫效果，使 UI 更加流暢和自然。這項技術通常應用於按鈕、圖片、卡片等 UI 元素的互動效果，如懸停、點擊或狀態變更。</p>
+<h2 id="1-transition-基礎概念"><a href="#1-transition-基礎概念" class="headerlink" title="1. transition 基礎概念"></a>1. <code>transition</code> 基礎概念</h2><p>CSS <code>transition</code> 屬性用於定義當元素的某些 CSS 屬性發生變化時，該變化應如何逐漸呈現，而非立即改變。基本語法如下：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">transition</span>: property duration timing-function delay;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>property</code>：指定要應用過渡效果的 CSS 屬性。</li>
+<li><code>duration</code>：設定過渡動畫的時間（如 <code>0.5s</code>、<code>200ms</code>）。</li>
+<li><code>timing-function</code>：定義動畫的速度曲線（如 <code>ease</code>、<code>linear</code>）。</li>
+<li><code>delay</code>：動畫開始前的延遲時間（可選，默認為 <code>0s</code>）。</li>
+</ul>
+<h2 id="2-transition-常見應用"><a href="#2-transition-常見應用" class="headerlink" title="2. transition 常見應用"></a>2. <code>transition</code> 常見應用</h2><h3 id="2-1-過渡單一屬性"><a href="#2-1-過渡單一屬性" class="headerlink" title="2.1 過渡單一屬性"></a>2.1 過渡單一屬性</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: blue;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">transition</span>: background-color <span class="number">0.3s</span> ease;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.button</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: darkblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>當滑鼠懸停在 <code>.button</code> 上時，背景顏色將在 <code>0.3s</code> 內從 <code>blue</code> 變為 <code>darkblue</code>。</p>
+<h3 id="2-2-過渡多個屬性"><a href="#2-2-過渡多個屬性" class="headerlink" title="2.2 過渡多個屬性"></a>2.2 過渡多個屬性</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.card</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: lightgray;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="attribute">transition</span>: background-color <span class="number">0.3s</span> ease, transform <span class="number">0.5s</span> ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.card</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: gray;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>當滑鼠懸停時，<code>.card</code> 的背景顏色會變深，並且整個卡片會放大 <code>1.1</code> 倍。</p>
+<h2 id="3-transition-進階應用"><a href="#3-transition-進階應用" class="headerlink" title="3. transition 進階應用"></a>3. <code>transition</code> 進階應用</h2><h3 id="3-1-transition-timing-function（動畫速度曲線）"><a href="#3-1-transition-timing-function（動畫速度曲線）" class="headerlink" title="3.1 transition-timing-function（動畫速度曲線）"></a>3.1 <code>transition-timing-function</code>（動畫速度曲線）</h3><p><code>timing-function</code> 用於定義動畫的速度變化方式，常見的值如下：</p>
+<ul>
+<li><code>linear</code>：等速變化。</li>
+<li><code>ease</code>（預設值）：開始與結束較慢，中間較快。</li>
+<li><code>ease-in</code>：開始較慢，之後加速。</li>
+<li><code>ease-out</code>：開始較快，最後減速。</li>
+<li><code>ease-in-out</code>：開始和結束都較慢。</li>
+</ul>
+<p>範例：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    <span class="attribute">transition</span>: transform <span class="number">1s</span> ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">200px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>當滑鼠懸停時，<code>.box</code> 會平滑地向右移動 <code>200px</code>，並且動畫在開始和結束時較慢。</p>
+<h3 id="3-2-transition-delay（延遲時間）"><a href="#3-2-transition-delay（延遲時間）" class="headerlink" title="3.2 transition-delay（延遲時間）"></a>3.2 <code>transition-delay</code>（延遲時間）</h3><p>可以設定 <code>transition-delay</code> 來延遲動畫的開始時間。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: green;</span><br><span class="line">    <span class="attribute">transition</span>: background-color <span class="number">0.5s</span> ease-in <span class="number">1s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: darkgreen;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>當滑鼠懸停時，<code>background-color</code> 會延遲 <code>1s</code> 後才開始變化。</p>
+<h2 id="4-transition-實際應用範例"><a href="#4-transition-實際應用範例" class="headerlink" title="4. transition 實際應用範例"></a>4. <code>transition</code> 實際應用範例</h2><h3 id="4-1-按鈕的點擊效果"><a href="#4-1-按鈕的點擊效果" class="headerlink" title="4.1 按鈕的點擊效果"></a>4.1 按鈕的點擊效果</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">12px</span> <span class="number">24px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#ff5733</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">    <span class="attribute">transition</span>: transform <span class="number">0.2s</span> ease-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.button</span><span class="selector-pseudo">:active</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">0.95</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>當按下 <code>.button</code> 時，按鈕會稍微縮小，產生按壓感。</p>
+<h3 id="4-2-漸變顯示效果"><a href="#4-2-漸變顯示效果" class="headerlink" title="4.2 漸變顯示效果"></a>4.2 漸變顯示效果</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.fade-box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: blue;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">transition</span>: opacity <span class="number">1s</span> ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.fade-box</span><span class="selector-class">.show</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>當 <code>.show</code> 類別被添加時，<code>.fade-box</code> 會在 <code>1s</code> 內逐漸顯示。</p>
+<h3 id="4-3-圖片放大效果"><a href="#4-3-圖片放大效果" class="headerlink" title="4.3 圖片放大效果"></a>4.3 圖片放大效果</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.image-container</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">transition</span>: width <span class="number">0.3s</span> ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.image-container</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>當滑鼠懸停時，圖片會平滑地放大。</p>
+<h2 id="5-transition-vs-animation"><a href="#5-transition-vs-animation" class="headerlink" title="5. transition vs animation"></a>5. <code>transition</code> vs <code>animation</code></h2><p>雖然 <code>transition</code> 和 <code>animation</code> 都能用來製作動畫，但它們的用途不同：</p>
+<ul>
+<li>**<code>transition</code>**：適合用於元素的狀態變更（如 <code>hover</code>、<code>focus</code>）。</li>
+<li>**<code>animation</code>**：適用於更複雜的動畫，如連續循環的動畫。</li>
+</ul>
+<p>如果需要更高級的動畫，例如無限重複、按時間順序變化的動畫，則應使用 <code>@keyframes</code> 和 <code>animation</code>。</p>
+<h2 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h2><p>CSS <code>transition</code> 是製作動畫效果最簡單且高效的方法之一。透過 <code>transition</code>，可以讓 UI 更加生動，使使用者體驗更流暢。掌握 <code>transition</code> 的基本語法與進階應用後，可以靈活運用於各種互動效果，如按鈕動畫、圖片過渡、淡入淡出等，讓網頁更加吸引人。</p>
 
                 </div>
 
@@ -273,7 +309,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/06/21/about-backend-engineer-10-keywords/" title="關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字" rel="bookmark">關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/06/13/about-frontend-engineer-10-keywords/" title="關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字" rel="bookmark">關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/21/en/about-backend-engineer-10-keywords/" title="10 key terms related to backend engineering" rel="bookmark">10 key terms related to backend engineering</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/03/22/software-engineer-technical-interview-resources/" title="常見軟體工程師技術面試資源整理" rel="bookmark">常見軟體工程師技術面試資源整理</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/06/22/software-engineer-and-web-develement-skill-tree/" title="軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）" rel="bookmark">軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/12/13/learning-notes-css-transform-intro-tutorial/" title="CSS transform 入門教學筆記 | 學習筆記" rel="bookmark">CSS transform 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/12/13/learning-notes-html-intro-tutorial/" title="HTML 入門教學筆記 | 學習筆記" rel="bookmark">HTML 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/10/16/learning-notes-alpinejs-intro-tutorial/" title="Alpine.js 入門教學筆記 | 學習筆記" rel="bookmark">Alpine.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/01/learning-notes-cookie-intro-tutorial/" title="Cookie 入門教學筆記 | 學習筆記" rel="bookmark">Cookie 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial copy/" title="JavaScript ES6 入門語法教學筆記 | 學習筆記" rel="bookmark">JavaScript ES6 入門語法教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -309,8 +345,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2015/01/22/about-software-engineer-10-keywords/";
-    var disqus_url = "https://tech.kdchang.net/2015/01/22/about-software-engineer-10-keywords/";
+    var disqus_identifier = "https://tech.kdchang.net/2022/12/13/learning-notes-css-transition-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2022/12/13/learning-notes-css-transition-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
