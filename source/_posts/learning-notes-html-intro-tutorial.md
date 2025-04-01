@@ -3,14 +3,16 @@ title: HTML 入門教學筆記 | 學習筆記
 date: 2021-12-14 02:23:41
 author: kdchang
 tags: 
-    - react
-    - Redux
-    - React Redux
+    - html
+    - 前端
+    - 前端開發
+    - 前端工程
+    - frontend
 
 ---
 
 #### 1. 什麼是 HTML？  
-HTML（HyperText Markup Language，超文本標記語言）是建立網頁的標準語言。它用標籤（tags）來結構化內容，讓瀏覽器能夠解析並顯示網頁。HTML 主要負責網頁的結構，而樣式與行為則交由 CSS 和 JavaScript 負責。
+`HTML`（HyperText Markup Language，超文本標記語言）是建立網頁的標準語言。它用標籤（tags）來結構化內容，讓瀏覽器能夠解析並顯示網頁。HTML 主要負責網頁的結構，而樣式與行為則交由 CSS 和 JavaScript 負責。
 
 ---
 

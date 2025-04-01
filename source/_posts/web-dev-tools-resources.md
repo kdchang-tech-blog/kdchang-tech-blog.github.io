@@ -67,3 +67,7 @@ tags:
 
 # API
 1. [{JSON} Placeholder Free fake and reliable API for testing and prototyping.](https://jsonplaceholder.typicode.com/)
+
+# 設計
+1. [s5-style](https://www.s5-style.com/)
+2. [cssdesignawards](https://www.cssdesignawards.com/)
