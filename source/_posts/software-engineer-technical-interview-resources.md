@@ -1,5 +1,5 @@
 ---
-title: 常見軟體工程師技術面試資源整理
+title: 常見軟體工程師技術面試及學習資源整理
 date: 2023-03-22 11:33:41
 author: kdchang
 tags: 
@@ -24,6 +24,13 @@ tags:
 3. [hackerrank](https://www.hackerrank.com/)
 4. [leetcode](https://leetcode.com/)
 5. [codewars](https://www.codewars.com/)
+
+## 線上程式學習網站
+1. [scrimba](https://scrimba.com/home)
+2. [codecademy](https://www.codecademy.com/)
+3. [pluralsight](https://www.pluralsight.com/)
+4. [teamtreehouse](https://teamtreehouse.com/)
+5. [udemy](https://www.udemy.com/)
 
 ## 常見程式題目
 1. [JavaScript Questions](https://github.com/lydiahallie/javascript-questions)
