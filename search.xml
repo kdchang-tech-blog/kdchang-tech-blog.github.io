@@ -266,122 +266,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Flexbox Froggy 入門教學筆記 | 學習筆記</title>
-    <url>/2024/07/10/learning-notes-css-flexbox-froggy-tutorial/</url>
-    <content><![CDATA[<h1 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h1><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
-<p>Flexbox Froggy 透過小青蛙過河遊戲化方式去介紹 Flexbox 使用方式：</p>
-<h2 id="Level-1"><a href="#Level-1" class="headerlink" title="Level 1"></a>Level 1</h2><p>Welcome to Flexbox Froggy, a game where you help Froggy and friends by writing CSS code! Guide this frog to the lilypad on the right by using the justify-content property, which aligns items horizontally and accepts the following values:</p>
-<p>flex-start: Items align to the left side of the container.<br>flex-end: Items align to the right side of the container.<br>center: Items align at the center of the container.<br>space-between: Items display with equal spacing between them.<br>space-around: Items display with equal spacing around them.<br>For example, justify-content: flex-end; will move the frog to the right. </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-2"><a href="#Level-2" class="headerlink" title="Level 2"></a>Level 2</h2><p>Use justify-content again to help these frogs get to their lilypads. Remember that this CSS property aligns items horizontally and accepts the following values:</p>
-<p><code>flex-start</code>: Items align to the left side of the container.<br><code>flex-end</code>: Items align to the right side of the container.<br><code>center</code>: Items align at the center of the container.<br><code>space-between</code>: Items display with equal spacing between them.<br><code>space-around</code>: Items display with equal spacing around them.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-3"><a href="#Level-3" class="headerlink" title="Level 3"></a>Level 3</h2><p>Help all three frogs find their lilypads just by using justify-content. This time, the lilypads have lots of space all around them.</p>
-<p>If you find yourself forgetting the possible values for a property, you can click on the property name to view them. Try clicking on justify-content.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-around;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-4"><a href="#Level-4" class="headerlink" title="Level 4"></a>Level 4</h2><p>Now the lilypads on the edges have drifted to the shore, increasing the space between them. Use justify-content. This time, the lilypads have equal spacing between them.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-5"><a href="#Level-5" class="headerlink" title="Level 5"></a>Level 5</h2><p>Now use align-items to help the frogs get to the bottom of the pond. This CSS property aligns items vertically and accepts the following values:</p>
-<p><code>flex-start</code>: Items align to the top of the container.<br><code>flex-end</code>: Items align to the bottom of the container.<br><code>center</code>: Items align at the vertical center of the container.<br><code>baseline</code>: Items display at the baseline of the container.<br><code>stretch</code>: Items are stretched to fit the container.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-6"><a href="#Level-6" class="headerlink" title="Level 6"></a>Level 6</h2><p>Lead the frog to the center of the pond using a combination of justify-content and align-items.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-7"><a href="#Level-7" class="headerlink" title="Level 7"></a>Level 7</h2><p>The frogs need to cross the pond again, this time for some lilypads with plenty of space around them. Use a combination of justify-content and align-items.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-around;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-8"><a href="#Level-8" class="headerlink" title="Level 8"></a>Level 8</h2><p>The frogs need to get in the same order as their lilypads using flex-direction. This CSS property defines the direction items are placed in the container, and accepts the following values:</p>
-<p><code>row</code>: Items are placed the same as the text direction.<br><code>row-reverse</code>: Items are placed opposite to the text direction.<br><code>column</code>: Items are placed top to bottom.<br><code>column-reverse</code>: Items are placed bottom to top.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-9"><a href="#Level-9" class="headerlink" title="Level 9"></a>Level 9</h2><p>Help the frogs find their column of lilypads using flex-direction. This CSS property defines the direction items are placed in the container, and accepts the following values:</p>
-<p><code>row</code>: Items are placed the same as the text direction.<br><code>row-reverse</code>: Items are placed opposite to the text direction.<br><code>column</code>: Items are placed top to bottom.<br><code>column-reverse</code>: Items are placed bottom to top.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-10"><a href="#Level-10" class="headerlink" title="Level 10"></a>Level 10</h2><p>Help the frogs get to their own lilypads. Although they seem close, it will take both flex-direction and justify-content to get them there.</p>
-<p>Notice that when you set the direction to a reversed row or column, start and end are also reversed.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-11"><a href="#Level-11" class="headerlink" title="Level 11"></a>Level 11</h2><p>Help the frogs find their lilypads using flex-direction and justify-content.</p>
-<p>Notice that when the flex direction is a column, justify-content changes to the vertical and align-items to the horizontal.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-12"><a href="#Level-12" class="headerlink" title="Level 12"></a>Level 12</h2><p>Help the frogs find their lilypads using flex-direction and justify-content.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-13"><a href="#Level-13" class="headerlink" title="Level 13"></a>Level 13</h2><p>Help the frogs find their lilypads using flex-direction, justify-content, and align-items.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-14"><a href="#Level-14" class="headerlink" title="Level 14"></a>Level 14</h2><p>Sometimes reversing the row or column order of a container is not enough. In these cases, we can apply the order property to individual items. By default, items have a value of 0, but we can use this property to also set it to a positive or negative integer value <code>(-2, -1, 0, 1, 2)</code>.</p>
-<p>Use the order property to reorder the frogs according to their lilypads.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-15"><a href="#Level-15" class="headerlink" title="Level 15"></a>Level 15</h2><p>Use the order property to send the red frog to his lilypad.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.red</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-16"><a href="#Level-16" class="headerlink" title="Level 16"></a>Level 16</h2><p>Another property you can apply to individual items is align-self. This property accepts the same values as align-items and its value for the specific item.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">align-self</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-17"><a href="#Level-17" class="headerlink" title="Level 17"></a>Level 17</h2><p>Combine order with align-self to help the frogs to their destinations.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">align-self</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-18"><a href="#Level-18" class="headerlink" title="Level 18"></a>Level 18</h2><p>Oh no! The frogs are all squeezed onto a single row of lilypads. Spread them out using the flex-wrap property, which accepts the following values:</p>
-<p>nowrap: Every item is fit to a single line.<br>wrap: Items wrap around to additional lines.<br>wrap-reverse: Items wrap around to additional lines in reverse.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-19"><a href="#Level-19" class="headerlink" title="Level 19"></a>Level 19</h2><p>Help this army of frogs form three orderly columns using a combination of flex-direction and flex-wrap.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-20"><a href="#Level-20" class="headerlink" title="Level 20"></a>Level 20</h2><p>The two properties flex-direction and flex-wrap are used so often together that the shorthand property flex-flow was created to combine them. This shorthand property accepts the value of the two properties separated by a space.</p>
-<p>For example, you can use flex-flow: row wrap to set rows and wrap them.</p>
-<p>Try using flex-flow to repeat the previous level.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-flow</span>: column wrap</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-21"><a href="#Level-21" class="headerlink" title="Level 21"></a>Level 21</h2><p>The frogs are spread all over the pond, but the lilypads are bunched at the top. You can use align-content to set how multiple lines are spaced apart from each other. This property takes the following values:</p>
-<p><code>flex-start</code>: Lines are packed at the top of the container.<br><code>flex-end</code>: Lines are packed at the bottom of the container.<br><code>center</code>: Lines are packed at the vertical center of the container.<br><code>space-between</code>: Lines display with equal spacing between them.<br><code>space-around</code>: Lines display with equal spacing around them.<br><code>stretch</code>: Lines are stretched to fit the container.<br>This can be confusing, but align-content determines the spacing between lines, while align-items determines how the items as a whole are aligned within the container. When there is only one line, align-content has no effect.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-22"><a href="#Level-22" class="headerlink" title="Level 22"></a>Level 22</h2><p>Now the current has bunched the lilypads at the bottom. Use align-content to guide the frogs there.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-23"><a href="#Level-23" class="headerlink" title="Level 23"></a>Level 23</h2><p>The frogs have had a party, but it is time to go home. Use a combination of flex-direction and align-content to get them to their lilypads.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">  <span class="attribute">align-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-24"><a href="#Level-24" class="headerlink" title="Level 24"></a>Level 24</h2><p>Bring the frogs home one last time by using the CSS properties you’ve learned:</p>
-<p><code>justify-content</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>align-items</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>flex-direction</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>order</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>align-self</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>flex-wrap</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>flex-flow</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>align-content</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-content</span>: space-between;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
-<li><a href="https://flexboxfroggy.com/">flexboxfroggy</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Flexbox Froggy</tag>
-        <tag>Flexbox</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS Flexbox align-items 和 align-content 入門教學筆記 | 學習筆記</title>
     <url>/2024/07/10/learning-notes-css-flexbox-align-items-align-content-garden-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在 CSS Flexbox 和 Grid 佈局中，<code>align-items</code> 和 <code>align-content</code> 兩者都與「對齊」有關，但適用的情境不同（單行 vs 多行）：</p>
@@ -497,11 +381,127 @@
 </ol>
 ]]></content>
       <tags>
-        <tag>CSS</tag>
         <tag>Grid Garden</tag>
         <tag>Grid</tag>
         <tag>align-items</tag>
         <tag>align-content</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flexbox Froggy 入門教學筆記 | 學習筆記</title>
+    <url>/2024/07/10/learning-notes-css-flexbox-froggy-tutorial/</url>
+    <content><![CDATA[<h1 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h1><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
+<p>Flexbox Froggy 透過小青蛙過河遊戲化方式去介紹 Flexbox 使用方式：</p>
+<h2 id="Level-1"><a href="#Level-1" class="headerlink" title="Level 1"></a>Level 1</h2><p>Welcome to Flexbox Froggy, a game where you help Froggy and friends by writing CSS code! Guide this frog to the lilypad on the right by using the justify-content property, which aligns items horizontally and accepts the following values:</p>
+<p>flex-start: Items align to the left side of the container.<br>flex-end: Items align to the right side of the container.<br>center: Items align at the center of the container.<br>space-between: Items display with equal spacing between them.<br>space-around: Items display with equal spacing around them.<br>For example, justify-content: flex-end; will move the frog to the right. </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-2"><a href="#Level-2" class="headerlink" title="Level 2"></a>Level 2</h2><p>Use justify-content again to help these frogs get to their lilypads. Remember that this CSS property aligns items horizontally and accepts the following values:</p>
+<p><code>flex-start</code>: Items align to the left side of the container.<br><code>flex-end</code>: Items align to the right side of the container.<br><code>center</code>: Items align at the center of the container.<br><code>space-between</code>: Items display with equal spacing between them.<br><code>space-around</code>: Items display with equal spacing around them.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-3"><a href="#Level-3" class="headerlink" title="Level 3"></a>Level 3</h2><p>Help all three frogs find their lilypads just by using justify-content. This time, the lilypads have lots of space all around them.</p>
+<p>If you find yourself forgetting the possible values for a property, you can click on the property name to view them. Try clicking on justify-content.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-around;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-4"><a href="#Level-4" class="headerlink" title="Level 4"></a>Level 4</h2><p>Now the lilypads on the edges have drifted to the shore, increasing the space between them. Use justify-content. This time, the lilypads have equal spacing between them.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-5"><a href="#Level-5" class="headerlink" title="Level 5"></a>Level 5</h2><p>Now use align-items to help the frogs get to the bottom of the pond. This CSS property aligns items vertically and accepts the following values:</p>
+<p><code>flex-start</code>: Items align to the top of the container.<br><code>flex-end</code>: Items align to the bottom of the container.<br><code>center</code>: Items align at the vertical center of the container.<br><code>baseline</code>: Items display at the baseline of the container.<br><code>stretch</code>: Items are stretched to fit the container.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-6"><a href="#Level-6" class="headerlink" title="Level 6"></a>Level 6</h2><p>Lead the frog to the center of the pond using a combination of justify-content and align-items.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-7"><a href="#Level-7" class="headerlink" title="Level 7"></a>Level 7</h2><p>The frogs need to cross the pond again, this time for some lilypads with plenty of space around them. Use a combination of justify-content and align-items.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-around;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-8"><a href="#Level-8" class="headerlink" title="Level 8"></a>Level 8</h2><p>The frogs need to get in the same order as their lilypads using flex-direction. This CSS property defines the direction items are placed in the container, and accepts the following values:</p>
+<p><code>row</code>: Items are placed the same as the text direction.<br><code>row-reverse</code>: Items are placed opposite to the text direction.<br><code>column</code>: Items are placed top to bottom.<br><code>column-reverse</code>: Items are placed bottom to top.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-9"><a href="#Level-9" class="headerlink" title="Level 9"></a>Level 9</h2><p>Help the frogs find their column of lilypads using flex-direction. This CSS property defines the direction items are placed in the container, and accepts the following values:</p>
+<p><code>row</code>: Items are placed the same as the text direction.<br><code>row-reverse</code>: Items are placed opposite to the text direction.<br><code>column</code>: Items are placed top to bottom.<br><code>column-reverse</code>: Items are placed bottom to top.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-10"><a href="#Level-10" class="headerlink" title="Level 10"></a>Level 10</h2><p>Help the frogs get to their own lilypads. Although they seem close, it will take both flex-direction and justify-content to get them there.</p>
+<p>Notice that when you set the direction to a reversed row or column, start and end are also reversed.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-11"><a href="#Level-11" class="headerlink" title="Level 11"></a>Level 11</h2><p>Help the frogs find their lilypads using flex-direction and justify-content.</p>
+<p>Notice that when the flex direction is a column, justify-content changes to the vertical and align-items to the horizontal.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-12"><a href="#Level-12" class="headerlink" title="Level 12"></a>Level 12</h2><p>Help the frogs find their lilypads using flex-direction and justify-content.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-13"><a href="#Level-13" class="headerlink" title="Level 13"></a>Level 13</h2><p>Help the frogs find their lilypads using flex-direction, justify-content, and align-items.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-14"><a href="#Level-14" class="headerlink" title="Level 14"></a>Level 14</h2><p>Sometimes reversing the row or column order of a container is not enough. In these cases, we can apply the order property to individual items. By default, items have a value of 0, but we can use this property to also set it to a positive or negative integer value <code>(-2, -1, 0, 1, 2)</code>.</p>
+<p>Use the order property to reorder the frogs according to their lilypads.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-15"><a href="#Level-15" class="headerlink" title="Level 15"></a>Level 15</h2><p>Use the order property to send the red frog to his lilypad.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.red</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-16"><a href="#Level-16" class="headerlink" title="Level 16"></a>Level 16</h2><p>Another property you can apply to individual items is align-self. This property accepts the same values as align-items and its value for the specific item.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">align-self</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-17"><a href="#Level-17" class="headerlink" title="Level 17"></a>Level 17</h2><p>Combine order with align-self to help the frogs to their destinations.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">align-self</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-18"><a href="#Level-18" class="headerlink" title="Level 18"></a>Level 18</h2><p>Oh no! The frogs are all squeezed onto a single row of lilypads. Spread them out using the flex-wrap property, which accepts the following values:</p>
+<p>nowrap: Every item is fit to a single line.<br>wrap: Items wrap around to additional lines.<br>wrap-reverse: Items wrap around to additional lines in reverse.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-19"><a href="#Level-19" class="headerlink" title="Level 19"></a>Level 19</h2><p>Help this army of frogs form three orderly columns using a combination of flex-direction and flex-wrap.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-20"><a href="#Level-20" class="headerlink" title="Level 20"></a>Level 20</h2><p>The two properties flex-direction and flex-wrap are used so often together that the shorthand property flex-flow was created to combine them. This shorthand property accepts the value of the two properties separated by a space.</p>
+<p>For example, you can use flex-flow: row wrap to set rows and wrap them.</p>
+<p>Try using flex-flow to repeat the previous level.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-flow</span>: column wrap</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-21"><a href="#Level-21" class="headerlink" title="Level 21"></a>Level 21</h2><p>The frogs are spread all over the pond, but the lilypads are bunched at the top. You can use align-content to set how multiple lines are spaced apart from each other. This property takes the following values:</p>
+<p><code>flex-start</code>: Lines are packed at the top of the container.<br><code>flex-end</code>: Lines are packed at the bottom of the container.<br><code>center</code>: Lines are packed at the vertical center of the container.<br><code>space-between</code>: Lines display with equal spacing between them.<br><code>space-around</code>: Lines display with equal spacing around them.<br><code>stretch</code>: Lines are stretched to fit the container.<br>This can be confusing, but align-content determines the spacing between lines, while align-items determines how the items as a whole are aligned within the container. When there is only one line, align-content has no effect.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-22"><a href="#Level-22" class="headerlink" title="Level 22"></a>Level 22</h2><p>Now the current has bunched the lilypads at the bottom. Use align-content to guide the frogs there.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-23"><a href="#Level-23" class="headerlink" title="Level 23"></a>Level 23</h2><p>The frogs have had a party, but it is time to go home. Use a combination of flex-direction and align-content to get them to their lilypads.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">  <span class="attribute">align-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-24"><a href="#Level-24" class="headerlink" title="Level 24"></a>Level 24</h2><p>Bring the frogs home one last time by using the CSS properties you’ve learned:</p>
+<p><code>justify-content</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>align-items</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>flex-direction</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>order</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>align-self</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>flex-wrap</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>flex-flow</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>align-content</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-content</span>: space-between;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
+<li><a href="https://flexboxfroggy.com/">flexboxfroggy</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>Flexbox Froggy</tag>
+        <tag>Flexbox</tag>
       </tags>
   </entry>
   <entry>
@@ -818,9 +818,9 @@
 </ol>
 ]]></content>
       <tags>
-        <tag>CSS</tag>
         <tag>Grid Garden</tag>
         <tag>Grid</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -1725,6 +1725,83 @@
       </tags>
   </entry>
   <entry>
+    <title>HTTP/2 介紹與入門教學筆記 | 學習筆記</title>
+    <url>/2023/12/16/learning-notes-http2-intro-tutorial%20copy/</url>
+    <content><![CDATA[<h2 id="1-HTTP-x2F-2-簡介"><a href="#1-HTTP-x2F-2-簡介" class="headerlink" title="1. HTTP&#x2F;2 簡介"></a>1. HTTP&#x2F;2 簡介</h2><p>HTTP&#x2F;2 是 HTTP&#x2F;1.1 的後繼版本，由 IETF HTTP 工作小組開發，並於 2015 年 5 月成為正式標準（RFC 7540）。HTTP&#x2F;2 的主要目標是提高 Web 的性能，減少延遲，並優化資源的傳輸方式。</p>
+<h2 id="2-HTTP-x2F-2-的核心特性"><a href="#2-HTTP-x2F-2-的核心特性" class="headerlink" title="2. HTTP&#x2F;2 的核心特性"></a>2. HTTP&#x2F;2 的核心特性</h2><h3 id="2-1-二進制分幀層（Binary-Framing-Layer）"><a href="#2-1-二進制分幀層（Binary-Framing-Layer）" class="headerlink" title="2.1 二進制分幀層（Binary Framing Layer）"></a>2.1 二進制分幀層（Binary Framing Layer）</h3><p>HTTP&#x2F;2 以二進制格式進行數據傳輸，而非 HTTP&#x2F;1.1 的純文字格式。這使得解析和處理更高效，減少了協議的開銷。</p>
+<h3 id="2-2-多路徑傳輸（Multiplexing）"><a href="#2-2-多路徑傳輸（Multiplexing）" class="headerlink" title="2.2 多路徑傳輸（Multiplexing）"></a>2.2 多路徑傳輸（Multiplexing）</h3><p>在 HTTP&#x2F;1.1 中，一個 TCP 連線同時只能處理一個請求，導致「線頭阻塞」問題。HTTP&#x2F;2 允許在單個 TCP 連線中並行傳輸多個請求與回應，顯著提高效率。</p>
+<h3 id="2-3-流量控制與優先權（Stream-Prioritization）"><a href="#2-3-流量控制與優先權（Stream-Prioritization）" class="headerlink" title="2.3 流量控制與優先權（Stream Prioritization）"></a>2.3 流量控制與優先權（Stream Prioritization）</h3><p>HTTP&#x2F;2 允許客戶端為請求設定優先級，讓重要的資源（如 CSS、JS）優先傳輸，提高頁面載入速度。</p>
+<h3 id="2-4-頭部壓縮（Header-Compression）"><a href="#2-4-頭部壓縮（Header-Compression）" class="headerlink" title="2.4 頭部壓縮（Header Compression）"></a>2.4 頭部壓縮（Header Compression）</h3><p>HTTP&#x2F;2 使用 HPACK 壓縮技術來減少 HTTP 標頭的大小，避免 HTTP&#x2F;1.1 中重複傳輸 Cookie、User-Agent 等大量標頭資訊的問題。</p>
+<h3 id="2-5-伺服器推送（Server-Push）"><a href="#2-5-伺服器推送（Server-Push）" class="headerlink" title="2.5 伺服器推送（Server Push）"></a>2.5 伺服器推送（Server Push）</h3><p>伺服器可以主動推送客戶端尚未請求的資源，例如 HTML 請求回應時，伺服器可同時推送 CSS、JavaScript 檔案，減少額外的請求時間。</p>
+<h2 id="3-HTTP-x2F-2-與-HTTP-x2F-1-1-的比較"><a href="#3-HTTP-x2F-2-與-HTTP-x2F-1-1-的比較" class="headerlink" title="3. HTTP&#x2F;2 與 HTTP&#x2F;1.1 的比較"></a>3. HTTP&#x2F;2 與 HTTP&#x2F;1.1 的比較</h2><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>HTTP&#x2F;1.1</th>
+<th>HTTP&#x2F;2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>資料格式</td>
+<td>純文字</td>
+<td>二進制</td>
+</tr>
+<tr>
+<td>多路復用</td>
+<td>不支援</td>
+<td>支援</td>
+</tr>
+<tr>
+<td>流量控制</td>
+<td>無</td>
+<td>有</td>
+</tr>
+<tr>
+<td>頭部壓縮</td>
+<td>無</td>
+<td>HPACK</td>
+</tr>
+<tr>
+<td>伺服器推送</td>
+<td>無</td>
+<td>有</td>
+</tr>
+</tbody></table>
+<h2 id="4-HTTP-x2F-2-的使用與設定"><a href="#4-HTTP-x2F-2-的使用與設定" class="headerlink" title="4. HTTP&#x2F;2 的使用與設定"></a>4. HTTP&#x2F;2 的使用與設定</h2><h3 id="4-1-瀏覽器支援"><a href="#4-1-瀏覽器支援" class="headerlink" title="4.1 瀏覽器支援"></a>4.1 瀏覽器支援</h3><p>現代主流瀏覽器（Chrome、Firefox、Edge、Safari）皆支援 HTTP&#x2F;2，但通常需要搭配 HTTPS 使用。</p>
+<h3 id="4-2-伺服器支援"><a href="#4-2-伺服器支援" class="headerlink" title="4.2 伺服器支援"></a>4.2 伺服器支援</h3><p>常見的 Web 伺服器如 Nginx、Apache、LiteSpeed 都已支援 HTTP&#x2F;2，但需進行適當的設定。</p>
+<h4 id="4-2-1-在-Nginx-啟用-HTTP-x2F-2"><a href="#4-2-1-在-Nginx-啟用-HTTP-x2F-2" class="headerlink" title="4.2.1 在 Nginx 啟用 HTTP&#x2F;2"></a>4.2.1 在 Nginx 啟用 HTTP&#x2F;2</h4><p>若要在 Nginx 中啟用 HTTP&#x2F;2，需要確保已安裝支援 HTTP&#x2F;2 的 Nginx 版本（1.9.5 以上）並修改設定檔：</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">443</span> ssl http2;</span><br><span class="line">    <span class="attribute">server_name</span> example.com;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">ssl_certificate</span> /etc/nginx/ssl/cert.pem;</span><br><span class="line">    <span class="attribute">ssl_certificate_key</span> /etc/nginx/ssl/cert.key;</span><br><span class="line"></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">root</span> /var/www/html;</span><br><span class="line">        <span class="attribute">index</span> index.html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>listen</code> 指令中加入 <code>http2</code> 即可啟用 HTTP&#x2F;2。</p>
+<h4 id="4-2-2-在-Apache-啟用-HTTP-x2F-2"><a href="#4-2-2-在-Apache-啟用-HTTP-x2F-2" class="headerlink" title="4.2.2 在 Apache 啟用 HTTP&#x2F;2"></a>4.2.2 在 Apache 啟用 HTTP&#x2F;2</h4><p>Apache 2.4.17 以上版本支援 HTTP&#x2F;2，需要啟用 <code>mod_http2</code> 模組。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">a2enmod http2</span><br><span class="line">systemctl restart apache2</span><br></pre></td></tr></table></figure>
+
+<p>接著，在 VirtualHost 設定中加入：</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="section">&lt;VirtualHost *<span class="number">:443</span>&gt;</span></span><br><span class="line">    <span class="attribute">Protocols</span> h2 http/<span class="number">1</span>.<span class="number">1</span></span><br><span class="line">    <span class="attribute">DocumentRoot</span> /var/www/html</span><br><span class="line">    <span class="attribute">ServerName</span> example.com</span><br><span class="line"><span class="section">&lt;/VirtualHost&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-HTTP-x2F-2-客戶端測試"><a href="#5-HTTP-x2F-2-客戶端測試" class="headerlink" title="5. HTTP&#x2F;2 客戶端測試"></a>5. HTTP&#x2F;2 客戶端測試</h2><p>可以使用 <code>curl</code> 測試 HTTP&#x2F;2 是否正常運作：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -I --http2 https://example.com</span><br></pre></td></tr></table></figure>
+
+<p>若顯示 <code>HTTP/2 200</code>，則表示伺服器已成功支援 HTTP&#x2F;2。</p>
+<h2 id="6-HTTP-x2F-2-的實際應用"><a href="#6-HTTP-x2F-2-的實際應用" class="headerlink" title="6. HTTP&#x2F;2 的實際應用"></a>6. HTTP&#x2F;2 的實際應用</h2><h3 id="6-1-使用-HTTP-x2F-2-Server-Push"><a href="#6-1-使用-HTTP-x2F-2-Server-Push" class="headerlink" title="6.1 使用 HTTP&#x2F;2 Server Push"></a>6.1 使用 HTTP&#x2F;2 Server Push</h3><p>在 HTTP&#x2F;2 中，可以使用 <code>Link</code> 標頭來主動推送資源。例如，在 Nginx 配置中加入：</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">location</span> / &#123;</span><br><span class="line">    <span class="attribute">add_header</span> Link <span class="string">&quot;&lt;/style.css&gt;; rel=preload; as=style&quot;</span>;</span><br><span class="line">    <span class="attribute">add_header</span> Link <span class="string">&quot;&lt;/script.js&gt;; rel=preload; as=script&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣當客戶端請求 <code>index.html</code> 時，伺服器會自動推送 <code>style.css</code> 和 <code>script.js</code>，減少 HTTP 請求數量。</p>
+<h3 id="6-2-透過瀏覽器-DevTools-觀察-HTTP-x2F-2"><a href="#6-2-透過瀏覽器-DevTools-觀察-HTTP-x2F-2" class="headerlink" title="6.2 透過瀏覽器 DevTools 觀察 HTTP&#x2F;2"></a>6.2 透過瀏覽器 DevTools 觀察 HTTP&#x2F;2</h3><p>打開 Chrome 開發者工具（F12） → <code>Network</code> 分頁，查看 <code>Protocol</code> 欄位，若顯示 <code>h2</code>，則表示該請求使用了 HTTP&#x2F;2。</p>
+<h2 id="7-總結"><a href="#7-總結" class="headerlink" title="7. 總結"></a>7. 總結</h2><p>HTTP&#x2F;2 改進了 HTTP&#x2F;1.1 的多項限制，透過多路徑傳輸、頭部壓縮與伺服器推送提高了 Web 效能。現代瀏覽器與伺服器已廣泛支援 HTTP&#x2F;2，建議在新專案中啟用 HTTP&#x2F;2，以提升用戶體驗與網站速度。</p>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>HTTP/1</tag>
+        <tag>HTTP</tag>
+        <tag>HTTP/2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript 箭頭函式 (Arrow Function）入門教學筆記 | 學習筆記</title>
     <url>/2021/01/16/learning-notes-javascript-arrow-function-this-intro-tutorial/</url>
     <content><![CDATA[<p>在 JavaScript 的 <strong>箭頭函式 (Arrow Function, <code>=&gt;</code>)</strong> 中，<code>this</code> 的行為與傳統的 <strong>函式表達式 (Function Expression)</strong> 不同，主要特點如下：</p>
@@ -1862,83 +1939,6 @@
         <tag>異步</tag>
         <tag>async/await</tag>
         <tag>fetch</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTTP/2 介紹與入門教學筆記 | 學習筆記</title>
-    <url>/2023/12/16/learning-notes-http2-intro-tutorial%20copy/</url>
-    <content><![CDATA[<h2 id="1-HTTP-x2F-2-簡介"><a href="#1-HTTP-x2F-2-簡介" class="headerlink" title="1. HTTP&#x2F;2 簡介"></a>1. HTTP&#x2F;2 簡介</h2><p>HTTP&#x2F;2 是 HTTP&#x2F;1.1 的後繼版本，由 IETF HTTP 工作小組開發，並於 2015 年 5 月成為正式標準（RFC 7540）。HTTP&#x2F;2 的主要目標是提高 Web 的性能，減少延遲，並優化資源的傳輸方式。</p>
-<h2 id="2-HTTP-x2F-2-的核心特性"><a href="#2-HTTP-x2F-2-的核心特性" class="headerlink" title="2. HTTP&#x2F;2 的核心特性"></a>2. HTTP&#x2F;2 的核心特性</h2><h3 id="2-1-二進制分幀層（Binary-Framing-Layer）"><a href="#2-1-二進制分幀層（Binary-Framing-Layer）" class="headerlink" title="2.1 二進制分幀層（Binary Framing Layer）"></a>2.1 二進制分幀層（Binary Framing Layer）</h3><p>HTTP&#x2F;2 以二進制格式進行數據傳輸，而非 HTTP&#x2F;1.1 的純文字格式。這使得解析和處理更高效，減少了協議的開銷。</p>
-<h3 id="2-2-多路徑傳輸（Multiplexing）"><a href="#2-2-多路徑傳輸（Multiplexing）" class="headerlink" title="2.2 多路徑傳輸（Multiplexing）"></a>2.2 多路徑傳輸（Multiplexing）</h3><p>在 HTTP&#x2F;1.1 中，一個 TCP 連線同時只能處理一個請求，導致「線頭阻塞」問題。HTTP&#x2F;2 允許在單個 TCP 連線中並行傳輸多個請求與回應，顯著提高效率。</p>
-<h3 id="2-3-流量控制與優先權（Stream-Prioritization）"><a href="#2-3-流量控制與優先權（Stream-Prioritization）" class="headerlink" title="2.3 流量控制與優先權（Stream Prioritization）"></a>2.3 流量控制與優先權（Stream Prioritization）</h3><p>HTTP&#x2F;2 允許客戶端為請求設定優先級，讓重要的資源（如 CSS、JS）優先傳輸，提高頁面載入速度。</p>
-<h3 id="2-4-頭部壓縮（Header-Compression）"><a href="#2-4-頭部壓縮（Header-Compression）" class="headerlink" title="2.4 頭部壓縮（Header Compression）"></a>2.4 頭部壓縮（Header Compression）</h3><p>HTTP&#x2F;2 使用 HPACK 壓縮技術來減少 HTTP 標頭的大小，避免 HTTP&#x2F;1.1 中重複傳輸 Cookie、User-Agent 等大量標頭資訊的問題。</p>
-<h3 id="2-5-伺服器推送（Server-Push）"><a href="#2-5-伺服器推送（Server-Push）" class="headerlink" title="2.5 伺服器推送（Server Push）"></a>2.5 伺服器推送（Server Push）</h3><p>伺服器可以主動推送客戶端尚未請求的資源，例如 HTML 請求回應時，伺服器可同時推送 CSS、JavaScript 檔案，減少額外的請求時間。</p>
-<h2 id="3-HTTP-x2F-2-與-HTTP-x2F-1-1-的比較"><a href="#3-HTTP-x2F-2-與-HTTP-x2F-1-1-的比較" class="headerlink" title="3. HTTP&#x2F;2 與 HTTP&#x2F;1.1 的比較"></a>3. HTTP&#x2F;2 與 HTTP&#x2F;1.1 的比較</h2><table>
-<thead>
-<tr>
-<th>特性</th>
-<th>HTTP&#x2F;1.1</th>
-<th>HTTP&#x2F;2</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>資料格式</td>
-<td>純文字</td>
-<td>二進制</td>
-</tr>
-<tr>
-<td>多路復用</td>
-<td>不支援</td>
-<td>支援</td>
-</tr>
-<tr>
-<td>流量控制</td>
-<td>無</td>
-<td>有</td>
-</tr>
-<tr>
-<td>頭部壓縮</td>
-<td>無</td>
-<td>HPACK</td>
-</tr>
-<tr>
-<td>伺服器推送</td>
-<td>無</td>
-<td>有</td>
-</tr>
-</tbody></table>
-<h2 id="4-HTTP-x2F-2-的使用與設定"><a href="#4-HTTP-x2F-2-的使用與設定" class="headerlink" title="4. HTTP&#x2F;2 的使用與設定"></a>4. HTTP&#x2F;2 的使用與設定</h2><h3 id="4-1-瀏覽器支援"><a href="#4-1-瀏覽器支援" class="headerlink" title="4.1 瀏覽器支援"></a>4.1 瀏覽器支援</h3><p>現代主流瀏覽器（Chrome、Firefox、Edge、Safari）皆支援 HTTP&#x2F;2，但通常需要搭配 HTTPS 使用。</p>
-<h3 id="4-2-伺服器支援"><a href="#4-2-伺服器支援" class="headerlink" title="4.2 伺服器支援"></a>4.2 伺服器支援</h3><p>常見的 Web 伺服器如 Nginx、Apache、LiteSpeed 都已支援 HTTP&#x2F;2，但需進行適當的設定。</p>
-<h4 id="4-2-1-在-Nginx-啟用-HTTP-x2F-2"><a href="#4-2-1-在-Nginx-啟用-HTTP-x2F-2" class="headerlink" title="4.2.1 在 Nginx 啟用 HTTP&#x2F;2"></a>4.2.1 在 Nginx 啟用 HTTP&#x2F;2</h4><p>若要在 Nginx 中啟用 HTTP&#x2F;2，需要確保已安裝支援 HTTP&#x2F;2 的 Nginx 版本（1.9.5 以上）並修改設定檔：</p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">443</span> ssl http2;</span><br><span class="line">    <span class="attribute">server_name</span> example.com;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">ssl_certificate</span> /etc/nginx/ssl/cert.pem;</span><br><span class="line">    <span class="attribute">ssl_certificate_key</span> /etc/nginx/ssl/cert.key;</span><br><span class="line"></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">root</span> /var/www/html;</span><br><span class="line">        <span class="attribute">index</span> index.html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在 <code>listen</code> 指令中加入 <code>http2</code> 即可啟用 HTTP&#x2F;2。</p>
-<h4 id="4-2-2-在-Apache-啟用-HTTP-x2F-2"><a href="#4-2-2-在-Apache-啟用-HTTP-x2F-2" class="headerlink" title="4.2.2 在 Apache 啟用 HTTP&#x2F;2"></a>4.2.2 在 Apache 啟用 HTTP&#x2F;2</h4><p>Apache 2.4.17 以上版本支援 HTTP&#x2F;2，需要啟用 <code>mod_http2</code> 模組。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">a2enmod http2</span><br><span class="line">systemctl restart apache2</span><br></pre></td></tr></table></figure>
-
-<p>接著，在 VirtualHost 設定中加入：</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="section">&lt;VirtualHost *<span class="number">:443</span>&gt;</span></span><br><span class="line">    <span class="attribute">Protocols</span> h2 http/<span class="number">1</span>.<span class="number">1</span></span><br><span class="line">    <span class="attribute">DocumentRoot</span> /var/www/html</span><br><span class="line">    <span class="attribute">ServerName</span> example.com</span><br><span class="line"><span class="section">&lt;/VirtualHost&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="5-HTTP-x2F-2-客戶端測試"><a href="#5-HTTP-x2F-2-客戶端測試" class="headerlink" title="5. HTTP&#x2F;2 客戶端測試"></a>5. HTTP&#x2F;2 客戶端測試</h2><p>可以使用 <code>curl</code> 測試 HTTP&#x2F;2 是否正常運作：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -I --http2 https://example.com</span><br></pre></td></tr></table></figure>
-
-<p>若顯示 <code>HTTP/2 200</code>，則表示伺服器已成功支援 HTTP&#x2F;2。</p>
-<h2 id="6-HTTP-x2F-2-的實際應用"><a href="#6-HTTP-x2F-2-的實際應用" class="headerlink" title="6. HTTP&#x2F;2 的實際應用"></a>6. HTTP&#x2F;2 的實際應用</h2><h3 id="6-1-使用-HTTP-x2F-2-Server-Push"><a href="#6-1-使用-HTTP-x2F-2-Server-Push" class="headerlink" title="6.1 使用 HTTP&#x2F;2 Server Push"></a>6.1 使用 HTTP&#x2F;2 Server Push</h3><p>在 HTTP&#x2F;2 中，可以使用 <code>Link</code> 標頭來主動推送資源。例如，在 Nginx 配置中加入：</p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">location</span> / &#123;</span><br><span class="line">    <span class="attribute">add_header</span> Link <span class="string">&quot;&lt;/style.css&gt;; rel=preload; as=style&quot;</span>;</span><br><span class="line">    <span class="attribute">add_header</span> Link <span class="string">&quot;&lt;/script.js&gt;; rel=preload; as=script&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這樣當客戶端請求 <code>index.html</code> 時，伺服器會自動推送 <code>style.css</code> 和 <code>script.js</code>，減少 HTTP 請求數量。</p>
-<h3 id="6-2-透過瀏覽器-DevTools-觀察-HTTP-x2F-2"><a href="#6-2-透過瀏覽器-DevTools-觀察-HTTP-x2F-2" class="headerlink" title="6.2 透過瀏覽器 DevTools 觀察 HTTP&#x2F;2"></a>6.2 透過瀏覽器 DevTools 觀察 HTTP&#x2F;2</h3><p>打開 Chrome 開發者工具（F12） → <code>Network</code> 分頁，查看 <code>Protocol</code> 欄位，若顯示 <code>h2</code>，則表示該請求使用了 HTTP&#x2F;2。</p>
-<h2 id="7-總結"><a href="#7-總結" class="headerlink" title="7. 總結"></a>7. 總結</h2><p>HTTP&#x2F;2 改進了 HTTP&#x2F;1.1 的多項限制，透過多路徑傳輸、頭部壓縮與伺服器推送提高了 Web 效能。現代瀏覽器與伺服器已廣泛支援 HTTP&#x2F;2，建議在新專案中啟用 HTTP&#x2F;2，以提升用戶體驗與網站速度。</p>
-]]></content>
-      <tags>
-        <tag>javascript</tag>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>HTTP/1</tag>
-        <tag>HTTP</tag>
-        <tag>HTTP/2</tag>
       </tags>
   </entry>
   <entry>
@@ -2349,86 +2349,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JavaScript 入門教學筆記 | 學習筆記</title>
-    <url>/2021/12/14/learning-notes-javascript-intro-tutorial/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><code>JavaScript</code>（簡稱 JS）是一種高階、直譯式、弱型別的程式語言，廣泛應用於 Web 開發。它最初用於瀏覽器端，現在也能在伺服器端（如 Node.js）運行，並支援多種應用開發，如網頁、行動應用、桌面應用等。</p>
-<hr>
-<h2 id="1-JavaScript-的基本語法"><a href="#1-JavaScript-的基本語法" class="headerlink" title="1. JavaScript 的基本語法"></a>1. JavaScript 的基本語法</h2><h3 id="1-1-變數與常數"><a href="#1-1-變數與常數" class="headerlink" title="1.1 變數與常數"></a>1.1 變數與常數</h3><p>在 JavaScript 中，可以使用 <code>var</code>、<code>let</code> 或 <code>const</code> 來宣告變數。  </p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>; <span class="comment">// 傳統變數宣告（不建議使用）</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">20</span>; <span class="comment">// 可變變數</span></span><br><span class="line"><span class="keyword">const</span> c = <span class="number">30</span>; <span class="comment">// 常數，無法重新賦值</span></span><br></pre></td></tr></table></figure>
-<p><code>let</code> 和 <code>const</code> 具有區塊作用域（Block Scope），而 <code>var</code> 則具有函式作用域（Function Scope）。</p>
-<hr>
-<h3 id="1-2-資料型別"><a href="#1-2-資料型別" class="headerlink" title="1.2 資料型別"></a>1.2 資料型別</h3><p>JavaScript 主要的資料型別包括：  </p>
-<ul>
-<li><p><strong>原始型別（Primitive Types）</strong>：</p>
-<ul>
-<li><code>string</code>（字串）</li>
-<li><code>number</code>（數字，包括整數與浮點數）</li>
-<li><code>boolean</code>（布林值）</li>
-<li><code>null</code>（空值）</li>
-<li><code>undefined</code>（未定義）</li>
-<li><code>symbol</code>（符號，ES6 引入）</li>
-</ul>
-</li>
-<li><p><strong>參考型別（Reference Types）</strong>：</p>
-<ul>
-<li><code>object</code>（物件）</li>
-<li><code>array</code>（陣列）</li>
-<li><code>function</code>（函式）</li>
-</ul>
-</li>
-</ul>
-<p>範例：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&#x27;Alice&#x27;</span>; <span class="comment">// 字串</span></span><br><span class="line"><span class="keyword">let</span> age = <span class="number">25</span>; <span class="comment">// 數字</span></span><br><span class="line"><span class="keyword">let</span> isStudent = <span class="literal">true</span>; <span class="comment">// 布林值</span></span><br><span class="line"><span class="keyword">let</span> hobby = <span class="literal">null</span>; <span class="comment">// 空值</span></span><br><span class="line"><span class="keyword">let</span> score; <span class="comment">// 未定義（undefined）</span></span><br><span class="line"><span class="keyword">let</span> person = &#123; <span class="attr">name</span>: <span class="string">&#x27;Bob&#x27;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;; <span class="comment">// 物件</span></span><br><span class="line"><span class="keyword">let</span> colors = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;blue&#x27;</span>]; <span class="comment">// 陣列</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="2-運算子"><a href="#2-運算子" class="headerlink" title="2. 運算子"></a>2. 運算子</h2><h3 id="2-1-算術運算子"><a href="#2-1-算術運算子" class="headerlink" title="2.1 算術運算子"></a>2.1 算術運算子</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> y = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x + y); <span class="comment">// 加法：15</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x - y); <span class="comment">// 減法：5</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x * y); <span class="comment">// 乘法：50</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x / y); <span class="comment">// 除法：2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x % y); <span class="comment">// 餘數：0</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x ** <span class="number">2</span>); <span class="comment">// 次方運算：100</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-2-比較運算子"><a href="#2-2-比較運算子" class="headerlink" title="2.2 比較運算子"></a>2.2 比較運算子</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">10</span> &gt; <span class="number">5</span>); <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">10</span> &gt;= <span class="number">10</span>); <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">10</span> &lt; <span class="number">5</span>); <span class="comment">// false</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">10</span> === <span class="string">&#x27;10&#x27;</span>); <span class="comment">// false（全等）</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">10</span> == <span class="string">&#x27;10&#x27;</span>); <span class="comment">// true（寬鬆比較）</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">10</span> !== <span class="string">&#x27;10&#x27;</span>); <span class="comment">// true（全不等）</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">10</span> != <span class="string">&#x27;10&#x27;</span>); <span class="comment">// false（寬鬆不等）</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-3-邏輯運算子"><a href="#2-3-邏輯運算子" class="headerlink" title="2.3 邏輯運算子"></a>2.3 邏輯運算子</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="literal">true</span> &amp;&amp; <span class="literal">false</span>); <span class="comment">// false（AND）</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="literal">true</span> || <span class="literal">false</span>); <span class="comment">// true（OR）</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(!<span class="literal">true</span>); <span class="comment">// false（NOT）</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="3-控制流程"><a href="#3-控制流程" class="headerlink" title="3. 控制流程"></a>3. 控制流程</h2><h3 id="3-1-條件判斷"><a href="#3-1-條件判斷" class="headerlink" title="3.1 條件判斷"></a>3.1 條件判斷</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> score = <span class="number">75</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (score &gt;= <span class="number">90</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;A&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (score &gt;= <span class="number">80</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;B&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;C&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-三元運算子"><a href="#3-2-三元運算子" class="headerlink" title="3.2 三元運算子"></a>3.2 三元運算子</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> age = <span class="number">18</span>;</span><br><span class="line"><span class="keyword">let</span> canVote = age &gt;= <span class="number">18</span> ? <span class="string">&#x27;可以投票&#x27;</span> : <span class="string">&#x27;不可以投票&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(canVote);</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-switch-語法"><a href="#3-3-switch-語法" class="headerlink" title="3.3 switch 語法"></a>3.3 <code>switch</code> 語法</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> fruit = <span class="string">&#x27;apple&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> (fruit) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;banana&#x27;</span>:</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;黃色&#x27;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;apple&#x27;</span>:</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;紅色&#x27;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="attr">default</span>:</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;未知&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="4-迴圈"><a href="#4-迴圈" class="headerlink" title="4. 迴圈"></a>4. 迴圈</h2><h3 id="4-1-for-迴圈"><a href="#4-1-for-迴圈" class="headerlink" title="4.1 for 迴圈"></a>4.1 <code>for</code> 迴圈</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;數字：&#x27;</span> + i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-while-迴圈"><a href="#4-2-while-迴圈" class="headerlink" title="4.2 while 迴圈"></a>4.2 <code>while</code> 迴圈</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (num &lt;= <span class="number">5</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;數字：&#x27;</span> + num);</span><br><span class="line">    num++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-3-forEach（適用於陣列）"><a href="#4-3-forEach（適用於陣列）" class="headerlink" title="4.3 forEach（適用於陣列）"></a>4.3 <code>forEach</code>（適用於陣列）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> colors = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;blue&#x27;</span>];</span><br><span class="line"></span><br><span class="line">colors.<span class="title function_">forEach</span>(<span class="keyword">function</span> (<span class="params">color</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(color);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="5-函式（Functions）"><a href="#5-函式（Functions）" class="headerlink" title="5. 函式（Functions）"></a>5. 函式（Functions）</h2><h3 id="5-1-一般函式"><a href="#5-1-一般函式" class="headerlink" title="5.1 一般函式"></a>5.1 一般函式</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">add</span>(<span class="number">3</span>, <span class="number">5</span>)); <span class="comment">// 8</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="5-2-箭頭函式（Arrow-Function）"><a href="#5-2-箭頭函式（Arrow-Function）" class="headerlink" title="5.2 箭頭函式（Arrow Function）"></a>5.2 箭頭函式（Arrow Function）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">multiply</span> = (<span class="params">a, b</span>) =&gt; a * b;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">multiply</span>(<span class="number">4</span>, <span class="number">6</span>)); <span class="comment">// 24</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="5-3-立即執行函式（IIFE）"><a href="#5-3-立即執行函式（IIFE）" class="headerlink" title="5.3 立即執行函式（IIFE）"></a>5.3 立即執行函式（IIFE）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;這是立即執行函式&#x27;</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="6-陣列與物件"><a href="#6-陣列與物件" class="headerlink" title="6. 陣列與物件"></a>6. 陣列與物件</h2><h3 id="6-1-陣列操作"><a href="#6-1-陣列操作" class="headerlink" title="6.1 陣列操作"></a>6.1 陣列操作</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;cherry&#x27;</span>];</span><br><span class="line"></span><br><span class="line">fruits.<span class="title function_">push</span>(<span class="string">&#x27;grape&#x27;</span>); <span class="comment">// 新增</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(fruits); <span class="comment">// [&#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;cherry&#x27;, &#x27;grape&#x27;]</span></span><br><span class="line"></span><br><span class="line">fruits.<span class="title function_">pop</span>(); <span class="comment">// 移除最後一個</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(fruits); <span class="comment">// [&#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;cherry&#x27;]</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="6-2-物件操作"><a href="#6-2-物件操作" class="headerlink" title="6.2 物件操作"></a>6.2 物件操作</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">25</span>,</span><br><span class="line">    <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello, my name is &#x27;</span> + <span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">name</span>); <span class="comment">// &#x27;Alice&#x27;</span></span><br><span class="line">person.<span class="title function_">greet</span>(); <span class="comment">// &#x27;Hello, my name is Alice&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="7-非同步處理"><a href="#7-非同步處理" class="headerlink" title="7. 非同步處理"></a>7. 非同步處理</h2><h3 id="7-1-setTimeout-與-setInterval"><a href="#7-1-setTimeout-與-setInterval" class="headerlink" title="7.1 setTimeout 與 setInterval"></a>7.1 <code>setTimeout</code> 與 <code>setInterval</code></h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;這段文字將在 2 秒後出現&#x27;</span>);</span><br><span class="line">&#125;, <span class="number">2000</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="7-2-Promise"><a href="#7-2-Promise" class="headerlink" title="7.2 Promise"></a>7.2 Promise</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> fetchData = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">resolve</span>(<span class="string">&#x27;資料已載入&#x27;</span>);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">fetchData.<span class="title function_">then</span>(<span class="function">(<span class="params">message</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(message));</span><br></pre></td></tr></table></figure>
-
-<h3 id="7-3-async-await"><a href="#7-3-async-await" class="headerlink" title="7.3 async/await"></a>7.3 <code>async/await</code></h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchData</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;資料已載入&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">fetchData</span>().<span class="title function_">then</span>(<span class="variable language_">console</span>.<span class="property">log</span>);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>JavaScript 是一種靈活且功能強大的語言，適用於前端與後端開發。本文介紹了基本語法、變數、運算子、控制流程、函式、陣列、物件及非同步處理等內容，這些知識構成 JavaScript 入門的基礎。建議透過實際練習來加深理解，如使用瀏覽器開發者工具或建立小型專案來測試所學內容。</p>
-]]></content>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript let 閉包（Closure）入門教學筆記 | 學習筆記</title>
     <url>/2021/01/16/learning-notes-javascript-let-closure/</url>
     <content><![CDATA[<h4 id="什麼是閉包（Closure）？"><a href="#什麼是閉包（Closure）？" class="headerlink" title="什麼是閉包（Closure）？"></a>什麼是閉包（Closure）？</h4><p>閉包是 JavaScript 中的一個強大概念，它允許函式「記住」其外部作用域（lexical scope），即使該作用域已經執行完畢並離開了執行環境。閉包使得函式能夠存取其外部函式內部的變數，而這些變數通常在外部函式執行結束後仍然可以被存取。</p>
@@ -2509,6 +2429,86 @@
         <tag>Closure</tag>
         <tag>let</tag>
         <tag>閉包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript 入門教學筆記 | 學習筆記</title>
+    <url>/2021/12/14/learning-notes-javascript-intro-tutorial/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><code>JavaScript</code>（簡稱 JS）是一種高階、直譯式、弱型別的程式語言，廣泛應用於 Web 開發。它最初用於瀏覽器端，現在也能在伺服器端（如 Node.js）運行，並支援多種應用開發，如網頁、行動應用、桌面應用等。</p>
+<hr>
+<h2 id="1-JavaScript-的基本語法"><a href="#1-JavaScript-的基本語法" class="headerlink" title="1. JavaScript 的基本語法"></a>1. JavaScript 的基本語法</h2><h3 id="1-1-變數與常數"><a href="#1-1-變數與常數" class="headerlink" title="1.1 變數與常數"></a>1.1 變數與常數</h3><p>在 JavaScript 中，可以使用 <code>var</code>、<code>let</code> 或 <code>const</code> 來宣告變數。  </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>; <span class="comment">// 傳統變數宣告（不建議使用）</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">20</span>; <span class="comment">// 可變變數</span></span><br><span class="line"><span class="keyword">const</span> c = <span class="number">30</span>; <span class="comment">// 常數，無法重新賦值</span></span><br></pre></td></tr></table></figure>
+<p><code>let</code> 和 <code>const</code> 具有區塊作用域（Block Scope），而 <code>var</code> 則具有函式作用域（Function Scope）。</p>
+<hr>
+<h3 id="1-2-資料型別"><a href="#1-2-資料型別" class="headerlink" title="1.2 資料型別"></a>1.2 資料型別</h3><p>JavaScript 主要的資料型別包括：  </p>
+<ul>
+<li><p><strong>原始型別（Primitive Types）</strong>：</p>
+<ul>
+<li><code>string</code>（字串）</li>
+<li><code>number</code>（數字，包括整數與浮點數）</li>
+<li><code>boolean</code>（布林值）</li>
+<li><code>null</code>（空值）</li>
+<li><code>undefined</code>（未定義）</li>
+<li><code>symbol</code>（符號，ES6 引入）</li>
+</ul>
+</li>
+<li><p><strong>參考型別（Reference Types）</strong>：</p>
+<ul>
+<li><code>object</code>（物件）</li>
+<li><code>array</code>（陣列）</li>
+<li><code>function</code>（函式）</li>
+</ul>
+</li>
+</ul>
+<p>範例：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&#x27;Alice&#x27;</span>; <span class="comment">// 字串</span></span><br><span class="line"><span class="keyword">let</span> age = <span class="number">25</span>; <span class="comment">// 數字</span></span><br><span class="line"><span class="keyword">let</span> isStudent = <span class="literal">true</span>; <span class="comment">// 布林值</span></span><br><span class="line"><span class="keyword">let</span> hobby = <span class="literal">null</span>; <span class="comment">// 空值</span></span><br><span class="line"><span class="keyword">let</span> score; <span class="comment">// 未定義（undefined）</span></span><br><span class="line"><span class="keyword">let</span> person = &#123; <span class="attr">name</span>: <span class="string">&#x27;Bob&#x27;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;; <span class="comment">// 物件</span></span><br><span class="line"><span class="keyword">let</span> colors = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;blue&#x27;</span>]; <span class="comment">// 陣列</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="2-運算子"><a href="#2-運算子" class="headerlink" title="2. 運算子"></a>2. 運算子</h2><h3 id="2-1-算術運算子"><a href="#2-1-算術運算子" class="headerlink" title="2.1 算術運算子"></a>2.1 算術運算子</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> y = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x + y); <span class="comment">// 加法：15</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x - y); <span class="comment">// 減法：5</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x * y); <span class="comment">// 乘法：50</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x / y); <span class="comment">// 除法：2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x % y); <span class="comment">// 餘數：0</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x ** <span class="number">2</span>); <span class="comment">// 次方運算：100</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-比較運算子"><a href="#2-2-比較運算子" class="headerlink" title="2.2 比較運算子"></a>2.2 比較運算子</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">10</span> &gt; <span class="number">5</span>); <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">10</span> &gt;= <span class="number">10</span>); <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">10</span> &lt; <span class="number">5</span>); <span class="comment">// false</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">10</span> === <span class="string">&#x27;10&#x27;</span>); <span class="comment">// false（全等）</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">10</span> == <span class="string">&#x27;10&#x27;</span>); <span class="comment">// true（寬鬆比較）</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">10</span> !== <span class="string">&#x27;10&#x27;</span>); <span class="comment">// true（全不等）</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">10</span> != <span class="string">&#x27;10&#x27;</span>); <span class="comment">// false（寬鬆不等）</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-邏輯運算子"><a href="#2-3-邏輯運算子" class="headerlink" title="2.3 邏輯運算子"></a>2.3 邏輯運算子</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="literal">true</span> &amp;&amp; <span class="literal">false</span>); <span class="comment">// false（AND）</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="literal">true</span> || <span class="literal">false</span>); <span class="comment">// true（OR）</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(!<span class="literal">true</span>); <span class="comment">// false（NOT）</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="3-控制流程"><a href="#3-控制流程" class="headerlink" title="3. 控制流程"></a>3. 控制流程</h2><h3 id="3-1-條件判斷"><a href="#3-1-條件判斷" class="headerlink" title="3.1 條件判斷"></a>3.1 條件判斷</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> score = <span class="number">75</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (score &gt;= <span class="number">90</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;A&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (score &gt;= <span class="number">80</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;B&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;C&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-三元運算子"><a href="#3-2-三元運算子" class="headerlink" title="3.2 三元運算子"></a>3.2 三元運算子</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> age = <span class="number">18</span>;</span><br><span class="line"><span class="keyword">let</span> canVote = age &gt;= <span class="number">18</span> ? <span class="string">&#x27;可以投票&#x27;</span> : <span class="string">&#x27;不可以投票&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(canVote);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-switch-語法"><a href="#3-3-switch-語法" class="headerlink" title="3.3 switch 語法"></a>3.3 <code>switch</code> 語法</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> fruit = <span class="string">&#x27;apple&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> (fruit) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;banana&#x27;</span>:</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;黃色&#x27;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;apple&#x27;</span>:</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;紅色&#x27;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="attr">default</span>:</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;未知&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="4-迴圈"><a href="#4-迴圈" class="headerlink" title="4. 迴圈"></a>4. 迴圈</h2><h3 id="4-1-for-迴圈"><a href="#4-1-for-迴圈" class="headerlink" title="4.1 for 迴圈"></a>4.1 <code>for</code> 迴圈</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;數字：&#x27;</span> + i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-while-迴圈"><a href="#4-2-while-迴圈" class="headerlink" title="4.2 while 迴圈"></a>4.2 <code>while</code> 迴圈</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (num &lt;= <span class="number">5</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;數字：&#x27;</span> + num);</span><br><span class="line">    num++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-forEach（適用於陣列）"><a href="#4-3-forEach（適用於陣列）" class="headerlink" title="4.3 forEach（適用於陣列）"></a>4.3 <code>forEach</code>（適用於陣列）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> colors = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;blue&#x27;</span>];</span><br><span class="line"></span><br><span class="line">colors.<span class="title function_">forEach</span>(<span class="keyword">function</span> (<span class="params">color</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(color);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-函式（Functions）"><a href="#5-函式（Functions）" class="headerlink" title="5. 函式（Functions）"></a>5. 函式（Functions）</h2><h3 id="5-1-一般函式"><a href="#5-1-一般函式" class="headerlink" title="5.1 一般函式"></a>5.1 一般函式</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">add</span>(<span class="number">3</span>, <span class="number">5</span>)); <span class="comment">// 8</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-箭頭函式（Arrow-Function）"><a href="#5-2-箭頭函式（Arrow-Function）" class="headerlink" title="5.2 箭頭函式（Arrow Function）"></a>5.2 箭頭函式（Arrow Function）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">multiply</span> = (<span class="params">a, b</span>) =&gt; a * b;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">multiply</span>(<span class="number">4</span>, <span class="number">6</span>)); <span class="comment">// 24</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-立即執行函式（IIFE）"><a href="#5-3-立即執行函式（IIFE）" class="headerlink" title="5.3 立即執行函式（IIFE）"></a>5.3 立即執行函式（IIFE）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;這是立即執行函式&#x27;</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="6-陣列與物件"><a href="#6-陣列與物件" class="headerlink" title="6. 陣列與物件"></a>6. 陣列與物件</h2><h3 id="6-1-陣列操作"><a href="#6-1-陣列操作" class="headerlink" title="6.1 陣列操作"></a>6.1 陣列操作</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;cherry&#x27;</span>];</span><br><span class="line"></span><br><span class="line">fruits.<span class="title function_">push</span>(<span class="string">&#x27;grape&#x27;</span>); <span class="comment">// 新增</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(fruits); <span class="comment">// [&#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;cherry&#x27;, &#x27;grape&#x27;]</span></span><br><span class="line"></span><br><span class="line">fruits.<span class="title function_">pop</span>(); <span class="comment">// 移除最後一個</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(fruits); <span class="comment">// [&#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;cherry&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-2-物件操作"><a href="#6-2-物件操作" class="headerlink" title="6.2 物件操作"></a>6.2 物件操作</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">25</span>,</span><br><span class="line">    <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello, my name is &#x27;</span> + <span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">name</span>); <span class="comment">// &#x27;Alice&#x27;</span></span><br><span class="line">person.<span class="title function_">greet</span>(); <span class="comment">// &#x27;Hello, my name is Alice&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="7-非同步處理"><a href="#7-非同步處理" class="headerlink" title="7. 非同步處理"></a>7. 非同步處理</h2><h3 id="7-1-setTimeout-與-setInterval"><a href="#7-1-setTimeout-與-setInterval" class="headerlink" title="7.1 setTimeout 與 setInterval"></a>7.1 <code>setTimeout</code> 與 <code>setInterval</code></h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;這段文字將在 2 秒後出現&#x27;</span>);</span><br><span class="line">&#125;, <span class="number">2000</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-2-Promise"><a href="#7-2-Promise" class="headerlink" title="7.2 Promise"></a>7.2 Promise</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> fetchData = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">resolve</span>(<span class="string">&#x27;資料已載入&#x27;</span>);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">fetchData.<span class="title function_">then</span>(<span class="function">(<span class="params">message</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(message));</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-3-async-await"><a href="#7-3-async-await" class="headerlink" title="7.3 async/await"></a>7.3 <code>async/await</code></h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchData</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;資料已載入&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">fetchData</span>().<span class="title function_">then</span>(<span class="variable language_">console</span>.<span class="property">log</span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>JavaScript 是一種靈活且功能強大的語言，適用於前端與後端開發。本文介紹了基本語法、變數、運算子、控制流程、函式、陣列、物件及非同步處理等內容，這些知識構成 JavaScript 入門的基礎。建議透過實際練習來加深理解，如使用瀏覽器開發者工具或建立小型專案來測試所學內容。</p>
+]]></content>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -2620,63 +2620,54 @@
       </tags>
   </entry>
   <entry>
-    <title>JavaScript this 入門教學筆記 | 學習筆記</title>
-    <url>/2021/01/16/learning-notes-javascript-this-intro-tutorial/</url>
-    <content><![CDATA[<p>在 JavaScript 中，<code>this</code> 是一個關鍵字，它的值會根據執行環境的不同而改變。以下是 <code>this</code> 在不同情境下的行為：</p>
-<hr>
-<h2 id="1-全域環境-Global-Context"><a href="#1-全域環境-Global-Context" class="headerlink" title="1. 全域環境 (Global Context)"></a>1. <strong>全域環境 (Global Context)</strong></h2><p>在瀏覽器中，<code>this</code> 預設指向 <code>window</code> 物件：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 在瀏覽器中，this 指向 window</span></span><br></pre></td></tr></table></figure>
-<p>在 Node.js 環境下，<code>this</code> 則指向 <code>global</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 在 Node.js 中，this 指向 global</span></span><br></pre></td></tr></table></figure>
+    <title>JavaScript 可選鏈接運算符（Optional Chaining）介紹與入門教學 | 學習筆記</title>
+    <url>/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 <code>JavaScript</code> 中，處理深層嵌套結構時，我們經常會遇到 <code>null</code> 或 <code>undefined</code> 的問題。例如，當我們需要訪問一個對象的屬性，而該屬性本身可能不存在時，傳統的做法會導致錯誤，這樣的情況會非常繁瑣。為了解決這個問題，JavaScript 引入了 <strong>可選鏈接運算符（Optional Chaining）</strong>，簡化了屬性訪問過程，並防止了因為屬性為 <code>null</code> 或 <code>undefined</code> 造成的錯誤。</p>
+<p>本文將詳細介紹可選鏈接運算符的概念、用法以及常見的實際應用場景。</p>
+<h3 id="1-可選鏈接運算符的基本語法"><a href="#1-可選鏈接運算符的基本語法" class="headerlink" title="1. 可選鏈接運算符的基本語法"></a>1. 可選鏈接運算符的基本語法</h3><p><strong>可選鏈接運算符（<code>?.</code>）</strong> 是 JavaScript 中一種新的語法，通過它我們可以安全地訪問對象的屬性，並且在中途如果遇到 <code>null</code> 或 <code>undefined</code>，就會停止執行並返回 <code>undefined</code>，而不是拋出錯誤。</p>
+<p>基本語法結構如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">object?.<span class="property">property</span></span><br><span class="line">object?.[key]</span><br><span class="line">object?.<span class="title function_">method</span>()</span><br></pre></td></tr></table></figure>
 
-<hr>
-<h2 id="2-函式內部-Function-Context"><a href="#2-函式內部-Function-Context" class="headerlink" title="2. 函式內部 (Function Context)"></a>2. <strong>函式內部 (Function Context)</strong></h2><p>在一般函式中，<code>this</code> 的值取決於是否使用 <code>&quot;use strict&quot;</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">showThis</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">showThis</span>(); <span class="comment">// 在非嚴格模式下，this 指向 window (瀏覽器) 或 global (Node.js)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">showStrictThis</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">showStrictThis</span>(); <span class="comment">// 在嚴格模式下，this 變成 undefined</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="3-物件方法-Object-Method"><a href="#3-物件方法-Object-Method" class="headerlink" title="3. 物件方法 (Object Method)"></a>3. <strong>物件方法 (Object Method)</strong></h2><p>當 <code>this</code> 被用在物件的方法內，它指向該物件：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Alice&quot;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// &quot;Alice&quot;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="4-建構函式-Constructor-Function"><a href="#4-建構函式-Constructor-Function" class="headerlink" title="4. 建構函式 (Constructor Function)"></a>4. <strong>建構函式 (Constructor Function)</strong></h2><p>在建構函式中，<code>this</code> 會指向新建立的物件：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Bob&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p.<span class="property">name</span>); <span class="comment">// &quot;Bob&quot;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="5-箭頭函式-Arrow-Function"><a href="#5-箭頭函式-Arrow-Function" class="headerlink" title="5. 箭頭函式 (Arrow Function)"></a>5. <strong>箭頭函式 (Arrow Function)</strong></h2><p>箭頭函式中的 <code>this</code> <strong>不會</strong> 指向它自己的執行環境，而是繼承自外層函式的作用域：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Charlie&quot;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">arrowFunc</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">arrowFunc</span>();</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// &quot;Charlie&quot; (this 繼承自 obj)</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="6-setTimeout-和-setInterval"><a href="#6-setTimeout-和-setInterval" class="headerlink" title="6. setTimeout 和 setInterval"></a>6. <strong>setTimeout 和 setInterval</strong></h2><p>在 <code>setTimeout</code> 或 <code>setInterval</code> 內，一般函式的 <code>this</code> 預設指向 <code>window</code> (瀏覽器) 或 <code>global</code> (Node.js)：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;David&quot;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// undefined，因為 this 指向 window/global</span></span><br></pre></td></tr></table></figure>
-<p>解法：改用箭頭函式：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;David&quot;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// &quot;David&quot;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="7-事件處理器-Event-Handler"><a href="#7-事件處理器-Event-Handler" class="headerlink" title="7. 事件處理器 (Event Handler)"></a>7. <strong>事件處理器 (Event Handler)</strong></h2><p>在事件處理函式中，<code>this</code> 指向觸發事件的元素：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 指向 &lt;button&gt; 元素</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>如果改用箭頭函式，<code>this</code> 會指向外部作用域：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 指向 window</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="8-call、apply-和-bind"><a href="#8-call、apply-和-bind" class="headerlink" title="8. call、apply 和 bind"></a>8. <strong>call、apply 和 bind</strong></h2><p>可以使用 <code>call()</code>、<code>apply()</code> 和 <code>bind()</code> 來改變 <code>this</code> 指向：</p>
-<h3 id="call"><a href="#call" class="headerlink" title="call()"></a><strong>call()</strong></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">greet</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> person = &#123; <span class="attr">name</span>: <span class="string">&quot;Eve&quot;</span> &#125;;</span><br><span class="line">greet.<span class="title function_">call</span>(person); <span class="comment">// &quot;Eve&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="apply"><a href="#apply" class="headerlink" title="apply()"></a><strong>apply()</strong></h3><p><code>apply()</code> 與 <code>call()</code> 類似，但參數是以陣列方式傳入：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">introduce</span>(<span class="params">age, city</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> is <span class="subst">$&#123;age&#125;</span> years old and lives in <span class="subst">$&#123;city&#125;</span>.`</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> person = &#123; <span class="attr">name</span>: <span class="string">&quot;Frank&quot;</span> &#125;;</span><br><span class="line">introduce.<span class="title function_">apply</span>(person, [<span class="number">25</span>, <span class="string">&quot;Taipei&quot;</span>]);</span><br></pre></td></tr></table></figure>
-
-<h3 id="bind"><a href="#bind" class="headerlink" title="bind()"></a><strong>bind()</strong></h3><p><code>bind()</code> 會回傳一個新的函式，永久綁定 <code>this</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> boundFunc = greet.<span class="title function_">bind</span>(person);</span><br><span class="line"><span class="title function_">boundFunc</span>(); <span class="comment">// &quot;Eve&quot;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><ul>
-<li><strong>全域環境</strong>：<code>this</code> 在瀏覽器中指向 <code>window</code>，在 Node.js 指向 <code>global</code></li>
-<li><strong>普通函式</strong>：嚴格模式下 <code>this</code> 為 <code>undefined</code>，否則指向 <code>window</code></li>
-<li><strong>物件方法</strong>：<code>this</code> 指向該物件</li>
-<li><strong>建構函式</strong>：<code>this</code> 指向新建立的物件</li>
-<li><strong>箭頭函式</strong>：<code>this</code> 繼承外部作用域</li>
-<li><strong>事件處理器</strong>：普通函式 <code>this</code> 指向事件元素，箭頭函式 <code>this</code> 指向外部作用域</li>
-<li><strong><code>call</code>、<code>apply</code>、<code>bind</code></strong> 可顯式設定 <code>this</code></li>
+<ul>
+<li><code>object?.property</code>：如果 <code>object</code> 為 <code>null</code> 或 <code>undefined</code>，則返回 <code>undefined</code>，否則返回對象的 <code>property</code> 屬性。</li>
+<li><code>object?.[key]</code>：這是動態屬性名的情況，與 <code>object?.property</code> 類似，當 <code>key</code> 是變數或表達式時，這種語法很有用。</li>
+<li><code>object?.method()</code>：如果 <code>object</code> 或 <code>method</code> 為 <code>null</code> 或 <code>undefined</code>，則返回 <code>undefined</code>，不會調用該方法。</li>
 </ul>
+<h3 id="2-為什麼需要可選鏈接運算符？"><a href="#2-為什麼需要可選鏈接運算符？" class="headerlink" title="2. 為什麼需要可選鏈接運算符？"></a>2. 為什麼需要可選鏈接運算符？</h3><p>在傳統 JavaScript 中，當我們處理嵌套對象的屬性時，若某個屬性不存在或是 <code>null</code>、<code>undefined</code>，我們會遇到錯誤。例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">address</span>: &#123;</span><br><span class="line">    <span class="attr">street</span>: <span class="string">&#x27;123 Main St&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">address</span>.<span class="property">street</span>); <span class="comment">// &quot;123 Main St&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">phone</span>.<span class="property">number</span>); <span class="comment">// TypeError: Cannot read property &#x27;number&#x27; of undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>在這個例子中，當我們嘗試訪問 <code>user.phone.number</code> 時，由於 <code>phone</code> 屬性不存在，會拋出錯誤。為了解決這個問題，通常我們需要進行多層檢查：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user &amp;&amp; user.<span class="property">phone</span> &amp;&amp; user.<span class="property">phone</span>.<span class="property">number</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>這樣的寫法看起來雜亂，並且很難處理更深層次的嵌套。可選鏈接運算符解決了這個問題，使得代碼更加簡潔和安全。</p>
+<h3 id="3-可選鏈接運算符的應用場景"><a href="#3-可選鏈接運算符的應用場景" class="headerlink" title="3. 可選鏈接運算符的應用場景"></a>3. 可選鏈接運算符的應用場景</h3><h4 id="3-1-訪問對象屬性"><a href="#3-1-訪問對象屬性" class="headerlink" title="3.1 訪問對象屬性"></a>3.1 訪問對象屬性</h4><p>當我們需要訪問對象的某一層屬性時，如果中間層級的某個屬性為 <code>null</code> 或 <code>undefined</code>，那麼使用可選鏈接運算符就能防止錯誤的拋出。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">address</span>: &#123;</span><br><span class="line">    <span class="attr">street</span>: <span class="string">&#x27;123 Main St&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">address</span>?.<span class="property">street</span>); <span class="comment">// &quot;123 Main St&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">phone</span>?.<span class="property">number</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>在這個例子中，<code>user?.address?.street</code> 會安全地返回 <code>street</code> 屬性，而 <code>user?.phone?.number</code> 會返回 <code>undefined</code>，因為 <code>phone</code> 屬性並不存在。</p>
+<h4 id="3-2-訪問數組元素"><a href="#3-2-訪問數組元素" class="headerlink" title="3.2 訪問數組元素"></a>3.2 訪問數組元素</h4><p>在操作數組時，如果我們想訪問某個索引的元素，也可以使用可選鏈接運算符來避免錯誤。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(array?.[<span class="number">1</span>]); <span class="comment">// 2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(array?.[<span class="number">10</span>]); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>這裡，<code>array?.[1]</code> 會返回 <code>2</code>，而 <code>array?.[10]</code> 會返回 <code>undefined</code>，即使索引超出了數組的範圍。</p>
+<h4 id="3-3-調用對象方法"><a href="#3-3-調用對象方法" class="headerlink" title="3.3 調用對象方法"></a>3.3 調用對象方法</h4><p>如果對象的方法不存在，使用可選鏈接運算符可以避免拋出錯誤，並且返回 <code>undefined</code>。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="title function_">greet</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello!&#x27;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">user?.<span class="title function_">greet</span>(); <span class="comment">// &quot;Hello!&quot;</span></span><br><span class="line">user?.<span class="title function_">sayGoodbye</span>(); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>在這個例子中，<code>user?.greet()</code> 會調用 <code>greet</code> 方法並顯示 “Hello!”，而 <code>user?.sayGoodbye()</code> 則返回 <code>undefined</code>，因為 <code>sayGoodbye</code> 方法不存在。</p>
+<h4 id="3-4-動態屬性名"><a href="#3-4-動態屬性名" class="headerlink" title="3.4 動態屬性名"></a>3.4 動態屬性名</h4><p>可選鏈接運算符也支持用動態屬性名來訪問對象屬性，這在處理具有不確定屬性的對象時非常有用。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">preferences</span>: &#123;</span><br><span class="line">    <span class="attr">theme</span>: <span class="string">&#x27;dark&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> key = <span class="string">&#x27;theme&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">preferences</span>?.[key]); <span class="comment">// &quot;dark&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>在這個例子中，<code>key</code> 是一個變量，表示要訪問的屬性名，<code>user?.preferences?.[key]</code> 可以安全地獲取 <code>preferences</code> 中的 <code>theme</code> 屬性。</p>
+<h3 id="4-與傳統方法的比較"><a href="#4-與傳統方法的比較" class="headerlink" title="4. 與傳統方法的比較"></a>4. 與傳統方法的比較</h3><p>使用可選鏈接運算符，我們的代碼變得更加簡潔，減少了不必要的檢查。傳統的方式可能需要多次檢查對象的存在，才能安全地訪問某個屬性，而可選鏈接運算符讓這一過程變得直觀且易於維護。</p>
+<p>傳統方法：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (user &amp;&amp; user.<span class="property">address</span> &amp;&amp; user.<span class="property">address</span>.<span class="property">street</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">address</span>.<span class="property">street</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用可選鏈接運算符：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">address</span>?.<span class="property">street</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-可選鏈接運算符與-null-合併運算符（-）"><a href="#5-可選鏈接運算符與-null-合併運算符（-）" class="headerlink" title="5. 可選鏈接運算符與 null 合併運算符（??）"></a>5. 可選鏈接運算符與 <code>null</code> 合併運算符（<code>??</code>）</h3><p>可選鏈接運算符經常與 <code>null</code> 合併運算符（<code>??</code>）一起使用。<code>??</code> 用來返回當前值是否為 <code>null</code> 或 <code>undefined</code>，如果是則返回其右側的值，否則返回當前值。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">const</span> name = user?.<span class="property">name</span> ?? <span class="string">&#x27;Default Name&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name); <span class="comment">// &quot;Default Name&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>在這裡，<code>user?.name</code> 會返回 <code>undefined</code>，因為 <code>user</code> 是 <code>null</code>，而 <code>??</code> 會將其替換為 <code>&#39;Default Name&#39;</code>。</p>
+<h3 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h3><p>可選鏈接運算符（<code>?.</code>）是 JavaScript 中非常實用的一個特性，它簡化了嵌套對象屬性訪問的邏輯，避免了 <code>null</code> 或 <code>undefined</code> 帶來的錯誤，使代碼更加簡潔且容易理解。無論是在處理複雜的 API 返回數據還是操作動態結構的對象時，可選鏈接運算符都能發揮重要作用。在日常開發中，我們可以利用它來編寫更健壯、可讀性更強的代碼。</p>
 ]]></content>
       <tags>
         <tag>javascript</tag>
@@ -2684,8 +2675,7 @@
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>this</tag>
+        <tag>Optional Chaining</tag>
       </tags>
   </entry>
   <entry>
@@ -2769,6 +2759,75 @@
         <tag>Closure</tag>
         <tag>閉包</tag>
         <tag>var</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript this 入門教學筆記 | 學習筆記</title>
+    <url>/2021/01/16/learning-notes-javascript-this-intro-tutorial/</url>
+    <content><![CDATA[<p>在 JavaScript 中，<code>this</code> 是一個關鍵字，它的值會根據執行環境的不同而改變。以下是 <code>this</code> 在不同情境下的行為：</p>
+<hr>
+<h2 id="1-全域環境-Global-Context"><a href="#1-全域環境-Global-Context" class="headerlink" title="1. 全域環境 (Global Context)"></a>1. <strong>全域環境 (Global Context)</strong></h2><p>在瀏覽器中，<code>this</code> 預設指向 <code>window</code> 物件：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 在瀏覽器中，this 指向 window</span></span><br></pre></td></tr></table></figure>
+<p>在 Node.js 環境下，<code>this</code> 則指向 <code>global</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 在 Node.js 中，this 指向 global</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="2-函式內部-Function-Context"><a href="#2-函式內部-Function-Context" class="headerlink" title="2. 函式內部 (Function Context)"></a>2. <strong>函式內部 (Function Context)</strong></h2><p>在一般函式中，<code>this</code> 的值取決於是否使用 <code>&quot;use strict&quot;</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">showThis</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">showThis</span>(); <span class="comment">// 在非嚴格模式下，this 指向 window (瀏覽器) 或 global (Node.js)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">showStrictThis</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">showStrictThis</span>(); <span class="comment">// 在嚴格模式下，this 變成 undefined</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="3-物件方法-Object-Method"><a href="#3-物件方法-Object-Method" class="headerlink" title="3. 物件方法 (Object Method)"></a>3. <strong>物件方法 (Object Method)</strong></h2><p>當 <code>this</code> 被用在物件的方法內，它指向該物件：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Alice&quot;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// &quot;Alice&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="4-建構函式-Constructor-Function"><a href="#4-建構函式-Constructor-Function" class="headerlink" title="4. 建構函式 (Constructor Function)"></a>4. <strong>建構函式 (Constructor Function)</strong></h2><p>在建構函式中，<code>this</code> 會指向新建立的物件：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Bob&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p.<span class="property">name</span>); <span class="comment">// &quot;Bob&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-箭頭函式-Arrow-Function"><a href="#5-箭頭函式-Arrow-Function" class="headerlink" title="5. 箭頭函式 (Arrow Function)"></a>5. <strong>箭頭函式 (Arrow Function)</strong></h2><p>箭頭函式中的 <code>this</code> <strong>不會</strong> 指向它自己的執行環境，而是繼承自外層函式的作用域：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Charlie&quot;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">arrowFunc</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">arrowFunc</span>();</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// &quot;Charlie&quot; (this 繼承自 obj)</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="6-setTimeout-和-setInterval"><a href="#6-setTimeout-和-setInterval" class="headerlink" title="6. setTimeout 和 setInterval"></a>6. <strong>setTimeout 和 setInterval</strong></h2><p>在 <code>setTimeout</code> 或 <code>setInterval</code> 內，一般函式的 <code>this</code> 預設指向 <code>window</code> (瀏覽器) 或 <code>global</code> (Node.js)：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;David&quot;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// undefined，因為 this 指向 window/global</span></span><br></pre></td></tr></table></figure>
+<p>解法：改用箭頭函式：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;David&quot;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// &quot;David&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="7-事件處理器-Event-Handler"><a href="#7-事件處理器-Event-Handler" class="headerlink" title="7. 事件處理器 (Event Handler)"></a>7. <strong>事件處理器 (Event Handler)</strong></h2><p>在事件處理函式中，<code>this</code> 指向觸發事件的元素：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 指向 &lt;button&gt; 元素</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>如果改用箭頭函式，<code>this</code> 會指向外部作用域：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 指向 window</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="8-call、apply-和-bind"><a href="#8-call、apply-和-bind" class="headerlink" title="8. call、apply 和 bind"></a>8. <strong>call、apply 和 bind</strong></h2><p>可以使用 <code>call()</code>、<code>apply()</code> 和 <code>bind()</code> 來改變 <code>this</code> 指向：</p>
+<h3 id="call"><a href="#call" class="headerlink" title="call()"></a><strong>call()</strong></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">greet</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> person = &#123; <span class="attr">name</span>: <span class="string">&quot;Eve&quot;</span> &#125;;</span><br><span class="line">greet.<span class="title function_">call</span>(person); <span class="comment">// &quot;Eve&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="apply"><a href="#apply" class="headerlink" title="apply()"></a><strong>apply()</strong></h3><p><code>apply()</code> 與 <code>call()</code> 類似，但參數是以陣列方式傳入：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">introduce</span>(<span class="params">age, city</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> is <span class="subst">$&#123;age&#125;</span> years old and lives in <span class="subst">$&#123;city&#125;</span>.`</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> person = &#123; <span class="attr">name</span>: <span class="string">&quot;Frank&quot;</span> &#125;;</span><br><span class="line">introduce.<span class="title function_">apply</span>(person, [<span class="number">25</span>, <span class="string">&quot;Taipei&quot;</span>]);</span><br></pre></td></tr></table></figure>
+
+<h3 id="bind"><a href="#bind" class="headerlink" title="bind()"></a><strong>bind()</strong></h3><p><code>bind()</code> 會回傳一個新的函式，永久綁定 <code>this</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> boundFunc = greet.<span class="title function_">bind</span>(person);</span><br><span class="line"><span class="title function_">boundFunc</span>(); <span class="comment">// &quot;Eve&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><ul>
+<li><strong>全域環境</strong>：<code>this</code> 在瀏覽器中指向 <code>window</code>，在 Node.js 指向 <code>global</code></li>
+<li><strong>普通函式</strong>：嚴格模式下 <code>this</code> 為 <code>undefined</code>，否則指向 <code>window</code></li>
+<li><strong>物件方法</strong>：<code>this</code> 指向該物件</li>
+<li><strong>建構函式</strong>：<code>this</code> 指向新建立的物件</li>
+<li><strong>箭頭函式</strong>：<code>this</code> 繼承外部作用域</li>
+<li><strong>事件處理器</strong>：普通函式 <code>this</code> 指向事件元素，箭頭函式 <code>this</code> 指向外部作用域</li>
+<li><strong><code>call</code>、<code>apply</code>、<code>bind</code></strong> 可顯式設定 <code>this</code></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>this</tag>
       </tags>
   </entry>
   <entry>
@@ -3223,76 +3282,6 @@
       </tags>
   </entry>
   <entry>
-    <title>React Redux 介紹入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/12/learning-notes-react-redux-intro-tutorial/</url>
-    <content><![CDATA[<h4 id="1-什麼是-Redux？"><a href="#1-什麼是-Redux？" class="headerlink" title="1. 什麼是 Redux？"></a>1. 什麼是 Redux？</h4><p><code>Redux</code> 是 JavaScript 應用程式的狀態管理工具，最常與 React 搭配使用。它提供一個單一的全域狀態樹，使應用程式的狀態變更更可預測、可測試、可維護。Redux 遵循 <strong>單向數據流</strong> 和 <strong>不可變狀態</strong> 的概念，適合管理大型應用的複雜狀態。  </p>
-<hr>
-<h4 id="2-Redux-核心概念"><a href="#2-Redux-核心概念" class="headerlink" title="2. Redux 核心概念"></a>2. Redux 核心概念</h4><p>Redux 的運作基礎主要由三個部分組成：  </p>
-<ol>
-<li><strong>Store（存儲狀態的地方）</strong>  <ul>
-<li>整個應用程式的狀態存儲在單一的 Store 中。</li>
-</ul>
-</li>
-<li><strong>Action（動作）</strong>  <ul>
-<li>Action 是一個 JavaScript 物件，描述了「發生了什麼事」。通常包含 <code>type</code> 屬性來表明事件類型，並可能包含 <code>payload</code> 傳遞額外數據。</li>
-</ul>
-</li>
-<li><strong>Reducer（狀態變更邏輯）</strong>  <ul>
-<li>Reducer 是一個純函式，接收當前狀態與 Action，根據 Action 類型來決定如何更新狀態。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h4 id="3-安裝-Redux-和-React-Redux"><a href="#3-安裝-Redux-和-React-Redux" class="headerlink" title="3. 安裝 Redux 和 React-Redux"></a>3. 安裝 Redux 和 React-Redux</h4><p>在 React 專案中安裝 Redux 及 React-Redux：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install @reduxjs/toolkit react-redux</span><br></pre></td></tr></table></figure>
-
-<p>Redux Toolkit（RTK）是官方推薦的 Redux 工具包，它提供更簡潔、易用的 API 來簡化 Redux 使用。  </p>
-<hr>
-<h4 id="4-創建-Redux-Store"><a href="#4-創建-Redux-Store" class="headerlink" title="4. 創建 Redux Store"></a>4. 創建 Redux Store</h4><p>在 <code>store.js</code> 檔案中，使用 <code>configureStore</code> 創建 Store：  </p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; configureStore &#125; <span class="keyword">from</span> <span class="string">&quot;@reduxjs/toolkit&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> counterReducer <span class="keyword">from</span> <span class="string">&quot;./counterSlice&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">configureStore</span>(&#123;</span><br><span class="line">  <span class="attr">reducer</span>: &#123;</span><br><span class="line">    <span class="attr">counter</span>: counterReducer,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span><br></pre></td></tr></table></figure>
-
-<p>在這裡，我們將 <code>counterReducer</code> 設定為 <code>counter</code> 這個 slice 的 reducer。</p>
-<hr>
-<h4 id="5-創建-Slice（Reducer-Action）"><a href="#5-創建-Slice（Reducer-Action）" class="headerlink" title="5. 創建 Slice（Reducer + Action）"></a>5. 創建 Slice（Reducer + Action）</h4><p>在 <code>counterSlice.js</code> 檔案中，使用 <code>createSlice</code> 定義 <code>counter</code> 相關的狀態與 reducer：  </p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createSlice &#125; <span class="keyword">from</span> <span class="string">&quot;@reduxjs/toolkit&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> counterSlice = <span class="title function_">createSlice</span>(&#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;counter&quot;</span>,</span><br><span class="line">  <span class="attr">initialState</span>: &#123; <span class="attr">value</span>: <span class="number">0</span> &#125;,</span><br><span class="line">  <span class="attr">reducers</span>: &#123;</span><br><span class="line">    <span class="attr">increment</span>: <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">value</span> += <span class="number">1</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">decrement</span>: <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">value</span> -= <span class="number">1</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">incrementByAmount</span>: <span class="function">(<span class="params">state, action</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">value</span> += action.<span class="property">payload</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> &#123; increment, decrement, incrementByAmount &#125; = counterSlice.<span class="property">actions</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> counterSlice.<span class="property">reducer</span>;</span><br></pre></td></tr></table></figure>
-
-<p>這裡的 <code>createSlice</code> 幫助我們：  </p>
-<ul>
-<li>定義狀態的初始值（<code>initialState</code>）  </li>
-<li>自動生成 <code>reducer</code>  </li>
-<li>自動產生對應的 Action</li>
-</ul>
-<hr>
-<h4 id="6-設置-Store-提供給-React"><a href="#6-設置-Store-提供給-React" class="headerlink" title="6. 設置 Store 提供給 React"></a>6. 設置 Store 提供給 React</h4><p>在 <code>index.js</code> 檔案中使用 <code>Provider</code> 讓整個 React 應用可以存取 Redux Store：  </p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&quot;react-dom&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Provider</span> &#125; <span class="keyword">from</span> <span class="string">&quot;react-redux&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&quot;./store&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&quot;./App&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">App</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">Provider</span>&gt;</span></span>,</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;root&quot;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<p>這樣 <code>App</code> 及其所有子元件都可以存取 Redux Store。</p>
-<hr>
-<h4 id="7-在-React-組件中使用-Redux"><a href="#7-在-React-組件中使用-Redux" class="headerlink" title="7. 在 React 組件中使用 Redux"></a>7. 在 React 組件中使用 Redux</h4><p>在 <code>Counter.js</code> 中使用 Redux Store 來讀取與修改 <code>counter</code> 的值：  </p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useSelector, useDispatch &#125; <span class="keyword">from</span> <span class="string">&quot;react-redux&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; increment, decrement, incrementByAmount &#125; <span class="keyword">from</span> <span class="string">&quot;./counterSlice&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Counter</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> count = <span class="title function_">useSelector</span>(<span class="function">(<span class="params">state</span>) =&gt;</span> state.<span class="property">counter</span>.<span class="property">value</span>);</span><br><span class="line">  <span class="keyword">const</span> dispatch = <span class="title function_">useDispatch</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>計數器：&#123;count&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> dispatch(increment())&#125;&gt;增加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> dispatch(decrement())&#125;&gt;減少<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> dispatch(incrementByAmount(5))&#125;&gt;增加 5<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Counter</span>;</span><br></pre></td></tr></table></figure>
-
-<p>在這個範例中：  </p>
-<ul>
-<li><code>useSelector(state =&gt; state.counter.value)</code> 取得 Store 內的 <code>counter</code> 值。  </li>
-<li><code>useDispatch()</code> 取得 Redux 的 <code>dispatch</code> 函式，發送 Action 來更新狀態。  </li>
-<li>點擊按鈕時，對應的 Action 會發送給 Reducer，修改狀態。</li>
-</ul>
-<hr>
-<h4 id="8-使用-Redux-DevTools-進行除錯"><a href="#8-使用-Redux-DevTools-進行除錯" class="headerlink" title="8. 使用 Redux DevTools 進行除錯"></a>8. 使用 Redux DevTools 進行除錯</h4><p>Redux Toolkit 內建支援 Redux DevTools，可以在瀏覽器中查看 Redux 狀態變更的歷史紀錄，方便除錯。安裝 <a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd">Redux DevTools</a>，並開啟瀏覽器的 <code>Redux</code> 分頁來觀察 Action 和 State 變化。</p>
-<hr>
-<h4 id="9-總結"><a href="#9-總結" class="headerlink" title="9. 總結"></a>9. 總結</h4><p>Redux 提供了一個強大的狀態管理方式，適合中大型應用。在 Redux Toolkit 的幫助下，開發 Redux 應用變得更加直觀與簡潔。本篇介紹了 Redux 的基本概念，並透過實際範例展示如何在 React 中整合 Redux。如果你的應用狀態複雜，需要跨組件共享，Redux 會是很好的選擇。</p>
-<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
-<li><a href="https://blog.typeart.cc/redux-vs-use-congtext-use-reducer-and-which-one/">redux vs useContext, useReducer，該怎麼選擇？</a></li>
-<li><a href="https://leewarrick.com/blog/the-problem-with-context/">The Problem with React’s Context API</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>react</tag>
-        <tag>Redux</tag>
-        <tag>React Redux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>React useMemo 與 useCallback 差異介紹與入門教學 | 學習筆記</title>
     <url>/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用 React hooks 進行開發時，<code>useMemo</code> 和 <code>useCallback</code> 是兩個常被提及的性能優化工具。它們都屬於 <strong>記憶化（memoization）</strong> 技術，用來避免不必要的重算與重渲染。然而，很多初學者在理解這兩者的用途與差異時常感到困惑。這篇文章將從概念出發，並搭配實際範例，幫助你掌握 <code>useMemo</code> 與 <code>useCallback</code> 的核心用途與實作方式。</p>
@@ -3365,6 +3354,76 @@
         <tag>ReactJS</tag>
         <tag>useMemo</tag>
         <tag>useCallback</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>React Redux 介紹入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/12/learning-notes-react-redux-intro-tutorial/</url>
+    <content><![CDATA[<h4 id="1-什麼是-Redux？"><a href="#1-什麼是-Redux？" class="headerlink" title="1. 什麼是 Redux？"></a>1. 什麼是 Redux？</h4><p><code>Redux</code> 是 JavaScript 應用程式的狀態管理工具，最常與 React 搭配使用。它提供一個單一的全域狀態樹，使應用程式的狀態變更更可預測、可測試、可維護。Redux 遵循 <strong>單向數據流</strong> 和 <strong>不可變狀態</strong> 的概念，適合管理大型應用的複雜狀態。  </p>
+<hr>
+<h4 id="2-Redux-核心概念"><a href="#2-Redux-核心概念" class="headerlink" title="2. Redux 核心概念"></a>2. Redux 核心概念</h4><p>Redux 的運作基礎主要由三個部分組成：  </p>
+<ol>
+<li><strong>Store（存儲狀態的地方）</strong>  <ul>
+<li>整個應用程式的狀態存儲在單一的 Store 中。</li>
+</ul>
+</li>
+<li><strong>Action（動作）</strong>  <ul>
+<li>Action 是一個 JavaScript 物件，描述了「發生了什麼事」。通常包含 <code>type</code> 屬性來表明事件類型，並可能包含 <code>payload</code> 傳遞額外數據。</li>
+</ul>
+</li>
+<li><strong>Reducer（狀態變更邏輯）</strong>  <ul>
+<li>Reducer 是一個純函式，接收當前狀態與 Action，根據 Action 類型來決定如何更新狀態。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="3-安裝-Redux-和-React-Redux"><a href="#3-安裝-Redux-和-React-Redux" class="headerlink" title="3. 安裝 Redux 和 React-Redux"></a>3. 安裝 Redux 和 React-Redux</h4><p>在 React 專案中安裝 Redux 及 React-Redux：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install @reduxjs/toolkit react-redux</span><br></pre></td></tr></table></figure>
+
+<p>Redux Toolkit（RTK）是官方推薦的 Redux 工具包，它提供更簡潔、易用的 API 來簡化 Redux 使用。  </p>
+<hr>
+<h4 id="4-創建-Redux-Store"><a href="#4-創建-Redux-Store" class="headerlink" title="4. 創建 Redux Store"></a>4. 創建 Redux Store</h4><p>在 <code>store.js</code> 檔案中，使用 <code>configureStore</code> 創建 Store：  </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; configureStore &#125; <span class="keyword">from</span> <span class="string">&quot;@reduxjs/toolkit&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> counterReducer <span class="keyword">from</span> <span class="string">&quot;./counterSlice&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">configureStore</span>(&#123;</span><br><span class="line">  <span class="attr">reducer</span>: &#123;</span><br><span class="line">    <span class="attr">counter</span>: counterReducer,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span><br></pre></td></tr></table></figure>
+
+<p>在這裡，我們將 <code>counterReducer</code> 設定為 <code>counter</code> 這個 slice 的 reducer。</p>
+<hr>
+<h4 id="5-創建-Slice（Reducer-Action）"><a href="#5-創建-Slice（Reducer-Action）" class="headerlink" title="5. 創建 Slice（Reducer + Action）"></a>5. 創建 Slice（Reducer + Action）</h4><p>在 <code>counterSlice.js</code> 檔案中，使用 <code>createSlice</code> 定義 <code>counter</code> 相關的狀態與 reducer：  </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createSlice &#125; <span class="keyword">from</span> <span class="string">&quot;@reduxjs/toolkit&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> counterSlice = <span class="title function_">createSlice</span>(&#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;counter&quot;</span>,</span><br><span class="line">  <span class="attr">initialState</span>: &#123; <span class="attr">value</span>: <span class="number">0</span> &#125;,</span><br><span class="line">  <span class="attr">reducers</span>: &#123;</span><br><span class="line">    <span class="attr">increment</span>: <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">value</span> += <span class="number">1</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">decrement</span>: <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">value</span> -= <span class="number">1</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">incrementByAmount</span>: <span class="function">(<span class="params">state, action</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">value</span> += action.<span class="property">payload</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> &#123; increment, decrement, incrementByAmount &#125; = counterSlice.<span class="property">actions</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> counterSlice.<span class="property">reducer</span>;</span><br></pre></td></tr></table></figure>
+
+<p>這裡的 <code>createSlice</code> 幫助我們：  </p>
+<ul>
+<li>定義狀態的初始值（<code>initialState</code>）  </li>
+<li>自動生成 <code>reducer</code>  </li>
+<li>自動產生對應的 Action</li>
+</ul>
+<hr>
+<h4 id="6-設置-Store-提供給-React"><a href="#6-設置-Store-提供給-React" class="headerlink" title="6. 設置 Store 提供給 React"></a>6. 設置 Store 提供給 React</h4><p>在 <code>index.js</code> 檔案中使用 <code>Provider</code> 讓整個 React 應用可以存取 Redux Store：  </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&quot;react-dom&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Provider</span> &#125; <span class="keyword">from</span> <span class="string">&quot;react-redux&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&quot;./store&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&quot;./App&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">App</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">Provider</span>&gt;</span></span>,</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;root&quot;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>這樣 <code>App</code> 及其所有子元件都可以存取 Redux Store。</p>
+<hr>
+<h4 id="7-在-React-組件中使用-Redux"><a href="#7-在-React-組件中使用-Redux" class="headerlink" title="7. 在 React 組件中使用 Redux"></a>7. 在 React 組件中使用 Redux</h4><p>在 <code>Counter.js</code> 中使用 Redux Store 來讀取與修改 <code>counter</code> 的值：  </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useSelector, useDispatch &#125; <span class="keyword">from</span> <span class="string">&quot;react-redux&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; increment, decrement, incrementByAmount &#125; <span class="keyword">from</span> <span class="string">&quot;./counterSlice&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Counter</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> count = <span class="title function_">useSelector</span>(<span class="function">(<span class="params">state</span>) =&gt;</span> state.<span class="property">counter</span>.<span class="property">value</span>);</span><br><span class="line">  <span class="keyword">const</span> dispatch = <span class="title function_">useDispatch</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>計數器：&#123;count&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> dispatch(increment())&#125;&gt;增加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> dispatch(decrement())&#125;&gt;減少<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> dispatch(incrementByAmount(5))&#125;&gt;增加 5<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Counter</span>;</span><br></pre></td></tr></table></figure>
+
+<p>在這個範例中：  </p>
+<ul>
+<li><code>useSelector(state =&gt; state.counter.value)</code> 取得 Store 內的 <code>counter</code> 值。  </li>
+<li><code>useDispatch()</code> 取得 Redux 的 <code>dispatch</code> 函式，發送 Action 來更新狀態。  </li>
+<li>點擊按鈕時，對應的 Action 會發送給 Reducer，修改狀態。</li>
+</ul>
+<hr>
+<h4 id="8-使用-Redux-DevTools-進行除錯"><a href="#8-使用-Redux-DevTools-進行除錯" class="headerlink" title="8. 使用 Redux DevTools 進行除錯"></a>8. 使用 Redux DevTools 進行除錯</h4><p>Redux Toolkit 內建支援 Redux DevTools，可以在瀏覽器中查看 Redux 狀態變更的歷史紀錄，方便除錯。安裝 <a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd">Redux DevTools</a>，並開啟瀏覽器的 <code>Redux</code> 分頁來觀察 Action 和 State 變化。</p>
+<hr>
+<h4 id="9-總結"><a href="#9-總結" class="headerlink" title="9. 總結"></a>9. 總結</h4><p>Redux 提供了一個強大的狀態管理方式，適合中大型應用。在 Redux Toolkit 的幫助下，開發 Redux 應用變得更加直觀與簡潔。本篇介紹了 Redux 的基本概念，並透過實際範例展示如何在 React 中整合 Redux。如果你的應用狀態複雜，需要跨組件共享，Redux 會是很好的選擇。</p>
+<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
+<li><a href="https://blog.typeart.cc/redux-vs-use-congtext-use-reducer-and-which-one/">redux vs useContext, useReducer，該怎麼選擇？</a></li>
+<li><a href="https://leewarrick.com/blog/the-problem-with-context/">The Problem with React’s Context API</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>react</tag>
+        <tag>Redux</tag>
+        <tag>React Redux</tag>
       </tags>
   </entry>
   <entry>
@@ -4087,33 +4146,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記</title>
-    <url>/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/</url>
-    <content><![CDATA[<h1 id="Components-元件"><a href="#Components-元件" class="headerlink" title="Components 元件"></a>Components 元件</h1><p>到目前為止，我們只使用了一個單一的元件。實際的 Vue 應用程式通常是由巢狀元件所組成的。</p>
-<p>父元件可以在其模板中渲染另一個元件作為子元件。要使用子元件，我們需要先匯入它：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>然後，我們可以在模板中使用該元件，如下所示：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<p>我們現在試試看將匯入子元件並將其渲染到模板中。</p>
-<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>A Child Component!<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記</title>
     <url>/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/</url>
     <content><![CDATA[<h1 id="Declarative-Rendering-聲明式渲染"><a href="#Declarative-Rendering-聲明式渲染" class="headerlink" title="Declarative Rendering 聲明式渲染"></a>Declarative Rendering 聲明式渲染</h1><p>在 Vue3 我們常看到的是 Vue 單文件元件 (SFC)。SFC 是一個可重用的、獨立的程式碼區塊，它將相關的 HTML、CSS 和 JavaScript 封裝在一起，並寫在一個 <code>.vue</code> 文件中。</p>
@@ -4140,6 +4172,33 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; reactive, ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> counter = <span class="title function_">reactive</span>(&#123; <span class="attr">count</span>: <span class="number">0</span> &#125;)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> message = <span class="title function_">ref</span>(<span class="string">&#x27;Hello World!&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Count is: &#123;&#123; counter.count &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Vue.js 3 提供了更好的性能、更靈活的 API 和更簡潔的開發體驗。無論是使用 Composition API 還是 Options API，都能快速上手並構建強大的前端應用。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記</title>
+    <url>/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/</url>
+    <content><![CDATA[<h1 id="Components-元件"><a href="#Components-元件" class="headerlink" title="Components 元件"></a>Components 元件</h1><p>到目前為止，我們只使用了一個單一的元件。實際的 Vue 應用程式通常是由巢狀元件所組成的。</p>
+<p>父元件可以在其模板中渲染另一個元件作為子元件。要使用子元件，我們需要先匯入它：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>然後，我們可以在模板中使用該元件，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>我們現在試試看將匯入子元件並將其渲染到模板中。</p>
+<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>A Child Component!<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>前端</tag>
@@ -4423,6 +4482,28 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [9] - Watchers 觀察者 | 學習筆記</title>
+    <url>/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/</url>
+    <content><![CDATA[<h1 id="Watchers-觀察者"><a href="#Watchers-觀察者" class="headerlink" title="Watchers 觀察者"></a>Watchers 觀察者</h1><p>有時我們可能需要以反應性的方式執行「Side-effect 副作用」，例如，當一個數值改變時將其記錄到控制台。我們可以使用觀察者來實現這一點：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="title function_">watch</span>(count, <span class="function">(<span class="params">newCount</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 是的，console.log() 是一種副作用</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`新的計數是：<span class="subst">$&#123;newCount&#125;</span>`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><code>watch()</code> 可以直接監視一個 <code>ref</code>，每當 <code>count</code> 的值改變時，回調函數就會被觸發。<code>watch()</code> 也可以監視其他類型的數據來源——更多細節請參閱指南：觀察者（Watchers）。</p>
+<p>比將訊息記錄到控制台更實用的例子，可能是當一個 ID 發生變化時，根據新 ID 獲取數據。我們的代碼目前是在元件掛載時，從一個模擬 API 獲取 <code>todos</code> 數據。此外，還有一個按鈕可以遞增應該被獲取的 <code>todo</code> ID。請嘗試實現一個觀察者，在按下按鈕時根據新 ID 獲取新的 <code>todo</code> 數據。</p>
+<p>參考範例：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoId = <span class="title function_">ref</span>(<span class="number">1</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoData = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchData</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="literal">null</span></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(</span></span><br><span class="line"><span class="language-javascript">    <span class="string">`https://jsonplaceholder.typicode.com/todos/<span class="subst">$&#123;todoId.value&#125;</span>`</span></span></span><br><span class="line"><span class="language-javascript">  )</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="keyword">await</span> res.<span class="title function_">json</span>()</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">fetchData</span>()</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">watch</span>(todoId, fetchData)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Todo id: &#123;&#123; todoId &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;todoId++&quot;</span> <span class="attr">:disabled</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Fetch next todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Loading...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">pre</span> <span class="attr">v-else</span>&gt;</span>&#123;&#123; todoData &#125;&#125;<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [8] - Lifecycle and Template Refs 生命週期與模板引用 | 學習筆記</title>
     <url>/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/</url>
     <content><![CDATA[<h2 id="Lifecycle-and-Template-Refs-生命週期與模板引用"><a href="#Lifecycle-and-Template-Refs-生命週期與模板引用" class="headerlink" title="Lifecycle and Template Refs 生命週期與模板引用"></a>Lifecycle and Template Refs 生命週期與模板引用</h2><p>到目前為止，Vue.js 透過響應式資料與聲明式渲染，幫助我們處理了所有的 DOM 更新。然而，無可避免地會有需要手動操作 DOM 的情況。</p>
@@ -4438,28 +4519,6 @@
 <h3 id="生命週期鉤子"><a href="#生命週期鉤子" class="headerlink" title="生命週期鉤子"></a>生命週期鉤子</h3><p>這稱為生命週期鉤子 (lifecycle hook)，它允許我們在元件生命週期的特定時間點註冊回呼函式。其他的生命週期鉤子還包括 <code>onUpdated</code> 和 <code>onUnmounted</code> 等。更多細節請參考官方文件 <a href="https://vuejs.org/guide/essentials/lifecycle.html">生命週期圖示</a>。</p>
 <h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>現在，我們可以嘗試添加一個 <code>onMounted</code> 鉤子，透過 <code>pElementRef.value</code> 訪問 <code>&lt;p&gt;</code> 元素，並對其進行一些直接的 DOM 操作（例如更改 <code>textContent</code>）。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> pElementRef = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  pElementRef.<span class="property">value</span>.<span class="property">textContent</span> = <span class="string">&#x27;mounted!&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">&quot;pElementRef&quot;</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [9] - Watchers 觀察者 | 學習筆記</title>
-    <url>/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/</url>
-    <content><![CDATA[<h1 id="Watchers-觀察者"><a href="#Watchers-觀察者" class="headerlink" title="Watchers 觀察者"></a>Watchers 觀察者</h1><p>有時我們可能需要以反應性的方式執行「Side-effect 副作用」，例如，當一個數值改變時將其記錄到控制台。我們可以使用觀察者來實現這一點：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="title function_">watch</span>(count, <span class="function">(<span class="params">newCount</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 是的，console.log() 是一種副作用</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`新的計數是：<span class="subst">$&#123;newCount&#125;</span>`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p><code>watch()</code> 可以直接監視一個 <code>ref</code>，每當 <code>count</code> 的值改變時，回調函數就會被觸發。<code>watch()</code> 也可以監視其他類型的數據來源——更多細節請參閱指南：觀察者（Watchers）。</p>
-<p>比將訊息記錄到控制台更實用的例子，可能是當一個 ID 發生變化時，根據新 ID 獲取數據。我們的代碼目前是在元件掛載時，從一個模擬 API 獲取 <code>todos</code> 數據。此外，還有一個按鈕可以遞增應該被獲取的 <code>todo</code> ID。請嘗試實現一個觀察者，在按下按鈕時根據新 ID 獲取新的 <code>todo</code> 數據。</p>
-<p>參考範例：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoId = <span class="title function_">ref</span>(<span class="number">1</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoData = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchData</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="literal">null</span></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(</span></span><br><span class="line"><span class="language-javascript">    <span class="string">`https://jsonplaceholder.typicode.com/todos/<span class="subst">$&#123;todoId.value&#125;</span>`</span></span></span><br><span class="line"><span class="language-javascript">  )</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="keyword">await</span> res.<span class="title function_">json</span>()</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">fetchData</span>()</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">watch</span>(todoId, fetchData)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Todo id: &#123;&#123; todoId &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;todoId++&quot;</span> <span class="attr">:disabled</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Fetch next todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Loading...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">pre</span> <span class="attr">v-else</span>&gt;</span>&#123;&#123; todoData &#125;&#125;<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -4720,6 +4779,27 @@
         <tag>網站開發</tag>
         <tag>網站開發工具</tag>
         <tag>學習資源</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常見 Web Frontend 前端工程師學習資源和工具</title>
+    <url>/2024/03/22/web-frontend-resources/</url>
+    <content><![CDATA[<h1 id="學習資源"><a href="#學習資源" class="headerlink" title="學習資源"></a>學習資源</h1><ol>
+<li><a href="https://frontendmasters.com/guides/front-end-handbook/2024/">前端開發大全手冊：The Front End Developer&#x2F;Engineer Handbook 2024</a></li>
+<li><a href="https://100dayscss.com/">100 天 CSS 練習挑戰</a></li>
+<li><a href="https://javascript30.com/">javascript30</a></li>
+<li><a href="https://www.greatfrontend.com/">greatfrontend</a></li>
+<li><a href="https://www.thisweb.dev/post/front-end-beginner-guide">零基礎一年轉職前端工程師：完整路徑、心得、資源全公開</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>前端工程</tag>
+        <tag>Software Engineer</tag>
+        <tag>前端工程師</tag>
+        <tag>Frontend Roadmap</tag>
+        <tag>前端面試</tag>
+        <tag>interview question</tag>
+        <tag>interview</tag>
       </tags>
   </entry>
   <entry>
@@ -4988,27 +5068,6 @@
 <li><a href="https://www.1111.com.tw/1000w/fanshome/discussTopic.asp?cat=FANS&id=233847">QNAP&#x2F;雷技&#x2F;Yahoo&#x2F;Synology-前端工程師-面試經驗分享</a></li>
 <li><a href="https://medium.com/hannah-lin/2024-%E8%B3%87%E6%B7%B1%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB%E9%9D%A2%E8%A9%A6%E5%BF%83%E5%BE%97-3cc0f718e78f">2024 資深前端工程師面試心得</a></li>
 <li><a href="https://github.com/lydiahallie/javascript-questions">JavaScript Questions</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>前端工程</tag>
-        <tag>Software Engineer</tag>
-        <tag>前端工程師</tag>
-        <tag>Frontend Roadmap</tag>
-        <tag>前端面試</tag>
-        <tag>interview question</tag>
-        <tag>interview</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常見 Web Frontend 前端工程師學習資源和工具</title>
-    <url>/2024/03/22/web-frontend-resources/</url>
-    <content><![CDATA[<h1 id="學習資源"><a href="#學習資源" class="headerlink" title="學習資源"></a>學習資源</h1><ol>
-<li><a href="https://frontendmasters.com/guides/front-end-handbook/2024/">前端開發大全手冊：The Front End Developer&#x2F;Engineer Handbook 2024</a></li>
-<li><a href="https://100dayscss.com/">100 天 CSS 練習挑戰</a></li>
-<li><a href="https://javascript30.com/">javascript30</a></li>
-<li><a href="https://www.greatfrontend.com/">greatfrontend</a></li>
-<li><a href="https://www.thisweb.dev/post/front-end-beginner-guide">零基礎一年轉職前端工程師：完整路徑、心得、資源全公開</a></li>
 </ol>
 ]]></content>
       <tags>
