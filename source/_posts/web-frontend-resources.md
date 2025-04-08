@@ -19,3 +19,9 @@ tags:
 3. [javascript30](https://javascript30.com/)
 4. [greatfrontend](https://www.greatfrontend.com/)
 5. [零基礎一年轉職前端工程師：完整路徑、心得、資源全公開](https://www.thisweb.dev/post/front-end-beginner-guide)
+
+# CSS
+1. [daisyui](https://daisyui.com/)
+2. [TailwindCSS](https://tailwindcss.com/)
+3. [新手入門：TailwindCSS 與 DaisyUI 的整合指南](https://realnewbie.com/coding/css/beginner-guide-integrating-tailwindcss-with-daisyui/)
+4. [重新認識 Flex 和 Grid 系列](https://ithelp.ithome.com.tw/users/20128346/ironman/3396)
