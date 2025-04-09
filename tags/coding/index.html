@@ -26,11 +26,11 @@
     
     <title>
         
-          Cookie 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/11/01/learning-notes-cookie-intro-tutorial/">
+    <link rel="canonical" href="https://tech.kdchang.net/tags/coding/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="Cookie 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="Cookie 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -185,247 +185,202 @@
 
 
     <!-- Main Content -->
-    <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
-
-<!-- Post Header -->
-<style type="text/css">
-    header.intro-header{
-        background-image: url('/img/cover.jpg')
-    }
-</style>
-<header class="intro-header" >
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/cover.jpg')">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-
-                    <h1>Cookie 入門教學筆記 | 學習筆記</h1>
-                    <span class="meta">
-                        Posted by kdchang on
-                        2024-11-01
-                    </span>
-                    <br>
-                    <div class="tags">
-                        
-                          <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
-                        
-                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
-                        
-                          <a class="tag" href="/tags/#前端開發" title="前端開發">前端開發</a>
-                        
-                          <a class="tag" href="/tags/#前端工程" title="前端工程">前端工程</a>
-                        
-                          <a class="tag" href="/tags/#frontend" title="frontend">frontend</a>
-                        
-                          <a class="tag" href="/tags/#frontend engineer" title="frontend engineer">frontend engineer</a>
-                        
-                          <a class="tag" href="/tags/#cookie" title="cookie">cookie</a>
-                        
-
-                    </div>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>KD&#39;s Tech Blog</h1>
+                    <!--<hr class="small">-->
+                    <span class="subheading">Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記 | KD 技術部落格</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
 
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        
+
+<!-- USE SIDEBAR -->
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
-                <br>
-                <div>
-                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.net" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
-                </div>
-                <br>
-                <div>
-                    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Cookie 是一種儲存在使用者瀏覽器上的小型文字檔案，用於保存使用者的狀態或資訊。常見用途包含：</p>
-<p><strong>紀錄登入狀態</strong>：讓使用者在網站上保持登入，不需每次重新輸入帳號。<br><strong>使用者偏好設定</strong>：保存使用者選擇的語言、主題等個人化設定。<br><strong>追蹤使用者行為</strong>：例如分析網站流量、廣告投放追蹤等。</p>
-<h1 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h1><p>Cookie 依據不同的分類方式，可以分為以下幾種常見種類：</p>
-<h3 id="一、依用途分類："><a href="#一、依用途分類：" class="headerlink" title="一、依用途分類："></a>一、依用途分類：</h3><ol>
-<li><p><strong>功能性 Cookie（Functional Cookies）</strong>  </p>
-<ul>
-<li>主要用於提升網站使用體驗，例如記住使用者的登入狀態、語言設定、購物車內容等。</li>
-</ul>
-</li>
-<li><p><strong>必要性 Cookie（Strictly Necessary Cookies）</strong>  </p>
-<ul>
-<li>維持網站基本運作所需，例如登入認證、網頁導航等，通常無法被關閉。</li>
-</ul>
-</li>
-<li><p><strong>分析型 Cookie（Analytical&#x2F;Performance Cookies）</strong>  </p>
-<ul>
-<li>用於收集網站流量數據，分析使用者行為，幫助網站優化，例如 Google Analytics。</li>
-</ul>
-</li>
-<li><p><strong>廣告追蹤 Cookie（Advertising&#x2F;Targeting Cookies）</strong>  </p>
-<ul>
-<li>用於追蹤使用者瀏覽行為，以提供個人化廣告或推薦內容。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="二、依存放時間分類："><a href="#二、依存放時間分類：" class="headerlink" title="二、依存放時間分類："></a>二、依存放時間分類：</h3><ol>
-<li><p><strong>暫時性 Cookie（Session Cookies）</strong>  </p>
-<ul>
-<li>只在<code>使用者開啟網頁期間有效</code>，<code>關閉瀏覽器後即刪除</code>。</li>
-</ul>
-</li>
-<li><p><strong>永久性 Cookie（Persistent Cookies）</strong>  </p>
-<ul>
-<li>設定到期日期，存放於使用者裝置上，保存時間較長，即使關閉瀏覽器也不會刪除，<code>直到設定的到期日或手動刪除</code>。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="三、依來源分類："><a href="#三、依來源分類：" class="headerlink" title="三、依來源分類："></a>三、依來源分類：</h3><ol>
-<li><p><strong>第一方 Cookie（First-party Cookies）</strong>  </p>
-<ul>
-<li>由<code>使用者瀏覽的網站</code>所設定，通常用於<code>記錄該網站上的互動紀錄</code>。</li>
-</ul>
-</li>
-<li><p><strong>第三方 Cookie（Third-party Cookies）</strong>  </p>
-<ul>
-<li>由非該網站的<code>第三方</code>（如廣告商）設定，用於<code>跨網站追蹤使用者行為</code>，以<code>推送廣告</code>等。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="四、特殊類型："><a href="#四、特殊類型：" class="headerlink" title="四、特殊類型："></a>四、特殊類型：</h3><ol>
-<li><p><strong>安全性 Cookie（Secure Cookies）</strong>  </p>
-<ul>
-<li>只能透過 <code>HTTPS</code> 傳輸，避免被攔截，主要保障敏感資料安全。</li>
-</ul>
-</li>
-<li><p><strong>HttpOnly Cookie</strong>  </p>
-<ul>
-<li>僅限伺服器端存取，JavaScript 無法讀取，用於防範 <code>XSS</code> 攻擊。</li>
-</ul>
-</li>
-<li><p><strong>SameSite Cookie</strong>  </p>
-<ul>
-<li>限制跨站請求攜帶 Cookie，減少 <code>CSRF</code> 攻擊風險，值可設為：</li>
-<li><code>Strict</code>：禁止跨站請求攜帶 Cookie。</li>
-<li><code>Lax</code>：部分允許，如從第三方網站點擊連結進來時可帶 Cookie。</li>
-<li><code>None</code>：允許跨站攜帶，但須配合 Secure。</li>
-</ul>
-</li>
-</ol>
-<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>這些分類會依需求搭配使用，例如一個「<code>必要性第一方暫時性 Cookie</code>」可能用於維護<code>登入和操作狀態</code>；一個「<code>第三方廣告追蹤永久性 Cookie</code>」則可能用於<code>跨網站顯示個人化廣告</code>。</p>
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+                <!-- Main Content -->
 
-                </div>
 
-                <br>
-                <section>
-                    歡迎分享按讚給予支持和鼓勵！
-                    <div class="fb-like" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
-                </section>
-                <br>
-                <div>
-                    <div class="fb-page" data-href="https://www.facebook.com/tech.kdchang.net" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/tech.kdchang.net" class="fb-xfbml-parse-ignore"><a target="_blank" rel="noopener" href="https://www.facebook.com/tech.kdchang.net">KD Chang（張凱迪）</a></blockquote></div>
-                </div>
-                <hr>
-                <div>
-                    <h3>Related Posts</h3>
-                    <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/10/16/learning-notes-alpinejs-intro-tutorial/" title="Alpine.js 入門教學筆記 | 學習筆記" rel="bookmark">Alpine.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial copy/" title="JavaScript ES6 入門語法教學筆記 | 學習筆記" rel="bookmark">JavaScript ES6 入門語法教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-arrow-function-this-intro-tutorial/" title="JavaScript 箭頭函式 (Arrow Function）入門教學筆記 | 學習筆記" rel="bookmark">JavaScript 箭頭函式 (Arrow Function）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-async-await/" title="async/await 入門教學筆記 | 學習筆記" rel="bookmark">async/await 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-call-stack-intro-tutorial/" title="JavaScript Call Stack 入門教學筆記 | 學習筆記" rel="bookmark">JavaScript Call Stack 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
-                    </div>
-                </div>
-                <!-- Tags -->
-                <h3>Comments</h3>
-                <hr>
-                
-                <!-- disqus start -->
-                <div class="comment">
-                    <div id="disqus_thread" class="disqus-thread"></div>
-                </div>
-                <!-- disqus end -->
-                
+<div class="post-preview">
+
+    <a href="/2018/02/01/learning-notes-javascript-challenge-intro-tutorial/">
+        <h2 class="post-title">
+            JavaScript 練習挑戰紀錄 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            Longest Word當我們執行 paragraph.match(/[a-z]+/gi) 時，這段 JavaScript 程式碼的意思是：
+目的：從 paragraph 字串中找出所有連續的英文字母（不分大小寫）組成的片段，並以陣列形式回傳。
+
+語法拆解：paragraph.match(/[a-z]+/gi)
+
+
+
+
+部分
+意思
+
+
+
+paragraph
+要處理的字串（變數名）
+
+
+.ma......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2018-02-01
+    </p>
+
+</div>
+<hr>
+
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+    
+</ul>
+
 
             </div>
-
     <!-- Sidebar Container -->
-
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
                 <!-- Featured Tags -->
                 
+
+                <!-- Short About -->
+                <section class="visible-md visible-lg">
+                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
+                    <div class="short-about">
+
+                        
+                            <img alt="KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪" src="/img/avatar.jpg" />
+                        
+
+                        
+                            <p>KD Chang 張凱迪（@kdchang），台灣大學，主修經濟學，臺大資管所畢業。是一個軟體工程師，也是一位 PM 產品/專案經理和教育工作者。曾服務過上市網路軟體公司、上市科技電子公司、台灣 AI 人工智慧新創獨角獸公司，也曾參與數個新創組織的創辦和多個網路產品服務的開發。A Software Engineer, Product/Project Manager &amp; Educator.:)</p>
+                        
+
+                        <!-- SNS Link -->
+                        <ul class="list-inline">
+                            
+                            
+                                <li>
+                                    <a target="_blank" href="https://twitter.com/kaidichang">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+                            
+
+                            
+
+                            
+                                <li>
+                                    <a target="_blank" href="https://www.facebook.com/tech.kdchang.net">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+
+                            
+                                <li>
+                                    <a target="_blank" href="https://www.instagram.com/kdchang_net">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+
+                            
+                                <li>
+                                    <a target="_blank"  href="https://github.com/kdchang">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+                            
+                            
+                            
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a target="_blank" rel="noopener" href="https://www.kdchang.net">KD Chang&#39;s Blog</a></li>
+                    
+                        <li><a target="_blank" rel="noopener" href="https://open.firstory.me/user/soft-skills-hacker">聽出職場軟實力 Podcast</a></li>
+                    
+                        <li><a target="_blank" rel="noopener" href="https://tw.coderbridge.com/">CoderBridge</a></li>
+                    
+                        <li><a target="_blank" rel="noopener" href="https://tw.yohowto.com/">Yohowto</a></li>
+                    
+                        <li><a target="_blank" rel="noopener" href="http://weekly.techbridge.cc/">TechBridge Weekly 技術週刊</a></li>
+                    
+                        <li><a target="_blank" rel="noopener" href="http://blog.techbridge.cc/">TechBridge Blog</a></li>
+                    
+                </ul>
+                
+                <hr>
+                <!-- facebook follow -->
+                <a target="_blank" rel="noopener" href="https://twitter.com/kaidichang?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @kaidichang</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <br>
+                <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.net" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+                <br>
+                <iframe style="margin-left: 2px; margin-bottom:-5px;"
+                    frameborder="0" scrolling="0" width="200px" height="20px" src="https://ghbtns.com/github-btn.html?user=kdchang&type=follow&count=true">
+                </iframe>
             </div>
-
-        </div>
+        
     </div>
-</article>
-
-
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/11/01/learning-notes-cookie-intro-tutorial/";
-    var disqus_url = "https://tech.kdchang.net/2024/11/01/learning-notes-cookie-intro-tutorial/";
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus 公共JS代码 end -->
-
-
-	<!-- Go to www.addthis.com/dashboard to customize your tools -->
-	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5728979c6a10856b"></script>
-
-
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<!-- <script>
-    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
-        anchors.options = {
-          visible: 'always',
-          placement: 'right',
-          icon: '#'
-        };
-        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-    })
-</script> -->
-<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
-<script>
-   anchors.add('h1, h2, h3');
-</script>
-<style>
-    /* place left on bigger screen */
-    @media all and (min-width: 800px) {
-        .anchorjs-link{
-            position: absolute;
-            left: -0.75em;
-            font-size: 1.1em;
-            margin-top : -0.1em;
-        }
-    }
-</style>
-
-
+</div>
 
     <!-- Footer -->
     <!-- Footer -->

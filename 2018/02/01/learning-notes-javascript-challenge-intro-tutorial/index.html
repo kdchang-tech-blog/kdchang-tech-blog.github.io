@@ -26,11 +26,11 @@
     
     <title>
         
-          Cookie 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          JavaScript 練習挑戰紀錄 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/11/01/learning-notes-cookie-intro-tutorial/">
+    <link rel="canonical" href="https://tech.kdchang.net/2018/02/01/learning-notes-javascript-challenge-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="Cookie 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="Cookie 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="JavaScript 練習挑戰紀錄 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="JavaScript 練習挑戰紀錄 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,27 +199,17 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>Cookie 入門教學筆記 | 學習筆記</h1>
+                    <h1>JavaScript 練習挑戰紀錄 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2024-11-01
+                        2018-02-01
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
                         
-                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
-                        
-                          <a class="tag" href="/tags/#前端開發" title="前端開發">前端開發</a>
-                        
-                          <a class="tag" href="/tags/#前端工程" title="前端工程">前端工程</a>
-                        
-                          <a class="tag" href="/tags/#frontend" title="frontend">frontend</a>
-                        
-                          <a class="tag" href="/tags/#frontend engineer" title="frontend engineer">frontend engineer</a>
-                        
-                          <a class="tag" href="/tags/#cookie" title="cookie">cookie</a>
+                          <a class="tag" href="/tags/#coding" title="coding">coding</a>
                         
 
                     </div>
@@ -245,79 +235,143 @@
                 </div>
                 <br>
                 <div>
-                    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Cookie 是一種儲存在使用者瀏覽器上的小型文字檔案，用於保存使用者的狀態或資訊。常見用途包含：</p>
-<p><strong>紀錄登入狀態</strong>：讓使用者在網站上保持登入，不需每次重新輸入帳號。<br><strong>使用者偏好設定</strong>：保存使用者選擇的語言、主題等個人化設定。<br><strong>追蹤使用者行為</strong>：例如分析網站流量、廣告投放追蹤等。</p>
-<h1 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h1><p>Cookie 依據不同的分類方式，可以分為以下幾種常見種類：</p>
-<h3 id="一、依用途分類："><a href="#一、依用途分類：" class="headerlink" title="一、依用途分類："></a>一、依用途分類：</h3><ol>
-<li><p><strong>功能性 Cookie（Functional Cookies）</strong>  </p>
-<ul>
-<li>主要用於提升網站使用體驗，例如記住使用者的登入狀態、語言設定、購物車內容等。</li>
-</ul>
-</li>
-<li><p><strong>必要性 Cookie（Strictly Necessary Cookies）</strong>  </p>
-<ul>
-<li>維持網站基本運作所需，例如登入認證、網頁導航等，通常無法被關閉。</li>
-</ul>
-</li>
-<li><p><strong>分析型 Cookie（Analytical&#x2F;Performance Cookies）</strong>  </p>
-<ul>
-<li>用於收集網站流量數據，分析使用者行為，幫助網站優化，例如 Google Analytics。</li>
-</ul>
-</li>
-<li><p><strong>廣告追蹤 Cookie（Advertising&#x2F;Targeting Cookies）</strong>  </p>
-<ul>
-<li>用於追蹤使用者瀏覽行為，以提供個人化廣告或推薦內容。</li>
-</ul>
-</li>
-</ol>
+                    <h2 id="Longest-Word"><a href="#Longest-Word" class="headerlink" title="Longest Word"></a>Longest Word</h2><p>當我們執行 <code>paragraph.match(/[a-z]+/gi)</code> 時，這段 JavaScript 程式碼的意思是：</p>
+<h3 id="目的："><a href="#目的：" class="headerlink" title="目的："></a><strong>目的：</strong></h3><p>從 <code>paragraph</code> 字串中<strong>找出所有連續的英文字母（不分大小寫）組成的片段</strong>，並以陣列形式回傳。</p>
 <hr>
-<h3 id="二、依存放時間分類："><a href="#二、依存放時間分類：" class="headerlink" title="二、依存放時間分類："></a>二、依存放時間分類：</h3><ol>
-<li><p><strong>暫時性 Cookie（Session Cookies）</strong>  </p>
-<ul>
-<li>只在<code>使用者開啟網頁期間有效</code>，<code>關閉瀏覽器後即刪除</code>。</li>
-</ul>
-</li>
-<li><p><strong>永久性 Cookie（Persistent Cookies）</strong>  </p>
-<ul>
-<li>設定到期日期，存放於使用者裝置上，保存時間較長，即使關閉瀏覽器也不會刪除，<code>直到設定的到期日或手動刪除</code>。</li>
-</ul>
-</li>
-</ol>
+<h3 id="語法拆解："><a href="#語法拆解：" class="headerlink" title="語法拆解："></a><strong>語法拆解：</strong></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">paragraph.<span class="title function_">match</span>(<span class="regexp">/[a-z]+/gi</span>)</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>意思</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>paragraph</code></td>
+<td>要處理的字串（變數名）</td>
+</tr>
+<tr>
+<td><code>.match(...)</code></td>
+<td>是一個字串的方法，會根據正則表達式去<strong>尋找所有符合條件的子字串</strong></td>
+</tr>
+<tr>
+<td><code>/[a-z]+/gi</code></td>
+<td>正則表達式：搜尋一或多個英文字母</td>
+</tr>
+<tr>
+<td><code>[a-z]</code></td>
+<td>表示小寫英文字母 a 到 z（大寫會由 <code>i</code> 修飾符處理）</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>表示「一個或多個」符合前面 <code>[a-z]</code> 的字元</td>
+</tr>
+<tr>
+<td><code>g</code></td>
+<td>global 全域搜尋，找到<strong>所有符合條件</strong>的片段</td>
+</tr>
+<tr>
+<td><code>i</code></td>
+<td>ignore case 忽略大小寫，讓 <code>[a-z]</code> 同時能配對 <code>A-Z</code></td>
+</tr>
+</tbody></table>
 <hr>
-<h3 id="三、依來源分類："><a href="#三、依來源分類：" class="headerlink" title="三、依來源分類："></a>三、依來源分類：</h3><ol>
-<li><p><strong>第一方 Cookie（First-party Cookies）</strong>  </p>
+<h3 id="範例："><a href="#範例：" class="headerlink" title="範例："></a><strong>範例：</strong></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> paragraph = <span class="string">&quot;Hello, 世界! This is a test123.&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> result = paragraph.<span class="title function_">match</span>(<span class="regexp">/[a-z]+/gi</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);</span><br></pre></td></tr></table></figure>
+
+<h4 id="輸出："><a href="#輸出：" class="headerlink" title="輸出："></a>輸出：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&quot;Hello&quot;, &quot;This&quot;, &quot;is&quot;, &quot;a&quot;, &quot;test&quot;]</span><br></pre></td></tr></table></figure>
+
+<p>這段程式會：</p>
 <ul>
-<li>由<code>使用者瀏覽的網站</code>所設定，通常用於<code>記錄該網站上的互動紀錄</code>。</li>
+<li>忽略中文與數字</li>
+<li>把英文字母串（不論大小寫）全都抓出來</li>
 </ul>
-</li>
-<li><p><strong>第三方 Cookie（Third-party Cookies）</strong>  </p>
-<ul>
-<li>由非該網站的<code>第三方</code>（如廣告商）設定，用於<code>跨網站追蹤使用者行為</code>，以<code>推送廣告</code>等。</li>
-</ul>
-</li>
-</ol>
+<p>好，我們真的慢慢來，我會用<strong>超直白的說法、一步一步演示</strong>，幫你理解 <code>arr.sort((a, b) =&gt; a - b)</code> 是怎麼把數字從小排到大的。</p>
 <hr>
-<h3 id="四、特殊類型："><a href="#四、特殊類型：" class="headerlink" title="四、特殊類型："></a>四、特殊類型：</h3><ol>
-<li><p><strong>安全性 Cookie（Secure Cookies）</strong>  </p>
-<ul>
-<li>只能透過 <code>HTTPS</code> 傳輸，避免被攔截，主要保障敏感資料安全。</li>
-</ul>
-</li>
-<li><p><strong>HttpOnly Cookie</strong>  </p>
-<ul>
-<li>僅限伺服器端存取，JavaScript 無法讀取，用於防範 <code>XSS</code> 攻擊。</li>
-</ul>
-</li>
-<li><p><strong>SameSite Cookie</strong>  </p>
-<ul>
-<li>限制跨站請求攜帶 Cookie，減少 <code>CSRF</code> 攻擊風險，值可設為：</li>
-<li><code>Strict</code>：禁止跨站請求攜帶 Cookie。</li>
-<li><code>Lax</code>：部分允許，如從第三方網站點擊連結進來時可帶 Cookie。</li>
-<li><code>None</code>：允許跨站攜帶，但須配合 Secure。</li>
-</ul>
-</li>
+<h2 id="先記住一個核心概念："><a href="#先記住一個核心概念：" class="headerlink" title="先記住一個核心概念："></a>先記住一個核心概念：</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">arr.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b);</span><br></pre></td></tr></table></figure>
+
+<p>這一行的意思是：</p>
+<blockquote>
+<p>陣列裡的「每兩個數字 a 和 b」，如果 a 比 b 小，就讓 a 排在 b 前面。</p>
+</blockquote>
+<hr>
+<h2 id="一步一步來看："><a href="#一步一步來看：" class="headerlink" title="一步一步來看："></a>一步一步來看：</h2><p>假設這個陣列：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">30</span>, <span class="number">10</span>, <span class="number">5</span>];</span><br></pre></td></tr></table></figure>
+
+<p>我們要用 <code>sort()</code> 排成：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[5, 10, 30]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="JS-怎麼做的？"><a href="#JS-怎麼做的？" class="headerlink" title="JS 怎麼做的？"></a>JS 怎麼做的？</h2><p>它會自動幫你「兩個兩個配對」來比較順序。</p>
+<h3 id="第一次比較：30-和-10"><a href="#第一次比較：30-和-10" class="headerlink" title="第一次比較：30 和 10"></a>第一次比較：30 和 10</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">a = <span class="number">30</span>, b = <span class="number">10</span></span><br><span class="line">a - b = <span class="number">30</span> - <span class="number">10</span> = <span class="number">20</span>（是正數）</span><br><span class="line"></span><br><span class="line"><span class="title class_">JavaScript</span> 覺得：b（<span class="number">10</span>）比較小 → 讓 <span class="number">10</span> 排在 <span class="number">30</span> 前面</span><br></pre></td></tr></table></figure>
+
+<p>結果變成這樣：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[10, 30, 5]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="第二次比較：30-和-5"><a href="#第二次比較：30-和-5" class="headerlink" title="第二次比較：30 和 5"></a>第二次比較：30 和 5</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">a = <span class="number">30</span>, b = <span class="number">5</span></span><br><span class="line">a - b = <span class="number">30</span> - <span class="number">5</span> = <span class="number">25</span>（是正數）</span><br><span class="line"></span><br><span class="line">b（<span class="number">5</span>）比較小 → 把 <span class="number">5</span> 放到前面</span><br></pre></td></tr></table></figure>
+
+<p>結果變成：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[10, 5, 30]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="第三次比較：10-和-5"><a href="#第三次比較：10-和-5" class="headerlink" title="第三次比較：10 和 5"></a>第三次比較：10 和 5</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">a = <span class="number">10</span>, b = <span class="number">5</span></span><br><span class="line">a - b = <span class="number">10</span> - <span class="number">5</span> = <span class="number">5</span>（是正數）</span><br><span class="line"></span><br><span class="line">b（<span class="number">5</span>）比較小 → 把 <span class="number">5</span> 放到前面</span><br></pre></td></tr></table></figure>
+
+<p>最後得到：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[5, 10, 30]</span><br></pre></td></tr></table></figure>
+
+<p>就是我們想要的「從小到大」排序！</p>
+<hr>
+<h2 id="最簡單的記法："><a href="#最簡單的記法：" class="headerlink" title="最簡單的記法："></a>最簡單的記法：</h2><table>
+<thead>
+<tr>
+<th>語法</th>
+<th>排序方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(a, b) =&gt; a - b</code></td>
+<td>小到大</td>
+</tr>
+<tr>
+<td><code>(a, b) =&gt; b - a</code></td>
+<td>大到小</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="小挑戰"><a href="#小挑戰" class="headerlink" title="小挑戰"></a>小挑戰</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">8</span>, <span class="number">3</span>, <span class="number">100</span>, <span class="number">1</span>];</span><br><span class="line">arr.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b); <span class="comment">// [1, 3, 8, 100]</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Codeland-Username-Validation"><a href="#Codeland-Username-Validation" class="headerlink" title="Codeland Username Validation"></a>Codeland Username Validation</h1><p>符合條件的正則表達式：</p>
+<h3 id="正則表達式："><a href="#正則表達式：" class="headerlink" title="正則表達式："></a>正則表達式：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">^[A-Za-z][A-Za-z0-9_]&#123;2,23&#125;[A-Za-z0-9]$</span><br></pre></td></tr></table></figure>
+
+<h3 id="解釋："><a href="#解釋：" class="headerlink" title="解釋："></a>解釋：</h3><ol>
+<li>**<code>^</code>**：字串的開始。</li>
+<li>**<code>[A-Za-z]</code>**：第一個字符必須是字母（無論是大寫還是小寫）。</li>
+<li>**<code>[A-Za-z0-9_]&#123;2,23&#125;</code>**：接下來可以包含字母、數字或底線，並且長度必須在 2 到 23 之間。這確保了整個字串的長度在 4 到 25 之間（包括起始的字母）。</li>
+<li>**<code>[A-Za-z0-9]</code>**：字串的結尾必須是字母或數字，不能是底線 <code>_</code>。</li>
+<li>**<code>$</code>**：字串的結束。</li>
 </ol>
-<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>這些分類會依需求搭配使用，例如一個「<code>必要性第一方暫時性 Cookie</code>」可能用於維護<code>登入和操作狀態</code>；一個「<code>第三方廣告追蹤永久性 Cookie</code>」則可能用於<code>跨網站顯示個人化廣告</code>。</p>
+<h3 id="規則解釋："><a href="#規則解釋：" class="headerlink" title="規則解釋："></a>規則解釋：</h3><ol>
+<li>用戶名必須是 4 到 25 個字符。</li>
+<li>用戶名的開頭必須是字母。</li>
+<li>用戶名可以包含字母、數字和底線 <code>_</code>。</li>
+<li>用戶名不能以底線 <code>_</code> 結尾。</li>
+</ol>
+<h3 id="範例：-1"><a href="#範例：-1" class="headerlink" title="範例："></a>範例：</h3><ul>
+<li><code>&quot;username123&quot;</code> 會匹配成功。</li>
+<li><code>&quot;user_name&quot;</code> 會匹配成功。</li>
+<li><code>&quot;user_name_&quot;</code> 會匹配失敗（因為底線 <code>_</code> 在結尾）。</li>
+<li><code>&quot;123username&quot;</code> 會匹配失敗（因為開頭不是字母）。</li>
+<li><code>&quot;user&quot;</code> 會匹配成功。</li>
+<li><code>&quot;a_1&quot;</code> 會匹配失敗（因為長度太短，少於 4 個字符）。</li>
+</ul>
+<h2 id="2620-Counter"><a href="#2620-Counter" class="headerlink" title="2620. Counter"></a>2620. Counter</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> createCounter = <span class="keyword">function</span>(<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n++;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>這樣做的好處是：</p>
+<p>n 是外部函式的區域變數（<code>closure</code>）</p>
+<p>每次呼叫內部函式都能使用並修改 n</p>
+<p>n++ 會先回傳 n 的值，再讓 n 加 1</p>
+<p>小補充：n++ vs ++n<br>n++：先回傳，再加一<br>++n：先加一，再回傳</p>
 
                 </div>
 
@@ -334,7 +388,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/10/16/learning-notes-alpinejs-intro-tutorial/" title="Alpine.js 入門教學筆記 | 學習筆記" rel="bookmark">Alpine.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial copy/" title="JavaScript ES6 入門語法教學筆記 | 學習筆記" rel="bookmark">JavaScript ES6 入門語法教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-arrow-function-this-intro-tutorial/" title="JavaScript 箭頭函式 (Arrow Function）入門教學筆記 | 學習筆記" rel="bookmark">JavaScript 箭頭函式 (Arrow Function）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-async-await/" title="async/await 入門教學筆記 | 學習筆記" rel="bookmark">async/await 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-call-stack-intro-tutorial/" title="JavaScript Call Stack 入門教學筆記 | 學習筆記" rel="bookmark">JavaScript Call Stack 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/12/15/learning-notes-javascript-hoisting-intro-tutorial/" title="JavaScript Hoisting 入門教學筆記 | 學習筆記" rel="bookmark">JavaScript Hoisting 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/12/14/learning-notes-javascript-intro-tutorial/" title="JavaScript 入門教學筆記 | 學習筆記" rel="bookmark">JavaScript 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -370,8 +424,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/11/01/learning-notes-cookie-intro-tutorial/";
-    var disqus_url = "https://tech.kdchang.net/2024/11/01/learning-notes-cookie-intro-tutorial/";
+    var disqus_identifier = "https://tech.kdchang.net/2018/02/01/learning-notes-javascript-challenge-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2018/02/01/learning-notes-javascript-challenge-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
