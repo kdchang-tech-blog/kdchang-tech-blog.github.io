@@ -32,14 +32,24 @@ tags:
 3. [pluralsight](https://www.pluralsight.com/)
 4. [teamtreehouse](https://teamtreehouse.com/)
 5. [udemy](https://www.udemy.com/)
+6. [freecodecamp](https://www.freecodecamp.org/)
+7. [MDN Curriculum](https://developer.mozilla.org/en-US/curriculum/)
 
 ## 常見程式題目
-1. [JavaScript Questions](https://github.com/lydiahallie/javascript-questions)
+1. [lydiahallie JavaScript Questions](https://github.com/lydiahallie/javascript-questions)
 2. [Front End Interview Handbook](https://www.frontendinterviewhandbook.com/)
 3. [BigFrontEnd.dev](https://bigfrontend.dev/)
-4. [2024 資深前端工程師面試心得](https://medium.com/hannah-lin/2024-%E8%B3%87%E6%B7%B1%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB%E9%9D%A2%E8%A9%A6%E5%BF%83%E5%BE%97-3cc0f718e78f)
-5. [greatfrontend](https://www.greatfrontend.com/)
-6. [最常見的前端面試題目](https://www.explainthis.io/zh-hant/swe-questions/frontend)
+4. [greatfrontend](https://www.greatfrontend.com/)
+5. [explainthis 最常見的前端面試題目](https://www.explainthis.io/zh-hant/swe-questions/frontend)
+6. [leetcode 30 Days of JavaScript](https://leetcode.com/studyplan/30-days-of-javascript/)
+7. [leetcode Top Interview 150](https://leetcode.com/studyplan/top-interview-150/)
+8. [react hackerrank](https://www.hackerrank.com/domains/react)
+9. [coderbyte Challenges](https://coderbyte.com/challenges)
+
+## 技術面試題目
+1. [[面試] 中英對照之 TS 面試題](https://medium.com/hannah-lin/%E9%9D%A2%E8%A9%A6-%E4%B8%AD%E8%8B%B1%E5%B0%8D%E7%85%A7%E4%B9%8B-ts-%E9%9D%A2%E8%A9%A6%E9%A1%8C-1c2e0c6e6b3b)
+2. [2024 資深前端工程師面試心得](https://medium.com/hannah-lin/2024-%E8%B3%87%E6%B7%B1%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB%E9%9D%A2%E8%A9%A6%E5%BF%83%E5%BE%97-3cc0f718e78f)
+3. [Three Ways to Reverse a String in JavaScript](https://www.freecodecamp.org/news/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb/)
 
 ## 系統設計
 1. [最完整的系統設計面試題](https://www.explainthis.io/zh-hant/swe-questions/system-design)
