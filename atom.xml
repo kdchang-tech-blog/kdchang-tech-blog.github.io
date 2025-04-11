@@ -6,7 +6,7 @@
   <link href="https://tech.kdchang.net/atom.xml" rel="self"/>
   
   <link href="https://tech.kdchang.net/"/>
-  <updated>2025-04-09T13:37:24.221Z</updated>
+  <updated>2025-04-11T12:52:00.275Z</updated>
   <id>https://tech.kdchang.net/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-04-09T13:37:24.221Z</updated>
+    <updated>2025-04-11T12:52:00.275Z</updated>
     
     
       
@@ -50,11 +50,52 @@
   </entry>
   
   <entry>
+    <title>React Context API 入門教學 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/</id>
+    <published>2024-12-21T03:33:41.000Z</published>
+    <updated>2025-04-11T12:52:00.276Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;React Context API 是 React 提供的一種方式，讓我們能夠在組件樹中傳遞資料，而不需要一層層地使用</summary>
+        
+      
+    
+    
+    
+    
+    <category term="javascript" scheme="https://tech.kdchang.net/tags/javascript/"/>
+    
+    <category term="前端" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端開發" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    
+    <category term="前端工程" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="frontend" scheme="https://tech.kdchang.net/tags/frontend/"/>
+    
+    <category term="React" scheme="https://tech.kdchang.net/tags/React/"/>
+    
+    <category term="React.js" scheme="https://tech.kdchang.net/tags/React-js/"/>
+    
+    <category term="ReactJS" scheme="https://tech.kdchang.net/tags/ReactJS/"/>
+    
+    <category term="useContext" scheme="https://tech.kdchang.net/tags/useContext/"/>
+    
+    <category term="Context API" scheme="https://tech.kdchang.net/tags/Context-API/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React useMemo 與 useCallback 差異介紹與入門教學 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-04-09T13:37:24.221Z</updated>
+    <updated>2025-04-11T12:52:00.276Z</updated>
     
     
       
@@ -95,7 +136,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-javascript-commonjs-amd-module-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-javascript-commonjs-amd-module-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-04-09T13:37:24.220Z</updated>
+    <updated>2025-04-11T12:52:00.275Z</updated>
     
     
       
@@ -136,7 +177,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-javascript-es-module-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-javascript-es-module-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-04-09T13:37:24.220Z</updated>
+    <updated>2025-04-11T12:52:00.275Z</updated>
     
     
       
@@ -173,7 +214,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-nodejs-expressjs-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-nodejs-expressjs-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-04-09T13:37:24.221Z</updated>
+    <updated>2025-04-11T12:52:00.275Z</updated>
     
     
       
@@ -216,7 +257,7 @@
     <link href="https://tech.kdchang.net/2024/12/14/learning-notes-css-font-size-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/14/learning-notes-css-font-size-intro-tutorial/</id>
     <published>2024-12-14T18:23:41.000Z</published>
-    <updated>2025-04-09T13:37:24.219Z</updated>
+    <updated>2025-04-11T12:52:00.274Z</updated>
     
     
       
@@ -243,11 +284,38 @@
   </entry>
   
   <entry>
+    <title>Vue 正確新增或修改物件屬性入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/14/learning-notes-vue-set-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/14/learning-notes-vue-set-intro-tutorial/</id>
+    <published>2024-12-14T18:23:41.000Z</published>
+    <updated>2025-04-11T12:52:00.276Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在 Vue 2（Options API）中，&lt;code&gt;this.$set&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="vue" scheme="https://tech.kdchang.net/tags/vue/"/>
+    
+    <category term="vue.js" scheme="https://tech.kdchang.net/tags/vue-js/"/>
+    
+    <category term="this.$set" scheme="https://tech.kdchang.net/tags/this-set/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JSX 入門教學筆記 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2024/12/13/learning-notes-jsx-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/13/learning-notes-jsx-intro-tutorial/</id>
     <published>2024-12-13T18:23:41.000Z</published>
-    <updated>2025-04-09T13:37:24.221Z</updated>
+    <updated>2025-04-11T12:52:00.275Z</updated>
     
     
       
@@ -261,9 +329,9 @@
     
     
     
-    <category term="JSX" scheme="https://tech.kdchang.net/tags/JSX/"/>
-    
     <category term="react" scheme="https://tech.kdchang.net/tags/react/"/>
+    
+    <category term="JSX" scheme="https://tech.kdchang.net/tags/JSX/"/>
     
   </entry>
   
@@ -272,7 +340,7 @@
     <link href="https://tech.kdchang.net/2024/12/13/learning-notes-regex-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/13/learning-notes-regex-intro-tutorial/</id>
     <published>2024-12-13T18:23:41.000Z</published>
-    <updated>2025-04-09T13:37:24.221Z</updated>
+    <updated>2025-04-11T12:52:00.276Z</updated>
     
     
       
@@ -297,11 +365,38 @@
   </entry>
   
   <entry>
+    <title>Backend For Frontend（BFF）入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/12/learning-notes-backend-for-frontend-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/12/learning-notes-backend-for-frontend-intro-tutorial/</id>
+    <published>2024-12-12T18:23:41.000Z</published>
+    <updated>2025-04-11T12:52:00.273Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;當今前端與後端開發越趨分離，加上行動裝置、多樣化的使用者端（Web、App、IoT 等）快速成長，&lt;strong&gt;Backend for</summary>
+        
+      
+    
+    
+    
+    
+    <category term="react" scheme="https://tech.kdchang.net/tags/react/"/>
+    
+    <category term="Redux" scheme="https://tech.kdchang.net/tags/Redux/"/>
+    
+    <category term="React Redux" scheme="https://tech.kdchang.net/tags/React-Redux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React Redux 介紹入門教學筆記 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2024/12/12/learning-notes-react-redux-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/12/learning-notes-react-redux-intro-tutorial/</id>
     <published>2024-12-12T18:23:41.000Z</published>
-    <updated>2025-04-09T13:37:24.221Z</updated>
+    <updated>2025-04-11T12:52:00.276Z</updated>
     
     
       
@@ -324,11 +419,38 @@
   </entry>
   
   <entry>
+    <title>前端渲染技術全解析：SSR、SSG、ISR、SPA 入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/12/learning-notes-spa-ssr-isr-ssg-redux-intro-tutorial%20copy/"/>
+    <id>https://tech.kdchang.net/2024/12/12/learning-notes-spa-ssr-isr-ssg-redux-intro-tutorial%20copy/</id>
+    <published>2024-12-12T18:23:41.000Z</published>
+    <updated>2025-04-11T12:52:00.276Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="react" scheme="https://tech.kdchang.net/tags/react/"/>
+    
+    <category term="Redux" scheme="https://tech.kdchang.net/tags/Redux/"/>
+    
+    <category term="React Redux" scheme="https://tech.kdchang.net/tags/React-Redux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Cypress 測試入門教學筆記 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2024/12/08/learning-notes-cypress-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/08/learning-notes-cypress-intro-tutorial/</id>
     <published>2024-12-08T18:23:41.000Z</published>
-    <updated>2025-04-09T13:37:24.220Z</updated>
+    <updated>2025-04-11T12:52:00.274Z</updated>
     
     
       
@@ -357,7 +479,7 @@
     <link href="https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial/</id>
     <published>2024-12-08T18:23:41.000Z</published>
-    <updated>2025-04-09T13:37:24.221Z</updated>
+    <updated>2025-04-11T12:52:00.275Z</updated>
     
     
       
@@ -384,7 +506,7 @@
     <link href="https://tech.kdchang.net/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</id>
     <published>2024-12-04T18:23:41.000Z</published>
-    <updated>2025-04-09T13:37:24.220Z</updated>
+    <updated>2025-04-11T12:52:00.274Z</updated>
     
     
       
@@ -413,7 +535,7 @@
     <link href="https://tech.kdchang.net/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/</id>
     <published>2024-12-03T18:23:41.000Z</published>
-    <updated>2025-04-09T13:37:24.221Z</updated>
+    <updated>2025-04-11T12:52:00.276Z</updated>
     
     
       
@@ -448,7 +570,7 @@
     <link href="https://tech.kdchang.net/2024/12/02/learning-notes-typescript-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/02/learning-notes-typescript-intro-tutorial/</id>
     <published>2024-12-02T18:23:41.000Z</published>
-    <updated>2025-04-09T13:37:24.222Z</updated>
+    <updated>2025-04-11T12:52:00.276Z</updated>
     
     
       
@@ -483,7 +605,7 @@
     <link href="https://tech.kdchang.net/2024/12/01/learning-notes-nuxtjs-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/01/learning-notes-nuxtjs-intro-tutorial/</id>
     <published>2024-12-01T18:23:41.000Z</published>
-    <updated>2025-04-09T13:37:24.221Z</updated>
+    <updated>2025-04-11T12:52:00.275Z</updated>
     
     
       
@@ -522,7 +644,7 @@
     <link href="https://tech.kdchang.net/2024/11/30/learning-notes-emotion-css-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/11/30/learning-notes-emotion-css-intro-tutorial/</id>
     <published>2024-11-30T18:23:41.000Z</published>
-    <updated>2025-04-09T13:37:24.220Z</updated>
+    <updated>2025-04-11T12:52:00.274Z</updated>
     
     
       
@@ -551,154 +673,6 @@
     <category term="Emotion CSS" scheme="https://tech.kdchang.net/tags/Emotion-CSS/"/>
     
     <category term="styled" scheme="https://tech.kdchang.net/tags/styled/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tailwind CSS 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/11/30/learning-notes-tailwind-css-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2024/11/30/learning-notes-tailwind-css-intro-tutorial/</id>
-    <published>2024-11-30T18:23:41.000Z</published>
-    <updated>2025-04-09T13:37:24.222Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;一、什麼是-Tailwind-CSS？&quot;&gt;&lt;a href=&quot;#一、什麼是-Tailwind-CSS？&quot; class=&quot;headerlink&quot; title=&quot;一、什麼是 Tailwind CSS？&quot;&gt;&lt;/a&gt;一、什麼是 Tailwind</summary>
-        
-      
-    
-    
-    
-    
-    <category term="前端" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="前端開發" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="前端工程" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
-    
-    <category term="frontend" scheme="https://tech.kdchang.net/tags/frontend/"/>
-    
-    <category term="frontend engineer" scheme="https://tech.kdchang.net/tags/frontend-engineer/"/>
-    
-    <category term="CSS" scheme="https://tech.kdchang.net/tags/CSS/"/>
-    
-    <category term="Tailwind" scheme="https://tech.kdchang.net/tags/Tailwind/"/>
-    
-    <category term="Tailwind CSS" scheme="https://tech.kdchang.net/tags/Tailwind-CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS Animation 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/11/16/learning-notes-css-animation-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2024/11/16/learning-notes-css-animation-intro-tutorial/</id>
-    <published>2024-11-16T03:33:41.000Z</published>
-    <updated>2025-04-09T13:37:24.219Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;在現代網頁開發中，動畫是一種強而有力的表現手法，能提升使用者體驗，使介面更加生動、有趣。相比 JavaScript，CSS</summary>
-        
-      
-    
-    
-    
-    
-    <category term="前端" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="前端開發" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="前端工程" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
-    
-    <category term="frontend" scheme="https://tech.kdchang.net/tags/frontend/"/>
-    
-    <category term="frontend engineer" scheme="https://tech.kdchang.net/tags/frontend-engineer/"/>
-    
-    <category term="css" scheme="https://tech.kdchang.net/tags/css/"/>
-    
-    <category term="Animation" scheme="https://tech.kdchang.net/tags/Animation/"/>
-    
-    <category term="transition" scheme="https://tech.kdchang.net/tags/transition/"/>
-    
-    <category term="transform" scheme="https://tech.kdchang.net/tags/transform/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React 與 Next.js 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/11/16/learning-notes-react-nextjs-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2024/11/16/learning-notes-react-nextjs-intro-tutorial/</id>
-    <published>2024-11-16T03:33:41.000Z</published>
-    <updated>2025-04-09T13:37:24.221Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-React-簡介&quot;&gt;&lt;a href=&quot;#1-React-簡介&quot; class=&quot;headerlink&quot; title=&quot;1. React 簡介&quot;&gt;&lt;/a&gt;1. React 簡介&lt;/h2&gt;&lt;p&gt;React 是由 Facebook（現 Meta）開發的</summary>
-        
-      
-    
-    
-    
-    
-    <category term="前端" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="前端開發" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="前端工程" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
-    
-    <category term="frontend" scheme="https://tech.kdchang.net/tags/frontend/"/>
-    
-    <category term="frontend engineer" scheme="https://tech.kdchang.net/tags/frontend-engineer/"/>
-    
-    <category term="vue" scheme="https://tech.kdchang.net/tags/vue/"/>
-    
-    <category term="vue3" scheme="https://tech.kdchang.net/tags/vue3/"/>
-    
-    <category term="vue.js" scheme="https://tech.kdchang.net/tags/vue-js/"/>
-    
-    <category term="vue.js 3" scheme="https://tech.kdchang.net/tags/vue-js-3/"/>
-    
-    <category term="Options API" scheme="https://tech.kdchang.net/tags/Options-API/"/>
-    
-    <category term="Composition API" scheme="https://tech.kdchang.net/tags/Composition-API/"/>
-    
-    <category term="Pinia" scheme="https://tech.kdchang.net/tags/Pinia/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Grid 網頁排版技巧入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/11/15/learning-notes-css-grid-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2024/11/15/learning-notes-css-grid-intro-tutorial/</id>
-    <published>2024-11-15T18:23:41.000Z</published>
-    <updated>2025-04-09T13:37:24.219Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;在現今網頁設計中，排版的結構與呈現方式對於用戶體驗至關重要。隨著網頁設計的演進，CSS &lt;code&gt;Grid&lt;/code&gt;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="css" scheme="https://tech.kdchang.net/tags/css/"/>
-    
-    <category term="Grid" scheme="https://tech.kdchang.net/tags/Grid/"/>
-    
-    <category term="排版" scheme="https://tech.kdchang.net/tags/%E6%8E%92%E7%89%88/"/>
     
   </entry>
   

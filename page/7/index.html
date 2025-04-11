@@ -119,14 +119,14 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/books/">Books</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/books/">Books</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -221,6 +221,139 @@
 
 <div class="post-preview">
 
+    <a href="/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/">
+        <h2 class="post-title">
+            Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            Props 屬性子元件可以透過 Props 接收來自父元件的輸入。首先，子元件需要宣告它所接收的 Props：
+&lt;!-- ChildComp.vue --&gt;&lt;script setup&gt;const props = defineProps(&#123;  msg: String&#125;)&lt;/script&gt;
+
+注意，defineProps() 是一個編譯時的......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2021-02-10
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/">
+        <h2 class="post-title">
+            Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            Components 元件到目前為止，我們只使用了一個單一的元件。實際的 Vue 應用程式通常是由巢狀元件所組成的。
+父元件可以在其模板中渲染另一個元件作為子元件。要使用子元件，我們需要先匯入它：
+import ChildComp from &#x27;./ChildComp.vue&#x27;
+
+然後，我們可以在模板中使用該元件，如下所示：
+&lt;template&gt;  &lt;Ch......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2021-02-09
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/">
+        <h2 class="post-title">
+            Vue.js 3 官方入門語法教學筆記 [9] - Watchers 觀察者 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            Watchers 觀察者有時我們可能需要以反應性的方式執行「Side-effect 副作用」，例如，當一個數值改變時將其記錄到控制台。我們可以使用觀察者來實現這一點：
+import &#123; ref, watch &#125; from &#x27;vue&#x27;const count = ref(0)watch(count, (newCount) =&gt; &#123;  // ......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2021-02-08
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/">
+        <h2 class="post-title">
+            Vue.js 3 官方入門語法教學筆記 [8] - Lifecycle and Template Refs 生命週期與模板引用 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            Lifecycle and Template Refs 生命週期與模板引用到目前為止，Vue.js 透過響應式資料與聲明式渲染，幫助我們處理了所有的 DOM 更新。然而，無可避免地會有需要手動操作 DOM 的情況。
+我們可以使用特殊的 ref 屬性來請求模板引用 (template ref)，也就是模板中某個元素的引用：
+範例&lt;template&gt;  &lt;p ref=&quot......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2021-02-07
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/">
+        <h2 class="post-title">
+            Vue.js 3 官方入門語法教學筆記 [7] - Computed Property 計算屬性 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            Computed Property 計算屬性讓我們在前一個待辦清單的範例基礎上繼續改進。這裡，我們已經為每個待辦項目新增了切換功能 (toggle)，這是透過在每個待辦物件中新增一個 done 屬性，並使用 v-model 綁定到核取方塊來實現的：
+&lt;template&gt;  &lt;li v-for=&quot;todo in todos&quot;&gt;    &lt;inpu......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2021-02-06
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/02/05/learning-notes-vuejs-3-official-tutorial-6-list-rendering/">
+        <h2 class="post-title">
+            Vue.js 3 官方入門語法教學筆記 [6] - List Rendering 表單綁定 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            List Rendering 列表渲染我們可以使用 v-for 指令根據一個來源陣列來渲染元素列表：
+&lt;template&gt;  &lt;ul&gt;    &lt;li v-for=&quot;todo in todos&quot; :key=&quot;todo.id&quot;&gt;      &#123;&#123; todo.text &#125;&#125;    &l......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2021-02-05
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/">
         <h2 class="post-title">
             Vue.js 3 官方入門語法教學筆記 [5] - Conditional Rendering 表單綁定 | 學習筆記
@@ -304,141 +437,6 @@
     <p class="post-meta">
         Posted by kdchang on
         2021-02-01
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/">
-        <h2 class="post-title">
-            Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            Declarative Rendering 聲明式渲染在 Vue3 我們常看到的是 Vue 單文件元件 (SFC)。SFC 是一個可重用的、獨立的程式碼區塊，它將相關的 HTML、CSS 和 JavaScript 封裝在一起，並寫在一個 .vue 文件中。
-Vue 的核心特性是聲明式渲染：使用擴展 HTML 的模板語法，我們可以根據 JavaScript 的狀態描述 HTML 應該如何呈現。......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2021-01-31
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/01/16/learning-notes-javascript-arrow-function-this-intro-tutorial/">
-        <h2 class="post-title">
-            JavaScript 箭頭函式 (Arrow Function）入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            在 JavaScript 的 箭頭函式 (Arrow Function, =&gt;) 中，this 的行為與傳統的 函式表達式 (Function Expression) 不同，主要特點如下：
-
-箭頭函式的 this 綁定
-箭頭函式不會建立自己的 this，而是繼承定義它的上下文（也稱為 詞法作用域 Lexical Scope）。
-在箭頭函式內部，this 指向的是箭頭函式所處的外部函式的......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2021-01-16
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/01/16/learning-notes-javascript-async-await/">
-        <h2 class="post-title">
-            async/await 入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            async 和 await 是 JavaScript 中處理非同步操作的語法糖，它們使得非同步代碼更加易讀和易寫，避免了傳統回調函數（callback）或 Promise 的 .then() 鏈式調用的冗長性。
-1. async 關鍵字async 是一個關鍵字，用來標記一個函數為「非同步函數」。非同步函數會隱式地返回一個 Promise，並且在函數內部，你可以使用 await 來等待非同步操......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2021-01-16
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/01/16/learning-notes-javascript-call-stack-intro-tutorial/">
-        <h2 class="post-title">
-            JavaScript Call Stack 入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            在 JavaScript 開發中，理解 Call Stack（呼叫堆疊） 是掌握執行流程與錯誤除錯的關鍵概念之一。它決定了程式碼執行的順序，也與同步與非同步行為密切相關。本文將深入介紹 Call Stack 的基本原理，並透過實際範例幫助你理解它的運作方式。
-
-1. 什麼是 Call Stack？Call Stack 是 JavaScript 引擎用來管理函式呼叫的結構，它遵循 LIFO（L......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2021-01-16
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/01/16/learning-notes-javascript-let-closure/">
-        <h2 class="post-title">
-            JavaScript let 閉包（Closure）入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            什麼是閉包（Closure）？閉包是 JavaScript 中的一個強大概念，它允許函式「記住」其外部作用域（lexical scope），即使該作用域已經執行完畢並離開了執行環境。閉包使得函式能夠存取其外部函式內部的變數，而這些變數通常在外部函式執行結束後仍然可以被存取。
-在 JavaScript 中，每當一個函式被創建時，它都會自動獲得對其外部變數的存取權，這就是閉包的核心概念。
-
-閉包......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2021-01-16
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/01/16/learning-notes-javascript-object-oriented-programming-intro-tutorial/">
-        <h2 class="post-title">
-            JavaScript 物件導向（Object-oriented programming）入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            1. 物件導向與 new 關鍵字JavaScript 是基於 原型 (Prototype) 的物件導向語言，而非典型的 類別 (Class) 為基礎的語言。但 ES6 之後，JavaScript 引入了 class 語法，使其更接近傳統的物件導向語言，如 Java 或 C++。
-在 JavaScript 中，new 關鍵字用於建立物件，並且會執行以下步驟：
-
-建立一個新的空物件。
-設定該物件......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2021-01-16
     </p>
 
 </div>
