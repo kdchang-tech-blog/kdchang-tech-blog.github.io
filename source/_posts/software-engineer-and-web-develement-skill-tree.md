@@ -22,12 +22,13 @@ tags:
 6. [ ] Vue
 7. [ ] React
 8. [ ] Angular
-9. [ ] Tailwind
+9. [ ] TailwindCSS
 10. [ ] Vitest
-11. [ ] Cypress
+11. [ ] Cypress/Jest
 12. [ ] TypeScript
 13. [ ] PWA
 14. [ ] SASS/LESS/PostCSS
+15. [ ] NodeJS
 
 # 後端
 [Backend Roadmap](https://roadmap.sh/backend) / [Backend Beginner Roadmap](https://roadmap.sh/backend?r=backend-beginner)

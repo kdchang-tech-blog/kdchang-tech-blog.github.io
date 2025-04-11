@@ -164,3 +164,5 @@ Redux 提供了一個強大的狀態管理方式，適合中大型應用。在 R
 # 參考文件
 1. [redux vs useContext, useReducer，該怎麼選擇？](https://blog.typeart.cc/redux-vs-use-congtext-use-reducer-and-which-one/)
 2. [The Problem with React's Context API](https://leewarrick.com/blog/the-problem-with-context/)
+3. [React 狀態管理套件比較與原理實現 feat. Redux, Zustand, Jotai, Recoil, MobX, Valtio](https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/a-comparison-of-react-state-management-libraries-ba61db07332b)
+4. [利用 React Context API + useReducer 實作 Redux](https://www.cythilya.tw/2023/05/25/implement-redux-by-react-context-api-and-useReducer/)

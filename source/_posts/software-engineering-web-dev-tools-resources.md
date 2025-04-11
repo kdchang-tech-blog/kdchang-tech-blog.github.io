@@ -1,16 +1,20 @@
 ---
-title: 常見 Web 網頁開發工具和學習資源整理
+title: 常見軟體工程師/網頁開發工具和學習資源整理
 date: 2024-03-22 11:33:41
 author: kdchang
 tags: 
     - Frontend Roadmap
     - Software Engineer
+    - Software Engineering
     - 前端工程師
     - 前端工程
     - 網頁開發
     - 網站開發
     - 網站開發工具
     - 學習資源
+    - 軟體工程
+    - 軟體工程師
+    - Web
 
 ---
 
@@ -36,6 +40,34 @@ tags:
 3. ColorZilla
 4. Fonts Ninja
 5. Check My Links
+
+## 終端機工具
+1. [ohmyzsh Themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
+2. [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
+
+✅ Terminal App：iTerm2
+網站：https://iterm2.com
+
+✅ Shell：zsh（macOS 預設就是 zsh）
+macOS Catalina 之後預設就是 zsh，不用特別安裝
+比 bash 現代，有 plugin & theme 支援
+
+✅ Framework：Oh My Zsh
+網站：https://ohmyz.sh
+
+優點：
+超多好用 plugin（git、docker、npm、自動補齊等）
+主題選擇豐富（powerlevel10k、agnoster...）
+安裝簡單，社群活躍
+
+安裝指令：
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+brew install romkatv/powerlevel10k/powerlevel10k
+# vim ~/.zshrc 修改主題樣式
+ZSH_THEME="powerlevel10k/powerlevel10k"
+source ~/.zshrc
+```
 
 ## 假文字
 1. [中文亂數假文產生器 Chinese Lorem Ipsum](https://pinkylam.me/generator/chinese-lorem-ipsum/)
@@ -65,12 +97,20 @@ tags:
 1. [Flexbox Froggy](https://flexboxfroggy.com/)
 2. [CSS Grid Garden](https://cssgridgarden.com/)
 
-# API
+## API
 1. [{JSON} Placeholder Free fake and reliable API for testing and prototyping.](https://jsonplaceholder.typicode.com/)
 
-# 設計
+## 設計
 1. [s5-style](https://www.s5-style.com/)
 2. [cssdesignawards](https://www.cssdesignawards.com/)
 
-# CSS 動畫
+## CSS 動畫
 1. [CSS 貝茲曲線](https://cubic-bezier.com/)
+
+## 文件工具
+1. [docusaurus](https://docusaurus.io/)
+
+## 線上編輯器
+1. [codesandbox](https://codesandbox.io/)
+2. [codepen](https://codepen.io/)
+3. [jsbin](https://jsbin.com/)

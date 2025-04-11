@@ -143,3 +143,7 @@ function ParentComponent() {
 - 在表單中將函式傳遞給 `input` 元件時，使用 `useCallback` 可避免整個表單重 render。
 
 記住一個原則：**不要為了使用 hook 而使用，而是根據實際效能需求進行優化**。如果你的應用很小或尚未遇到效能問題，先專注於撰寫可讀性高、邏輯清楚的程式碼，這才是最重要的。
+
+
+## 參考文件
+1. [如何優化 React 元件的渲染效能，並避免渲染陷阱](https://muki.tw/react-render-usecallback-react-memo/)
