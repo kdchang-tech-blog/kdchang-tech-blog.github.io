@@ -26,11 +26,11 @@
     
     <title>
         
-          CSS Flexbox align-items 和 align-content 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          Vue ref 與 reactive 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/07/10/learning-notes-css-flexbox-align-items-align-content-garden-tutorial/">
+    <link rel="canonical" href="https://tech.kdchang.net/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="CSS Flexbox align-items 和 align-content 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="CSS Flexbox align-items 和 align-content 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="Vue ref 與 reactive 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="Vue ref 與 reactive 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,23 +199,21 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>CSS Flexbox align-items 和 align-content 入門教學筆記 | 學習筆記</h1>
+                    <h1>Vue ref 與 reactive 入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2024-07-10
+                        2024-12-16
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
+                          <a class="tag" href="/tags/#vue" title="vue">vue</a>
                         
-                          <a class="tag" href="/tags/#Grid Garden" title="Grid Garden">Grid Garden</a>
+                          <a class="tag" href="/tags/#vue.js" title="vue.js">vue.js</a>
                         
-                          <a class="tag" href="/tags/#Grid" title="Grid">Grid</a>
+                          <a class="tag" href="/tags/#ref" title="ref">ref</a>
                         
-                          <a class="tag" href="/tags/#align-items" title="align-items">align-items</a>
-                        
-                          <a class="tag" href="/tags/#align-content" title="align-content">align-content</a>
+                          <a class="tag" href="/tags/#reactive" title="reactive">reactive</a>
                         
 
                     </div>
@@ -241,117 +239,64 @@
                 </div>
                 <br>
                 <div>
-                    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在 CSS Flexbox 和 Grid 佈局中，<code>align-items</code> 和 <code>align-content</code> 兩者都與「對齊」有關，但適用的情境不同（單行 vs 多行）：</p>
-<h2 id="1-align-items"><a href="#1-align-items" class="headerlink" title="1. align-items"></a>1. <code>align-items</code></h2><ul>
-<li>作用於<strong>單行內容</strong>（單行 Flexbox 或 Grid 容器內的項目）。</li>
-<li>控制<strong>子元素</strong>在<strong>交叉軸（cross-axis）</strong>上的對齊方式。</li>
-</ul>
-<h3 id="常見值"><a href="#常見值" class="headerlink" title="常見值"></a><strong>常見值</strong></h3><table>
-<thead>
-<tr>
-<th>值</th>
-<th>說明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>stretch</code></td>
-<td>預設值，子元素會拉伸填滿容器的交叉軸</td>
-</tr>
-<tr>
-<td><code>flex-start</code></td>
-<td>對齊交叉軸的起始點</td>
-</tr>
-<tr>
-<td><code>flex-end</code></td>
-<td>對齊交叉軸的結束點</td>
-</tr>
-<tr>
-<td><code>center</code></td>
-<td>置中對齊</td>
-</tr>
-<tr>
-<td><code>baseline</code></td>
-<td>以文字基線（baseline）對齊</td>
-</tr>
-</tbody></table>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a><strong>範例</strong></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: center; <span class="comment">/* 子元素在交叉軸上置中對齊 */</span></span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: lightblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p> <strong>效果</strong>：<code>item</code> 會在 <code>container</code> 的交叉軸（垂直方向）置中對齊。</p>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 Vue 3 中，<code>ref</code> 與 <code>reactive</code> 都是用來創建<strong>響應式資料</strong>的工具，但它們適用的情境略有不同。以下是清楚的比較與實際使用範例，幫助你理解什麼時候該用哪一個。</p>
 <hr>
-<h2 id="2-align-content"><a href="#2-align-content" class="headerlink" title="2. align-content"></a>2. <code>align-content</code></h2><ul>
-<li>作用於<strong>多行內容</strong>（當 <code>flex-wrap: wrap</code> 或 Grid 有多行時）。</li>
-<li>控制<strong>整體行的對齊</strong>，而不是單個項目。</li>
+<h2 id="ref-使用情境"><a href="#ref-使用情境" class="headerlink" title="ref 使用情境"></a><code>ref</code> 使用情境</h2><h3 id="適用於："><a href="#適用於：" class="headerlink" title="適用於："></a>適用於：</h3><ul>
+<li><strong>原始資料型別</strong>：如 <code>Number</code>、<code>String</code>、<code>Boolean</code>、<code>Date</code> 等。</li>
+<li>你只需要追蹤單一值。</li>
+<li>當你需要某個變數傳遞到 <code>&lt;template&gt;</code> 或函式中。</li>
 </ul>
-<h3 id="常見值-1"><a href="#常見值-1" class="headerlink" title="常見值"></a><strong>常見值</strong></h3><table>
-<thead>
-<tr>
-<th>值</th>
-<th>說明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>stretch</code></td>
-<td>預設值，行會拉伸填滿容器</td>
-</tr>
-<tr>
-<td><code>flex-start</code></td>
-<td>行對齊交叉軸的起始點</td>
-</tr>
-<tr>
-<td><code>flex-end</code></td>
-<td>行對齊交叉軸的結束點</td>
-</tr>
-<tr>
-<td><code>center</code></td>
-<td>行置中對齊</td>
-</tr>
-<tr>
-<td><code>space-between</code></td>
-<td>第一行靠起始點，最後一行靠結束點，其他行平均分布</td>
-</tr>
-<tr>
-<td><code>space-around</code></td>
-<td>每行之間有相等的間距</td>
-</tr>
-<tr>
-<td><code>space-evenly</code></td>
-<td>每行之間及兩側間距相等</td>
-</tr>
-</tbody></table>
-<h3 id="範例-1"><a href="#範例-1" class="headerlink" title="範例"></a><strong>範例</strong></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">align-content</span>: center; <span class="comment">/* 整體行群組在交叉軸上置中 */</span></span><br><span class="line">  <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: lightcoral;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span><br><span class="line">count.<span class="property">value</span>++ <span class="comment">// 需要用 .value 訪問或修改</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>效果</strong>：當 <code>.container</code> 高度足夠時，多行 <code>.item</code> 會整體置中排列。</p>
+<h3 id="範例："><a href="#範例：" class="headerlink" title="範例："></a>範例：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const message = ref(&#x27;Hello&#x27;)</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">const updateMessage = () =&gt; &#123;</span><br><span class="line">  message.value = &#x27;Hi Vue 3&#x27;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
 <hr>
-<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a><strong>總結</strong></h2><table>
+<h2 id="reactive-使用情境"><a href="#reactive-使用情境" class="headerlink" title="reactive 使用情境"></a><code>reactive</code> 使用情境</h2><h3 id="適用於：-1"><a href="#適用於：-1" class="headerlink" title="適用於："></a>適用於：</h3><ul>
+<li><strong>物件或陣列</strong>：需要操作多個屬性的資料結構。</li>
+<li>多層巢狀資料或你希望所有屬性都具有響應性。</li>
+<li>表單資料、設定物件等複雜狀態管理。</li>
+</ul>
+<h3 id="語法：-1"><a href="#語法：-1" class="headerlink" title="語法："></a>語法：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; reactive &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> user = <span class="title function_">reactive</span>(&#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Daniel&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">30</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">user.<span class="property">age</span>++ <span class="comment">// 直接修改即可，無需 .value</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="範例：-1"><a href="#範例：-1" class="headerlink" title="範例："></a>範例：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; reactive &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const form = reactive(&#123;</span><br><span class="line">  username: &#x27;&#x27;,</span><br><span class="line">  email: &#x27;&#x27;,</span><br><span class="line">  isSubscribed: false</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const submitForm = () =&gt; &#123;</span><br><span class="line">  console.log(form.username, form.email, form.isSubscribed)</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="⚠️-ref-包物件-vs-reactive"><a href="#⚠️-ref-包物件-vs-reactive" class="headerlink" title="⚠️ ref 包物件 vs reactive"></a>⚠️ <code>ref</code> 包物件 vs <code>reactive</code></h2><p>雖然你也可以這樣用：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = <span class="title function_">ref</span>(&#123; <span class="attr">name</span>: <span class="string">&#x27;Daniel&#x27;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>但要存取時就需要：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">user.<span class="property">value</span>.<span class="property">name</span> = <span class="string">&#x27;John&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>用 <code>reactive</code> 則可以直接操作：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">user.<span class="property">name</span> = <span class="string">&#x27;John&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>所以若你有<strong>物件資料</strong>，通常選擇 <code>reactive</code> 更直覺。</p>
+<hr>
+<h2 id="建議使用方式整理："><a href="#建議使用方式整理：" class="headerlink" title="建議使用方式整理："></a>建議使用方式整理：</h2><table>
 <thead>
 <tr>
-<th>屬性</th>
-<th>影響對象</th>
-<th>適用於</th>
-<th>主要功能</th>
+<th>類型</th>
+<th>建議使用方式</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><code>align-items</code></td>
-<td>子元素</td>
-<td>單行（未換行）</td>
-<td>控制子元素在交叉軸上的對齊</td>
+<td>單一變數（數字、字串）</td>
+<td><code>ref</code></td>
 </tr>
 <tr>
-<td><code>align-content</code></td>
-<td>整體行</td>
-<td>多行（<code>flex-wrap: wrap</code>）</td>
-<td>控制多行的整體對齊</td>
+<td>多欄位表單資料</td>
+<td><code>reactive</code></td>
+</tr>
+<tr>
+<td>陣列、物件、巢狀結構</td>
+<td><code>reactive</code></td>
+</tr>
+<tr>
+<td>要被 <code>watch</code> 或 <code>computed</code> 的原始值</td>
+<td><code>ref</code></td>
 </tr>
 </tbody></table>
-<p>如果容器內只有<strong>一行</strong>，<code>align-content</code> 通常不會有影響，這時候應該使用 <code>align-items</code>。</p>
-<p>需要 <code>align-content</code> 發揮作用時，請確保：</p>
-<ol>
-<li>容器有 <code>flex-wrap: wrap;</code>（多行）</li>
-<li>容器有足夠的<strong>高度</strong>（不然內容會自動填滿）</li>
-</ol>
+<hr>
 
                 </div>
 
@@ -368,7 +313,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/07/10/learning-notes-css-grid-garden-tutorial/" title="Grid Garden 入門教學筆記 | 學習筆記" rel="bookmark">Grid Garden 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/07/10/learning-notes-css-flexbox-froggy-tutorial/" title="Flexbox Froggy 入門教學筆記 | 學習筆記" rel="bookmark">Flexbox Froggy 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/30/learning-notes-emotion-css-intro-tutorial/" title="Emotion CSS 入門教學筆記 | 學習筆記" rel="bookmark">Emotion CSS 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/07/01/learning-notes-html-css-layout-intro-tutorial/" title="HTML & CSS 切版入門教學筆記 | 學習筆記" rel="bookmark">HTML & CSS 切版入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/05/31/learning-notes-less-intro-tutorial/" title="LESS 入門教學筆記 | 學習筆記" rel="bookmark">LESS 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-react-nextjs-intro-tutorial/" title="React 與 Next.js 入門教學筆記 | 學習筆記" rel="bookmark">React 與 Next.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/" title="Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/14/learning-notes-vue-set-intro-tutorial/" title="Vue 正確新增或修改物件屬性入門教學筆記 | 學習筆記" rel="bookmark">Vue 正確新增或修改物件屬性入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/" title="Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/" title="Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -404,8 +349,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/07/10/learning-notes-css-flexbox-align-items-align-content-garden-tutorial/";
-    var disqus_url = "https://tech.kdchang.net/2024/07/10/learning-notes-css-flexbox-align-items-align-content-garden-tutorial/";
+    var disqus_identifier = "https://tech.kdchang.net/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

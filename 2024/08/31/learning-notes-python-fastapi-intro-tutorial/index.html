@@ -26,11 +26,11 @@
     
     <title>
         
-          Vue.js 3 官方入門語法教學筆記 [2] - Attribute Bindings 屬性綁定 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          FastAPI 入門教學筆記：打造現代 Python Web API 的入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/">
+    <link rel="canonical" href="https://tech.kdchang.net/2024/08/31/learning-notes-python-fastapi-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="Vue.js 3 官方入門語法教學筆記 [2] - Attribute Bindings 屬性綁定 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="Vue.js 3 官方入門語法教學筆記 [2] - Attribute Bindings 屬性綁定 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="FastAPI 入門教學筆記：打造現代 Python Web API 的入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="FastAPI 入門教學筆記：打造現代 Python Web API 的入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,31 +199,19 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>Vue.js 3 官方入門語法教學筆記 [2] - Attribute Bindings 屬性綁定 | 學習筆記</h1>
+                    <h1>FastAPI 入門教學筆記：打造現代 Python Web API 的入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2021-02-01
+                        2024-08-31
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
+                          <a class="tag" href="/tags/#web" title="web">web</a>
                         
-                          <a class="tag" href="/tags/#前端開發" title="前端開發">前端開發</a>
+                          <a class="tag" href="/tags/#python" title="python">python</a>
                         
-                          <a class="tag" href="/tags/#前端工程" title="前端工程">前端工程</a>
-                        
-                          <a class="tag" href="/tags/#frontend" title="frontend">frontend</a>
-                        
-                          <a class="tag" href="/tags/#frontend engineer" title="frontend engineer">frontend engineer</a>
-                        
-                          <a class="tag" href="/tags/#vue" title="vue">vue</a>
-                        
-                          <a class="tag" href="/tags/#vue3" title="vue3">vue3</a>
-                        
-                          <a class="tag" href="/tags/#vue.js" title="vue.js">vue.js</a>
-                        
-                          <a class="tag" href="/tags/#vue.js 3" title="vue.js 3">vue.js 3</a>
+                          <a class="tag" href="/tags/#FastAPI" title="FastAPI">FastAPI</a>
                         
 
                     </div>
@@ -249,17 +237,98 @@
                 </div>
                 <br>
                 <div>
-                    <p><strong>Attribute Bindings 屬性綁定</strong><br>在 Vue 中，Mustache 語法只能用於文字插值。要將屬性綁定到動態值，我們需要使用 <code>v-bind</code> 指令：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">&quot;dynamicId&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+                    <h2 id="什麼是-FastAPI？"><a href="#什麼是-FastAPI？" class="headerlink" title="什麼是 FastAPI？"></a>什麼是 FastAPI？</h2><p>FastAPI 是一個現代、快速（高效能）、基於 Python 3.7+ 類型提示的 Web 框架，用於建構 API。其核心優勢包含：</p>
+<ul>
+<li><strong>自動生成文件</strong>：內建 OpenAPI 與 Swagger UI 支援</li>
+<li><strong>高效能</strong>：基於 Starlette 和 Pydantic，效能可媲美 Node.js 與 Go</li>
+<li><strong>開發快速</strong>：強大的 IDE 支援與自動補全功能</li>
+<li><strong>自動驗證與序列化</strong>：透過 Pydantic 型別自動完成</li>
+</ul>
+<p>FastAPI 適合快速構建 RESTful API，尤其在開發微服務、機器學習模型部署、或任何 API 後端都非常合適。</p>
+<hr>
+<h2 id="快速開始：環境準備與安裝"><a href="#快速開始：環境準備與安裝" class="headerlink" title="快速開始：環境準備與安裝"></a>快速開始：環境準備與安裝</h2><p>建議使用虛擬環境管理專案依賴。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python -m venv .venv</span><br><span class="line"><span class="built_in">source</span> .venv/bin/activate  <span class="comment"># Windows: .venv\Scripts\activate</span></span><br><span class="line">pip install fastapi uvicorn</span><br></pre></td></tr></table></figure>
 
-<p>指令是一種特殊的屬性，以 <code>v-</code> 前綴開頭，屬於 Vue 的模板語法的一部分。與文字插值類似，指令的值是 JavaScript 表達式，可以訪問組件的狀態。有關 <code>v-bind</code> 和指令語法的完整細節，請參閱官方說明<a target="_blank" rel="noopener" href="https://vuejs.org/guide/essentials/template-syntax.html">指南 - 模板語法</a>。</p>
-<p>冒號之後的部分（<code>:id</code>）是指令的「參數」。在這裡，元素的 <code>id</code> 屬性將與組件狀態中的 <code>dynamicId</code> 屬性同步。</p>
-<p>由於 <code>v-bind</code> 的使用頻率很高，Vue 提供了專用的簡寫語法：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">:id</span>=<span class="string">&quot;dynamicId&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>fastapi</code>：核心框架</li>
+<li><code>uvicorn</code>：ASGI Server，用來啟動應用程式</li>
+</ul>
+<hr>
+<h2 id="第一個-FastAPI-程式：Hello-API"><a href="#第一個-FastAPI-程式：Hello-API" class="headerlink" title="第一個 FastAPI 程式：Hello API"></a>第一個 FastAPI 程式：Hello API</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># main.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> fastapi <span class="keyword">import</span> FastAPI</span><br><span class="line"></span><br><span class="line">app = FastAPI()</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read_root</span>():</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;message&quot;</span>: <span class="string">&quot;Hello, FastAPI!&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>啟動應用程式：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">uvicorn main:app --reload</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>--reload</code>：啟用熱重載，開發時會自動重新載入程式</li>
+</ul>
+<p>訪問 <code>http://127.0.0.1:8000/</code>，你會看到：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Hello, FastAPI!&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
 <hr>
-<p>我們可以試著將動態類名綁定到 <code>&lt;h1&gt;</code>，使用 <code>titleClass</code> 的 <code>ref</code> 作為值。如果綁定正確，文字應該會變成紅色！</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> titleClass = <span class="title function_">ref</span>(<span class="string">&#x27;title&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">:class</span>=<span class="string">&quot;titleClass&quot;</span>&gt;</span>Make me red<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> <span class="comment">&lt;!-- add dynamic class binding here --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.title</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="自動生成的互動式-API-文件"><a href="#自動生成的互動式-API-文件" class="headerlink" title="自動生成的互動式 API 文件"></a>自動生成的互動式 API 文件</h2><p>FastAPI 自動提供兩個 API 文件頁面：</p>
+<ul>
+<li>Swagger UI：<code>http://127.0.0.1:8000/docs</code></li>
+<li>Redoc：<code>http://127.0.0.1:8000/redoc</code></li>
+</ul>
+<p>這些文件會根據程式中的路由與型別提示自動生成，方便前後端協作與測試。</p>
+<hr>
+<h2 id="使用路由參數與查詢參數"><a href="#使用路由參數與查詢參數" class="headerlink" title="使用路由參數與查詢參數"></a>使用路由參數與查詢參數</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/items/&#123;item_id&#125;&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read_item</span>(<span class="params">item_id: <span class="built_in">int</span>, q: <span class="built_in">str</span> = <span class="literal">None</span></span>):</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;item_id&quot;</span>: item_id, <span class="string">&quot;q&quot;</span>: q&#125;</span><br></pre></td></tr></table></figure>
+
+<p>範例請求：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET /items/42?q=fastapi</span><br></pre></td></tr></table></figure>
+
+<p>回應結果：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;item_id&quot;</span><span class="punctuation">:</span> <span class="number">42</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;q&quot;</span><span class="punctuation">:</span> <span class="string">&quot;fastapi&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>item_id</code> 是路由參數，會自動轉換為 int</li>
+<li><code>q</code> 是查詢參數，預設為 None</li>
+</ul>
+<hr>
+<h2 id="接收與驗證請求資料：使用-Pydantic-模型"><a href="#接收與驗證請求資料：使用-Pydantic-模型" class="headerlink" title="接收與驗證請求資料：使用 Pydantic 模型"></a>接收與驗證請求資料：使用 Pydantic 模型</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pydantic <span class="keyword">import</span> BaseModel</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Item</span>(<span class="title class_ inherited__">BaseModel</span>):</span><br><span class="line">    name: <span class="built_in">str</span></span><br><span class="line">    description: <span class="built_in">str</span> = <span class="literal">None</span></span><br><span class="line">    price: <span class="built_in">float</span></span><br><span class="line">    in_stock: <span class="built_in">bool</span> = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.post(<span class="params"><span class="string">&quot;/items/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_item</span>(<span class="params">item: Item</span>):</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;message&quot;</span>: <span class="string">&quot;Item created&quot;</span>, <span class="string">&quot;item&quot;</span>: item&#125;</span><br></pre></td></tr></table></figure>
+
+<p>發送 POST 請求：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">POST /items/</span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Laptop&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;A powerful device&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;price&quot;</span><span class="punctuation">:</span> <span class="number">1299.99</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;in_stock&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>回應：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Item created&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;item&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Laptop&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;A powerful device&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;price&quot;</span><span class="punctuation">:</span> <span class="number">1299.99</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;in_stock&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Pydantic 會自動進行資料驗證與轉換</li>
+<li>FastAPI 可根據模型自動生成 API 文件</li>
+</ul>
+<hr>
+<h2 id="表單與檔案上傳支援"><a href="#表單與檔案上傳支援" class="headerlink" title="表單與檔案上傳支援"></a>表單與檔案上傳支援</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> fastapi <span class="keyword">import</span> Form, UploadFile, File</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.post(<span class="params"><span class="string">&quot;/submit/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">submit_form</span>(<span class="params">username: <span class="built_in">str</span> = Form(<span class="params">...</span>), file: UploadFile = File(<span class="params">...</span>)</span>):</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="string">&quot;username&quot;</span>: username,</span><br><span class="line">        <span class="string">&quot;filename&quot;</span>: file.filename,</span><br><span class="line">        <span class="string">&quot;content_type&quot;</span>: file.content_type</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>這對於處理使用者上傳檔案與表單資料非常方便。</p>
+<hr>
+<h2 id="回傳自定義-HTTP-狀態碼與錯誤處理"><a href="#回傳自定義-HTTP-狀態碼與錯誤處理" class="headerlink" title="回傳自定義 HTTP 狀態碼與錯誤處理"></a>回傳自定義 HTTP 狀態碼與錯誤處理</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> fastapi <span class="keyword">import</span> HTTPException</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/users/&#123;user_id&#125;&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read_user</span>(<span class="params">user_id: <span class="built_in">int</span></span>):</span><br><span class="line">    <span class="keyword">if</span> user_id != <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">raise</span> HTTPException(status_code=<span class="number">404</span>, detail=<span class="string">&quot;User not found&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;user_id&quot;</span>: user_id, <span class="string">&quot;name&quot;</span>: <span class="string">&quot;Alice&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這會回傳：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;detail&quot;</span><span class="punctuation">:</span> <span class="string">&quot;User not found&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>並帶有 HTTP 404 錯誤。</p>
+<hr>
+<h2 id="小結與下一步學習方向"><a href="#小結與下一步學習方向" class="headerlink" title="小結與下一步學習方向"></a>小結與下一步學習方向</h2><p>FastAPI 提供了一種現代化且優雅的方式來構建 API：</p>
+<ul>
+<li>強大的型別檢查與 IDE 支援</li>
+<li>直覺的程式結構與文件生成</li>
+<li>高效能適合用於生產環境</li>
+</ul>
+<h3 id="建議學習方向："><a href="#建議學習方向：" class="headerlink" title="建議學習方向："></a>建議學習方向：</h3><ol>
+<li>路由分割與模組化管理</li>
+<li>使用依賴注入（Depends）</li>
+<li>整合資料庫（如 SQLAlchemy）</li>
+<li>JWT 身份驗證與 OAuth2</li>
+<li>測試與部署（例如 Docker、Gunicorn）</li>
+</ol>
+<hr>
+<p>如果你是從 Flask 或 Django REST Framework 轉過來，會發現 FastAPI 提供了相當先進的開發體驗與高效能，是非常值得學習與投入的框架。</p>
+<h3 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://fastapi.tiangolo.com/">fastapi API</a></li>
+</ol>
+
                 </div>
 
                 <br>
@@ -275,7 +344,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-react-nextjs-intro-tutorial/" title="React 與 Next.js 入門教學筆記 | 學習筆記" rel="bookmark">React 與 Next.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/" title="Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/" title="Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/" title="Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/" title="Vue.js 3 官方入門語法教學筆記 [12] - Emits 事件傳遞 | 學習筆記" rel="bookmark">Vue.js 3 官方入門語法教學筆記 [12] - Emits 事件傳遞 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/10/16/learning-notes-web-security-intro-tutorial/" title="Web 資訊安全入門教學筆記 | 學習筆記" rel="bookmark">Web 資訊安全入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/10/16/learning-notes-web-client-performance-optimization-intro-tutorial/" title="Web 前端效能優化入門教學筆記 | 學習筆記" rel="bookmark">Web 前端效能優化入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/08/31/learning-notes-python-openssl-setup-intro-tutorial/" title="Python 指定使用 OpenSSL 介紹入門教學筆記 | 學習筆記" rel="bookmark">Python 指定使用 OpenSSL 介紹入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -311,8 +380,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/";
-    var disqus_url = "https://tech.kdchang.net/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-declarative-rendering/";
+    var disqus_identifier = "https://tech.kdchang.net/2024/08/31/learning-notes-python-fastapi-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2024/08/31/learning-notes-python-fastapi-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
