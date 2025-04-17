@@ -605,122 +605,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Flexbox Froggy 入門教學筆記 | 學習筆記</title>
-    <url>/2024/07/10/learning-notes-css-flexbox-froggy-tutorial/</url>
-    <content><![CDATA[<h1 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h1><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
-<p>Flexbox Froggy 透過小青蛙過河遊戲化方式去介紹 Flexbox 使用方式：</p>
-<h2 id="Level-1"><a href="#Level-1" class="headerlink" title="Level 1"></a>Level 1</h2><p>Welcome to Flexbox Froggy, a game where you help Froggy and friends by writing CSS code! Guide this frog to the lilypad on the right by using the justify-content property, which aligns items horizontally and accepts the following values:</p>
-<p>flex-start: Items align to the left side of the container.<br>flex-end: Items align to the right side of the container.<br>center: Items align at the center of the container.<br>space-between: Items display with equal spacing between them.<br>space-around: Items display with equal spacing around them.<br>For example, justify-content: flex-end; will move the frog to the right. </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-2"><a href="#Level-2" class="headerlink" title="Level 2"></a>Level 2</h2><p>Use justify-content again to help these frogs get to their lilypads. Remember that this CSS property aligns items horizontally and accepts the following values:</p>
-<p><code>flex-start</code>: Items align to the left side of the container.<br><code>flex-end</code>: Items align to the right side of the container.<br><code>center</code>: Items align at the center of the container.<br><code>space-between</code>: Items display with equal spacing between them.<br><code>space-around</code>: Items display with equal spacing around them.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-3"><a href="#Level-3" class="headerlink" title="Level 3"></a>Level 3</h2><p>Help all three frogs find their lilypads just by using justify-content. This time, the lilypads have lots of space all around them.</p>
-<p>If you find yourself forgetting the possible values for a property, you can click on the property name to view them. Try clicking on justify-content.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-around;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-4"><a href="#Level-4" class="headerlink" title="Level 4"></a>Level 4</h2><p>Now the lilypads on the edges have drifted to the shore, increasing the space between them. Use justify-content. This time, the lilypads have equal spacing between them.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-5"><a href="#Level-5" class="headerlink" title="Level 5"></a>Level 5</h2><p>Now use align-items to help the frogs get to the bottom of the pond. This CSS property aligns items vertically and accepts the following values:</p>
-<p><code>flex-start</code>: Items align to the top of the container.<br><code>flex-end</code>: Items align to the bottom of the container.<br><code>center</code>: Items align at the vertical center of the container.<br><code>baseline</code>: Items display at the baseline of the container.<br><code>stretch</code>: Items are stretched to fit the container.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-6"><a href="#Level-6" class="headerlink" title="Level 6"></a>Level 6</h2><p>Lead the frog to the center of the pond using a combination of justify-content and align-items.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-7"><a href="#Level-7" class="headerlink" title="Level 7"></a>Level 7</h2><p>The frogs need to cross the pond again, this time for some lilypads with plenty of space around them. Use a combination of justify-content and align-items.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-around;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-8"><a href="#Level-8" class="headerlink" title="Level 8"></a>Level 8</h2><p>The frogs need to get in the same order as their lilypads using flex-direction. This CSS property defines the direction items are placed in the container, and accepts the following values:</p>
-<p><code>row</code>: Items are placed the same as the text direction.<br><code>row-reverse</code>: Items are placed opposite to the text direction.<br><code>column</code>: Items are placed top to bottom.<br><code>column-reverse</code>: Items are placed bottom to top.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-9"><a href="#Level-9" class="headerlink" title="Level 9"></a>Level 9</h2><p>Help the frogs find their column of lilypads using flex-direction. This CSS property defines the direction items are placed in the container, and accepts the following values:</p>
-<p><code>row</code>: Items are placed the same as the text direction.<br><code>row-reverse</code>: Items are placed opposite to the text direction.<br><code>column</code>: Items are placed top to bottom.<br><code>column-reverse</code>: Items are placed bottom to top.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-10"><a href="#Level-10" class="headerlink" title="Level 10"></a>Level 10</h2><p>Help the frogs get to their own lilypads. Although they seem close, it will take both flex-direction and justify-content to get them there.</p>
-<p>Notice that when you set the direction to a reversed row or column, start and end are also reversed.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-11"><a href="#Level-11" class="headerlink" title="Level 11"></a>Level 11</h2><p>Help the frogs find their lilypads using flex-direction and justify-content.</p>
-<p>Notice that when the flex direction is a column, justify-content changes to the vertical and align-items to the horizontal.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-12"><a href="#Level-12" class="headerlink" title="Level 12"></a>Level 12</h2><p>Help the frogs find their lilypads using flex-direction and justify-content.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-13"><a href="#Level-13" class="headerlink" title="Level 13"></a>Level 13</h2><p>Help the frogs find their lilypads using flex-direction, justify-content, and align-items.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-14"><a href="#Level-14" class="headerlink" title="Level 14"></a>Level 14</h2><p>Sometimes reversing the row or column order of a container is not enough. In these cases, we can apply the order property to individual items. By default, items have a value of 0, but we can use this property to also set it to a positive or negative integer value <code>(-2, -1, 0, 1, 2)</code>.</p>
-<p>Use the order property to reorder the frogs according to their lilypads.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-15"><a href="#Level-15" class="headerlink" title="Level 15"></a>Level 15</h2><p>Use the order property to send the red frog to his lilypad.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.red</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-16"><a href="#Level-16" class="headerlink" title="Level 16"></a>Level 16</h2><p>Another property you can apply to individual items is align-self. This property accepts the same values as align-items and its value for the specific item.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">align-self</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-17"><a href="#Level-17" class="headerlink" title="Level 17"></a>Level 17</h2><p>Combine order with align-self to help the frogs to their destinations.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">align-self</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-18"><a href="#Level-18" class="headerlink" title="Level 18"></a>Level 18</h2><p>Oh no! The frogs are all squeezed onto a single row of lilypads. Spread them out using the flex-wrap property, which accepts the following values:</p>
-<p>nowrap: Every item is fit to a single line.<br>wrap: Items wrap around to additional lines.<br>wrap-reverse: Items wrap around to additional lines in reverse.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-19"><a href="#Level-19" class="headerlink" title="Level 19"></a>Level 19</h2><p>Help this army of frogs form three orderly columns using a combination of flex-direction and flex-wrap.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-20"><a href="#Level-20" class="headerlink" title="Level 20"></a>Level 20</h2><p>The two properties flex-direction and flex-wrap are used so often together that the shorthand property flex-flow was created to combine them. This shorthand property accepts the value of the two properties separated by a space.</p>
-<p>For example, you can use flex-flow: row wrap to set rows and wrap them.</p>
-<p>Try using flex-flow to repeat the previous level.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-flow</span>: column wrap</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-21"><a href="#Level-21" class="headerlink" title="Level 21"></a>Level 21</h2><p>The frogs are spread all over the pond, but the lilypads are bunched at the top. You can use align-content to set how multiple lines are spaced apart from each other. This property takes the following values:</p>
-<p><code>flex-start</code>: Lines are packed at the top of the container.<br><code>flex-end</code>: Lines are packed at the bottom of the container.<br><code>center</code>: Lines are packed at the vertical center of the container.<br><code>space-between</code>: Lines display with equal spacing between them.<br><code>space-around</code>: Lines display with equal spacing around them.<br><code>stretch</code>: Lines are stretched to fit the container.<br>This can be confusing, but align-content determines the spacing between lines, while align-items determines how the items as a whole are aligned within the container. When there is only one line, align-content has no effect.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-22"><a href="#Level-22" class="headerlink" title="Level 22"></a>Level 22</h2><p>Now the current has bunched the lilypads at the bottom. Use align-content to guide the frogs there.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-23"><a href="#Level-23" class="headerlink" title="Level 23"></a>Level 23</h2><p>The frogs have had a party, but it is time to go home. Use a combination of flex-direction and align-content to get them to their lilypads.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">  <span class="attribute">align-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-24"><a href="#Level-24" class="headerlink" title="Level 24"></a>Level 24</h2><p>Bring the frogs home one last time by using the CSS properties you’ve learned:</p>
-<p><code>justify-content</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>align-items</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>flex-direction</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>order</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>align-self</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>flex-wrap</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>flex-flow</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>align-content</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-content</span>: space-between;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
-<li><a href="https://flexboxfroggy.com/">flexboxfroggy</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Flexbox Froggy</tag>
-        <tag>Flexbox</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS Flexbox align-items 和 align-content 入門教學筆記 | 學習筆記</title>
     <url>/2024/07/10/learning-notes-css-flexbox-align-items-align-content-garden-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在 CSS Flexbox 和 Grid 佈局中，<code>align-items</code> 和 <code>align-content</code> 兩者都與「對齊」有關，但適用的情境不同（單行 vs 多行）：</p>
@@ -836,11 +720,127 @@
 </ol>
 ]]></content>
       <tags>
-        <tag>CSS</tag>
         <tag>Grid Garden</tag>
         <tag>Grid</tag>
         <tag>align-items</tag>
         <tag>align-content</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flexbox Froggy 入門教學筆記 | 學習筆記</title>
+    <url>/2024/07/10/learning-notes-css-flexbox-froggy-tutorial/</url>
+    <content><![CDATA[<h1 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h1><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
+<p>Flexbox Froggy 透過小青蛙過河遊戲化方式去介紹 Flexbox 使用方式：</p>
+<h2 id="Level-1"><a href="#Level-1" class="headerlink" title="Level 1"></a>Level 1</h2><p>Welcome to Flexbox Froggy, a game where you help Froggy and friends by writing CSS code! Guide this frog to the lilypad on the right by using the justify-content property, which aligns items horizontally and accepts the following values:</p>
+<p>flex-start: Items align to the left side of the container.<br>flex-end: Items align to the right side of the container.<br>center: Items align at the center of the container.<br>space-between: Items display with equal spacing between them.<br>space-around: Items display with equal spacing around them.<br>For example, justify-content: flex-end; will move the frog to the right. </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-2"><a href="#Level-2" class="headerlink" title="Level 2"></a>Level 2</h2><p>Use justify-content again to help these frogs get to their lilypads. Remember that this CSS property aligns items horizontally and accepts the following values:</p>
+<p><code>flex-start</code>: Items align to the left side of the container.<br><code>flex-end</code>: Items align to the right side of the container.<br><code>center</code>: Items align at the center of the container.<br><code>space-between</code>: Items display with equal spacing between them.<br><code>space-around</code>: Items display with equal spacing around them.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-3"><a href="#Level-3" class="headerlink" title="Level 3"></a>Level 3</h2><p>Help all three frogs find their lilypads just by using justify-content. This time, the lilypads have lots of space all around them.</p>
+<p>If you find yourself forgetting the possible values for a property, you can click on the property name to view them. Try clicking on justify-content.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-around;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-4"><a href="#Level-4" class="headerlink" title="Level 4"></a>Level 4</h2><p>Now the lilypads on the edges have drifted to the shore, increasing the space between them. Use justify-content. This time, the lilypads have equal spacing between them.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-5"><a href="#Level-5" class="headerlink" title="Level 5"></a>Level 5</h2><p>Now use align-items to help the frogs get to the bottom of the pond. This CSS property aligns items vertically and accepts the following values:</p>
+<p><code>flex-start</code>: Items align to the top of the container.<br><code>flex-end</code>: Items align to the bottom of the container.<br><code>center</code>: Items align at the vertical center of the container.<br><code>baseline</code>: Items display at the baseline of the container.<br><code>stretch</code>: Items are stretched to fit the container.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-6"><a href="#Level-6" class="headerlink" title="Level 6"></a>Level 6</h2><p>Lead the frog to the center of the pond using a combination of justify-content and align-items.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-7"><a href="#Level-7" class="headerlink" title="Level 7"></a>Level 7</h2><p>The frogs need to cross the pond again, this time for some lilypads with plenty of space around them. Use a combination of justify-content and align-items.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-around;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-8"><a href="#Level-8" class="headerlink" title="Level 8"></a>Level 8</h2><p>The frogs need to get in the same order as their lilypads using flex-direction. This CSS property defines the direction items are placed in the container, and accepts the following values:</p>
+<p><code>row</code>: Items are placed the same as the text direction.<br><code>row-reverse</code>: Items are placed opposite to the text direction.<br><code>column</code>: Items are placed top to bottom.<br><code>column-reverse</code>: Items are placed bottom to top.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-9"><a href="#Level-9" class="headerlink" title="Level 9"></a>Level 9</h2><p>Help the frogs find their column of lilypads using flex-direction. This CSS property defines the direction items are placed in the container, and accepts the following values:</p>
+<p><code>row</code>: Items are placed the same as the text direction.<br><code>row-reverse</code>: Items are placed opposite to the text direction.<br><code>column</code>: Items are placed top to bottom.<br><code>column-reverse</code>: Items are placed bottom to top.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-10"><a href="#Level-10" class="headerlink" title="Level 10"></a>Level 10</h2><p>Help the frogs get to their own lilypads. Although they seem close, it will take both flex-direction and justify-content to get them there.</p>
+<p>Notice that when you set the direction to a reversed row or column, start and end are also reversed.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-11"><a href="#Level-11" class="headerlink" title="Level 11"></a>Level 11</h2><p>Help the frogs find their lilypads using flex-direction and justify-content.</p>
+<p>Notice that when the flex direction is a column, justify-content changes to the vertical and align-items to the horizontal.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-12"><a href="#Level-12" class="headerlink" title="Level 12"></a>Level 12</h2><p>Help the frogs find their lilypads using flex-direction and justify-content.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-13"><a href="#Level-13" class="headerlink" title="Level 13"></a>Level 13</h2><p>Help the frogs find their lilypads using flex-direction, justify-content, and align-items.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-14"><a href="#Level-14" class="headerlink" title="Level 14"></a>Level 14</h2><p>Sometimes reversing the row or column order of a container is not enough. In these cases, we can apply the order property to individual items. By default, items have a value of 0, but we can use this property to also set it to a positive or negative integer value <code>(-2, -1, 0, 1, 2)</code>.</p>
+<p>Use the order property to reorder the frogs according to their lilypads.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-15"><a href="#Level-15" class="headerlink" title="Level 15"></a>Level 15</h2><p>Use the order property to send the red frog to his lilypad.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.red</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-16"><a href="#Level-16" class="headerlink" title="Level 16"></a>Level 16</h2><p>Another property you can apply to individual items is align-self. This property accepts the same values as align-items and its value for the specific item.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">align-self</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-17"><a href="#Level-17" class="headerlink" title="Level 17"></a>Level 17</h2><p>Combine order with align-self to help the frogs to their destinations.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">align-self</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-18"><a href="#Level-18" class="headerlink" title="Level 18"></a>Level 18</h2><p>Oh no! The frogs are all squeezed onto a single row of lilypads. Spread them out using the flex-wrap property, which accepts the following values:</p>
+<p>nowrap: Every item is fit to a single line.<br>wrap: Items wrap around to additional lines.<br>wrap-reverse: Items wrap around to additional lines in reverse.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-19"><a href="#Level-19" class="headerlink" title="Level 19"></a>Level 19</h2><p>Help this army of frogs form three orderly columns using a combination of flex-direction and flex-wrap.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-20"><a href="#Level-20" class="headerlink" title="Level 20"></a>Level 20</h2><p>The two properties flex-direction and flex-wrap are used so often together that the shorthand property flex-flow was created to combine them. This shorthand property accepts the value of the two properties separated by a space.</p>
+<p>For example, you can use flex-flow: row wrap to set rows and wrap them.</p>
+<p>Try using flex-flow to repeat the previous level.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-flow</span>: column wrap</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-21"><a href="#Level-21" class="headerlink" title="Level 21"></a>Level 21</h2><p>The frogs are spread all over the pond, but the lilypads are bunched at the top. You can use align-content to set how multiple lines are spaced apart from each other. This property takes the following values:</p>
+<p><code>flex-start</code>: Lines are packed at the top of the container.<br><code>flex-end</code>: Lines are packed at the bottom of the container.<br><code>center</code>: Lines are packed at the vertical center of the container.<br><code>space-between</code>: Lines display with equal spacing between them.<br><code>space-around</code>: Lines display with equal spacing around them.<br><code>stretch</code>: Lines are stretched to fit the container.<br>This can be confusing, but align-content determines the spacing between lines, while align-items determines how the items as a whole are aligned within the container. When there is only one line, align-content has no effect.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-22"><a href="#Level-22" class="headerlink" title="Level 22"></a>Level 22</h2><p>Now the current has bunched the lilypads at the bottom. Use align-content to guide the frogs there.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-23"><a href="#Level-23" class="headerlink" title="Level 23"></a>Level 23</h2><p>The frogs have had a party, but it is time to go home. Use a combination of flex-direction and align-content to get them to their lilypads.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">  <span class="attribute">align-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-24"><a href="#Level-24" class="headerlink" title="Level 24"></a>Level 24</h2><p>Bring the frogs home one last time by using the CSS properties you’ve learned:</p>
+<p><code>justify-content</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>align-items</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>flex-direction</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>order</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>align-self</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>flex-wrap</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>flex-flow</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>align-content</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-content</span>: space-between;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
+<li><a href="https://flexboxfroggy.com/">flexboxfroggy</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>Flexbox Froggy</tag>
+        <tag>Flexbox</tag>
       </tags>
   </entry>
   <entry>
@@ -1042,63 +1042,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Grid 網頁排版技巧入門教學筆記 | 學習筆記</title>
-    <url>/2024/11/15/learning-notes-css-grid-intro-tutorial/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在現今網頁設計中，排版的結構與呈現方式對於用戶體驗至關重要。隨著網頁設計的演進，CSS <code>Grid</code> 成為了最強大且靈活的排版工具之一。透過 CSS Grid，你可以輕鬆創建複雜的佈局，並且適應不同設備的需求。本文將介紹 CSS Grid 的基本概念與使用技巧，幫助你迅速掌握如何在網頁設計中使用 Grid。</p>
-<h4 id="1-什麼是-CSS-Grid？"><a href="#1-什麼是-CSS-Grid？" class="headerlink" title="1. 什麼是 CSS Grid？"></a>1. 什麼是 CSS Grid？</h4><p>CSS Grid Layout（簡稱 Grid）是 CSS3 的一個強大功能，允許開發者以列和行的方式來設計網頁佈局。它使得網頁設計更加直觀和靈活，不再需要依賴浮動（float）或定位（position）等老舊技巧，簡化了許多複雜的布局問題。</p>
-<p>Grid 是由「<code>容器</code>」和「<code>項目</code>」兩部分組成。容器定義了網格的結構，而項目則是容器內部的元素。你可以在容器內輕鬆地將項目放置在指定的網格區域中，從而創建各種排版樣式。</p>
-<h4 id="2-CSS-Grid-的基本語法"><a href="#2-CSS-Grid-的基本語法" class="headerlink" title="2. CSS Grid 的基本語法"></a>2. CSS Grid 的基本語法</h4><p>在使用 CSS Grid 時，首先需要定義一個容器元素並啟用 Grid 布局。這樣，容器內的子元素將成為 Grid 項目。以下是基本的設置步驟：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: auto;</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>display: grid;</code> 啟用容器的 Grid 布局。</li>
-<li><code>grid-template-columns: repeat(3, 1fr);</code> 設定三列，每列的寬度為等比例（<code>1fr</code>）。<code>1fr</code> 代表容器寬度的 1&#x2F;3。</li>
-<li><code>grid-template-rows: auto;</code> 使得行的高度根據內容自動調整。</li>
-<li><code>gap: 10px;</code> 定義網格項目之間的間距。</li>
-</ul>
-<h4 id="3-定義-Grid-容器的列和行"><a href="#3-定義-Grid-容器的列和行" class="headerlink" title="3. 定義 Grid 容器的列和行"></a>3. 定義 Grid 容器的列和行</h4><p>你可以使用 <code>grid-template-columns</code> 和 <code>grid-template-rows</code> 來設置容器內列和行的數量、大小及比例。</p>
-<h5 id="定義列"><a href="#定義列" class="headerlink" title="定義列"></a>定義列</h5><p>例如，若想創建四列的佈局，可以這樣寫：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> <span class="number">300px</span> <span class="number">400px</span> <span class="number">1</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這裡，我們設置了四列的寬度，前三列有固定的像素寬度，最後一列使用 <code>1fr</code>，即佔據剩餘的可用空間。</p>
-<h5 id="定義行"><a href="#定義行" class="headerlink" title="定義行"></a>定義行</h5><p>類似地，你可以設置行的大小。若要讓每一行的高度根據內容自動調整，可以使用：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">100px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這表示網格容器有兩行，第一行的高度固定為 100px，第二行的高度將根據內容自動調整。</p>
-<h4 id="4-放置-Grid-項目"><a href="#4-放置-Grid-項目" class="headerlink" title="4. 放置 Grid 項目"></a>4. 放置 Grid 項目</h4><p>Grid 容器的子元素會自動成為 Grid 項目。你可以使用 <code>grid-column</code> 和 <code>grid-row</code> 屬性來指定某個項目占據的列與行。</p>
-<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span> / <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這表示 <code>.item1</code> 元素會從第 1 列跨越到第 3 列，占據第一行。</p>
-<ul>
-<li><code>grid-column: 1 / 3;</code> 表示該元素會從第 1 列起，跨越兩列，直到第 3 列結束。</li>
-<li><code>grid-row: 1;</code> 表示該元素位於第 1 行。</li>
-</ul>
-<h4 id="5-使用-fr-單位設置比例"><a href="#5-使用-fr-單位設置比例" class="headerlink" title="5. 使用 fr 單位設置比例"></a>5. 使用 <code>fr</code> 單位設置比例</h4><p>CSS Grid 中最重要的單位之一是 <code>fr</code>（fraction，分數），它讓你可以設定元素在可用空間中所佔比例。</p>
-<p>假設你有三列，且希望第一列占 1 部分，第二列占 2 部分，第三列占 3 部分：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr <span class="number">3</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這樣會將總寬度分成六等份，其中第一列占 1 份，第二列占 2 份，第三列占 3 份。這樣的佈局適合於動態響應式設計。</p>
-<h4 id="6-設置間距"><a href="#6-設置間距" class="headerlink" title="6. 設置間距"></a>6. 設置間距</h4><p>除了 <code>gap</code> 屬性，你還可以為列與行的間距分別設置不同的值：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span> <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這裡，<code>gap: 10px 20px;</code> 的第一個數值設定了行之間的間距為 10px，第二個數值設定了列之間的間距為 20px。</p>
-<h4 id="7-嵌套-Grid"><a href="#7-嵌套-Grid" class="headerlink" title="7. 嵌套 Grid"></a>7. 嵌套 Grid</h4><p>Grid 允許你在網格項目內再次使用 Grid 佈局，這樣可以創建更複雜的排版結構。例如，假設你在某個項目內再創建一個小的網格：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在這個範例中，<code>.item1</code> 是一個 Grid 項目，它內部再次使用 Grid 排版，定義兩列，其中第一列占據 1 部分，第二列占據 2 部分。</p>
-<h4 id="8-響應式設計"><a href="#8-響應式設計" class="headerlink" title="8. 響應式設計"></a>8. 響應式設計</h4><p>Grid 讓你輕鬆應對不同設備的佈局需求。你可以使用媒體查詢來調整 Grid 排版。例如：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">4</span>, <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">2</span>, <span class="number">1</span>fr);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">480px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這段程式碼會根據螢幕寬度變化調整容器的列數：在寬度大於 768px 時顯示四列，在寬度小於 768px 時顯示兩列，在寬度小於 480px 時顯示單列。</p>
-<h4 id="9-小結"><a href="#9-小結" class="headerlink" title="9. 小結"></a>9. 小結</h4><p>CSS Grid 為現代網頁設計提供了一個簡單、強大且靈活的排版解決方案。它不僅能夠解決過去使用浮動或定位方法無法達成的複雜佈局，還能輕鬆適應響應式設計的需求。掌握 CSS Grid，你將能夠更高效地創建現代化的網頁佈局，提升設計的精確度與可維護性。希望本文的介紹能幫助你快速入門並將這項技術應用到你的項目中。</p>
-]]></content>
-      <tags>
-        <tag>css</tag>
-        <tag>Grid</tag>
-        <tag>排版</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Grid Garden 入門教學筆記 | 學習筆記</title>
     <url>/2024/07/10/learning-notes-css-grid-garden-tutorial/</url>
     <content><![CDATA[<h1 id="1-Grid-簡介"><a href="#1-Grid-簡介" class="headerlink" title="1. Grid 簡介"></a>1. Grid 簡介</h1><p><code>Grid</code>（Grid Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
@@ -1214,9 +1157,66 @@
 </ol>
 ]]></content>
       <tags>
-        <tag>CSS</tag>
         <tag>Grid Garden</tag>
         <tag>Grid</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Grid 網頁排版技巧入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/15/learning-notes-css-grid-intro-tutorial/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在現今網頁設計中，排版的結構與呈現方式對於用戶體驗至關重要。隨著網頁設計的演進，CSS <code>Grid</code> 成為了最強大且靈活的排版工具之一。透過 CSS Grid，你可以輕鬆創建複雜的佈局，並且適應不同設備的需求。本文將介紹 CSS Grid 的基本概念與使用技巧，幫助你迅速掌握如何在網頁設計中使用 Grid。</p>
+<h4 id="1-什麼是-CSS-Grid？"><a href="#1-什麼是-CSS-Grid？" class="headerlink" title="1. 什麼是 CSS Grid？"></a>1. 什麼是 CSS Grid？</h4><p>CSS Grid Layout（簡稱 Grid）是 CSS3 的一個強大功能，允許開發者以列和行的方式來設計網頁佈局。它使得網頁設計更加直觀和靈活，不再需要依賴浮動（float）或定位（position）等老舊技巧，簡化了許多複雜的布局問題。</p>
+<p>Grid 是由「<code>容器</code>」和「<code>項目</code>」兩部分組成。容器定義了網格的結構，而項目則是容器內部的元素。你可以在容器內輕鬆地將項目放置在指定的網格區域中，從而創建各種排版樣式。</p>
+<h4 id="2-CSS-Grid-的基本語法"><a href="#2-CSS-Grid-的基本語法" class="headerlink" title="2. CSS Grid 的基本語法"></a>2. CSS Grid 的基本語法</h4><p>在使用 CSS Grid 時，首先需要定義一個容器元素並啟用 Grid 布局。這樣，容器內的子元素將成為 Grid 項目。以下是基本的設置步驟：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: auto;</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>display: grid;</code> 啟用容器的 Grid 布局。</li>
+<li><code>grid-template-columns: repeat(3, 1fr);</code> 設定三列，每列的寬度為等比例（<code>1fr</code>）。<code>1fr</code> 代表容器寬度的 1&#x2F;3。</li>
+<li><code>grid-template-rows: auto;</code> 使得行的高度根據內容自動調整。</li>
+<li><code>gap: 10px;</code> 定義網格項目之間的間距。</li>
+</ul>
+<h4 id="3-定義-Grid-容器的列和行"><a href="#3-定義-Grid-容器的列和行" class="headerlink" title="3. 定義 Grid 容器的列和行"></a>3. 定義 Grid 容器的列和行</h4><p>你可以使用 <code>grid-template-columns</code> 和 <code>grid-template-rows</code> 來設置容器內列和行的數量、大小及比例。</p>
+<h5 id="定義列"><a href="#定義列" class="headerlink" title="定義列"></a>定義列</h5><p>例如，若想創建四列的佈局，可以這樣寫：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> <span class="number">300px</span> <span class="number">400px</span> <span class="number">1</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這裡，我們設置了四列的寬度，前三列有固定的像素寬度，最後一列使用 <code>1fr</code>，即佔據剩餘的可用空間。</p>
+<h5 id="定義行"><a href="#定義行" class="headerlink" title="定義行"></a>定義行</h5><p>類似地，你可以設置行的大小。若要讓每一行的高度根據內容自動調整，可以使用：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">100px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這表示網格容器有兩行，第一行的高度固定為 100px，第二行的高度將根據內容自動調整。</p>
+<h4 id="4-放置-Grid-項目"><a href="#4-放置-Grid-項目" class="headerlink" title="4. 放置 Grid 項目"></a>4. 放置 Grid 項目</h4><p>Grid 容器的子元素會自動成為 Grid 項目。你可以使用 <code>grid-column</code> 和 <code>grid-row</code> 屬性來指定某個項目占據的列與行。</p>
+<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span> / <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這表示 <code>.item1</code> 元素會從第 1 列跨越到第 3 列，占據第一行。</p>
+<ul>
+<li><code>grid-column: 1 / 3;</code> 表示該元素會從第 1 列起，跨越兩列，直到第 3 列結束。</li>
+<li><code>grid-row: 1;</code> 表示該元素位於第 1 行。</li>
+</ul>
+<h4 id="5-使用-fr-單位設置比例"><a href="#5-使用-fr-單位設置比例" class="headerlink" title="5. 使用 fr 單位設置比例"></a>5. 使用 <code>fr</code> 單位設置比例</h4><p>CSS Grid 中最重要的單位之一是 <code>fr</code>（fraction，分數），它讓你可以設定元素在可用空間中所佔比例。</p>
+<p>假設你有三列，且希望第一列占 1 部分，第二列占 2 部分，第三列占 3 部分：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr <span class="number">3</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣會將總寬度分成六等份，其中第一列占 1 份，第二列占 2 份，第三列占 3 份。這樣的佈局適合於動態響應式設計。</p>
+<h4 id="6-設置間距"><a href="#6-設置間距" class="headerlink" title="6. 設置間距"></a>6. 設置間距</h4><p>除了 <code>gap</code> 屬性，你還可以為列與行的間距分別設置不同的值：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span> <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這裡，<code>gap: 10px 20px;</code> 的第一個數值設定了行之間的間距為 10px，第二個數值設定了列之間的間距為 20px。</p>
+<h4 id="7-嵌套-Grid"><a href="#7-嵌套-Grid" class="headerlink" title="7. 嵌套 Grid"></a>7. 嵌套 Grid</h4><p>Grid 允許你在網格項目內再次使用 Grid 佈局，這樣可以創建更複雜的排版結構。例如，假設你在某個項目內再創建一個小的網格：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在這個範例中，<code>.item1</code> 是一個 Grid 項目，它內部再次使用 Grid 排版，定義兩列，其中第一列占據 1 部分，第二列占據 2 部分。</p>
+<h4 id="8-響應式設計"><a href="#8-響應式設計" class="headerlink" title="8. 響應式設計"></a>8. 響應式設計</h4><p>Grid 讓你輕鬆應對不同設備的佈局需求。你可以使用媒體查詢來調整 Grid 排版。例如：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">4</span>, <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">2</span>, <span class="number">1</span>fr);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">480px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼會根據螢幕寬度變化調整容器的列數：在寬度大於 768px 時顯示四列，在寬度小於 768px 時顯示兩列，在寬度小於 480px 時顯示單列。</p>
+<h4 id="9-小結"><a href="#9-小結" class="headerlink" title="9. 小結"></a>9. 小結</h4><p>CSS Grid 為現代網頁設計提供了一個簡單、強大且靈活的排版解決方案。它不僅能夠解決過去使用浮動或定位方法無法達成的複雜佈局，還能輕鬆適應響應式設計的需求。掌握 CSS Grid，你將能夠更高效地創建現代化的網頁佈局，提升設計的精確度與可維護性。希望本文的介紹能幫助你快速入門並將這項技術應用到你的項目中。</p>
+]]></content>
+      <tags>
+        <tag>css</tag>
+        <tag>Grid</tag>
+        <tag>排版</tag>
       </tags>
   </entry>
   <entry>
@@ -1636,6 +1636,72 @@
         <tag>測試</tag>
         <tag>E2E</tag>
         <tag>QA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Django 入門教學筆記 | 學習筆記</title>
+    <url>/2023/07/01/learning-notes-django-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Django 是一個由 Python 編寫的高階 Web 框架，強調快速開發與簡潔設計。它提供完整的功能模組如 ORM、Admin 介面、Form 處理、URL 路由與認證系統，讓開發者能專注於商業邏輯而非重複造輪子。本文將帶你一步一步建立一個基本的 Django 應用程式，並說明其核心概念。</p>
+<h2 id="一、環境安裝"><a href="#一、環境安裝" class="headerlink" title="一、環境安裝"></a>一、環境安裝</h2><p>首先，請確保你已安裝好 Python（建議 3.8+）與 pip。以下是建立虛擬環境並安裝 Django 的方式：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python -m venv myenv</span><br><span class="line"><span class="built_in">source</span> myenv/bin/activate  <span class="comment"># Windows 請使用 myenv\Scripts\activate</span></span><br><span class="line">pip install django</span><br></pre></td></tr></table></figure>
+
+<p>確認安裝成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">django-admin --version</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、建立-Django-專案"><a href="#二、建立-Django-專案" class="headerlink" title="二、建立 Django 專案"></a>二、建立 Django 專案</h2><p>Django 使用專案（project）與應用程式（app）來組織程式碼。先建立一個新的專案：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">django-admin startproject mysite</span><br><span class="line"><span class="built_in">cd</span> mysite</span><br></pre></td></tr></table></figure>
+
+<p>你會看到以下結構：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysite/</span><br><span class="line">    manage.py</span><br><span class="line">    mysite/</span><br><span class="line">        __init__.py</span><br><span class="line">        settings.py</span><br><span class="line">        urls.py</span><br><span class="line">        asgi.py</span><br><span class="line">        wsgi.py</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、建立應用程式"><a href="#三、建立應用程式" class="headerlink" title="三、建立應用程式"></a>三、建立應用程式</h2><p>應用程式是 Django 專案的功能模組。例如一個部落格、用戶系統或留言板就是一個 app。以下我們建立一個簡單的留言板：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py startapp guestbook</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>guestbook/</code> 資料夾中會看到以下結構：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">guestbook/</span><br><span class="line">    models.py</span><br><span class="line">    views.py</span><br><span class="line">    admin.py</span><br><span class="line">    apps.py</span><br><span class="line">    tests.py</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+
+<p>接著，在 <code>mysite/settings.py</code> 中註冊這個 app：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">&#x27;guestbook&#x27;</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、定義資料模型（Model）"><a href="#四、定義資料模型（Model）" class="headerlink" title="四、定義資料模型（Model）"></a>四、定義資料模型（Model）</h2><p>編輯 <code>guestbook/models.py</code>，新增一個留言的資料模型：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Message</span>(models.Model):</span><br><span class="line">    name = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line">    content = models.TextField()</span><br><span class="line">    created_at = models.DateTimeField(auto_now_add=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&#x27;<span class="subst">&#123;self.name&#125;</span> 說：<span class="subst">&#123;self.content[:<span class="number">20</span>]&#125;</span>...&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>建立資料表：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py makemigrations</span><br><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、啟用後台管理介面"><a href="#五、啟用後台管理介面" class="headerlink" title="五、啟用後台管理介面"></a>五、啟用後台管理介面</h2><p>Django 提供強大的 admin 功能。先建立一個 superuser：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py createsuperuser</span><br></pre></td></tr></table></figure>
+
+<p>然後在 <code>guestbook/admin.py</code> 中註冊 model：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Message</span><br><span class="line"></span><br><span class="line">admin.site.register(Message)</span><br></pre></td></tr></table></figure>
+
+<p>啟動伺服器並進入後台：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
+
+<p>前往瀏覽器開啟 <code>http://127.0.0.1:8000/admin/</code>，使用剛建立的帳號登入，即可操作資料。</p>
+<h2 id="六、建立-Views-與-Templates"><a href="#六、建立-Views-與-Templates" class="headerlink" title="六、建立 Views 與 Templates"></a>六、建立 Views 與 Templates</h2><p>接下來，我們撰寫一個簡單的留言列表與新增留言的畫面。</p>
+<h3 id="views-py"><a href="#views-py" class="headerlink" title="views.py"></a>views.py</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render, redirect</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Message</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">message_list</span>(<span class="params">request</span>):</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&quot;POST&quot;</span>:</span><br><span class="line">        name = request.POST.get(<span class="string">&#x27;name&#x27;</span>)</span><br><span class="line">        content = request.POST.get(<span class="string">&#x27;content&#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> name <span class="keyword">and</span> content:</span><br><span class="line">            Message.objects.create(name=name, content=content)</span><br><span class="line">        <span class="keyword">return</span> redirect(<span class="string">&#x27;message_list&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    messages = Message.objects.order_by(<span class="string">&#x27;-created_at&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;guestbook/message_list.html&#x27;</span>, &#123;<span class="string">&#x27;messages&#x27;</span>: messages&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="templates"><a href="#templates" class="headerlink" title="templates"></a>templates</h3><p>建立目錄 <code>guestbook/templates/guestbook/message_list.html</code>：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>留言板<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>留言板<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">        &#123;% csrf_token %&#125;</span><br><span class="line">        姓名：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        留言：<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">&quot;content&quot;</span> <span class="attr">rows</span>=<span class="string">&quot;5&quot;</span> <span class="attr">cols</span>=<span class="string">&quot;40&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;送出&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">    &#123;% for msg in messages %&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span>&#123;&#123; msg.name &#125;&#125;<span class="tag">&lt;/<span class="name">strong</span>&gt;</span> 說：<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; msg.content &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">small</span>&gt;</span>&#123;&#123; msg.created_at &#125;&#125;<span class="tag">&lt;/<span class="name">small</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="七、設定-URL-路由"><a href="#七、設定-URL-路由" class="headerlink" title="七、設定 URL 路由"></a>七、設定 URL 路由</h2><p>在 <code>guestbook/</code> 建立 <code>urls.py</code>：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;&#x27;</span>, views.message_list, name=<span class="string">&#x27;message_list&#x27;</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>然後到 <code>mysite/urls.py</code> 中加入：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path, include</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;admin/&#x27;</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">&#x27;&#x27;</span>, include(<span class="string">&#x27;guestbook.urls&#x27;</span>)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="八、啟動開發伺服器"><a href="#八、啟動開發伺服器" class="headerlink" title="八、啟動開發伺服器"></a>八、啟動開發伺服器</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
+
+<p>在瀏覽器開啟 <code>http://127.0.0.1:8000/</code>，你將看到留言板畫面，並能提交留言。</p>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Django 是功能非常齊全且具可擴展性的 Web 框架，初學者可從資料模型、後台管理、表單處理與模板引擎著手。本文僅為入門教學，未來更多進階功能如使用 class-based views、form 類別、自訂 middleware、部署到雲端等，規劃在之後的教學筆記進行介紹。</p>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>setTimeout</tag>
+        <tag>for loop</tag>
+        <tag>closure</tag>
       </tags>
   </entry>
   <entry>
@@ -2727,6 +2793,89 @@
       </tags>
   </entry>
   <entry>
+    <title>setTimeout + for loop + closure 核心介紹入門教學筆記 | 學習筆記</title>
+    <url>/2023/07/01/learning-notes-javascript-event-loop-closure-problems/</url>
+    <content><![CDATA[<h3 id="一、var-和-let-的作用域差異"><a href="#一、var-和-let-的作用域差異" class="headerlink" title="一、var 和 let 的作用域差異"></a>一、<code>var</code> 和 <code>let</code> 的作用域差異</h3><table>
+<thead>
+<tr>
+<th>宣告方式</th>
+<th>作用域</th>
+<th>是否有暫時性死區（TDZ）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>var</code></td>
+<td>函式作用域</td>
+<td>否</td>
+</tr>
+<tr>
+<td><code>let</code></td>
+<td>區塊作用域</td>
+<td>是</td>
+</tr>
+<tr>
+<td><code>const</code></td>
+<td>區塊作用域</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>var</code> 宣告的變數在整個函式內都可存取</li>
+<li><code>let</code> 則只在所在區塊 <code>&#123;&#125;</code> 中有效</li>
+</ul>
+<hr>
+<h3 id="二、閉包（Closure）"><a href="#二、閉包（Closure）" class="headerlink" title="二、閉包（Closure）"></a>二、閉包（Closure）</h3><p>閉包是指「函式能記住它被定義時的作用域，即使在外部執行也能存取當時的變數」。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">outer</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> <span class="title function_">inner</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(count++);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fn = <span class="title function_">outer</span>();</span><br><span class="line"><span class="title function_">fn</span>(); <span class="comment">// 0</span></span><br><span class="line"><span class="title function_">fn</span>(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<p>這個例子中，<code>inner</code> 函式記住了 <code>outer</code> 中的 <code>count</code> 變數。</p>
+<hr>
+<h3 id="三、事件迴圈與-setTimeout"><a href="#三、事件迴圈與-setTimeout" class="headerlink" title="三、事件迴圈與 setTimeout"></a>三、事件迴圈與 <code>setTimeout</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;start&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;timeout&quot;</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;end&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>輸出順序：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">start</span><br><span class="line">end</span><br><span class="line">timeout</span><br></pre></td></tr></table></figure>
+
+<p>原因是 <code>setTimeout</code> 是非同步的，它會被放入「事件佇列」（event queue）中，等主程式執行完後才會被處理。</p>
+<hr>
+<h3 id="四、面試陷阱：var-與-setTimeout-搭配"><a href="#四、面試陷阱：var-與-setTimeout-搭配" class="headerlink" title="四、面試陷阱：var 與 setTimeout 搭配"></a>四、面試陷阱：<code>var</code> 與 <code>setTimeout</code> 搭配</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這段程式的輸出是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">3</span><br><span class="line">3</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<p>因為：</p>
+<ul>
+<li><code>var</code> 沒有區塊作用域，所有的 <code>setTimeout</code> 都引用同一個 <code>i</code></li>
+<li>當 <code>setTimeout</code> 執行時，迴圈已跑完，<code>i</code> 已是 3</li>
+</ul>
+<hr>
+<h3 id="五、正確解法：使用-let"><a href="#五、正確解法：使用-let" class="headerlink" title="五、正確解法：使用 let"></a>五、正確解法：使用 <code>let</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>輸出為：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<p>因為 <code>let</code> 有區塊作用域，每次迴圈都建立新的 <code>i</code>，閉包會記住各自的值。</p>
+<hr>
+<h3 id="六、另一個解法：IIFE（立即執行函式）"><a href="#六、另一個解法：IIFE（立即執行函式）" class="headerlink" title="六、另一個解法：IIFE（立即執行函式）"></a>六、另一個解法：IIFE（立即執行函式）</h3><p>若必須用 <code>var</code>，可以用 IIFE 綁定每次的 <code>i</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  (<span class="keyword">function</span>(<span class="params">j</span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(j);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣也會正確輸出：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="七、總結"><a href="#七、總結" class="headerlink" title="七、總結"></a>七、總結</h3><ol>
+<li><code>var</code> 是函式作用域，容易被非同步邏輯影響</li>
+<li><code>let</code> 是區塊作用域，與閉包搭配可解決常見陷阱</li>
+<li><code>setTimeout</code> 是非同步，會延遲執行</li>
+<li>通常面試會結合這些概念出題，考你對 JavaScript 執行流程、作用域與閉包的理解</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>setTimeout</tag>
+        <tag>for loop</tag>
+        <tag>closure</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript Hoisting 入門教學筆記 | 學習筆記</title>
     <url>/2021/12/15/learning-notes-javascript-hoisting-intro-tutorial/</url>
     <content><![CDATA[<h2 id="1-什麼是-Hoisting？"><a href="#1-什麼是-Hoisting？" class="headerlink" title="1. 什麼是 Hoisting？"></a>1. 什麼是 Hoisting？</h2><p>Hoisting（提升）是 JavaScript 中的一種行為，它允許變數與函式在執行時被提升到作用域的頂部，這表示你可以在宣告之前使用它們，而不會發生錯誤。「<code>建立期</code>」（<code>Creation Phase</code>）和「<code>執行期</code>」（<code>Execution Phase</code>），建立期主要為定義變數名稱，執行期為執行程式和指定賦值。</p>
@@ -2997,65 +3146,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JavaScript 可選鏈接運算符（Optional Chaining）介紹與入門教學 | 學習筆記</title>
-    <url>/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 <code>JavaScript</code> 中，處理深層嵌套結構時，我們經常會遇到 <code>null</code> 或 <code>undefined</code> 的問題。例如，當我們需要訪問一個對象的屬性，而該屬性本身可能不存在時，傳統的做法會導致錯誤，這樣的情況會非常繁瑣。為了解決這個問題，JavaScript 引入了 <strong>可選鏈接運算符（Optional Chaining）</strong>，簡化了屬性訪問過程，並防止了因為屬性為 <code>null</code> 或 <code>undefined</code> 造成的錯誤。</p>
-<p>本文將詳細介紹可選鏈接運算符的概念、用法以及常見的實際應用場景。</p>
-<h3 id="1-可選鏈接運算符的基本語法"><a href="#1-可選鏈接運算符的基本語法" class="headerlink" title="1. 可選鏈接運算符的基本語法"></a>1. 可選鏈接運算符的基本語法</h3><p><strong>可選鏈接運算符（<code>?.</code>）</strong> 是 JavaScript 中一種新的語法，通過它我們可以安全地訪問對象的屬性，並且在中途如果遇到 <code>null</code> 或 <code>undefined</code>，就會停止執行並返回 <code>undefined</code>，而不是拋出錯誤。</p>
-<p>基本語法結構如下：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">object?.<span class="property">property</span></span><br><span class="line">object?.[key]</span><br><span class="line">object?.<span class="title function_">method</span>()</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>object?.property</code>：如果 <code>object</code> 為 <code>null</code> 或 <code>undefined</code>，則返回 <code>undefined</code>，否則返回對象的 <code>property</code> 屬性。</li>
-<li><code>object?.[key]</code>：這是動態屬性名的情況，與 <code>object?.property</code> 類似，當 <code>key</code> 是變數或表達式時，這種語法很有用。</li>
-<li><code>object?.method()</code>：如果 <code>object</code> 或 <code>method</code> 為 <code>null</code> 或 <code>undefined</code>，則返回 <code>undefined</code>，不會調用該方法。</li>
-</ul>
-<h3 id="2-為什麼需要可選鏈接運算符？"><a href="#2-為什麼需要可選鏈接運算符？" class="headerlink" title="2. 為什麼需要可選鏈接運算符？"></a>2. 為什麼需要可選鏈接運算符？</h3><p>在傳統 JavaScript 中，當我們處理嵌套對象的屬性時，若某個屬性不存在或是 <code>null</code>、<code>undefined</code>，我們會遇到錯誤。例如：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">address</span>: &#123;</span><br><span class="line">    <span class="attr">street</span>: <span class="string">&#x27;123 Main St&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">address</span>.<span class="property">street</span>); <span class="comment">// &quot;123 Main St&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">phone</span>.<span class="property">number</span>); <span class="comment">// TypeError: Cannot read property &#x27;number&#x27; of undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>在這個例子中，當我們嘗試訪問 <code>user.phone.number</code> 時，由於 <code>phone</code> 屬性不存在，會拋出錯誤。為了解決這個問題，通常我們需要進行多層檢查：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user &amp;&amp; user.<span class="property">phone</span> &amp;&amp; user.<span class="property">phone</span>.<span class="property">number</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>這樣的寫法看起來雜亂，並且很難處理更深層次的嵌套。可選鏈接運算符解決了這個問題，使得代碼更加簡潔和安全。</p>
-<h3 id="3-可選鏈接運算符的應用場景"><a href="#3-可選鏈接運算符的應用場景" class="headerlink" title="3. 可選鏈接運算符的應用場景"></a>3. 可選鏈接運算符的應用場景</h3><h4 id="3-1-訪問對象屬性"><a href="#3-1-訪問對象屬性" class="headerlink" title="3.1 訪問對象屬性"></a>3.1 訪問對象屬性</h4><p>當我們需要訪問對象的某一層屬性時，如果中間層級的某個屬性為 <code>null</code> 或 <code>undefined</code>，那麼使用可選鏈接運算符就能防止錯誤的拋出。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">address</span>: &#123;</span><br><span class="line">    <span class="attr">street</span>: <span class="string">&#x27;123 Main St&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">address</span>?.<span class="property">street</span>); <span class="comment">// &quot;123 Main St&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">phone</span>?.<span class="property">number</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>在這個例子中，<code>user?.address?.street</code> 會安全地返回 <code>street</code> 屬性，而 <code>user?.phone?.number</code> 會返回 <code>undefined</code>，因為 <code>phone</code> 屬性並不存在。</p>
-<h4 id="3-2-訪問數組元素"><a href="#3-2-訪問數組元素" class="headerlink" title="3.2 訪問數組元素"></a>3.2 訪問數組元素</h4><p>在操作數組時，如果我們想訪問某個索引的元素，也可以使用可選鏈接運算符來避免錯誤。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(array?.[<span class="number">1</span>]); <span class="comment">// 2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(array?.[<span class="number">10</span>]); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>這裡，<code>array?.[1]</code> 會返回 <code>2</code>，而 <code>array?.[10]</code> 會返回 <code>undefined</code>，即使索引超出了數組的範圍。</p>
-<h4 id="3-3-調用對象方法"><a href="#3-3-調用對象方法" class="headerlink" title="3.3 調用對象方法"></a>3.3 調用對象方法</h4><p>如果對象的方法不存在，使用可選鏈接運算符可以避免拋出錯誤，並且返回 <code>undefined</code>。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="title function_">greet</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello!&#x27;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">user?.<span class="title function_">greet</span>(); <span class="comment">// &quot;Hello!&quot;</span></span><br><span class="line">user?.<span class="title function_">sayGoodbye</span>(); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>在這個例子中，<code>user?.greet()</code> 會調用 <code>greet</code> 方法並顯示 “Hello!”，而 <code>user?.sayGoodbye()</code> 則返回 <code>undefined</code>，因為 <code>sayGoodbye</code> 方法不存在。</p>
-<h4 id="3-4-動態屬性名"><a href="#3-4-動態屬性名" class="headerlink" title="3.4 動態屬性名"></a>3.4 動態屬性名</h4><p>可選鏈接運算符也支持用動態屬性名來訪問對象屬性，這在處理具有不確定屬性的對象時非常有用。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">preferences</span>: &#123;</span><br><span class="line">    <span class="attr">theme</span>: <span class="string">&#x27;dark&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> key = <span class="string">&#x27;theme&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">preferences</span>?.[key]); <span class="comment">// &quot;dark&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>在這個例子中，<code>key</code> 是一個變量，表示要訪問的屬性名，<code>user?.preferences?.[key]</code> 可以安全地獲取 <code>preferences</code> 中的 <code>theme</code> 屬性。</p>
-<h3 id="4-與傳統方法的比較"><a href="#4-與傳統方法的比較" class="headerlink" title="4. 與傳統方法的比較"></a>4. 與傳統方法的比較</h3><p>使用可選鏈接運算符，我們的代碼變得更加簡潔，減少了不必要的檢查。傳統的方式可能需要多次檢查對象的存在，才能安全地訪問某個屬性，而可選鏈接運算符讓這一過程變得直觀且易於維護。</p>
-<p>傳統方法：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (user &amp;&amp; user.<span class="property">address</span> &amp;&amp; user.<span class="property">address</span>.<span class="property">street</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">address</span>.<span class="property">street</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用可選鏈接運算符：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">address</span>?.<span class="property">street</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-可選鏈接運算符與-null-合併運算符（-）"><a href="#5-可選鏈接運算符與-null-合併運算符（-）" class="headerlink" title="5. 可選鏈接運算符與 null 合併運算符（??）"></a>5. 可選鏈接運算符與 <code>null</code> 合併運算符（<code>??</code>）</h3><p>可選鏈接運算符經常與 <code>null</code> 合併運算符（<code>??</code>）一起使用。<code>??</code> 用來返回當前值是否為 <code>null</code> 或 <code>undefined</code>，如果是則返回其右側的值，否則返回當前值。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">const</span> name = user?.<span class="property">name</span> ?? <span class="string">&#x27;Default Name&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name); <span class="comment">// &quot;Default Name&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>在這裡，<code>user?.name</code> 會返回 <code>undefined</code>，因為 <code>user</code> 是 <code>null</code>，而 <code>??</code> 會將其替換為 <code>&#39;Default Name&#39;</code>。</p>
-<h3 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h3><p>可選鏈接運算符（<code>?.</code>）是 JavaScript 中非常實用的一個特性，它簡化了嵌套對象屬性訪問的邏輯，避免了 <code>null</code> 或 <code>undefined</code> 帶來的錯誤，使代碼更加簡潔且容易理解。無論是在處理複雜的 API 返回數據還是操作動態結構的對象時，可選鏈接運算符都能發揮重要作用。在日常開發中，我們可以利用它來編寫更健壯、可讀性更強的代碼。</p>
-]]></content>
-      <tags>
-        <tag>javascript</tag>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>Optional Chaining</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript 物件導向（Object-oriented programming）入門教學筆記 | 學習筆記</title>
     <url>/2021/01/16/learning-notes-javascript-object-oriented-programming-intro-tutorial/</url>
     <content><![CDATA[<h2 id="1-物件導向與-new-關鍵字"><a href="#1-物件導向與-new-關鍵字" class="headerlink" title="1. 物件導向與 new 關鍵字"></a>1. 物件導向與 <code>new</code> 關鍵字</h2><p>JavaScript 是基於 <strong>原型 (Prototype)</strong> 的物件導向語言，而非典型的 <strong>類別 (Class)</strong> 為基礎的語言。但 ES6 之後，JavaScript 引入了 <code>class</code> 語法，使其更接近傳統的物件導向語言，如 Java 或 C++。</p>
@@ -3161,6 +3251,65 @@
         <tag>this</tag>
         <tag>OOP</tag>
         <tag>Object-oriented programming</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript 可選鏈接運算符（Optional Chaining）介紹與入門教學 | 學習筆記</title>
+    <url>/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 <code>JavaScript</code> 中，處理深層嵌套結構時，我們經常會遇到 <code>null</code> 或 <code>undefined</code> 的問題。例如，當我們需要訪問一個對象的屬性，而該屬性本身可能不存在時，傳統的做法會導致錯誤，這樣的情況會非常繁瑣。為了解決這個問題，JavaScript 引入了 <strong>可選鏈接運算符（Optional Chaining）</strong>，簡化了屬性訪問過程，並防止了因為屬性為 <code>null</code> 或 <code>undefined</code> 造成的錯誤。</p>
+<p>本文將詳細介紹可選鏈接運算符的概念、用法以及常見的實際應用場景。</p>
+<h3 id="1-可選鏈接運算符的基本語法"><a href="#1-可選鏈接運算符的基本語法" class="headerlink" title="1. 可選鏈接運算符的基本語法"></a>1. 可選鏈接運算符的基本語法</h3><p><strong>可選鏈接運算符（<code>?.</code>）</strong> 是 JavaScript 中一種新的語法，通過它我們可以安全地訪問對象的屬性，並且在中途如果遇到 <code>null</code> 或 <code>undefined</code>，就會停止執行並返回 <code>undefined</code>，而不是拋出錯誤。</p>
+<p>基本語法結構如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">object?.<span class="property">property</span></span><br><span class="line">object?.[key]</span><br><span class="line">object?.<span class="title function_">method</span>()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>object?.property</code>：如果 <code>object</code> 為 <code>null</code> 或 <code>undefined</code>，則返回 <code>undefined</code>，否則返回對象的 <code>property</code> 屬性。</li>
+<li><code>object?.[key]</code>：這是動態屬性名的情況，與 <code>object?.property</code> 類似，當 <code>key</code> 是變數或表達式時，這種語法很有用。</li>
+<li><code>object?.method()</code>：如果 <code>object</code> 或 <code>method</code> 為 <code>null</code> 或 <code>undefined</code>，則返回 <code>undefined</code>，不會調用該方法。</li>
+</ul>
+<h3 id="2-為什麼需要可選鏈接運算符？"><a href="#2-為什麼需要可選鏈接運算符？" class="headerlink" title="2. 為什麼需要可選鏈接運算符？"></a>2. 為什麼需要可選鏈接運算符？</h3><p>在傳統 JavaScript 中，當我們處理嵌套對象的屬性時，若某個屬性不存在或是 <code>null</code>、<code>undefined</code>，我們會遇到錯誤。例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">address</span>: &#123;</span><br><span class="line">    <span class="attr">street</span>: <span class="string">&#x27;123 Main St&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">address</span>.<span class="property">street</span>); <span class="comment">// &quot;123 Main St&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">phone</span>.<span class="property">number</span>); <span class="comment">// TypeError: Cannot read property &#x27;number&#x27; of undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>在這個例子中，當我們嘗試訪問 <code>user.phone.number</code> 時，由於 <code>phone</code> 屬性不存在，會拋出錯誤。為了解決這個問題，通常我們需要進行多層檢查：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user &amp;&amp; user.<span class="property">phone</span> &amp;&amp; user.<span class="property">phone</span>.<span class="property">number</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>這樣的寫法看起來雜亂，並且很難處理更深層次的嵌套。可選鏈接運算符解決了這個問題，使得代碼更加簡潔和安全。</p>
+<h3 id="3-可選鏈接運算符的應用場景"><a href="#3-可選鏈接運算符的應用場景" class="headerlink" title="3. 可選鏈接運算符的應用場景"></a>3. 可選鏈接運算符的應用場景</h3><h4 id="3-1-訪問對象屬性"><a href="#3-1-訪問對象屬性" class="headerlink" title="3.1 訪問對象屬性"></a>3.1 訪問對象屬性</h4><p>當我們需要訪問對象的某一層屬性時，如果中間層級的某個屬性為 <code>null</code> 或 <code>undefined</code>，那麼使用可選鏈接運算符就能防止錯誤的拋出。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">address</span>: &#123;</span><br><span class="line">    <span class="attr">street</span>: <span class="string">&#x27;123 Main St&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">address</span>?.<span class="property">street</span>); <span class="comment">// &quot;123 Main St&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">phone</span>?.<span class="property">number</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>在這個例子中，<code>user?.address?.street</code> 會安全地返回 <code>street</code> 屬性，而 <code>user?.phone?.number</code> 會返回 <code>undefined</code>，因為 <code>phone</code> 屬性並不存在。</p>
+<h4 id="3-2-訪問數組元素"><a href="#3-2-訪問數組元素" class="headerlink" title="3.2 訪問數組元素"></a>3.2 訪問數組元素</h4><p>在操作數組時，如果我們想訪問某個索引的元素，也可以使用可選鏈接運算符來避免錯誤。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(array?.[<span class="number">1</span>]); <span class="comment">// 2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(array?.[<span class="number">10</span>]); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>這裡，<code>array?.[1]</code> 會返回 <code>2</code>，而 <code>array?.[10]</code> 會返回 <code>undefined</code>，即使索引超出了數組的範圍。</p>
+<h4 id="3-3-調用對象方法"><a href="#3-3-調用對象方法" class="headerlink" title="3.3 調用對象方法"></a>3.3 調用對象方法</h4><p>如果對象的方法不存在，使用可選鏈接運算符可以避免拋出錯誤，並且返回 <code>undefined</code>。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="title function_">greet</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello!&#x27;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">user?.<span class="title function_">greet</span>(); <span class="comment">// &quot;Hello!&quot;</span></span><br><span class="line">user?.<span class="title function_">sayGoodbye</span>(); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>在這個例子中，<code>user?.greet()</code> 會調用 <code>greet</code> 方法並顯示 “Hello!”，而 <code>user?.sayGoodbye()</code> 則返回 <code>undefined</code>，因為 <code>sayGoodbye</code> 方法不存在。</p>
+<h4 id="3-4-動態屬性名"><a href="#3-4-動態屬性名" class="headerlink" title="3.4 動態屬性名"></a>3.4 動態屬性名</h4><p>可選鏈接運算符也支持用動態屬性名來訪問對象屬性，這在處理具有不確定屬性的對象時非常有用。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">preferences</span>: &#123;</span><br><span class="line">    <span class="attr">theme</span>: <span class="string">&#x27;dark&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> key = <span class="string">&#x27;theme&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">preferences</span>?.[key]); <span class="comment">// &quot;dark&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>在這個例子中，<code>key</code> 是一個變量，表示要訪問的屬性名，<code>user?.preferences?.[key]</code> 可以安全地獲取 <code>preferences</code> 中的 <code>theme</code> 屬性。</p>
+<h3 id="4-與傳統方法的比較"><a href="#4-與傳統方法的比較" class="headerlink" title="4. 與傳統方法的比較"></a>4. 與傳統方法的比較</h3><p>使用可選鏈接運算符，我們的代碼變得更加簡潔，減少了不必要的檢查。傳統的方式可能需要多次檢查對象的存在，才能安全地訪問某個屬性，而可選鏈接運算符讓這一過程變得直觀且易於維護。</p>
+<p>傳統方法：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (user &amp;&amp; user.<span class="property">address</span> &amp;&amp; user.<span class="property">address</span>.<span class="property">street</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">address</span>.<span class="property">street</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用可選鏈接運算符：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">address</span>?.<span class="property">street</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-可選鏈接運算符與-null-合併運算符（-）"><a href="#5-可選鏈接運算符與-null-合併運算符（-）" class="headerlink" title="5. 可選鏈接運算符與 null 合併運算符（??）"></a>5. 可選鏈接運算符與 <code>null</code> 合併運算符（<code>??</code>）</h3><p>可選鏈接運算符經常與 <code>null</code> 合併運算符（<code>??</code>）一起使用。<code>??</code> 用來返回當前值是否為 <code>null</code> 或 <code>undefined</code>，如果是則返回其右側的值，否則返回當前值。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">const</span> name = user?.<span class="property">name</span> ?? <span class="string">&#x27;Default Name&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name); <span class="comment">// &quot;Default Name&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>在這裡，<code>user?.name</code> 會返回 <code>undefined</code>，因為 <code>user</code> 是 <code>null</code>，而 <code>??</code> 會將其替換為 <code>&#39;Default Name&#39;</code>。</p>
+<h3 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h3><p>可選鏈接運算符（<code>?.</code>）是 JavaScript 中非常實用的一個特性，它簡化了嵌套對象屬性訪問的邏輯，避免了 <code>null</code> 或 <code>undefined</code> 帶來的錯誤，使代碼更加簡潔且容易理解。無論是在處理複雜的 API 返回數據還是操作動態結構的對象時，可選鏈接運算符都能發揮重要作用。在日常開發中，我們可以利用它來編寫更健壯、可讀性更強的代碼。</p>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>Optional Chaining</tag>
       </tags>
   </entry>
   <entry>
@@ -4391,57 +4540,6 @@
       </tags>
   </entry>
   <entry>
-    <title>SASS 語法介紹入門教學筆記 | 學習筆記</title>
-    <url>/2024/06/30/learning-notes-sass-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="什麼是-SASS？"><a href="#什麼是-SASS？" class="headerlink" title="什麼是 SASS？"></a>什麼是 SASS？</h1><p><code>SASS</code>（Syntactically Awesome Style Sheets）是一種 CSS 預處理器，旨在提升 CSS 的功能性，讓開發者能夠以更加靈活和高效的方式編寫樣式表。它提供了許多比 CSS 更強大的功能，例如變數、巢狀規則、混合（mixins）、繼承等。SASS 語法有兩種主要形式：一種是較為常見的 SCSS（<code>Sassy CSS</code>），另一種則是 <code>SASS</code>，本文將主要介紹 SASS 語法。</p>
-<p>與 SCSS 不同，SASS 語法採用的是縮排語法，即不使用大括號和分號，而是利用縮排來結構化程式碼。這種語法更簡潔，對於習慣 Python 等語言的開發者來說，學習曲線較為平滑。</p>
-<h1 id="安裝與設置"><a href="#安裝與設置" class="headerlink" title="安裝與設置"></a>安裝與設置</h1><p>要開始使用 SASS，首先需要安裝 SASS 編譯器。最常見的安裝方式是透過 Node.js 的 npm（Node Package Manager）。請按照以下步驟進行安裝：</p>
-<ol>
-<li><p>確保已經安裝了 Node.js 和 npm。</p>
-</li>
-<li><p>打開終端機，並在專案資料夾中執行以下命令來安裝 SASS：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g sass</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安裝完成後，可以通過命令行執行 SASS 編譯命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sass input.sass output.css</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>這樣，<code>input.sass</code> 就會被編譯為標準的 <code>output.css</code> 檔案。</p>
-<h1 id="SASS-語法介紹"><a href="#SASS-語法介紹" class="headerlink" title="SASS 語法介紹"></a>SASS 語法介紹</h1><h3 id="1-變數（Variables）"><a href="#1-變數（Variables）" class="headerlink" title="1. 變數（Variables）"></a>1. 變數（Variables）</h3><p>SASS 的變數功能讓開發者可以將顏色、字體大小、間距等常用值儲存在變數中，這樣能夠提高樣式的可重用性，並讓程式碼更具維護性。在 SASS 中，變數以 <code>$</code> 符號開頭。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$primary-color: #3498db</span><br><span class="line">$font-size: 16px</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  font-size: $font-size</span><br><span class="line">  color: $primary-color</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，我們定義了 <code>$primary-color</code> 和 <code>$font-size</code> 兩個變數，並將其應用於 <code>body</code> 樣式中。這樣，只需要修改變數的值，即可全局更新相應的樣式。</p>
-<h3 id="2-巢狀規則（Nesting）"><a href="#2-巢狀規則（Nesting）" class="headerlink" title="2. 巢狀規則（Nesting）"></a>2. 巢狀規則（Nesting）</h3><p>SASS 支援巢狀規則，這樣可以讓樣式更加結構化，並且簡化對於子元素樣式的編寫。SASS 使用縮排來表示層級關係，這一點與傳統的 CSS 需要寫出完整選擇器有所不同。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nav</span><br><span class="line">  background-color: #333</span><br><span class="line">  ul</span><br><span class="line">    list-style-type: none</span><br><span class="line">    padding: 0</span><br><span class="line">  li</span><br><span class="line">    display: inline-block</span><br><span class="line">  a</span><br><span class="line">    color: white</span><br><span class="line">    text-decoration: none</span><br></pre></td></tr></table></figure>
-
-<p>這段程式碼會被編譯為：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">list-style-type</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這樣的寫法可以避免寫重複的選擇器，並且清晰地表現出元素之間的層級結構。</p>
-<h3 id="3-混合（Mixins）"><a href="#3-混合（Mixins）" class="headerlink" title="3. 混合（Mixins）"></a>3. 混合（Mixins）</h3><p>混合是 SASS 中一個非常有用的功能，它可以將一段可重用的樣式封裝成一個混合，並且可以接受參數，實現樣式的動態應用。混合類似於函數，能夠在不同地方重複使用。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">=mixin border-radius($radius)</span><br><span class="line">  -webkit-border-radius: $radius</span><br><span class="line">  -moz-border-radius: $radius</span><br><span class="line">  border-radius: $radius</span><br><span class="line"></span><br><span class="line">.box</span><br><span class="line">  @include border-radius(10px)</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，我們定義了一個名為 <code>border-radius</code> 的混合，接受一個 <code>$radius</code> 參數，用來設置元素的邊框圓角。然後，我們在 <code>.box</code> 中使用 <code>@include</code> 引入這個混合，並傳遞具體的參數。這樣，當需要改變邊框圓角的樣式時，只需要修改混合的參數，而不需要在多個地方重複編寫。</p>
-<h3 id="4-繼承（Inheritance）"><a href="#4-繼承（Inheritance）" class="headerlink" title="4. 繼承（Inheritance）"></a>4. 繼承（Inheritance）</h3><p>SASS 提供了繼承功能，使得一個選擇器可以繼承另一個選擇器的樣式。這有助於減少樣式重複，並保持程式碼的整潔性。SASS 使用 <code>@extend</code> 指令來實現繼承。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%button-base</span><br><span class="line">  padding: 10px 15px</span><br><span class="line">  background-color: #3498db</span><br><span class="line">  color: white</span><br><span class="line">  border: none</span><br><span class="line">  border-radius: 5px</span><br><span class="line"></span><br><span class="line">.button-primary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #1abc9c</span><br><span class="line"></span><br><span class="line">.button-secondary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #f39c12</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，我們定義了一個 <code>%button-base</code> 共享樣式，然後讓 <code>.button-primary</code> 和 <code>.button-secondary</code> 繼承這些樣式，並根據需要進行自定義修改。使用繼承的方式可以減少代碼重複，提高樣式的可維護性。</p>
-<h3 id="5-條件語句（Conditionals）"><a href="#5-條件語句（Conditionals）" class="headerlink" title="5. 條件語句（Conditionals）"></a>5. 條件語句（Conditionals）</h3><p>SASS 支援條件語句，這讓我們可以根據某些條件選擇性地應用不同的樣式。這樣可以使樣式表更具動態性，根據不同情境調整顯示效果。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$theme: light</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  @if $theme == light</span><br><span class="line">    background-color: #fff</span><br><span class="line">    color: #333</span><br><span class="line">  @else</span><br><span class="line">    background-color: #333</span><br><span class="line">    color: #fff</span><br></pre></td></tr></table></figure>
-
-<p>這段程式碼中，根據變數 <code>$theme</code> 的值，條件地設定 <code>body</code> 的背景顏色和文字顏色。如果 <code>$theme</code> 為 <code>light</code>，則使用淺色背景和深色文字；否則，使用深色背景和淺色文字。</p>
-<h3 id="6-循環（Loops）"><a href="#6-循環（Loops）" class="headerlink" title="6. 循環（Loops）"></a>6. 循環（Loops）</h3><p>SASS 還支援循環語句，這在需要根據某些條件自動生成多個樣式時非常有用。SASS 的循環可以遍歷一個列表，並生成對應的樣式。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$colors: red, green, blue</span><br><span class="line"></span><br><span class="line">@each $color in $colors</span><br><span class="line">  .#&#123;$color&#125;-box</span><br><span class="line">    background-color: $color</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，<code>@each</code> 循環將遍歷 <code>$colors</code> 列表，並為每個顏色生成一個相應的類別 <code>.red-box</code>、<code>.green-box</code> 和 <code>.blue-box</code>，並將其背景顏色設置為對應的顏色。</p>
-<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>SASS 的 SASS 語法是一種簡潔且強大的 CSS 編寫方式，通過簡單的縮排結構，讓開發者能夠更有效率地編寫和維護樣式。SASS 提供的變數、巢狀規則、混合、繼承等功能，能夠使樣式更加模組化、動態化，並大大減少冗餘代碼。學會 SASS 語法後，你可以更靈活地處理大型專案中的 CSS，提升工作效率。如果你還沒有開始使用 SASS，不妨從這些基礎語法開始，體驗它帶來的便利。</p>
-]]></content>
-      <tags>
-        <tag>CSS</tag>
-        <tag>SASS</tag>
-        <tag>SCSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Responsive Design 響應式設計入門教學筆記 | 學習筆記</title>
     <url>/2022/06/09/learning-notes-responsive-design-rwd/</url>
     <content><![CDATA[<h2 id="Responsive-Design-響應式設計入門教學筆記"><a href="#Responsive-Design-響應式設計入門教學筆記" class="headerlink" title="Responsive Design 響應式設計入門教學筆記"></a>Responsive Design 響應式設計入門教學筆記</h2><h3 id="一、什麼是響應式設計"><a href="#一、什麼是響應式設計" class="headerlink" title="一、什麼是響應式設計"></a>一、什麼是響應式設計</h3><p>響應式設計 (Responsive Design) 是一種網頁設計方法，使網頁能夠根據不同裝置的螢幕尺寸與解析度，自動調整版面配置，以提供最佳的使用體驗。</p>
@@ -4495,6 +4593,57 @@
         <tag>Responsive Design</tag>
         <tag>響應式設計</tag>
         <tag>RWD</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SASS 語法介紹入門教學筆記 | 學習筆記</title>
+    <url>/2024/06/30/learning-notes-sass-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="什麼是-SASS？"><a href="#什麼是-SASS？" class="headerlink" title="什麼是 SASS？"></a>什麼是 SASS？</h1><p><code>SASS</code>（Syntactically Awesome Style Sheets）是一種 CSS 預處理器，旨在提升 CSS 的功能性，讓開發者能夠以更加靈活和高效的方式編寫樣式表。它提供了許多比 CSS 更強大的功能，例如變數、巢狀規則、混合（mixins）、繼承等。SASS 語法有兩種主要形式：一種是較為常見的 SCSS（<code>Sassy CSS</code>），另一種則是 <code>SASS</code>，本文將主要介紹 SASS 語法。</p>
+<p>與 SCSS 不同，SASS 語法採用的是縮排語法，即不使用大括號和分號，而是利用縮排來結構化程式碼。這種語法更簡潔，對於習慣 Python 等語言的開發者來說，學習曲線較為平滑。</p>
+<h1 id="安裝與設置"><a href="#安裝與設置" class="headerlink" title="安裝與設置"></a>安裝與設置</h1><p>要開始使用 SASS，首先需要安裝 SASS 編譯器。最常見的安裝方式是透過 Node.js 的 npm（Node Package Manager）。請按照以下步驟進行安裝：</p>
+<ol>
+<li><p>確保已經安裝了 Node.js 和 npm。</p>
+</li>
+<li><p>打開終端機，並在專案資料夾中執行以下命令來安裝 SASS：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g sass</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安裝完成後，可以通過命令行執行 SASS 編譯命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sass input.sass output.css</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>這樣，<code>input.sass</code> 就會被編譯為標準的 <code>output.css</code> 檔案。</p>
+<h1 id="SASS-語法介紹"><a href="#SASS-語法介紹" class="headerlink" title="SASS 語法介紹"></a>SASS 語法介紹</h1><h3 id="1-變數（Variables）"><a href="#1-變數（Variables）" class="headerlink" title="1. 變數（Variables）"></a>1. 變數（Variables）</h3><p>SASS 的變數功能讓開發者可以將顏色、字體大小、間距等常用值儲存在變數中，這樣能夠提高樣式的可重用性，並讓程式碼更具維護性。在 SASS 中，變數以 <code>$</code> 符號開頭。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$primary-color: #3498db</span><br><span class="line">$font-size: 16px</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  font-size: $font-size</span><br><span class="line">  color: $primary-color</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了 <code>$primary-color</code> 和 <code>$font-size</code> 兩個變數，並將其應用於 <code>body</code> 樣式中。這樣，只需要修改變數的值，即可全局更新相應的樣式。</p>
+<h3 id="2-巢狀規則（Nesting）"><a href="#2-巢狀規則（Nesting）" class="headerlink" title="2. 巢狀規則（Nesting）"></a>2. 巢狀規則（Nesting）</h3><p>SASS 支援巢狀規則，這樣可以讓樣式更加結構化，並且簡化對於子元素樣式的編寫。SASS 使用縮排來表示層級關係，這一點與傳統的 CSS 需要寫出完整選擇器有所不同。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nav</span><br><span class="line">  background-color: #333</span><br><span class="line">  ul</span><br><span class="line">    list-style-type: none</span><br><span class="line">    padding: 0</span><br><span class="line">  li</span><br><span class="line">    display: inline-block</span><br><span class="line">  a</span><br><span class="line">    color: white</span><br><span class="line">    text-decoration: none</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼會被編譯為：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">list-style-type</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣的寫法可以避免寫重複的選擇器，並且清晰地表現出元素之間的層級結構。</p>
+<h3 id="3-混合（Mixins）"><a href="#3-混合（Mixins）" class="headerlink" title="3. 混合（Mixins）"></a>3. 混合（Mixins）</h3><p>混合是 SASS 中一個非常有用的功能，它可以將一段可重用的樣式封裝成一個混合，並且可以接受參數，實現樣式的動態應用。混合類似於函數，能夠在不同地方重複使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">=mixin border-radius($radius)</span><br><span class="line">  -webkit-border-radius: $radius</span><br><span class="line">  -moz-border-radius: $radius</span><br><span class="line">  border-radius: $radius</span><br><span class="line"></span><br><span class="line">.box</span><br><span class="line">  @include border-radius(10px)</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了一個名為 <code>border-radius</code> 的混合，接受一個 <code>$radius</code> 參數，用來設置元素的邊框圓角。然後，我們在 <code>.box</code> 中使用 <code>@include</code> 引入這個混合，並傳遞具體的參數。這樣，當需要改變邊框圓角的樣式時，只需要修改混合的參數，而不需要在多個地方重複編寫。</p>
+<h3 id="4-繼承（Inheritance）"><a href="#4-繼承（Inheritance）" class="headerlink" title="4. 繼承（Inheritance）"></a>4. 繼承（Inheritance）</h3><p>SASS 提供了繼承功能，使得一個選擇器可以繼承另一個選擇器的樣式。這有助於減少樣式重複，並保持程式碼的整潔性。SASS 使用 <code>@extend</code> 指令來實現繼承。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%button-base</span><br><span class="line">  padding: 10px 15px</span><br><span class="line">  background-color: #3498db</span><br><span class="line">  color: white</span><br><span class="line">  border: none</span><br><span class="line">  border-radius: 5px</span><br><span class="line"></span><br><span class="line">.button-primary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #1abc9c</span><br><span class="line"></span><br><span class="line">.button-secondary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #f39c12</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了一個 <code>%button-base</code> 共享樣式，然後讓 <code>.button-primary</code> 和 <code>.button-secondary</code> 繼承這些樣式，並根據需要進行自定義修改。使用繼承的方式可以減少代碼重複，提高樣式的可維護性。</p>
+<h3 id="5-條件語句（Conditionals）"><a href="#5-條件語句（Conditionals）" class="headerlink" title="5. 條件語句（Conditionals）"></a>5. 條件語句（Conditionals）</h3><p>SASS 支援條件語句，這讓我們可以根據某些條件選擇性地應用不同的樣式。這樣可以使樣式表更具動態性，根據不同情境調整顯示效果。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$theme: light</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  @if $theme == light</span><br><span class="line">    background-color: #fff</span><br><span class="line">    color: #333</span><br><span class="line">  @else</span><br><span class="line">    background-color: #333</span><br><span class="line">    color: #fff</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼中，根據變數 <code>$theme</code> 的值，條件地設定 <code>body</code> 的背景顏色和文字顏色。如果 <code>$theme</code> 為 <code>light</code>，則使用淺色背景和深色文字；否則，使用深色背景和淺色文字。</p>
+<h3 id="6-循環（Loops）"><a href="#6-循環（Loops）" class="headerlink" title="6. 循環（Loops）"></a>6. 循環（Loops）</h3><p>SASS 還支援循環語句，這在需要根據某些條件自動生成多個樣式時非常有用。SASS 的循環可以遍歷一個列表，並生成對應的樣式。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$colors: red, green, blue</span><br><span class="line"></span><br><span class="line">@each $color in $colors</span><br><span class="line">  .#&#123;$color&#125;-box</span><br><span class="line">    background-color: $color</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，<code>@each</code> 循環將遍歷 <code>$colors</code> 列表，並為每個顏色生成一個相應的類別 <code>.red-box</code>、<code>.green-box</code> 和 <code>.blue-box</code>，並將其背景顏色設置為對應的顏色。</p>
+<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>SASS 的 SASS 語法是一種簡潔且強大的 CSS 編寫方式，通過簡單的縮排結構，讓開發者能夠更有效率地編寫和維護樣式。SASS 提供的變數、巢狀規則、混合、繼承等功能，能夠使樣式更加模組化、動態化，並大大減少冗餘代碼。學會 SASS 語法後，你可以更靈活地處理大型專案中的 CSS，提升工作效率。如果你還沒有開始使用 SASS，不妨從這些基礎語法開始，體驗它帶來的便利。</p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>SASS</tag>
+        <tag>SCSS</tag>
       </tags>
   </entry>
   <entry>
@@ -4825,114 +4974,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Tailwind CSS 入門教學筆記 | 學習筆記</title>
-    <url>/2024/11/30/learning-notes-tailwind-css-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="一、什麼是-Tailwind-CSS？"><a href="#一、什麼是-Tailwind-CSS？" class="headerlink" title="一、什麼是 Tailwind CSS？"></a>一、什麼是 Tailwind CSS？</h1><p>Tailwind CSS 是一款以「<code>工具類別優先</code>」（<code>Utility-First</code>）為核心設計理念的 CSS 框架，與傳統的 CSS 框架（如 Bootstrap、Bulma）不同，它不提供預設的 UI 元件，而是提供大量的樣式工具類別，讓開發者可以快速組合來建構 UI，而不需要額外撰寫自訂 CSS。  </p>
-<p>相較於傳統 CSS 框架，Tailwind CSS 具有以下幾個主要優勢：  </p>
-<ol>
-<li><strong>開發效率高</strong>：只需使用<code>類別組合</code>即可完成設計，無需撰寫額外 CSS。  </li>
-<li><strong>高度可客製化</strong>：可以透過設定檔調整顏色、字型、間距等設計。  </li>
-<li><strong>內建響應式支援</strong>：透過 <code>sm: md: lg: xl:</code> 等前綴輕鬆定義不同裝置的樣式。  </li>
-<li><strong>一致性強</strong>：開發團隊可以統一使用 Tailwind CSS 定義的設計樣式，減少 UI 風格不一致的問題。  </li>
-<li><strong>效能優化</strong>：可透過 PurgeCSS 移除未使用的樣式，確保最小化 CSS 檔案大小，提高網站載入速度。</li>
-</ol>
-<hr>
-<h1 id="二、安裝-Tailwind-CSS"><a href="#二、安裝-Tailwind-CSS" class="headerlink" title="二、安裝 Tailwind CSS"></a>二、安裝 Tailwind CSS</h1><p>Tailwind CSS 可以透過多種方式安裝，以下介紹幾種常見的方法：  </p>
-<h3 id="1-使用-CDN（適合快速測試）"><a href="#1-使用-CDN（適合快速測試）" class="headerlink" title="1. 使用 CDN（適合快速測試）"></a>1. 使用 CDN（適合快速測試）</h3><p>如果只是想快速體驗 Tailwind CSS，可以直接在 HTML 檔案中加入以下 <code>&lt;link&gt;</code>：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>這種方式適合小型專案或測試 Tailwind CSS 的功能，但不適合正式開發，因為無法使用客製化設定。  </p>
-<h3 id="2-透過-npm-安裝（推薦方式）"><a href="#2-透過-npm-安裝（推薦方式）" class="headerlink" title="2. 透過 npm 安裝（推薦方式）"></a>2. 透過 npm 安裝（推薦方式）</h3><p>在正式開發環境中，建議使用 npm 或 yarn 來安裝 Tailwind CSS，以便進行客製化設定。  </p>
-<p><strong>安裝 Tailwind CSS</strong>：  </p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -D tailwindcss postcss autoprefixer</span><br><span class="line">npx tailwindcss init -p</span><br></pre></td></tr></table></figure>
-
-<p>執行上述指令後，會在專案根目錄中產生 <code>tailwind.config.js</code> 設定檔，可用來調整 Tailwind 的預設樣式。  </p>
-<p><strong>設定 Tailwind CSS</strong>：  </p>
-<p>開啟 <code>tailwind.config.js</code>，找到 <code>content</code> 設定，確保 Tailwind 只處理專案內的相關檔案，例如：  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">content</span>: [<span class="string">&quot;./src/**/*.&#123;html,js,ts,jsx,tsx&#125;&quot;</span>],</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;&#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>這樣 Tailwind CSS 就只會掃描 <code>src</code> 資料夾內的 HTML、JavaScript 和 TypeScript 檔案，避免產生不必要的 CSS。  </p>
-<p><strong>引入 Tailwind 樣式</strong>：  </p>
-<p>在 <code>src/index.css</code> 或 <code>styles.css</code> 檔案中加入以下內容，讓 Tailwind CSS 套用基礎樣式：  </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@tailwind</span> base;</span><br><span class="line"><span class="keyword">@tailwind</span> components;</span><br><span class="line"><span class="keyword">@tailwind</span> utilities;</span><br></pre></td></tr></table></figure>
-
-<p>最後，在開發環境中執行 Tailwind 編譯指令：  </p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch</span><br></pre></td></tr></table></figure>
-
-<p>這會自動監聽檔案變化，並輸出 Tailwind CSS 的樣式到 <code>output.css</code>。  </p>
-<hr>
-<h1 id="三、Tailwind-CSS-常用類別"><a href="#三、Tailwind-CSS-常用類別" class="headerlink" title="三、Tailwind CSS 常用類別"></a>三、Tailwind CSS 常用類別</h1><p>Tailwind CSS 提供大量的工具類別，以下介紹幾個常用的類別和應用範例。  </p>
-<h3 id="1-文字樣式"><a href="#1-文字樣式" class="headerlink" title="1. 文字樣式"></a>1. 文字樣式</h3><p>Tailwind 允許透過類別來快速調整字體大小、顏色、行距等樣式，例如：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text-lg font-bold text-gray-700 leading-relaxed&quot;</span>&gt;</span></span><br><span class="line">  這是一段示範文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>其中：  </p>
-<ul>
-<li><code>text-lg</code>：字體大小  </li>
-<li><code>font-bold</code>：加粗  </li>
-<li><code>text-gray-700</code>：深灰色文字  </li>
-<li><code>leading-relaxed</code>：行距較寬</li>
-</ul>
-<h3 id="2-背景與邊框"><a href="#2-背景與邊框" class="headerlink" title="2. 背景與邊框"></a>2. 背景與邊框</h3><p>可以使用背景色與邊框樣式來設計 UI，示例如下：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-500 text-white p-4 rounded-lg shadow-lg&quot;</span>&gt;</span></span><br><span class="line">  Tailwind CSS 範例</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>bg-blue-500</code>：藍色背景  </li>
-<li><code>text-white</code>：白色文字  </li>
-<li><code>p-4</code>：內距 16px  </li>
-<li><code>rounded-lg</code>：圓角  </li>
-<li><code>shadow-lg</code>：大型陰影</li>
-</ul>
-<h3 id="3-Flexbox-佈局"><a href="#3-Flexbox-佈局" class="headerlink" title="3. Flexbox 佈局"></a>3. Flexbox 佈局</h3><p>Tailwind CSS 提供完整的 Flexbox 工具類別，讓開發者能夠快速進行佈局：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;flex items-center justify-between p-4 bg-gray-200&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>左側內容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>右側內容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>flex</code>：啟用 Flexbox  </li>
-<li><code>items-center</code>：垂直置中  </li>
-<li><code>justify-between</code>：左右對齊</li>
-</ul>
-<h3 id="4-Grid-佈局"><a href="#4-Grid-佈局" class="headerlink" title="4. Grid 佈局"></a>4. Grid 佈局</h3><p>使用 Grid 來建立多欄式佈局：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid grid-cols-3 gap-4&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-red-200 p-4&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-green-200 p-4&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-200 p-4&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>grid</code>：啟用 Grid  </li>
-<li><code>grid-cols-3</code>：建立三欄  </li>
-<li><code>gap-4</code>：欄間距</li>
-</ul>
-<h3 id="5-響應式設計"><a href="#5-響應式設計" class="headerlink" title="5. 響應式設計"></a>5. 響應式設計</h3><p>Tailwind 內建響應式前綴，適用於不同裝置：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;text-base md:text-lg lg:text-xl xl:text-2xl&quot;</span>&gt;</span></span><br><span class="line">  響應式字體大小</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>text-base</code>：手機（預設）  </li>
-<li><code>md:text-lg</code>：平板（<code>min-width: 768px</code>）  </li>
-<li><code>lg:text-xl</code>：筆電（<code>min-width: 1024px</code>）  </li>
-<li><code>xl:text-2xl</code>：桌機（<code>min-width: 1280px</code>）</li>
-</ul>
-<hr>
-<h1 id="四、Tailwind-CSS-進階功能"><a href="#四、Tailwind-CSS-進階功能" class="headerlink" title="四、Tailwind CSS 進階功能"></a>四、Tailwind CSS 進階功能</h1><h3 id="1-自訂樣式"><a href="#1-自訂樣式" class="headerlink" title="1. 自訂樣式"></a>1. 自訂樣式</h3><p>可以透過 <code>tailwind.config.js</code> 來擴充自訂樣式，例如新增顏色：  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;</span><br><span class="line">      <span class="attr">colors</span>: &#123;</span><br><span class="line">        <span class="attr">primary</span>: <span class="string">&quot;#1E40AF&quot;</span>,</span><br><span class="line">        <span class="attr">secondary</span>: <span class="string">&quot;#9333EA&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>這樣就可以在 HTML 中使用 <code>text-primary</code> 或 <code>bg-secondary</code> 來套用顏色。  </p>
-<h3 id="2-使用-apply-簡化樣式"><a href="#2-使用-apply-簡化樣式" class="headerlink" title="2. 使用 @apply 簡化樣式"></a>2. 使用 @apply 簡化樣式</h3><p>在 CSS 檔案中使用 <code>@apply</code> 來重複使用 Tailwind 類別：  </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.btn</span> &#123;</span><br><span class="line">  <span class="keyword">@apply</span> bg-blue-<span class="number">500</span> text-white px-<span class="number">4</span> py-<span class="number">2</span> rounded;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然後在 HTML 中只需寫：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>按鈕<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="五、總結"><a href="#五、總結" class="headerlink" title="五、總結"></a>五、總結</h1><p>Tailwind CSS 透過工具類別的方式大幅提升開發效率，並提供響應式設計、靈活佈局與高度客製化的功能。對於前端開發者而言，熟悉 Tailwind CSS 可以讓 UI 設計更加直觀、高效，並減少對自訂 CSS 的依賴，進而提升開發維護性。</p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>CSS</tag>
-        <tag>Tailwind</tag>
-        <tag>Tailwind CSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>TypeScript 入門教學筆記 | 學習筆記</title>
     <url>/2024/12/02/learning-notes-typescript-intro-tutorial/</url>
     <content><![CDATA[<h1 id="一、什麼是-TypeScript？"><a href="#一、什麼是-TypeScript？" class="headerlink" title="一、什麼是 TypeScript？"></a>一、什麼是 TypeScript？</h1><p>TypeScript 是由 Microsoft 開發的 JavaScript 超集（Superset），提供靜態型別檢查（Static Type Checking），讓開發者在編譯時發現錯誤，提升程式碼的可靠性與可維護性。TypeScript 會被編譯為標準 JavaScript，並可以運行於任何支援 JavaScript 的環境，例如瀏覽器或 Node.js。  </p>
@@ -5063,6 +5104,114 @@
       </tags>
   </entry>
   <entry>
+    <title>Tailwind CSS 入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/30/learning-notes-tailwind-css-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="一、什麼是-Tailwind-CSS？"><a href="#一、什麼是-Tailwind-CSS？" class="headerlink" title="一、什麼是 Tailwind CSS？"></a>一、什麼是 Tailwind CSS？</h1><p>Tailwind CSS 是一款以「<code>工具類別優先</code>」（<code>Utility-First</code>）為核心設計理念的 CSS 框架，與傳統的 CSS 框架（如 Bootstrap、Bulma）不同，它不提供預設的 UI 元件，而是提供大量的樣式工具類別，讓開發者可以快速組合來建構 UI，而不需要額外撰寫自訂 CSS。  </p>
+<p>相較於傳統 CSS 框架，Tailwind CSS 具有以下幾個主要優勢：  </p>
+<ol>
+<li><strong>開發效率高</strong>：只需使用<code>類別組合</code>即可完成設計，無需撰寫額外 CSS。  </li>
+<li><strong>高度可客製化</strong>：可以透過設定檔調整顏色、字型、間距等設計。  </li>
+<li><strong>內建響應式支援</strong>：透過 <code>sm: md: lg: xl:</code> 等前綴輕鬆定義不同裝置的樣式。  </li>
+<li><strong>一致性強</strong>：開發團隊可以統一使用 Tailwind CSS 定義的設計樣式，減少 UI 風格不一致的問題。  </li>
+<li><strong>效能優化</strong>：可透過 PurgeCSS 移除未使用的樣式，確保最小化 CSS 檔案大小，提高網站載入速度。</li>
+</ol>
+<hr>
+<h1 id="二、安裝-Tailwind-CSS"><a href="#二、安裝-Tailwind-CSS" class="headerlink" title="二、安裝 Tailwind CSS"></a>二、安裝 Tailwind CSS</h1><p>Tailwind CSS 可以透過多種方式安裝，以下介紹幾種常見的方法：  </p>
+<h3 id="1-使用-CDN（適合快速測試）"><a href="#1-使用-CDN（適合快速測試）" class="headerlink" title="1. 使用 CDN（適合快速測試）"></a>1. 使用 CDN（適合快速測試）</h3><p>如果只是想快速體驗 Tailwind CSS，可以直接在 HTML 檔案中加入以下 <code>&lt;link&gt;</code>：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>這種方式適合小型專案或測試 Tailwind CSS 的功能，但不適合正式開發，因為無法使用客製化設定。  </p>
+<h3 id="2-透過-npm-安裝（推薦方式）"><a href="#2-透過-npm-安裝（推薦方式）" class="headerlink" title="2. 透過 npm 安裝（推薦方式）"></a>2. 透過 npm 安裝（推薦方式）</h3><p>在正式開發環境中，建議使用 npm 或 yarn 來安裝 Tailwind CSS，以便進行客製化設定。  </p>
+<p><strong>安裝 Tailwind CSS</strong>：  </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -D tailwindcss postcss autoprefixer</span><br><span class="line">npx tailwindcss init -p</span><br></pre></td></tr></table></figure>
+
+<p>執行上述指令後，會在專案根目錄中產生 <code>tailwind.config.js</code> 設定檔，可用來調整 Tailwind 的預設樣式。  </p>
+<p><strong>設定 Tailwind CSS</strong>：  </p>
+<p>開啟 <code>tailwind.config.js</code>，找到 <code>content</code> 設定，確保 Tailwind 只處理專案內的相關檔案，例如：  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">content</span>: [<span class="string">&quot;./src/**/*.&#123;html,js,ts,jsx,tsx&#125;&quot;</span>],</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;&#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>這樣 Tailwind CSS 就只會掃描 <code>src</code> 資料夾內的 HTML、JavaScript 和 TypeScript 檔案，避免產生不必要的 CSS。  </p>
+<p><strong>引入 Tailwind 樣式</strong>：  </p>
+<p>在 <code>src/index.css</code> 或 <code>styles.css</code> 檔案中加入以下內容，讓 Tailwind CSS 套用基礎樣式：  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@tailwind</span> base;</span><br><span class="line"><span class="keyword">@tailwind</span> components;</span><br><span class="line"><span class="keyword">@tailwind</span> utilities;</span><br></pre></td></tr></table></figure>
+
+<p>最後，在開發環境中執行 Tailwind 編譯指令：  </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch</span><br></pre></td></tr></table></figure>
+
+<p>這會自動監聽檔案變化，並輸出 Tailwind CSS 的樣式到 <code>output.css</code>。  </p>
+<hr>
+<h1 id="三、Tailwind-CSS-常用類別"><a href="#三、Tailwind-CSS-常用類別" class="headerlink" title="三、Tailwind CSS 常用類別"></a>三、Tailwind CSS 常用類別</h1><p>Tailwind CSS 提供大量的工具類別，以下介紹幾個常用的類別和應用範例。  </p>
+<h3 id="1-文字樣式"><a href="#1-文字樣式" class="headerlink" title="1. 文字樣式"></a>1. 文字樣式</h3><p>Tailwind 允許透過類別來快速調整字體大小、顏色、行距等樣式，例如：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text-lg font-bold text-gray-700 leading-relaxed&quot;</span>&gt;</span></span><br><span class="line">  這是一段示範文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>其中：  </p>
+<ul>
+<li><code>text-lg</code>：字體大小  </li>
+<li><code>font-bold</code>：加粗  </li>
+<li><code>text-gray-700</code>：深灰色文字  </li>
+<li><code>leading-relaxed</code>：行距較寬</li>
+</ul>
+<h3 id="2-背景與邊框"><a href="#2-背景與邊框" class="headerlink" title="2. 背景與邊框"></a>2. 背景與邊框</h3><p>可以使用背景色與邊框樣式來設計 UI，示例如下：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-500 text-white p-4 rounded-lg shadow-lg&quot;</span>&gt;</span></span><br><span class="line">  Tailwind CSS 範例</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>bg-blue-500</code>：藍色背景  </li>
+<li><code>text-white</code>：白色文字  </li>
+<li><code>p-4</code>：內距 16px  </li>
+<li><code>rounded-lg</code>：圓角  </li>
+<li><code>shadow-lg</code>：大型陰影</li>
+</ul>
+<h3 id="3-Flexbox-佈局"><a href="#3-Flexbox-佈局" class="headerlink" title="3. Flexbox 佈局"></a>3. Flexbox 佈局</h3><p>Tailwind CSS 提供完整的 Flexbox 工具類別，讓開發者能夠快速進行佈局：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;flex items-center justify-between p-4 bg-gray-200&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>左側內容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>右側內容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>flex</code>：啟用 Flexbox  </li>
+<li><code>items-center</code>：垂直置中  </li>
+<li><code>justify-between</code>：左右對齊</li>
+</ul>
+<h3 id="4-Grid-佈局"><a href="#4-Grid-佈局" class="headerlink" title="4. Grid 佈局"></a>4. Grid 佈局</h3><p>使用 Grid 來建立多欄式佈局：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid grid-cols-3 gap-4&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-red-200 p-4&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-green-200 p-4&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-200 p-4&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>grid</code>：啟用 Grid  </li>
+<li><code>grid-cols-3</code>：建立三欄  </li>
+<li><code>gap-4</code>：欄間距</li>
+</ul>
+<h3 id="5-響應式設計"><a href="#5-響應式設計" class="headerlink" title="5. 響應式設計"></a>5. 響應式設計</h3><p>Tailwind 內建響應式前綴，適用於不同裝置：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;text-base md:text-lg lg:text-xl xl:text-2xl&quot;</span>&gt;</span></span><br><span class="line">  響應式字體大小</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>text-base</code>：手機（預設）  </li>
+<li><code>md:text-lg</code>：平板（<code>min-width: 768px</code>）  </li>
+<li><code>lg:text-xl</code>：筆電（<code>min-width: 1024px</code>）  </li>
+<li><code>xl:text-2xl</code>：桌機（<code>min-width: 1280px</code>）</li>
+</ul>
+<hr>
+<h1 id="四、Tailwind-CSS-進階功能"><a href="#四、Tailwind-CSS-進階功能" class="headerlink" title="四、Tailwind CSS 進階功能"></a>四、Tailwind CSS 進階功能</h1><h3 id="1-自訂樣式"><a href="#1-自訂樣式" class="headerlink" title="1. 自訂樣式"></a>1. 自訂樣式</h3><p>可以透過 <code>tailwind.config.js</code> 來擴充自訂樣式，例如新增顏色：  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;</span><br><span class="line">      <span class="attr">colors</span>: &#123;</span><br><span class="line">        <span class="attr">primary</span>: <span class="string">&quot;#1E40AF&quot;</span>,</span><br><span class="line">        <span class="attr">secondary</span>: <span class="string">&quot;#9333EA&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>這樣就可以在 HTML 中使用 <code>text-primary</code> 或 <code>bg-secondary</code> 來套用顏色。  </p>
+<h3 id="2-使用-apply-簡化樣式"><a href="#2-使用-apply-簡化樣式" class="headerlink" title="2. 使用 @apply 簡化樣式"></a>2. 使用 @apply 簡化樣式</h3><p>在 CSS 檔案中使用 <code>@apply</code> 來重複使用 Tailwind 類別：  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.btn</span> &#123;</span><br><span class="line">  <span class="keyword">@apply</span> bg-blue-<span class="number">500</span> text-white px-<span class="number">4</span> py-<span class="number">2</span> rounded;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然後在 HTML 中只需寫：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>按鈕<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="五、總結"><a href="#五、總結" class="headerlink" title="五、總結"></a>五、總結</h1><p>Tailwind CSS 透過工具類別的方式大幅提升開發效率，並提供響應式設計、靈活佈局與高度客製化的功能。對於前端開發者而言，熟悉 Tailwind CSS 可以讓 UI 設計更加直觀、高效，並減少對自訂 CSS 的依賴，進而提升開發維護性。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>CSS</tag>
+        <tag>Tailwind</tag>
+        <tag>Tailwind CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue i18n 入門教學筆記 | 學習筆記</title>
     <url>/2024/11/13/learning-notes-vue-i18n-intro-tutorial/</url>
     <content><![CDATA[<h2 id="1-Vue-I18n-簡介"><a href="#1-Vue-I18n-簡介" class="headerlink" title="1. Vue I18n 簡介"></a>1. Vue I18n 簡介</h2><p>Vue i18n 是 Vue.js 的國際化（Internationalization）解決方案，可用於管理應用程式的多語系內容。當開發需要支援不同語言的應用時，Vue i18n 提供了一個高效的方式來處理翻譯、數字格式、日期格式等。</p>
@@ -5118,6 +5267,49 @@
         <tag>多語系</tag>
         <tag>多國語系</tag>
         <tag>在地化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue 正確新增或修改物件屬性入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/14/learning-notes-vue-set-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 Vue 2（Options API）中，<code>this.$set</code> 是用來<strong>在響應式系統中正確新增或修改物件屬性</strong>的方法。這對於<strong>動態新增屬性或修改陣列的指定索引值</strong>特別有用。</p>
+<hr>
+<h2 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(target, propertyName/index, value)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>target</code>：要修改的對象或陣列</li>
+<li><code>propertyName</code>（物件）或 <code>index</code>（陣列）</li>
+<li><code>value</code>：要設的值</li>
+</ul>
+<hr>
+<h2 id="為什麼需要-this-set？"><a href="#為什麼需要-this-set？" class="headerlink" title="為什麼需要 this.$set？"></a>為什麼需要 <code>this.$set</code>？</h2><p>Vue 2 的 reactivity（響應式系統）使用 <code>Object.defineProperty</code>，它<strong>無法偵測到新加的屬性</strong>或是直接對陣列用索引來賦值。</p>
+<p>例如，下面的程式碼是不會觸發畫面更新的：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">someObj</span>.<span class="property">newKey</span> = <span class="string">&#x27;value&#x27;</span>      <span class="comment">// 不會觸發更新</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">someArray</span>[<span class="number">1</span>] = <span class="string">&#x27;changed&#x27;</span>      <span class="comment">// 不會觸發更新</span></span><br></pre></td></tr></table></figure>
+
+<p>必須改成：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">someObj</span>, <span class="string">&#x27;newKey&#x27;</span>, <span class="string">&#x27;value&#x27;</span>)      <span class="comment">// 會觸發更新</span></span><br><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">someArray</span>, <span class="number">1</span>, <span class="string">&#x27;changed&#x27;</span>)         <span class="comment">// 會觸發更新</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="範例一：對物件新增屬性"><a href="#範例一：對物件新增屬性" class="headerlink" title="範例一：對物件新增屬性"></a>範例一：對物件新增屬性</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">user</span>: &#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;小明&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">user</span>, <span class="string">&#x27;age&#x27;</span>, <span class="number">30</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣才能讓 <code>user.age</code> 成為響應式屬性，更新時畫面才會重新渲染。</p>
+<hr>
+<h2 id="範例二：修改陣列中的值"><a href="#範例二：修改陣列中的值" class="headerlink" title="範例二：修改陣列中的值"></a>範例二：修改陣列中的值</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">items</span>: [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">methods</span>: &#123;</span><br><span class="line">  <span class="title function_">updateItem</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">items</span>, <span class="number">1</span>, <span class="string">&#x27;changed&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Vue-3-呢？"><a href="#Vue-3-呢？" class="headerlink" title="Vue 3 呢？"></a>Vue 3 呢？</h2><p>在 Vue 3 裡，因為 reactivity 系統改用 <strong>Proxy</strong>，所以可以直接新增或修改屬性，不需要 <code>this.$set</code> 了：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">someObj</span>.<span class="property">newKey</span> = <span class="string">&#x27;value&#x27;</span>   <span class="comment">// Vue 3 沒問題</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">someArray</span>[<span class="number">1</span>] = <span class="string">&#x27;changed&#x27;</span>   <span class="comment">// Vue 3 沒問題</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>如果你正在寫 Vue 2 的 Tic Tac Toe 遊戲，當你要動態更新棋盤的某個格子時，這樣做就是對的：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">board</span>[row], col, <span class="string">&#x27;X&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>這樣才能確保畫面能即時更新。</p>
+]]></content>
+      <tags>
+        <tag>vue</tag>
+        <tag>vue.js</tag>
+        <tag>this.$set</tag>
       </tags>
   </entry>
   <entry>
@@ -5230,49 +5422,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue 正確新增或修改物件屬性入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/14/learning-notes-vue-set-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 Vue 2（Options API）中，<code>this.$set</code> 是用來<strong>在響應式系統中正確新增或修改物件屬性</strong>的方法。這對於<strong>動態新增屬性或修改陣列的指定索引值</strong>特別有用。</p>
-<hr>
-<h2 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(target, propertyName/index, value)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>target</code>：要修改的對象或陣列</li>
-<li><code>propertyName</code>（物件）或 <code>index</code>（陣列）</li>
-<li><code>value</code>：要設的值</li>
-</ul>
-<hr>
-<h2 id="為什麼需要-this-set？"><a href="#為什麼需要-this-set？" class="headerlink" title="為什麼需要 this.$set？"></a>為什麼需要 <code>this.$set</code>？</h2><p>Vue 2 的 reactivity（響應式系統）使用 <code>Object.defineProperty</code>，它<strong>無法偵測到新加的屬性</strong>或是直接對陣列用索引來賦值。</p>
-<p>例如，下面的程式碼是不會觸發畫面更新的：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">someObj</span>.<span class="property">newKey</span> = <span class="string">&#x27;value&#x27;</span>      <span class="comment">// 不會觸發更新</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">someArray</span>[<span class="number">1</span>] = <span class="string">&#x27;changed&#x27;</span>      <span class="comment">// 不會觸發更新</span></span><br></pre></td></tr></table></figure>
-
-<p>必須改成：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">someObj</span>, <span class="string">&#x27;newKey&#x27;</span>, <span class="string">&#x27;value&#x27;</span>)      <span class="comment">// 會觸發更新</span></span><br><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">someArray</span>, <span class="number">1</span>, <span class="string">&#x27;changed&#x27;</span>)         <span class="comment">// 會觸發更新</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="範例一：對物件新增屬性"><a href="#範例一：對物件新增屬性" class="headerlink" title="範例一：對物件新增屬性"></a>範例一：對物件新增屬性</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">user</span>: &#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;小明&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">user</span>, <span class="string">&#x27;age&#x27;</span>, <span class="number">30</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這樣才能讓 <code>user.age</code> 成為響應式屬性，更新時畫面才會重新渲染。</p>
-<hr>
-<h2 id="範例二：修改陣列中的值"><a href="#範例二：修改陣列中的值" class="headerlink" title="範例二：修改陣列中的值"></a>範例二：修改陣列中的值</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">items</span>: [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">methods</span>: &#123;</span><br><span class="line">  <span class="title function_">updateItem</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">items</span>, <span class="number">1</span>, <span class="string">&#x27;changed&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Vue-3-呢？"><a href="#Vue-3-呢？" class="headerlink" title="Vue 3 呢？"></a>Vue 3 呢？</h2><p>在 Vue 3 裡，因為 reactivity 系統改用 <strong>Proxy</strong>，所以可以直接新增或修改屬性，不需要 <code>this.$set</code> 了：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">someObj</span>.<span class="property">newKey</span> = <span class="string">&#x27;value&#x27;</span>   <span class="comment">// Vue 3 沒問題</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">someArray</span>[<span class="number">1</span>] = <span class="string">&#x27;changed&#x27;</span>   <span class="comment">// Vue 3 沒問題</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>如果你正在寫 Vue 2 的 Tic Tac Toe 遊戲，當你要動態更新棋盤的某個格子時，這樣做就是對的：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">board</span>[row], col, <span class="string">&#x27;X&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>這樣才能確保畫面能即時更新。</p>
-]]></content>
-      <tags>
-        <tag>vue</tag>
-        <tag>vue.js</tag>
-        <tag>this.$set</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記</title>
     <url>/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/</url>
     <content><![CDATA[<h1 id="Components-元件"><a href="#Components-元件" class="headerlink" title="Components 元件"></a>Components 元件</h1><p>到目前為止，我們只使用了一個單一的元件。實際的 Vue 應用程式通常是由巢狀元件所組成的。</p>
@@ -5350,34 +5499,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [13] - Slots 插槽 | 學習筆記</title>
-    <url>/2021/02/13/learning-notes-vuejs-3-official-tutorial-13-slots/</url>
-    <content><![CDATA[<h1 id="Slots-插槽"><a href="#Slots-插槽" class="headerlink" title="Slots 插槽"></a>Slots 插槽</h1><p>除了透過 Props 傳遞資料外，父元件還可以透過插槽將模板片段傳遞給子元件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp&gt;</span><br><span class="line">    這是一些插槽內容！</span><br><span class="line">  &lt;/ChildComp&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<p>在子元件中，可以使用 <code>&lt;slot&gt;</code> 元素作為插槽來渲染父元件傳遞的內容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 子元件的模板 --&gt;</span><br><span class="line">  &lt;slot /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<p>插槽內的內容會被視為「預設內容」：當父元件沒有傳遞插槽內容時，會顯示這些預設內容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;slot&gt;預設內容&lt;/slot&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<p>目前我們尚未向 <code>&lt;ChildComp&gt;</code> 傳遞任何插槽內容，因此你應該會看到預設內容。現在試著利用父元件的 <code>msg</code> 狀態，為子元件提供一些插槽內容吧！</p>
-<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> msg = <span class="title function_">ref</span>(<span class="string">&#x27;from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span>&gt;</span>Message: &#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">ChildComp</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> msg = <span class="title function_">ref</span>(<span class="string">&#x27;from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span>&gt;</span>Message: &#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">ChildComp</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [2] - Attribute Bindings 屬性綁定 | 學習筆記</title>
     <url>/2021/02/01/learning-notes-vuejs-3-official-tutorial-2-attribute-bindings/</url>
     <content><![CDATA[<p><strong>Attribute Bindings 屬性綁定</strong><br>在 Vue 中，Mustache 語法只能用於文字插值。要將屬性綁定到動態值，我們需要使用 <code>v-bind</code> 指令：</p>
@@ -5421,6 +5542,34 @@
 <hr>
 <p>現在，我們可以試著自己實作 <code>increment</code> 函式，並使用 <code>v-on</code> 將它綁定到按鈕。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [13] - Slots 插槽 | 學習筆記</title>
+    <url>/2021/02/13/learning-notes-vuejs-3-official-tutorial-13-slots/</url>
+    <content><![CDATA[<h1 id="Slots-插槽"><a href="#Slots-插槽" class="headerlink" title="Slots 插槽"></a>Slots 插槽</h1><p>除了透過 Props 傳遞資料外，父元件還可以透過插槽將模板片段傳遞給子元件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp&gt;</span><br><span class="line">    這是一些插槽內容！</span><br><span class="line">  &lt;/ChildComp&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在子元件中，可以使用 <code>&lt;slot&gt;</code> 元素作為插槽來渲染父元件傳遞的內容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 子元件的模板 --&gt;</span><br><span class="line">  &lt;slot /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>插槽內的內容會被視為「預設內容」：當父元件沒有傳遞插槽內容時，會顯示這些預設內容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;slot&gt;預設內容&lt;/slot&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>目前我們尚未向 <code>&lt;ChildComp&gt;</code> 傳遞任何插槽內容，因此你應該會看到預設內容。現在試著利用父元件的 <code>msg</code> 狀態，為子元件提供一些插槽內容吧！</p>
+<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> msg = <span class="title function_">ref</span>(<span class="string">&#x27;from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span>&gt;</span>Message: &#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">ChildComp</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> msg = <span class="title function_">ref</span>(<span class="string">&#x27;from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span>&gt;</span>Message: &#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">ChildComp</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -5673,97 +5822,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Web 資訊安全入門教學筆記 | 學習筆記</title>
-    <url>/2024/10/16/learning-notes-web-security-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在現代網頁應用中，資安問題層出不窮，從簡單的跨站攻擊（XSS）到複雜的憑證竊取、身份偽造（CSRF），都可能導致個資外洩、系統遭入侵甚至企業商譽受損。</p>
-<p>本篇筆記將從實務角度出發，介紹幾種常見 Web 資安風險及其防範策略，讓你能以最基本的方式保護網站與使用者安全。</p>
-<hr>
-<h2 id="一、常見-Web-資安威脅類型"><a href="#一、常見-Web-資安威脅類型" class="headerlink" title="一、常見 Web 資安威脅類型"></a>一、常見 Web 資安威脅類型</h2><h3 id="1-XSS（Cross-Site-Scripting，跨站腳本攻擊）"><a href="#1-XSS（Cross-Site-Scripting，跨站腳本攻擊）" class="headerlink" title="1. XSS（Cross-Site Scripting，跨站腳本攻擊）"></a>1. XSS（Cross-Site Scripting，跨站腳本攻擊）</h3><p><strong>原理</strong>：攻擊者將惡意腳本注入至網站，當其他使用者瀏覽該頁面時，惡意腳本便會在其瀏覽器上執行，例如竊取 cookie、冒充使用者操作等。</p>
-<h3 id="實例："><a href="#實例：" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 攻擊者輸入的留言內容 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="title function_">alert</span>(<span class="string">&#x27;你被 XSS 攻擊了&#x27;</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>若網站未正確處理輸入，這段 JavaScript 就會直接被執行。</p>
-<h3 id="防範方式："><a href="#防範方式：" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>對所有輸入進行 <strong>轉義（Escape）</strong></li>
-<li>使用前端框架自動編碼機制（如 React 的 JSX）</li>
-<li>避免使用 <code>innerHTML</code> 插入未清洗的資料</li>
-</ul>
-<h4 id="範例（JavaScript-轉義文字）："><a href="#範例（JavaScript-轉義文字）：" class="headerlink" title="範例（JavaScript 轉義文字）："></a>範例（JavaScript 轉義文字）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">escapeHtml</span>(<span class="params">str</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> str</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&amp;/g</span>, <span class="string">&quot;&amp;amp;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&lt;/g</span>, <span class="string">&quot;&amp;lt;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&gt;/g</span>, <span class="string">&quot;&amp;gt;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&quot;/g</span>, <span class="string">&quot;&amp;quot;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&#x27;/g</span>, <span class="string">&quot;&amp;#039;&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="2-CSRF（Cross-Site-Request-Forgery，跨站請求偽造）"><a href="#2-CSRF（Cross-Site-Request-Forgery，跨站請求偽造）" class="headerlink" title="2. CSRF（Cross-Site Request Forgery，跨站請求偽造）"></a>2. CSRF（Cross-Site Request Forgery，跨站請求偽造）</h3><p><strong>原理</strong>：攻擊者引導使用者點擊惡意連結或載入圖片，使其在未察覺情況下對已登入的網站發送請求，進而竄改資料或觸發操作。</p>
-<h3 id="實例：-1"><a href="#實例：-1" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 攻擊者網站中隱藏圖片，觸發某網站的轉帳請求 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://bank.com/transfer?amount=1000&amp;to=attacker&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>如果使用者已登入 <code>bank.com</code> 且未防範 CSRF，就可能無意間轉帳。</p>
-<h3 id="防範方式：-1"><a href="#防範方式：-1" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>後端驗證 <strong>CSRF Token</strong></li>
-<li>使用 <strong>SameSite Cookie 屬性</strong></li>
-<li>僅允許 POST &#x2F; PATCH &#x2F; DELETE 操作變更狀態</li>
-<li>驗證 Referer &#x2F; Origin 標頭（有風險）</li>
-</ul>
-<h4 id="範例（Express-CSRF-Token）："><a href="#範例（Express-CSRF-Token）：" class="headerlink" title="範例（Express + CSRF Token）："></a>範例（Express + CSRF Token）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> csrf = <span class="built_in">require</span>(<span class="string">&quot;csurf&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> cookieParser = <span class="built_in">require</span>(<span class="string">&quot;cookie-parser&quot;</span>);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">cookieParser</span>());</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">csrf</span>(&#123; <span class="attr">cookie</span>: <span class="literal">true</span> &#125;));</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&quot;/form&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&quot;form&quot;</span>, &#123; <span class="attr">csrfToken</span>: req.<span class="title function_">csrfToken</span>() &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="3-SQL-Injection（SQL-注入）"><a href="#3-SQL-Injection（SQL-注入）" class="headerlink" title="3. SQL Injection（SQL 注入）"></a>3. SQL Injection（SQL 注入）</h3><p><strong>原理</strong>：透過惡意輸入拼接 SQL 查詢語句，導致資料庫查詢異常，甚至刪除資料。</p>
-<h3 id="實例：-2"><a href="#實例：-2" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 假設未使用參數化查詢</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> username <span class="operator">=</span> <span class="string">&#x27;&#x27;</span> <span class="keyword">OR</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<p>攻擊者輸入 <code>&#39; OR 1=1; --</code> 可繞過認證邏輯，取得所有帳戶資料。</p>
-<h3 id="防範方式：-2"><a href="#防範方式：-2" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>使用 ORM 或預處理語句（Prepared Statement）</li>
-<li>不拼接 SQL 字串，改用參數綁定</li>
-<li>限制資料庫帳號權限</li>
-</ul>
-<h4 id="範例（Node-js-MySQL）："><a href="#範例（Node-js-MySQL）：" class="headerlink" title="範例（Node.js + MySQL）："></a>範例（Node.js + MySQL）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> username = req.<span class="property">body</span>.<span class="property">username</span>;</span><br><span class="line"><span class="keyword">const</span> password = req.<span class="property">body</span>.<span class="property">password</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> query = <span class="string">&quot;SELECT * FROM users WHERE username = ? AND password = ?&quot;</span>;</span><br><span class="line">connection.<span class="title function_">query</span>(query, [username, password], <span class="keyword">function</span> (<span class="params">err, results</span>) &#123;</span><br><span class="line">  <span class="comment">// 安全地查詢</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="4-資料傳輸未加密（缺少-HTTPS）"><a href="#4-資料傳輸未加密（缺少-HTTPS）" class="headerlink" title="4. 資料傳輸未加密（缺少 HTTPS）"></a>4. 資料傳輸未加密（缺少 HTTPS）</h3><p><strong>原理</strong>：若網站使用 HTTP，使用者資料（如帳號密碼、金流資訊）在傳輸過程中可能被中間人攔截（Man-in-the-Middle attack）。</p>
-<h3 id="防範方式：-3"><a href="#防範方式：-3" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>強制使用 HTTPS（導入憑證）</li>
-<li>使用 HSTS（HTTP Strict Transport Security）</li>
-<li>移除 HTTP 存取（使用 301 重導）</li>
-</ul>
-<h4 id="範例（NGINX-強制-HTTPS）："><a href="#範例（NGINX-強制-HTTPS）：" class="headerlink" title="範例（NGINX 強制 HTTPS）："></a>範例（NGINX 強制 HTTPS）：</h4><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">  <span class="attribute">server_name</span> example.com;</span><br><span class="line">  <span class="attribute">return</span> <span class="number">301</span> https://<span class="variable">$host</span><span class="variable">$request_uri</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="5-檔案上傳風險"><a href="#5-檔案上傳風險" class="headerlink" title="5. 檔案上傳風險"></a>5. 檔案上傳風險</h3><p><strong>原理</strong>：攻擊者透過檔案上傳功能傳入惡意腳本（如 <code>.php</code>、<code>.jsp</code>），若伺服器未阻擋，可能導致遠端代碼執行。</p>
-<h3 id="防範方式：-4"><a href="#防範方式：-4" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>限制可上傳的檔案類型與副檔名</li>
-<li>不讓使用者可直接存取上傳目錄</li>
-<li>使用 UUID 改名，避免原檔名執行</li>
-</ul>
-<hr>
-<h2 id="附加安全性強化機制"><a href="#附加安全性強化機制" class="headerlink" title="附加安全性強化機制"></a>附加安全性強化機制</h2><h3 id="HTTP-安全標頭設定（Security-Headers）"><a href="#HTTP-安全標頭設定（Security-Headers）" class="headerlink" title="HTTP 安全標頭設定（Security Headers）"></a>HTTP 安全標頭設定（Security Headers）</h3><p>使用如 Helmet（Express.js 中間件）快速加入以下標頭：</p>
-<ul>
-<li><code>Content-Security-Policy</code>：防止 XSS 和資源注入</li>
-<li><code>X-Frame-Options</code>：防止點擊劫持（Clickjacking）</li>
-<li><code>X-Content-Type-Options</code>：避免 MIME 類型混淆</li>
-<li><code>Strict-Transport-Security</code>：強制 HTTPS</li>
-</ul>
-<h4 id="範例（Node-js-Helmet）："><a href="#範例（Node-js-Helmet）：" class="headerlink" title="範例（Node.js + Helmet）："></a>範例（Node.js + Helmet）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> helmet = <span class="built_in">require</span>(<span class="string">&quot;helmet&quot;</span>);</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">helmet</span>());</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="總結與建議實作順序"><a href="#總結與建議實作順序" class="headerlink" title="總結與建議實作順序"></a>總結與建議實作順序</h2><p>如果剛開始建立 Web 專案，可以按照以下步驟檢查安全性：</p>
-<ol>
-<li>輸入驗證與輸出轉義，防範 XSS</li>
-<li>加入 CSRF Token 機制</li>
-<li>資料庫查詢全面使用預處理語句</li>
-<li>部署 HTTPS 並強制重導</li>
-<li>使用 Helmet 加強安全標頭</li>
-<li>定期檢查依賴套件漏洞（如 <code>npm audit</code>）</li>
-</ol>
-<p>資訊安全並非一勞永逸，而是一種持續維護的工作。建議我們可以將資安意識融入日常開發流程中，隨時更新資安知識與工具。</p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>web</tag>
-        <tag>資訊安全</tag>
-        <tag>Web 資訊安全</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Web 前端效能優化入門教學筆記 | 學習筆記</title>
     <url>/2024/10/16/learning-notes-web-client-performance-optimization-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在網頁開發中，效能優化是一個不可忽視的重要課題。無論是企業網站、單頁應用（SPA），或是電商平台，效能表現都直接影響使用者體驗與轉換率。</p>
@@ -5863,6 +5921,97 @@
       </tags>
   </entry>
   <entry>
+    <title>Web 資訊安全入門教學筆記 | 學習筆記</title>
+    <url>/2024/10/16/learning-notes-web-security-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在現代網頁應用中，資安問題層出不窮，從簡單的跨站攻擊（XSS）到複雜的憑證竊取、身份偽造（CSRF），都可能導致個資外洩、系統遭入侵甚至企業商譽受損。</p>
+<p>本篇筆記將從實務角度出發，介紹幾種常見 Web 資安風險及其防範策略，讓你能以最基本的方式保護網站與使用者安全。</p>
+<hr>
+<h2 id="一、常見-Web-資安威脅類型"><a href="#一、常見-Web-資安威脅類型" class="headerlink" title="一、常見 Web 資安威脅類型"></a>一、常見 Web 資安威脅類型</h2><h3 id="1-XSS（Cross-Site-Scripting，跨站腳本攻擊）"><a href="#1-XSS（Cross-Site-Scripting，跨站腳本攻擊）" class="headerlink" title="1. XSS（Cross-Site Scripting，跨站腳本攻擊）"></a>1. XSS（Cross-Site Scripting，跨站腳本攻擊）</h3><p><strong>原理</strong>：攻擊者將惡意腳本注入至網站，當其他使用者瀏覽該頁面時，惡意腳本便會在其瀏覽器上執行，例如竊取 cookie、冒充使用者操作等。</p>
+<h3 id="實例："><a href="#實例：" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 攻擊者輸入的留言內容 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="title function_">alert</span>(<span class="string">&#x27;你被 XSS 攻擊了&#x27;</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>若網站未正確處理輸入，這段 JavaScript 就會直接被執行。</p>
+<h3 id="防範方式："><a href="#防範方式：" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>對所有輸入進行 <strong>轉義（Escape）</strong></li>
+<li>使用前端框架自動編碼機制（如 React 的 JSX）</li>
+<li>避免使用 <code>innerHTML</code> 插入未清洗的資料</li>
+</ul>
+<h4 id="範例（JavaScript-轉義文字）："><a href="#範例（JavaScript-轉義文字）：" class="headerlink" title="範例（JavaScript 轉義文字）："></a>範例（JavaScript 轉義文字）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">escapeHtml</span>(<span class="params">str</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> str</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&amp;/g</span>, <span class="string">&quot;&amp;amp;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&lt;/g</span>, <span class="string">&quot;&amp;lt;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&gt;/g</span>, <span class="string">&quot;&amp;gt;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&quot;/g</span>, <span class="string">&quot;&amp;quot;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&#x27;/g</span>, <span class="string">&quot;&amp;#039;&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-CSRF（Cross-Site-Request-Forgery，跨站請求偽造）"><a href="#2-CSRF（Cross-Site-Request-Forgery，跨站請求偽造）" class="headerlink" title="2. CSRF（Cross-Site Request Forgery，跨站請求偽造）"></a>2. CSRF（Cross-Site Request Forgery，跨站請求偽造）</h3><p><strong>原理</strong>：攻擊者引導使用者點擊惡意連結或載入圖片，使其在未察覺情況下對已登入的網站發送請求，進而竄改資料或觸發操作。</p>
+<h3 id="實例：-1"><a href="#實例：-1" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 攻擊者網站中隱藏圖片，觸發某網站的轉帳請求 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://bank.com/transfer?amount=1000&amp;to=attacker&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果使用者已登入 <code>bank.com</code> 且未防範 CSRF，就可能無意間轉帳。</p>
+<h3 id="防範方式：-1"><a href="#防範方式：-1" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>後端驗證 <strong>CSRF Token</strong></li>
+<li>使用 <strong>SameSite Cookie 屬性</strong></li>
+<li>僅允許 POST &#x2F; PATCH &#x2F; DELETE 操作變更狀態</li>
+<li>驗證 Referer &#x2F; Origin 標頭（有風險）</li>
+</ul>
+<h4 id="範例（Express-CSRF-Token）："><a href="#範例（Express-CSRF-Token）：" class="headerlink" title="範例（Express + CSRF Token）："></a>範例（Express + CSRF Token）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> csrf = <span class="built_in">require</span>(<span class="string">&quot;csurf&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> cookieParser = <span class="built_in">require</span>(<span class="string">&quot;cookie-parser&quot;</span>);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">cookieParser</span>());</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">csrf</span>(&#123; <span class="attr">cookie</span>: <span class="literal">true</span> &#125;));</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&quot;/form&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&quot;form&quot;</span>, &#123; <span class="attr">csrfToken</span>: req.<span class="title function_">csrfToken</span>() &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-SQL-Injection（SQL-注入）"><a href="#3-SQL-Injection（SQL-注入）" class="headerlink" title="3. SQL Injection（SQL 注入）"></a>3. SQL Injection（SQL 注入）</h3><p><strong>原理</strong>：透過惡意輸入拼接 SQL 查詢語句，導致資料庫查詢異常，甚至刪除資料。</p>
+<h3 id="實例：-2"><a href="#實例：-2" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 假設未使用參數化查詢</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> username <span class="operator">=</span> <span class="string">&#x27;&#x27;</span> <span class="keyword">OR</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>攻擊者輸入 <code>&#39; OR 1=1; --</code> 可繞過認證邏輯，取得所有帳戶資料。</p>
+<h3 id="防範方式：-2"><a href="#防範方式：-2" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>使用 ORM 或預處理語句（Prepared Statement）</li>
+<li>不拼接 SQL 字串，改用參數綁定</li>
+<li>限制資料庫帳號權限</li>
+</ul>
+<h4 id="範例（Node-js-MySQL）："><a href="#範例（Node-js-MySQL）：" class="headerlink" title="範例（Node.js + MySQL）："></a>範例（Node.js + MySQL）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> username = req.<span class="property">body</span>.<span class="property">username</span>;</span><br><span class="line"><span class="keyword">const</span> password = req.<span class="property">body</span>.<span class="property">password</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> query = <span class="string">&quot;SELECT * FROM users WHERE username = ? AND password = ?&quot;</span>;</span><br><span class="line">connection.<span class="title function_">query</span>(query, [username, password], <span class="keyword">function</span> (<span class="params">err, results</span>) &#123;</span><br><span class="line">  <span class="comment">// 安全地查詢</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="4-資料傳輸未加密（缺少-HTTPS）"><a href="#4-資料傳輸未加密（缺少-HTTPS）" class="headerlink" title="4. 資料傳輸未加密（缺少 HTTPS）"></a>4. 資料傳輸未加密（缺少 HTTPS）</h3><p><strong>原理</strong>：若網站使用 HTTP，使用者資料（如帳號密碼、金流資訊）在傳輸過程中可能被中間人攔截（Man-in-the-Middle attack）。</p>
+<h3 id="防範方式：-3"><a href="#防範方式：-3" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>強制使用 HTTPS（導入憑證）</li>
+<li>使用 HSTS（HTTP Strict Transport Security）</li>
+<li>移除 HTTP 存取（使用 301 重導）</li>
+</ul>
+<h4 id="範例（NGINX-強制-HTTPS）："><a href="#範例（NGINX-強制-HTTPS）：" class="headerlink" title="範例（NGINX 強制 HTTPS）："></a>範例（NGINX 強制 HTTPS）：</h4><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">  <span class="attribute">server_name</span> example.com;</span><br><span class="line">  <span class="attribute">return</span> <span class="number">301</span> https://<span class="variable">$host</span><span class="variable">$request_uri</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="5-檔案上傳風險"><a href="#5-檔案上傳風險" class="headerlink" title="5. 檔案上傳風險"></a>5. 檔案上傳風險</h3><p><strong>原理</strong>：攻擊者透過檔案上傳功能傳入惡意腳本（如 <code>.php</code>、<code>.jsp</code>），若伺服器未阻擋，可能導致遠端代碼執行。</p>
+<h3 id="防範方式：-4"><a href="#防範方式：-4" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>限制可上傳的檔案類型與副檔名</li>
+<li>不讓使用者可直接存取上傳目錄</li>
+<li>使用 UUID 改名，避免原檔名執行</li>
+</ul>
+<hr>
+<h2 id="附加安全性強化機制"><a href="#附加安全性強化機制" class="headerlink" title="附加安全性強化機制"></a>附加安全性強化機制</h2><h3 id="HTTP-安全標頭設定（Security-Headers）"><a href="#HTTP-安全標頭設定（Security-Headers）" class="headerlink" title="HTTP 安全標頭設定（Security Headers）"></a>HTTP 安全標頭設定（Security Headers）</h3><p>使用如 Helmet（Express.js 中間件）快速加入以下標頭：</p>
+<ul>
+<li><code>Content-Security-Policy</code>：防止 XSS 和資源注入</li>
+<li><code>X-Frame-Options</code>：防止點擊劫持（Clickjacking）</li>
+<li><code>X-Content-Type-Options</code>：避免 MIME 類型混淆</li>
+<li><code>Strict-Transport-Security</code>：強制 HTTPS</li>
+</ul>
+<h4 id="範例（Node-js-Helmet）："><a href="#範例（Node-js-Helmet）：" class="headerlink" title="範例（Node.js + Helmet）："></a>範例（Node.js + Helmet）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> helmet = <span class="built_in">require</span>(<span class="string">&quot;helmet&quot;</span>);</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">helmet</span>());</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="總結與建議實作順序"><a href="#總結與建議實作順序" class="headerlink" title="總結與建議實作順序"></a>總結與建議實作順序</h2><p>如果剛開始建立 Web 專案，可以按照以下步驟檢查安全性：</p>
+<ol>
+<li>輸入驗證與輸出轉義，防範 XSS</li>
+<li>加入 CSRF Token 機制</li>
+<li>資料庫查詢全面使用預處理語句</li>
+<li>部署 HTTPS 並強制重導</li>
+<li>使用 Helmet 加強安全標頭</li>
+<li>定期檢查依賴套件漏洞（如 <code>npm audit</code>）</li>
+</ol>
+<p>資訊安全並非一勞永逸，而是一種持續維護的工作。建議我們可以將資安意識融入日常開發流程中，隨時更新資安知識與工具。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>web</tag>
+        <tag>資訊安全</tag>
+        <tag>Web 資訊安全</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>WebSocket 入門教學筆記 | 學習筆記</title>
     <url>/2024/07/10/learning-notes-websocket-intro-tutorial/</url>
     <content><![CDATA[<h1 id="1-WebSocket-簡介"><a href="#1-WebSocket-簡介" class="headerlink" title="1. WebSocket 簡介"></a>1. WebSocket 簡介</h1><p><code>WebSocket</code> 是一種全雙工通訊協議，允許伺服器與客戶端建立持久連線，並在兩者之間即時傳輸數據。相較於傳統的 HTTP 請求-回應模式，WebSocket 提供了更低延遲的通訊方式。</p>
@@ -5943,9 +6092,9 @@
       </tags>
   </entry>
   <entry>
-    <title>常見軟體工程師技術面試及學習資源整理</title>
+    <title>常見軟體工程師/Web 開發技術面試及學習資源整理</title>
     <url>/2023/03/22/software-engineer-technical-interview-resources/</url>
-    <content><![CDATA[<p>以下彙整常見 Web 網頁開發工具和資源整理：</p>
+    <content><![CDATA[<p>以下彙整常見軟體工程師技術面試及學習資源整理：</p>
 <h2 id="程式解題網站"><a href="#程式解題網站" class="headerlink" title="程式解題網站"></a>程式解題網站</h2><ol>
 <li><a href="https://coderbyte.com/developers">coderbyte</a></li>
 <li><a href="https://www.codility.com/">codility</a></li>
@@ -5963,6 +6112,7 @@
 <li><a href="https://www.udemy.com/">udemy</a></li>
 <li><a href="https://www.freecodecamp.org/">freecodecamp</a></li>
 <li><a href="https://developer.mozilla.org/en-US/curriculum/">MDN Curriculum</a></li>
+<li><a href="https://www.frontendmentor.io/">frontendmentor</a></li>
 </ol>
 <h2 id="常見程式題目"><a href="#常見程式題目" class="headerlink" title="常見程式題目"></a>常見程式題目</h2><ol>
 <li><a href="https://github.com/lydiahallie/javascript-questions">lydiahallie JavaScript Questions</a></li>
