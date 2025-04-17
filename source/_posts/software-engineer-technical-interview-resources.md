@@ -1,5 +1,5 @@
 ---
-title: 常見軟體工程師技術面試及學習資源整理
+title: 常見軟體工程師/Web 開發技術面試及學習資源整理
 date: 2023-03-22 11:33:41
 author: kdchang
 tags: 
@@ -16,7 +16,7 @@ tags:
 
 ---
 
-以下彙整常見 Web 網頁開發工具和資源整理：
+以下彙整常見軟體工程師技術面試及學習資源整理：
 
 ## 程式解題網站
 1. [coderbyte](https://coderbyte.com/developers)
@@ -35,6 +35,7 @@ tags:
 5. [udemy](https://www.udemy.com/)
 6. [freecodecamp](https://www.freecodecamp.org/)
 7. [MDN Curriculum](https://developer.mozilla.org/en-US/curriculum/)
+8. [frontendmentor](https://www.frontendmentor.io/)
 
 ## 常見程式題目
 1. [lydiahallie JavaScript Questions](https://github.com/lydiahallie/javascript-questions)
