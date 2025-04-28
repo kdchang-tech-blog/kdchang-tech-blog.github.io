@@ -26,11 +26,11 @@
     
     <title>
         
-          Django「一對一」、「一對多」、「多對多」關聯入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          Git 入門教學筆記：從零開始學版本控制 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/12/01/learning-notes-python-django-db-mapping-intro-tutorial/">
+    <link rel="canonical" href="https://tech.kdchang.net/2024/12/21/learning-notes-git-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="Django「一對一」、「一對多」、「多對多」關聯入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="Django「一對一」、「一對多」、「多對多」關聯入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="Git 入門教學筆記：從零開始學版本控制 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="Git 入門教學筆記：從零開始學版本控制 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,23 +199,19 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>Django「一對一」、「一對多」、「多對多」關聯入門教學筆記 | 學習筆記</h1>
+                    <h1>Git 入門教學筆記：從零開始學版本控制 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2024-12-01
+                        2024-12-21
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#python" title="python">python</a>
+                          <a class="tag" href="/tags/#Github" title="Github">Github</a>
                         
-                          <a class="tag" href="/tags/#Django" title="Django">Django</a>
+                          <a class="tag" href="/tags/#Git" title="Git">Git</a>
                         
-                          <a class="tag" href="/tags/#一對一" title="一對一">一對一</a>
-                        
-                          <a class="tag" href="/tags/#一對多" title="一對多">一對多</a>
-                        
-                          <a class="tag" href="/tags/#多對多" title="多對多">多對多</a>
+                          <a class="tag" href="/tags/#版本控制" title="版本控制">版本控制</a>
                         
 
                     </div>
@@ -241,52 +237,98 @@
                 </div>
                 <br>
                 <div>
-                    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>當你在學 Django 或資料庫設計時，常會遇到「一對一」、「一對多」、「多對多」這三種關聯（Relationship）。這些是資料庫中表與表之間的關係，下面用簡單的例子幫你搞懂它們的差異：</p>
+                    <h2 id="為什麼要學-Git？"><a href="#為什麼要學-Git？" class="headerlink" title="為什麼要學 Git？"></a>為什麼要學 Git？</h2><p>在軟體開發中，版本控制是一個不可或缺的工具。Git 是目前最流行的版本控制系統，它能幫助你：</p>
+<ul>
+<li>記錄每次修改的歷史紀錄</li>
+<li>回復到任一個過去的狀態</li>
+<li>多人協作開發不衝突</li>
+<li>管理分支進行實驗性開發</li>
+</ul>
+<p>無論是獨立開發者、團隊協作，還是參與開源專案，Git 都是你的好夥伴。</p>
 <hr>
-<h2 id="一對一（One-to-One）"><a href="#一對一（One-to-One）" class="headerlink" title="一對一（One-to-One）"></a>一對一（One-to-One）</h2><h3 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h3><p>一個資料只對應另一個資料，彼此之間是唯一配對的關係。</p>
-<h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><p>每個人都有一張身份證 → 一個人對應一張身份證，一張身份證只對應一個人。</p>
-<h3 id="Django-實作："><a href="#Django-實作：" class="headerlink" title="Django 實作："></a>Django 實作：</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>(models.Model):</span><br><span class="line">    name = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">IDCard</span>(models.Model):</span><br><span class="line">    number = models.CharField(max_length=<span class="number">20</span>)</span><br><span class="line">    owner = models.OneToOneField(Person, on_delete=models.CASCADE)</span><br></pre></td></tr></table></figure>
+<h2 id="一、安裝-Git"><a href="#一、安裝-Git" class="headerlink" title="一、安裝 Git"></a>一、安裝 Git</h2><h3 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+
+<h3 id="Ubuntu-x2F-Debian"><a href="#Ubuntu-x2F-Debian" class="headerlink" title="Ubuntu &#x2F; Debian"></a>Ubuntu &#x2F; Debian</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install git</span><br></pre></td></tr></table></figure>
+
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>請至官網下載安裝：<a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com</a></p>
+<hr>
+<h2 id="二、基本設定"><a href="#二、基本設定" class="headerlink" title="二、基本設定"></a>二、基本設定</h2><p>第一次使用 Git 前，請先設定你的名稱與 Email（這會記錄在每次提交的資訊中）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的名字&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;you@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>你也可以檢查目前的設定：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="一對多（One-to-Many）"><a href="#一對多（One-to-Many）" class="headerlink" title="一對多（One-to-Many）"></a>一對多（One-to-Many）</h2><h3 id="概念：-1"><a href="#概念：-1" class="headerlink" title="概念："></a>概念：</h3><p>一筆資料可以對應到多筆資料，但每一筆資料只能對應回唯一一筆上層資料。</p>
-<h3 id="例子：-1"><a href="#例子：-1" class="headerlink" title="例子："></a>例子：</h3><p>一個作者可以寫很多本書 → 一個作者對應多本書，但一本書只會有一個作者。</p>
-<h3 id="Django-實作：-1"><a href="#Django-實作：-1" class="headerlink" title="Django 實作："></a>Django 實作：</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Author</span>(models.Model):</span><br><span class="line">    name = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Book</span>(models.Model):</span><br><span class="line">    title = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line">    author = models.ForeignKey(Author, on_delete=models.CASCADE)</span><br></pre></td></tr></table></figure>
+<h2 id="三、建立本地倉庫（repository）"><a href="#三、建立本地倉庫（repository）" class="headerlink" title="三、建立本地倉庫（repository）"></a>三、建立本地倉庫（repository）</h2><h3 id="建立一個新資料夾並初始化-Git"><a href="#建立一個新資料夾並初始化-Git" class="headerlink" title="建立一個新資料夾並初始化 Git"></a>建立一個新資料夾並初始化 Git</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> my-project</span><br><span class="line"><span class="built_in">cd</span> my-project</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<p>此時 <code>.git/</code> 目錄會被建立，代表你已經在這個資料夾啟用了版本控制。</p>
+<hr>
+<h2 id="四、版本控制的基本流程"><a href="#四、版本控制的基本流程" class="headerlink" title="四、版本控制的基本流程"></a>四、版本控制的基本流程</h2><p>Git 的工作流程大致分為三個區域：</p>
+<ol>
+<li><strong>工作區（Working Directory）</strong>：你實際修改的檔案</li>
+<li><strong>暫存區（Staging Area）</strong>：準備提交的檔案</li>
+<li><strong>版本庫（Repository）</strong>：正式提交的版本歷史</li>
+</ol>
+<h3 id="1-查看狀態"><a href="#1-查看狀態" class="headerlink" title="1. 查看狀態"></a>1. 查看狀態</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-將檔案加入暫存區"><a href="#2-將檔案加入暫存區" class="headerlink" title="2. 將檔案加入暫存區"></a>2. 將檔案加入暫存區</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add 檔名</span><br><span class="line"><span class="comment"># 或加入全部變動檔案</span></span><br><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-提交版本（commit）"><a href="#3-提交版本（commit）" class="headerlink" title="3. 提交版本（commit）"></a>3. 提交版本（commit）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;加入了首頁 HTML 結構&quot;</span></span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="多對多（Many-to-Many）"><a href="#多對多（Many-to-Many）" class="headerlink" title="多對多（Many-to-Many）"></a>多對多（Many-to-Many）</h2><h3 id="概念：-2"><a href="#概念：-2" class="headerlink" title="概念："></a>概念：</h3><p>一筆資料可以對應到多筆資料，而對方也可以對應回來多筆資料。</p>
-<h3 id="例子：-2"><a href="#例子：-2" class="headerlink" title="例子："></a>例子：</h3><p>學生選修多門課程，一門課也有很多學生 → 學生對多門課，課程對多位學生。</p>
-<h3 id="Django-實作：-2"><a href="#Django-實作：-2" class="headerlink" title="Django 實作："></a>Django 實作：</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>(models.Model):</span><br><span class="line">    name = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line">    courses = models.ManyToManyField(<span class="string">&#x27;Course&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Course</span>(models.Model):</span><br><span class="line">    title = models.CharField(max_length=<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="五、版本紀錄與回溯"><a href="#五、版本紀錄與回溯" class="headerlink" title="五、版本紀錄與回溯"></a>五、版本紀錄與回溯</h2><h3 id="查看提交紀錄"><a href="#查看提交紀錄" class="headerlink" title="查看提交紀錄"></a>查看提交紀錄</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 
-<p>（也可以在 <code>Course</code> 裡加 <code>students = models.ManyToManyField(Student)</code>，結果會一樣）</p>
+<p>如果想要簡潔查看</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> --oneline</span><br></pre></td></tr></table></figure>
+
+<h3 id="回到先前的狀態（例如最近一次提交）"><a href="#回到先前的狀態（例如最近一次提交）" class="headerlink" title="回到先前的狀態（例如最近一次提交）"></a>回到先前的狀態（例如最近一次提交）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout HEAD^</span><br><span class="line"><span class="comment"># 回到上上一個版本</span></span><br><span class="line">git checkout HEAD~2</span><br></pre></td></tr></table></figure>
+
+<p>但請注意這樣會進入「detached HEAD」狀態，只是暫時查看，不適合繼續開發。</p>
 <hr>
-<h2 id="小整理比較表："><a href="#小整理比較表：" class="headerlink" title="小整理比較表："></a>小整理比較表：</h2><table>
-<thead>
-<tr>
-<th>類型</th>
-<th>關係形式</th>
-<th>範例</th>
-<th>Django 欄位</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>一對一</td>
-<td>A ➝ B 且 B ➝ A</td>
-<td>人 → 身份證</td>
-<td><code>OneToOneField</code></td>
-</tr>
-<tr>
-<td>一對多</td>
-<td>A ➝ 多個 B</td>
-<td>作者 → 書</td>
-<td><code>ForeignKey</code></td>
-</tr>
-<tr>
-<td>多對多</td>
-<td>A ⇄ 多個 B，互相多對多</td>
-<td>學生 ⇄ 課程</td>
-<td><code>ManyToManyField</code></td>
-</tr>
-</tbody></table>
+<h2 id="六、分支操作（branch）"><a href="#六、分支操作（branch）" class="headerlink" title="六、分支操作（branch）"></a>六、分支操作（branch）</h2><p>分支是 Git 強大的一環，可以讓你同時開發多個功能而互不干擾。</p>
+<h3 id="建立新分支"><a href="#建立新分支" class="headerlink" title="建立新分支"></a>建立新分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch feature-login</span><br></pre></td></tr></table></figure>
+
+<h3 id="切換分支"><a href="#切換分支" class="headerlink" title="切換分支"></a>切換分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout feature-login</span><br></pre></td></tr></table></figure>
+
+<p>或合併成一行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -b feature-login</span><br></pre></td></tr></table></figure>
+
+<h3 id="合併分支"><a href="#合併分支" class="headerlink" title="合併分支"></a>合併分支</h3><p>切回主分支（通常是 <code>main</code> 或 <code>master</code>）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout main</span><br><span class="line">git merge feature-login</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="七、遠端倉庫（Remote-Repository）"><a href="#七、遠端倉庫（Remote-Repository）" class="headerlink" title="七、遠端倉庫（Remote Repository）"></a>七、遠端倉庫（Remote Repository）</h2><p>若你使用 GitHub、GitLab 等服務，可以將本地專案推送到遠端：</p>
+<h3 id="新增遠端倉庫"><a href="#新增遠端倉庫" class="headerlink" title="新增遠端倉庫"></a>新增遠端倉庫</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add origin https://github.com/yourname/yourproject.git</span><br></pre></td></tr></table></figure>
+
+<h3 id="推送本地分支"><a href="#推送本地分支" class="headerlink" title="推送本地分支"></a>推送本地分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+
+<h3 id="拉取遠端最新變更"><a href="#拉取遠端最新變更" class="headerlink" title="拉取遠端最新變更"></a>拉取遠端最新變更</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git pull origin main</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="八、-gitignore-檔案"><a href="#八、-gitignore-檔案" class="headerlink" title="八、.gitignore 檔案"></a>八、.gitignore 檔案</h2><p><code>.gitignore</code> 用來指定不想被 Git 管理的檔案，例如：</p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">node_modules/</span><br><span class="line">.env</span><br><span class="line">*.log</span><br><span class="line">.DS_Store</span><br></pre></td></tr></table></figure>
+
+<p>建立一個 <code>.gitignore</code> 檔案，放進你專案根目錄，就能避免把不該版本控制的東西送到遠端倉庫。</p>
+<hr>
+<h2 id="九、常見狀況與解法"><a href="#九、常見狀況與解法" class="headerlink" title="九、常見狀況與解法"></a>九、常見狀況與解法</h2><h3 id="修改後不小心沒-add-就-commit-了？"><a href="#修改後不小心沒-add-就-commit-了？" class="headerlink" title="修改後不小心沒 add 就 commit 了？"></a>修改後不小心沒 add 就 commit 了？</h3><p>可用下列方式補上：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add 新增的檔案</span><br><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+
+<h3 id="想撤銷修改？"><a href="#想撤銷修改？" class="headerlink" title="想撤銷修改？"></a>想撤銷修改？</h3><p>還沒 add 的：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -- 檔案名</span><br></pre></td></tr></table></figure>
+
+<p>已經 add 了但還沒 commit：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset HEAD 檔案名</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="十、總結：從習慣開始，讓版本控制變簡單"><a href="#十、總結：從習慣開始，讓版本控制變簡單" class="headerlink" title="十、總結：從習慣開始，讓版本控制變簡單"></a>十、總結：從習慣開始，讓版本控制變簡單</h2><p>熟悉 Git 的過程一開始可能會覺得繁瑣，但當你習慣了之後，它會成為你每天工作中不可或缺的工具。建議你在小專案中練習基本指令，隨手記錄每次的變更，透過良好的 commit message，讓未來的你感謝現在有好好整理的你。</p>
+<p>如果你希望與他人協作開發，Git 更能大幅簡化流程、避免衝突。下一步，你可以學習 Pull Request（PR）、Git Flow、Rebase 等進階技巧，逐步精進你的版本控制能力。</p>
+<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
+<li><a target="_blank" rel="noopener" href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.conventionalcommits.org/zh-hant/v1.0.0/">約定式提交</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackmd.io/@ohQEG7SsQoeXVwVP2-v06A/rkhtpmyXa">[Git] Conventional Commits 規範性提交</a></li>
+<li><a target="_blank" rel="noopener" href="https://w3c.hexschool.com/git/10bf7677">git reflog - 還原大招</a></li>
+<li><a target="_blank" rel="noopener" href="https://gitbook.tw/">為你自己學 Git</a></li>
+</ol>
 
                 </div>
 
@@ -303,7 +345,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/08/31/learning-notes-python-django-crud-intro-tutorial/" title="Django CRUD（不使用 ModelForm）入門教學筆記 | 學習筆記" rel="bookmark">Django CRUD（不使用 ModelForm）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/08/31/learning-notes-python-fastapi-intro-tutorial/" title="FastAPI 入門教學筆記：打造現代 Python Web API 的入門教學筆記 | 學習筆記" rel="bookmark">FastAPI 入門教學筆記：打造現代 Python Web API 的入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/08/31/learning-notes-python-openssl-setup-intro-tutorial/" title="Python 指定使用 OpenSSL 介紹入門教學筆記 | 學習筆記" rel="bookmark">Python 指定使用 OpenSSL 介紹入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/21/learning-notes-git-command-intro-tutorial/" title="Git 指令學習筆記 | 學習筆記" rel="bookmark">Git 指令學習筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/" title="Git Flow 介紹與 GitHub Flow 介紹入門教學筆記 | 學習筆記" rel="bookmark">Git Flow 介紹與 GitHub Flow 介紹入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -339,8 +381,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/12/01/learning-notes-python-django-db-mapping-intro-tutorial/";
-    var disqus_url = "https://tech.kdchang.net/2024/12/01/learning-notes-python-django-db-mapping-intro-tutorial/";
+    var disqus_identifier = "https://tech.kdchang.net/2024/12/21/learning-notes-git-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2024/12/21/learning-notes-git-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

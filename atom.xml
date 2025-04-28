@@ -6,7 +6,7 @@
   <link href="https://tech.kdchang.net/atom.xml" rel="self"/>
   
   <link href="https://tech.kdchang.net/"/>
-  <updated>2025-04-24T12:03:13.334Z</updated>
+  <updated>2025-04-28T08:15:26.466Z</updated>
   <id>https://tech.kdchang.net/</id>
   
   <author>
@@ -17,11 +17,65 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Git 指令學習筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/21/learning-notes-git-command-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/21/learning-notes-git-command-intro-tutorial/</id>
+    <published>2024-12-21T03:33:41.000Z</published>
+    <updated>2025-04-28T08:15:26.466Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;Git 是現代軟體開發中最常使用的分散式版本控制系統，它幫助開發者管理源代碼的版本和協作。這篇教學將從基礎開始，介紹 Git</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Github" scheme="https://tech.kdchang.net/tags/Github/"/>
+    
+    <category term="Git" scheme="https://tech.kdchang.net/tags/Git/"/>
+    
+    <category term="版本控制" scheme="https://tech.kdchang.net/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git 入門教學筆記：從零開始學版本控制 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/21/learning-notes-git-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/21/learning-notes-git-intro-tutorial/</id>
+    <published>2024-12-21T03:33:41.000Z</published>
+    <updated>2025-04-28T08:15:26.466Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;為什麼要學-Git？&quot;&gt;&lt;a href=&quot;#為什麼要學-Git？&quot; class=&quot;headerlink&quot; title=&quot;為什麼要學 Git？&quot;&gt;&lt;/a&gt;為什麼要學 Git？&lt;/h2&gt;&lt;p&gt;在軟體開發中，版本控制是一個不可或缺的工具。Git</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Github" scheme="https://tech.kdchang.net/tags/Github/"/>
+    
+    <category term="Git" scheme="https://tech.kdchang.net/tags/Git/"/>
+    
+    <category term="版本控制" scheme="https://tech.kdchang.net/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript 可選鏈接運算符（Optional Chaining）介紹與入門教學 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-04-24T12:03:13.334Z</updated>
+    <updated>2025-04-28T08:15:26.467Z</updated>
     
     
       
@@ -54,7 +108,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-04-24T12:03:13.335Z</updated>
+    <updated>2025-04-28T08:15:26.467Z</updated>
     
     
       
@@ -95,7 +149,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-04-24T12:03:13.335Z</updated>
+    <updated>2025-04-28T08:15:26.468Z</updated>
     
     
       
@@ -136,7 +190,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/</id>
     <published>2024-12-16T18:23:41.000Z</published>
-    <updated>2025-04-24T12:03:13.336Z</updated>
+    <updated>2025-04-28T08:15:26.468Z</updated>
     
     
       
@@ -165,7 +219,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-javascript-commonjs-amd-module-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-javascript-commonjs-amd-module-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-04-24T12:03:13.334Z</updated>
+    <updated>2025-04-28T08:15:26.466Z</updated>
     
     
       
@@ -206,7 +260,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-javascript-es-module-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-javascript-es-module-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-04-24T12:03:13.334Z</updated>
+    <updated>2025-04-28T08:15:26.466Z</updated>
     
     
       
@@ -243,7 +297,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-nodejs-expressjs-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-nodejs-expressjs-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-04-24T12:03:13.335Z</updated>
+    <updated>2025-04-28T08:15:26.467Z</updated>
     
     
       
@@ -286,7 +340,7 @@
     <link href="https://tech.kdchang.net/2024/12/14/learning-notes-css-font-size-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/14/learning-notes-css-font-size-intro-tutorial/</id>
     <published>2024-12-14T18:23:41.000Z</published>
-    <updated>2025-04-24T12:03:13.333Z</updated>
+    <updated>2025-04-28T08:15:26.465Z</updated>
     
     
       
@@ -317,7 +371,7 @@
     <link href="https://tech.kdchang.net/2024/12/14/learning-notes-vue-set-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/14/learning-notes-vue-set-intro-tutorial/</id>
     <published>2024-12-14T18:23:41.000Z</published>
-    <updated>2025-04-24T12:03:13.336Z</updated>
+    <updated>2025-04-28T08:15:26.468Z</updated>
     
     
       
@@ -344,7 +398,7 @@
     <link href="https://tech.kdchang.net/2024/12/13/learning-notes-jsx-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/13/learning-notes-jsx-intro-tutorial/</id>
     <published>2024-12-13T18:23:41.000Z</published>
-    <updated>2025-04-24T12:03:13.334Z</updated>
+    <updated>2025-04-28T08:15:26.467Z</updated>
     
     
       
@@ -369,7 +423,7 @@
     <link href="https://tech.kdchang.net/2024/12/13/learning-notes-regex-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/13/learning-notes-regex-intro-tutorial/</id>
     <published>2024-12-13T18:23:41.000Z</published>
-    <updated>2025-04-24T12:03:13.335Z</updated>
+    <updated>2025-04-28T08:15:26.468Z</updated>
     
     
       
@@ -398,7 +452,7 @@
     <link href="https://tech.kdchang.net/2024/12/12/learning-notes-backend-for-frontend-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/12/learning-notes-backend-for-frontend-intro-tutorial/</id>
     <published>2024-12-12T18:23:41.000Z</published>
-    <updated>2025-04-24T12:03:13.333Z</updated>
+    <updated>2025-04-28T08:15:26.465Z</updated>
     
     
       
@@ -425,7 +479,7 @@
     <link href="https://tech.kdchang.net/2024/12/12/learning-notes-react-redux-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/12/learning-notes-react-redux-intro-tutorial/</id>
     <published>2024-12-12T18:23:41.000Z</published>
-    <updated>2025-04-24T12:03:13.335Z</updated>
+    <updated>2025-04-28T08:15:26.468Z</updated>
     
     
       
@@ -452,7 +506,7 @@
     <link href="https://tech.kdchang.net/2024/12/12/learning-notes-spa-ssr-isr-ssg-redux-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2024/12/12/learning-notes-spa-ssr-isr-ssg-redux-intro-tutorial%20copy/</id>
     <published>2024-12-12T18:23:41.000Z</published>
-    <updated>2025-04-24T12:03:13.335Z</updated>
+    <updated>2025-04-28T08:15:26.468Z</updated>
     
     
       
@@ -479,7 +533,7 @@
     <link href="https://tech.kdchang.net/2024/12/08/learning-notes-cypress-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/08/learning-notes-cypress-intro-tutorial/</id>
     <published>2024-12-08T18:23:41.000Z</published>
-    <updated>2025-04-24T12:03:13.333Z</updated>
+    <updated>2025-04-28T08:15:26.466Z</updated>
     
     
       
@@ -508,7 +562,7 @@
     <link href="https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial/</id>
     <published>2024-12-08T18:23:41.000Z</published>
-    <updated>2025-04-24T12:03:13.335Z</updated>
+    <updated>2025-04-28T08:15:26.467Z</updated>
     
     
       
@@ -535,7 +589,7 @@
     <link href="https://tech.kdchang.net/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</id>
     <published>2024-12-04T18:23:41.000Z</published>
-    <updated>2025-04-24T12:03:13.334Z</updated>
+    <updated>2025-04-28T08:15:26.466Z</updated>
     
     
       
@@ -549,13 +603,13 @@
     
     
     
-    <category term="Git Flow" scheme="https://tech.kdchang.net/tags/Git-Flow/"/>
-    
-    <category term="Github Flow" scheme="https://tech.kdchang.net/tags/Github-Flow/"/>
-    
     <category term="Github" scheme="https://tech.kdchang.net/tags/Github/"/>
     
     <category term="Git" scheme="https://tech.kdchang.net/tags/Git/"/>
+    
+    <category term="Git Flow" scheme="https://tech.kdchang.net/tags/Git-Flow/"/>
+    
+    <category term="Github Flow" scheme="https://tech.kdchang.net/tags/Github-Flow/"/>
     
   </entry>
   
@@ -564,7 +618,7 @@
     <link href="https://tech.kdchang.net/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/</id>
     <published>2024-12-03T18:23:41.000Z</published>
-    <updated>2025-04-24T12:03:13.335Z</updated>
+    <updated>2025-04-28T08:15:26.467Z</updated>
     
     
       
@@ -591,80 +645,6 @@
     <category term="CSS" scheme="https://tech.kdchang.net/tags/CSS/"/>
     
     <category term="typescript" scheme="https://tech.kdchang.net/tags/typescript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TypeScript 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/12/02/learning-notes-typescript-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2024/12/02/learning-notes-typescript-intro-tutorial/</id>
-    <published>2024-12-02T18:23:41.000Z</published>
-    <updated>2025-04-24T12:03:13.336Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;一、什麼是-TypeScript？&quot;&gt;&lt;a href=&quot;#一、什麼是-TypeScript？&quot; class=&quot;headerlink&quot; title=&quot;一、什麼是 TypeScript？&quot;&gt;&lt;/a&gt;一、什麼是</summary>
-        
-      
-    
-    
-    
-    
-    <category term="前端" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="前端開發" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="前端工程" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
-    
-    <category term="frontend" scheme="https://tech.kdchang.net/tags/frontend/"/>
-    
-    <category term="frontend engineer" scheme="https://tech.kdchang.net/tags/frontend-engineer/"/>
-    
-    <category term="CSS" scheme="https://tech.kdchang.net/tags/CSS/"/>
-    
-    <category term="typescript" scheme="https://tech.kdchang.net/tags/typescript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Nuxt.js 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/12/01/learning-notes-nuxtjs-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2024/12/01/learning-notes-nuxtjs-intro-tutorial/</id>
-    <published>2024-12-01T18:23:41.000Z</published>
-    <updated>2025-04-24T12:03:13.335Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;一、什麼是-Nuxt-js？&quot;&gt;&lt;a href=&quot;#一、什麼是-Nuxt-js？&quot; class=&quot;headerlink&quot; title=&quot;一、什麼是 Nuxt.js？&quot;&gt;&lt;/a&gt;一、什麼是 Nuxt.js？&lt;/h1&gt;&lt;p&gt;&lt;code&gt;Nuxt.js&lt;/code&gt;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="前端" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="前端開發" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="前端工程" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
-    
-    <category term="frontend" scheme="https://tech.kdchang.net/tags/frontend/"/>
-    
-    <category term="frontend engineer" scheme="https://tech.kdchang.net/tags/frontend-engineer/"/>
-    
-    <category term="CSS" scheme="https://tech.kdchang.net/tags/CSS/"/>
-    
-    <category term="Nuxt" scheme="https://tech.kdchang.net/tags/Nuxt/"/>
-    
-    <category term="Nuxt.js" scheme="https://tech.kdchang.net/tags/Nuxt-js/"/>
-    
-    <category term="Vue.js" scheme="https://tech.kdchang.net/tags/Vue-js/"/>
     
   </entry>
   

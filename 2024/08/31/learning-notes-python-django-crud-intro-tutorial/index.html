@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword"  content="軟體工程, 程式設計, 程式開發, frontend, backend, web, software, software engineer, JavaScript, Python">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/img/logo.ico">
+    <meta name="google-site-verification" content="cMTgiEFMM7gXpRMBbu_05Lnj0scwhDPCMvpfhQOpENI" />
+    <script src="/js/search.js"></script> 
+
+    
+    
+    
+       <script type="text/javascript">      
+         var search_path = "search.xml";
+       if (search_path.length == 0) {
+         search_path = "search.xml";
+       }
+       var path = "/" + search_path;
+         searchFunc(path, 'local-search-input', 'local-search-result');
+       </script>
+    
+    <title>
+        
+          Django CRUD（不使用 ModelForm）入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+        
+    </title>
+
+    <link rel="canonical" href="https://tech.kdchang.net/2024/08/31/learning-notes-python-django-crud-intro-tutorial/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/main.css?v=1">
+
+    <!-- og tag -->
+    <meta name="generator" content="KD's Tech Blog">
+    
+      <meta name="og:title" content="Django CRUD（不使用 ModelForm）入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="Django CRUD（不使用 ModelForm）入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+    
+    
+      <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+      <meta name="og:description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+    
+    
+      <meta name="og:image" content="https://tech.kdchang.net/img/logo.png">
+    
+    <meta name="og:type" content="website">
+    <!--Twitter Graph-->
+    <meta name="twitter:card" content="summary" />
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<link rel="alternate" href="/atom.xml" title="KD's Tech Blog" type="application/atom+xml">
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">KD&#39;s Tech Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/books/">Books</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/search/">Search</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    <li>
+                        <a href="/atom.xml">RSS</a>
+                    </li>                 
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/cover.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+
+                    <h1>Django CRUD（不使用 ModelForm）入門教學筆記 | 學習筆記</h1>
+                    <span class="meta">
+                        Posted by kdchang on
+                        2024-08-31
+                    </span>
+                    <br>
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#web" title="web">web</a>
+                        
+                          <a class="tag" href="/tags/#python" title="python">python</a>
+                        
+                          <a class="tag" href="/tags/#Django" title="Django">Django</a>
+                        
+                          <a class="tag" href="/tags/#ModelForm）" title="ModelForm）">ModelForm）</a>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+                <br>
+                <div>
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.net" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+                <br>
+                <div>
+                    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在 Django 中，<code>ModelForm</code> 提供了一個快速建立表單與驗證的工具，但在某些情境下，我們可能希望自己掌控表單結構與驗證流程。這篇筆記將示範如何不依賴 <code>ModelForm</code>，手動實作一套 CRUD 系統，幫助你更深入理解 Django 表單處理的基本原理。</p>
+<p>我們將製作一個簡單的「書籍管理系統」，支援新增（Create）、讀取（Read）、更新（Update）與刪除（Delete）書籍資訊。</p>
+<h2 id="1-建立-Django-專案與應用"><a href="#1-建立-Django-專案與應用" class="headerlink" title="1. 建立 Django 專案與應用"></a>1. 建立 Django 專案與應用</h2><p>首先，安裝 Django 並建立新的專案與應用：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install django</span><br><span class="line">django-admin startproject myproject</span><br><span class="line"><span class="built_in">cd</span> myproject</span><br><span class="line">python manage.py startapp books</span><br></pre></td></tr></table></figure>
+
+<p>註冊 <code>books</code> 應用於 <code>myproject/settings.py</code> 的 <code>INSTALLED_APPS</code>：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">&#x27;books&#x27;</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-定義模型（Model）"><a href="#2-定義模型（Model）" class="headerlink" title="2. 定義模型（Model）"></a>2. 定義模型（Model）</h2><p>在 <code>books/models.py</code> 中定義一個簡單的書籍模型：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Book</span>(models.Model):</span><br><span class="line">    title = models.CharField(max_length=<span class="number">200</span>)</span><br><span class="line">    author = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line">    published_date = models.DateField()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.title</span><br></pre></td></tr></table></figure>
+
+<p>遷移資料庫：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py makemigrations</span><br><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-撰寫-Views（不使用-ModelForm）"><a href="#3-撰寫-Views（不使用-ModelForm）" class="headerlink" title="3. 撰寫 Views（不使用 ModelForm）"></a>3. 撰寫 Views（不使用 ModelForm）</h2><p>在 <code>books/views.py</code> 中撰寫手動處理的 CRUD 功能。</p>
+<h3 id="新增書籍（Create）"><a href="#新增書籍（Create）" class="headerlink" title="新增書籍（Create）"></a>新增書籍（Create）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render, redirect</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Book</span><br><span class="line"><span class="keyword">from</span> django.utils.dateparse <span class="keyword">import</span> parse_date</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_book</span>(<span class="params">request</span>):</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        title = request.POST.get(<span class="string">&#x27;title&#x27;</span>)</span><br><span class="line">        author = request.POST.get(<span class="string">&#x27;author&#x27;</span>)</span><br><span class="line">        published_date_str = request.POST.get(<span class="string">&#x27;published_date&#x27;</span>)</span><br><span class="line">        published_date = parse_date(published_date_str)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> title <span class="keyword">and</span> author <span class="keyword">and</span> published_date:</span><br><span class="line">            Book.objects.create(title=title, author=author, published_date=published_date)</span><br><span class="line">            <span class="keyword">return</span> redirect(<span class="string">&#x27;book_list&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            error = <span class="string">&quot;所有欄位皆為必填&quot;</span></span><br><span class="line">            <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_form.html&#x27;</span>, &#123;<span class="string">&#x27;error&#x27;</span>: error&#125;)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_form.html&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="讀取書籍（Read）"><a href="#讀取書籍（Read）" class="headerlink" title="讀取書籍（Read）"></a>讀取書籍（Read）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">book_list</span>(<span class="params">request</span>):</span><br><span class="line">    books = Book.objects.<span class="built_in">all</span>()</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_list.html&#x27;</span>, &#123;<span class="string">&#x27;books&#x27;</span>: books&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="更新書籍（Update）"><a href="#更新書籍（Update）" class="headerlink" title="更新書籍（Update）"></a>更新書籍（Update）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> get_object_or_404</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">update_book</span>(<span class="params">request, pk</span>):</span><br><span class="line">    book = get_object_or_404(Book, pk=pk)</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        title = request.POST.get(<span class="string">&#x27;title&#x27;</span>)</span><br><span class="line">        author = request.POST.get(<span class="string">&#x27;author&#x27;</span>)</span><br><span class="line">        published_date_str = request.POST.get(<span class="string">&#x27;published_date&#x27;</span>)</span><br><span class="line">        published_date = parse_date(published_date_str)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> title <span class="keyword">and</span> author <span class="keyword">and</span> published_date:</span><br><span class="line">            book.title = title</span><br><span class="line">            book.author = author</span><br><span class="line">            book.published_date = published_date</span><br><span class="line">            book.save()</span><br><span class="line">            <span class="keyword">return</span> redirect(<span class="string">&#x27;book_list&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            error = <span class="string">&quot;所有欄位皆為必填&quot;</span></span><br><span class="line">            <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_form.html&#x27;</span>, &#123;<span class="string">&#x27;book&#x27;</span>: book, <span class="string">&#x27;error&#x27;</span>: error&#125;)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_form.html&#x27;</span>, &#123;<span class="string">&#x27;book&#x27;</span>: book&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="刪除書籍（Delete）"><a href="#刪除書籍（Delete）" class="headerlink" title="刪除書籍（Delete）"></a>刪除書籍（Delete）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">delete_book</span>(<span class="params">request, pk</span>):</span><br><span class="line">    book = get_object_or_404(Book, pk=pk)</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        book.delete()</span><br><span class="line">        <span class="keyword">return</span> redirect(<span class="string">&#x27;book_list&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_confirm_delete.html&#x27;</span>, &#123;<span class="string">&#x27;book&#x27;</span>: book&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-設定-URL-路由"><a href="#4-設定-URL-路由" class="headerlink" title="4. 設定 URL 路由"></a>4. 設定 URL 路由</h2><p>在 <code>books/urls.py</code> 中設定對應的路由：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;&#x27;</span>, views.book_list, name=<span class="string">&#x27;book_list&#x27;</span>),</span><br><span class="line">    path(<span class="string">&#x27;create/&#x27;</span>, views.create_book, name=<span class="string">&#x27;create_book&#x27;</span>),</span><br><span class="line">    path(<span class="string">&#x27;update/&lt;int:pk&gt;/&#x27;</span>, views.update_book, name=<span class="string">&#x27;update_book&#x27;</span>),</span><br><span class="line">    path(<span class="string">&#x27;delete/&lt;int:pk&gt;/&#x27;</span>, views.delete_book, name=<span class="string">&#x27;delete_book&#x27;</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>並在 <code>myproject/urls.py</code> 引入 <code>books</code> 路由：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path, include</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;admin/&#x27;</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">&#x27;books/&#x27;</span>, include(<span class="string">&#x27;books.urls&#x27;</span>)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-建立模板（Templates）"><a href="#5-建立模板（Templates）" class="headerlink" title="5. 建立模板（Templates）"></a>5. 建立模板（Templates）</h2><p>手動撰寫簡單的 HTML 表單與顯示畫面。</p>
+<h3 id="book-list-html"><a href="#book-list-html" class="headerlink" title="book_list.html"></a><code>book_list.html</code></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>書籍列表<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;create_book&#x27; %&#125;&quot;</span>&gt;</span>新增書籍<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    &#123;% for book in books %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        &#123;&#123; book.title &#125;&#125; - &#123;&#123; book.author &#125;&#125; - &#123;&#123; book.published_date &#125;&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;update_book&#x27; book.id %&#125;&quot;</span>&gt;</span>編輯<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;delete_book&#x27; book.id %&#125;&quot;</span>&gt;</span>刪除<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="book-form-html"><a href="#book-form-html" class="headerlink" title="book_form.html"></a><code>book_form.html</code></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;% if book %&#125;編輯書籍&#123;% else %&#125;新增書籍&#123;% endif %&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;% if error %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:red;&quot;</span>&gt;</span>&#123;&#123; error &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">    &#123;% csrf_token %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        標題：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;title&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&#123;&#123; book.title|default_if_none:&#x27;&#x27; &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        作者：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;author&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&#123;&#123; book.author|default_if_none:&#x27;&#x27; &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        出版日期（格式 yyyy-mm-dd）：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;published_date&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&#123;&#123; book.published_date|default_if_none:&#x27;&#x27; &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>儲存<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;book_list&#x27; %&#125;&quot;</span>&gt;</span>返回列表<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="book-confirm-delete-html"><a href="#book-confirm-delete-html" class="headerlink" title="book_confirm_delete.html"></a><code>book_confirm_delete.html</code></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>刪除書籍<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>確定要刪除 &quot;&#123;&#123; book.title &#125;&#125;&quot; 嗎？<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">    &#123;% csrf_token %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>確定刪除<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;book_list&#x27; %&#125;&quot;</span>&gt;</span>取消<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-啟動伺服器測試"><a href="#6-啟動伺服器測試" class="headerlink" title="6. 啟動伺服器測試"></a>6. 啟動伺服器測試</h2><p>啟動 Django 開發伺服器：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
+
+<p>在瀏覽器開啟 <code>http://127.0.0.1:8000/books/</code>，你將可以新增、查詢、編輯和刪除書籍。</p>
+<hr>
+<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>這篇教學示範了在 <strong>不使用 <code>ModelForm</code></strong> 的情況下，手動撰寫表單處理與資料驗證，完整實作了 Django 的 CRUD 功能。</p>
+<p>這種方式的優點在於靈活度高，你可以完全控制表單的結構、驗證邏輯與錯誤處理，非常適合需要客製化表單行為或前後端分離的專案。不過，相較於使用 <code>ModelForm</code>，開發成本略高，也容易產生重複程式碼，因此適時選擇工具是重要的工程判斷。</p>
+<p>進一步的優化方向包括：</p>
+<ul>
+<li>加入更完整的資料驗證</li>
+<li>增加欄位格式錯誤提示</li>
+<li>使用 JavaScript 增強表單互動</li>
+<li>將表單資料與邏輯封裝成 Class-Based Views（CBV）</li>
+</ul>
+<p>透過本篇範例，希望你對 Django 低階處理表單與 CRUD 流程有更深入的理解。</p>
+
+                </div>
+
+                <br>
+                <section>
+                    歡迎分享按讚給予支持和鼓勵！
+                    <div class="fb-like" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                </section>
+                <br>
+                <div>
+                    <div class="fb-page" data-href="https://www.facebook.com/tech.kdchang.net" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/tech.kdchang.net" class="fb-xfbml-parse-ignore"><a target="_blank" rel="noopener" href="https://www.facebook.com/tech.kdchang.net">KD Chang（張凱迪）</a></blockquote></div>
+                </div>
+                <hr>
+                <div>
+                    <h3>Related Posts</h3>
+                    <div>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/08/31/learning-notes-python-fastapi-intro-tutorial/" title="FastAPI 入門教學筆記：打造現代 Python Web API 的入門教學筆記 | 學習筆記" rel="bookmark">FastAPI 入門教學筆記：打造現代 Python Web API 的入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/01/learning-notes-python-django-db-mapping-intro-tutorial/" title="Django「一對一」、「一對多」、「多對多」關聯入門教學筆記 | 學習筆記" rel="bookmark">Django「一對一」、「一對多」、「多對多」關聯入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/10/16/learning-notes-web-security-intro-tutorial/" title="Web 資訊安全入門教學筆記 | 學習筆記" rel="bookmark">Web 資訊安全入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/10/16/learning-notes-web-client-performance-optimization-intro-tutorial/" title="Web 前端效能優化入門教學筆記 | 學習筆記" rel="bookmark">Web 前端效能優化入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/08/31/learning-notes-python-openssl-setup-intro-tutorial/" title="Python 指定使用 OpenSSL 介紹入門教學筆記 | 學習筆記" rel="bookmark">Python 指定使用 OpenSSL 介紹入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                    </div>
+                </div>
+                <!-- Tags -->
+                <h3>Comments</h3>
+                <hr>
+                
+                <!-- disqus start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus end -->
+                
+
+            </div>
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "kdchang-tech-blog";
+    var disqus_identifier = "https://tech.kdchang.net/2024/08/31/learning-notes-python-django-crud-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2024/08/31/learning-notes-python-django-crud-intro-tutorial/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5728979c6a10856b"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<!-- <script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script> -->
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+<script>
+   anchors.add('h1, h2, h3');
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<a id="scroll-to-top-button">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/kaidichang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/tech.kdchang.net">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/kdchang_net">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kdchang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <hr>
+                <div class="copyright text-muted">
+                    Special thanks <a href="https://unsplash.com/@afgprogrammer" target="_blank">Mohammad Rahmani</a>、<a href="https://www.flickr.com/photos/derek-john-lee/14698093740/in/photolist-ooPzcj-r2kVt-ppV21v-brhFX3-wd3Qsy-cLiKEL-xDR92-28QCtA-29YFZZ-gzuZk-dqbhxt-9FwCBY-q57bEv-bVhZJr-dYxGXn-dxg9g7-8x7gjU-dzjMic-rQhf-9TMgJ3-mEsFjW-qbzd4p-q6cJvc-7zYttk-q2gE5S-bdb4G4-8ifmQN-eivVeg-9ZZFVz-aD6q6r-bnjfWh-qJAn2g-k22Ttf-n9Jhfj-kk4woh-sj43iz-5NYGUn-96wNhi-9ZZFz6-8DJkQf-4wQizw-3bzz8p-9yzTSd-xDQee-68Xwfp-7t5WPx-xDTM5-o5RPYA-kWihhy-7iHDEX" target="_blank">Derek</a>、<a href="https://www.flickr.com/photos/mashleymorgan/" target="_blank">mashleymorgan</a>、<a href="https://www.flickr.com/photos/mustafeez27/" target="_blank">mustafeez27</a>         
+                    and <a href="http://blog.kaijun.rocks" target="_blank">Kaijun</a>
+                    <br> 
+                    Copyright &copy; KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪 2025
+                    <hr>
+                    <!-- facebook follow -->
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.net" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+<!-- Custom Main JavaScript -->
+<script src="/js/main.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://tech.kdchang.net/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fb.js -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="X3eUifxc"></script>
+
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FN9X92SM77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FN9X92SM77');
+</script>
+
+
+
+	
+</body>
+
+</html>

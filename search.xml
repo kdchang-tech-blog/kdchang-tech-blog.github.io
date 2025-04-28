@@ -1922,6 +1922,102 @@
       </tags>
   </entry>
   <entry>
+    <title>Git 指令學習筆記 | 學習筆記</title>
+    <url>/2024/12/21/learning-notes-git-command-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Git 是現代軟體開發中最常使用的分散式版本控制系統，它幫助開發者管理源代碼的版本和協作。這篇教學將從基礎開始，介紹 Git 的常用命令並提供實際範例，幫助你熟悉如何使用 Git 來進行版本控制與協作。</p>
+<h2 id="1-初始化-Git-倉庫-git-init"><a href="#1-初始化-Git-倉庫-git-init" class="headerlink" title="1. 初始化 Git 倉庫 (git init)"></a>1. 初始化 Git 倉庫 (<code>git init</code>)</h2><p>在專案資料夾中使用 <code>git init</code> 可以初始化一個新的 Git 倉庫，這樣就可以開始使用 Git 來管理專案中的檔案版本。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<p>執行後會在專案資料夾內建立一個 <code>.git</code> 的隱藏資料夾，這表示這個資料夾已經被 Git 所管理。</p>
+<h2 id="2-查看當前狀態-git-status"><a href="#2-查看當前狀態-git-status" class="headerlink" title="2. 查看當前狀態 (git status)"></a>2. 查看當前狀態 (<code>git status</code>)</h2><p>在進行版本控制時，使用 <code>git status</code> 可以查看專案的當前狀態。這個命令會顯示哪些檔案已經被修改、哪些檔案尚未加入版本控制。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<p>這會列出所有變更過的檔案（包括已修改、尚未追蹤的檔案等）以及當前分支的狀態。</p>
+<h2 id="3-新增檔案到暫存區-git-add"><a href="#3-新增檔案到暫存區-git-add" class="headerlink" title="3. 新增檔案到暫存區 (git add)"></a>3. 新增檔案到暫存區 (<code>git add</code>)</h2><p>修改檔案後，必須先使用 <code>git add</code> 把檔案新增到暫存區，才可以進行提交。使用 <code>git add</code> 可以指定單一檔案或多個檔案，或者一次將所有檔案加入暫存區。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add filename.txt</span><br></pre></td></tr></table></figure>
+
+<p>或將所有變更加入暫存區：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-提交變更-git-commit"><a href="#4-提交變更-git-commit" class="headerlink" title="4. 提交變更 (git commit)"></a>4. 提交變更 (<code>git commit</code>)</h2><p>將檔案從暫存區提交到本地版本庫使用 <code>git commit</code>。每次提交時，需要提供一個簡短的描述，解釋這次提交的內容。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;新增使用者登錄功能&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-設定-Git-使用者資訊-git-config"><a href="#5-設定-Git-使用者資訊-git-config" class="headerlink" title="5. 設定 Git 使用者資訊 (git config)"></a>5. 設定 Git 使用者資訊 (<code>git config</code>)</h2><p>在進行提交之前，必須設定 Git 的使用者名稱和電子郵件。這些資料會與每次提交關聯。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;your.email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>這會把你的名稱和郵箱寫入全域設定，未來每次提交都會使用這些設定。</p>
+<h2 id="6-查看提交歷史-git-log"><a href="#6-查看提交歷史-git-log" class="headerlink" title="6. 查看提交歷史 (git log)"></a>6. 查看提交歷史 (<code>git log</code>)</h2><p>使用 <code>git log</code> 可以查看專案的提交歷史。這會顯示每次提交的詳細信息，包括提交哈希值、作者、日期和提交訊息。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+
+<p>如果希望更簡潔的輸出，可以使用 <code>--oneline</code> 參數：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> --oneline</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-恢復檔案-git-restore"><a href="#7-恢復檔案-git-restore" class="headerlink" title="7. 恢復檔案 (git restore)"></a>7. 恢復檔案 (<code>git restore</code>)</h2><p>如果你修改了一些檔案並且還沒有提交，可以使用 <code>git restore</code> 恢復檔案到上次提交的狀態，撤銷變更。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git restore filename.txt</span><br></pre></td></tr></table></figure>
+
+<p>如果想撤銷暫存區的變更，可以使用：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git restore --staged filename.txt</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-追蹤檔案變動紀錄-git-blame"><a href="#8-追蹤檔案變動紀錄-git-blame" class="headerlink" title="8. 追蹤檔案變動紀錄 (git blame)"></a>8. 追蹤檔案變動紀錄 (<code>git blame</code>)</h2><p>如果你想查看某個檔案每一行是誰在什麼時候修改的，可以使用 <code>git blame</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git blame filename.txt</span><br></pre></td></tr></table></figure>
+
+<p>這會顯示每一行的修改者與修改時間，有助於了解程式碼的歷史。</p>
+<h2 id="9-建立分支-git-branch"><a href="#9-建立分支-git-branch" class="headerlink" title="9. 建立分支 (git branch)"></a>9. 建立分支 (<code>git branch</code>)</h2><p>在 Git 中，分支讓你能夠並行地進行多個工作。你可以使用 <code>git branch</code> 查看目前所有的分支。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<p>要創建新的分支：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch feature-login</span><br></pre></td></tr></table></figure>
+
+<h2 id="10-切換分支-git-switch"><a href="#10-切換分支-git-switch" class="headerlink" title="10. 切換分支 (git switch)"></a>10. 切換分支 (<code>git switch</code>)</h2><p>要切換到不同的分支，可以使用 <code>git switch</code>。例如，切換到 <code>feature-login</code> 分支：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git switch feature-login</span><br></pre></td></tr></table></figure>
+
+<p>如果你要創建並切換到一個新的分支，可以加上 <code>-c</code> 選項：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git switch -c feature-register</span><br></pre></td></tr></table></figure>
+
+<h2 id="11-切換提交紀錄或分支-git-checkout"><a href="#11-切換提交紀錄或分支-git-checkout" class="headerlink" title="11. 切換提交紀錄或分支 (git checkout)"></a>11. 切換提交紀錄或分支 (<code>git checkout</code>)</h2><p>雖然 <code>git switch</code> 是較新的命令，但仍然可以使用 <code>git checkout</code> 切換分支或還原檔案。要切換到某個分支：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout feature-login</span><br></pre></td></tr></table></figure>
+
+<p>若要還原某個檔案到指定的提交：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout &lt;commit_hash&gt; filename.txt</span><br></pre></td></tr></table></figure>
+
+<h2 id="12-合併分支-git-merge"><a href="#12-合併分支-git-merge" class="headerlink" title="12. 合併分支 (git merge)"></a>12. 合併分支 (<code>git merge</code>)</h2><p>將不同分支的更改合併回主分支可以使用 <code>git merge</code>。首先切換到目標分支（例如 <code>main</code>），然後執行合併操作：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git switch main</span><br><span class="line">git merge feature-login</span><br></pre></td></tr></table></figure>
+
+<p>如果有衝突，Git 會提示你解決衝突。</p>
+<h2 id="13-重新整理提交歷史-git-rebase"><a href="#13-重新整理提交歷史-git-rebase" class="headerlink" title="13. 重新整理提交歷史 (git rebase)"></a>13. 重新整理提交歷史 (<code>git rebase</code>)</h2><p><code>git rebase</code> 用來重新整理提交歷史，將一個分支的更改重新應用到另一個分支上，使歷史更為線性。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git switch feature-login</span><br><span class="line">git rebase main</span><br></pre></td></tr></table></figure>
+
+<p>這會將 <code>feature-login</code> 分支的變更，重新應用到 <code>main</code> 分支的最新提交上。</p>
+<h2 id="14-重置提交-git-reset"><a href="#14-重置提交-git-reset" class="headerlink" title="14. 重置提交 (git reset)"></a>14. 重置提交 (<code>git reset</code>)</h2><p>如果你想取消最近一次的提交，可以使用 <code>git reset</code>。使用 <code>--soft</code> 保留檔案變更，<code>--hard</code> 則會刪除變更：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset --soft HEAD^</span><br></pre></td></tr></table></figure>
+
+<p>這會將上一個提交撤回，但保留檔案變更；若使用 <code>--hard</code>，則會完全撤回提交及變更。</p>
+<h2 id="15-查看操作紀錄-git-reflog"><a href="#15-查看操作紀錄-git-reflog" class="headerlink" title="15. 查看操作紀錄 (git reflog)"></a>15. 查看操作紀錄 (<code>git reflog</code>)</h2><p><code>git reflog</code> 可以幫助你查看 HEAD 的操作紀錄，即便你進行了 <code>reset</code> 或 <code>checkout</code> 等操作。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+
+<p>這個命令列出所有曾經指向 HEAD 的 commit 參考，並且可以用來恢復丟失的提交。</p>
+<h2 id="16-暫存變更-git-stash"><a href="#16-暫存變更-git-stash" class="headerlink" title="16. 暫存變更 (git stash)"></a>16. 暫存變更 (<code>git stash</code>)</h2><p>如果你正在進行某些變更，但又需要切換到其他分支處理緊急問題，可以使用 <code>git stash</code> 暫時儲存未提交的變更：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
+
+<p>這會暫時保存變更，並恢復工作目錄到最後一次提交的狀態。待你完成緊急工作後，可以使用 <code>git stash pop</code> 恢復變更。</p>
+<h2 id="17-選擇性地應用提交-git-cherry-pick"><a href="#17-選擇性地應用提交-git-cherry-pick" class="headerlink" title="17. 選擇性地應用提交 (git cherry-pick)"></a>17. 選擇性地應用提交 (<code>git cherry-pick</code>)</h2><p><code>git cherry-pick</code> 讓你可以選擇性地將某個提交應用到當前分支。例如，將 <code>feature-login</code> 分支的某個提交應用到 <code>main</code> 分支：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git cherry-pick &lt;commit_hash&gt;</span><br></pre></td></tr></table></figure>
+
+<p>這對於選擇性地將某些特定變更移動到其他分支非常有用。</p>
+<h2 id="18-子模組-git-submodule"><a href="#18-子模組-git-submodule" class="headerlink" title="18. 子模組 (git submodule)"></a>18. 子模組 (<code>git submodule</code>)</h2><p>當專案中有其他專案作為依賴時，可以使用 Git 子模組來管理。首先，將子模組加入專案：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git submodule add &lt;repository_url&gt; path/to/submodule</span><br></pre></td></tr></table></figure>
+
+<p>這會在專案中加入一個指向其他 Git 倉庫的子模組。在克隆專案時，記得加上 <code>--recurse-submodules</code> 來獲取子模組的內容。</p>
+<hr>
+<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>以上介紹了 Git 中一些常用的命令，這些命令幾乎涵蓋了日常開發中的大部分需求。熟練掌握 Git 讓你在開發過程中更加高效，無論是單人開發還是團隊協作，都能大大提高工作流的順暢性。如果你還有進一步的需求或疑問，隨時可以深入學習 Git 的進階技巧。</p>
+]]></content>
+      <tags>
+        <tag>Github</tag>
+        <tag>Git</tag>
+        <tag>版本控制</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git Flow 介紹與 GitHub Flow 介紹入門教學筆記 | 學習筆記</title>
     <url>/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在軟體開發中，版本控制是協作開發中至關重要的工具。Git 作為當前最受歡迎的版本控制系統，其強大的分支管理和版本控制功能，使得開發團隊能夠高效地進行協作。兩種常見的 Git 工作流是 Git Flow 和 GitHub Flow，這些工作流提供了清晰的分支管理策略，讓團隊可以更加有序地開發和部署代碼。本文將介紹 Git Flow 和 GitHub Flow 的基本概念、使用方法，以及它們之間的區別。</p>
@@ -1975,10 +2071,184 @@
 <h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>Git Flow 和 GitHub Flow 各有優缺點，適用的場景也有所不同。選擇哪一種工作流，應根據團隊的規模、項目的複雜度以及發佈頻率來決定。對於需要穩定發佈和多版本管理的項目，Git Flow 是一個更好的選擇。而對於需要快速迭代和頻繁部署的小型項目，GitHub Flow 則是一個更簡單有效的選擇。</p>
 ]]></content>
       <tags>
-        <tag>Git Flow</tag>
-        <tag>Github Flow</tag>
         <tag>Github</tag>
         <tag>Git</tag>
+        <tag>Git Flow</tag>
+        <tag>Github Flow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git 入門教學筆記：從零開始學版本控制 | 學習筆記</title>
+    <url>/2024/12/21/learning-notes-git-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="為什麼要學-Git？"><a href="#為什麼要學-Git？" class="headerlink" title="為什麼要學 Git？"></a>為什麼要學 Git？</h2><p>在軟體開發中，版本控制是一個不可或缺的工具。Git 是目前最流行的版本控制系統，它能幫助你：</p>
+<ul>
+<li>記錄每次修改的歷史紀錄</li>
+<li>回復到任一個過去的狀態</li>
+<li>多人協作開發不衝突</li>
+<li>管理分支進行實驗性開發</li>
+</ul>
+<p>無論是獨立開發者、團隊協作，還是參與開源專案，Git 都是你的好夥伴。</p>
+<hr>
+<h2 id="一、安裝-Git"><a href="#一、安裝-Git" class="headerlink" title="一、安裝 Git"></a>一、安裝 Git</h2><h3 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+
+<h3 id="Ubuntu-x2F-Debian"><a href="#Ubuntu-x2F-Debian" class="headerlink" title="Ubuntu &#x2F; Debian"></a>Ubuntu &#x2F; Debian</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install git</span><br></pre></td></tr></table></figure>
+
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>請至官網下載安裝：<a href="https://git-scm.com/">https://git-scm.com</a></p>
+<hr>
+<h2 id="二、基本設定"><a href="#二、基本設定" class="headerlink" title="二、基本設定"></a>二、基本設定</h2><p>第一次使用 Git 前，請先設定你的名稱與 Email（這會記錄在每次提交的資訊中）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的名字&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;you@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>你也可以檢查目前的設定：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="三、建立本地倉庫（repository）"><a href="#三、建立本地倉庫（repository）" class="headerlink" title="三、建立本地倉庫（repository）"></a>三、建立本地倉庫（repository）</h2><h3 id="建立一個新資料夾並初始化-Git"><a href="#建立一個新資料夾並初始化-Git" class="headerlink" title="建立一個新資料夾並初始化 Git"></a>建立一個新資料夾並初始化 Git</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> my-project</span><br><span class="line"><span class="built_in">cd</span> my-project</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<p>此時 <code>.git/</code> 目錄會被建立，代表你已經在這個資料夾啟用了版本控制。</p>
+<hr>
+<h2 id="四、版本控制的基本流程"><a href="#四、版本控制的基本流程" class="headerlink" title="四、版本控制的基本流程"></a>四、版本控制的基本流程</h2><p>Git 的工作流程大致分為三個區域：</p>
+<ol>
+<li><strong>工作區（Working Directory）</strong>：你實際修改的檔案</li>
+<li><strong>暫存區（Staging Area）</strong>：準備提交的檔案</li>
+<li><strong>版本庫（Repository）</strong>：正式提交的版本歷史</li>
+</ol>
+<h3 id="1-查看狀態"><a href="#1-查看狀態" class="headerlink" title="1. 查看狀態"></a>1. 查看狀態</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-將檔案加入暫存區"><a href="#2-將檔案加入暫存區" class="headerlink" title="2. 將檔案加入暫存區"></a>2. 將檔案加入暫存區</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add 檔名</span><br><span class="line"><span class="comment"># 或加入全部變動檔案</span></span><br><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-提交版本（commit）"><a href="#3-提交版本（commit）" class="headerlink" title="3. 提交版本（commit）"></a>3. 提交版本（commit）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;加入了首頁 HTML 結構&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="五、版本紀錄與回溯"><a href="#五、版本紀錄與回溯" class="headerlink" title="五、版本紀錄與回溯"></a>五、版本紀錄與回溯</h2><h3 id="查看提交紀錄"><a href="#查看提交紀錄" class="headerlink" title="查看提交紀錄"></a>查看提交紀錄</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+
+<p>如果想要簡潔查看</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> --oneline</span><br></pre></td></tr></table></figure>
+
+<h3 id="回到先前的狀態（例如最近一次提交）"><a href="#回到先前的狀態（例如最近一次提交）" class="headerlink" title="回到先前的狀態（例如最近一次提交）"></a>回到先前的狀態（例如最近一次提交）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout HEAD^</span><br><span class="line"><span class="comment"># 回到上上一個版本</span></span><br><span class="line">git checkout HEAD~2</span><br></pre></td></tr></table></figure>
+
+<p>但請注意這樣會進入「detached HEAD」狀態，只是暫時查看，不適合繼續開發。</p>
+<hr>
+<h2 id="六、分支操作（branch）"><a href="#六、分支操作（branch）" class="headerlink" title="六、分支操作（branch）"></a>六、分支操作（branch）</h2><p>分支是 Git 強大的一環，可以讓你同時開發多個功能而互不干擾。</p>
+<h3 id="建立新分支"><a href="#建立新分支" class="headerlink" title="建立新分支"></a>建立新分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch feature-login</span><br></pre></td></tr></table></figure>
+
+<h3 id="切換分支"><a href="#切換分支" class="headerlink" title="切換分支"></a>切換分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout feature-login</span><br></pre></td></tr></table></figure>
+
+<p>或合併成一行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -b feature-login</span><br></pre></td></tr></table></figure>
+
+<h3 id="合併分支"><a href="#合併分支" class="headerlink" title="合併分支"></a>合併分支</h3><p>切回主分支（通常是 <code>main</code> 或 <code>master</code>）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout main</span><br><span class="line">git merge feature-login</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="七、遠端倉庫（Remote-Repository）"><a href="#七、遠端倉庫（Remote-Repository）" class="headerlink" title="七、遠端倉庫（Remote Repository）"></a>七、遠端倉庫（Remote Repository）</h2><p>若你使用 GitHub、GitLab 等服務，可以將本地專案推送到遠端：</p>
+<h3 id="新增遠端倉庫"><a href="#新增遠端倉庫" class="headerlink" title="新增遠端倉庫"></a>新增遠端倉庫</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add origin https://github.com/yourname/yourproject.git</span><br></pre></td></tr></table></figure>
+
+<h3 id="推送本地分支"><a href="#推送本地分支" class="headerlink" title="推送本地分支"></a>推送本地分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+
+<h3 id="拉取遠端最新變更"><a href="#拉取遠端最新變更" class="headerlink" title="拉取遠端最新變更"></a>拉取遠端最新變更</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git pull origin main</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="八、-gitignore-檔案"><a href="#八、-gitignore-檔案" class="headerlink" title="八、.gitignore 檔案"></a>八、.gitignore 檔案</h2><p><code>.gitignore</code> 用來指定不想被 Git 管理的檔案，例如：</p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">node_modules/</span><br><span class="line">.env</span><br><span class="line">*.log</span><br><span class="line">.DS_Store</span><br></pre></td></tr></table></figure>
+
+<p>建立一個 <code>.gitignore</code> 檔案，放進你專案根目錄，就能避免把不該版本控制的東西送到遠端倉庫。</p>
+<hr>
+<h2 id="九、常見狀況與解法"><a href="#九、常見狀況與解法" class="headerlink" title="九、常見狀況與解法"></a>九、常見狀況與解法</h2><h3 id="修改後不小心沒-add-就-commit-了？"><a href="#修改後不小心沒-add-就-commit-了？" class="headerlink" title="修改後不小心沒 add 就 commit 了？"></a>修改後不小心沒 add 就 commit 了？</h3><p>可用下列方式補上：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add 新增的檔案</span><br><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+
+<h3 id="想撤銷修改？"><a href="#想撤銷修改？" class="headerlink" title="想撤銷修改？"></a>想撤銷修改？</h3><p>還沒 add 的：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -- 檔案名</span><br></pre></td></tr></table></figure>
+
+<p>已經 add 了但還沒 commit：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset HEAD 檔案名</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="十、總結：從習慣開始，讓版本控制變簡單"><a href="#十、總結：從習慣開始，讓版本控制變簡單" class="headerlink" title="十、總結：從習慣開始，讓版本控制變簡單"></a>十、總結：從習慣開始，讓版本控制變簡單</h2><p>熟悉 Git 的過程一開始可能會覺得繁瑣，但當你習慣了之後，它會成為你每天工作中不可或缺的工具。建議你在小專案中練習基本指令，隨手記錄每次的變更，透過良好的 commit message，讓未來的你感謝現在有好好整理的你。</p>
+<p>如果你希望與他人協作開發，Git 更能大幅簡化流程、避免衝突。下一步，你可以學習 Pull Request（PR）、Git Flow、Rebase 等進階技巧，逐步精進你的版本控制能力。</p>
+<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
+<li><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a></li>
+<li><a href="https://www.conventionalcommits.org/zh-hant/v1.0.0/">約定式提交</a></li>
+<li><a href="https://hackmd.io/@ohQEG7SsQoeXVwVP2-v06A/rkhtpmyXa">[Git] Conventional Commits 規範性提交</a></li>
+<li><a href="https://w3c.hexschool.com/git/10bf7677">git reflog - 還原大招</a></li>
+<li><a href="https://gitbook.tw/">為你自己學 Git</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Github</tag>
+        <tag>Git</tag>
+        <tag>版本控制</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML &amp; CSS 切版入門教學筆記 | 學習筆記</title>
+    <url>/2024/07/01/learning-notes-html-css-layout-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="1-HTML-基礎概念"><a href="#1-HTML-基礎概念" class="headerlink" title="1. HTML 基礎概念"></a>1. HTML 基礎概念</h1><p>HTML（HyperText Markup Language）是網頁的基礎結構，透過標籤（Tag）定義不同的內容與結構。</p>
+<h3 id="1-1-常見標籤"><a href="#1-1-常見標籤" class="headerlink" title="1.1 常見標籤"></a>1.1 常見標籤</h3><ul>
+<li><code>&lt;!DOCTYPE html&gt;</code>：宣告 HTML 文件類型。</li>
+<li><code>&lt;html&gt;</code>：HTML 文件的根標籤。</li>
+<li><code>&lt;head&gt;</code>：包含頁面設定、SEO 資訊、CSS 連結等。</li>
+<li><code>&lt;title&gt;</code>：設定網頁標題。</li>
+<li><code>&lt;body&gt;</code>：放置頁面可見內容。</li>
+<li><code>&lt;h1&gt; ~ &lt;h6&gt;</code>：標題。</li>
+<li><code>&lt;p&gt;</code>：段落。</li>
+<li><code>&lt;a&gt;</code>：超連結。</li>
+<li><code>&lt;img&gt;</code>：圖片。</li>
+<li><code>&lt;ul&gt;</code>、<code>&lt;ol&gt;</code>、<code>&lt;li&gt;</code>：無序與有序列表。</li>
+<li><code>&lt;div&gt;</code>：區塊。</li>
+<li><code>&lt;span&gt;</code>：行內元素。</li>
+<li><code>&lt;table&gt;</code>、<code>&lt;tr&gt;</code>、<code>&lt;td&gt;</code>：表格。</li>
+</ul>
+<h3 id="1-2-HTML5-新增語意標籤"><a href="#1-2-HTML5-新增語意標籤" class="headerlink" title="1.2 HTML5 新增語意標籤"></a>1.2 HTML5 新增語意標籤</h3><ul>
+<li><code>&lt;header&gt;</code>：頁首。</li>
+<li><code>&lt;nav&gt;</code>：導航。</li>
+<li><code>&lt;section&gt;</code>：區段。</li>
+<li><code>&lt;article&gt;</code>：獨立內容。</li>
+<li><code>&lt;aside&gt;</code>：側邊欄。</li>
+<li><code>&lt;footer&gt;</code>：頁尾。</li>
+</ul>
+<h1 id="2-CSS-基礎概念"><a href="#2-CSS-基礎概念" class="headerlink" title="2. CSS 基礎概念"></a>2. CSS 基礎概念</h1><p>CSS（Cascading Style Sheets）用於設計與美化 HTML 元素。</p>
+<h3 id="2-1-CSS-引入方式"><a href="#2-1-CSS-引入方式" class="headerlink" title="2.1 CSS 引入方式"></a>2.1 CSS 引入方式</h3><ul>
+<li><strong>內嵌樣式（Inline Style）</strong>：直接寫在 HTML 標籤內，例如：<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color: red; font-size: 16px;&quot;</span>&gt;</span>這是一段文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>內部樣式（Internal Style）</strong>：寫在 <code>&lt;style&gt;</code> 標籤內，例如：<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: blue; <span class="attribute">font-size</span>: <span class="number">18px</span>; &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>外部樣式（External Style）</strong>：將 CSS 放入 <code>.css</code> 文件中，再用 <code>&lt;link&gt;</code> 連結，例如：<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;styles.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2-2-CSS-選擇器"><a href="#2-2-CSS-選擇器" class="headerlink" title="2.2 CSS 選擇器"></a>2.2 CSS 選擇器</h3><ul>
+<li><strong>標籤選擇器</strong>：影響所有相同標籤，例如：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: green; &#125;</span><br></pre></td></tr></table></figure></li>
+<li><strong>類別選擇器（Class）</strong>：適用於多個元素，例如：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123; <span class="attribute">background-color</span>: yellow; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span>內容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>ID 選擇器</strong>：適用於單一元素，例如：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#header</span> &#123; <span class="attribute">font-size</span>: <span class="number">24px</span>; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">&quot;header&quot;</span>&gt;</span>標題<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>後代選擇器</strong>：選擇特定層級內的元素，例如：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: blue; &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2-3-盒模型（Box-Model）"><a href="#2-3-盒模型（Box-Model）" class="headerlink" title="2.3 盒模型（Box Model）"></a>2.3 盒模型（Box Model）</h3><p>盒模型包含四個部分：</p>
+<ol>
+<li><strong>Content</strong>（內容區域）。</li>
+<li><strong>Padding</strong>（內距，內容與邊框之間的距離）。</li>
+<li><strong>Border</strong>（邊框）。</li>
+<li><strong>Margin</strong>（外距，與其他元素的距離）。</li>
+</ol>
+<p>範例：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid black;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-常見版型切版技巧"><a href="#3-常見版型切版技巧" class="headerlink" title="3. 常見版型切版技巧"></a>3. 常見版型切版技巧</h1><h3 id="3-1-Flexbox-佈局"><a href="#3-1-Flexbox-佈局" class="headerlink" title="3.1 Flexbox 佈局"></a>3.1 Flexbox 佈局</h3><p><code>Flexbox</code> 用於彈性排列子元素。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-Grid-佈局"><a href="#3-2-Grid-佈局" class="headerlink" title="3.2 Grid 佈局"></a>3.2 Grid 佈局</h3><p><code>Grid</code> 提供更強大的網格系統。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-響應式設計（RWD）"><a href="#3-3-響應式設計（RWD）" class="headerlink" title="3.3 響應式設計（RWD）"></a>3.3 響應式設計（RWD）</h3><p>使用 <code>@media</code> 來適應不同螢幕尺寸。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-實戰案例：基本網頁切版"><a href="#4-實戰案例：基本網頁切版" class="headerlink" title="4. 實戰案例：基本網頁切版"></a>4. 實戰案例：基本網頁切版</h1><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-TW&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>簡單網頁<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;styles.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的網站<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>首頁<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>關於<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>聯絡<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>這是一個簡單的 HTML &amp; CSS 切版示範。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: Arial, sans-serif;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">header</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">    <span class="attribute">max-width</span>: <span class="number">800px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: auto;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-總結"><a href="#5-總結" class="headerlink" title="5. 總結"></a>5. 總結</h1><p>透過學習 HTML 與 CSS，可以建立結構清晰、外觀美觀的網頁。建議多加練習不同的切版方式，如 Flexbox 和 Grid，並運用 RWD 技巧來提升適應性，讓網站在不同裝置上都能有良好的呈現效果。</p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>HTML</tag>
+        <tag>切版</tag>
       </tags>
   </entry>
   <entry>
@@ -2055,78 +2325,6 @@
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTML &amp; CSS 切版入門教學筆記 | 學習筆記</title>
-    <url>/2024/07/01/learning-notes-html-css-layout-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="1-HTML-基礎概念"><a href="#1-HTML-基礎概念" class="headerlink" title="1. HTML 基礎概念"></a>1. HTML 基礎概念</h1><p>HTML（HyperText Markup Language）是網頁的基礎結構，透過標籤（Tag）定義不同的內容與結構。</p>
-<h3 id="1-1-常見標籤"><a href="#1-1-常見標籤" class="headerlink" title="1.1 常見標籤"></a>1.1 常見標籤</h3><ul>
-<li><code>&lt;!DOCTYPE html&gt;</code>：宣告 HTML 文件類型。</li>
-<li><code>&lt;html&gt;</code>：HTML 文件的根標籤。</li>
-<li><code>&lt;head&gt;</code>：包含頁面設定、SEO 資訊、CSS 連結等。</li>
-<li><code>&lt;title&gt;</code>：設定網頁標題。</li>
-<li><code>&lt;body&gt;</code>：放置頁面可見內容。</li>
-<li><code>&lt;h1&gt; ~ &lt;h6&gt;</code>：標題。</li>
-<li><code>&lt;p&gt;</code>：段落。</li>
-<li><code>&lt;a&gt;</code>：超連結。</li>
-<li><code>&lt;img&gt;</code>：圖片。</li>
-<li><code>&lt;ul&gt;</code>、<code>&lt;ol&gt;</code>、<code>&lt;li&gt;</code>：無序與有序列表。</li>
-<li><code>&lt;div&gt;</code>：區塊。</li>
-<li><code>&lt;span&gt;</code>：行內元素。</li>
-<li><code>&lt;table&gt;</code>、<code>&lt;tr&gt;</code>、<code>&lt;td&gt;</code>：表格。</li>
-</ul>
-<h3 id="1-2-HTML5-新增語意標籤"><a href="#1-2-HTML5-新增語意標籤" class="headerlink" title="1.2 HTML5 新增語意標籤"></a>1.2 HTML5 新增語意標籤</h3><ul>
-<li><code>&lt;header&gt;</code>：頁首。</li>
-<li><code>&lt;nav&gt;</code>：導航。</li>
-<li><code>&lt;section&gt;</code>：區段。</li>
-<li><code>&lt;article&gt;</code>：獨立內容。</li>
-<li><code>&lt;aside&gt;</code>：側邊欄。</li>
-<li><code>&lt;footer&gt;</code>：頁尾。</li>
-</ul>
-<h1 id="2-CSS-基礎概念"><a href="#2-CSS-基礎概念" class="headerlink" title="2. CSS 基礎概念"></a>2. CSS 基礎概念</h1><p>CSS（Cascading Style Sheets）用於設計與美化 HTML 元素。</p>
-<h3 id="2-1-CSS-引入方式"><a href="#2-1-CSS-引入方式" class="headerlink" title="2.1 CSS 引入方式"></a>2.1 CSS 引入方式</h3><ul>
-<li><strong>內嵌樣式（Inline Style）</strong>：直接寫在 HTML 標籤內，例如：<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color: red; font-size: 16px;&quot;</span>&gt;</span>這是一段文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><strong>內部樣式（Internal Style）</strong>：寫在 <code>&lt;style&gt;</code> 標籤內，例如：<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: blue; <span class="attribute">font-size</span>: <span class="number">18px</span>; &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><strong>外部樣式（External Style）</strong>：將 CSS 放入 <code>.css</code> 文件中，再用 <code>&lt;link&gt;</code> 連結，例如：<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;styles.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="2-2-CSS-選擇器"><a href="#2-2-CSS-選擇器" class="headerlink" title="2.2 CSS 選擇器"></a>2.2 CSS 選擇器</h3><ul>
-<li><strong>標籤選擇器</strong>：影響所有相同標籤，例如：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: green; &#125;</span><br></pre></td></tr></table></figure></li>
-<li><strong>類別選擇器（Class）</strong>：適用於多個元素，例如：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123; <span class="attribute">background-color</span>: yellow; &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span>內容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><strong>ID 選擇器</strong>：適用於單一元素，例如：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#header</span> &#123; <span class="attribute">font-size</span>: <span class="number">24px</span>; &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">&quot;header&quot;</span>&gt;</span>標題<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><strong>後代選擇器</strong>：選擇特定層級內的元素，例如：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: blue; &#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="2-3-盒模型（Box-Model）"><a href="#2-3-盒模型（Box-Model）" class="headerlink" title="2.3 盒模型（Box Model）"></a>2.3 盒模型（Box Model）</h3><p>盒模型包含四個部分：</p>
-<ol>
-<li><strong>Content</strong>（內容區域）。</li>
-<li><strong>Padding</strong>（內距，內容與邊框之間的距離）。</li>
-<li><strong>Border</strong>（邊框）。</li>
-<li><strong>Margin</strong>（外距，與其他元素的距離）。</li>
-</ol>
-<p>範例：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid black;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="3-常見版型切版技巧"><a href="#3-常見版型切版技巧" class="headerlink" title="3. 常見版型切版技巧"></a>3. 常見版型切版技巧</h1><h3 id="3-1-Flexbox-佈局"><a href="#3-1-Flexbox-佈局" class="headerlink" title="3.1 Flexbox 佈局"></a>3.1 Flexbox 佈局</h3><p><code>Flexbox</code> 用於彈性排列子元素。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-Grid-佈局"><a href="#3-2-Grid-佈局" class="headerlink" title="3.2 Grid 佈局"></a>3.2 Grid 佈局</h3><p><code>Grid</code> 提供更強大的網格系統。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-響應式設計（RWD）"><a href="#3-3-響應式設計（RWD）" class="headerlink" title="3.3 響應式設計（RWD）"></a>3.3 響應式設計（RWD）</h3><p>使用 <code>@media</code> 來適應不同螢幕尺寸。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="4-實戰案例：基本網頁切版"><a href="#4-實戰案例：基本網頁切版" class="headerlink" title="4. 實戰案例：基本網頁切版"></a>4. 實戰案例：基本網頁切版</h1><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-TW&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>簡單網頁<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;styles.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的網站<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>首頁<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>關於<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>聯絡<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>這是一個簡單的 HTML &amp; CSS 切版示範。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: Arial, sans-serif;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">header</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">    <span class="attribute">max-width</span>: <span class="number">800px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: auto;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="5-總結"><a href="#5-總結" class="headerlink" title="5. 總結"></a>5. 總結</h1><p>透過學習 HTML 與 CSS，可以建立結構清晰、外觀美觀的網頁。建議多加練習不同的切版方式，如 Flexbox 和 Grid，並運用 RWD 技巧來提升適應性，讓網站在不同裝置上都能有良好的呈現效果。</p>
-]]></content>
-      <tags>
-        <tag>CSS</tag>
-        <tag>HTML</tag>
-        <tag>切版</tag>
       </tags>
   </entry>
   <entry>
@@ -2653,6 +2851,89 @@
       </tags>
   </entry>
   <entry>
+    <title>setTimeout + for loop + closure 核心介紹入門教學筆記 | 學習筆記</title>
+    <url>/2023/07/01/learning-notes-javascript-event-loop-closure-problems/</url>
+    <content><![CDATA[<h3 id="一、var-和-let-的作用域差異"><a href="#一、var-和-let-的作用域差異" class="headerlink" title="一、var 和 let 的作用域差異"></a>一、<code>var</code> 和 <code>let</code> 的作用域差異</h3><table>
+<thead>
+<tr>
+<th>宣告方式</th>
+<th>作用域</th>
+<th>是否有暫時性死區（TDZ）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>var</code></td>
+<td>函式作用域</td>
+<td>否</td>
+</tr>
+<tr>
+<td><code>let</code></td>
+<td>區塊作用域</td>
+<td>是</td>
+</tr>
+<tr>
+<td><code>const</code></td>
+<td>區塊作用域</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>var</code> 宣告的變數在整個函式內都可存取</li>
+<li><code>let</code> 則只在所在區塊 <code>&#123;&#125;</code> 中有效</li>
+</ul>
+<hr>
+<h3 id="二、閉包（Closure）"><a href="#二、閉包（Closure）" class="headerlink" title="二、閉包（Closure）"></a>二、閉包（Closure）</h3><p>閉包是指「函式能記住它被定義時的作用域，即使在外部執行也能存取當時的變數」。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">outer</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> <span class="title function_">inner</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(count++);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fn = <span class="title function_">outer</span>();</span><br><span class="line"><span class="title function_">fn</span>(); <span class="comment">// 0</span></span><br><span class="line"><span class="title function_">fn</span>(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<p>這個例子中，<code>inner</code> 函式記住了 <code>outer</code> 中的 <code>count</code> 變數。</p>
+<hr>
+<h3 id="三、事件迴圈與-setTimeout"><a href="#三、事件迴圈與-setTimeout" class="headerlink" title="三、事件迴圈與 setTimeout"></a>三、事件迴圈與 <code>setTimeout</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;start&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;timeout&quot;</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;end&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>輸出順序：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">start</span><br><span class="line">end</span><br><span class="line">timeout</span><br></pre></td></tr></table></figure>
+
+<p>原因是 <code>setTimeout</code> 是非同步的，它會被放入「事件佇列」（event queue）中，等主程式執行完後才會被處理。</p>
+<hr>
+<h3 id="四、面試陷阱：var-與-setTimeout-搭配"><a href="#四、面試陷阱：var-與-setTimeout-搭配" class="headerlink" title="四、面試陷阱：var 與 setTimeout 搭配"></a>四、面試陷阱：<code>var</code> 與 <code>setTimeout</code> 搭配</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這段程式的輸出是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">3</span><br><span class="line">3</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<p>因為：</p>
+<ul>
+<li><code>var</code> 沒有區塊作用域，所有的 <code>setTimeout</code> 都引用同一個 <code>i</code></li>
+<li>當 <code>setTimeout</code> 執行時，迴圈已跑完，<code>i</code> 已是 3</li>
+</ul>
+<hr>
+<h3 id="五、正確解法：使用-let"><a href="#五、正確解法：使用-let" class="headerlink" title="五、正確解法：使用 let"></a>五、正確解法：使用 <code>let</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>輸出為：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<p>因為 <code>let</code> 有區塊作用域，每次迴圈都建立新的 <code>i</code>，閉包會記住各自的值。</p>
+<hr>
+<h3 id="六、另一個解法：IIFE（立即執行函式）"><a href="#六、另一個解法：IIFE（立即執行函式）" class="headerlink" title="六、另一個解法：IIFE（立即執行函式）"></a>六、另一個解法：IIFE（立即執行函式）</h3><p>若必須用 <code>var</code>，可以用 IIFE 綁定每次的 <code>i</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  (<span class="keyword">function</span>(<span class="params">j</span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(j);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣也會正確輸出：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="七、總結"><a href="#七、總結" class="headerlink" title="七、總結"></a>七、總結</h3><ol>
+<li><code>var</code> 是函式作用域，容易被非同步邏輯影響</li>
+<li><code>let</code> 是區塊作用域，與閉包搭配可解決常見陷阱</li>
+<li><code>setTimeout</code> 是非同步，會延遲執行</li>
+<li>通常面試會結合這些概念出題，考你對 JavaScript 執行流程、作用域與閉包的理解</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>setTimeout</tag>
+        <tag>for loop</tag>
+        <tag>closure</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript 模組（Module）入門教學筆記 | 學習筆記</title>
     <url>/2024/12/16/learning-notes-javascript-es-module-intro-tutorial/</url>
     <content><![CDATA[<h2 id="1-什麼是-JavaScript-模組？"><a href="#1-什麼是-JavaScript-模組？" class="headerlink" title="1. 什麼是 JavaScript 模組？"></a><strong>1. 什麼是 JavaScript 模組？</strong></h2><p>JavaScript 模組（Module）是一種<strong>將程式碼拆分成多個獨立文件</strong>，並在不同文件間共享和管理程式碼的方式。透過模組化的設計，可以讓程式碼更具結構性、可讀性與可維護性。</p>
@@ -2790,89 +3071,6 @@
         <tag>frontend engineer</tag>
         <tag>模組</tag>
         <tag>module</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>setTimeout + for loop + closure 核心介紹入門教學筆記 | 學習筆記</title>
-    <url>/2023/07/01/learning-notes-javascript-event-loop-closure-problems/</url>
-    <content><![CDATA[<h3 id="一、var-和-let-的作用域差異"><a href="#一、var-和-let-的作用域差異" class="headerlink" title="一、var 和 let 的作用域差異"></a>一、<code>var</code> 和 <code>let</code> 的作用域差異</h3><table>
-<thead>
-<tr>
-<th>宣告方式</th>
-<th>作用域</th>
-<th>是否有暫時性死區（TDZ）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>var</code></td>
-<td>函式作用域</td>
-<td>否</td>
-</tr>
-<tr>
-<td><code>let</code></td>
-<td>區塊作用域</td>
-<td>是</td>
-</tr>
-<tr>
-<td><code>const</code></td>
-<td>區塊作用域</td>
-<td>是</td>
-</tr>
-</tbody></table>
-<ul>
-<li><code>var</code> 宣告的變數在整個函式內都可存取</li>
-<li><code>let</code> 則只在所在區塊 <code>&#123;&#125;</code> 中有效</li>
-</ul>
-<hr>
-<h3 id="二、閉包（Closure）"><a href="#二、閉包（Closure）" class="headerlink" title="二、閉包（Closure）"></a>二、閉包（Closure）</h3><p>閉包是指「函式能記住它被定義時的作用域，即使在外部執行也能存取當時的變數」。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">outer</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> <span class="title function_">inner</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(count++);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fn = <span class="title function_">outer</span>();</span><br><span class="line"><span class="title function_">fn</span>(); <span class="comment">// 0</span></span><br><span class="line"><span class="title function_">fn</span>(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-
-<p>這個例子中，<code>inner</code> 函式記住了 <code>outer</code> 中的 <code>count</code> 變數。</p>
-<hr>
-<h3 id="三、事件迴圈與-setTimeout"><a href="#三、事件迴圈與-setTimeout" class="headerlink" title="三、事件迴圈與 setTimeout"></a>三、事件迴圈與 <code>setTimeout</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;start&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;timeout&quot;</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;end&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>輸出順序：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">start</span><br><span class="line">end</span><br><span class="line">timeout</span><br></pre></td></tr></table></figure>
-
-<p>原因是 <code>setTimeout</code> 是非同步的，它會被放入「事件佇列」（event queue）中，等主程式執行完後才會被處理。</p>
-<hr>
-<h3 id="四、面試陷阱：var-與-setTimeout-搭配"><a href="#四、面試陷阱：var-與-setTimeout-搭配" class="headerlink" title="四、面試陷阱：var 與 setTimeout 搭配"></a>四、面試陷阱：<code>var</code> 與 <code>setTimeout</code> 搭配</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這段程式的輸出是：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">3</span><br><span class="line">3</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
-
-<p>因為：</p>
-<ul>
-<li><code>var</code> 沒有區塊作用域，所有的 <code>setTimeout</code> 都引用同一個 <code>i</code></li>
-<li>當 <code>setTimeout</code> 執行時，迴圈已跑完，<code>i</code> 已是 3</li>
-</ul>
-<hr>
-<h3 id="五、正確解法：使用-let"><a href="#五、正確解法：使用-let" class="headerlink" title="五、正確解法：使用 let"></a>五、正確解法：使用 <code>let</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>輸出為：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-<p>因為 <code>let</code> 有區塊作用域，每次迴圈都建立新的 <code>i</code>，閉包會記住各自的值。</p>
-<hr>
-<h3 id="六、另一個解法：IIFE（立即執行函式）"><a href="#六、另一個解法：IIFE（立即執行函式）" class="headerlink" title="六、另一個解法：IIFE（立即執行函式）"></a>六、另一個解法：IIFE（立即執行函式）</h3><p>若必須用 <code>var</code>，可以用 IIFE 綁定每次的 <code>i</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  (<span class="keyword">function</span>(<span class="params">j</span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(j);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這樣也會正確輸出：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="七、總結"><a href="#七、總結" class="headerlink" title="七、總結"></a>七、總結</h3><ol>
-<li><code>var</code> 是函式作用域，容易被非同步邏輯影響</li>
-<li><code>let</code> 是區塊作用域，與閉包搭配可解決常見陷阱</li>
-<li><code>setTimeout</code> 是非同步，會延遲執行</li>
-<li>通常面試會結合這些概念出題，考你對 JavaScript 執行流程、作用域與閉包的理解</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>javascript</tag>
-        <tag>setTimeout</tag>
-        <tag>for loop</tag>
-        <tag>closure</tag>
       </tags>
   </entry>
   <entry>
@@ -3953,6 +4151,68 @@
       </tags>
   </entry>
   <entry>
+    <title>Django CRUD（不使用 ModelForm）入門教學筆記 | 學習筆記</title>
+    <url>/2024/08/31/learning-notes-python-django-crud-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在 Django 中，<code>ModelForm</code> 提供了一個快速建立表單與驗證的工具，但在某些情境下，我們可能希望自己掌控表單結構與驗證流程。這篇筆記將示範如何不依賴 <code>ModelForm</code>，手動實作一套 CRUD 系統，幫助你更深入理解 Django 表單處理的基本原理。</p>
+<p>我們將製作一個簡單的「書籍管理系統」，支援新增（Create）、讀取（Read）、更新（Update）與刪除（Delete）書籍資訊。</p>
+<h2 id="1-建立-Django-專案與應用"><a href="#1-建立-Django-專案與應用" class="headerlink" title="1. 建立 Django 專案與應用"></a>1. 建立 Django 專案與應用</h2><p>首先，安裝 Django 並建立新的專案與應用：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install django</span><br><span class="line">django-admin startproject myproject</span><br><span class="line"><span class="built_in">cd</span> myproject</span><br><span class="line">python manage.py startapp books</span><br></pre></td></tr></table></figure>
+
+<p>註冊 <code>books</code> 應用於 <code>myproject/settings.py</code> 的 <code>INSTALLED_APPS</code>：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">&#x27;books&#x27;</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-定義模型（Model）"><a href="#2-定義模型（Model）" class="headerlink" title="2. 定義模型（Model）"></a>2. 定義模型（Model）</h2><p>在 <code>books/models.py</code> 中定義一個簡單的書籍模型：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Book</span>(models.Model):</span><br><span class="line">    title = models.CharField(max_length=<span class="number">200</span>)</span><br><span class="line">    author = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line">    published_date = models.DateField()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.title</span><br></pre></td></tr></table></figure>
+
+<p>遷移資料庫：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py makemigrations</span><br><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-撰寫-Views（不使用-ModelForm）"><a href="#3-撰寫-Views（不使用-ModelForm）" class="headerlink" title="3. 撰寫 Views（不使用 ModelForm）"></a>3. 撰寫 Views（不使用 ModelForm）</h2><p>在 <code>books/views.py</code> 中撰寫手動處理的 CRUD 功能。</p>
+<h3 id="新增書籍（Create）"><a href="#新增書籍（Create）" class="headerlink" title="新增書籍（Create）"></a>新增書籍（Create）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render, redirect</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Book</span><br><span class="line"><span class="keyword">from</span> django.utils.dateparse <span class="keyword">import</span> parse_date</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_book</span>(<span class="params">request</span>):</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        title = request.POST.get(<span class="string">&#x27;title&#x27;</span>)</span><br><span class="line">        author = request.POST.get(<span class="string">&#x27;author&#x27;</span>)</span><br><span class="line">        published_date_str = request.POST.get(<span class="string">&#x27;published_date&#x27;</span>)</span><br><span class="line">        published_date = parse_date(published_date_str)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> title <span class="keyword">and</span> author <span class="keyword">and</span> published_date:</span><br><span class="line">            Book.objects.create(title=title, author=author, published_date=published_date)</span><br><span class="line">            <span class="keyword">return</span> redirect(<span class="string">&#x27;book_list&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            error = <span class="string">&quot;所有欄位皆為必填&quot;</span></span><br><span class="line">            <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_form.html&#x27;</span>, &#123;<span class="string">&#x27;error&#x27;</span>: error&#125;)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_form.html&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="讀取書籍（Read）"><a href="#讀取書籍（Read）" class="headerlink" title="讀取書籍（Read）"></a>讀取書籍（Read）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">book_list</span>(<span class="params">request</span>):</span><br><span class="line">    books = Book.objects.<span class="built_in">all</span>()</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_list.html&#x27;</span>, &#123;<span class="string">&#x27;books&#x27;</span>: books&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="更新書籍（Update）"><a href="#更新書籍（Update）" class="headerlink" title="更新書籍（Update）"></a>更新書籍（Update）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> get_object_or_404</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">update_book</span>(<span class="params">request, pk</span>):</span><br><span class="line">    book = get_object_or_404(Book, pk=pk)</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        title = request.POST.get(<span class="string">&#x27;title&#x27;</span>)</span><br><span class="line">        author = request.POST.get(<span class="string">&#x27;author&#x27;</span>)</span><br><span class="line">        published_date_str = request.POST.get(<span class="string">&#x27;published_date&#x27;</span>)</span><br><span class="line">        published_date = parse_date(published_date_str)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> title <span class="keyword">and</span> author <span class="keyword">and</span> published_date:</span><br><span class="line">            book.title = title</span><br><span class="line">            book.author = author</span><br><span class="line">            book.published_date = published_date</span><br><span class="line">            book.save()</span><br><span class="line">            <span class="keyword">return</span> redirect(<span class="string">&#x27;book_list&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            error = <span class="string">&quot;所有欄位皆為必填&quot;</span></span><br><span class="line">            <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_form.html&#x27;</span>, &#123;<span class="string">&#x27;book&#x27;</span>: book, <span class="string">&#x27;error&#x27;</span>: error&#125;)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_form.html&#x27;</span>, &#123;<span class="string">&#x27;book&#x27;</span>: book&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="刪除書籍（Delete）"><a href="#刪除書籍（Delete）" class="headerlink" title="刪除書籍（Delete）"></a>刪除書籍（Delete）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">delete_book</span>(<span class="params">request, pk</span>):</span><br><span class="line">    book = get_object_or_404(Book, pk=pk)</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        book.delete()</span><br><span class="line">        <span class="keyword">return</span> redirect(<span class="string">&#x27;book_list&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_confirm_delete.html&#x27;</span>, &#123;<span class="string">&#x27;book&#x27;</span>: book&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-設定-URL-路由"><a href="#4-設定-URL-路由" class="headerlink" title="4. 設定 URL 路由"></a>4. 設定 URL 路由</h2><p>在 <code>books/urls.py</code> 中設定對應的路由：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;&#x27;</span>, views.book_list, name=<span class="string">&#x27;book_list&#x27;</span>),</span><br><span class="line">    path(<span class="string">&#x27;create/&#x27;</span>, views.create_book, name=<span class="string">&#x27;create_book&#x27;</span>),</span><br><span class="line">    path(<span class="string">&#x27;update/&lt;int:pk&gt;/&#x27;</span>, views.update_book, name=<span class="string">&#x27;update_book&#x27;</span>),</span><br><span class="line">    path(<span class="string">&#x27;delete/&lt;int:pk&gt;/&#x27;</span>, views.delete_book, name=<span class="string">&#x27;delete_book&#x27;</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>並在 <code>myproject/urls.py</code> 引入 <code>books</code> 路由：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path, include</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;admin/&#x27;</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">&#x27;books/&#x27;</span>, include(<span class="string">&#x27;books.urls&#x27;</span>)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-建立模板（Templates）"><a href="#5-建立模板（Templates）" class="headerlink" title="5. 建立模板（Templates）"></a>5. 建立模板（Templates）</h2><p>手動撰寫簡單的 HTML 表單與顯示畫面。</p>
+<h3 id="book-list-html"><a href="#book-list-html" class="headerlink" title="book_list.html"></a><code>book_list.html</code></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>書籍列表<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;create_book&#x27; %&#125;&quot;</span>&gt;</span>新增書籍<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    &#123;% for book in books %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        &#123;&#123; book.title &#125;&#125; - &#123;&#123; book.author &#125;&#125; - &#123;&#123; book.published_date &#125;&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;update_book&#x27; book.id %&#125;&quot;</span>&gt;</span>編輯<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;delete_book&#x27; book.id %&#125;&quot;</span>&gt;</span>刪除<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="book-form-html"><a href="#book-form-html" class="headerlink" title="book_form.html"></a><code>book_form.html</code></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;% if book %&#125;編輯書籍&#123;% else %&#125;新增書籍&#123;% endif %&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;% if error %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:red;&quot;</span>&gt;</span>&#123;&#123; error &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">    &#123;% csrf_token %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        標題：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;title&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&#123;&#123; book.title|default_if_none:&#x27;&#x27; &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        作者：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;author&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&#123;&#123; book.author|default_if_none:&#x27;&#x27; &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        出版日期（格式 yyyy-mm-dd）：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;published_date&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&#123;&#123; book.published_date|default_if_none:&#x27;&#x27; &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>儲存<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;book_list&#x27; %&#125;&quot;</span>&gt;</span>返回列表<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="book-confirm-delete-html"><a href="#book-confirm-delete-html" class="headerlink" title="book_confirm_delete.html"></a><code>book_confirm_delete.html</code></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>刪除書籍<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>確定要刪除 &quot;&#123;&#123; book.title &#125;&#125;&quot; 嗎？<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">    &#123;% csrf_token %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>確定刪除<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;book_list&#x27; %&#125;&quot;</span>&gt;</span>取消<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-啟動伺服器測試"><a href="#6-啟動伺服器測試" class="headerlink" title="6. 啟動伺服器測試"></a>6. 啟動伺服器測試</h2><p>啟動 Django 開發伺服器：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
+
+<p>在瀏覽器開啟 <code>http://127.0.0.1:8000/books/</code>，你將可以新增、查詢、編輯和刪除書籍。</p>
+<hr>
+<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>這篇教學示範了在 <strong>不使用 <code>ModelForm</code></strong> 的情況下，手動撰寫表單處理與資料驗證，完整實作了 Django 的 CRUD 功能。</p>
+<p>這種方式的優點在於靈活度高，你可以完全控制表單的結構、驗證邏輯與錯誤處理，非常適合需要客製化表單行為或前後端分離的專案。不過，相較於使用 <code>ModelForm</code>，開發成本略高，也容易產生重複程式碼，因此適時選擇工具是重要的工程判斷。</p>
+<p>進一步的優化方向包括：</p>
+<ul>
+<li>加入更完整的資料驗證</li>
+<li>增加欄位格式錯誤提示</li>
+<li>使用 JavaScript 增強表單互動</li>
+<li>將表單資料與邏輯封裝成 Class-Based Views（CBV）</li>
+</ul>
+<p>透過本篇範例，希望你對 Django 低階處理表單與 CRUD 流程有更深入的理解。</p>
+]]></content>
+      <tags>
+        <tag>web</tag>
+        <tag>python</tag>
+        <tag>Django</tag>
+        <tag>ModelForm）</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Django「一對一」、「一對多」、「多對多」關聯入門教學筆記 | 學習筆記</title>
     <url>/2024/12/01/learning-notes-python-django-db-mapping-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>當你在學 Django 或資料庫設計時，常會遇到「一對一」、「一對多」、「多對多」這三種關聯（Relationship）。這些是資料庫中表與表之間的關係，下面用簡單的例子幫你搞懂它們的差異：</p>
@@ -4003,11 +4263,11 @@
 </tbody></table>
 ]]></content>
       <tags>
+        <tag>python</tag>
         <tag>Django</tag>
         <tag>一對一</tag>
         <tag>一對多</tag>
         <tag>多對多</tag>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -4106,8 +4366,8 @@
 </ol>
 ]]></content>
       <tags>
-        <tag>python</tag>
         <tag>web</tag>
+        <tag>python</tag>
         <tag>FastAPI</tag>
       </tags>
   </entry>
@@ -5880,6 +6140,97 @@
       </tags>
   </entry>
   <entry>
+    <title>Web 資訊安全入門教學筆記 | 學習筆記</title>
+    <url>/2024/10/16/learning-notes-web-security-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在現代網頁應用中，資安問題層出不窮，從簡單的跨站攻擊（XSS）到複雜的憑證竊取、身份偽造（CSRF），都可能導致個資外洩、系統遭入侵甚至企業商譽受損。</p>
+<p>本篇筆記將從實務角度出發，介紹幾種常見 Web 資安風險及其防範策略，讓你能以最基本的方式保護網站與使用者安全。</p>
+<hr>
+<h2 id="一、常見-Web-資安威脅類型"><a href="#一、常見-Web-資安威脅類型" class="headerlink" title="一、常見 Web 資安威脅類型"></a>一、常見 Web 資安威脅類型</h2><h3 id="1-XSS（Cross-Site-Scripting，跨站腳本攻擊）"><a href="#1-XSS（Cross-Site-Scripting，跨站腳本攻擊）" class="headerlink" title="1. XSS（Cross-Site Scripting，跨站腳本攻擊）"></a>1. XSS（Cross-Site Scripting，跨站腳本攻擊）</h3><p><strong>原理</strong>：攻擊者將惡意腳本注入至網站，當其他使用者瀏覽該頁面時，惡意腳本便會在其瀏覽器上執行，例如竊取 cookie、冒充使用者操作等。</p>
+<h3 id="實例："><a href="#實例：" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 攻擊者輸入的留言內容 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="title function_">alert</span>(<span class="string">&#x27;你被 XSS 攻擊了&#x27;</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>若網站未正確處理輸入，這段 JavaScript 就會直接被執行。</p>
+<h3 id="防範方式："><a href="#防範方式：" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>對所有輸入進行 <strong>轉義（Escape）</strong></li>
+<li>使用前端框架自動編碼機制（如 React 的 JSX）</li>
+<li>避免使用 <code>innerHTML</code> 插入未清洗的資料</li>
+</ul>
+<h4 id="範例（JavaScript-轉義文字）："><a href="#範例（JavaScript-轉義文字）：" class="headerlink" title="範例（JavaScript 轉義文字）："></a>範例（JavaScript 轉義文字）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">escapeHtml</span>(<span class="params">str</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> str</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&amp;/g</span>, <span class="string">&quot;&amp;amp;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&lt;/g</span>, <span class="string">&quot;&amp;lt;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&gt;/g</span>, <span class="string">&quot;&amp;gt;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&quot;/g</span>, <span class="string">&quot;&amp;quot;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&#x27;/g</span>, <span class="string">&quot;&amp;#039;&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-CSRF（Cross-Site-Request-Forgery，跨站請求偽造）"><a href="#2-CSRF（Cross-Site-Request-Forgery，跨站請求偽造）" class="headerlink" title="2. CSRF（Cross-Site Request Forgery，跨站請求偽造）"></a>2. CSRF（Cross-Site Request Forgery，跨站請求偽造）</h3><p><strong>原理</strong>：攻擊者引導使用者點擊惡意連結或載入圖片，使其在未察覺情況下對已登入的網站發送請求，進而竄改資料或觸發操作。</p>
+<h3 id="實例：-1"><a href="#實例：-1" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 攻擊者網站中隱藏圖片，觸發某網站的轉帳請求 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://bank.com/transfer?amount=1000&amp;to=attacker&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果使用者已登入 <code>bank.com</code> 且未防範 CSRF，就可能無意間轉帳。</p>
+<h3 id="防範方式：-1"><a href="#防範方式：-1" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>後端驗證 <strong>CSRF Token</strong></li>
+<li>使用 <strong>SameSite Cookie 屬性</strong></li>
+<li>僅允許 POST &#x2F; PATCH &#x2F; DELETE 操作變更狀態</li>
+<li>驗證 Referer &#x2F; Origin 標頭（有風險）</li>
+</ul>
+<h4 id="範例（Express-CSRF-Token）："><a href="#範例（Express-CSRF-Token）：" class="headerlink" title="範例（Express + CSRF Token）："></a>範例（Express + CSRF Token）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> csrf = <span class="built_in">require</span>(<span class="string">&quot;csurf&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> cookieParser = <span class="built_in">require</span>(<span class="string">&quot;cookie-parser&quot;</span>);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">cookieParser</span>());</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">csrf</span>(&#123; <span class="attr">cookie</span>: <span class="literal">true</span> &#125;));</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&quot;/form&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&quot;form&quot;</span>, &#123; <span class="attr">csrfToken</span>: req.<span class="title function_">csrfToken</span>() &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-SQL-Injection（SQL-注入）"><a href="#3-SQL-Injection（SQL-注入）" class="headerlink" title="3. SQL Injection（SQL 注入）"></a>3. SQL Injection（SQL 注入）</h3><p><strong>原理</strong>：透過惡意輸入拼接 SQL 查詢語句，導致資料庫查詢異常，甚至刪除資料。</p>
+<h3 id="實例：-2"><a href="#實例：-2" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 假設未使用參數化查詢</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> username <span class="operator">=</span> <span class="string">&#x27;&#x27;</span> <span class="keyword">OR</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>攻擊者輸入 <code>&#39; OR 1=1; --</code> 可繞過認證邏輯，取得所有帳戶資料。</p>
+<h3 id="防範方式：-2"><a href="#防範方式：-2" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>使用 ORM 或預處理語句（Prepared Statement）</li>
+<li>不拼接 SQL 字串，改用參數綁定</li>
+<li>限制資料庫帳號權限</li>
+</ul>
+<h4 id="範例（Node-js-MySQL）："><a href="#範例（Node-js-MySQL）：" class="headerlink" title="範例（Node.js + MySQL）："></a>範例（Node.js + MySQL）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> username = req.<span class="property">body</span>.<span class="property">username</span>;</span><br><span class="line"><span class="keyword">const</span> password = req.<span class="property">body</span>.<span class="property">password</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> query = <span class="string">&quot;SELECT * FROM users WHERE username = ? AND password = ?&quot;</span>;</span><br><span class="line">connection.<span class="title function_">query</span>(query, [username, password], <span class="keyword">function</span> (<span class="params">err, results</span>) &#123;</span><br><span class="line">  <span class="comment">// 安全地查詢</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="4-資料傳輸未加密（缺少-HTTPS）"><a href="#4-資料傳輸未加密（缺少-HTTPS）" class="headerlink" title="4. 資料傳輸未加密（缺少 HTTPS）"></a>4. 資料傳輸未加密（缺少 HTTPS）</h3><p><strong>原理</strong>：若網站使用 HTTP，使用者資料（如帳號密碼、金流資訊）在傳輸過程中可能被中間人攔截（Man-in-the-Middle attack）。</p>
+<h3 id="防範方式：-3"><a href="#防範方式：-3" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>強制使用 HTTPS（導入憑證）</li>
+<li>使用 HSTS（HTTP Strict Transport Security）</li>
+<li>移除 HTTP 存取（使用 301 重導）</li>
+</ul>
+<h4 id="範例（NGINX-強制-HTTPS）："><a href="#範例（NGINX-強制-HTTPS）：" class="headerlink" title="範例（NGINX 強制 HTTPS）："></a>範例（NGINX 強制 HTTPS）：</h4><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">  <span class="attribute">server_name</span> example.com;</span><br><span class="line">  <span class="attribute">return</span> <span class="number">301</span> https://<span class="variable">$host</span><span class="variable">$request_uri</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="5-檔案上傳風險"><a href="#5-檔案上傳風險" class="headerlink" title="5. 檔案上傳風險"></a>5. 檔案上傳風險</h3><p><strong>原理</strong>：攻擊者透過檔案上傳功能傳入惡意腳本（如 <code>.php</code>、<code>.jsp</code>），若伺服器未阻擋，可能導致遠端代碼執行。</p>
+<h3 id="防範方式：-4"><a href="#防範方式：-4" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>限制可上傳的檔案類型與副檔名</li>
+<li>不讓使用者可直接存取上傳目錄</li>
+<li>使用 UUID 改名，避免原檔名執行</li>
+</ul>
+<hr>
+<h2 id="附加安全性強化機制"><a href="#附加安全性強化機制" class="headerlink" title="附加安全性強化機制"></a>附加安全性強化機制</h2><h3 id="HTTP-安全標頭設定（Security-Headers）"><a href="#HTTP-安全標頭設定（Security-Headers）" class="headerlink" title="HTTP 安全標頭設定（Security Headers）"></a>HTTP 安全標頭設定（Security Headers）</h3><p>使用如 Helmet（Express.js 中間件）快速加入以下標頭：</p>
+<ul>
+<li><code>Content-Security-Policy</code>：防止 XSS 和資源注入</li>
+<li><code>X-Frame-Options</code>：防止點擊劫持（Clickjacking）</li>
+<li><code>X-Content-Type-Options</code>：避免 MIME 類型混淆</li>
+<li><code>Strict-Transport-Security</code>：強制 HTTPS</li>
+</ul>
+<h4 id="範例（Node-js-Helmet）："><a href="#範例（Node-js-Helmet）：" class="headerlink" title="範例（Node.js + Helmet）："></a>範例（Node.js + Helmet）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> helmet = <span class="built_in">require</span>(<span class="string">&quot;helmet&quot;</span>);</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">helmet</span>());</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="總結與建議實作順序"><a href="#總結與建議實作順序" class="headerlink" title="總結與建議實作順序"></a>總結與建議實作順序</h2><p>如果剛開始建立 Web 專案，可以按照以下步驟檢查安全性：</p>
+<ol>
+<li>輸入驗證與輸出轉義，防範 XSS</li>
+<li>加入 CSRF Token 機制</li>
+<li>資料庫查詢全面使用預處理語句</li>
+<li>部署 HTTPS 並強制重導</li>
+<li>使用 Helmet 加強安全標頭</li>
+<li>定期檢查依賴套件漏洞（如 <code>npm audit</code>）</li>
+</ol>
+<p>資訊安全並非一勞永逸，而是一種持續維護的工作。建議我們可以將資安意識融入日常開發流程中，隨時更新資安知識與工具。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>web</tag>
+        <tag>資訊安全</tag>
+        <tag>Web 資訊安全</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Web 前端效能優化入門教學筆記 | 學習筆記</title>
     <url>/2024/10/16/learning-notes-web-client-performance-optimization-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在網頁開發中，效能優化是一個不可忽視的重要課題。無論是企業網站、單頁應用（SPA），或是電商平台，效能表現都直接影響使用者體驗與轉換率。</p>
@@ -5979,134 +6330,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Web 資訊安全入門教學筆記 | 學習筆記</title>
-    <url>/2024/10/16/learning-notes-web-security-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在現代網頁應用中，資安問題層出不窮，從簡單的跨站攻擊（XSS）到複雜的憑證竊取、身份偽造（CSRF），都可能導致個資外洩、系統遭入侵甚至企業商譽受損。</p>
-<p>本篇筆記將從實務角度出發，介紹幾種常見 Web 資安風險及其防範策略，讓你能以最基本的方式保護網站與使用者安全。</p>
-<hr>
-<h2 id="一、常見-Web-資安威脅類型"><a href="#一、常見-Web-資安威脅類型" class="headerlink" title="一、常見 Web 資安威脅類型"></a>一、常見 Web 資安威脅類型</h2><h3 id="1-XSS（Cross-Site-Scripting，跨站腳本攻擊）"><a href="#1-XSS（Cross-Site-Scripting，跨站腳本攻擊）" class="headerlink" title="1. XSS（Cross-Site Scripting，跨站腳本攻擊）"></a>1. XSS（Cross-Site Scripting，跨站腳本攻擊）</h3><p><strong>原理</strong>：攻擊者將惡意腳本注入至網站，當其他使用者瀏覽該頁面時，惡意腳本便會在其瀏覽器上執行，例如竊取 cookie、冒充使用者操作等。</p>
-<h3 id="實例："><a href="#實例：" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 攻擊者輸入的留言內容 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="title function_">alert</span>(<span class="string">&#x27;你被 XSS 攻擊了&#x27;</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>若網站未正確處理輸入，這段 JavaScript 就會直接被執行。</p>
-<h3 id="防範方式："><a href="#防範方式：" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>對所有輸入進行 <strong>轉義（Escape）</strong></li>
-<li>使用前端框架自動編碼機制（如 React 的 JSX）</li>
-<li>避免使用 <code>innerHTML</code> 插入未清洗的資料</li>
-</ul>
-<h4 id="範例（JavaScript-轉義文字）："><a href="#範例（JavaScript-轉義文字）：" class="headerlink" title="範例（JavaScript 轉義文字）："></a>範例（JavaScript 轉義文字）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">escapeHtml</span>(<span class="params">str</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> str</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&amp;/g</span>, <span class="string">&quot;&amp;amp;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&lt;/g</span>, <span class="string">&quot;&amp;lt;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&gt;/g</span>, <span class="string">&quot;&amp;gt;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&quot;/g</span>, <span class="string">&quot;&amp;quot;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&#x27;/g</span>, <span class="string">&quot;&amp;#039;&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="2-CSRF（Cross-Site-Request-Forgery，跨站請求偽造）"><a href="#2-CSRF（Cross-Site-Request-Forgery，跨站請求偽造）" class="headerlink" title="2. CSRF（Cross-Site Request Forgery，跨站請求偽造）"></a>2. CSRF（Cross-Site Request Forgery，跨站請求偽造）</h3><p><strong>原理</strong>：攻擊者引導使用者點擊惡意連結或載入圖片，使其在未察覺情況下對已登入的網站發送請求，進而竄改資料或觸發操作。</p>
-<h3 id="實例：-1"><a href="#實例：-1" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 攻擊者網站中隱藏圖片，觸發某網站的轉帳請求 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://bank.com/transfer?amount=1000&amp;to=attacker&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>如果使用者已登入 <code>bank.com</code> 且未防範 CSRF，就可能無意間轉帳。</p>
-<h3 id="防範方式：-1"><a href="#防範方式：-1" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>後端驗證 <strong>CSRF Token</strong></li>
-<li>使用 <strong>SameSite Cookie 屬性</strong></li>
-<li>僅允許 POST &#x2F; PATCH &#x2F; DELETE 操作變更狀態</li>
-<li>驗證 Referer &#x2F; Origin 標頭（有風險）</li>
-</ul>
-<h4 id="範例（Express-CSRF-Token）："><a href="#範例（Express-CSRF-Token）：" class="headerlink" title="範例（Express + CSRF Token）："></a>範例（Express + CSRF Token）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> csrf = <span class="built_in">require</span>(<span class="string">&quot;csurf&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> cookieParser = <span class="built_in">require</span>(<span class="string">&quot;cookie-parser&quot;</span>);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">cookieParser</span>());</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">csrf</span>(&#123; <span class="attr">cookie</span>: <span class="literal">true</span> &#125;));</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&quot;/form&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&quot;form&quot;</span>, &#123; <span class="attr">csrfToken</span>: req.<span class="title function_">csrfToken</span>() &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="3-SQL-Injection（SQL-注入）"><a href="#3-SQL-Injection（SQL-注入）" class="headerlink" title="3. SQL Injection（SQL 注入）"></a>3. SQL Injection（SQL 注入）</h3><p><strong>原理</strong>：透過惡意輸入拼接 SQL 查詢語句，導致資料庫查詢異常，甚至刪除資料。</p>
-<h3 id="實例：-2"><a href="#實例：-2" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 假設未使用參數化查詢</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> username <span class="operator">=</span> <span class="string">&#x27;&#x27;</span> <span class="keyword">OR</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<p>攻擊者輸入 <code>&#39; OR 1=1; --</code> 可繞過認證邏輯，取得所有帳戶資料。</p>
-<h3 id="防範方式：-2"><a href="#防範方式：-2" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>使用 ORM 或預處理語句（Prepared Statement）</li>
-<li>不拼接 SQL 字串，改用參數綁定</li>
-<li>限制資料庫帳號權限</li>
-</ul>
-<h4 id="範例（Node-js-MySQL）："><a href="#範例（Node-js-MySQL）：" class="headerlink" title="範例（Node.js + MySQL）："></a>範例（Node.js + MySQL）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> username = req.<span class="property">body</span>.<span class="property">username</span>;</span><br><span class="line"><span class="keyword">const</span> password = req.<span class="property">body</span>.<span class="property">password</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> query = <span class="string">&quot;SELECT * FROM users WHERE username = ? AND password = ?&quot;</span>;</span><br><span class="line">connection.<span class="title function_">query</span>(query, [username, password], <span class="keyword">function</span> (<span class="params">err, results</span>) &#123;</span><br><span class="line">  <span class="comment">// 安全地查詢</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="4-資料傳輸未加密（缺少-HTTPS）"><a href="#4-資料傳輸未加密（缺少-HTTPS）" class="headerlink" title="4. 資料傳輸未加密（缺少 HTTPS）"></a>4. 資料傳輸未加密（缺少 HTTPS）</h3><p><strong>原理</strong>：若網站使用 HTTP，使用者資料（如帳號密碼、金流資訊）在傳輸過程中可能被中間人攔截（Man-in-the-Middle attack）。</p>
-<h3 id="防範方式：-3"><a href="#防範方式：-3" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>強制使用 HTTPS（導入憑證）</li>
-<li>使用 HSTS（HTTP Strict Transport Security）</li>
-<li>移除 HTTP 存取（使用 301 重導）</li>
-</ul>
-<h4 id="範例（NGINX-強制-HTTPS）："><a href="#範例（NGINX-強制-HTTPS）：" class="headerlink" title="範例（NGINX 強制 HTTPS）："></a>範例（NGINX 強制 HTTPS）：</h4><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">  <span class="attribute">server_name</span> example.com;</span><br><span class="line">  <span class="attribute">return</span> <span class="number">301</span> https://<span class="variable">$host</span><span class="variable">$request_uri</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="5-檔案上傳風險"><a href="#5-檔案上傳風險" class="headerlink" title="5. 檔案上傳風險"></a>5. 檔案上傳風險</h3><p><strong>原理</strong>：攻擊者透過檔案上傳功能傳入惡意腳本（如 <code>.php</code>、<code>.jsp</code>），若伺服器未阻擋，可能導致遠端代碼執行。</p>
-<h3 id="防範方式：-4"><a href="#防範方式：-4" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>限制可上傳的檔案類型與副檔名</li>
-<li>不讓使用者可直接存取上傳目錄</li>
-<li>使用 UUID 改名，避免原檔名執行</li>
-</ul>
-<hr>
-<h2 id="附加安全性強化機制"><a href="#附加安全性強化機制" class="headerlink" title="附加安全性強化機制"></a>附加安全性強化機制</h2><h3 id="HTTP-安全標頭設定（Security-Headers）"><a href="#HTTP-安全標頭設定（Security-Headers）" class="headerlink" title="HTTP 安全標頭設定（Security Headers）"></a>HTTP 安全標頭設定（Security Headers）</h3><p>使用如 Helmet（Express.js 中間件）快速加入以下標頭：</p>
-<ul>
-<li><code>Content-Security-Policy</code>：防止 XSS 和資源注入</li>
-<li><code>X-Frame-Options</code>：防止點擊劫持（Clickjacking）</li>
-<li><code>X-Content-Type-Options</code>：避免 MIME 類型混淆</li>
-<li><code>Strict-Transport-Security</code>：強制 HTTPS</li>
-</ul>
-<h4 id="範例（Node-js-Helmet）："><a href="#範例（Node-js-Helmet）：" class="headerlink" title="範例（Node.js + Helmet）："></a>範例（Node.js + Helmet）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> helmet = <span class="built_in">require</span>(<span class="string">&quot;helmet&quot;</span>);</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">helmet</span>());</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="總結與建議實作順序"><a href="#總結與建議實作順序" class="headerlink" title="總結與建議實作順序"></a>總結與建議實作順序</h2><p>如果剛開始建立 Web 專案，可以按照以下步驟檢查安全性：</p>
-<ol>
-<li>輸入驗證與輸出轉義，防範 XSS</li>
-<li>加入 CSRF Token 機制</li>
-<li>資料庫查詢全面使用預處理語句</li>
-<li>部署 HTTPS 並強制重導</li>
-<li>使用 Helmet 加強安全標頭</li>
-<li>定期檢查依賴套件漏洞（如 <code>npm audit</code>）</li>
-</ol>
-<p>資訊安全並非一勞永逸，而是一種持續維護的工作。建議我們可以將資安意識融入日常開發流程中，隨時更新資安知識與工具。</p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>web</tag>
-        <tag>資訊安全</tag>
-        <tag>Web 資訊安全</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</title>
-    <url>/2024/06/22/software-engineer-and-web-develement-skill-tree/</url>
-    <content><![CDATA[<h1 id="前端工程"><a href="#前端工程" class="headerlink" title="前端工程"></a>前端工程</h1><p><a href="https://roadmap.sh/frontend">Frontend Roadmap</a> &#x2F; <a href="https://roadmap.sh/frontend?r=frontend-beginner">Frontend Beginner Roadmap</a></p>
-<ol>
-<li><input checked="" disabled="" type="checkbox"> HTML</li>
-<li><input disabled="" type="checkbox"> CSS</li>
-<li><input disabled="" type="checkbox"> JavaScript</li>
-<li><input disabled="" type="checkbox"> Version Control Systems&#x2F;Git&#x2F;Github</li>
-<li><input disabled="" type="checkbox"> npm</li>
-<li><input disabled="" type="checkbox"> Vue</li>
-<li><input disabled="" type="checkbox"> React</li>
-<li><input disabled="" type="checkbox"> Angular</li>
-<li><input disabled="" type="checkbox"> TailwindCSS</li>
-<li><input disabled="" type="checkbox"> Vitest</li>
-<li><input disabled="" type="checkbox"> Cypress&#x2F;Jest</li>
-<li><input disabled="" type="checkbox"> TypeScript</li>
-<li><input disabled="" type="checkbox"> PWA</li>
-<li><input disabled="" type="checkbox"> SASS&#x2F;LESS&#x2F;PostCSS</li>
-<li><input disabled="" type="checkbox"> NodeJS</li>
-</ol>
-<h1 id="後端"><a href="#後端" class="headerlink" title="後端"></a>後端</h1><p><a href="https://roadmap.sh/backend">Backend Roadmap</a> &#x2F; <a href="https://roadmap.sh/backend?r=backend-beginner">Backend Beginner Roadmap</a></p>
-<h1 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h1><p><a href="https://roadmap.sh/devops">DevOps Roadmap</a> &#x2F; <a href="https://roadmap.sh/devops?r=devops-beginner">DevOps Beginner Roadmap</a></p>
-<h1 id="全端"><a href="#全端" class="headerlink" title="全端"></a>全端</h1><p><a href="https://roadmap.sh/full-stack">Full Stack Roadmap</a></p>
-<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
-<li><a href="https://github.com/kamranahmedse/developer-roadmap?tab=readme-ov-file">github developer-roadmap</a></li>
-<li><a href="https://hackmd.io/@were1122was/BkUpHXuAq">N+1 Queries 效能問題</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Software Engineer</tag>
-        <tag>Frontend Roadmap</tag>
-        <tag>Backend Roadmap</tag>
-        <tag>DevOps</tag>
-        <tag>Full Stack</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>WebSocket 入門教學筆記 | 學習筆記</title>
     <url>/2024/07/10/learning-notes-websocket-intro-tutorial/</url>
     <content><![CDATA[<h1 id="1-WebSocket-簡介"><a href="#1-WebSocket-簡介" class="headerlink" title="1. WebSocket 簡介"></a>1. WebSocket 簡介</h1><p><code>WebSocket</code> 是一種全雙工通訊協議，允許伺服器與客戶端建立持久連線，並在兩者之間即時傳輸數據。相較於傳統的 HTTP 請求-回應模式，WebSocket 提供了更低延遲的通訊方式。</p>
@@ -6147,6 +6370,43 @@
         <tag>Node.js</tag>
         <tag>NodeJS</tag>
         <tag>WebSocket</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</title>
+    <url>/2024/06/22/software-engineer-and-web-develement-skill-tree/</url>
+    <content><![CDATA[<h1 id="前端工程"><a href="#前端工程" class="headerlink" title="前端工程"></a>前端工程</h1><p><a href="https://roadmap.sh/frontend">Frontend Roadmap</a> &#x2F; <a href="https://roadmap.sh/frontend?r=frontend-beginner">Frontend Beginner Roadmap</a></p>
+<ol>
+<li><input checked="" disabled="" type="checkbox"> HTML</li>
+<li><input disabled="" type="checkbox"> CSS</li>
+<li><input disabled="" type="checkbox"> JavaScript</li>
+<li><input disabled="" type="checkbox"> Version Control Systems&#x2F;Git&#x2F;Github</li>
+<li><input disabled="" type="checkbox"> npm</li>
+<li><input disabled="" type="checkbox"> Vue</li>
+<li><input disabled="" type="checkbox"> React</li>
+<li><input disabled="" type="checkbox"> Angular</li>
+<li><input disabled="" type="checkbox"> TailwindCSS</li>
+<li><input disabled="" type="checkbox"> Vitest</li>
+<li><input disabled="" type="checkbox"> Cypress&#x2F;Jest</li>
+<li><input disabled="" type="checkbox"> TypeScript</li>
+<li><input disabled="" type="checkbox"> PWA</li>
+<li><input disabled="" type="checkbox"> SASS&#x2F;LESS&#x2F;PostCSS</li>
+<li><input disabled="" type="checkbox"> NodeJS</li>
+</ol>
+<h1 id="後端"><a href="#後端" class="headerlink" title="後端"></a>後端</h1><p><a href="https://roadmap.sh/backend">Backend Roadmap</a> &#x2F; <a href="https://roadmap.sh/backend?r=backend-beginner">Backend Beginner Roadmap</a></p>
+<h1 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h1><p><a href="https://roadmap.sh/devops">DevOps Roadmap</a> &#x2F; <a href="https://roadmap.sh/devops?r=devops-beginner">DevOps Beginner Roadmap</a></p>
+<h1 id="全端"><a href="#全端" class="headerlink" title="全端"></a>全端</h1><p><a href="https://roadmap.sh/full-stack">Full Stack Roadmap</a></p>
+<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
+<li><a href="https://github.com/kamranahmedse/developer-roadmap?tab=readme-ov-file">github developer-roadmap</a></li>
+<li><a href="https://hackmd.io/@were1122was/BkUpHXuAq">N+1 Queries 效能問題</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Software Engineer</tag>
+        <tag>Frontend Roadmap</tag>
+        <tag>Backend Roadmap</tag>
+        <tag>DevOps</tag>
+        <tag>Full Stack</tag>
       </tags>
   </entry>
   <entry>
