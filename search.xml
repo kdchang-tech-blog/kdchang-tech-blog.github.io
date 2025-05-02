@@ -167,15 +167,137 @@
 <p>如果你的專案需要更強大的功能，可以考慮與 Vue.js 或 React 搭配，或在更大規模的應用中使用其他框架。</p>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>javascript</tag>
         <tag>模組</tag>
         <tag>Alpine</tag>
         <tag>Alpine.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AOS（Animate On Scroll Library）入門教學筆記 | 學習筆記</title>
+    <url>/2024/08/31/learning-notes-aos-animate-on-scroll-library-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在現代網頁設計中，視覺效果和互動性已經成為提升使用者體驗的重要元素。當使用者向下滾動頁面時，如果某些區塊能夠平滑地出現、滑入、淡入或放大，能大大提升網站的專業感和吸引力。這類效果通常被稱為「滾動動畫」。</p>
+<p><a href="https://michalsnik.github.io/aos/">AOS (Animate On Scroll)</a> 是一個輕量級的 JavaScript 函式庫，讓你可以輕鬆地為 HTML 元素加上動畫效果，並且在元素進入畫面時自動播放動畫。它不需要你手動寫 JavaScript 控制事件，也不依賴大型框架，學習曲線平緩，非常適合想快速加上動畫效果的開發者。</p>
+<hr>
+<h2 id="一、AOS-的特點"><a href="#一、AOS-的特點" class="headerlink" title="一、AOS 的特點"></a>一、AOS 的特點</h2><ul>
+<li><strong>輕量</strong>：只有數十 KB，對效能影響小。</li>
+<li><strong>易於使用</strong>：只需要加幾個 <code>data-aos</code> 屬性在 HTML 元素上即可。</li>
+<li><strong>可自訂動畫</strong>：支援動畫類型、延遲時間、持續時間、執行次數等調整。</li>
+<li><strong>無框架依賴</strong>：可搭配純 HTML&#x2F;CSS&#x2F;JS 使用，也支援 React、Vue 等框架。</li>
+<li><strong>良好的瀏覽器支援</strong>：支援所有現代瀏覽器。</li>
+</ul>
+<hr>
+<h2 id="二、如何安裝-AOS"><a href="#二、如何安裝-AOS" class="headerlink" title="二、如何安裝 AOS"></a>二、如何安裝 AOS</h2><h3 id="方法一：使用-CDN（最簡單方式）"><a href="#方法一：使用-CDN（最簡單方式）" class="headerlink" title="方法一：使用 CDN（最簡單方式）"></a>方法一：使用 CDN（最簡單方式）</h3><p>在你的 HTML 檔案 <code>&lt;head&gt;</code> 加入 CSS：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://unpkg.com/aos@2.3.4/dist/aos.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在 <code>&lt;body&gt;</code> 結尾加入 JS：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/aos@2.3.4/dist/aos.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">  AOS.init();</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="方法二：透過-npm-安裝（建議在模組化專案中使用）"><a href="#方法二：透過-npm-安裝（建議在模組化專案中使用）" class="headerlink" title="方法二：透過 npm 安裝（建議在模組化專案中使用）"></a>方法二：透過 npm 安裝（建議在模組化專案中使用）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install aos --save</span><br></pre></td></tr></table></figure>
+
+<p>在你的 JavaScript 中引入與初始化：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="variable constant_">AOS</span> <span class="keyword">from</span> <span class="string">&#x27;aos&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;aos/dist/aos.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable constant_">AOS</span>.<span class="title function_">init</span>();</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="三、基本用法"><a href="#三、基本用法" class="headerlink" title="三、基本用法"></a>三、基本用法</h2><p>只要在 HTML 元素上加入 <code>data-aos</code> 屬性即可。例如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;fade-up&quot;</span>&gt;</span></span><br><span class="line">  這段文字將會在滾動時從下方淡入出現</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常見的動畫效果："><a href="#常見的動畫效果：" class="headerlink" title="常見的動畫效果："></a>常見的動畫效果：</h3><table>
+<thead>
+<tr>
+<th>效果名稱</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>fade</td>
+<td>淡入</td>
+</tr>
+<tr>
+<td>fade-up</td>
+<td>向上淡入</td>
+</tr>
+<tr>
+<td>fade-down</td>
+<td>向下淡入</td>
+</tr>
+<tr>
+<td>fade-left</td>
+<td>向左淡入</td>
+</tr>
+<tr>
+<td>fade-right</td>
+<td>向右淡入</td>
+</tr>
+<tr>
+<td>zoom-in</td>
+<td>放大淡入</td>
+</tr>
+<tr>
+<td>zoom-out</td>
+<td>縮小淡入</td>
+</tr>
+<tr>
+<td>flip-left</td>
+<td>向左翻轉進場</td>
+</tr>
+<tr>
+<td>slide-up</td>
+<td>向上滑入</td>
+</tr>
+<tr>
+<td>slide-down</td>
+<td>向下滑入</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="四、進階設定"><a href="#四、進階設定" class="headerlink" title="四、進階設定"></a>四、進階設定</h2><p>AOS 提供許多自訂參數，以下為常用屬性說明：</p>
+<h3 id="1-data-aos-duration"><a href="#1-data-aos-duration" class="headerlink" title="1. data-aos-duration"></a>1. <code>data-aos-duration</code></h3><p>動畫持續時間（毫秒），預設為 400ms：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;fade-up&quot;</span> <span class="attr">data-aos-duration</span>=<span class="string">&quot;1000&quot;</span>&gt;</span></span><br><span class="line">  動畫持續 1 秒</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-data-aos-delay"><a href="#2-data-aos-delay" class="headerlink" title="2. data-aos-delay"></a>2. <code>data-aos-delay</code></h3><p>動畫延遲時間（毫秒），可用來讓多個元素依序出現：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;fade-up&quot;</span> <span class="attr">data-aos-delay</span>=<span class="string">&quot;0&quot;</span>&gt;</span>第一個<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;fade-up&quot;</span> <span class="attr">data-aos-delay</span>=<span class="string">&quot;200&quot;</span>&gt;</span>第二個<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;fade-up&quot;</span> <span class="attr">data-aos-delay</span>=<span class="string">&quot;400&quot;</span>&gt;</span>第三個<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-data-aos-once"><a href="#3-data-aos-once" class="headerlink" title="3. data-aos-once"></a>3. <code>data-aos-once</code></h3><p>設定是否只執行一次動畫（預設為 false，表示每次滾動進入都會重新動畫）：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;fade-up&quot;</span> <span class="attr">data-aos-once</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">  只播放一次動畫</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-data-aos-offset"><a href="#4-data-aos-offset" class="headerlink" title="4. data-aos-offset"></a>4. <code>data-aos-offset</code></h3><p>控制動畫啟動前的滾動距離（單位：像素）：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;fade-up&quot;</span> <span class="attr">data-aos-offset</span>=<span class="string">&quot;300&quot;</span>&gt;</span></span><br><span class="line">  滾動到距離螢幕頂端 300px 時才開始動畫</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="五、實際範例"><a href="#五、實際範例" class="headerlink" title="五、實際範例"></a>五、實際範例</h2><p>以下是一個完整的簡單 HTML 範例：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-Hant&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>AOS 教學範例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://unpkg.com/aos@2.3.4/dist/aos.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">font-family</span>: sans-serif;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">padding</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">section</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">100vh</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">align-items</span>: center;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">justify-content</span>: center;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">font-size</span>: <span class="number">2rem</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;fade-up&quot;</span>&gt;</span>第一個區塊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;zoom-in&quot;</span> <span class="attr">data-aos-delay</span>=<span class="string">&quot;200&quot;</span>&gt;</span>第二個區塊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;slide-left&quot;</span> <span class="attr">data-aos-duration</span>=<span class="string">&quot;800&quot;</span>&gt;</span>第三個區塊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/aos@2.3.4/dist/aos.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    AOS.init();</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>你可以將這段程式碼儲存為 HTML 檔案後，直接打開瀏覽器觀看滾動動畫效果。</p>
+<hr>
+<h2 id="六、常見問題與注意事項"><a href="#六、常見問題與注意事項" class="headerlink" title="六、常見問題與注意事項"></a>六、常見問題與注意事項</h2><ol>
+<li><p><strong>AOS 沒有效果？</strong><br>確認你有正確載入 <code>aos.css</code> 和執行 <code>AOS.init()</code>。</p>
+</li>
+<li><p><strong>元素進入畫面但沒有動畫？</strong><br>嘗試調整 <code>data-aos-offset</code> 或確認元素是否真的進入視窗中。</p>
+</li>
+<li><p><strong>動畫無法重複？</strong><br>預設會重複，除非你加上了 <code>data-aos-once=&quot;true&quot;</code>。</p>
+</li>
+<li><p><strong>與 SPA 框架（如 React、Vue）整合時動畫失效？</strong><br>動態渲染的頁面需在 DOM 更新完後重新執行 <code>AOS.refresh()</code>。</p>
+</li>
+</ol>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>AOS 是一個非常實用又容易上手的前端動畫工具。你不需要寫複雜的 JavaScript，只要加幾行 <code>data-aos</code> 屬性就能為你的網站加入吸引人的動態效果。無論是製作個人作品集、商業網站或展示頁面，AOS 都是快速提升視覺層次感的絕佳利器。</p>
+<p>當你需要更細緻的動畫控制或複雜的交互邏輯，也可以進一步探索 <code>GSAP</code>、<code>ScrollMagic</code> 等更強大的動畫工具。但若只是想快速達到流暢的滾動動畫，AOS 絕對是一個值得推薦的選擇。</p>
+<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
+<li><a href="https://gsap.com/">gsap</a></li>
+<li><a href="https://scrollmagic.io/">scrollmagic</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>AOS</tag>
+        <tag>Animate On Scroll Library</tag>
+        <tag>css</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -302,128 +424,6 @@
       </tags>
   </entry>
   <entry>
-    <title>AOS（Animate On Scroll Library）入門教學筆記 | 學習筆記</title>
-    <url>/2024/08/31/learning-notes-aos-animate-on-scroll-library-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在現代網頁設計中，視覺效果和互動性已經成為提升使用者體驗的重要元素。當使用者向下滾動頁面時，如果某些區塊能夠平滑地出現、滑入、淡入或放大，能大大提升網站的專業感和吸引力。這類效果通常被稱為「滾動動畫」。</p>
-<p><a href="https://michalsnik.github.io/aos/">AOS (Animate On Scroll)</a> 是一個輕量級的 JavaScript 函式庫，讓你可以輕鬆地為 HTML 元素加上動畫效果，並且在元素進入畫面時自動播放動畫。它不需要你手動寫 JavaScript 控制事件，也不依賴大型框架，學習曲線平緩，非常適合想快速加上動畫效果的開發者。</p>
-<hr>
-<h2 id="一、AOS-的特點"><a href="#一、AOS-的特點" class="headerlink" title="一、AOS 的特點"></a>一、AOS 的特點</h2><ul>
-<li><strong>輕量</strong>：只有數十 KB，對效能影響小。</li>
-<li><strong>易於使用</strong>：只需要加幾個 <code>data-aos</code> 屬性在 HTML 元素上即可。</li>
-<li><strong>可自訂動畫</strong>：支援動畫類型、延遲時間、持續時間、執行次數等調整。</li>
-<li><strong>無框架依賴</strong>：可搭配純 HTML&#x2F;CSS&#x2F;JS 使用，也支援 React、Vue 等框架。</li>
-<li><strong>良好的瀏覽器支援</strong>：支援所有現代瀏覽器。</li>
-</ul>
-<hr>
-<h2 id="二、如何安裝-AOS"><a href="#二、如何安裝-AOS" class="headerlink" title="二、如何安裝 AOS"></a>二、如何安裝 AOS</h2><h3 id="方法一：使用-CDN（最簡單方式）"><a href="#方法一：使用-CDN（最簡單方式）" class="headerlink" title="方法一：使用 CDN（最簡單方式）"></a>方法一：使用 CDN（最簡單方式）</h3><p>在你的 HTML 檔案 <code>&lt;head&gt;</code> 加入 CSS：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://unpkg.com/aos@2.3.4/dist/aos.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>在 <code>&lt;body&gt;</code> 結尾加入 JS：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/aos@2.3.4/dist/aos.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">  AOS.init();</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="方法二：透過-npm-安裝（建議在模組化專案中使用）"><a href="#方法二：透過-npm-安裝（建議在模組化專案中使用）" class="headerlink" title="方法二：透過 npm 安裝（建議在模組化專案中使用）"></a>方法二：透過 npm 安裝（建議在模組化專案中使用）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install aos --save</span><br></pre></td></tr></table></figure>
-
-<p>在你的 JavaScript 中引入與初始化：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="variable constant_">AOS</span> <span class="keyword">from</span> <span class="string">&#x27;aos&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;aos/dist/aos.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable constant_">AOS</span>.<span class="title function_">init</span>();</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="三、基本用法"><a href="#三、基本用法" class="headerlink" title="三、基本用法"></a>三、基本用法</h2><p>只要在 HTML 元素上加入 <code>data-aos</code> 屬性即可。例如：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;fade-up&quot;</span>&gt;</span></span><br><span class="line">  這段文字將會在滾動時從下方淡入出現</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="常見的動畫效果："><a href="#常見的動畫效果：" class="headerlink" title="常見的動畫效果："></a>常見的動畫效果：</h3><table>
-<thead>
-<tr>
-<th>效果名稱</th>
-<th>說明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>fade</td>
-<td>淡入</td>
-</tr>
-<tr>
-<td>fade-up</td>
-<td>向上淡入</td>
-</tr>
-<tr>
-<td>fade-down</td>
-<td>向下淡入</td>
-</tr>
-<tr>
-<td>fade-left</td>
-<td>向左淡入</td>
-</tr>
-<tr>
-<td>fade-right</td>
-<td>向右淡入</td>
-</tr>
-<tr>
-<td>zoom-in</td>
-<td>放大淡入</td>
-</tr>
-<tr>
-<td>zoom-out</td>
-<td>縮小淡入</td>
-</tr>
-<tr>
-<td>flip-left</td>
-<td>向左翻轉進場</td>
-</tr>
-<tr>
-<td>slide-up</td>
-<td>向上滑入</td>
-</tr>
-<tr>
-<td>slide-down</td>
-<td>向下滑入</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="四、進階設定"><a href="#四、進階設定" class="headerlink" title="四、進階設定"></a>四、進階設定</h2><p>AOS 提供許多自訂參數，以下為常用屬性說明：</p>
-<h3 id="1-data-aos-duration"><a href="#1-data-aos-duration" class="headerlink" title="1. data-aos-duration"></a>1. <code>data-aos-duration</code></h3><p>動畫持續時間（毫秒），預設為 400ms：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;fade-up&quot;</span> <span class="attr">data-aos-duration</span>=<span class="string">&quot;1000&quot;</span>&gt;</span></span><br><span class="line">  動畫持續 1 秒</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-data-aos-delay"><a href="#2-data-aos-delay" class="headerlink" title="2. data-aos-delay"></a>2. <code>data-aos-delay</code></h3><p>動畫延遲時間（毫秒），可用來讓多個元素依序出現：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;fade-up&quot;</span> <span class="attr">data-aos-delay</span>=<span class="string">&quot;0&quot;</span>&gt;</span>第一個<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;fade-up&quot;</span> <span class="attr">data-aos-delay</span>=<span class="string">&quot;200&quot;</span>&gt;</span>第二個<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;fade-up&quot;</span> <span class="attr">data-aos-delay</span>=<span class="string">&quot;400&quot;</span>&gt;</span>第三個<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-data-aos-once"><a href="#3-data-aos-once" class="headerlink" title="3. data-aos-once"></a>3. <code>data-aos-once</code></h3><p>設定是否只執行一次動畫（預設為 false，表示每次滾動進入都會重新動畫）：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;fade-up&quot;</span> <span class="attr">data-aos-once</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">  只播放一次動畫</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="4-data-aos-offset"><a href="#4-data-aos-offset" class="headerlink" title="4. data-aos-offset"></a>4. <code>data-aos-offset</code></h3><p>控制動畫啟動前的滾動距離（單位：像素）：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;fade-up&quot;</span> <span class="attr">data-aos-offset</span>=<span class="string">&quot;300&quot;</span>&gt;</span></span><br><span class="line">  滾動到距離螢幕頂端 300px 時才開始動畫</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="五、實際範例"><a href="#五、實際範例" class="headerlink" title="五、實際範例"></a>五、實際範例</h2><p>以下是一個完整的簡單 HTML 範例：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-Hant&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>AOS 教學範例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://unpkg.com/aos@2.3.4/dist/aos.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">font-family</span>: sans-serif;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">padding</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">section</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">100vh</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">align-items</span>: center;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">justify-content</span>: center;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">font-size</span>: <span class="number">2rem</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;fade-up&quot;</span>&gt;</span>第一個區塊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;zoom-in&quot;</span> <span class="attr">data-aos-delay</span>=<span class="string">&quot;200&quot;</span>&gt;</span>第二個區塊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-aos</span>=<span class="string">&quot;slide-left&quot;</span> <span class="attr">data-aos-duration</span>=<span class="string">&quot;800&quot;</span>&gt;</span>第三個區塊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/aos@2.3.4/dist/aos.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    AOS.init();</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>你可以將這段程式碼儲存為 HTML 檔案後，直接打開瀏覽器觀看滾動動畫效果。</p>
-<hr>
-<h2 id="六、常見問題與注意事項"><a href="#六、常見問題與注意事項" class="headerlink" title="六、常見問題與注意事項"></a>六、常見問題與注意事項</h2><ol>
-<li><p><strong>AOS 沒有效果？</strong><br>確認你有正確載入 <code>aos.css</code> 和執行 <code>AOS.init()</code>。</p>
-</li>
-<li><p><strong>元素進入畫面但沒有動畫？</strong><br>嘗試調整 <code>data-aos-offset</code> 或確認元素是否真的進入視窗中。</p>
-</li>
-<li><p><strong>動畫無法重複？</strong><br>預設會重複，除非你加上了 <code>data-aos-once=&quot;true&quot;</code>。</p>
-</li>
-<li><p><strong>與 SPA 框架（如 React、Vue）整合時動畫失效？</strong><br>動態渲染的頁面需在 DOM 更新完後重新執行 <code>AOS.refresh()</code>。</p>
-</li>
-</ol>
-<hr>
-<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>AOS 是一個非常實用又容易上手的前端動畫工具。你不需要寫複雜的 JavaScript，只要加幾行 <code>data-aos</code> 屬性就能為你的網站加入吸引人的動態效果。無論是製作個人作品集、商業網站或展示頁面，AOS 都是快速提升視覺層次感的絕佳利器。</p>
-<p>當你需要更細緻的動畫控制或複雜的交互邏輯，也可以進一步探索 <code>GSAP</code>、<code>ScrollMagic</code> 等更強大的動畫工具。但若只是想快速達到流暢的滾動動畫，AOS 絕對是一個值得推薦的選擇。</p>
-<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
-<li><a href="https://gsap.com/">gsap</a></li>
-<li><a href="https://scrollmagic.io/">scrollmagic</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>AOS</tag>
-        <tag>Animate On Scroll Library</tag>
-        <tag>css</tag>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Cookie 入門教學筆記 | 學習筆記</title>
     <url>/2024/11/01/learning-notes-cookie-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Cookie 是一種儲存在使用者瀏覽器上的小型文字檔案，用於保存使用者的狀態或資訊。常見用途包含：</p>
@@ -501,12 +501,12 @@
 <h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>這些分類會依需求搭配使用，例如一個「<code>必要性第一方暫時性 Cookie</code>」可能用於維護<code>登入和操作狀態</code>；一個「<code>第三方廣告追蹤永久性 Cookie</code>」則可能用於<code>跨網站顯示個人化廣告</code>。</p>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>javascript</tag>
         <tag>cookie</tag>
       </tags>
   </entry>
@@ -895,127 +895,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Grid Garden 入門教學筆記 | 學習筆記</title>
-    <url>/2024/07/10/learning-notes-css-grid-garden-tutorial/</url>
-    <content><![CDATA[<h1 id="1-Grid-簡介"><a href="#1-Grid-簡介" class="headerlink" title="1. Grid 簡介"></a>1. Grid 簡介</h1><p><code>Grid</code>（Grid Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
-<p>Grid Garden 透過花圃澆花遊戲化方式去介紹 Grid 使用方式</p>
-<h2 id="Level-1"><a href="#Level-1" class="headerlink" title="Level 1"></a>Level 1</h2><p>Welcome to Grid Garden, where you write CSS code to grow your carrot garden! Water only the areas that have carrots by using the grid-column-start property.</p>
-<p>For example, grid-column-start: 3; will water the area starting at the 3rd vertical grid line, which is another way of saying the 3rd vertical border from the left in the grid.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-2"><a href="#Level-2" class="headerlink" title="Level 2"></a>Level 2</h2><p>Uh oh, looks like weeds are growing in the corner of your garden. Use grid-column-start to poison them. Note that the weeds start at the 5th vertical grid line.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#poison</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-3"><a href="#Level-3" class="headerlink" title="Level 3"></a>Level 3</h2><p>When grid-column-start is used alone, the grid item by default will span exactly one column. However, you can extend the item across multiple columns by adding the grid-column-end property.</p>
-<p>Using grid-column-end, water all of your carrots while avoiding the dirt. We don’t want to waste any water! Note that the carrots start at the 1st vertical grid line and end at the 4th.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">grid-column-end</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-4"><a href="#Level-4" class="headerlink" title="Level 4"></a>Level 4</h2><p>When pairing grid-column-start and grid-column-end, you might assume that the end value has to be greater than the start value. But this turns out not the case!</p>
-<p>Try setting grid-column-end to a value less than 5 to water your carrots.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">5</span>;</span><br><span class="line">  <span class="attribute">grid-column-end</span>: <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-5"><a href="#Level-5" class="headerlink" title="Level 5"></a>Level 5</h2><p>If you want to count grid lines from the right instead of the left, you can give grid-column-start and grid-column-end negative values. For example, you can set it to -1 to specify the first grid line from the right.</p>
-<p>Try setting grid-column-end to a negative value.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">grid-column-end</span>: -<span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-6"><a href="#Level-6" class="headerlink" title="Level 6"></a>Level 6</h2><p>Now try setting grid-column-start to a negative value.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#poison</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-7"><a href="#Level-7" class="headerlink" title="Level 7"></a>Level 7</h2><p>Instead of defining a grid item based on the start and end positions of the grid lines, you can define it based on your desired column width using the span keyword. Keep in mind that span only works with positive values.</p>
-<p>For example, water these carrots with the rule grid-column-end: span 2;.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">2</span>;</span><br><span class="line">  <span class="attribute">grid-column-end</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-8"><a href="#Level-8" class="headerlink" title="Level 8"></a>Level 8</h2><p>Try using grid-column-end with the span keyword again to water your carrots.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">grid-column-end</span>: <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-9"><a href="#Level-9" class="headerlink" title="Level 9"></a>Level 9</h2><p>You can also use the span keyword with grid-column-start to set your item’s width relative to the end position.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">grid-column-end</span>: <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-10"><a href="#Level-10" class="headerlink" title="Level 10"></a>Level 10</h2><p>Typing both grid-column-start and grid-column-end every time can get tiring. Fortunately, grid-column is a shorthand property that can accept both values at once, separated by a slash.</p>
-<p>For example, grid-column: 2 &#x2F; 4; will set the grid item to start on the 2nd vertical grid line and end on the 4th grid line.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">4</span>/<span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-11"><a href="#Level-11" class="headerlink" title="Level 11"></a>Level 11</h2><p>Try using grid-column to water these carrots. The span keyword also works with this shorthand property so give it a try!</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">2</span>/<span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-12"><a href="#Level-12" class="headerlink" title="Level 12"></a>Level 12</h2><p>One of the things that sets CSS grids apart from flexbox is that you can easily position items in two dimensions: columns and rows. grid-row-start works much like grid-column-start except along the vertical axis.</p>
-<p>Use grid-row-start to water these carrots.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-row-start</span>: <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-13"><a href="#Level-13" class="headerlink" title="Level 13"></a>Level 13</h2><p>Now give the shorthand property grid-row a try.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">3</span>/<span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-14"><a href="#Level-14" class="headerlink" title="Level 14"></a>Level 14</h2><p>Use grid-column and grid-row at the same time to set position in both dimensions.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#poison</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">2</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-15"><a href="#Level-15" class="headerlink" title="Level 15"></a>Level 15</h2><p>You can also use grid-column and grid-row together to span larger areas within the grid. Give it a try!</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">2</span>/<span class="number">6</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>/<span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-16"><a href="#Level-16" class="headerlink" title="Level 16"></a>Level 16</h2><p>If typing out both grid-column and grid-row is too much for you, there’s yet another shorthand for that. grid-area accepts four values separated by slashes: grid-row-start, grid-column-start, grid-row-end, followed by grid-column-end.</p>
-<p>One example of this would be grid-area: 1 &#x2F; 1 &#x2F; 3 &#x2F; 6;.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-area</span>: <span class="number">1</span> / <span class="number">2</span> / <span class="number">4</span> / <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-17"><a href="#Level-17" class="headerlink" title="Level 17"></a>Level 17</h2><p>How about multiple items? You can overlap them without any trouble. Use grid-area to define a second area that covers all of the unwatered carrots.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water-1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-area</span>: <span class="number">1</span> / <span class="number">4</span> / <span class="number">6</span> / <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water-2</span> &#123;</span><br><span class="line">  <span class="attribute">grid-area</span>: <span class="number">2</span> / <span class="number">3</span> / <span class="number">5</span> / <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-18"><a href="#Level-18" class="headerlink" title="Level 18"></a>Level 18</h2><p>If grid items aren’t explicitly placed with grid-area, grid-column, grid-row, etc., they are automatically placed according to their order in the source code. We can override this using the order property, which is one of the advantages of grid over table-based layout.</p>
-<p>By default, all grid items have an order of 0, but this can be set to any positive or negative value, similar to z-index.</p>
-<p>Right now, the carrots in the second column are being poisoned and the weeds in the last column are being watered. Change the order value of the poison to fix this right away!</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.water</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#poison</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-19"><a href="#Level-19" class="headerlink" title="Level 19"></a>Level 19</h2><p>Now the water and poison are alternating, even though all of the weeds are at the start of your garden. Set the order of the poisons to remedy this.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.water</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.poison</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-20"><a href="#Level-20" class="headerlink" title="Level 20"></a>Level 20</h2><p>Up to this point, you’ve had your garden set up as a grid with five columns, each 20% of the full width, and five rows, each 20% of the full height.</p>
-<p>This was done with the rules grid-template-columns: 20% 20% 20% 20% 20%; and grid-template-rows: 20% 20% 20% 20% 20%; Each rule has five values which create five columns, each set to 20% of the overall width of the garden.</p>
-<p>But you can set the grid up however you like. Give grid-template-columns a new value to water your carrots. You’ll want to set the width of the 1st column to be 50%.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">50%</span> <span class="number">10%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-21"><a href="#Level-21" class="headerlink" title="Level 21"></a>Level 21</h2><p>Specifying a bunch of columns with identical widths can get tedious. Luckily there’s a repeat function to help with that.</p>
-<p>For example, we previously defined five 20% columns with the rule grid-template-columns: 20% 20% 20% 20% 20%;. This can be simplified as grid-template-columns: repeat(5, 20%);</p>
-<p>Using grid-template-columns with the repeat function, create eight columns each with 12.5% width. This way you won’t overwater your garden.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">1</span>, <span class="number">12.5%</span>);</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-22"><a href="#Level-22" class="headerlink" title="Level 22"></a>Level 22</h2><p>grid-template-columns doesn’t just accept values in percentages, but also length units like pixels and ems. You can even mix different units together.</p>
-<p>Here, set three columns to 100px, 3em, and 40% respectively.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">100px</span> <span class="number">3em</span> <span class="number">40%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-23"><a href="#Level-23" class="headerlink" title="Level 23"></a>Level 23</h2><p>Grid also introduces a new unit, the fractional fr. Each fr unit allocates one share of the available space. For example, if two elements are set to 1fr and 3fr respectively, the space is divided into 4 equal shares; the first element occupies 1&#x2F;4 and the second element 3&#x2F;4 of any leftover space.</p>
-<p>Here, weeds make up the left 1&#x2F;6 of your first row and carrots the remaining 5&#x2F;6. Create two columns with these widths using fr units.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">5</span>fr;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-24"><a href="#Level-24" class="headerlink" title="Level 24"></a>Level 24</h2><p>When columns are set with pixels, percentages, or ems, any other columns set with fr will divvy up the space that’s left over.</p>
-<p>Here the carrots form a 50 pixel column on the left, and the weeds a 50 pixel column on the right. With grid-template-columns, create these two columns, and use fr to make three more columns that take up the remaining space in between.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">50px</span> <span class="number">1</span>fr <span class="number">1</span>fr <span class="number">1</span>fr <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-area</span>: <span class="number">1</span> / <span class="number">1</span> / <span class="number">6</span> / <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#poison</span> &#123;</span><br><span class="line">  <span class="attribute">grid-area</span>: <span class="number">1</span> / <span class="number">5</span> / <span class="number">6</span> / <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-25"><a href="#Level-25" class="headerlink" title="Level 25"></a>Level 25</h2><p>Now there is a 75 pixel column of weeds on the left side of your garden. 3&#x2F;5 of the remaining space is growing carrots, while 2&#x2F;5 has been overrun with weeds.</p>
-<p>Use grid-template-columns with a combination of px and fr units to make the necessary columns.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">75px</span> <span class="number">3</span>fr <span class="number">2</span>fr;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-26"><a href="#Level-26" class="headerlink" title="Level 26"></a>Level 26</h2><p>grid-template-rows works much the same as grid-template-columns.</p>
-<p>Use grid-template-rows to water all but the top 50 pixels of your garden. Note that the water is set to fill only your 5th row, so you’ll need to create 5 rows in total.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">12.5px</span> <span class="number">12.5px</span> <span class="number">12.5px</span> <span class="number">12.5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span> / <span class="number">6</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">5</span> / <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-27"><a href="#Level-27" class="headerlink" title="Level 27"></a>Level 27</h2><p>grid-template is a shorthand property that combines grid-template-rows and grid-template-columns.</p>
-<p>For example, grid-template: 50% 50% &#x2F; 200px; will create a grid with two rows that are 50% each, and one column that is 200 pixels wide.</p>
-<p>Try using grid-template to water an area that includes the top 60% and left 200 pixels of your garden.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template</span>: <span class="number">60%</span> / <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-28"><a href="#Level-28" class="headerlink" title="Level 28"></a>Level 28</h2><p>Your garden is looking great. Here you’ve left a 50 pixel path at the bottom of your garden and filled the rest with carrots.</p>
-<p>Unfortunately, the left 20% of your carrots have been overrun with weeds. Use CSS grid one last time to treat your garden.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template</span>: <span class="number">1</span>fr <span class="number">50px</span> / <span class="number">1</span>fr <span class="number">4</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
-<li><a href="https://programmingmentor.com/post/playing-css-grid-garden/">Playing CSS Grid Garden with Answers Explained</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Grid Garden</tag>
-        <tag>Grid</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS font-size 單位介紹入門教學筆記 | 學習筆記</title>
     <url>/2024/12/14/learning-notes-css-font-size-intro-tutorial/</url>
     <content><![CDATA[<p>在 CSS 中，<code>px</code>、<code>rem</code>、<code>em</code> 和 <code>vh</code> 都可以用來設定 <code>font-size</code>，但它們的用途和適用場景不同。以下是詳細解析與使用建議：</p>
@@ -1160,6 +1039,127 @@
         <tag>rem</tag>
         <tag>em</tag>
         <tag>vh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Grid Garden 入門教學筆記 | 學習筆記</title>
+    <url>/2024/07/10/learning-notes-css-grid-garden-tutorial/</url>
+    <content><![CDATA[<h1 id="1-Grid-簡介"><a href="#1-Grid-簡介" class="headerlink" title="1. Grid 簡介"></a>1. Grid 簡介</h1><p><code>Grid</code>（Grid Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
+<p>Grid Garden 透過花圃澆花遊戲化方式去介紹 Grid 使用方式</p>
+<h2 id="Level-1"><a href="#Level-1" class="headerlink" title="Level 1"></a>Level 1</h2><p>Welcome to Grid Garden, where you write CSS code to grow your carrot garden! Water only the areas that have carrots by using the grid-column-start property.</p>
+<p>For example, grid-column-start: 3; will water the area starting at the 3rd vertical grid line, which is another way of saying the 3rd vertical border from the left in the grid.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-2"><a href="#Level-2" class="headerlink" title="Level 2"></a>Level 2</h2><p>Uh oh, looks like weeds are growing in the corner of your garden. Use grid-column-start to poison them. Note that the weeds start at the 5th vertical grid line.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#poison</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-3"><a href="#Level-3" class="headerlink" title="Level 3"></a>Level 3</h2><p>When grid-column-start is used alone, the grid item by default will span exactly one column. However, you can extend the item across multiple columns by adding the grid-column-end property.</p>
+<p>Using grid-column-end, water all of your carrots while avoiding the dirt. We don’t want to waste any water! Note that the carrots start at the 1st vertical grid line and end at the 4th.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">grid-column-end</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-4"><a href="#Level-4" class="headerlink" title="Level 4"></a>Level 4</h2><p>When pairing grid-column-start and grid-column-end, you might assume that the end value has to be greater than the start value. But this turns out not the case!</p>
+<p>Try setting grid-column-end to a value less than 5 to water your carrots.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">5</span>;</span><br><span class="line">  <span class="attribute">grid-column-end</span>: <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-5"><a href="#Level-5" class="headerlink" title="Level 5"></a>Level 5</h2><p>If you want to count grid lines from the right instead of the left, you can give grid-column-start and grid-column-end negative values. For example, you can set it to -1 to specify the first grid line from the right.</p>
+<p>Try setting grid-column-end to a negative value.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">grid-column-end</span>: -<span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-6"><a href="#Level-6" class="headerlink" title="Level 6"></a>Level 6</h2><p>Now try setting grid-column-start to a negative value.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#poison</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-7"><a href="#Level-7" class="headerlink" title="Level 7"></a>Level 7</h2><p>Instead of defining a grid item based on the start and end positions of the grid lines, you can define it based on your desired column width using the span keyword. Keep in mind that span only works with positive values.</p>
+<p>For example, water these carrots with the rule grid-column-end: span 2;.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">2</span>;</span><br><span class="line">  <span class="attribute">grid-column-end</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-8"><a href="#Level-8" class="headerlink" title="Level 8"></a>Level 8</h2><p>Try using grid-column-end with the span keyword again to water your carrots.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">grid-column-end</span>: <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-9"><a href="#Level-9" class="headerlink" title="Level 9"></a>Level 9</h2><p>You can also use the span keyword with grid-column-start to set your item’s width relative to the end position.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">grid-column-end</span>: <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-10"><a href="#Level-10" class="headerlink" title="Level 10"></a>Level 10</h2><p>Typing both grid-column-start and grid-column-end every time can get tiring. Fortunately, grid-column is a shorthand property that can accept both values at once, separated by a slash.</p>
+<p>For example, grid-column: 2 &#x2F; 4; will set the grid item to start on the 2nd vertical grid line and end on the 4th grid line.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">4</span>/<span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-11"><a href="#Level-11" class="headerlink" title="Level 11"></a>Level 11</h2><p>Try using grid-column to water these carrots. The span keyword also works with this shorthand property so give it a try!</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">2</span>/<span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-12"><a href="#Level-12" class="headerlink" title="Level 12"></a>Level 12</h2><p>One of the things that sets CSS grids apart from flexbox is that you can easily position items in two dimensions: columns and rows. grid-row-start works much like grid-column-start except along the vertical axis.</p>
+<p>Use grid-row-start to water these carrots.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-row-start</span>: <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-13"><a href="#Level-13" class="headerlink" title="Level 13"></a>Level 13</h2><p>Now give the shorthand property grid-row a try.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">3</span>/<span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-14"><a href="#Level-14" class="headerlink" title="Level 14"></a>Level 14</h2><p>Use grid-column and grid-row at the same time to set position in both dimensions.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#poison</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">2</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-15"><a href="#Level-15" class="headerlink" title="Level 15"></a>Level 15</h2><p>You can also use grid-column and grid-row together to span larger areas within the grid. Give it a try!</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">2</span>/<span class="number">6</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>/<span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-16"><a href="#Level-16" class="headerlink" title="Level 16"></a>Level 16</h2><p>If typing out both grid-column and grid-row is too much for you, there’s yet another shorthand for that. grid-area accepts four values separated by slashes: grid-row-start, grid-column-start, grid-row-end, followed by grid-column-end.</p>
+<p>One example of this would be grid-area: 1 &#x2F; 1 &#x2F; 3 &#x2F; 6;.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-area</span>: <span class="number">1</span> / <span class="number">2</span> / <span class="number">4</span> / <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-17"><a href="#Level-17" class="headerlink" title="Level 17"></a>Level 17</h2><p>How about multiple items? You can overlap them without any trouble. Use grid-area to define a second area that covers all of the unwatered carrots.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water-1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-area</span>: <span class="number">1</span> / <span class="number">4</span> / <span class="number">6</span> / <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water-2</span> &#123;</span><br><span class="line">  <span class="attribute">grid-area</span>: <span class="number">2</span> / <span class="number">3</span> / <span class="number">5</span> / <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-18"><a href="#Level-18" class="headerlink" title="Level 18"></a>Level 18</h2><p>If grid items aren’t explicitly placed with grid-area, grid-column, grid-row, etc., they are automatically placed according to their order in the source code. We can override this using the order property, which is one of the advantages of grid over table-based layout.</p>
+<p>By default, all grid items have an order of 0, but this can be set to any positive or negative value, similar to z-index.</p>
+<p>Right now, the carrots in the second column are being poisoned and the weeds in the last column are being watered. Change the order value of the poison to fix this right away!</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.water</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#poison</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-19"><a href="#Level-19" class="headerlink" title="Level 19"></a>Level 19</h2><p>Now the water and poison are alternating, even though all of the weeds are at the start of your garden. Set the order of the poisons to remedy this.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.water</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.poison</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-20"><a href="#Level-20" class="headerlink" title="Level 20"></a>Level 20</h2><p>Up to this point, you’ve had your garden set up as a grid with five columns, each 20% of the full width, and five rows, each 20% of the full height.</p>
+<p>This was done with the rules grid-template-columns: 20% 20% 20% 20% 20%; and grid-template-rows: 20% 20% 20% 20% 20%; Each rule has five values which create five columns, each set to 20% of the overall width of the garden.</p>
+<p>But you can set the grid up however you like. Give grid-template-columns a new value to water your carrots. You’ll want to set the width of the 1st column to be 50%.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">50%</span> <span class="number">10%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-21"><a href="#Level-21" class="headerlink" title="Level 21"></a>Level 21</h2><p>Specifying a bunch of columns with identical widths can get tedious. Luckily there’s a repeat function to help with that.</p>
+<p>For example, we previously defined five 20% columns with the rule grid-template-columns: 20% 20% 20% 20% 20%;. This can be simplified as grid-template-columns: repeat(5, 20%);</p>
+<p>Using grid-template-columns with the repeat function, create eight columns each with 12.5% width. This way you won’t overwater your garden.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">1</span>, <span class="number">12.5%</span>);</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-22"><a href="#Level-22" class="headerlink" title="Level 22"></a>Level 22</h2><p>grid-template-columns doesn’t just accept values in percentages, but also length units like pixels and ems. You can even mix different units together.</p>
+<p>Here, set three columns to 100px, 3em, and 40% respectively.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">100px</span> <span class="number">3em</span> <span class="number">40%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-23"><a href="#Level-23" class="headerlink" title="Level 23"></a>Level 23</h2><p>Grid also introduces a new unit, the fractional fr. Each fr unit allocates one share of the available space. For example, if two elements are set to 1fr and 3fr respectively, the space is divided into 4 equal shares; the first element occupies 1&#x2F;4 and the second element 3&#x2F;4 of any leftover space.</p>
+<p>Here, weeds make up the left 1&#x2F;6 of your first row and carrots the remaining 5&#x2F;6. Create two columns with these widths using fr units.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">5</span>fr;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-24"><a href="#Level-24" class="headerlink" title="Level 24"></a>Level 24</h2><p>When columns are set with pixels, percentages, or ems, any other columns set with fr will divvy up the space that’s left over.</p>
+<p>Here the carrots form a 50 pixel column on the left, and the weeds a 50 pixel column on the right. With grid-template-columns, create these two columns, and use fr to make three more columns that take up the remaining space in between.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">50px</span> <span class="number">1</span>fr <span class="number">1</span>fr <span class="number">1</span>fr <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-area</span>: <span class="number">1</span> / <span class="number">1</span> / <span class="number">6</span> / <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#poison</span> &#123;</span><br><span class="line">  <span class="attribute">grid-area</span>: <span class="number">1</span> / <span class="number">5</span> / <span class="number">6</span> / <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-25"><a href="#Level-25" class="headerlink" title="Level 25"></a>Level 25</h2><p>Now there is a 75 pixel column of weeds on the left side of your garden. 3&#x2F;5 of the remaining space is growing carrots, while 2&#x2F;5 has been overrun with weeds.</p>
+<p>Use grid-template-columns with a combination of px and fr units to make the necessary columns.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">75px</span> <span class="number">3</span>fr <span class="number">2</span>fr;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-26"><a href="#Level-26" class="headerlink" title="Level 26"></a>Level 26</h2><p>grid-template-rows works much the same as grid-template-columns.</p>
+<p>Use grid-template-rows to water all but the top 50 pixels of your garden. Note that the water is set to fill only your 5th row, so you’ll need to create 5 rows in total.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span> <span class="number">20%</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">12.5px</span> <span class="number">12.5px</span> <span class="number">12.5px</span> <span class="number">12.5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span> / <span class="number">6</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">5</span> / <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-27"><a href="#Level-27" class="headerlink" title="Level 27"></a>Level 27</h2><p>grid-template is a shorthand property that combines grid-template-rows and grid-template-columns.</p>
+<p>For example, grid-template: 50% 50% &#x2F; 200px; will create a grid with two rows that are 50% each, and one column that is 200 pixels wide.</p>
+<p>Try using grid-template to water an area that includes the top 60% and left 200 pixels of your garden.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template</span>: <span class="number">60%</span> / <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-28"><a href="#Level-28" class="headerlink" title="Level 28"></a>Level 28</h2><p>Your garden is looking great. Here you’ve left a 50 pixel path at the bottom of your garden and filled the rest with carrots.</p>
+<p>Unfortunately, the left 20% of your carrots have been overrun with weeds. Use CSS grid one last time to treat your garden.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#garden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template</span>: <span class="number">1</span>fr <span class="number">50px</span> / <span class="number">1</span>fr <span class="number">4</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
+<li><a href="https://programmingmentor.com/post/playing-css-grid-garden/">Playing CSS Grid Garden with Answers Explained</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Grid Garden</tag>
+        <tag>Grid</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -1865,12 +1865,12 @@
 <p>這些 ES6 基礎語法，是現代 JavaScript 開發的常用技巧，掌握這些概念能大幅提升程式撰寫效率。</p>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>javascript</tag>
         <tag>ES6</tag>
         <tag>ECMAScript</tag>
         <tag>ECMAScript6</tag>
@@ -2394,11 +2394,11 @@
 <h2 id="7-總結"><a href="#7-總結" class="headerlink" title="7. 總結"></a>7. 總結</h2><p>HTTP&#x2F;2 改進了 HTTP&#x2F;1.1 的多項限制，透過多路徑傳輸、頭部壓縮與伺服器推送提高了 Web 效能。現代瀏覽器與伺服器已廣泛支援 HTTP&#x2F;2，建議在新專案中啟用 HTTP&#x2F;2，以提升用戶體驗與網站速度。</p>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
+        <tag>javascript</tag>
         <tag>HTTP/1</tag>
         <tag>HTTP</tag>
         <tag>HTTP/2</tag>
@@ -2496,12 +2496,12 @@
 </ul>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>javascript</tag>
         <tag>this</tag>
         <tag>Arrow Function</tag>
       </tags>
@@ -2532,12 +2532,12 @@
 </ul>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>javascript</tag>
         <tag>非同步</tag>
         <tag>異步</tag>
         <tag>async/await</tag>
@@ -2606,12 +2606,12 @@
 <p>透過理解 Call Stack 的運作，開發者可以更有效地編寫、優化與除錯 JavaScript 程式碼。</p>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>javascript</tag>
         <tag>非同步</tag>
         <tag>異步</tag>
         <tag>Call Stack</tag>
@@ -2838,12 +2838,12 @@
 <p>雖然 CommonJS 和 AMD 仍然在某些專案中使用，但未來趨勢將逐漸轉向 ES Modules。因此，對於新專案，建議 <strong>優先使用 ES Modules（import&#x2F;export）</strong>，而對於舊專案或特定環境（如 Node.js 早期版本），仍可能需要使用 CommonJS 或 AMD。</p>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>javascript</tag>
         <tag>模組</tag>
         <tag>module</tag>
         <tag>CommonJS（CJS）</tag>
@@ -2980,12 +2980,12 @@
 <p>掌握 JavaScript 模組的概念，能夠讓你更有效地開發與維護大型專案。</p>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>javascript</tag>
         <tag>模組</tag>
         <tag>module</tag>
       </tags>
@@ -3365,12 +3365,12 @@
 <p>掌握閉包後，可以更進一步學習 JavaScript 中的函式式程式設計（Functional Programming），提升程式的模組化與可讀性。</p>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>javascript</tag>
         <tag>async/await</tag>
         <tag>Closure</tag>
         <tag>let</tag>
@@ -3474,12 +3474,12 @@
 <p>JavaScript 的物件導向概念提供了靈活的方式來組織程式碼，掌握 <code>prototype</code>、<code>class</code>、<code>extends</code> 和 <code>super()</code>，可以幫助開發者寫出更具可讀性與可維護性的程式碼。</p>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>javascript</tag>
         <tag>this</tag>
         <tag>OOP</tag>
         <tag>Object-oriented programming</tag>
@@ -3536,11 +3536,11 @@
 <h3 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h3><p>可選鏈接運算符（<code>?.</code>）是 JavaScript 中非常實用的一個特性，它簡化了嵌套對象屬性訪問的邏輯，避免了 <code>null</code> 或 <code>undefined</code> 帶來的錯誤，使代碼更加簡潔且容易理解。無論是在處理複雜的 API 返回數據還是操作動態結構的對象時，可選鏈接運算符都能發揮重要作用。在日常開發中，我們可以利用它來編寫更健壯、可讀性更強的代碼。</p>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
+        <tag>javascript</tag>
         <tag>Optional Chaining</tag>
       </tags>
   </entry>
@@ -3633,12 +3633,12 @@
 </ul>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>javascript</tag>
         <tag>this</tag>
       </tags>
   </entry>
@@ -3713,12 +3713,12 @@
 <p>掌握閉包後，可以更進一步學習 JavaScript 的函式式程式設計（Functional Programming），提升程式的模組化與可讀性。</p>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>javascript</tag>
         <tag>async/await</tag>
         <tag>Closure</tag>
         <tag>閉包</tag>
@@ -3957,12 +3957,12 @@
 <p>這些概念是 Express.js 開發的基礎，熟練後可以進一步學習 JWT 認證、WebSocket、GraphQL 等進階技術！</p>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>javascript</tag>
         <tag>模組</tag>
         <tag>nodejs</tag>
         <tag>mongoose</tag>
@@ -4539,11 +4539,11 @@
 </ol>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
+        <tag>javascript</tag>
         <tag>React</tag>
         <tag>React.js</tag>
         <tag>ReactJS</tag>
@@ -4592,15 +4592,15 @@
 <h2 id="7-總結"><a href="#7-總結" class="headerlink" title="7. 總結"></a>7. 總結</h2><p>Next.js 提供了比 React 更豐富的功能，如內建路由、伺服器端渲染（SSR）和 API 路由，適合開發高效能與 SEO 友好的網站。熟悉這些核心概念後，你可以更輕鬆地構建現代化的前端應用程式。</p>
 ]]></content>
       <tags>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
         <tag>Options API</tag>
         <tag>Composition API</tag>
         <tag>Pinia</tag>
@@ -4744,11 +4744,11 @@
 </ol>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
+        <tag>javascript</tag>
         <tag>React</tag>
         <tag>React.js</tag>
         <tag>ReactJS</tag>
@@ -5791,15 +5791,15 @@
 <h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Vue.js 3 提供了更好的性能、更靈活的 API 和更簡潔的開發體驗。無論是使用 Composition API 還是 Options API，都能快速上手並構建強大的前端應用。</p>
 ]]></content>
       <tags>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -5818,65 +5818,15 @@
 <figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>A Child Component!<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記</title>
-    <url>/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/</url>
-    <content><![CDATA[<h1 id="Props-屬性"><a href="#Props-屬性" class="headerlink" title="Props 屬性"></a>Props 屬性</h1><p>子元件可以透過 Props 接收來自父元件的輸入。首先，子元件需要宣告它所接收的 Props：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- ChildComp.vue --&gt;</span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const props = defineProps(&#123;</span><br><span class="line">  msg: String</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>注意，<code>defineProps()</code> 是一個編譯時的巨集，不需要額外匯入。一旦宣告後，<code>msg</code> Prop 就可以在子元件的模板中使用，也可以透過 <code>defineProps()</code> 返回的物件在 JavaScript 中存取。</p>
-<p>父元件可以像設定屬性一樣，將 Prop 傳遞給子元件。若要傳遞動態值，也可以使用 <code>v-bind</code> 語法：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp :msg=&quot;greeting&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<p>我們現在在編輯器中試試看吧！</p>
-<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> greeting = <span class="title function_">ref</span>(<span class="string">&#x27;Hello from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> <span class="attr">:msg</span>=<span class="string">&quot;greeting&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> props = <span class="title function_">defineProps</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="attr">msg</span>: <span class="title class_">String</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123; msg || &#x27;No props passed yet&#x27; &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [12] - Emits 事件傳遞 | 學習筆記</title>
-    <url>/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/</url>
-    <content><![CDATA[<h1 id="Emits-事件傳遞"><a href="#Emits-事件傳遞" class="headerlink" title="Emits 事件傳遞"></a>Emits 事件傳遞</h1><p>除了接收 Props 之外，子元件也可以向父元件觸發事件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">// 宣告要觸發的事件</span><br><span class="line">const emit = defineEmits([&#x27;response&#x27;])</span><br><span class="line"></span><br><span class="line">// 觸發事件並傳遞參數</span><br><span class="line">emit(&#x27;response&#x27;, &#x27;hello from child&#x27;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>emit()</code> 的第一個參數是事件名稱，任何額外的參數都會傳遞給事件監聽器。</p>
-<p>父元件可以使用 <code>v-on</code> 來監聽子元件觸發的事件——如下範例中，處理函式接收來自子元件 <code>emit</code> 的額外參數，並將其賦值給本地狀態：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp @response=&quot;(msg) =&gt; childMsg = msg&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<p>現在我們在編輯器中試試看吧！</p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -5896,15 +5846,41 @@
 
 <figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> msg = <span class="title function_">ref</span>(<span class="string">&#x27;from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span>&gt;</span>Message: &#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">ChildComp</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記</title>
+    <url>/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/</url>
+    <content><![CDATA[<h1 id="Props-屬性"><a href="#Props-屬性" class="headerlink" title="Props 屬性"></a>Props 屬性</h1><p>子元件可以透過 Props 接收來自父元件的輸入。首先，子元件需要宣告它所接收的 Props：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- ChildComp.vue --&gt;</span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const props = defineProps(&#123;</span><br><span class="line">  msg: String</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>注意，<code>defineProps()</code> 是一個編譯時的巨集，不需要額外匯入。一旦宣告後，<code>msg</code> Prop 就可以在子元件的模板中使用，也可以透過 <code>defineProps()</code> 返回的物件在 JavaScript 中存取。</p>
+<p>父元件可以像設定屬性一樣，將 Prop 傳遞給子元件。若要傳遞動態值，也可以使用 <code>v-bind</code> 語法：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp :msg=&quot;greeting&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>我們現在在編輯器中試試看吧！</p>
+<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> greeting = <span class="title function_">ref</span>(<span class="string">&#x27;Hello from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> <span class="attr">:msg</span>=<span class="string">&quot;greeting&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> props = <span class="title function_">defineProps</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="attr">msg</span>: <span class="title class_">String</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123; msg || &#x27;No props passed yet&#x27; &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
         <tag>vue</tag>
         <tag>vue3</tag>
         <tag>vue.js</tag>
         <tag>vue.js 3</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
       </tags>
   </entry>
   <entry>
@@ -5922,15 +5898,39 @@
 <p>我們可以試著將動態類名綁定到 <code>&lt;h1&gt;</code>，使用 <code>titleClass</code> 的 <code>ref</code> 作為值。如果綁定正確，文字應該會變成紅色！</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> titleClass = <span class="title function_">ref</span>(<span class="string">&#x27;title&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">:class</span>=<span class="string">&quot;titleClass&quot;</span>&gt;</span>Make me red<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> <span class="comment">&lt;!-- add dynamic class binding here --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.title</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [12] - Emits 事件傳遞 | 學習筆記</title>
+    <url>/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/</url>
+    <content><![CDATA[<h1 id="Emits-事件傳遞"><a href="#Emits-事件傳遞" class="headerlink" title="Emits 事件傳遞"></a>Emits 事件傳遞</h1><p>除了接收 Props 之外，子元件也可以向父元件觸發事件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">// 宣告要觸發的事件</span><br><span class="line">const emit = defineEmits([&#x27;response&#x27;])</span><br><span class="line"></span><br><span class="line">// 觸發事件並傳遞參數</span><br><span class="line">emit(&#x27;response&#x27;, &#x27;hello from child&#x27;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>emit()</code> 的第一個參數是事件名稱，任何額外的參數都會傳遞給事件監聽器。</p>
+<p>父元件可以使用 <code>v-on</code> 來監聽子元件觸發的事件——如下範例中，處理函式接收來自子元件 <code>emit</code> 的額外參數，並將其賦值給本地狀態：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp @response=&quot;(msg) =&gt; childMsg = msg&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>現在我們在編輯器中試試看吧！</p>
+]]></content>
+      <tags>
         <tag>vue</tag>
         <tag>vue3</tag>
         <tag>vue.js</tag>
         <tag>vue.js 3</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
       </tags>
   </entry>
   <entry>
@@ -5952,15 +5952,15 @@
 <p>現在，我們可以試著自己實作 <code>increment</code> 函式，並使用 <code>v-on</code> 將它綁定到按鈕。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -5991,46 +5991,15 @@
 <p>HTML&#x2F;Composition 版本：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; createApp, ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> text = <span class="title function_">ref</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">onInput</span>(<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      text.<span class="property">value</span> = e.<span class="property">target</span>.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">      text,</span></span><br><span class="line"><span class="language-javascript">      onInput</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;).<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">:value</span>=<span class="string">&quot;text&quot;</span> @<span class="attr">input</span>=<span class="string">&quot;onInput&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;Type here&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; text &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [5] - Conditional Rendering 表單綁定 | 學習筆記</title>
-    <url>/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/</url>
-    <content><![CDATA[<p><strong>Conditional Rendering 條件渲染</strong><br>在 Vue 中，我們可以使用 <code>v-if</code> 指令來條件式渲染元素：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>這個 <code>&lt;h1&gt;</code> 只有在 <code>awesome</code> 的值為真值時才會被渲染。如果 <code>awesome</code> 的值變為假值，它將從 DOM 中被移除。</p>
-<hr>
-<p>我們還可以使用 <code>v-else</code> 和 <code>v-else-if</code> 表示條件的其他分支：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>目前的範例同時顯示了兩個 <code>&lt;h1&gt;</code>，按鈕也沒有作用。請嘗試為 <code>&lt;h1&gt;</code> 添加 <code>v-if</code> 和 <code>v-else</code> 指令，並實作一個 <code>toggle()</code> 方法，使我們可以透過按鈕來切換顯示的內容。</p>
-<hr>
-<p>示例程式碼範例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;h1 v-if=&quot;awesome&quot;&gt;Vue is awesome!&lt;/h1&gt;</span><br><span class="line">  &lt;h1 v-else&gt;Oh no 😢&lt;/h1&gt;</span><br><span class="line">  &lt;button @click=&quot;toggle&quot;&gt;Toggle&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const awesome = ref(true)</span><br><span class="line"></span><br><span class="line">function toggle() &#123;</span><br><span class="line">  awesome.value = !awesome.value</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>更多關於 <code>v-if</code> 的詳細內容請參閱官方<a href="https://vuejs.org/guide/essentials/conditional.html">指南 - 條件渲染</a>。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> awesome = <span class="title function_">ref</span>(<span class="literal">true</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">toggle</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  awesome.<span class="property">value</span> = !awesome.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;toggle&quot;</span>&gt;</span>Toggle<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -6059,15 +6028,46 @@
 <p>更多關於 <code>v-for</code> 的詳細內容，請參閱官方<a href="https://vuejs.org/guide/essentials/list.html">指南 - 列表渲染</a>。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// give each todo a unique id</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">let</span> id = <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> newTodo = <span class="title function_">ref</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todos = <span class="title function_">ref</span>([</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn HTML&#x27;</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn JavaScript&#x27;</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn Vue&#x27;</span> &#125;</span></span><br><span class="line"><span class="language-javascript">])</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">addTodo</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span>.<span class="title function_">push</span>(&#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: newTodo.<span class="property">value</span> &#125;)</span></span><br><span class="line"><span class="language-javascript">  newTodo.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">removeTodo</span>(<span class="params">todo</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span> = todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> t !== todo)</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">form</span> @<span class="attr">submit.prevent</span>=<span class="string">&quot;addTodo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;newTodo&quot;</span> <span class="attr">required</span> <span class="attr">placeholder</span>=<span class="string">&quot;new todo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in todos&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;todo.id&quot;</span>&gt;</span></span><br><span class="line">      &#123;&#123; todo.text &#125;&#125;</span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;removeTodo(todo)&quot;</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [5] - Conditional Rendering 表單綁定 | 學習筆記</title>
+    <url>/2021/02/04/learning-notes-vuejs-3-official-tutorial-5-conditional-rendering/</url>
+    <content><![CDATA[<p><strong>Conditional Rendering 條件渲染</strong><br>在 Vue 中，我們可以使用 <code>v-if</code> 指令來條件式渲染元素：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>這個 <code>&lt;h1&gt;</code> 只有在 <code>awesome</code> 的值為真值時才會被渲染。如果 <code>awesome</code> 的值變為假值，它將從 DOM 中被移除。</p>
+<hr>
+<p>我們還可以使用 <code>v-else</code> 和 <code>v-else-if</code> 表示條件的其他分支：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>目前的範例同時顯示了兩個 <code>&lt;h1&gt;</code>，按鈕也沒有作用。請嘗試為 <code>&lt;h1&gt;</code> 添加 <code>v-if</code> 和 <code>v-else</code> 指令，並實作一個 <code>toggle()</code> 方法，使我們可以透過按鈕來切換顯示的內容。</p>
+<hr>
+<p>示例程式碼範例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;h1 v-if=&quot;awesome&quot;&gt;Vue is awesome!&lt;/h1&gt;</span><br><span class="line">  &lt;h1 v-else&gt;Oh no 😢&lt;/h1&gt;</span><br><span class="line">  &lt;button @click=&quot;toggle&quot;&gt;Toggle&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const awesome = ref(true)</span><br><span class="line"></span><br><span class="line">function toggle() &#123;</span><br><span class="line">  awesome.value = !awesome.value</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>更多關於 <code>v-if</code> 的詳細內容請參閱官方<a href="https://vuejs.org/guide/essentials/conditional.html">指南 - 條件渲染</a>。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> awesome = <span class="title function_">ref</span>(<span class="literal">true</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">toggle</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  awesome.<span class="property">value</span> = !awesome.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;toggle&quot;</span>&gt;</span>Toggle<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
         <tag>vue</tag>
         <tag>vue3</tag>
         <tag>vue.js</tag>
         <tag>vue.js 3</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
       </tags>
   </entry>
   <entry>
@@ -6087,15 +6087,15 @@
 <p>現在，嘗試新增一個 <code>filteredTodos</code> 計算屬性，並實現其計算邏輯！如果實現正確，當隱藏已完成項目時，勾選一個待辦項目應會立即將其隱藏。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, computed &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">let</span> id = <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> newTodo = <span class="title function_">ref</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> hideCompleted = <span class="title function_">ref</span>(<span class="literal">false</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todos = <span class="title function_">ref</span>([</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn HTML&#x27;</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn JavaScript&#x27;</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn Vue&#x27;</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;</span></span><br><span class="line"><span class="language-javascript">])</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> filteredTodos = <span class="title function_">computed</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">return</span> hideCompleted.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">    ? todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> !t.<span class="property">done</span>)</span></span><br><span class="line"><span class="language-javascript">    : todos.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">addTodo</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span>.<span class="title function_">push</span>(&#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: newTodo.<span class="property">value</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;)</span></span><br><span class="line"><span class="language-javascript">  newTodo.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">removeTodo</span>(<span class="params">todo</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span> = todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> t !== todo)</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">form</span> @<span class="attr">submit.prevent</span>=<span class="string">&quot;addTodo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;newTodo&quot;</span> <span class="attr">required</span> <span class="attr">placeholder</span>=<span class="string">&quot;new todo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in filteredTodos&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;todo.id&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;todo.done&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">:class</span>=<span class="string">&quot;&#123; done: todo.done &#125;&quot;</span>&gt;</span>&#123;&#123; todo.text &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;removeTodo(todo)&quot;</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;hideCompleted = !hideCompleted&quot;</span>&gt;</span></span><br><span class="line">    &#123;&#123; hideCompleted ? &#x27;Show all&#x27; : &#x27;Hide completed&#x27; &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.done</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">text-decoration</span>: line-through;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -6115,15 +6115,15 @@
 <h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>現在，我們可以嘗試添加一個 <code>onMounted</code> 鉤子，透過 <code>pElementRef.value</code> 訪問 <code>&lt;p&gt;</code> 元素，並對其進行一些直接的 DOM 操作（例如更改 <code>textContent</code>）。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> pElementRef = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  pElementRef.<span class="property">value</span>.<span class="property">textContent</span> = <span class="string">&#x27;mounted!&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">&quot;pElementRef&quot;</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -6137,15 +6137,15 @@
 <p>參考範例：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoId = <span class="title function_">ref</span>(<span class="number">1</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoData = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchData</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="literal">null</span></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(</span></span><br><span class="line"><span class="language-javascript">    <span class="string">`https://jsonplaceholder.typicode.com/todos/<span class="subst">$&#123;todoId.value&#125;</span>`</span></span></span><br><span class="line"><span class="language-javascript">  )</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="keyword">await</span> res.<span class="title function_">json</span>()</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">fetchData</span>()</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">watch</span>(todoId, fetchData)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Todo id: &#123;&#123; todoId &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;todoId++&quot;</span> <span class="attr">:disabled</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Fetch next todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Loading...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">pre</span> <span class="attr">v-else</span>&gt;</span>&#123;&#123; todoData &#125;&#125;<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
@@ -6189,15 +6189,15 @@
 <p>在學習階段，我們也不需要僅限於某一種風格。可以根據適合的情境使用適合的 API 風格。</p>
 ]]></content>
       <tags>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
         <tag>前端</tag>
         <tag>前端開發</tag>
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
         <tag>Options API</tag>
         <tag>Composition API</tag>
       </tags>
