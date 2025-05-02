@@ -243,6 +243,83 @@ git in......
 
 <div class="post-preview">
 
+    <a href="/2023/12/21/learning-notes-javascript-event-input-intro-tutorial/">
+        <h2 class="post-title">
+            JavaScript this 使用情境入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言在 JavaScript 中，箭頭函式（arrow function）與傳統函式在 this 的行為上有一些不同。箭頭函式不會創建自己的 this，而是繼承外部作用域的 this，這就是為什麼你會遇到 this 的問題。
+傳統函式中的 this在傳統的函式中，this 會指向該函式被調用時的上下文。例如，當函式作為事件處理器時，this 會指向觸發事件的元素。
+function regu......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2023-12-21
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2023/12/21/learning-notes-javascript-this-cases-intro-tutorial/">
+        <h2 class="post-title">
+            JavaScript 多事件處理綁定使用情境入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言在 JavaScript 中，你可以通過事件處理的方式來為多個 input 元素綁定事件處理器。這樣做可以讓你在父容器上綁定一個事件處理器，並通過 event.target 確定觸發事件的具體 input 元素，而不需要為每個 input 元素單獨綁定事件。
+事件委派的概念事件委派是一種常見的事件處理技術，它將事件綁定到父元素或容器上，然後通過 event.target 來確定哪個子元素......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2023-12-21
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2023/12/21/learning-notes-vuejs-pinia-store-reactive-intro-tutorial copy/">
+        <h2 class="post-title">
+            Vue pinia 保持 reactive 入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            保持 reactive 寫法：
+
+1️. 用 computedconst todos = computed(() =&gt; todoStore.todos)
+
+優點  
+
+保持 reactive  
+簡單直接  
+在 template 裡 todos 可以直接使用
+
+缺點  
+
+如果只是讀值，其實有點多餘
+
+建議用於：在 template 需要用 v-for=&quot;todo in t......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2023-12-21
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2023/12/16/learning-notes-http2-intro-tutorial copy/">
         <h2 class="post-title">
             HTTP/2 介紹與入門教學筆記 | 學習筆記
@@ -410,75 +487,6 @@ MDN Curricu......
     <p class="post-meta">
         Posted by kdchang on
         2023-03-22
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2022/12/13/learning-notes-css-transition-intro-tutorial/">
-        <h2 class="post-title">
-            CSS transition 入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言CSS transition 屬性允許元素在狀態變化時產生平滑的動畫效果，使 UI 更加流暢和自然。這項技術通常應用於按鈕、圖片、卡片等 UI 元素的互動效果，如懸停、點擊或狀態變更。
-1. transition 基礎概念CSS transition 屬性用於定義當元素的某些 CSS 屬性發生變化時，該變化應如何逐漸呈現，而非立即改變。基本語法如下：
-transition: proper......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2022-12-13
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2022/06/09/learning-notes-responsive-design-rwd/">
-        <h2 class="post-title">
-            Responsive Design 響應式設計入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            Responsive Design 響應式設計入門教學筆記一、什麼是響應式設計響應式設計 (Responsive Design) 是一種網頁設計方法，使網頁能夠根據不同裝置的螢幕尺寸與解析度，自動調整版面配置，以提供最佳的使用體驗。
-二、響應式設計的重要概念1. 視圖 (Viewport)&lt;meta name=&quot;viewport&quot; content=&quot;wid......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2022-06-09
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/12/15/learning-notes-css-specificity-tutorial/">
-        <h2 class="post-title">
-            CSS 權重（Specificity）入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            1. 什麼是 CSS 權重？CSS 權重（Specificity）是指當多個選擇器同時作用於同一個元素時，瀏覽器決定應用哪條 CSS 規則的優先級機制。不同選擇器具有不同的權重，權重高的樣式會覆蓋權重低的樣式。  
-
-2. CSS 權重的計算方式CSS 權重由四個部分組成，從高到低分別是：  
-
-行內樣式（Inline Styles）
-ID 選擇器（ID Selectors）
-類別、偽類與屬......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2021-12-15
     </p>
 
 </div>

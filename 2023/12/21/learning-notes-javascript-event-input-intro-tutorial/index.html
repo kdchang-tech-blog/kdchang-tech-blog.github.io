@@ -26,11 +26,11 @@
     
     <title>
         
-          JavaScript 練習挑戰紀錄 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          JavaScript this 使用情境入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2018/02/01/learning-notes-javascript-challenge-intro-tutorial/">
+    <link rel="canonical" href="https://tech.kdchang.net/2023/12/21/learning-notes-javascript-event-input-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="JavaScript 練習挑戰紀錄 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="JavaScript 練習挑戰紀錄 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="JavaScript this 使用情境入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="JavaScript this 使用情境入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,17 +199,19 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>JavaScript 練習挑戰紀錄 | 學習筆記</h1>
+                    <h1>JavaScript this 使用情境入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2018-02-01
+                        2023-12-21
                     </span>
                     <br>
                     <div class="tags">
                         
                           <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
                         
-                          <a class="tag" href="/tags/#coding" title="coding">coding</a>
+                          <a class="tag" href="/tags/#this" title="this">this</a>
+                        
+                          <a class="tag" href="/tags/#arrow function" title="arrow function">arrow function</a>
                         
 
                     </div>
@@ -235,143 +237,30 @@
                 </div>
                 <br>
                 <div>
-                    <h2 id="Longest-Word"><a href="#Longest-Word" class="headerlink" title="Longest Word"></a>Longest Word</h2><p>當我們執行 <code>paragraph.match(/[a-z]+/gi)</code> 時，這段 JavaScript 程式碼的意思是：</p>
-<h3 id="目的："><a href="#目的：" class="headerlink" title="目的："></a><strong>目的：</strong></h3><p>從 <code>paragraph</code> 字串中<strong>找出所有連續的英文字母（不分大小寫）組成的片段</strong>，並以陣列形式回傳。</p>
-<hr>
-<h3 id="語法拆解："><a href="#語法拆解：" class="headerlink" title="語法拆解："></a><strong>語法拆解：</strong></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">paragraph.<span class="title function_">match</span>(<span class="regexp">/[a-z]+/gi</span>)</span><br></pre></td></tr></table></figure>
+                    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在 JavaScript 中，箭頭函式（arrow function）與傳統函式在 <code>this</code> 的行為上有一些不同。箭頭函式不會創建自己的 <code>this</code>，而是繼承外部作用域的 <code>this</code>，這就是為什麼你會遇到 <code>this</code> 的問題。</p>
+<h3 id="傳統函式中的-this"><a href="#傳統函式中的-this" class="headerlink" title="傳統函式中的 this"></a>傳統函式中的 <code>this</code></h3><p>在傳統的函式中，<code>this</code> 會指向該函式被調用時的上下文。例如，當函式作為事件處理器時，<code>this</code> 會指向觸發事件的元素。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">regularFunction</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);  <span class="comment">// &#x27;this&#x27; 是調用它的上下文</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;KD&#x27;</span>,</span><br><span class="line">  <span class="attr">show</span>: regularFunction</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">show</span>();  <span class="comment">// &#x27;this&#x27; 會指向 obj</span></span><br></pre></td></tr></table></figure>
 
-<table>
-<thead>
-<tr>
-<th>部分</th>
-<th>意思</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>paragraph</code></td>
-<td>要處理的字串（變數名）</td>
-</tr>
-<tr>
-<td><code>.match(...)</code></td>
-<td>是一個字串的方法，會根據正則表達式去<strong>尋找所有符合條件的子字串</strong></td>
-</tr>
-<tr>
-<td><code>/[a-z]+/gi</code></td>
-<td>正則表達式：搜尋一或多個英文字母</td>
-</tr>
-<tr>
-<td><code>[a-z]</code></td>
-<td>表示小寫英文字母 a 到 z（大寫會由 <code>i</code> 修飾符處理）</td>
-</tr>
-<tr>
-<td><code>+</code></td>
-<td>表示「一個或多個」符合前面 <code>[a-z]</code> 的字元</td>
-</tr>
-<tr>
-<td><code>g</code></td>
-<td>global 全域搜尋，找到<strong>所有符合條件</strong>的片段</td>
-</tr>
-<tr>
-<td><code>i</code></td>
-<td>ignore case 忽略大小寫，讓 <code>[a-z]</code> 同時能配對 <code>A-Z</code></td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="範例："><a href="#範例：" class="headerlink" title="範例："></a><strong>範例：</strong></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> paragraph = <span class="string">&quot;Hello, 世界! This is a test123.&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> result = paragraph.<span class="title function_">match</span>(<span class="regexp">/[a-z]+/gi</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);</span><br></pre></td></tr></table></figure>
+<h3 id="箭頭函式中的-this"><a href="#箭頭函式中的-this" class="headerlink" title="箭頭函式中的 this"></a>箭頭函式中的 <code>this</code></h3><p>在箭頭函式中，<code>this</code> 並不會綁定到函式的上下文，而是繼承自外部作用域。這通常會讓箭頭函式的 <code>this</code> 變得不同於你預期的結果。</p>
+<h3 id="例子：this-的問題"><a href="#例子：this-的問題" class="headerlink" title="例子：this 的問題"></a>例子：<code>this</code> 的問題</h3><p>假設有這樣的情境，當你在一個物件的方法中使用箭頭函式作為事件處理器，<code>this</code> 會指向外部作用域，而不是該物件本身。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;KD&#x27;</span>,</span><br><span class="line">  <span class="attr">show</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 使用傳統函式作為事件處理器</span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>).<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);  <span class="comment">// &#x27;this&#x27; 指向的是 &#x27;btn&#x27; 按鈕元素</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用箭頭函式作為事件處理器</span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>).<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);  <span class="comment">// &#x27;this&#x27; 指向外部作用域，即 &#x27;obj&#x27; 物件</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">show</span>();</span><br></pre></td></tr></table></figure>
 
-<h4 id="輸出："><a href="#輸出：" class="headerlink" title="輸出："></a>輸出：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&quot;Hello&quot;, &quot;This&quot;, &quot;is&quot;, &quot;a&quot;, &quot;test&quot;]</span><br></pre></td></tr></table></figure>
-
-<p>這段程式會：</p>
 <ul>
-<li>忽略中文與數字</li>
-<li>把英文字母串（不論大小寫）全都抓出來</li>
+<li>在傳統函式中，<code>this</code> 會指向觸發事件的 DOM 元素（這裡是 <code>btn</code> 按鈕）。</li>
+<li>在箭頭函式中，<code>this</code> 會指向外部作用域（這裡是 <code>obj</code> 物件），因為箭頭函式不會創建自己的 <code>this</code>。</li>
 </ul>
-<p>好，我們真的慢慢來，我會用<strong>超直白的說法、一步一步演示</strong>，幫你理解 <code>arr.sort((a, b) =&gt; a - b)</code> 是怎麼把數字從小排到大的。</p>
-<hr>
-<h2 id="先記住一個核心概念："><a href="#先記住一個核心概念：" class="headerlink" title="先記住一個核心概念："></a>先記住一個核心概念：</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">arr.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b);</span><br></pre></td></tr></table></figure>
+<h3 id="解決方案：確保-this-正確指向"><a href="#解決方案：確保-this-正確指向" class="headerlink" title="解決方案：確保 this 正確指向"></a>解決方案：確保 <code>this</code> 正確指向</h3><p>如果你希望 <code>this</code> 指向物件本身，可以使用傳統函式或手動綁定 <code>this</code>。</p>
+<h4 id="使用傳統函式"><a href="#使用傳統函式" class="headerlink" title="使用傳統函式"></a>使用傳統函式</h4><p>如果你希望在事件處理器中讓 <code>this</code> 指向物件本身，可以使用傳統函式，或者使用 <code>bind</code> 顯式綁定 <code>this</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;KD&#x27;</span>,</span><br><span class="line">  <span class="attr">show</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>).<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);  <span class="comment">// &#x27;this&#x27; 指向 obj</span></span><br><span class="line">    &#125;.<span class="title function_">bind</span>(<span class="variable language_">this</span>));  <span class="comment">// 顯式綁定 &#x27;this&#x27; 到 obj</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">show</span>();</span><br></pre></td></tr></table></figure>
 
-<p>這一行的意思是：</p>
-<blockquote>
-<p>陣列裡的「每兩個數字 a 和 b」，如果 a 比 b 小，就讓 a 排在 b 前面。</p>
-</blockquote>
-<hr>
-<h2 id="一步一步來看："><a href="#一步一步來看：" class="headerlink" title="一步一步來看："></a>一步一步來看：</h2><p>假設這個陣列：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">30</span>, <span class="number">10</span>, <span class="number">5</span>];</span><br></pre></td></tr></table></figure>
+<h4 id="另一個選項：箭頭函式和外部-this"><a href="#另一個選項：箭頭函式和外部-this" class="headerlink" title="另一個選項：箭頭函式和外部 this"></a>另一個選項：箭頭函式和外部 <code>this</code></h4><p>如果你希望繼續使用箭頭函式，你可以將物件的 <code>this</code> 儲存到外部變數中，並在箭頭函式中引用它。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;KD&#x27;</span>,</span><br><span class="line">  <span class="attr">show</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> self = <span class="variable language_">this</span>;  <span class="comment">// 保存物件的 &#x27;this&#x27;</span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>).<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(self);  <span class="comment">// 使用外部的 &#x27;self&#x27;，指向 obj</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">show</span>();</span><br></pre></td></tr></table></figure>
 
-<p>我們要用 <code>sort()</code> 排成：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[5, 10, 30]</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="JS-怎麼做的？"><a href="#JS-怎麼做的？" class="headerlink" title="JS 怎麼做的？"></a>JS 怎麼做的？</h2><p>它會自動幫你「兩個兩個配對」來比較順序。</p>
-<h3 id="第一次比較：30-和-10"><a href="#第一次比較：30-和-10" class="headerlink" title="第一次比較：30 和 10"></a>第一次比較：30 和 10</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">a = <span class="number">30</span>, b = <span class="number">10</span></span><br><span class="line">a - b = <span class="number">30</span> - <span class="number">10</span> = <span class="number">20</span>（是正數）</span><br><span class="line"></span><br><span class="line"><span class="title class_">JavaScript</span> 覺得：b（<span class="number">10</span>）比較小 → 讓 <span class="number">10</span> 排在 <span class="number">30</span> 前面</span><br></pre></td></tr></table></figure>
-
-<p>結果變成這樣：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[10, 30, 5]</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="第二次比較：30-和-5"><a href="#第二次比較：30-和-5" class="headerlink" title="第二次比較：30 和 5"></a>第二次比較：30 和 5</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">a = <span class="number">30</span>, b = <span class="number">5</span></span><br><span class="line">a - b = <span class="number">30</span> - <span class="number">5</span> = <span class="number">25</span>（是正數）</span><br><span class="line"></span><br><span class="line">b（<span class="number">5</span>）比較小 → 把 <span class="number">5</span> 放到前面</span><br></pre></td></tr></table></figure>
-
-<p>結果變成：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[10, 5, 30]</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="第三次比較：10-和-5"><a href="#第三次比較：10-和-5" class="headerlink" title="第三次比較：10 和 5"></a>第三次比較：10 和 5</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">a = <span class="number">10</span>, b = <span class="number">5</span></span><br><span class="line">a - b = <span class="number">10</span> - <span class="number">5</span> = <span class="number">5</span>（是正數）</span><br><span class="line"></span><br><span class="line">b（<span class="number">5</span>）比較小 → 把 <span class="number">5</span> 放到前面</span><br></pre></td></tr></table></figure>
-
-<p>最後得到：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[5, 10, 30]</span><br></pre></td></tr></table></figure>
-
-<p>就是我們想要的「從小到大」排序！</p>
-<hr>
-<h2 id="最簡單的記法："><a href="#最簡單的記法：" class="headerlink" title="最簡單的記法："></a>最簡單的記法：</h2><table>
-<thead>
-<tr>
-<th>語法</th>
-<th>排序方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>(a, b) =&gt; a - b</code></td>
-<td>小到大</td>
-</tr>
-<tr>
-<td><code>(a, b) =&gt; b - a</code></td>
-<td>大到小</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="小挑戰"><a href="#小挑戰" class="headerlink" title="小挑戰"></a>小挑戰</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">8</span>, <span class="number">3</span>, <span class="number">100</span>, <span class="number">1</span>];</span><br><span class="line">arr.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b); <span class="comment">// [1, 3, 8, 100]</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="Codeland-Username-Validation"><a href="#Codeland-Username-Validation" class="headerlink" title="Codeland Username Validation"></a>Codeland Username Validation</h1><p>符合條件的正則表達式：</p>
-<h3 id="正則表達式："><a href="#正則表達式：" class="headerlink" title="正則表達式："></a>正則表達式：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">^[A-Za-z][A-Za-z0-9_]&#123;2,23&#125;[A-Za-z0-9]$</span><br></pre></td></tr></table></figure>
-
-<h3 id="解釋："><a href="#解釋：" class="headerlink" title="解釋："></a>解釋：</h3><ol>
-<li>**<code>^</code>**：字串的開始。</li>
-<li>**<code>[A-Za-z]</code>**：第一個字符必須是字母（無論是大寫還是小寫）。</li>
-<li>**<code>[A-Za-z0-9_]&#123;2,23&#125;</code>**：接下來可以包含字母、數字或底線，並且長度必須在 2 到 23 之間。這確保了整個字串的長度在 4 到 25 之間（包括起始的字母）。</li>
-<li>**<code>[A-Za-z0-9]</code>**：字串的結尾必須是字母或數字，不能是底線 <code>_</code>。</li>
-<li>**<code>$</code>**：字串的結束。</li>
-</ol>
-<h3 id="規則解釋："><a href="#規則解釋：" class="headerlink" title="規則解釋："></a>規則解釋：</h3><ol>
-<li>用戶名必須是 4 到 25 個字符。</li>
-<li>用戶名的開頭必須是字母。</li>
-<li>用戶名可以包含字母、數字和底線 <code>_</code>。</li>
-<li>用戶名不能以底線 <code>_</code> 結尾。</li>
-</ol>
-<h3 id="範例：-1"><a href="#範例：-1" class="headerlink" title="範例："></a>範例：</h3><ul>
-<li><code>&quot;username123&quot;</code> 會匹配成功。</li>
-<li><code>&quot;user_name&quot;</code> 會匹配成功。</li>
-<li><code>&quot;user_name_&quot;</code> 會匹配失敗（因為底線 <code>_</code> 在結尾）。</li>
-<li><code>&quot;123username&quot;</code> 會匹配失敗（因為開頭不是字母）。</li>
-<li><code>&quot;user&quot;</code> 會匹配成功。</li>
-<li><code>&quot;a_1&quot;</code> 會匹配失敗（因為長度太短，少於 4 個字符）。</li>
+<h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><ul>
+<li><strong>傳統函式</strong> 會根據調用上下文決定 <code>this</code> 的值。</li>
+<li><strong>箭頭函式</strong> 會繼承外部作用域的 <code>this</code>，不會創建自己的 <code>this</code>，這樣在某些情況下會導致 <code>this</code> 不如預期。</li>
+<li>如果你需要在事件處理器中使用物件的 <code>this</code>，可以選擇使用傳統函式或顯式綁定 <code>this</code>。</li>
 </ul>
-<h2 id="2620-Counter"><a href="#2620-Counter" class="headerlink" title="2620. Counter"></a>2620. Counter</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> createCounter = <span class="keyword">function</span>(<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n++;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>這樣做的好處是：</p>
-<p>n 是外部函式的區域變數（<code>closure</code>）</p>
-<p>每次呼叫內部函式都能使用並修改 n</p>
-<p>n++ 會先回傳 n 的值，再讓 n 加 1</p>
-<p>小補充：n++ vs ++n<br>n++：先回傳，再加一<br>++n：先加一，再回傳</p>
 
                 </div>
 
@@ -388,7 +277,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/08/31/learning-notes-aos-animate-on-scroll-library-intro-tutorial/" title="AOS（Animate On Scroll Library）入門教學筆記 | 學習筆記" rel="bookmark">AOS（Animate On Scroll Library）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/12/21/learning-notes-javascript-event-input-intro-tutorial/" title="JavaScript this 使用情境入門教學筆記 | 學習筆記" rel="bookmark">JavaScript this 使用情境入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/12/15/learning-notes-javascript-hoisting-intro-tutorial/" title="JavaScript Hoisting 入門教學筆記 | 學習筆記" rel="bookmark">JavaScript Hoisting 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/12/14/learning-notes-javascript-intro-tutorial/" title="JavaScript 入門教學筆記 | 學習筆記" rel="bookmark">JavaScript 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/12/21/learning-notes-javascript-this-cases-intro-tutorial/" title="JavaScript 多事件處理綁定使用情境入門教學筆記 | 學習筆記" rel="bookmark">JavaScript 多事件處理綁定使用情境入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/12/21/learning-notes-javascript-this-cases-intro-tutorial/" title="JavaScript 多事件處理綁定使用情境入門教學筆記 | 學習筆記" rel="bookmark">JavaScript 多事件處理綁定使用情境入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/08/31/learning-notes-aos-animate-on-scroll-library-intro-tutorial/" title="AOS（Animate On Scroll Library）入門教學筆記 | 學習筆記" rel="bookmark">AOS（Animate On Scroll Library）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2018/02/01/learning-notes-javascript-challenge-intro-tutorial/" title="JavaScript 練習挑戰紀錄 | 學習筆記" rel="bookmark">JavaScript 練習挑戰紀錄 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/12/15/learning-notes-javascript-hoisting-intro-tutorial/" title="JavaScript Hoisting 入門教學筆記 | 學習筆記" rel="bookmark">JavaScript Hoisting 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/12/14/learning-notes-javascript-intro-tutorial/" title="JavaScript 入門教學筆記 | 學習筆記" rel="bookmark">JavaScript 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -424,8 +313,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2018/02/01/learning-notes-javascript-challenge-intro-tutorial/";
-    var disqus_url = "https://tech.kdchang.net/2018/02/01/learning-notes-javascript-challenge-intro-tutorial/";
+    var disqus_identifier = "https://tech.kdchang.net/2023/12/21/learning-notes-javascript-event-input-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2023/12/21/learning-notes-javascript-event-input-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
