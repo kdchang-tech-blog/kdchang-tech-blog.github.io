@@ -47,14 +47,14 @@ tags:
 1. [ohmyzsh Themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
 2. [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
 
-✅ Terminal App：iTerm2
+(1). Terminal App：iTerm2
 網站：https://iterm2.com
 
-✅ Shell：zsh（macOS 預設就是 zsh）
+(2). Shell：zsh（macOS 預設就是 zsh）
 macOS Catalina 之後預設就是 zsh，不用特別安裝
 比 bash 現代，有 plugin & theme 支援
 
-✅ Framework：Oh My Zsh
+(3). Framework：Oh My Zsh
 網站：https://ohmyz.sh
 
 優點：
