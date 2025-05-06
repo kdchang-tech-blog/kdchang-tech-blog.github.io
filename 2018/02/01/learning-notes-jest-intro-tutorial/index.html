@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword"  content="軟體工程, 程式設計, 程式開發, frontend, backend, web, software, software engineer, JavaScript, Python">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/img/logo.ico">
+    <meta name="google-site-verification" content="cMTgiEFMM7gXpRMBbu_05Lnj0scwhDPCMvpfhQOpENI" />
+    <script src="/js/search.js"></script> 
+
+    
+    
+    
+       <script type="text/javascript">      
+         var search_path = "search.xml";
+       if (search_path.length == 0) {
+         search_path = "search.xml";
+       }
+       var path = "/" + search_path;
+         searchFunc(path, 'local-search-input', 'local-search-result');
+       </script>
+    
+    <title>
+        
+          Jest 使用 ES Module 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+        
+    </title>
+
+    <link rel="canonical" href="https://tech.kdchang.net/2018/02/01/learning-notes-jest-intro-tutorial/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/main.css?v=1">
+
+    <!-- og tag -->
+    <meta name="generator" content="KD's Tech Blog">
+    
+      <meta name="og:title" content="Jest 使用 ES Module 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="Jest 使用 ES Module 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+    
+    
+      <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+      <meta name="og:description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+    
+    
+      <meta name="og:image" content="https://tech.kdchang.net/img/logo.png">
+    
+    <meta name="og:type" content="website">
+    <!--Twitter Graph-->
+    <meta name="twitter:card" content="summary" />
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<link rel="alternate" href="/atom.xml" title="KD's Tech Blog" type="application/atom+xml">
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">KD&#39;s Tech Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/books/">Books</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/search/">Search</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    <li>
+                        <a href="/atom.xml">RSS</a>
+                    </li>                 
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/cover.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+
+                    <h1>Jest 使用 ES Module 入門教學筆記 | 學習筆記</h1>
+                    <span class="meta">
+                        Posted by kdchang on
+                        2018-02-01
+                    </span>
+                    <br>
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#Jest" title="Jest">Jest</a>
+                        
+                          <a class="tag" href="/tags/#ES Module" title="ES Module">ES Module</a>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+                <br>
+                <div>
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.net" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+                <br>
+                <div>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 JavaScript 開發中，<strong>ES Modules (ESM)</strong> 已成為標準。從 Node.js 12 開始，ESM 已獲得原生支援，而前端開發（如 React、Vue、Svelte 等框架）早已全面採用 ES Module。<br>然而，當我們使用 Jest 來撰寫與執行測試時，若要直接使用 ES Module，會遇到一些設定上的挑戰。本篇筆記將說明如何在專案中讓 Jest 正確執行 ES Module 程式碼，並透過實例展示操作流程。</p>
+<hr>
+<h3 id="1-Jest-是否支援-ES-Module？"><a href="#1-Jest-是否支援-ES-Module？" class="headerlink" title="1. Jest 是否支援 ES Module？"></a>1. Jest 是否支援 ES Module？</h3><p>Jest 自 <strong>v27</strong> 版本開始實驗性支援 ES Module，到了 <strong>v28 以後更加穩定</strong>。但因為 Node.js 與 CommonJS、ESM 的處理邏輯不同，仍需要額外設定。</p>
+<p>若你使用 ES Module（例如 <code>.mjs</code> 檔案、<code>type: module</code>），或是前端專案用 ES6 <code>import</code> &#x2F; <code>export</code>，就必須進行相應的 Jest 設定。</p>
+<hr>
+<h3 id="2-初始化專案與安裝-Jest"><a href="#2-初始化專案與安裝-Jest" class="headerlink" title="2. 初始化專案與安裝 Jest"></a>2. 初始化專案與安裝 Jest</h3><p>首先，我們建立一個 Node.js 專案：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> jest-esm-demo</span><br><span class="line"><span class="built_in">cd</span> jest-esm-demo</span><br><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
+
+<p>接著安裝 Jest：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install --save-dev jest</span><br></pre></td></tr></table></figure>
+
+<p><strong>重點！</strong> 在 <code>package.json</code> 中加入 <code>type: &quot;module&quot;</code>，讓整個專案採用 ES Module：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;jest-esm-demo&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;module&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;jest&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;devDependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;jest&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^29.0.0&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-撰寫-ES-Module-程式碼"><a href="#3-撰寫-ES-Module-程式碼" class="headerlink" title="3. 撰寫 ES Module 程式碼"></a>3. 撰寫 ES Module 程式碼</h3><p>假設我們有一個簡單的 <strong>加法模組</strong> <code>sum.mjs</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// sum.mjs</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接著建立測試檔案 <code>sum.test.mjs</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// sum.test.mjs</span></span><br><span class="line"><span class="keyword">import</span> &#123; sum &#125; <span class="keyword">from</span> <span class="string">&quot;./sum.mjs&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span>(<span class="string">&quot;adds 1 + 2 to equal 3&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="title function_">expect</span>(<span class="title function_">sum</span>(<span class="number">1</span>, <span class="number">2</span>)).<span class="title function_">toBe</span>(<span class="number">3</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>這時候直接執行 <code>npm test</code> 會報錯：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SyntaxError: Cannot use import statement outside a module</span><br></pre></td></tr></table></figure>
+
+<p>因為 <strong>Jest 預設使用 CommonJS</strong>，不認得 ES Module，需要額外設定。</p>
+<hr>
+<h3 id="4-設定-Jest-支援-ES-Module"><a href="#4-設定-Jest-支援-ES-Module" class="headerlink" title="4. 設定 Jest 支援 ES Module"></a>4. 設定 Jest 支援 ES Module</h3><h4 id="方案一：使用-jest-config-js-並指定-transform"><a href="#方案一：使用-jest-config-js-並指定-transform" class="headerlink" title="方案一：使用 jest.config.js 並指定 transform"></a>方案一：使用 <code>jest.config.js</code> 並指定 <code>transform</code></h4><p>首先，安裝 <strong>Babel</strong> 或 <strong><code>jest-esm-transformer</code></strong> 之類的工具。如果希望簡單一點，可以直接使用 Jest 的內建 ESM 模式（推薦）。</p>
+<p>建立 <code>jest.config.js</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// jest.config.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">transform</span>: &#123;&#125;,</span><br><span class="line">  <span class="attr">extensionsToTreatAsEsm</span>: [<span class="string">&quot;.mjs&quot;</span>],</span><br><span class="line">  <span class="attr">testEnvironment</span>: <span class="string">&quot;node&quot;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>重點設定解釋：</strong></p>
+<ul>
+<li><code>transform: &#123;&#125;</code> 表示不使用 Babel 或其他轉譯器</li>
+<li><code>extensionsToTreatAsEsm</code> 告訴 Jest 哪些副檔名視為 ESM</li>
+<li><code>testEnvironment: &#39;node&#39;</code> 使用 Node 環境（非 jsdom）</li>
+</ul>
+<p>執行 <code>npm test</code>，這時候仍會報錯：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Jest encountered an unexpected token</span><br></pre></td></tr></table></figure>
+
+<p>因為 Jest 內建 transform 無法處理 ES Module 語法（即便 Node.js 支援，但 Jest 內部解析流程不同）。</p>
+<hr>
+<h3 id="5-方案二：使用-babel-jest-轉譯-ESM"><a href="#5-方案二：使用-babel-jest-轉譯-ESM" class="headerlink" title="5. 方案二：使用 babel-jest 轉譯 ESM"></a>5. 方案二：使用 <code>babel-jest</code> 轉譯 ESM</h3><p>安裝 Babel 及相關套件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install --save-dev @babel/preset-env babel-jest</span><br></pre></td></tr></table></figure>
+
+<p>建立 <code>.babelrc</code>：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;presets&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;@babel/preset-env&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>更新 <code>jest.config.js</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">transform</span>: &#123;</span><br><span class="line">    <span class="string">&quot;^.+\\.m?js$&quot;</span>: <span class="string">&quot;babel-jest&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">extensionsToTreatAsEsm</span>: [<span class="string">&quot;.mjs&quot;</span>],</span><br><span class="line">  <span class="attr">testEnvironment</span>: <span class="string">&quot;node&quot;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>這樣 Jest 會用 <strong>babel-jest</strong> 處理 <code>.js</code>、<code>.mjs</code> 檔案，並當作 ESM 解析。</p>
+<p>此時執行 <code>npm test</code>，測試就會通過：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">PASS  ./sum.test.mjs</span><br><span class="line">✓ adds 1 + 2 to equal 3 (5 ms)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="6-測試更複雜情境"><a href="#6-測試更複雜情境" class="headerlink" title="6. 測試更複雜情境"></a>6. 測試更複雜情境</h3><p>假設我們有一個 <strong>fetch 模組</strong>，使用 async function：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// fetchData.mjs</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchData</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;peanut butter&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>測試檔：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// fetchData.test.mjs</span></span><br><span class="line"><span class="keyword">import</span> &#123; fetchData &#125; <span class="keyword">from</span> <span class="string">&quot;./fetchData.mjs&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span>(<span class="string">&quot;returns peanut butter&quot;</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> data = <span class="keyword">await</span> <span class="title function_">fetchData</span>();</span><br><span class="line">  <span class="title function_">expect</span>(data).<span class="title function_">toBe</span>(<span class="string">&quot;peanut butter&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>一樣執行 <code>npm test</code>，因為已經設定好 Babel 與 ESM，非同步測試也能正常運作。</p>
+<hr>
+<h3 id="7-使用-import-meta-url-注意事項"><a href="#7-使用-import-meta-url-注意事項" class="headerlink" title="7. 使用 import.meta.url 注意事項"></a>7. 使用 <code>import.meta.url</code> 注意事項</h3><p>如果你的程式中有用 <code>import.meta.url</code>（例如讀取檔案、動態載入），要注意 <strong>Jest 執行時 context 與 Node.js 直跑不同</strong>。</p>
+<p>例如：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// fileUtil.mjs</span></span><br><span class="line"><span class="keyword">import</span> &#123; readFile &#125; <span class="keyword">from</span> <span class="string">&quot;node:fs/promises&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; fileURLToPath &#125; <span class="keyword">from</span> <span class="string">&quot;node:url&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; dirname, join &#125; <span class="keyword">from</span> <span class="string">&quot;node:path&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> __filename = <span class="title function_">fileURLToPath</span>(<span class="keyword">import</span>.<span class="property">meta</span>.<span class="property">url</span>);</span><br><span class="line"><span class="keyword">const</span> __dirname = <span class="title function_">dirname</span>(__filename);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">readConfig</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> filePath = <span class="title function_">join</span>(__dirname, <span class="string">&quot;config.json&quot;</span>);</span><br><span class="line">  <span class="keyword">const</span> content = <span class="keyword">await</span> <span class="title function_">readFile</span>(filePath, <span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">JSON</span>.<span class="title function_">parse</span>(content);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>測試時要確保 <code>import.meta.url</code> 能被正確解析（可能需要 <code>jest-environment-node</code>，或 Mock 檔案路徑）。</p>
+<hr>
+<h3 id="8-常見錯誤與解法"><a href="#8-常見錯誤與解法" class="headerlink" title="8. 常見錯誤與解法"></a>8. 常見錯誤與解法</h3><p><strong>問題：<code>SyntaxError: Cannot use import statement outside a module</code></strong></p>
+<ul>
+<li>確認 <code>jest.config.js</code> 中有 <code>extensionsToTreatAsEsm</code></li>
+<li>測試檔、副程式檔是否副檔名為 <code>.mjs</code></li>
+</ul>
+<p><strong>問題：<code>Unexpected token export</code></strong></p>
+<ul>
+<li>確認有設定 <code>transform</code> 使用 <code>babel-jest</code></li>
+<li>確認 <code>.babelrc</code> 正確啟用 <code>@babel/preset-env</code></li>
+</ul>
+<p><strong>問題：ESM 測試檔找不到 module</strong></p>
+<ul>
+<li>確認 <code>package.json</code> 有 <code>type: module</code></li>
+<li>相對路徑記得補 <code>.mjs</code> 副檔名</li>
+</ul>
+<hr>
+<h3 id="9-實用-Jest-CLI-指令"><a href="#9-實用-Jest-CLI-指令" class="headerlink" title="9. 實用 Jest CLI 指令"></a>9. 實用 Jest CLI 指令</h3><ul>
+<li>執行單一測試檔：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npx jest sum.test.mjs</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>只跑某個測試：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test.<span class="title function_">only</span>(<span class="string">&#x27;專跑這個測試&#x27;</span>, <span class="function">() =&gt;</span> &#123; ... &#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>顯示覆蓋率：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npx jest --coverage</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Jest 預設是為 <strong>CommonJS</strong> 設計，但隨著 <strong>ES Module</strong> 在 Node.js 與前端日漸普及，支援 ESM 變得越來越重要。</p>
+<p>透過本文介紹，我們可以知道：</p>
+<ol>
+<li><code>type: module</code> 啟用 ESM</li>
+<li>Jest 需要設定 <code>transform</code> 及 <code>extensionsToTreatAsEsm</code></li>
+<li>使用 <code>babel-jest</code> 來處理 ESM</li>
+<li>注意 <code>import.meta.url</code>、路徑、非同步等 ESM 細節</li>
+</ol>
+<p>雖然設定比 CJS 稍微複雜，但一旦設定好後，整個測試流程一樣流暢，也能為未來更符合現代標準的專案奠定基礎。</p>
+<p>建議未來若有使用 TypeScript、React、Vue 等，也可以結合對應的 transformer 與設定，讓 Jest 完全支援你的開發堆疊。</p>
+
+                </div>
+
+                <br>
+                <section>
+                    歡迎分享按讚給予支持和鼓勵！
+                    <div class="fb-like" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                </section>
+                <br>
+                <div>
+                    <div class="fb-page" data-href="https://www.facebook.com/tech.kdchang.net" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/tech.kdchang.net" class="fb-xfbml-parse-ignore"><a target="_blank" rel="noopener" href="https://www.facebook.com/tech.kdchang.net">KD Chang（張凱迪）</a></blockquote></div>
+                </div>
+                <hr>
+                <div>
+                    <h3>Related Posts</h3>
+                    <div>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2018/02/01/learning-notes-jest-unit-test-aaa-intro-tutorial/" title="Jest 使用 ES Module 入門教學筆記 | 學習筆記" rel="bookmark">Jest 使用 ES Module 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2018/02/01/learning-notes-lighthouse-intro-tutorial/" title="Google Lighthouse 介紹與入門教學筆記 | 學習筆記" rel="bookmark">Google Lighthouse 介紹與入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                    </div>
+                </div>
+                <!-- Tags -->
+                <h3>Comments</h3>
+                <hr>
+                
+                <!-- disqus start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus end -->
+                
+
+            </div>
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "kdchang-tech-blog";
+    var disqus_identifier = "https://tech.kdchang.net/2018/02/01/learning-notes-jest-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2018/02/01/learning-notes-jest-intro-tutorial/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5728979c6a10856b"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<!-- <script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script> -->
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+<script>
+   anchors.add('h1, h2, h3');
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<a id="scroll-to-top-button">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/kaidichang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/tech.kdchang.net">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/kdchang_net">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kdchang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <hr>
+                <div class="copyright text-muted">
+                    Special thanks <a href="https://unsplash.com/@afgprogrammer" target="_blank">Mohammad Rahmani</a>、<a href="https://www.flickr.com/photos/derek-john-lee/14698093740/in/photolist-ooPzcj-r2kVt-ppV21v-brhFX3-wd3Qsy-cLiKEL-xDR92-28QCtA-29YFZZ-gzuZk-dqbhxt-9FwCBY-q57bEv-bVhZJr-dYxGXn-dxg9g7-8x7gjU-dzjMic-rQhf-9TMgJ3-mEsFjW-qbzd4p-q6cJvc-7zYttk-q2gE5S-bdb4G4-8ifmQN-eivVeg-9ZZFVz-aD6q6r-bnjfWh-qJAn2g-k22Ttf-n9Jhfj-kk4woh-sj43iz-5NYGUn-96wNhi-9ZZFz6-8DJkQf-4wQizw-3bzz8p-9yzTSd-xDQee-68Xwfp-7t5WPx-xDTM5-o5RPYA-kWihhy-7iHDEX" target="_blank">Derek</a>、<a href="https://www.flickr.com/photos/mashleymorgan/" target="_blank">mashleymorgan</a>、<a href="https://www.flickr.com/photos/mustafeez27/" target="_blank">mustafeez27</a>         
+                    and <a href="http://blog.kaijun.rocks" target="_blank">Kaijun</a>
+                    <br> 
+                    Copyright &copy; KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪 2025
+                    <hr>
+                    <!-- facebook follow -->
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.net" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+<!-- Custom Main JavaScript -->
+<script src="/js/main.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://tech.kdchang.net/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fb.js -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="X3eUifxc"></script>
+
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FN9X92SM77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FN9X92SM77');
+</script>
+
+
+
+	
+</body>
+
+</html>
