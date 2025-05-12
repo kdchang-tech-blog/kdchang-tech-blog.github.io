@@ -6,7 +6,7 @@
   <link href="https://tech.kdchang.net/atom.xml" rel="self"/>
   
   <link href="https://tech.kdchang.net/"/>
-  <updated>2025-05-12T08:46:54.954Z</updated>
+  <updated>2025-05-12T08:47:19.362Z</updated>
   <id>https://tech.kdchang.net/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>12 Factor App 入門教學：打造現代雲端應用的十二守則教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2025/02/08/learning-notes-node-js-intro-tutorial%20copy/"/>
+    <id>https://tech.kdchang.net/2025/02/08/learning-notes-node-js-intro-tutorial%20copy/</id>
+    <published>2025-02-08T18:23:41.000Z</published>
+    <updated>2025-05-12T08:47:19.362Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;12 Factor App&lt;/strong&gt; 是由 Heroku</summary>
+        
+      
+    
+    
+    
+    
+    <category term="12 Factor App" scheme="https://tech.kdchang.net/tags/12-Factor-App/"/>
+    
+    <category term="Heroku" scheme="https://tech.kdchang.net/tags/Heroku/"/>
+    
+    <category term="SaaS" scheme="https://tech.kdchang.net/tags/SaaS/"/>
+    
+    <category term="API" scheme="https://tech.kdchang.net/tags/API/"/>
+    
+    <category term="cloud" scheme="https://tech.kdchang.net/tags/cloud/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript 可選鏈接運算符（Optional Chaining）介紹與入門教學 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-05-12T08:46:54.954Z</updated>
+    <updated>2025-05-12T08:47:19.362Z</updated>
     
     
       
@@ -54,7 +85,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-05-12T08:46:54.955Z</updated>
+    <updated>2025-05-12T08:47:19.363Z</updated>
     
     
       
@@ -95,7 +126,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-05-12T08:46:54.955Z</updated>
+    <updated>2025-05-12T08:47:19.363Z</updated>
     
     
       
@@ -136,7 +167,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/</id>
     <published>2024-12-16T18:23:41.000Z</published>
-    <updated>2025-05-12T08:46:54.956Z</updated>
+    <updated>2025-05-12T08:47:19.363Z</updated>
     
     
       
@@ -165,7 +196,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-javascript-commonjs-amd-module-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-javascript-commonjs-amd-module-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-05-12T08:46:54.953Z</updated>
+    <updated>2025-05-12T08:47:19.361Z</updated>
     
     
       
@@ -206,7 +237,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-javascript-es-module-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-javascript-es-module-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-05-12T08:46:54.954Z</updated>
+    <updated>2025-05-12T08:47:19.361Z</updated>
     
     
       
@@ -243,7 +274,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-nodejs-expressjs-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-nodejs-expressjs-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-05-12T08:46:54.954Z</updated>
+    <updated>2025-05-12T08:47:19.362Z</updated>
     
     
       
@@ -286,7 +317,7 @@
     <link href="https://tech.kdchang.net/2024/12/14/learning-notes-css-font-size-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/14/learning-notes-css-font-size-intro-tutorial/</id>
     <published>2024-12-14T18:23:41.000Z</published>
-    <updated>2025-05-12T08:46:54.952Z</updated>
+    <updated>2025-05-12T08:47:19.360Z</updated>
     
     
       
@@ -317,7 +348,7 @@
     <link href="https://tech.kdchang.net/2024/12/14/learning-notes-vue-set-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/14/learning-notes-vue-set-intro-tutorial/</id>
     <published>2024-12-14T18:23:41.000Z</published>
-    <updated>2025-05-12T08:46:54.956Z</updated>
+    <updated>2025-05-12T08:47:19.363Z</updated>
     
     
       
@@ -344,7 +375,7 @@
     <link href="https://tech.kdchang.net/2024/12/13/learning-notes-jsx-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/13/learning-notes-jsx-intro-tutorial/</id>
     <published>2024-12-13T18:23:41.000Z</published>
-    <updated>2025-05-12T08:46:54.954Z</updated>
+    <updated>2025-05-12T08:47:19.362Z</updated>
     
     
       
@@ -369,7 +400,7 @@
     <link href="https://tech.kdchang.net/2024/12/13/learning-notes-regex-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/13/learning-notes-regex-intro-tutorial/</id>
     <published>2024-12-13T18:23:41.000Z</published>
-    <updated>2025-05-12T08:46:54.955Z</updated>
+    <updated>2025-05-12T08:47:19.363Z</updated>
     
     
       
@@ -398,7 +429,7 @@
     <link href="https://tech.kdchang.net/2024/12/12/learning-notes-backend-for-frontend-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/12/learning-notes-backend-for-frontend-intro-tutorial/</id>
     <published>2024-12-12T18:23:41.000Z</published>
-    <updated>2025-05-12T08:46:54.952Z</updated>
+    <updated>2025-05-12T08:47:19.360Z</updated>
     
     
       
@@ -425,7 +456,7 @@
     <link href="https://tech.kdchang.net/2024/12/12/learning-notes-react-redux-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/12/learning-notes-react-redux-intro-tutorial/</id>
     <published>2024-12-12T18:23:41.000Z</published>
-    <updated>2025-05-12T08:46:54.955Z</updated>
+    <updated>2025-05-12T08:47:19.363Z</updated>
     
     
       
@@ -452,7 +483,7 @@
     <link href="https://tech.kdchang.net/2024/12/12/learning-notes-spa-ssr-isr-ssg-redux-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2024/12/12/learning-notes-spa-ssr-isr-ssg-redux-intro-tutorial%20copy/</id>
     <published>2024-12-12T18:23:41.000Z</published>
-    <updated>2025-05-12T08:46:54.955Z</updated>
+    <updated>2025-05-12T08:47:19.363Z</updated>
     
     
       
@@ -479,7 +510,7 @@
     <link href="https://tech.kdchang.net/2024/12/08/learning-notes-cypress-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/08/learning-notes-cypress-intro-tutorial/</id>
     <published>2024-12-08T18:23:41.000Z</published>
-    <updated>2025-05-12T08:46:54.953Z</updated>
+    <updated>2025-05-12T08:47:19.360Z</updated>
     
     
       
@@ -504,42 +535,11 @@
   </entry>
   
   <entry>
-    <title>12 Factor App 入門教學：打造現代雲端應用的十二守則教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial%20copy/"/>
-    <id>https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial%20copy/</id>
-    <published>2024-12-08T18:23:41.000Z</published>
-    <updated>2025-05-12T08:46:54.954Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;12 Factor App&lt;/strong&gt; 是由 Heroku</summary>
-        
-      
-    
-    
-    
-    
-    <category term="12 Factor App" scheme="https://tech.kdchang.net/tags/12-Factor-App/"/>
-    
-    <category term="Heroku" scheme="https://tech.kdchang.net/tags/Heroku/"/>
-    
-    <category term="SaaS" scheme="https://tech.kdchang.net/tags/SaaS/"/>
-    
-    <category term="API" scheme="https://tech.kdchang.net/tags/API/"/>
-    
-    <category term="cloud" scheme="https://tech.kdchang.net/tags/cloud/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Node.js 入門教學筆記 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial/</id>
     <published>2024-12-08T18:23:41.000Z</published>
-    <updated>2025-05-12T08:46:54.954Z</updated>
+    <updated>2025-05-12T08:47:19.362Z</updated>
     
     
       
@@ -566,7 +566,7 @@
     <link href="https://tech.kdchang.net/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</id>
     <published>2024-12-04T18:23:41.000Z</published>
-    <updated>2025-05-12T08:46:54.953Z</updated>
+    <updated>2025-05-12T08:47:19.361Z</updated>
     
     
       
@@ -595,7 +595,7 @@
     <link href="https://tech.kdchang.net/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/</id>
     <published>2024-12-03T18:23:41.000Z</published>
-    <updated>2025-05-12T08:46:54.955Z</updated>
+    <updated>2025-05-12T08:47:19.362Z</updated>
     
     
       
@@ -630,7 +630,7 @@
     <link href="https://tech.kdchang.net/2024/12/02/learning-notes-typescript-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/02/learning-notes-typescript-intro-tutorial/</id>
     <published>2024-12-02T18:23:41.000Z</published>
-    <updated>2025-05-12T08:46:54.956Z</updated>
+    <updated>2025-05-12T08:47:19.363Z</updated>
     
     
       
