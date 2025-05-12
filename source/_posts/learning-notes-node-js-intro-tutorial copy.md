@@ -30,13 +30,13 @@ tags:
 git@github.com:kdchang/todo-api.git  # 統一代碼庫
 ```
 
-若你在 GitHub 上有一個 `todo-api` 倉庫，開發、測試與生產環境的部署都應來自這個倉庫的不同分支或 Tag。
+若你在 GitHub 上有一個 `todo-api` 倉庫，開發、測試與生產環境（production、staging、dev）的部署都應來自這個倉庫的不同分支或 Tag。
 
 ---
 
 ## 二、 Dependencies（明確聲明相依套件）
 
-**使用明確的套件管理工具來聲明所有相依項目，避免依賴系統層級安裝**
+**使用明確的套件管理工具來聲明所有相依項目，避免依賴系統層級安裝**，例如：使用如 requirements.txt, Pipfile, package.json
 
 **範例（Node.js）**
 
@@ -50,9 +50,7 @@ git@github.com:kdchang/todo-api.git  # 統一代碼庫
 }
 ```
 
-部署時只需透過 `npm install` 即可安裝所有套件。
-
----
+## 部署時只需透過 `npm install` 即可安裝所有套件。
 
 ## 三、 Config（環境設定分離）
 
@@ -76,7 +74,7 @@ JWT_SECRET=my_secret_token
 
 **無論是本地資料庫、第三方 API、AWS S3 等，都視為可替換的附屬資源**
 
-切換服務供應商不應需改動應用邏輯，只要變更設定即可。
+切換服務供應商不應需改動應用邏輯，只要變更設定即可。例如：DATABASE_URL
 
 **範例：**
 
@@ -94,9 +92,9 @@ const s3 = new AWS.S3({
 
 **明確區分建置（build）、發布（release）與執行（run）三個階段**
 
-- Build：編譯程式、安裝依賴
-- Release：結合建置結果與設定，生成可部署版本
-- Run：實際執行應用
+- Build：編譯程式、安裝依賴（例如：container）
+- Release：結合建置結果與設定，生成可部署版本。將 build 結果與設定綁定
+- Run：實際執行應用（以 immutable 的方式）
 
 **範例（Heroku）：**
 
@@ -107,11 +105,11 @@ heroku run npm start  # 執行
 
 ---
 
-## 六、 Processes（無狀態的執行單元）
+## 六、 Stateless Processes（無狀態的執行單元）
 
 **應用程式應以一個或多個無狀態進程執行，狀態需存於外部服務**
 
-避免將使用者 session 存在記憶體中，應使用 Redis、資料庫等外部服務。
+避免將使用者 session 存在記憶體中，應使用 Redis、資料庫等外部服務。可以隨時 scale out
 
 **範例（Express）：**
 
@@ -131,7 +129,7 @@ app.use(
 
 ## 七、 Port Binding（綁定至 Port 提供服務）
 
-**應用應自行綁定 port 來對外提供 HTTP 服務，而非依賴外部 Web Server**
+**應用應自行綁定 port 來對外提供 HTTP 服務，而非依賴外部 Web Server**，例如：Gunicorn
 
 這使得應用本身即是一個完整的服務，容易容器化部署。
 
@@ -147,7 +145,7 @@ app.listen(process.env.PORT || 3000, () => {
 
 ## 八、 Concurrency（使用程序模型提升並行能力）
 
-**透過分工的進程來擴展應用功能，例如 Web、Worker 等**
+**透過分工的進程來擴展應用功能，例如 Web、Worker、queue 等**
 
 每個類型的處理單位可根據需求水平擴充。
 
@@ -177,6 +175,8 @@ process.on("SIGTERM", () => {
 });
 ```
 
+當使用容器應能快速重啟
+
 ---
 
 ## 十、 Dev/Prod Parity（開發與生產環境的一致性）
@@ -195,6 +195,8 @@ RUN npm install
 CMD ["npm", "start"]
 ```
 
+減少「只有 production 才會發生」的 bug
+
 ---
 
 ## 十一、 Logs（將 log 作為事件串流）
@@ -208,7 +210,7 @@ console.log("User login success", { userId: 123 });
 console.error("Database connection failed", error);
 ```
 
-在 Heroku、GCP、Kubernetes 等平台會自動收集這些 log。
+在 Heroku、GCP、Kubernetes 等平台會自動收集這些 log，讓 log 管理交給專門工具收集（如 ELK, CloudWatch）
 
 ---
 
@@ -216,7 +218,7 @@ console.error("Database connection failed", error);
 
 **資料庫 migration、資料修復等管理任務應能以一次性指令執行**
 
-這些指令應與主應用共用相同的環境設定與程式碼。
+這些指令應與主應用共用相同的環境設定與程式碼。管理性任務（如資料遷移）應獨立於應用程式主進程（例如：`python manage.py migrate`）
 
 **範例：**
 
