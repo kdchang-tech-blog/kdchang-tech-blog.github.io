@@ -26,11 +26,11 @@
     
     <title>
         
-          Cookie 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          12 Factor App 入門教學：打造現代雲端應用的十二守則教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/11/01/learning-notes-cookie-intro-tutorial/">
+    <link rel="canonical" href="https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial copy/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="Cookie 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="Cookie 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="12 Factor App 入門教學：打造現代雲端應用的十二守則教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="12 Factor App 入門教學：打造現代雲端應用的十二守則教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,27 +199,23 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>Cookie 入門教學筆記 | 學習筆記</h1>
+                    <h1>12 Factor App 入門教學：打造現代雲端應用的十二守則教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2024-11-01
+                        2024-12-08
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                          <a class="tag" href="/tags/#12 Factor App" title="12 Factor App">12 Factor App</a>
                         
-                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
+                          <a class="tag" href="/tags/#Heroku" title="Heroku">Heroku</a>
                         
-                          <a class="tag" href="/tags/#前端開發" title="前端開發">前端開發</a>
+                          <a class="tag" href="/tags/#SaaS" title="SaaS">SaaS</a>
                         
-                          <a class="tag" href="/tags/#前端工程" title="前端工程">前端工程</a>
+                          <a class="tag" href="/tags/#API" title="API">API</a>
                         
-                          <a class="tag" href="/tags/#frontend" title="frontend">frontend</a>
-                        
-                          <a class="tag" href="/tags/#frontend engineer" title="frontend engineer">frontend engineer</a>
-                        
-                          <a class="tag" href="/tags/#cookie" title="cookie">cookie</a>
+                          <a class="tag" href="/tags/#cloud" title="cloud">cloud</a>
                         
 
                     </div>
@@ -245,79 +241,88 @@
                 </div>
                 <br>
                 <div>
-                    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Cookie 是一種儲存在使用者瀏覽器上的小型文字檔案，用於保存使用者的狀態或資訊。常見用途包含：</p>
-<p><strong>紀錄登入狀態</strong>：讓使用者在網站上保持登入，不需每次重新輸入帳號。<br><strong>使用者偏好設定</strong>：保存使用者選擇的語言、主題等個人化設定。<br><strong>追蹤使用者行為</strong>：例如分析網站流量、廣告投放追蹤等。</p>
-<h1 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h1><p>Cookie 依據不同的分類方式，可以分為以下幾種常見種類：</p>
-<h3 id="一、依用途分類："><a href="#一、依用途分類：" class="headerlink" title="一、依用途分類："></a>一、依用途分類：</h3><ol>
-<li><p><strong>功能性 Cookie（Functional Cookies）</strong>  </p>
-<ul>
-<li>主要用於提升網站使用體驗，例如記住使用者的登入狀態、語言設定、購物車內容等。</li>
-</ul>
-</li>
-<li><p><strong>必要性 Cookie（Strictly Necessary Cookies）</strong>  </p>
-<ul>
-<li>維持網站基本運作所需，例如登入認證、網頁導航等，通常無法被關閉。</li>
-</ul>
-</li>
-<li><p><strong>分析型 Cookie（Analytical&#x2F;Performance Cookies）</strong>  </p>
-<ul>
-<li>用於收集網站流量數據，分析使用者行為，幫助網站優化，例如 Google Analytics。</li>
-</ul>
-</li>
-<li><p><strong>廣告追蹤 Cookie（Advertising&#x2F;Targeting Cookies）</strong>  </p>
-<ul>
-<li>用於追蹤使用者瀏覽行為，以提供個人化廣告或推薦內容。</li>
-</ul>
-</li>
-</ol>
+                    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>12 Factor App</strong> 是由 Heroku 團隊提出的一套雲端應用架構設計原則，旨在幫助開發者打造可擴展、可維護、易部署的現代化應用程式。這些準則不限語言或框架，廣泛適用於各種 SaaS 應用、API 服務、微服務架構等場景。</p>
+<p>以下是每一個 factor 的說明與實際範例：</p>
 <hr>
-<h3 id="二、依存放時間分類："><a href="#二、依存放時間分類：" class="headerlink" title="二、依存放時間分類："></a>二、依存放時間分類：</h3><ol>
-<li><p><strong>暫時性 Cookie（Session Cookies）</strong>  </p>
-<ul>
-<li>只在<code>使用者開啟網頁期間有效</code>，<code>關閉瀏覽器後即刪除</code>。</li>
-</ul>
-</li>
-<li><p><strong>永久性 Cookie（Persistent Cookies）</strong>  </p>
-<ul>
-<li>設定到期日期，存放於使用者裝置上，保存時間較長，即使關閉瀏覽器也不會刪除，<code>直到設定的到期日或手動刪除</code>。</li>
-</ul>
-</li>
-</ol>
+<h2 id="一、-Codebase（代碼基底）"><a href="#一、-Codebase（代碼基底）" class="headerlink" title="一、 Codebase（代碼基底）"></a>一、 Codebase（代碼基底）</h2><p><strong>一個應用對應一個代碼庫，多個部署環境共用該代碼庫</strong></p>
+<p>一個應用程式不應散落在多個 Git 倉庫中，即使部署至多個環境（開發、測試、正式），仍應共用同一代碼庫。</p>
+<p><strong>範例：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git@github.com:kdchang/todo-api.git  <span class="comment"># 統一代碼庫</span></span><br></pre></td></tr></table></figure>
+
+<p>若你在 GitHub 上有一個 <code>todo-api</code> 倉庫，開發、測試與生產環境（production、staging、dev）的部署都應來自這個倉庫的不同分支或 Tag。</p>
 <hr>
-<h3 id="三、依來源分類："><a href="#三、依來源分類：" class="headerlink" title="三、依來源分類："></a>三、依來源分類：</h3><ol>
-<li><p><strong>第一方 Cookie（First-party Cookies）</strong>  </p>
-<ul>
-<li>由<code>使用者瀏覽的網站</code>所設定，通常用於<code>記錄該網站上的互動紀錄</code>。</li>
-</ul>
-</li>
-<li><p><strong>第三方 Cookie（Third-party Cookies）</strong>  </p>
-<ul>
-<li>由非該網站的<code>第三方</code>（如廣告商）設定，用於<code>跨網站追蹤使用者行為</code>，以<code>推送廣告</code>等。</li>
-</ul>
-</li>
-</ol>
+<h2 id="二、-Dependencies（明確聲明相依套件）"><a href="#二、-Dependencies（明確聲明相依套件）" class="headerlink" title="二、 Dependencies（明確聲明相依套件）"></a>二、 Dependencies（明確聲明相依套件）</h2><p><strong>使用明確的套件管理工具來聲明所有相依項目，避免依賴系統層級安裝</strong>，例如：使用如 requirements.txt, Pipfile, package.json</p>
+<p><strong>範例（Node.js）</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># package.json 中聲明所有依賴</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;dependencies&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;express&quot;</span>: <span class="string">&quot;^4.18.2&quot;</span>,</span><br><span class="line">    <span class="string">&quot;dotenv&quot;</span>: <span class="string">&quot;^16.0.3&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="部署時只需透過-npm-install-即可安裝所有套件。"><a href="#部署時只需透過-npm-install-即可安裝所有套件。" class="headerlink" title="部署時只需透過 npm install 即可安裝所有套件。"></a>部署時只需透過 <code>npm install</code> 即可安裝所有套件。</h2><h2 id="三、-Config（環境設定分離）"><a href="#三、-Config（環境設定分離）" class="headerlink" title="三、 Config（環境設定分離）"></a>三、 Config（環境設定分離）</h2><p><strong>環境變數應儲存所有設定資訊，而非寫死在程式碼中</strong></p>
+<p>這包含資料庫連線、API 金鑰、第三方服務設定等。</p>
+<p><strong>範例：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># .env 檔（不要提交到 Git）</span></span><br><span class="line">DATABASE_URL=postgres://user:pass@host:5432/dbname</span><br><span class="line">JWT_SECRET=my_secret_token</span><br></pre></td></tr></table></figure>
+
+<p>程式碼中透過 <code>process.env</code> 取用這些變數。</p>
 <hr>
-<h3 id="四、特殊類型："><a href="#四、特殊類型：" class="headerlink" title="四、特殊類型："></a>四、特殊類型：</h3><ol>
-<li><p><strong>安全性 Cookie（Secure Cookies）</strong>  </p>
+<h2 id="四、-Backing-Services（外部資源視為附屬服務）"><a href="#四、-Backing-Services（外部資源視為附屬服務）" class="headerlink" title="四、 Backing Services（外部資源視為附屬服務）"></a>四、 Backing Services（外部資源視為附屬服務）</h2><p><strong>無論是本地資料庫、第三方 API、AWS S3 等，都視為可替換的附屬資源</strong></p>
+<p>切換服務供應商不應需改動應用邏輯，只要變更設定即可。例如：DATABASE_URL</p>
+<p><strong>範例：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> s3 = <span class="keyword">new</span> <span class="variable constant_">AWS</span>.<span class="title function_">S3</span>(&#123;</span><br><span class="line">  <span class="attr">accessKeyId</span>: process.<span class="property">env</span>.<span class="property">AWS_ACCESS_KEY</span>,</span><br><span class="line">  <span class="attr">secretAccessKey</span>: process.<span class="property">env</span>.<span class="property">AWS_SECRET_KEY</span>,</span><br><span class="line">  <span class="attr">region</span>: process.<span class="property">env</span>.<span class="property">AWS_REGION</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="五、-Build-Release-Run（建置、發布、執行分離）"><a href="#五、-Build-Release-Run（建置、發布、執行分離）" class="headerlink" title="五、 Build, Release, Run（建置、發布、執行分離）"></a>五、 Build, Release, Run（建置、發布、執行分離）</h2><p><strong>明確區分建置（build）、發布（release）與執行（run）三個階段</strong></p>
 <ul>
-<li>只能透過 <code>HTTPS</code> 傳輸，避免被攔截，主要保障敏感資料安全。</li>
+<li>Build：編譯程式、安裝依賴（例如：container）</li>
+<li>Release：結合建置結果與設定，生成可部署版本。將 build 結果與設定綁定</li>
+<li>Run：實際執行應用（以 immutable 的方式）</li>
 </ul>
-</li>
-<li><p><strong>HttpOnly Cookie</strong>  </p>
-<ul>
-<li>僅限伺服器端存取，JavaScript 無法讀取，用於防範 <code>XSS</code> 攻擊。</li>
-</ul>
-</li>
-<li><p><strong>SameSite Cookie</strong>  </p>
-<ul>
-<li>限制跨站請求攜帶 Cookie，減少 <code>CSRF</code> 攻擊風險，值可設為：</li>
-<li><code>Strict</code>：禁止跨站請求攜帶 Cookie。</li>
-<li><code>Lax</code>：部分允許，如從第三方網站點擊連結進來時可帶 Cookie。</li>
-<li><code>None</code>：允許跨站攜帶，但須配合 Secure。</li>
-</ul>
-</li>
-</ol>
-<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>這些分類會依需求搭配使用，例如一個「<code>必要性第一方暫時性 Cookie</code>」可能用於維護<code>登入和操作狀態</code>；一個「<code>第三方廣告追蹤永久性 Cookie</code>」則可能用於<code>跨網站顯示個人化廣告</code>。</p>
+<p><strong>範例（Heroku）：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push heroku main  <span class="comment"># 觸發 build 與 release</span></span><br><span class="line">heroku run npm start  <span class="comment"># 執行</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="六、-Stateless-Processes（無狀態的執行單元）"><a href="#六、-Stateless-Processes（無狀態的執行單元）" class="headerlink" title="六、 Stateless Processes（無狀態的執行單元）"></a>六、 Stateless Processes（無狀態的執行單元）</h2><p><strong>應用程式應以一個或多個無狀態進程執行，狀態需存於外部服務</strong></p>
+<p>避免將使用者 session 存在記憶體中，應使用 Redis、資料庫等外部服務。可以隨時 scale out</p>
+<p><strong>範例（Express）：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Session 儲存至 Redis，而非記憶體</span></span><br><span class="line">app.<span class="title function_">use</span>(</span><br><span class="line">  <span class="title function_">session</span>(&#123;</span><br><span class="line">    <span class="attr">store</span>: <span class="keyword">new</span> <span class="title class_">RedisStore</span>(&#123; <span class="attr">client</span>: redisClient &#125;),</span><br><span class="line">    <span class="attr">secret</span>: process.<span class="property">env</span>.<span class="property">SESSION_SECRET</span>,</span><br><span class="line">    <span class="attr">resave</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">saveUninitialized</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="七、-Port-Binding（綁定至-Port-提供服務）"><a href="#七、-Port-Binding（綁定至-Port-提供服務）" class="headerlink" title="七、 Port Binding（綁定至 Port 提供服務）"></a>七、 Port Binding（綁定至 Port 提供服務）</h2><p><strong>應用應自行綁定 port 來對外提供 HTTP 服務，而非依賴外部 Web Server</strong>，例如：Gunicorn</p>
+<p>這使得應用本身即是一個完整的服務，容易容器化部署。</p>
+<p><strong>範例（Node.js）：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">listen</span>(process.<span class="property">env</span>.<span class="property">PORT</span> || <span class="number">3000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Server started&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="八、-Concurrency（使用程序模型提升並行能力）"><a href="#八、-Concurrency（使用程序模型提升並行能力）" class="headerlink" title="八、 Concurrency（使用程序模型提升並行能力）"></a>八、 Concurrency（使用程序模型提升並行能力）</h2><p><strong>透過分工的進程來擴展應用功能，例如 Web、Worker、queue 等</strong></p>
+<p>每個類型的處理單位可根據需求水平擴充。</p>
+<p><strong>範例（使用 PM2）</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pm2 start app.js -i max       <span class="comment"># 啟動多個 Web 處理進程</span></span><br><span class="line">pm2 start worker.js --name worker  <span class="comment"># 啟動背景任務處理器</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="九、-Disposability（快速啟動與優雅關閉）"><a href="#九、-Disposability（快速啟動與優雅關閉）" class="headerlink" title="九、 Disposability（快速啟動與優雅關閉）"></a>九、 Disposability（快速啟動與優雅關閉）</h2><p><strong>應用應能快速啟動與安全關閉，適應雲端平台的彈性調度</strong></p>
+<p>優雅關閉能確保未完成的請求被妥善處理完畢。</p>
+<p><strong>範例（Node.js）：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">process.<span class="title function_">on</span>(<span class="string">&quot;SIGTERM&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  server.<span class="title function_">close</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Server closed&quot;</span>);</span><br><span class="line">    process.<span class="title function_">exit</span>(<span class="number">0</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>當使用容器應能快速重啟</p>
+<hr>
+<h2 id="十、-Dev-x2F-Prod-Parity（開發與生產環境的一致性）"><a href="#十、-Dev-x2F-Prod-Parity（開發與生產環境的一致性）" class="headerlink" title="十、 Dev&#x2F;Prod Parity（開發與生產環境的一致性）"></a>十、 Dev&#x2F;Prod Parity（開發與生產環境的一致性）</h2><p><strong>開發、測試、生產環境盡可能相似，降低部署錯誤風險</strong></p>
+<p>推薦使用 Docker 來統一環境。</p>
+<p><strong>範例：</strong></p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">FROM</span> node:<span class="number">18</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /app</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> . .</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> npm install</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;npm&quot;</span>, <span class="string">&quot;start&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p>減少「只有 production 才會發生」的 bug</p>
+<hr>
+<h2 id="十一、-Logs（將-log-作為事件串流）"><a href="#十一、-Logs（將-log-作為事件串流）" class="headerlink" title="十一、 Logs（將 log 作為事件串流）"></a>十一、 Logs（將 log 作為事件串流）</h2><p><strong>應用不應自行管理 log 文件，而是將 log 輸出到 stdout&#x2F;stderr，再由平台集中收集與分析</strong></p>
+<p><strong>範例：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;User login success&quot;</span>, &#123; <span class="attr">userId</span>: <span class="number">123</span> &#125;);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;Database connection failed&quot;</span>, error);</span><br></pre></td></tr></table></figure>
+
+<p>在 Heroku、GCP、Kubernetes 等平台會自動收集這些 log，讓 log 管理交給專門工具收集（如 ELK, CloudWatch）</p>
+<hr>
+<h2 id="十二、-Admin-Processes（一時性管理指令）"><a href="#十二、-Admin-Processes（一時性管理指令）" class="headerlink" title="十二、 Admin Processes（一時性管理指令）"></a>十二、 Admin Processes（一時性管理指令）</h2><p><strong>資料庫 migration、資料修復等管理任務應能以一次性指令執行</strong></p>
+<p>這些指令應與主應用共用相同的環境設定與程式碼。管理性任務（如資料遷移）應獨立於應用程式主進程（例如：<code>python manage.py migrate</code>）</p>
+<p><strong>範例：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Sequelize migration 指令</span></span><br><span class="line">npx sequelize-cli db:migrate</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>12 Factor App 並不是一套硬性規定，而是建立雲端應用的實務指南。當你的應用朝微服務、CI&#x2F;CD、雲端部署發展時，這十二項原則能幫助你打造更穩定、可擴充的系統架構。</p>
 
                 </div>
 
@@ -334,7 +339,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/10/16/learning-notes-alpinejs-intro-tutorial/" title="Alpine.js 入門教學筆記 | 學習筆記" rel="bookmark">Alpine.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial copy/" title="JavaScript ES6 入門語法教學筆記 | 學習筆記" rel="bookmark">JavaScript ES6 入門語法教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-arrow-function-this-intro-tutorial/" title="JavaScript 箭頭函式 (Arrow Function）入門教學筆記 | 學習筆記" rel="bookmark">JavaScript 箭頭函式 (Arrow Function）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-async-await/" title="async/await 入門教學筆記 | 學習筆記" rel="bookmark">async/await 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-call-stack-intro-tutorial/" title="JavaScript Call Stack 入門教學筆記 | 學習筆記" rel="bookmark">JavaScript Call Stack 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                        
                     </div>
                 </div>
                 <!-- Tags -->
@@ -370,8 +375,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/11/01/learning-notes-cookie-intro-tutorial/";
-    var disqus_url = "https://tech.kdchang.net/2024/11/01/learning-notes-cookie-intro-tutorial/";
+    var disqus_identifier = "https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial%20copy/";
+    var disqus_url = "https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial%20copy/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
