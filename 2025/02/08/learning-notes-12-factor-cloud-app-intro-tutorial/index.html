@@ -133,14 +133,14 @@
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/search/">Search</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/search/">Search</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -255,7 +255,8 @@
 <p><strong>範例（Node.js）</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># package.json 中聲明所有依賴</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;dependencies&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;express&quot;</span>: <span class="string">&quot;^4.18.2&quot;</span>,</span><br><span class="line">    <span class="string">&quot;dotenv&quot;</span>: <span class="string">&quot;^16.0.3&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="部署時只需透過-npm-install-即可安裝所有套件。"><a href="#部署時只需透過-npm-install-即可安裝所有套件。" class="headerlink" title="部署時只需透過 npm install 即可安裝所有套件。"></a>部署時只需透過 <code>npm install</code> 即可安裝所有套件。</h2><h2 id="三、-Config（環境設定分離）"><a href="#三、-Config（環境設定分離）" class="headerlink" title="三、 Config（環境設定分離）"></a>三、 Config（環境設定分離）</h2><p><strong>環境變數應儲存所有設定資訊，而非寫死在程式碼中</strong></p>
+<p>部署時只需透過 <code>npm install</code> 即可安裝所有套件。</p>
+<h2 id="三、-Config（環境設定分離）"><a href="#三、-Config（環境設定分離）" class="headerlink" title="三、 Config（環境設定分離）"></a>三、 Config（環境設定分離）</h2><p><strong>環境變數應儲存所有設定資訊，而非寫死在程式碼中</strong>，例如：<code>.env</code></p>
 <p>這包含資料庫連線、API 金鑰、第三方服務設定等。</p>
 <p><strong>範例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># .env 檔（不要提交到 Git）</span></span><br><span class="line">DATABASE_URL=postgres://user:pass@host:5432/dbname</span><br><span class="line">JWT_SECRET=my_secret_token</span><br></pre></td></tr></table></figure>
@@ -297,18 +298,16 @@
 
 <hr>
 <h2 id="九、-Disposability（快速啟動與優雅關閉）"><a href="#九、-Disposability（快速啟動與優雅關閉）" class="headerlink" title="九、 Disposability（快速啟動與優雅關閉）"></a>九、 Disposability（快速啟動與優雅關閉）</h2><p><strong>應用應能快速啟動與安全關閉，適應雲端平台的彈性調度</strong></p>
-<p>優雅關閉能確保未完成的請求被妥善處理完畢。</p>
+<p>優雅關閉能確保未完成的請求被妥善處理完畢，當使用容器應能快速重啟。</p>
 <p><strong>範例（Node.js）：</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">process.<span class="title function_">on</span>(<span class="string">&quot;SIGTERM&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  server.<span class="title function_">close</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Server closed&quot;</span>);</span><br><span class="line">    process.<span class="title function_">exit</span>(<span class="number">0</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<p>當使用容器應能快速重啟</p>
 <hr>
 <h2 id="十、-Dev-x2F-Prod-Parity（開發與生產環境的一致性）"><a href="#十、-Dev-x2F-Prod-Parity（開發與生產環境的一致性）" class="headerlink" title="十、 Dev&#x2F;Prod Parity（開發與生產環境的一致性）"></a>十、 Dev&#x2F;Prod Parity（開發與生產環境的一致性）</h2><p><strong>開發、測試、生產環境盡可能相似，降低部署錯誤風險</strong></p>
-<p>推薦使用 Docker 來統一環境。</p>
+<p>推薦使用 Docker 來統一環境。盡量減少「只有 production 才會發生」的 bug。</p>
 <p><strong>範例：</strong></p>
 <figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">FROM</span> node:<span class="number">18</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /app</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> . .</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> npm install</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;npm&quot;</span>, <span class="string">&quot;start&quot;</span>]</span></span><br></pre></td></tr></table></figure>
 
-<p>減少「只有 production 才會發生」的 bug</p>
 <hr>
 <h2 id="十一、-Logs（將-log-作為事件串流）"><a href="#十一、-Logs（將-log-作為事件串流）" class="headerlink" title="十一、 Logs（將 log 作為事件串流）"></a>十一、 Logs（將 log 作為事件串流）</h2><p><strong>應用不應自行管理 log 文件，而是將 log 輸出到 stdout&#x2F;stderr，再由平台集中收集與分析</strong></p>
 <p><strong>範例：</strong></p>
