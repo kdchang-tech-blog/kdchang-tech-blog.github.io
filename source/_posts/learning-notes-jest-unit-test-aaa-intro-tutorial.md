@@ -1,5 +1,5 @@
 ---
-title: Jest 使用 ES Module 入門教學筆記 | 學習筆記
+title: Jest AAA 測試原則入門教學筆記 | 學習筆記
 date: 2018-02-02 02:23:41
 author: kdchang
 tags:
