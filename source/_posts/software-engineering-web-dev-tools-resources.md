@@ -82,9 +82,28 @@ source ~/.zshrc
 1. [Fake images please?](https://fakeimg.pl/)
 2. [Picsum photos](https://picsum.photos/)
 
+## icon
+
+1. [lucide](https://lucide.dev/)
+
 ## 影片
 
 1. [Free Creative Commons Zero Videos](https://www.pexels.com/search/videos/creative%20commons%20zero/)
+
+# 前端學習資源
+
+1. [前端開發大全手冊：The Front End Developer/Engineer Handbook 2024](https://frontendmasters.com/guides/front-end-handbook/2024/)
+2. [100 天 CSS 練習挑戰](https://100dayscss.com/)
+3. [javascript30](https://javascript30.com/)
+4. [greatfrontend](https://www.greatfrontend.com/)
+5. [零基礎一年轉職前端工程師：完整路徑、心得、資源全公開](https://www.thisweb.dev/post/front-end-beginner-guide)
+
+# CSS
+
+1. [daisyui](https://daisyui.com/)
+2. [TailwindCSS](https://tailwindcss.com/)
+3. [新手入門：TailwindCSS 與 DaisyUI 的整合指南](https://realnewbie.com/coding/css/beginner-guide-integrating-tailwindcss-with-daisyui/)
+4. [重新認識 Flex 和 Grid 系列](https://ithelp.ithome.com.tw/users/20128346/ironman/3396)
 
 ## CSS 文件
 
@@ -148,3 +167,29 @@ source ~/.zshrc
 
 `prettier.semi: true` 就是 每行最後自動加分號
 以後每次 存檔（`Ctrl+S`）會自動補分號、排版！
+
+## ESLint
+
+eslint.config.js
+
+```js
+import js from "@eslint/js";
+import globals from "globals";
+import pluginVue from "eslint-plugin-vue";
+import { defineConfig } from "eslint/config";
+
+export default defineConfig([
+  {
+    files: ["**/*.{js,mjs,cjs,vue}"],
+    ignores: ["dist/**", "node_modules/**"],
+    plugins: { js },
+    extends: ["js/recommended"],
+    rules: {},
+  },
+  {
+    files: ["**/*.{js,mjs,cjs,vue}"],
+    languageOptions: { globals: globals.browser },
+  },
+  pluginVue.configs["flat/essential"],
+]);
+```
