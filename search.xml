@@ -784,100 +784,6 @@
       </tags>
   </entry>
   <entry>
-    <title>CSS Animation 入門教學筆記 | 學習筆記</title>
-    <url>/2024/11/16/learning-notes-css-animation-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在現代網頁開發中，動畫是一種強而有力的表現手法，能提升使用者體驗，使介面更加生動、有趣。相比 JavaScript，CSS Animation 提供一種更簡潔、性能更佳的動畫解法，尤其適合製作 UI 中的小型動畫效果。</p>
-<p>本篇教學筆記將介紹 CSS Animation 的基本語法、常見屬性與一個實際範例，幫助你快速上手。</p>
-<hr>
-<h2 id="為什麼使用-CSS-Animation？"><a href="#為什麼使用-CSS-Animation？" class="headerlink" title="為什麼使用 CSS Animation？"></a>為什麼使用 CSS Animation？</h2><p>CSS Animation 的優點：</p>
-<ol>
-<li><strong>簡單易用</strong>：使用純 CSS 撰寫動畫，不需額外 JavaScript。</li>
-<li><strong>效能佳</strong>：瀏覽器針對 CSS Animation 做過優化，效能較好。</li>
-<li><strong>語意清楚</strong>：樣式與行為分離，程式碼結構清晰。</li>
-</ol>
-<hr>
-<h2 id="基本語法"><a href="#基本語法" class="headerlink" title="基本語法"></a>基本語法</h2><p>CSS 動畫的基本概念分為兩大部分：</p>
-<ol>
-<li><code>@keyframes</code>：定義動畫的每個階段（狀態）</li>
-<li>動畫屬性（如 <code>animation-name</code>、<code>animation-duration</code> 等）：設定動畫的名稱、時間、重複次數等</li>
-</ol>
-<h3 id="1-定義動畫步驟：-keyframes"><a href="#1-定義動畫步驟：-keyframes" class="headerlink" title="1. 定義動畫步驟：@keyframes"></a>1. 定義動畫步驟：<code>@keyframes</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> fadeIn &#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">to</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>也可以使用百分比表示中間過程：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> moveBox &#123;</span><br><span class="line">  <span class="number">0%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="number">50%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">100px</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="number">100%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-套用動畫屬性"><a href="#2-套用動畫屬性" class="headerlink" title="2. 套用動畫屬性"></a>2. 套用動畫屬性</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">animation-name</span>: fadeIn;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">1s</span>;</span><br><span class="line">  <span class="attribute">animation-timing-function</span>: ease-in-out;</span><br><span class="line">  <span class="attribute">animation-delay</span>: <span class="number">0s</span>;</span><br><span class="line">  <span class="attribute">animation-iteration-count</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">animation-fill-mode</span>: forwards;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>也可以使用簡寫語法：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">animation</span>: fadeIn <span class="number">1s</span> ease-in-out <span class="number">0s</span> <span class="number">1</span> forwards;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="常見屬性說明"><a href="#常見屬性說明" class="headerlink" title="常見屬性說明"></a>常見屬性說明</h2><table>
-<thead>
-<tr>
-<th>屬性</th>
-<th>說明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>animation-name</code></td>
-<td>對應的 <code>@keyframes</code> 名稱</td>
-</tr>
-<tr>
-<td><code>animation-duration</code></td>
-<td>動畫持續時間（如 <code>2s</code>、<code>500ms</code>）</td>
-</tr>
-<tr>
-<td><code>animation-delay</code></td>
-<td>動畫延遲時間</td>
-</tr>
-<tr>
-<td><code>animation-iteration-count</code></td>
-<td>播放次數（數字或 <code>infinite</code>）</td>
-</tr>
-<tr>
-<td><code>animation-direction</code></td>
-<td>播放方向（如 <code>normal</code>、<code>reverse</code>、<code>alternate</code>）</td>
-</tr>
-<tr>
-<td><code>animation-timing-function</code></td>
-<td>動畫速度曲線（如 <code>linear</code>、<code>ease</code>、<code>ease-in-out</code>、<code>cubic-bezier</code>）</td>
-</tr>
-<tr>
-<td><code>animation-fill-mode</code></td>
-<td>動畫結束後元素狀態（如 <code>none</code>、<code>forwards</code>、<code>backwards</code>、<code>both</code>）</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="實際範例：淡入移動效果"><a href="#實際範例：淡入移動效果" class="headerlink" title="實際範例：淡入移動效果"></a>實際範例：淡入移動效果</h2><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-Hant&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS Animation 入門範例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;animated-box&quot;</span>&gt;</span>Hello CSS Animation<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="CSS（style-css）"><a href="#CSS（style-css）" class="headerlink" title="CSS（style.css）"></a>CSS（style.css）</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f0f0f0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.animated-box</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">20px</span> <span class="number">40px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#4a90e2</span>;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">24px</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">30px</span>);</span><br><span class="line">  <span class="attribute">animation</span>: fadeSlideIn <span class="number">1s</span> ease-out forwards;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> fadeSlideIn &#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">30px</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">to</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="效果說明"><a href="#效果說明" class="headerlink" title="效果說明"></a>效果說明</h3><p>當頁面載入時，<code>.animated-box</code> 元素會從下方淡入移動到原位。這種效果常用於元件出現時的動畫，例如：卡片載入、提示訊息出現等。</p>
-<hr>
-<h2 id="進階補充"><a href="#進階補充" class="headerlink" title="進階補充"></a>進階補充</h2><h3 id="多個動畫階段"><a href="#多個動畫階段" class="headerlink" title="多個動畫階段"></a>多個動畫階段</h3><p>可以使用百分比定義多個狀態：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> bounce &#123;</span><br><span class="line">  <span class="number">0%</span>   &#123; <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">0</span>); &#125;</span><br><span class="line">  <span class="number">30%</span>  &#123; <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">50px</span>); &#125;</span><br><span class="line">  <span class="number">50%</span>  &#123; <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">0</span>); &#125;</span><br><span class="line">  <span class="number">70%</span>  &#123; <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">25px</span>); &#125;</span><br><span class="line">  <span class="number">100%</span> &#123; <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">0</span>); &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="搭配-hover-做互動動畫"><a href="#搭配-hover-做互動動畫" class="headerlink" title="搭配 hover 做互動動畫"></a>搭配 <code>hover</code> 做互動動畫</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: transform <span class="number">0.3s</span> ease;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.button</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>雖然這是使用 <code>transition</code>，但若需要更多控制，就可以改用 <code>animation</code>。</p>
-<hr>
-<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>CSS Animation 提供一套簡潔的方式，能有效為網頁增添動態效果。適合使用在進場動畫、提示動畫、狀態變化等場合。若需求單純、動畫步驟不複雜，建議優先使用 CSS Animation 來取代 JavaScript，提升效能與維護性。</p>
-<p>如果你剛開始學前端，建議從觀察現有網站的動畫效果出發，試著模仿並自己實作，會對 CSS Animation 有更深的理解。下一步你可以學習 <code>transition</code>、<code>transform</code> 與 <code>cubic-bezier</code>，讓動畫更自然、細緻。</p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>css</tag>
-        <tag>Animation</tag>
-        <tag>transition</tag>
-        <tag>transform</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS Flexbox align-items 和 align-content 入門教學筆記 | 學習筆記</title>
     <url>/2024/07/10/learning-notes-css-flexbox-align-items-align-content-garden-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在 CSS Flexbox 和 Grid 佈局中，<code>align-items</code> 和 <code>align-content</code> 兩者都與「對齊」有關，但適用的情境不同（單行 vs 多行）：</p>
@@ -998,6 +904,100 @@
         <tag>align-items</tag>
         <tag>align-content</tag>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS Animation 入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/16/learning-notes-css-animation-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在現代網頁開發中，動畫是一種強而有力的表現手法，能提升使用者體驗，使介面更加生動、有趣。相比 JavaScript，CSS Animation 提供一種更簡潔、性能更佳的動畫解法，尤其適合製作 UI 中的小型動畫效果。</p>
+<p>本篇教學筆記將介紹 CSS Animation 的基本語法、常見屬性與一個實際範例，幫助你快速上手。</p>
+<hr>
+<h2 id="為什麼使用-CSS-Animation？"><a href="#為什麼使用-CSS-Animation？" class="headerlink" title="為什麼使用 CSS Animation？"></a>為什麼使用 CSS Animation？</h2><p>CSS Animation 的優點：</p>
+<ol>
+<li><strong>簡單易用</strong>：使用純 CSS 撰寫動畫，不需額外 JavaScript。</li>
+<li><strong>效能佳</strong>：瀏覽器針對 CSS Animation 做過優化，效能較好。</li>
+<li><strong>語意清楚</strong>：樣式與行為分離，程式碼結構清晰。</li>
+</ol>
+<hr>
+<h2 id="基本語法"><a href="#基本語法" class="headerlink" title="基本語法"></a>基本語法</h2><p>CSS 動畫的基本概念分為兩大部分：</p>
+<ol>
+<li><code>@keyframes</code>：定義動畫的每個階段（狀態）</li>
+<li>動畫屬性（如 <code>animation-name</code>、<code>animation-duration</code> 等）：設定動畫的名稱、時間、重複次數等</li>
+</ol>
+<h3 id="1-定義動畫步驟：-keyframes"><a href="#1-定義動畫步驟：-keyframes" class="headerlink" title="1. 定義動畫步驟：@keyframes"></a>1. 定義動畫步驟：<code>@keyframes</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> fadeIn &#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">to</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>也可以使用百分比表示中間過程：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> moveBox &#123;</span><br><span class="line">  <span class="number">0%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="number">50%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">100px</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="number">100%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-套用動畫屬性"><a href="#2-套用動畫屬性" class="headerlink" title="2. 套用動畫屬性"></a>2. 套用動畫屬性</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">animation-name</span>: fadeIn;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">1s</span>;</span><br><span class="line">  <span class="attribute">animation-timing-function</span>: ease-in-out;</span><br><span class="line">  <span class="attribute">animation-delay</span>: <span class="number">0s</span>;</span><br><span class="line">  <span class="attribute">animation-iteration-count</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">animation-fill-mode</span>: forwards;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>也可以使用簡寫語法：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">animation</span>: fadeIn <span class="number">1s</span> ease-in-out <span class="number">0s</span> <span class="number">1</span> forwards;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="常見屬性說明"><a href="#常見屬性說明" class="headerlink" title="常見屬性說明"></a>常見屬性說明</h2><table>
+<thead>
+<tr>
+<th>屬性</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>animation-name</code></td>
+<td>對應的 <code>@keyframes</code> 名稱</td>
+</tr>
+<tr>
+<td><code>animation-duration</code></td>
+<td>動畫持續時間（如 <code>2s</code>、<code>500ms</code>）</td>
+</tr>
+<tr>
+<td><code>animation-delay</code></td>
+<td>動畫延遲時間</td>
+</tr>
+<tr>
+<td><code>animation-iteration-count</code></td>
+<td>播放次數（數字或 <code>infinite</code>）</td>
+</tr>
+<tr>
+<td><code>animation-direction</code></td>
+<td>播放方向（如 <code>normal</code>、<code>reverse</code>、<code>alternate</code>）</td>
+</tr>
+<tr>
+<td><code>animation-timing-function</code></td>
+<td>動畫速度曲線（如 <code>linear</code>、<code>ease</code>、<code>ease-in-out</code>、<code>cubic-bezier</code>）</td>
+</tr>
+<tr>
+<td><code>animation-fill-mode</code></td>
+<td>動畫結束後元素狀態（如 <code>none</code>、<code>forwards</code>、<code>backwards</code>、<code>both</code>）</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="實際範例：淡入移動效果"><a href="#實際範例：淡入移動效果" class="headerlink" title="實際範例：淡入移動效果"></a>實際範例：淡入移動效果</h2><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-Hant&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS Animation 入門範例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;animated-box&quot;</span>&gt;</span>Hello CSS Animation<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="CSS（style-css）"><a href="#CSS（style-css）" class="headerlink" title="CSS（style.css）"></a>CSS（style.css）</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f0f0f0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.animated-box</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">20px</span> <span class="number">40px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#4a90e2</span>;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">24px</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">30px</span>);</span><br><span class="line">  <span class="attribute">animation</span>: fadeSlideIn <span class="number">1s</span> ease-out forwards;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> fadeSlideIn &#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">30px</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">to</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="效果說明"><a href="#效果說明" class="headerlink" title="效果說明"></a>效果說明</h3><p>當頁面載入時，<code>.animated-box</code> 元素會從下方淡入移動到原位。這種效果常用於元件出現時的動畫，例如：卡片載入、提示訊息出現等。</p>
+<hr>
+<h2 id="進階補充"><a href="#進階補充" class="headerlink" title="進階補充"></a>進階補充</h2><h3 id="多個動畫階段"><a href="#多個動畫階段" class="headerlink" title="多個動畫階段"></a>多個動畫階段</h3><p>可以使用百分比定義多個狀態：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> bounce &#123;</span><br><span class="line">  <span class="number">0%</span>   &#123; <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">0</span>); &#125;</span><br><span class="line">  <span class="number">30%</span>  &#123; <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">50px</span>); &#125;</span><br><span class="line">  <span class="number">50%</span>  &#123; <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">0</span>); &#125;</span><br><span class="line">  <span class="number">70%</span>  &#123; <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">25px</span>); &#125;</span><br><span class="line">  <span class="number">100%</span> &#123; <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">0</span>); &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="搭配-hover-做互動動畫"><a href="#搭配-hover-做互動動畫" class="headerlink" title="搭配 hover 做互動動畫"></a>搭配 <code>hover</code> 做互動動畫</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: transform <span class="number">0.3s</span> ease;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.button</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>雖然這是使用 <code>transition</code>，但若需要更多控制，就可以改用 <code>animation</code>。</p>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>CSS Animation 提供一套簡潔的方式，能有效為網頁增添動態效果。適合使用在進場動畫、提示動畫、狀態變化等場合。若需求單純、動畫步驟不複雜，建議優先使用 CSS Animation 來取代 JavaScript，提升效能與維護性。</p>
+<p>如果你剛開始學前端，建議從觀察現有網站的動畫效果出發，試著模仿並自己實作，會對 CSS Animation 有更深的理解。下一步你可以學習 <code>transition</code>、<code>transform</code> 與 <code>cubic-bezier</code>，讓動畫更自然、細緻。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>css</tag>
+        <tag>Animation</tag>
+        <tag>transition</tag>
+        <tag>transform</tag>
       </tags>
   </entry>
   <entry>
@@ -1315,6 +1315,63 @@
       </tags>
   </entry>
   <entry>
+    <title>Grid 網頁排版技巧入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/15/learning-notes-css-grid-intro-tutorial/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在現今網頁設計中，排版的結構與呈現方式對於用戶體驗至關重要。隨著網頁設計的演進，CSS <code>Grid</code> 成為了最強大且靈活的排版工具之一。透過 CSS Grid，你可以輕鬆創建複雜的佈局，並且適應不同設備的需求。本文將介紹 CSS Grid 的基本概念與使用技巧，幫助你迅速掌握如何在網頁設計中使用 Grid。</p>
+<h4 id="1-什麼是-CSS-Grid？"><a href="#1-什麼是-CSS-Grid？" class="headerlink" title="1. 什麼是 CSS Grid？"></a>1. 什麼是 CSS Grid？</h4><p>CSS Grid Layout（簡稱 Grid）是 CSS3 的一個強大功能，允許開發者以列和行的方式來設計網頁佈局。它使得網頁設計更加直觀和靈活，不再需要依賴浮動（float）或定位（position）等老舊技巧，簡化了許多複雜的布局問題。</p>
+<p>Grid 是由「<code>容器</code>」和「<code>項目</code>」兩部分組成。容器定義了網格的結構，而項目則是容器內部的元素。你可以在容器內輕鬆地將項目放置在指定的網格區域中，從而創建各種排版樣式。</p>
+<h4 id="2-CSS-Grid-的基本語法"><a href="#2-CSS-Grid-的基本語法" class="headerlink" title="2. CSS Grid 的基本語法"></a>2. CSS Grid 的基本語法</h4><p>在使用 CSS Grid 時，首先需要定義一個容器元素並啟用 Grid 布局。這樣，容器內的子元素將成為 Grid 項目。以下是基本的設置步驟：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: auto;</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>display: grid;</code> 啟用容器的 Grid 布局。</li>
+<li><code>grid-template-columns: repeat(3, 1fr);</code> 設定三列，每列的寬度為等比例（<code>1fr</code>）。<code>1fr</code> 代表容器寬度的 1&#x2F;3。</li>
+<li><code>grid-template-rows: auto;</code> 使得行的高度根據內容自動調整。</li>
+<li><code>gap: 10px;</code> 定義網格項目之間的間距。</li>
+</ul>
+<h4 id="3-定義-Grid-容器的列和行"><a href="#3-定義-Grid-容器的列和行" class="headerlink" title="3. 定義 Grid 容器的列和行"></a>3. 定義 Grid 容器的列和行</h4><p>你可以使用 <code>grid-template-columns</code> 和 <code>grid-template-rows</code> 來設置容器內列和行的數量、大小及比例。</p>
+<h5 id="定義列"><a href="#定義列" class="headerlink" title="定義列"></a>定義列</h5><p>例如，若想創建四列的佈局，可以這樣寫：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> <span class="number">300px</span> <span class="number">400px</span> <span class="number">1</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這裡，我們設置了四列的寬度，前三列有固定的像素寬度，最後一列使用 <code>1fr</code>，即佔據剩餘的可用空間。</p>
+<h5 id="定義行"><a href="#定義行" class="headerlink" title="定義行"></a>定義行</h5><p>類似地，你可以設置行的大小。若要讓每一行的高度根據內容自動調整，可以使用：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">100px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這表示網格容器有兩行，第一行的高度固定為 100px，第二行的高度將根據內容自動調整。</p>
+<h4 id="4-放置-Grid-項目"><a href="#4-放置-Grid-項目" class="headerlink" title="4. 放置 Grid 項目"></a>4. 放置 Grid 項目</h4><p>Grid 容器的子元素會自動成為 Grid 項目。你可以使用 <code>grid-column</code> 和 <code>grid-row</code> 屬性來指定某個項目占據的列與行。</p>
+<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span> / <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這表示 <code>.item1</code> 元素會從第 1 列跨越到第 3 列，占據第一行。</p>
+<ul>
+<li><code>grid-column: 1 / 3;</code> 表示該元素會從第 1 列起，跨越兩列，直到第 3 列結束。</li>
+<li><code>grid-row: 1;</code> 表示該元素位於第 1 行。</li>
+</ul>
+<h4 id="5-使用-fr-單位設置比例"><a href="#5-使用-fr-單位設置比例" class="headerlink" title="5. 使用 fr 單位設置比例"></a>5. 使用 <code>fr</code> 單位設置比例</h4><p>CSS Grid 中最重要的單位之一是 <code>fr</code>（fraction，分數），它讓你可以設定元素在可用空間中所佔比例。</p>
+<p>假設你有三列，且希望第一列占 1 部分，第二列占 2 部分，第三列占 3 部分：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr <span class="number">3</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣會將總寬度分成六等份，其中第一列占 1 份，第二列占 2 份，第三列占 3 份。這樣的佈局適合於動態響應式設計。</p>
+<h4 id="6-設置間距"><a href="#6-設置間距" class="headerlink" title="6. 設置間距"></a>6. 設置間距</h4><p>除了 <code>gap</code> 屬性，你還可以為列與行的間距分別設置不同的值：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span> <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這裡，<code>gap: 10px 20px;</code> 的第一個數值設定了行之間的間距為 10px，第二個數值設定了列之間的間距為 20px。</p>
+<h4 id="7-嵌套-Grid"><a href="#7-嵌套-Grid" class="headerlink" title="7. 嵌套 Grid"></a>7. 嵌套 Grid</h4><p>Grid 允許你在網格項目內再次使用 Grid 佈局，這樣可以創建更複雜的排版結構。例如，假設你在某個項目內再創建一個小的網格：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在這個範例中，<code>.item1</code> 是一個 Grid 項目，它內部再次使用 Grid 排版，定義兩列，其中第一列占據 1 部分，第二列占據 2 部分。</p>
+<h4 id="8-響應式設計"><a href="#8-響應式設計" class="headerlink" title="8. 響應式設計"></a>8. 響應式設計</h4><p>Grid 讓你輕鬆應對不同設備的佈局需求。你可以使用媒體查詢來調整 Grid 排版。例如：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">4</span>, <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">2</span>, <span class="number">1</span>fr);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">480px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼會根據螢幕寬度變化調整容器的列數：在寬度大於 768px 時顯示四列，在寬度小於 768px 時顯示兩列，在寬度小於 480px 時顯示單列。</p>
+<h4 id="9-小結"><a href="#9-小結" class="headerlink" title="9. 小結"></a>9. 小結</h4><p>CSS Grid 為現代網頁設計提供了一個簡單、強大且靈活的排版解決方案。它不僅能夠解決過去使用浮動或定位方法無法達成的複雜佈局，還能輕鬆適應響應式設計的需求。掌握 CSS Grid，你將能夠更高效地創建現代化的網頁佈局，提升設計的精確度與可維護性。希望本文的介紹能幫助你快速入門並將這項技術應用到你的項目中。</p>
+]]></content>
+      <tags>
+        <tag>css</tag>
+        <tag>Grid</tag>
+        <tag>排版</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Grid Garden 入門教學筆記 | 學習筆記</title>
     <url>/2024/07/10/learning-notes-css-grid-garden-tutorial/</url>
     <content><![CDATA[<h1 id="1-Grid-簡介"><a href="#1-Grid-簡介" class="headerlink" title="1. Grid 簡介"></a>1. Grid 簡介</h1><p><code>Grid</code>（Grid Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
@@ -1433,63 +1490,6 @@
         <tag>Grid Garden</tag>
         <tag>Grid</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Grid 網頁排版技巧入門教學筆記 | 學習筆記</title>
-    <url>/2024/11/15/learning-notes-css-grid-intro-tutorial/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在現今網頁設計中，排版的結構與呈現方式對於用戶體驗至關重要。隨著網頁設計的演進，CSS <code>Grid</code> 成為了最強大且靈活的排版工具之一。透過 CSS Grid，你可以輕鬆創建複雜的佈局，並且適應不同設備的需求。本文將介紹 CSS Grid 的基本概念與使用技巧，幫助你迅速掌握如何在網頁設計中使用 Grid。</p>
-<h4 id="1-什麼是-CSS-Grid？"><a href="#1-什麼是-CSS-Grid？" class="headerlink" title="1. 什麼是 CSS Grid？"></a>1. 什麼是 CSS Grid？</h4><p>CSS Grid Layout（簡稱 Grid）是 CSS3 的一個強大功能，允許開發者以列和行的方式來設計網頁佈局。它使得網頁設計更加直觀和靈活，不再需要依賴浮動（float）或定位（position）等老舊技巧，簡化了許多複雜的布局問題。</p>
-<p>Grid 是由「<code>容器</code>」和「<code>項目</code>」兩部分組成。容器定義了網格的結構，而項目則是容器內部的元素。你可以在容器內輕鬆地將項目放置在指定的網格區域中，從而創建各種排版樣式。</p>
-<h4 id="2-CSS-Grid-的基本語法"><a href="#2-CSS-Grid-的基本語法" class="headerlink" title="2. CSS Grid 的基本語法"></a>2. CSS Grid 的基本語法</h4><p>在使用 CSS Grid 時，首先需要定義一個容器元素並啟用 Grid 布局。這樣，容器內的子元素將成為 Grid 項目。以下是基本的設置步驟：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: auto;</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>display: grid;</code> 啟用容器的 Grid 布局。</li>
-<li><code>grid-template-columns: repeat(3, 1fr);</code> 設定三列，每列的寬度為等比例（<code>1fr</code>）。<code>1fr</code> 代表容器寬度的 1&#x2F;3。</li>
-<li><code>grid-template-rows: auto;</code> 使得行的高度根據內容自動調整。</li>
-<li><code>gap: 10px;</code> 定義網格項目之間的間距。</li>
-</ul>
-<h4 id="3-定義-Grid-容器的列和行"><a href="#3-定義-Grid-容器的列和行" class="headerlink" title="3. 定義 Grid 容器的列和行"></a>3. 定義 Grid 容器的列和行</h4><p>你可以使用 <code>grid-template-columns</code> 和 <code>grid-template-rows</code> 來設置容器內列和行的數量、大小及比例。</p>
-<h5 id="定義列"><a href="#定義列" class="headerlink" title="定義列"></a>定義列</h5><p>例如，若想創建四列的佈局，可以這樣寫：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> <span class="number">300px</span> <span class="number">400px</span> <span class="number">1</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這裡，我們設置了四列的寬度，前三列有固定的像素寬度，最後一列使用 <code>1fr</code>，即佔據剩餘的可用空間。</p>
-<h5 id="定義行"><a href="#定義行" class="headerlink" title="定義行"></a>定義行</h5><p>類似地，你可以設置行的大小。若要讓每一行的高度根據內容自動調整，可以使用：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">100px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這表示網格容器有兩行，第一行的高度固定為 100px，第二行的高度將根據內容自動調整。</p>
-<h4 id="4-放置-Grid-項目"><a href="#4-放置-Grid-項目" class="headerlink" title="4. 放置 Grid 項目"></a>4. 放置 Grid 項目</h4><p>Grid 容器的子元素會自動成為 Grid 項目。你可以使用 <code>grid-column</code> 和 <code>grid-row</code> 屬性來指定某個項目占據的列與行。</p>
-<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span> / <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這表示 <code>.item1</code> 元素會從第 1 列跨越到第 3 列，占據第一行。</p>
-<ul>
-<li><code>grid-column: 1 / 3;</code> 表示該元素會從第 1 列起，跨越兩列，直到第 3 列結束。</li>
-<li><code>grid-row: 1;</code> 表示該元素位於第 1 行。</li>
-</ul>
-<h4 id="5-使用-fr-單位設置比例"><a href="#5-使用-fr-單位設置比例" class="headerlink" title="5. 使用 fr 單位設置比例"></a>5. 使用 <code>fr</code> 單位設置比例</h4><p>CSS Grid 中最重要的單位之一是 <code>fr</code>（fraction，分數），它讓你可以設定元素在可用空間中所佔比例。</p>
-<p>假設你有三列，且希望第一列占 1 部分，第二列占 2 部分，第三列占 3 部分：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr <span class="number">3</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這樣會將總寬度分成六等份，其中第一列占 1 份，第二列占 2 份，第三列占 3 份。這樣的佈局適合於動態響應式設計。</p>
-<h4 id="6-設置間距"><a href="#6-設置間距" class="headerlink" title="6. 設置間距"></a>6. 設置間距</h4><p>除了 <code>gap</code> 屬性，你還可以為列與行的間距分別設置不同的值：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span> <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這裡，<code>gap: 10px 20px;</code> 的第一個數值設定了行之間的間距為 10px，第二個數值設定了列之間的間距為 20px。</p>
-<h4 id="7-嵌套-Grid"><a href="#7-嵌套-Grid" class="headerlink" title="7. 嵌套 Grid"></a>7. 嵌套 Grid</h4><p>Grid 允許你在網格項目內再次使用 Grid 佈局，這樣可以創建更複雜的排版結構。例如，假設你在某個項目內再創建一個小的網格：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在這個範例中，<code>.item1</code> 是一個 Grid 項目，它內部再次使用 Grid 排版，定義兩列，其中第一列占據 1 部分，第二列占據 2 部分。</p>
-<h4 id="8-響應式設計"><a href="#8-響應式設計" class="headerlink" title="8. 響應式設計"></a>8. 響應式設計</h4><p>Grid 讓你輕鬆應對不同設備的佈局需求。你可以使用媒體查詢來調整 Grid 排版。例如：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">4</span>, <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">2</span>, <span class="number">1</span>fr);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">480px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這段程式碼會根據螢幕寬度變化調整容器的列數：在寬度大於 768px 時顯示四列，在寬度小於 768px 時顯示兩列，在寬度小於 480px 時顯示單列。</p>
-<h4 id="9-小結"><a href="#9-小結" class="headerlink" title="9. 小結"></a>9. 小結</h4><p>CSS Grid 為現代網頁設計提供了一個簡單、強大且靈活的排版解決方案。它不僅能夠解決過去使用浮動或定位方法無法達成的複雜佈局，還能輕鬆適應響應式設計的需求。掌握 CSS Grid，你將能夠更高效地創建現代化的網頁佈局，提升設計的精確度與可維護性。希望本文的介紹能幫助你快速入門並將這項技術應用到你的項目中。</p>
-]]></content>
-      <tags>
-        <tag>css</tag>
-        <tag>Grid</tag>
-        <tag>排版</tag>
       </tags>
   </entry>
   <entry>
@@ -5009,68 +5009,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Django CRUD（不使用 ModelForm）入門教學筆記 | 學習筆記</title>
-    <url>/2024/08/31/learning-notes-python-django-crud-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在 Django 中，<code>ModelForm</code> 提供了一個快速建立表單與驗證的工具，但在某些情境下，我們可能希望自己掌控表單結構與驗證流程。這篇筆記將示範如何不依賴 <code>ModelForm</code>，手動實作一套 CRUD 系統，幫助你更深入理解 Django 表單處理的基本原理。</p>
-<p>我們將製作一個簡單的「書籍管理系統」，支援新增（Create）、讀取（Read）、更新（Update）與刪除（Delete）書籍資訊。</p>
-<h2 id="1-建立-Django-專案與應用"><a href="#1-建立-Django-專案與應用" class="headerlink" title="1. 建立 Django 專案與應用"></a>1. 建立 Django 專案與應用</h2><p>首先，安裝 Django 並建立新的專案與應用：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install django</span><br><span class="line">django-admin startproject myproject</span><br><span class="line"><span class="built_in">cd</span> myproject</span><br><span class="line">python manage.py startapp books</span><br></pre></td></tr></table></figure>
-
-<p>註冊 <code>books</code> 應用於 <code>myproject/settings.py</code> 的 <code>INSTALLED_APPS</code>：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">&#x27;books&#x27;</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-定義模型（Model）"><a href="#2-定義模型（Model）" class="headerlink" title="2. 定義模型（Model）"></a>2. 定義模型（Model）</h2><p>在 <code>books/models.py</code> 中定義一個簡單的書籍模型：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Book</span>(models.Model):</span><br><span class="line">    title = models.CharField(max_length=<span class="number">200</span>)</span><br><span class="line">    author = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line">    published_date = models.DateField()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.title</span><br></pre></td></tr></table></figure>
-
-<p>遷移資料庫：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py makemigrations</span><br><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-撰寫-Views（不使用-ModelForm）"><a href="#3-撰寫-Views（不使用-ModelForm）" class="headerlink" title="3. 撰寫 Views（不使用 ModelForm）"></a>3. 撰寫 Views（不使用 ModelForm）</h2><p>在 <code>books/views.py</code> 中撰寫手動處理的 CRUD 功能。</p>
-<h3 id="新增書籍（Create）"><a href="#新增書籍（Create）" class="headerlink" title="新增書籍（Create）"></a>新增書籍（Create）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render, redirect</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Book</span><br><span class="line"><span class="keyword">from</span> django.utils.dateparse <span class="keyword">import</span> parse_date</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_book</span>(<span class="params">request</span>):</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        title = request.POST.get(<span class="string">&#x27;title&#x27;</span>)</span><br><span class="line">        author = request.POST.get(<span class="string">&#x27;author&#x27;</span>)</span><br><span class="line">        published_date_str = request.POST.get(<span class="string">&#x27;published_date&#x27;</span>)</span><br><span class="line">        published_date = parse_date(published_date_str)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> title <span class="keyword">and</span> author <span class="keyword">and</span> published_date:</span><br><span class="line">            Book.objects.create(title=title, author=author, published_date=published_date)</span><br><span class="line">            <span class="keyword">return</span> redirect(<span class="string">&#x27;book_list&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            error = <span class="string">&quot;所有欄位皆為必填&quot;</span></span><br><span class="line">            <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_form.html&#x27;</span>, &#123;<span class="string">&#x27;error&#x27;</span>: error&#125;)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_form.html&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="讀取書籍（Read）"><a href="#讀取書籍（Read）" class="headerlink" title="讀取書籍（Read）"></a>讀取書籍（Read）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">book_list</span>(<span class="params">request</span>):</span><br><span class="line">    books = Book.objects.<span class="built_in">all</span>()</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_list.html&#x27;</span>, &#123;<span class="string">&#x27;books&#x27;</span>: books&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="更新書籍（Update）"><a href="#更新書籍（Update）" class="headerlink" title="更新書籍（Update）"></a>更新書籍（Update）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> get_object_or_404</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">update_book</span>(<span class="params">request, pk</span>):</span><br><span class="line">    book = get_object_or_404(Book, pk=pk)</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        title = request.POST.get(<span class="string">&#x27;title&#x27;</span>)</span><br><span class="line">        author = request.POST.get(<span class="string">&#x27;author&#x27;</span>)</span><br><span class="line">        published_date_str = request.POST.get(<span class="string">&#x27;published_date&#x27;</span>)</span><br><span class="line">        published_date = parse_date(published_date_str)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> title <span class="keyword">and</span> author <span class="keyword">and</span> published_date:</span><br><span class="line">            book.title = title</span><br><span class="line">            book.author = author</span><br><span class="line">            book.published_date = published_date</span><br><span class="line">            book.save()</span><br><span class="line">            <span class="keyword">return</span> redirect(<span class="string">&#x27;book_list&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            error = <span class="string">&quot;所有欄位皆為必填&quot;</span></span><br><span class="line">            <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_form.html&#x27;</span>, &#123;<span class="string">&#x27;book&#x27;</span>: book, <span class="string">&#x27;error&#x27;</span>: error&#125;)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_form.html&#x27;</span>, &#123;<span class="string">&#x27;book&#x27;</span>: book&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="刪除書籍（Delete）"><a href="#刪除書籍（Delete）" class="headerlink" title="刪除書籍（Delete）"></a>刪除書籍（Delete）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">delete_book</span>(<span class="params">request, pk</span>):</span><br><span class="line">    book = get_object_or_404(Book, pk=pk)</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        book.delete()</span><br><span class="line">        <span class="keyword">return</span> redirect(<span class="string">&#x27;book_list&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_confirm_delete.html&#x27;</span>, &#123;<span class="string">&#x27;book&#x27;</span>: book&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-設定-URL-路由"><a href="#4-設定-URL-路由" class="headerlink" title="4. 設定 URL 路由"></a>4. 設定 URL 路由</h2><p>在 <code>books/urls.py</code> 中設定對應的路由：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;&#x27;</span>, views.book_list, name=<span class="string">&#x27;book_list&#x27;</span>),</span><br><span class="line">    path(<span class="string">&#x27;create/&#x27;</span>, views.create_book, name=<span class="string">&#x27;create_book&#x27;</span>),</span><br><span class="line">    path(<span class="string">&#x27;update/&lt;int:pk&gt;/&#x27;</span>, views.update_book, name=<span class="string">&#x27;update_book&#x27;</span>),</span><br><span class="line">    path(<span class="string">&#x27;delete/&lt;int:pk&gt;/&#x27;</span>, views.delete_book, name=<span class="string">&#x27;delete_book&#x27;</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<p>並在 <code>myproject/urls.py</code> 引入 <code>books</code> 路由：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path, include</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;admin/&#x27;</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">&#x27;books/&#x27;</span>, include(<span class="string">&#x27;books.urls&#x27;</span>)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-建立模板（Templates）"><a href="#5-建立模板（Templates）" class="headerlink" title="5. 建立模板（Templates）"></a>5. 建立模板（Templates）</h2><p>手動撰寫簡單的 HTML 表單與顯示畫面。</p>
-<h3 id="book-list-html"><a href="#book-list-html" class="headerlink" title="book_list.html"></a><code>book_list.html</code></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>書籍列表<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;create_book&#x27; %&#125;&quot;</span>&gt;</span>新增書籍<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    &#123;% for book in books %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        &#123;&#123; book.title &#125;&#125; - &#123;&#123; book.author &#125;&#125; - &#123;&#123; book.published_date &#125;&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;update_book&#x27; book.id %&#125;&quot;</span>&gt;</span>編輯<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;delete_book&#x27; book.id %&#125;&quot;</span>&gt;</span>刪除<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="book-form-html"><a href="#book-form-html" class="headerlink" title="book_form.html"></a><code>book_form.html</code></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;% if book %&#125;編輯書籍&#123;% else %&#125;新增書籍&#123;% endif %&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;% if error %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:red;&quot;</span>&gt;</span>&#123;&#123; error &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">    &#123;% csrf_token %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        標題：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;title&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&#123;&#123; book.title|default_if_none:&#x27;&#x27; &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        作者：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;author&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&#123;&#123; book.author|default_if_none:&#x27;&#x27; &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        出版日期（格式 yyyy-mm-dd）：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;published_date&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&#123;&#123; book.published_date|default_if_none:&#x27;&#x27; &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>儲存<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;book_list&#x27; %&#125;&quot;</span>&gt;</span>返回列表<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="book-confirm-delete-html"><a href="#book-confirm-delete-html" class="headerlink" title="book_confirm_delete.html"></a><code>book_confirm_delete.html</code></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>刪除書籍<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>確定要刪除 &quot;&#123;&#123; book.title &#125;&#125;&quot; 嗎？<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">    &#123;% csrf_token %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>確定刪除<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;book_list&#x27; %&#125;&quot;</span>&gt;</span>取消<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="6-啟動伺服器測試"><a href="#6-啟動伺服器測試" class="headerlink" title="6. 啟動伺服器測試"></a>6. 啟動伺服器測試</h2><p>啟動 Django 開發伺服器：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
-
-<p>在瀏覽器開啟 <code>http://127.0.0.1:8000/books/</code>，你將可以新增、查詢、編輯和刪除書籍。</p>
-<hr>
-<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>這篇教學示範了在 <strong>不使用 <code>ModelForm</code></strong> 的情況下，手動撰寫表單處理與資料驗證，完整實作了 Django 的 CRUD 功能。</p>
-<p>這種方式的優點在於靈活度高，你可以完全控制表單的結構、驗證邏輯與錯誤處理，非常適合需要客製化表單行為或前後端分離的專案。不過，相較於使用 <code>ModelForm</code>，開發成本略高，也容易產生重複程式碼，因此適時選擇工具是重要的工程判斷。</p>
-<p>進一步的優化方向包括：</p>
-<ul>
-<li>加入更完整的資料驗證</li>
-<li>增加欄位格式錯誤提示</li>
-<li>使用 JavaScript 增強表單互動</li>
-<li>將表單資料與邏輯封裝成 Class-Based Views（CBV）</li>
-</ul>
-<p>透過本篇範例，希望你對 Django 低階處理表單與 CRUD 流程有更深入的理解。</p>
-]]></content>
-      <tags>
-        <tag>Django</tag>
-        <tag>web</tag>
-        <tag>python</tag>
-        <tag>ModelForm）</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Django「一對一」、「一對多」、「多對多」關聯入門教學筆記 | 學習筆記</title>
     <url>/2024/12/01/learning-notes-python-django-db-mapping-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>當你在學 Django 或資料庫設計時，常會遇到「一對一」、「一對多」、「多對多」這三種關聯（Relationship）。這些是資料庫中表與表之間的關係，下面用簡單的例子幫你搞懂它們的差異：</p>
@@ -5122,10 +5060,10 @@
 ]]></content>
       <tags>
         <tag>Django</tag>
-        <tag>python</tag>
         <tag>一對一</tag>
         <tag>一對多</tag>
         <tag>多對多</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -5224,9 +5162,71 @@
 </ol>
 ]]></content>
       <tags>
-        <tag>web</tag>
         <tag>python</tag>
+        <tag>web</tag>
         <tag>FastAPI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Django CRUD（不使用 ModelForm）入門教學筆記 | 學習筆記</title>
+    <url>/2024/08/31/learning-notes-python-django-crud-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在 Django 中，<code>ModelForm</code> 提供了一個快速建立表單與驗證的工具，但在某些情境下，我們可能希望自己掌控表單結構與驗證流程。這篇筆記將示範如何不依賴 <code>ModelForm</code>，手動實作一套 CRUD 系統，幫助你更深入理解 Django 表單處理的基本原理。</p>
+<p>我們將製作一個簡單的「書籍管理系統」，支援新增（Create）、讀取（Read）、更新（Update）與刪除（Delete）書籍資訊。</p>
+<h2 id="1-建立-Django-專案與應用"><a href="#1-建立-Django-專案與應用" class="headerlink" title="1. 建立 Django 專案與應用"></a>1. 建立 Django 專案與應用</h2><p>首先，安裝 Django 並建立新的專案與應用：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install django</span><br><span class="line">django-admin startproject myproject</span><br><span class="line"><span class="built_in">cd</span> myproject</span><br><span class="line">python manage.py startapp books</span><br></pre></td></tr></table></figure>
+
+<p>註冊 <code>books</code> 應用於 <code>myproject/settings.py</code> 的 <code>INSTALLED_APPS</code>：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">&#x27;books&#x27;</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-定義模型（Model）"><a href="#2-定義模型（Model）" class="headerlink" title="2. 定義模型（Model）"></a>2. 定義模型（Model）</h2><p>在 <code>books/models.py</code> 中定義一個簡單的書籍模型：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Book</span>(models.Model):</span><br><span class="line">    title = models.CharField(max_length=<span class="number">200</span>)</span><br><span class="line">    author = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line">    published_date = models.DateField()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.title</span><br></pre></td></tr></table></figure>
+
+<p>遷移資料庫：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py makemigrations</span><br><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-撰寫-Views（不使用-ModelForm）"><a href="#3-撰寫-Views（不使用-ModelForm）" class="headerlink" title="3. 撰寫 Views（不使用 ModelForm）"></a>3. 撰寫 Views（不使用 ModelForm）</h2><p>在 <code>books/views.py</code> 中撰寫手動處理的 CRUD 功能。</p>
+<h3 id="新增書籍（Create）"><a href="#新增書籍（Create）" class="headerlink" title="新增書籍（Create）"></a>新增書籍（Create）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render, redirect</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Book</span><br><span class="line"><span class="keyword">from</span> django.utils.dateparse <span class="keyword">import</span> parse_date</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_book</span>(<span class="params">request</span>):</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        title = request.POST.get(<span class="string">&#x27;title&#x27;</span>)</span><br><span class="line">        author = request.POST.get(<span class="string">&#x27;author&#x27;</span>)</span><br><span class="line">        published_date_str = request.POST.get(<span class="string">&#x27;published_date&#x27;</span>)</span><br><span class="line">        published_date = parse_date(published_date_str)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> title <span class="keyword">and</span> author <span class="keyword">and</span> published_date:</span><br><span class="line">            Book.objects.create(title=title, author=author, published_date=published_date)</span><br><span class="line">            <span class="keyword">return</span> redirect(<span class="string">&#x27;book_list&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            error = <span class="string">&quot;所有欄位皆為必填&quot;</span></span><br><span class="line">            <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_form.html&#x27;</span>, &#123;<span class="string">&#x27;error&#x27;</span>: error&#125;)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_form.html&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="讀取書籍（Read）"><a href="#讀取書籍（Read）" class="headerlink" title="讀取書籍（Read）"></a>讀取書籍（Read）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">book_list</span>(<span class="params">request</span>):</span><br><span class="line">    books = Book.objects.<span class="built_in">all</span>()</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_list.html&#x27;</span>, &#123;<span class="string">&#x27;books&#x27;</span>: books&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="更新書籍（Update）"><a href="#更新書籍（Update）" class="headerlink" title="更新書籍（Update）"></a>更新書籍（Update）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> get_object_or_404</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">update_book</span>(<span class="params">request, pk</span>):</span><br><span class="line">    book = get_object_or_404(Book, pk=pk)</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        title = request.POST.get(<span class="string">&#x27;title&#x27;</span>)</span><br><span class="line">        author = request.POST.get(<span class="string">&#x27;author&#x27;</span>)</span><br><span class="line">        published_date_str = request.POST.get(<span class="string">&#x27;published_date&#x27;</span>)</span><br><span class="line">        published_date = parse_date(published_date_str)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> title <span class="keyword">and</span> author <span class="keyword">and</span> published_date:</span><br><span class="line">            book.title = title</span><br><span class="line">            book.author = author</span><br><span class="line">            book.published_date = published_date</span><br><span class="line">            book.save()</span><br><span class="line">            <span class="keyword">return</span> redirect(<span class="string">&#x27;book_list&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            error = <span class="string">&quot;所有欄位皆為必填&quot;</span></span><br><span class="line">            <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_form.html&#x27;</span>, &#123;<span class="string">&#x27;book&#x27;</span>: book, <span class="string">&#x27;error&#x27;</span>: error&#125;)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_form.html&#x27;</span>, &#123;<span class="string">&#x27;book&#x27;</span>: book&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="刪除書籍（Delete）"><a href="#刪除書籍（Delete）" class="headerlink" title="刪除書籍（Delete）"></a>刪除書籍（Delete）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">delete_book</span>(<span class="params">request, pk</span>):</span><br><span class="line">    book = get_object_or_404(Book, pk=pk)</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        book.delete()</span><br><span class="line">        <span class="keyword">return</span> redirect(<span class="string">&#x27;book_list&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;books/book_confirm_delete.html&#x27;</span>, &#123;<span class="string">&#x27;book&#x27;</span>: book&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-設定-URL-路由"><a href="#4-設定-URL-路由" class="headerlink" title="4. 設定 URL 路由"></a>4. 設定 URL 路由</h2><p>在 <code>books/urls.py</code> 中設定對應的路由：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;&#x27;</span>, views.book_list, name=<span class="string">&#x27;book_list&#x27;</span>),</span><br><span class="line">    path(<span class="string">&#x27;create/&#x27;</span>, views.create_book, name=<span class="string">&#x27;create_book&#x27;</span>),</span><br><span class="line">    path(<span class="string">&#x27;update/&lt;int:pk&gt;/&#x27;</span>, views.update_book, name=<span class="string">&#x27;update_book&#x27;</span>),</span><br><span class="line">    path(<span class="string">&#x27;delete/&lt;int:pk&gt;/&#x27;</span>, views.delete_book, name=<span class="string">&#x27;delete_book&#x27;</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>並在 <code>myproject/urls.py</code> 引入 <code>books</code> 路由：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path, include</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;admin/&#x27;</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">&#x27;books/&#x27;</span>, include(<span class="string">&#x27;books.urls&#x27;</span>)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-建立模板（Templates）"><a href="#5-建立模板（Templates）" class="headerlink" title="5. 建立模板（Templates）"></a>5. 建立模板（Templates）</h2><p>手動撰寫簡單的 HTML 表單與顯示畫面。</p>
+<h3 id="book-list-html"><a href="#book-list-html" class="headerlink" title="book_list.html"></a><code>book_list.html</code></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>書籍列表<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;create_book&#x27; %&#125;&quot;</span>&gt;</span>新增書籍<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    &#123;% for book in books %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        &#123;&#123; book.title &#125;&#125; - &#123;&#123; book.author &#125;&#125; - &#123;&#123; book.published_date &#125;&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;update_book&#x27; book.id %&#125;&quot;</span>&gt;</span>編輯<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;delete_book&#x27; book.id %&#125;&quot;</span>&gt;</span>刪除<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="book-form-html"><a href="#book-form-html" class="headerlink" title="book_form.html"></a><code>book_form.html</code></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;% if book %&#125;編輯書籍&#123;% else %&#125;新增書籍&#123;% endif %&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;% if error %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:red;&quot;</span>&gt;</span>&#123;&#123; error &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">    &#123;% csrf_token %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        標題：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;title&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&#123;&#123; book.title|default_if_none:&#x27;&#x27; &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        作者：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;author&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&#123;&#123; book.author|default_if_none:&#x27;&#x27; &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        出版日期（格式 yyyy-mm-dd）：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;published_date&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&#123;&#123; book.published_date|default_if_none:&#x27;&#x27; &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>儲存<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;book_list&#x27; %&#125;&quot;</span>&gt;</span>返回列表<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="book-confirm-delete-html"><a href="#book-confirm-delete-html" class="headerlink" title="book_confirm_delete.html"></a><code>book_confirm_delete.html</code></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>刪除書籍<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>確定要刪除 &quot;&#123;&#123; book.title &#125;&#125;&quot; 嗎？<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">    &#123;% csrf_token %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>確定刪除<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;% url &#x27;book_list&#x27; %&#125;&quot;</span>&gt;</span>取消<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-啟動伺服器測試"><a href="#6-啟動伺服器測試" class="headerlink" title="6. 啟動伺服器測試"></a>6. 啟動伺服器測試</h2><p>啟動 Django 開發伺服器：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
+
+<p>在瀏覽器開啟 <code>http://127.0.0.1:8000/books/</code>，你將可以新增、查詢、編輯和刪除書籍。</p>
+<hr>
+<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>這篇教學示範了在 <strong>不使用 <code>ModelForm</code></strong> 的情況下，手動撰寫表單處理與資料驗證，完整實作了 Django 的 CRUD 功能。</p>
+<p>這種方式的優點在於靈活度高，你可以完全控制表單的結構、驗證邏輯與錯誤處理，非常適合需要客製化表單行為或前後端分離的專案。不過，相較於使用 <code>ModelForm</code>，開發成本略高，也容易產生重複程式碼，因此適時選擇工具是重要的工程判斷。</p>
+<p>進一步的優化方向包括：</p>
+<ul>
+<li>加入更完整的資料驗證</li>
+<li>增加欄位格式錯誤提示</li>
+<li>使用 JavaScript 增強表單互動</li>
+<li>將表單資料與邏輯封裝成 Class-Based Views（CBV）</li>
+</ul>
+<p>透過本篇範例，希望你對 Django 低階處理表單與 CRUD 流程有更深入的理解。</p>
+]]></content>
+      <tags>
+        <tag>Django</tag>
+        <tag>python</tag>
+        <tag>web</tag>
+        <tag>ModelForm）</tag>
       </tags>
   </entry>
   <entry>
@@ -5743,62 +5743,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Responsive Design 響應式設計入門教學筆記 | 學習筆記</title>
-    <url>/2022/06/09/learning-notes-responsive-design-rwd/</url>
-    <content><![CDATA[<h2 id="Responsive-Design-響應式設計入門教學筆記"><a href="#Responsive-Design-響應式設計入門教學筆記" class="headerlink" title="Responsive Design 響應式設計入門教學筆記"></a>Responsive Design 響應式設計入門教學筆記</h2><h3 id="一、什麼是響應式設計"><a href="#一、什麼是響應式設計" class="headerlink" title="一、什麼是響應式設計"></a>一、什麼是響應式設計</h3><p>響應式設計 (Responsive Design) 是一種網頁設計方法，使網頁能夠根據不同裝置的螢幕尺寸與解析度，自動調整版面配置，以提供最佳的使用體驗。</p>
-<h3 id="二、響應式設計的重要概念"><a href="#二、響應式設計的重要概念" class="headerlink" title="二、響應式設計的重要概念"></a>二、響應式設計的重要概念</h3><h4 id="1-視圖-Viewport"><a href="#1-視圖-Viewport" class="headerlink" title="1. 視圖 (Viewport)"></a>1. 視圖 (Viewport)</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>這段程式碼放在 <head> 標籤內，能讓網頁根據不同裝置寬度調整顯示比例，是響應式設計的基本設定。</p>
-<h4 id="2-流動網格-Fluid-Grid"><a href="#2-流動網格-Fluid-Grid" class="headerlink" title="2. 流動網格 (Fluid Grid)"></a>2. 流動網格 (Fluid Grid)</h4><p>使用百分比 (%) 來設定元素的寬度，而非固定的像素 (px)，讓版面能隨螢幕大小調整。</p>
-<h4 id="3-彈性圖片-Flexible-Images"><a href="#3-彈性圖片-Flexible-Images" class="headerlink" title="3. 彈性圖片 (Flexible Images)"></a>3. 彈性圖片 (Flexible Images)</h4><p>圖片大小以百分比或 max-width 設定，避免圖片超出容器範圍。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-媒體查詢-Media-Queries"><a href="#4-媒體查詢-Media-Queries" class="headerlink" title="4. 媒體查詢 (Media Queries)"></a>4. 媒體查詢 (Media Queries)</h4><p>根據裝置螢幕大小套用不同的 CSS 樣式。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: lightgrey;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="三、常見的斷點-Breakpoints"><a href="#三、常見的斷點-Breakpoints" class="headerlink" title="三、常見的斷點 (Breakpoints)"></a>三、常見的斷點 (Breakpoints)</h3><p>以下為常見的螢幕寬度斷點，用來針對不同裝置設定樣式：</p>
-<table>
-<thead>
-<tr>
-<th>裝置類型</th>
-<th>斷點寬度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>手機</td>
-<td>0 - 576px</td>
-</tr>
-<tr>
-<td>平板</td>
-<td>577px - 768px</td>
-</tr>
-<tr>
-<td>小型桌面</td>
-<td>769px - 992px</td>
-</tr>
-<tr>
-<td>大型桌面</td>
-<td>993px 以上</td>
-</tr>
-</tbody></table>
-<h3 id="四、實作範例"><a href="#四、實作範例" class="headerlink" title="四、實作範例"></a>四、實作範例</h3><h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-Hant&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>響應式設計範例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>歡迎來到響應式設計範例<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>這是一個簡單的響應式網頁範例。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: Arial, sans-serif;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: lightblue;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">576px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="五、其他工具"><a href="#五、其他工具" class="headerlink" title="五、其他工具"></a>五、其他工具</h3><ol>
-<li>Bootstrap：內建響應式網格系統，方便快速開發響應式網頁。</li>
-<li>Flexbox：簡化版面排列的工具，適合處理彈性佈局。</li>
-<li>CSS Grid：強大的網格系統，用於建立複雜的版面。</li>
-</ol>
-<h3 id="六、結語"><a href="#六、結語" class="headerlink" title="六、結語"></a>六、結語</h3><p>響應式設計能提升使用者體驗，使網頁能適應不同裝置，有助於 SEO 表現，是現代網頁設計不可忽視的重要技能。</p>
-]]></content>
-      <tags>
-        <tag>Responsive Design</tag>
-        <tag>響應式設計</tag>
-        <tag>RWD</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SASS 語法介紹入門教學筆記 | 學習筆記</title>
     <url>/2024/06/30/learning-notes-sass-intro-tutorial/</url>
     <content><![CDATA[<h1 id="什麼是-SASS？"><a href="#什麼是-SASS？" class="headerlink" title="什麼是 SASS？"></a>什麼是 SASS？</h1><p><code>SASS</code>（Syntactically Awesome Style Sheets）是一種 CSS 預處理器，旨在提升 CSS 的功能性，讓開發者能夠以更加靈活和高效的方式編寫樣式表。它提供了許多比 CSS 更強大的功能，例如變數、巢狀規則、混合（mixins）、繼承等。SASS 語法有兩種主要形式：一種是較為常見的 SCSS（<code>Sassy CSS</code>），另一種則是 <code>SASS</code>，本文將主要介紹 SASS 語法。</p>
@@ -6102,6 +6046,62 @@
       </tags>
   </entry>
   <entry>
+    <title>Responsive Design 響應式設計入門教學筆記 | 學習筆記</title>
+    <url>/2022/06/09/learning-notes-responsive-design-rwd/</url>
+    <content><![CDATA[<h2 id="Responsive-Design-響應式設計入門教學筆記"><a href="#Responsive-Design-響應式設計入門教學筆記" class="headerlink" title="Responsive Design 響應式設計入門教學筆記"></a>Responsive Design 響應式設計入門教學筆記</h2><h3 id="一、什麼是響應式設計"><a href="#一、什麼是響應式設計" class="headerlink" title="一、什麼是響應式設計"></a>一、什麼是響應式設計</h3><p>響應式設計 (Responsive Design) 是一種網頁設計方法，使網頁能夠根據不同裝置的螢幕尺寸與解析度，自動調整版面配置，以提供最佳的使用體驗。</p>
+<h3 id="二、響應式設計的重要概念"><a href="#二、響應式設計的重要概念" class="headerlink" title="二、響應式設計的重要概念"></a>二、響應式設計的重要概念</h3><h4 id="1-視圖-Viewport"><a href="#1-視圖-Viewport" class="headerlink" title="1. 視圖 (Viewport)"></a>1. 視圖 (Viewport)</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼放在 <head> 標籤內，能讓網頁根據不同裝置寬度調整顯示比例，是響應式設計的基本設定。</p>
+<h4 id="2-流動網格-Fluid-Grid"><a href="#2-流動網格-Fluid-Grid" class="headerlink" title="2. 流動網格 (Fluid Grid)"></a>2. 流動網格 (Fluid Grid)</h4><p>使用百分比 (%) 來設定元素的寬度，而非固定的像素 (px)，讓版面能隨螢幕大小調整。</p>
+<h4 id="3-彈性圖片-Flexible-Images"><a href="#3-彈性圖片-Flexible-Images" class="headerlink" title="3. 彈性圖片 (Flexible Images)"></a>3. 彈性圖片 (Flexible Images)</h4><p>圖片大小以百分比或 max-width 設定，避免圖片超出容器範圍。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-媒體查詢-Media-Queries"><a href="#4-媒體查詢-Media-Queries" class="headerlink" title="4. 媒體查詢 (Media Queries)"></a>4. 媒體查詢 (Media Queries)</h4><p>根據裝置螢幕大小套用不同的 CSS 樣式。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: lightgrey;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、常見的斷點-Breakpoints"><a href="#三、常見的斷點-Breakpoints" class="headerlink" title="三、常見的斷點 (Breakpoints)"></a>三、常見的斷點 (Breakpoints)</h3><p>以下為常見的螢幕寬度斷點，用來針對不同裝置設定樣式：</p>
+<table>
+<thead>
+<tr>
+<th>裝置類型</th>
+<th>斷點寬度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>手機</td>
+<td>0 - 576px</td>
+</tr>
+<tr>
+<td>平板</td>
+<td>577px - 768px</td>
+</tr>
+<tr>
+<td>小型桌面</td>
+<td>769px - 992px</td>
+</tr>
+<tr>
+<td>大型桌面</td>
+<td>993px 以上</td>
+</tr>
+</tbody></table>
+<h3 id="四、實作範例"><a href="#四、實作範例" class="headerlink" title="四、實作範例"></a>四、實作範例</h3><h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-Hant&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>響應式設計範例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>歡迎來到響應式設計範例<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>這是一個簡單的響應式網頁範例。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: Arial, sans-serif;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: lightblue;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">576px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="五、其他工具"><a href="#五、其他工具" class="headerlink" title="五、其他工具"></a>五、其他工具</h3><ol>
+<li>Bootstrap：內建響應式網格系統，方便快速開發響應式網頁。</li>
+<li>Flexbox：簡化版面排列的工具，適合處理彈性佈局。</li>
+<li>CSS Grid：強大的網格系統，用於建立複雜的版面。</li>
+</ol>
+<h3 id="六、結語"><a href="#六、結語" class="headerlink" title="六、結語"></a>六、結語</h3><p>響應式設計能提升使用者體驗，使網頁能適應不同裝置，有助於 SEO 表現，是現代網頁設計不可忽視的重要技能。</p>
+]]></content>
+      <tags>
+        <tag>Responsive Design</tag>
+        <tag>響應式設計</tag>
+        <tag>RWD</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>整合 Tailwind CSS 與 daisyUI 的入門教學筆記 | 學習筆記</title>
     <url>/2024/10/16/learning-notes-tailwind-css-daisyui-intro-tutorial/</url>
     <content><![CDATA[<h2 id="一、前言：為什麼選擇-Tailwind-CSS-搭配-daisyUI？"><a href="#一、前言：為什麼選擇-Tailwind-CSS-搭配-daisyUI？" class="headerlink" title="一、前言：為什麼選擇 Tailwind CSS 搭配 daisyUI？"></a>一、前言：為什麼選擇 Tailwind CSS 搭配 daisyUI？</h2><p>在現代前端開發中，Tailwind CSS 提供了高度自訂、原子化的 CSS class，使得開發者能夠以更模組化與語意化的方式撰寫樣式。然而，Tailwind 並不內建 UI 元件，這就使得一些常見元件（如按鈕、表單、卡片）仍需手動組裝樣式。</p>
@@ -6174,114 +6174,6 @@
         <tag>Tailwind</tag>
         <tag>TailwindCSS</tag>
         <tag>daisyUI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tailwind CSS 入門教學筆記 | 學習筆記</title>
-    <url>/2024/11/30/learning-notes-tailwind-css-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="一、什麼是-Tailwind-CSS？"><a href="#一、什麼是-Tailwind-CSS？" class="headerlink" title="一、什麼是 Tailwind CSS？"></a>一、什麼是 Tailwind CSS？</h1><p>Tailwind CSS 是一款以「<code>工具類別優先</code>」（<code>Utility-First</code>）為核心設計理念的 CSS 框架，與傳統的 CSS 框架（如 Bootstrap、Bulma）不同，它不提供預設的 UI 元件，而是提供大量的樣式工具類別，讓開發者可以快速組合來建構 UI，而不需要額外撰寫自訂 CSS。  </p>
-<p>相較於傳統 CSS 框架，Tailwind CSS 具有以下幾個主要優勢：  </p>
-<ol>
-<li><strong>開發效率高</strong>：只需使用<code>類別組合</code>即可完成設計，無需撰寫額外 CSS。  </li>
-<li><strong>高度可客製化</strong>：可以透過設定檔調整顏色、字型、間距等設計。  </li>
-<li><strong>內建響應式支援</strong>：透過 <code>sm: md: lg: xl:</code> 等前綴輕鬆定義不同裝置的樣式。  </li>
-<li><strong>一致性強</strong>：開發團隊可以統一使用 Tailwind CSS 定義的設計樣式，減少 UI 風格不一致的問題。  </li>
-<li><strong>效能優化</strong>：可透過 PurgeCSS 移除未使用的樣式，確保最小化 CSS 檔案大小，提高網站載入速度。</li>
-</ol>
-<hr>
-<h1 id="二、安裝-Tailwind-CSS"><a href="#二、安裝-Tailwind-CSS" class="headerlink" title="二、安裝 Tailwind CSS"></a>二、安裝 Tailwind CSS</h1><p>Tailwind CSS 可以透過多種方式安裝，以下介紹幾種常見的方法：  </p>
-<h3 id="1-使用-CDN（適合快速測試）"><a href="#1-使用-CDN（適合快速測試）" class="headerlink" title="1. 使用 CDN（適合快速測試）"></a>1. 使用 CDN（適合快速測試）</h3><p>如果只是想快速體驗 Tailwind CSS，可以直接在 HTML 檔案中加入以下 <code>&lt;link&gt;</code>：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>這種方式適合小型專案或測試 Tailwind CSS 的功能，但不適合正式開發，因為無法使用客製化設定。  </p>
-<h3 id="2-透過-npm-安裝（推薦方式）"><a href="#2-透過-npm-安裝（推薦方式）" class="headerlink" title="2. 透過 npm 安裝（推薦方式）"></a>2. 透過 npm 安裝（推薦方式）</h3><p>在正式開發環境中，建議使用 npm 或 yarn 來安裝 Tailwind CSS，以便進行客製化設定。  </p>
-<p><strong>安裝 Tailwind CSS</strong>：  </p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -D tailwindcss postcss autoprefixer</span><br><span class="line">npx tailwindcss init -p</span><br></pre></td></tr></table></figure>
-
-<p>執行上述指令後，會在專案根目錄中產生 <code>tailwind.config.js</code> 設定檔，可用來調整 Tailwind 的預設樣式。  </p>
-<p><strong>設定 Tailwind CSS</strong>：  </p>
-<p>開啟 <code>tailwind.config.js</code>，找到 <code>content</code> 設定，確保 Tailwind 只處理專案內的相關檔案，例如：  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">content</span>: [<span class="string">&quot;./src/**/*.&#123;html,js,ts,jsx,tsx&#125;&quot;</span>],</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;&#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>這樣 Tailwind CSS 就只會掃描 <code>src</code> 資料夾內的 HTML、JavaScript 和 TypeScript 檔案，避免產生不必要的 CSS。  </p>
-<p><strong>引入 Tailwind 樣式</strong>：  </p>
-<p>在 <code>src/index.css</code> 或 <code>styles.css</code> 檔案中加入以下內容，讓 Tailwind CSS 套用基礎樣式：  </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@tailwind</span> base;</span><br><span class="line"><span class="keyword">@tailwind</span> components;</span><br><span class="line"><span class="keyword">@tailwind</span> utilities;</span><br></pre></td></tr></table></figure>
-
-<p>最後，在開發環境中執行 Tailwind 編譯指令：  </p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch</span><br></pre></td></tr></table></figure>
-
-<p>這會自動監聽檔案變化，並輸出 Tailwind CSS 的樣式到 <code>output.css</code>。  </p>
-<hr>
-<h1 id="三、Tailwind-CSS-常用類別"><a href="#三、Tailwind-CSS-常用類別" class="headerlink" title="三、Tailwind CSS 常用類別"></a>三、Tailwind CSS 常用類別</h1><p>Tailwind CSS 提供大量的工具類別，以下介紹幾個常用的類別和應用範例。  </p>
-<h3 id="1-文字樣式"><a href="#1-文字樣式" class="headerlink" title="1. 文字樣式"></a>1. 文字樣式</h3><p>Tailwind 允許透過類別來快速調整字體大小、顏色、行距等樣式，例如：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text-lg font-bold text-gray-700 leading-relaxed&quot;</span>&gt;</span></span><br><span class="line">  這是一段示範文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>其中：  </p>
-<ul>
-<li><code>text-lg</code>：字體大小  </li>
-<li><code>font-bold</code>：加粗  </li>
-<li><code>text-gray-700</code>：深灰色文字  </li>
-<li><code>leading-relaxed</code>：行距較寬</li>
-</ul>
-<h3 id="2-背景與邊框"><a href="#2-背景與邊框" class="headerlink" title="2. 背景與邊框"></a>2. 背景與邊框</h3><p>可以使用背景色與邊框樣式來設計 UI，示例如下：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-500 text-white p-4 rounded-lg shadow-lg&quot;</span>&gt;</span></span><br><span class="line">  Tailwind CSS 範例</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>bg-blue-500</code>：藍色背景  </li>
-<li><code>text-white</code>：白色文字  </li>
-<li><code>p-4</code>：內距 16px  </li>
-<li><code>rounded-lg</code>：圓角  </li>
-<li><code>shadow-lg</code>：大型陰影</li>
-</ul>
-<h3 id="3-Flexbox-佈局"><a href="#3-Flexbox-佈局" class="headerlink" title="3. Flexbox 佈局"></a>3. Flexbox 佈局</h3><p>Tailwind CSS 提供完整的 Flexbox 工具類別，讓開發者能夠快速進行佈局：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;flex items-center justify-between p-4 bg-gray-200&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>左側內容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>右側內容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>flex</code>：啟用 Flexbox  </li>
-<li><code>items-center</code>：垂直置中  </li>
-<li><code>justify-between</code>：左右對齊</li>
-</ul>
-<h3 id="4-Grid-佈局"><a href="#4-Grid-佈局" class="headerlink" title="4. Grid 佈局"></a>4. Grid 佈局</h3><p>使用 Grid 來建立多欄式佈局：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid grid-cols-3 gap-4&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-red-200 p-4&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-green-200 p-4&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-200 p-4&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>grid</code>：啟用 Grid  </li>
-<li><code>grid-cols-3</code>：建立三欄  </li>
-<li><code>gap-4</code>：欄間距</li>
-</ul>
-<h3 id="5-響應式設計"><a href="#5-響應式設計" class="headerlink" title="5. 響應式設計"></a>5. 響應式設計</h3><p>Tailwind 內建響應式前綴，適用於不同裝置：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;text-base md:text-lg lg:text-xl xl:text-2xl&quot;</span>&gt;</span></span><br><span class="line">  響應式字體大小</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>text-base</code>：手機（預設）  </li>
-<li><code>md:text-lg</code>：平板（<code>min-width: 768px</code>）  </li>
-<li><code>lg:text-xl</code>：筆電（<code>min-width: 1024px</code>）  </li>
-<li><code>xl:text-2xl</code>：桌機（<code>min-width: 1280px</code>）</li>
-</ul>
-<hr>
-<h1 id="四、Tailwind-CSS-進階功能"><a href="#四、Tailwind-CSS-進階功能" class="headerlink" title="四、Tailwind CSS 進階功能"></a>四、Tailwind CSS 進階功能</h1><h3 id="1-自訂樣式"><a href="#1-自訂樣式" class="headerlink" title="1. 自訂樣式"></a>1. 自訂樣式</h3><p>可以透過 <code>tailwind.config.js</code> 來擴充自訂樣式，例如新增顏色：  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;</span><br><span class="line">      <span class="attr">colors</span>: &#123;</span><br><span class="line">        <span class="attr">primary</span>: <span class="string">&quot;#1E40AF&quot;</span>,</span><br><span class="line">        <span class="attr">secondary</span>: <span class="string">&quot;#9333EA&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>這樣就可以在 HTML 中使用 <code>text-primary</code> 或 <code>bg-secondary</code> 來套用顏色。  </p>
-<h3 id="2-使用-apply-簡化樣式"><a href="#2-使用-apply-簡化樣式" class="headerlink" title="2. 使用 @apply 簡化樣式"></a>2. 使用 @apply 簡化樣式</h3><p>在 CSS 檔案中使用 <code>@apply</code> 來重複使用 Tailwind 類別：  </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.btn</span> &#123;</span><br><span class="line">  <span class="keyword">@apply</span> bg-blue-<span class="number">500</span> text-white px-<span class="number">4</span> py-<span class="number">2</span> rounded;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然後在 HTML 中只需寫：  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>按鈕<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="五、總結"><a href="#五、總結" class="headerlink" title="五、總結"></a>五、總結</h1><p>Tailwind CSS 透過工具類別的方式大幅提升開發效率，並提供響應式設計、靈活佈局與高度客製化的功能。對於前端開發者而言，熟悉 Tailwind CSS 可以讓 UI 設計更加直觀、高效，並減少對自訂 CSS 的依賴，進而提升開發維護性。</p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>CSS</tag>
-        <tag>Tailwind</tag>
-        <tag>Tailwind CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -6473,6 +6365,183 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue ref 與 reactive 入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 Vue 3 中，<code>ref</code> 與 <code>reactive</code> 都是用來創建<strong>響應式資料</strong>的工具，但它們適用的情境略有不同。以下是清楚的比較與實際使用範例，幫助你理解什麼時候該用哪一個。</p>
+<hr>
+<h2 id="ref-使用情境"><a href="#ref-使用情境" class="headerlink" title="ref 使用情境"></a><code>ref</code> 使用情境</h2><h3 id="適用於："><a href="#適用於：" class="headerlink" title="適用於："></a>適用於：</h3><ul>
+<li><strong>原始資料型別</strong>：如 <code>Number</code>、<code>String</code>、<code>Boolean</code>、<code>Date</code> 等。</li>
+<li>你只需要追蹤單一值。</li>
+<li>當你需要某個變數傳遞到 <code>&lt;template&gt;</code> 或函式中。</li>
+</ul>
+<h3 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span><br><span class="line">count.<span class="property">value</span>++ <span class="comment">// 需要用 .value 訪問或修改</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="範例："><a href="#範例：" class="headerlink" title="範例："></a>範例：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const message = ref(&#x27;Hello&#x27;)</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">const updateMessage = () =&gt; &#123;</span><br><span class="line">  message.value = &#x27;Hi Vue 3&#x27;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="reactive-使用情境"><a href="#reactive-使用情境" class="headerlink" title="reactive 使用情境"></a><code>reactive</code> 使用情境</h2><h3 id="適用於：-1"><a href="#適用於：-1" class="headerlink" title="適用於："></a>適用於：</h3><ul>
+<li><strong>物件或陣列</strong>：需要操作多個屬性的資料結構。</li>
+<li>多層巢狀資料或你希望所有屬性都具有響應性。</li>
+<li>表單資料、設定物件等複雜狀態管理。</li>
+</ul>
+<h3 id="語法：-1"><a href="#語法：-1" class="headerlink" title="語法："></a>語法：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; reactive &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> user = <span class="title function_">reactive</span>(&#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Daniel&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">30</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">user.<span class="property">age</span>++ <span class="comment">// 直接修改即可，無需 .value</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="範例：-1"><a href="#範例：-1" class="headerlink" title="範例："></a>範例：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; reactive &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const form = reactive(&#123;</span><br><span class="line">  username: &#x27;&#x27;,</span><br><span class="line">  email: &#x27;&#x27;,</span><br><span class="line">  isSubscribed: false</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const submitForm = () =&gt; &#123;</span><br><span class="line">  console.log(form.username, form.email, form.isSubscribed)</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="⚠️-ref-包物件-vs-reactive"><a href="#⚠️-ref-包物件-vs-reactive" class="headerlink" title="⚠️ ref 包物件 vs reactive"></a>⚠️ <code>ref</code> 包物件 vs <code>reactive</code></h2><p>雖然你也可以這樣用：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = <span class="title function_">ref</span>(&#123; <span class="attr">name</span>: <span class="string">&#x27;Daniel&#x27;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>但要存取時就需要：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">user.<span class="property">value</span>.<span class="property">name</span> = <span class="string">&#x27;John&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>用 <code>reactive</code> 則可以直接操作：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">user.<span class="property">name</span> = <span class="string">&#x27;John&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>所以若你有<strong>物件資料</strong>，通常選擇 <code>reactive</code> 更直覺。</p>
+<hr>
+<h2 id="建議使用方式整理："><a href="#建議使用方式整理：" class="headerlink" title="建議使用方式整理："></a>建議使用方式整理：</h2><table>
+<thead>
+<tr>
+<th>類型</th>
+<th>建議使用方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>單一變數（數字、字串）</td>
+<td><code>ref</code></td>
+</tr>
+<tr>
+<td>多欄位表單資料</td>
+<td><code>reactive</code></td>
+</tr>
+<tr>
+<td>陣列、物件、巢狀結構</td>
+<td><code>reactive</code></td>
+</tr>
+<tr>
+<td>要被 <code>watch</code> 或 <code>computed</code> 的原始值</td>
+<td><code>ref</code></td>
+</tr>
+</tbody></table>
+<hr>
+]]></content>
+      <tags>
+        <tag>vue</tag>
+        <tag>vue.js</tag>
+        <tag>ref</tag>
+        <tag>reactive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tailwind CSS 入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/30/learning-notes-tailwind-css-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="一、什麼是-Tailwind-CSS？"><a href="#一、什麼是-Tailwind-CSS？" class="headerlink" title="一、什麼是 Tailwind CSS？"></a>一、什麼是 Tailwind CSS？</h1><p>Tailwind CSS 是一款以「<code>工具類別優先</code>」（<code>Utility-First</code>）為核心設計理念的 CSS 框架，與傳統的 CSS 框架（如 Bootstrap、Bulma）不同，它不提供預設的 UI 元件，而是提供大量的樣式工具類別，讓開發者可以快速組合來建構 UI，而不需要額外撰寫自訂 CSS。  </p>
+<p>相較於傳統 CSS 框架，Tailwind CSS 具有以下幾個主要優勢：  </p>
+<ol>
+<li><strong>開發效率高</strong>：只需使用<code>類別組合</code>即可完成設計，無需撰寫額外 CSS。  </li>
+<li><strong>高度可客製化</strong>：可以透過設定檔調整顏色、字型、間距等設計。  </li>
+<li><strong>內建響應式支援</strong>：透過 <code>sm: md: lg: xl:</code> 等前綴輕鬆定義不同裝置的樣式。  </li>
+<li><strong>一致性強</strong>：開發團隊可以統一使用 Tailwind CSS 定義的設計樣式，減少 UI 風格不一致的問題。  </li>
+<li><strong>效能優化</strong>：可透過 PurgeCSS 移除未使用的樣式，確保最小化 CSS 檔案大小，提高網站載入速度。</li>
+</ol>
+<hr>
+<h1 id="二、安裝-Tailwind-CSS"><a href="#二、安裝-Tailwind-CSS" class="headerlink" title="二、安裝 Tailwind CSS"></a>二、安裝 Tailwind CSS</h1><p>Tailwind CSS 可以透過多種方式安裝，以下介紹幾種常見的方法：  </p>
+<h3 id="1-使用-CDN（適合快速測試）"><a href="#1-使用-CDN（適合快速測試）" class="headerlink" title="1. 使用 CDN（適合快速測試）"></a>1. 使用 CDN（適合快速測試）</h3><p>如果只是想快速體驗 Tailwind CSS，可以直接在 HTML 檔案中加入以下 <code>&lt;link&gt;</code>：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>這種方式適合小型專案或測試 Tailwind CSS 的功能，但不適合正式開發，因為無法使用客製化設定。  </p>
+<h3 id="2-透過-npm-安裝（推薦方式）"><a href="#2-透過-npm-安裝（推薦方式）" class="headerlink" title="2. 透過 npm 安裝（推薦方式）"></a>2. 透過 npm 安裝（推薦方式）</h3><p>在正式開發環境中，建議使用 npm 或 yarn 來安裝 Tailwind CSS，以便進行客製化設定。  </p>
+<p><strong>安裝 Tailwind CSS</strong>：  </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -D tailwindcss postcss autoprefixer</span><br><span class="line">npx tailwindcss init -p</span><br></pre></td></tr></table></figure>
+
+<p>執行上述指令後，會在專案根目錄中產生 <code>tailwind.config.js</code> 設定檔，可用來調整 Tailwind 的預設樣式。  </p>
+<p><strong>設定 Tailwind CSS</strong>：  </p>
+<p>開啟 <code>tailwind.config.js</code>，找到 <code>content</code> 設定，確保 Tailwind 只處理專案內的相關檔案，例如：  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">content</span>: [<span class="string">&quot;./src/**/*.&#123;html,js,ts,jsx,tsx&#125;&quot;</span>],</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;&#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>這樣 Tailwind CSS 就只會掃描 <code>src</code> 資料夾內的 HTML、JavaScript 和 TypeScript 檔案，避免產生不必要的 CSS。  </p>
+<p><strong>引入 Tailwind 樣式</strong>：  </p>
+<p>在 <code>src/index.css</code> 或 <code>styles.css</code> 檔案中加入以下內容，讓 Tailwind CSS 套用基礎樣式：  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@tailwind</span> base;</span><br><span class="line"><span class="keyword">@tailwind</span> components;</span><br><span class="line"><span class="keyword">@tailwind</span> utilities;</span><br></pre></td></tr></table></figure>
+
+<p>最後，在開發環境中執行 Tailwind 編譯指令：  </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch</span><br></pre></td></tr></table></figure>
+
+<p>這會自動監聽檔案變化，並輸出 Tailwind CSS 的樣式到 <code>output.css</code>。  </p>
+<hr>
+<h1 id="三、Tailwind-CSS-常用類別"><a href="#三、Tailwind-CSS-常用類別" class="headerlink" title="三、Tailwind CSS 常用類別"></a>三、Tailwind CSS 常用類別</h1><p>Tailwind CSS 提供大量的工具類別，以下介紹幾個常用的類別和應用範例。  </p>
+<h3 id="1-文字樣式"><a href="#1-文字樣式" class="headerlink" title="1. 文字樣式"></a>1. 文字樣式</h3><p>Tailwind 允許透過類別來快速調整字體大小、顏色、行距等樣式，例如：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text-lg font-bold text-gray-700 leading-relaxed&quot;</span>&gt;</span></span><br><span class="line">  這是一段示範文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>其中：  </p>
+<ul>
+<li><code>text-lg</code>：字體大小  </li>
+<li><code>font-bold</code>：加粗  </li>
+<li><code>text-gray-700</code>：深灰色文字  </li>
+<li><code>leading-relaxed</code>：行距較寬</li>
+</ul>
+<h3 id="2-背景與邊框"><a href="#2-背景與邊框" class="headerlink" title="2. 背景與邊框"></a>2. 背景與邊框</h3><p>可以使用背景色與邊框樣式來設計 UI，示例如下：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-500 text-white p-4 rounded-lg shadow-lg&quot;</span>&gt;</span></span><br><span class="line">  Tailwind CSS 範例</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>bg-blue-500</code>：藍色背景  </li>
+<li><code>text-white</code>：白色文字  </li>
+<li><code>p-4</code>：內距 16px  </li>
+<li><code>rounded-lg</code>：圓角  </li>
+<li><code>shadow-lg</code>：大型陰影</li>
+</ul>
+<h3 id="3-Flexbox-佈局"><a href="#3-Flexbox-佈局" class="headerlink" title="3. Flexbox 佈局"></a>3. Flexbox 佈局</h3><p>Tailwind CSS 提供完整的 Flexbox 工具類別，讓開發者能夠快速進行佈局：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;flex items-center justify-between p-4 bg-gray-200&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>左側內容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>右側內容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>flex</code>：啟用 Flexbox  </li>
+<li><code>items-center</code>：垂直置中  </li>
+<li><code>justify-between</code>：左右對齊</li>
+</ul>
+<h3 id="4-Grid-佈局"><a href="#4-Grid-佈局" class="headerlink" title="4. Grid 佈局"></a>4. Grid 佈局</h3><p>使用 Grid 來建立多欄式佈局：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid grid-cols-3 gap-4&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-red-200 p-4&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-green-200 p-4&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-200 p-4&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>grid</code>：啟用 Grid  </li>
+<li><code>grid-cols-3</code>：建立三欄  </li>
+<li><code>gap-4</code>：欄間距</li>
+</ul>
+<h3 id="5-響應式設計"><a href="#5-響應式設計" class="headerlink" title="5. 響應式設計"></a>5. 響應式設計</h3><p>Tailwind 內建響應式前綴，適用於不同裝置：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;text-base md:text-lg lg:text-xl xl:text-2xl&quot;</span>&gt;</span></span><br><span class="line">  響應式字體大小</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>text-base</code>：手機（預設）  </li>
+<li><code>md:text-lg</code>：平板（<code>min-width: 768px</code>）  </li>
+<li><code>lg:text-xl</code>：筆電（<code>min-width: 1024px</code>）  </li>
+<li><code>xl:text-2xl</code>：桌機（<code>min-width: 1280px</code>）</li>
+</ul>
+<hr>
+<h1 id="四、Tailwind-CSS-進階功能"><a href="#四、Tailwind-CSS-進階功能" class="headerlink" title="四、Tailwind CSS 進階功能"></a>四、Tailwind CSS 進階功能</h1><h3 id="1-自訂樣式"><a href="#1-自訂樣式" class="headerlink" title="1. 自訂樣式"></a>1. 自訂樣式</h3><p>可以透過 <code>tailwind.config.js</code> 來擴充自訂樣式，例如新增顏色：  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">extend</span>: &#123;</span><br><span class="line">      <span class="attr">colors</span>: &#123;</span><br><span class="line">        <span class="attr">primary</span>: <span class="string">&quot;#1E40AF&quot;</span>,</span><br><span class="line">        <span class="attr">secondary</span>: <span class="string">&quot;#9333EA&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>這樣就可以在 HTML 中使用 <code>text-primary</code> 或 <code>bg-secondary</code> 來套用顏色。  </p>
+<h3 id="2-使用-apply-簡化樣式"><a href="#2-使用-apply-簡化樣式" class="headerlink" title="2. 使用 @apply 簡化樣式"></a>2. 使用 @apply 簡化樣式</h3><p>在 CSS 檔案中使用 <code>@apply</code> 來重複使用 Tailwind 類別：  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.btn</span> &#123;</span><br><span class="line">  <span class="keyword">@apply</span> bg-blue-<span class="number">500</span> text-white px-<span class="number">4</span> py-<span class="number">2</span> rounded;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然後在 HTML 中只需寫：  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>按鈕<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="五、總結"><a href="#五、總結" class="headerlink" title="五、總結"></a>五、總結</h1><p>Tailwind CSS 透過工具類別的方式大幅提升開發效率，並提供響應式設計、靈活佈局與高度客製化的功能。對於前端開發者而言，熟悉 Tailwind CSS 可以讓 UI 設計更加直觀、高效，並減少對自訂 CSS 的依賴，進而提升開發維護性。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>CSS</tag>
+        <tag>Tailwind</tag>
+        <tag>Tailwind CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue Router 入門教學筆記 | 學習筆記</title>
     <url>/2024/11/16/learning-notes-vue-router-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Vue Router 是 Vue.js 官方提供的前端路由解決方案，專為構建單頁應用（SPA, Single Page Application）而設計。它讓我們可以根據網址變化動態切換畫面而不重新載入頁面，是開發 Vue 應用不可或缺的工具之一。</p>
@@ -6584,75 +6653,6 @@
         <tag>frontend engineer</tag>
         <tag>Vue</tag>
         <tag>Vue Router</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue ref 與 reactive 入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 Vue 3 中，<code>ref</code> 與 <code>reactive</code> 都是用來創建<strong>響應式資料</strong>的工具，但它們適用的情境略有不同。以下是清楚的比較與實際使用範例，幫助你理解什麼時候該用哪一個。</p>
-<hr>
-<h2 id="ref-使用情境"><a href="#ref-使用情境" class="headerlink" title="ref 使用情境"></a><code>ref</code> 使用情境</h2><h3 id="適用於："><a href="#適用於：" class="headerlink" title="適用於："></a>適用於：</h3><ul>
-<li><strong>原始資料型別</strong>：如 <code>Number</code>、<code>String</code>、<code>Boolean</code>、<code>Date</code> 等。</li>
-<li>你只需要追蹤單一值。</li>
-<li>當你需要某個變數傳遞到 <code>&lt;template&gt;</code> 或函式中。</li>
-</ul>
-<h3 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span><br><span class="line">count.<span class="property">value</span>++ <span class="comment">// 需要用 .value 訪問或修改</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="範例："><a href="#範例：" class="headerlink" title="範例："></a>範例：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const message = ref(&#x27;Hello&#x27;)</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">const updateMessage = () =&gt; &#123;</span><br><span class="line">  message.value = &#x27;Hi Vue 3&#x27;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="reactive-使用情境"><a href="#reactive-使用情境" class="headerlink" title="reactive 使用情境"></a><code>reactive</code> 使用情境</h2><h3 id="適用於：-1"><a href="#適用於：-1" class="headerlink" title="適用於："></a>適用於：</h3><ul>
-<li><strong>物件或陣列</strong>：需要操作多個屬性的資料結構。</li>
-<li>多層巢狀資料或你希望所有屬性都具有響應性。</li>
-<li>表單資料、設定物件等複雜狀態管理。</li>
-</ul>
-<h3 id="語法：-1"><a href="#語法：-1" class="headerlink" title="語法："></a>語法：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; reactive &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> user = <span class="title function_">reactive</span>(&#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Daniel&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">30</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">user.<span class="property">age</span>++ <span class="comment">// 直接修改即可，無需 .value</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="範例：-1"><a href="#範例：-1" class="headerlink" title="範例："></a>範例：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; reactive &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const form = reactive(&#123;</span><br><span class="line">  username: &#x27;&#x27;,</span><br><span class="line">  email: &#x27;&#x27;,</span><br><span class="line">  isSubscribed: false</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const submitForm = () =&gt; &#123;</span><br><span class="line">  console.log(form.username, form.email, form.isSubscribed)</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="⚠️-ref-包物件-vs-reactive"><a href="#⚠️-ref-包物件-vs-reactive" class="headerlink" title="⚠️ ref 包物件 vs reactive"></a>⚠️ <code>ref</code> 包物件 vs <code>reactive</code></h2><p>雖然你也可以這樣用：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = <span class="title function_">ref</span>(&#123; <span class="attr">name</span>: <span class="string">&#x27;Daniel&#x27;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;)</span><br></pre></td></tr></table></figure>
-
-<p>但要存取時就需要：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">user.<span class="property">value</span>.<span class="property">name</span> = <span class="string">&#x27;John&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>用 <code>reactive</code> 則可以直接操作：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">user.<span class="property">name</span> = <span class="string">&#x27;John&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>所以若你有<strong>物件資料</strong>，通常選擇 <code>reactive</code> 更直覺。</p>
-<hr>
-<h2 id="建議使用方式整理："><a href="#建議使用方式整理：" class="headerlink" title="建議使用方式整理："></a>建議使用方式整理：</h2><table>
-<thead>
-<tr>
-<th>類型</th>
-<th>建議使用方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>單一變數（數字、字串）</td>
-<td><code>ref</code></td>
-</tr>
-<tr>
-<td>多欄位表單資料</td>
-<td><code>reactive</code></td>
-</tr>
-<tr>
-<td>陣列、物件、巢狀結構</td>
-<td><code>reactive</code></td>
-</tr>
-<tr>
-<td>要被 <code>watch</code> 或 <code>computed</code> 的原始值</td>
-<td><code>ref</code></td>
-</tr>
-</tbody></table>
-<hr>
-]]></content>
-      <tags>
-        <tag>vue</tag>
-        <tag>vue.js</tag>
-        <tag>ref</tag>
-        <tag>reactive</tag>
       </tags>
   </entry>
   <entry>
@@ -6807,30 +6807,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [12] - Emits 事件傳遞 | 學習筆記</title>
-    <url>/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/</url>
-    <content><![CDATA[<h1 id="Emits-事件傳遞"><a href="#Emits-事件傳遞" class="headerlink" title="Emits 事件傳遞"></a>Emits 事件傳遞</h1><p>除了接收 Props 之外，子元件也可以向父元件觸發事件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">// 宣告要觸發的事件</span><br><span class="line">const emit = defineEmits([&#x27;response&#x27;])</span><br><span class="line"></span><br><span class="line">// 觸發事件並傳遞參數</span><br><span class="line">emit(&#x27;response&#x27;, &#x27;hello from child&#x27;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>emit()</code> 的第一個參數是事件名稱，任何額外的參數都會傳遞給事件監聽器。</p>
-<p>父元件可以使用 <code>v-on</code> 來監聽子元件觸發的事件——如下範例中，處理函式接收來自子元件 <code>emit</code> 的額外參數，並將其賦值給本地狀態：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp @response=&quot;(msg) =&gt; childMsg = msg&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<p>現在我們在編輯器中試試看吧！</p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記</title>
     <url>/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/</url>
     <content><![CDATA[<h1 id="Props-屬性"><a href="#Props-屬性" class="headerlink" title="Props 屬性"></a>Props 屬性</h1><p>子元件可以透過 Props 接收來自父元件的輸入。首先，子元件需要宣告它所接收的 Props：</p>
@@ -6844,6 +6820,30 @@
 <figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> greeting = <span class="title function_">ref</span>(<span class="string">&#x27;Hello from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> <span class="attr">:msg</span>=<span class="string">&quot;greeting&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> props = <span class="title function_">defineProps</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="attr">msg</span>: <span class="title class_">String</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123; msg || &#x27;No props passed yet&#x27; &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [12] - Emits 事件傳遞 | 學習筆記</title>
+    <url>/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/</url>
+    <content><![CDATA[<h1 id="Emits-事件傳遞"><a href="#Emits-事件傳遞" class="headerlink" title="Emits 事件傳遞"></a>Emits 事件傳遞</h1><p>除了接收 Props 之外，子元件也可以向父元件觸發事件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">// 宣告要觸發的事件</span><br><span class="line">const emit = defineEmits([&#x27;response&#x27;])</span><br><span class="line"></span><br><span class="line">// 觸發事件並傳遞參數</span><br><span class="line">emit(&#x27;response&#x27;, &#x27;hello from child&#x27;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>emit()</code> 的第一個參數是事件名稱，任何額外的參數都會傳遞給事件監聽器。</p>
+<p>父元件可以使用 <code>v-on</code> 來監聽子元件觸發的事件——如下範例中，處理函式接收來自子元件 <code>emit</code> 的額外參數，並將其賦值給本地狀態：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp @response=&quot;(msg) =&gt; childMsg = msg&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>現在我們在編輯器中試試看吧！</p>
+]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -7366,97 +7366,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Web 資訊安全入門教學筆記 | 學習筆記</title>
-    <url>/2024/10/16/learning-notes-web-security-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在現代網頁應用中，資安問題層出不窮，從簡單的跨站攻擊（XSS）到複雜的憑證竊取、身份偽造（CSRF），都可能導致個資外洩、系統遭入侵甚至企業商譽受損。</p>
-<p>本篇筆記將從實務角度出發，介紹幾種常見 Web 資安風險及其防範策略，讓你能以最基本的方式保護網站與使用者安全。</p>
-<hr>
-<h2 id="一、常見-Web-資安威脅類型"><a href="#一、常見-Web-資安威脅類型" class="headerlink" title="一、常見 Web 資安威脅類型"></a>一、常見 Web 資安威脅類型</h2><h3 id="1-XSS（Cross-Site-Scripting，跨站腳本攻擊）"><a href="#1-XSS（Cross-Site-Scripting，跨站腳本攻擊）" class="headerlink" title="1. XSS（Cross-Site Scripting，跨站腳本攻擊）"></a>1. XSS（Cross-Site Scripting，跨站腳本攻擊）</h3><p><strong>原理</strong>：攻擊者將惡意腳本注入至網站，當其他使用者瀏覽該頁面時，惡意腳本便會在其瀏覽器上執行，例如竊取 cookie、冒充使用者操作等。</p>
-<h3 id="實例："><a href="#實例：" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 攻擊者輸入的留言內容 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="title function_">alert</span>(<span class="string">&#x27;你被 XSS 攻擊了&#x27;</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>若網站未正確處理輸入，這段 JavaScript 就會直接被執行。</p>
-<h3 id="防範方式："><a href="#防範方式：" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>對所有輸入進行 <strong>轉義（Escape）</strong></li>
-<li>使用前端框架自動編碼機制（如 React 的 JSX）</li>
-<li>避免使用 <code>innerHTML</code> 插入未清洗的資料</li>
-</ul>
-<h4 id="範例（JavaScript-轉義文字）："><a href="#範例（JavaScript-轉義文字）：" class="headerlink" title="範例（JavaScript 轉義文字）："></a>範例（JavaScript 轉義文字）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">escapeHtml</span>(<span class="params">str</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> str</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&amp;/g</span>, <span class="string">&quot;&amp;amp;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&lt;/g</span>, <span class="string">&quot;&amp;lt;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&gt;/g</span>, <span class="string">&quot;&amp;gt;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&quot;/g</span>, <span class="string">&quot;&amp;quot;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&#x27;/g</span>, <span class="string">&quot;&amp;#039;&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="2-CSRF（Cross-Site-Request-Forgery，跨站請求偽造）"><a href="#2-CSRF（Cross-Site-Request-Forgery，跨站請求偽造）" class="headerlink" title="2. CSRF（Cross-Site Request Forgery，跨站請求偽造）"></a>2. CSRF（Cross-Site Request Forgery，跨站請求偽造）</h3><p><strong>原理</strong>：攻擊者引導使用者點擊惡意連結或載入圖片，使其在未察覺情況下對已登入的網站發送請求，進而竄改資料或觸發操作。</p>
-<h3 id="實例：-1"><a href="#實例：-1" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 攻擊者網站中隱藏圖片，觸發某網站的轉帳請求 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://bank.com/transfer?amount=1000&amp;to=attacker&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>如果使用者已登入 <code>bank.com</code> 且未防範 CSRF，就可能無意間轉帳。</p>
-<h3 id="防範方式：-1"><a href="#防範方式：-1" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>後端驗證 <strong>CSRF Token</strong></li>
-<li>使用 <strong>SameSite Cookie 屬性</strong></li>
-<li>僅允許 POST &#x2F; PATCH &#x2F; DELETE 操作變更狀態</li>
-<li>驗證 Referer &#x2F; Origin 標頭（有風險）</li>
-</ul>
-<h4 id="範例（Express-CSRF-Token）："><a href="#範例（Express-CSRF-Token）：" class="headerlink" title="範例（Express + CSRF Token）："></a>範例（Express + CSRF Token）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> csrf = <span class="built_in">require</span>(<span class="string">&quot;csurf&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> cookieParser = <span class="built_in">require</span>(<span class="string">&quot;cookie-parser&quot;</span>);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">cookieParser</span>());</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">csrf</span>(&#123; <span class="attr">cookie</span>: <span class="literal">true</span> &#125;));</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&quot;/form&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&quot;form&quot;</span>, &#123; <span class="attr">csrfToken</span>: req.<span class="title function_">csrfToken</span>() &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="3-SQL-Injection（SQL-注入）"><a href="#3-SQL-Injection（SQL-注入）" class="headerlink" title="3. SQL Injection（SQL 注入）"></a>3. SQL Injection（SQL 注入）</h3><p><strong>原理</strong>：透過惡意輸入拼接 SQL 查詢語句，導致資料庫查詢異常，甚至刪除資料。</p>
-<h3 id="實例：-2"><a href="#實例：-2" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 假設未使用參數化查詢</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> username <span class="operator">=</span> <span class="string">&#x27;&#x27;</span> <span class="keyword">OR</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<p>攻擊者輸入 <code>&#39; OR 1=1; --</code> 可繞過認證邏輯，取得所有帳戶資料。</p>
-<h3 id="防範方式：-2"><a href="#防範方式：-2" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>使用 ORM 或預處理語句（Prepared Statement）</li>
-<li>不拼接 SQL 字串，改用參數綁定</li>
-<li>限制資料庫帳號權限</li>
-</ul>
-<h4 id="範例（Node-js-MySQL）："><a href="#範例（Node-js-MySQL）：" class="headerlink" title="範例（Node.js + MySQL）："></a>範例（Node.js + MySQL）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> username = req.<span class="property">body</span>.<span class="property">username</span>;</span><br><span class="line"><span class="keyword">const</span> password = req.<span class="property">body</span>.<span class="property">password</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> query = <span class="string">&quot;SELECT * FROM users WHERE username = ? AND password = ?&quot;</span>;</span><br><span class="line">connection.<span class="title function_">query</span>(query, [username, password], <span class="keyword">function</span> (<span class="params">err, results</span>) &#123;</span><br><span class="line">  <span class="comment">// 安全地查詢</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="4-資料傳輸未加密（缺少-HTTPS）"><a href="#4-資料傳輸未加密（缺少-HTTPS）" class="headerlink" title="4. 資料傳輸未加密（缺少 HTTPS）"></a>4. 資料傳輸未加密（缺少 HTTPS）</h3><p><strong>原理</strong>：若網站使用 HTTP，使用者資料（如帳號密碼、金流資訊）在傳輸過程中可能被中間人攔截（Man-in-the-Middle attack）。</p>
-<h3 id="防範方式：-3"><a href="#防範方式：-3" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>強制使用 HTTPS（導入憑證）</li>
-<li>使用 HSTS（HTTP Strict Transport Security）</li>
-<li>移除 HTTP 存取（使用 301 重導）</li>
-</ul>
-<h4 id="範例（NGINX-強制-HTTPS）："><a href="#範例（NGINX-強制-HTTPS）：" class="headerlink" title="範例（NGINX 強制 HTTPS）："></a>範例（NGINX 強制 HTTPS）：</h4><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">  <span class="attribute">server_name</span> example.com;</span><br><span class="line">  <span class="attribute">return</span> <span class="number">301</span> https://<span class="variable">$host</span><span class="variable">$request_uri</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="5-檔案上傳風險"><a href="#5-檔案上傳風險" class="headerlink" title="5. 檔案上傳風險"></a>5. 檔案上傳風險</h3><p><strong>原理</strong>：攻擊者透過檔案上傳功能傳入惡意腳本（如 <code>.php</code>、<code>.jsp</code>），若伺服器未阻擋，可能導致遠端代碼執行。</p>
-<h3 id="防範方式：-4"><a href="#防範方式：-4" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>限制可上傳的檔案類型與副檔名</li>
-<li>不讓使用者可直接存取上傳目錄</li>
-<li>使用 UUID 改名，避免原檔名執行</li>
-</ul>
-<hr>
-<h2 id="附加安全性強化機制"><a href="#附加安全性強化機制" class="headerlink" title="附加安全性強化機制"></a>附加安全性強化機制</h2><h3 id="HTTP-安全標頭設定（Security-Headers）"><a href="#HTTP-安全標頭設定（Security-Headers）" class="headerlink" title="HTTP 安全標頭設定（Security Headers）"></a>HTTP 安全標頭設定（Security Headers）</h3><p>使用如 Helmet（Express.js 中間件）快速加入以下標頭：</p>
-<ul>
-<li><code>Content-Security-Policy</code>：防止 XSS 和資源注入</li>
-<li><code>X-Frame-Options</code>：防止點擊劫持（Clickjacking）</li>
-<li><code>X-Content-Type-Options</code>：避免 MIME 類型混淆</li>
-<li><code>Strict-Transport-Security</code>：強制 HTTPS</li>
-</ul>
-<h4 id="範例（Node-js-Helmet）："><a href="#範例（Node-js-Helmet）：" class="headerlink" title="範例（Node.js + Helmet）："></a>範例（Node.js + Helmet）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> helmet = <span class="built_in">require</span>(<span class="string">&quot;helmet&quot;</span>);</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">helmet</span>());</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="總結與建議實作順序"><a href="#總結與建議實作順序" class="headerlink" title="總結與建議實作順序"></a>總結與建議實作順序</h2><p>如果剛開始建立 Web 專案，可以按照以下步驟檢查安全性：</p>
-<ol>
-<li>輸入驗證與輸出轉義，防範 XSS</li>
-<li>加入 CSRF Token 機制</li>
-<li>資料庫查詢全面使用預處理語句</li>
-<li>部署 HTTPS 並強制重導</li>
-<li>使用 Helmet 加強安全標頭</li>
-<li>定期檢查依賴套件漏洞（如 <code>npm audit</code>）</li>
-</ol>
-<p>資訊安全並非一勞永逸，而是一種持續維護的工作。建議我們可以將資安意識融入日常開發流程中，隨時更新資安知識與工具。</p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>web</tag>
-        <tag>資訊安全</tag>
-        <tag>Web 資訊安全</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Web 前端效能優化入門教學筆記 | 學習筆記</title>
     <url>/2024/10/16/learning-notes-web-client-performance-optimization-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在網頁開發中，效能優化是一個不可忽視的重要課題。無論是企業網站、單頁應用（SPA），或是電商平台，效能表現都直接影響使用者體驗與轉換率。</p>
@@ -7553,6 +7462,97 @@
         <tag>css</tag>
         <tag>web</tag>
         <tag>前端效能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Web 資訊安全入門教學筆記 | 學習筆記</title>
+    <url>/2024/10/16/learning-notes-web-security-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在現代網頁應用中，資安問題層出不窮，從簡單的跨站攻擊（XSS）到複雜的憑證竊取、身份偽造（CSRF），都可能導致個資外洩、系統遭入侵甚至企業商譽受損。</p>
+<p>本篇筆記將從實務角度出發，介紹幾種常見 Web 資安風險及其防範策略，讓你能以最基本的方式保護網站與使用者安全。</p>
+<hr>
+<h2 id="一、常見-Web-資安威脅類型"><a href="#一、常見-Web-資安威脅類型" class="headerlink" title="一、常見 Web 資安威脅類型"></a>一、常見 Web 資安威脅類型</h2><h3 id="1-XSS（Cross-Site-Scripting，跨站腳本攻擊）"><a href="#1-XSS（Cross-Site-Scripting，跨站腳本攻擊）" class="headerlink" title="1. XSS（Cross-Site Scripting，跨站腳本攻擊）"></a>1. XSS（Cross-Site Scripting，跨站腳本攻擊）</h3><p><strong>原理</strong>：攻擊者將惡意腳本注入至網站，當其他使用者瀏覽該頁面時，惡意腳本便會在其瀏覽器上執行，例如竊取 cookie、冒充使用者操作等。</p>
+<h3 id="實例："><a href="#實例：" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 攻擊者輸入的留言內容 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="title function_">alert</span>(<span class="string">&#x27;你被 XSS 攻擊了&#x27;</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>若網站未正確處理輸入，這段 JavaScript 就會直接被執行。</p>
+<h3 id="防範方式："><a href="#防範方式：" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>對所有輸入進行 <strong>轉義（Escape）</strong></li>
+<li>使用前端框架自動編碼機制（如 React 的 JSX）</li>
+<li>避免使用 <code>innerHTML</code> 插入未清洗的資料</li>
+</ul>
+<h4 id="範例（JavaScript-轉義文字）："><a href="#範例（JavaScript-轉義文字）：" class="headerlink" title="範例（JavaScript 轉義文字）："></a>範例（JavaScript 轉義文字）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">escapeHtml</span>(<span class="params">str</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> str</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&amp;/g</span>, <span class="string">&quot;&amp;amp;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&lt;/g</span>, <span class="string">&quot;&amp;lt;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&gt;/g</span>, <span class="string">&quot;&amp;gt;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&quot;/g</span>, <span class="string">&quot;&amp;quot;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&#x27;/g</span>, <span class="string">&quot;&amp;#039;&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-CSRF（Cross-Site-Request-Forgery，跨站請求偽造）"><a href="#2-CSRF（Cross-Site-Request-Forgery，跨站請求偽造）" class="headerlink" title="2. CSRF（Cross-Site Request Forgery，跨站請求偽造）"></a>2. CSRF（Cross-Site Request Forgery，跨站請求偽造）</h3><p><strong>原理</strong>：攻擊者引導使用者點擊惡意連結或載入圖片，使其在未察覺情況下對已登入的網站發送請求，進而竄改資料或觸發操作。</p>
+<h3 id="實例：-1"><a href="#實例：-1" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 攻擊者網站中隱藏圖片，觸發某網站的轉帳請求 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://bank.com/transfer?amount=1000&amp;to=attacker&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果使用者已登入 <code>bank.com</code> 且未防範 CSRF，就可能無意間轉帳。</p>
+<h3 id="防範方式：-1"><a href="#防範方式：-1" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>後端驗證 <strong>CSRF Token</strong></li>
+<li>使用 <strong>SameSite Cookie 屬性</strong></li>
+<li>僅允許 POST &#x2F; PATCH &#x2F; DELETE 操作變更狀態</li>
+<li>驗證 Referer &#x2F; Origin 標頭（有風險）</li>
+</ul>
+<h4 id="範例（Express-CSRF-Token）："><a href="#範例（Express-CSRF-Token）：" class="headerlink" title="範例（Express + CSRF Token）："></a>範例（Express + CSRF Token）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> csrf = <span class="built_in">require</span>(<span class="string">&quot;csurf&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> cookieParser = <span class="built_in">require</span>(<span class="string">&quot;cookie-parser&quot;</span>);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">cookieParser</span>());</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">csrf</span>(&#123; <span class="attr">cookie</span>: <span class="literal">true</span> &#125;));</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&quot;/form&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&quot;form&quot;</span>, &#123; <span class="attr">csrfToken</span>: req.<span class="title function_">csrfToken</span>() &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-SQL-Injection（SQL-注入）"><a href="#3-SQL-Injection（SQL-注入）" class="headerlink" title="3. SQL Injection（SQL 注入）"></a>3. SQL Injection（SQL 注入）</h3><p><strong>原理</strong>：透過惡意輸入拼接 SQL 查詢語句，導致資料庫查詢異常，甚至刪除資料。</p>
+<h3 id="實例：-2"><a href="#實例：-2" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 假設未使用參數化查詢</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> username <span class="operator">=</span> <span class="string">&#x27;&#x27;</span> <span class="keyword">OR</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>攻擊者輸入 <code>&#39; OR 1=1; --</code> 可繞過認證邏輯，取得所有帳戶資料。</p>
+<h3 id="防範方式：-2"><a href="#防範方式：-2" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>使用 ORM 或預處理語句（Prepared Statement）</li>
+<li>不拼接 SQL 字串，改用參數綁定</li>
+<li>限制資料庫帳號權限</li>
+</ul>
+<h4 id="範例（Node-js-MySQL）："><a href="#範例（Node-js-MySQL）：" class="headerlink" title="範例（Node.js + MySQL）："></a>範例（Node.js + MySQL）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> username = req.<span class="property">body</span>.<span class="property">username</span>;</span><br><span class="line"><span class="keyword">const</span> password = req.<span class="property">body</span>.<span class="property">password</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> query = <span class="string">&quot;SELECT * FROM users WHERE username = ? AND password = ?&quot;</span>;</span><br><span class="line">connection.<span class="title function_">query</span>(query, [username, password], <span class="keyword">function</span> (<span class="params">err, results</span>) &#123;</span><br><span class="line">  <span class="comment">// 安全地查詢</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="4-資料傳輸未加密（缺少-HTTPS）"><a href="#4-資料傳輸未加密（缺少-HTTPS）" class="headerlink" title="4. 資料傳輸未加密（缺少 HTTPS）"></a>4. 資料傳輸未加密（缺少 HTTPS）</h3><p><strong>原理</strong>：若網站使用 HTTP，使用者資料（如帳號密碼、金流資訊）在傳輸過程中可能被中間人攔截（Man-in-the-Middle attack）。</p>
+<h3 id="防範方式：-3"><a href="#防範方式：-3" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>強制使用 HTTPS（導入憑證）</li>
+<li>使用 HSTS（HTTP Strict Transport Security）</li>
+<li>移除 HTTP 存取（使用 301 重導）</li>
+</ul>
+<h4 id="範例（NGINX-強制-HTTPS）："><a href="#範例（NGINX-強制-HTTPS）：" class="headerlink" title="範例（NGINX 強制 HTTPS）："></a>範例（NGINX 強制 HTTPS）：</h4><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">  <span class="attribute">server_name</span> example.com;</span><br><span class="line">  <span class="attribute">return</span> <span class="number">301</span> https://<span class="variable">$host</span><span class="variable">$request_uri</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="5-檔案上傳風險"><a href="#5-檔案上傳風險" class="headerlink" title="5. 檔案上傳風險"></a>5. 檔案上傳風險</h3><p><strong>原理</strong>：攻擊者透過檔案上傳功能傳入惡意腳本（如 <code>.php</code>、<code>.jsp</code>），若伺服器未阻擋，可能導致遠端代碼執行。</p>
+<h3 id="防範方式：-4"><a href="#防範方式：-4" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>限制可上傳的檔案類型與副檔名</li>
+<li>不讓使用者可直接存取上傳目錄</li>
+<li>使用 UUID 改名，避免原檔名執行</li>
+</ul>
+<hr>
+<h2 id="附加安全性強化機制"><a href="#附加安全性強化機制" class="headerlink" title="附加安全性強化機制"></a>附加安全性強化機制</h2><h3 id="HTTP-安全標頭設定（Security-Headers）"><a href="#HTTP-安全標頭設定（Security-Headers）" class="headerlink" title="HTTP 安全標頭設定（Security Headers）"></a>HTTP 安全標頭設定（Security Headers）</h3><p>使用如 Helmet（Express.js 中間件）快速加入以下標頭：</p>
+<ul>
+<li><code>Content-Security-Policy</code>：防止 XSS 和資源注入</li>
+<li><code>X-Frame-Options</code>：防止點擊劫持（Clickjacking）</li>
+<li><code>X-Content-Type-Options</code>：避免 MIME 類型混淆</li>
+<li><code>Strict-Transport-Security</code>：強制 HTTPS</li>
+</ul>
+<h4 id="範例（Node-js-Helmet）："><a href="#範例（Node-js-Helmet）：" class="headerlink" title="範例（Node.js + Helmet）："></a>範例（Node.js + Helmet）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> helmet = <span class="built_in">require</span>(<span class="string">&quot;helmet&quot;</span>);</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">helmet</span>());</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="總結與建議實作順序"><a href="#總結與建議實作順序" class="headerlink" title="總結與建議實作順序"></a>總結與建議實作順序</h2><p>如果剛開始建立 Web 專案，可以按照以下步驟檢查安全性：</p>
+<ol>
+<li>輸入驗證與輸出轉義，防範 XSS</li>
+<li>加入 CSRF Token 機制</li>
+<li>資料庫查詢全面使用預處理語句</li>
+<li>部署 HTTPS 並強制重導</li>
+<li>使用 Helmet 加強安全標頭</li>
+<li>定期檢查依賴套件漏洞（如 <code>npm audit</code>）</li>
+</ol>
+<p>資訊安全並非一勞永逸，而是一種持續維護的工作。建議我們可以將資安意識融入日常開發流程中，隨時更新資安知識與工具。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>web</tag>
+        <tag>資訊安全</tag>
+        <tag>Web 資訊安全</tag>
       </tags>
   </entry>
   <entry>
