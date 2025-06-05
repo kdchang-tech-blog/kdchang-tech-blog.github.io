@@ -119,13 +119,6 @@
 
                         
                         <li>
-                            <a href="/books/">Books</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/about/">About</a>
                         </li>
                         
@@ -134,6 +127,13 @@
                         
                         <li>
                             <a href="/search/">Search</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/books/">Books</a>
                         </li>
                         
                     
@@ -295,16 +295,15 @@ fu......
 
 <div class="post-preview">
 
-    <a href="/2021/01/16/learning-notes-javascript-call-stack-intro-tutorial/">
+    <a href="/2021/01/16/learning-notes-javascript-async-await/">
         <h2 class="post-title">
-            JavaScript Call Stack 入門教學筆記 | 學習筆記
+            async/await 入門教學筆記 | 學習筆記
         </h2>
         <hr>
         
         <div class="post-content-preview">
-            在 JavaScript 開發中，理解 Call Stack（呼叫堆疊） 是掌握執行流程與錯誤除錯的關鍵概念之一。它決定了程式碼執行的順序，也與同步與非同步行為密切相關。本文將深入介紹 Call Stack 的基本原理，並透過實際範例幫助你理解它的運作方式。
-
-1. 什麼是 Call Stack？Call Stack 是 JavaScript 引擎用來管理函式呼叫的結構，它遵循 LIFO（L......
+            async 和 await 是 JavaScript 中處理非同步操作的語法糖，它們使得非同步代碼更加易讀和易寫，避免了傳統回調函數（callback）或 Promise 的 .then() 鏈式調用的冗長性。
+1. async 關鍵字async 是一個關鍵字，用來標記一個函數為「非同步函數」。非同步函數會隱式地返回一個 Promise，並且在函數內部，你可以使用 await 來等待非同步操......
         </div>
     </a>
     <p class="post-meta">
@@ -317,15 +316,16 @@ fu......
 
 <div class="post-preview">
 
-    <a href="/2021/01/16/learning-notes-javascript-async-await/">
+    <a href="/2021/01/16/learning-notes-javascript-call-stack-intro-tutorial/">
         <h2 class="post-title">
-            async/await 入門教學筆記 | 學習筆記
+            JavaScript Call Stack 入門教學筆記 | 學習筆記
         </h2>
         <hr>
         
         <div class="post-content-preview">
-            async 和 await 是 JavaScript 中處理非同步操作的語法糖，它們使得非同步代碼更加易讀和易寫，避免了傳統回調函數（callback）或 Promise 的 .then() 鏈式調用的冗長性。
-1. async 關鍵字async 是一個關鍵字，用來標記一個函數為「非同步函數」。非同步函數會隱式地返回一個 Promise，並且在函數內部，你可以使用 await 來等待非同步操......
+            在 JavaScript 開發中，理解 Call Stack（呼叫堆疊） 是掌握執行流程與錯誤除錯的關鍵概念之一。它決定了程式碼執行的順序，也與同步與非同步行為密切相關。本文將深入介紹 Call Stack 的基本原理，並透過實際範例幫助你理解它的運作方式。
+
+1. 什麼是 Call Stack？Call Stack 是 JavaScript 引擎用來管理函式呼叫的結構，它遵循 LIFO（L......
         </div>
     </a>
     <p class="post-meta">
