@@ -73,7 +73,7 @@ friends: [
         href: "https://www.kdchang.net"
     },
     {
-        title: "KD's Travel Blog 旅行部落格 🏔️",
+        title: "KD's Travel Blog 旅行部落格 🏔️,
         href: "https://travel.kdchang.net"
     },
     {
@@ -158,8 +158,8 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: huxblog
 plugins:
-  - hexo-generator-cname
-  - hexo-generator-robotstxt
+  hexo-generator-cname
+  hexo-generator-robotstxt
 
 ## social
 addthis:
@@ -231,8 +231,8 @@ feed:
   template:
 
 include:
-  - .nojekyll
-  - CNAME
+  .nojekyll
+  CNAME
 
 index_generator:
   per_page: 10
