@@ -26,9 +26,23 @@ hexo new post <post_name>
 ```
 
 ## archives
+
 ---
+
 layout: "archives"
 title: "Archives"
 description: "Hey, they are archives."
 header-img: "img/archive-bg.jpg"
+
 ---
+
+## debug
+
+```
+hexo generate --debug
+hexo server --debug
+```
+
+## deploy
+
+add empty file: `.nojekyll`
