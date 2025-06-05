@@ -1001,57 +1001,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Flexbox 網頁排版技巧入門教學筆記 | 學習筆記</title>
-    <url>/2024/11/14/learning-notes-css-flexbox-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h2><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
-<h3 id="1-1-為何使用-Flexbox？"><a href="#1-1-為何使用-Flexbox？" class="headerlink" title="1.1 為何使用 Flexbox？"></a>1.1 為何使用 Flexbox？</h3><ul>
-<li><strong>彈性調整</strong>：元素可根據可用空間動態調整大小。</li>
-<li><strong>簡化佈局</strong>：減少對 <code>float</code>、<code>inline-block</code> 及 <code>position</code> 依賴。</li>
-<li><strong>更好的對齊方式</strong>：內建強大的對齊與分佈控制。</li>
-</ul>
-<h2 id="2-Flexbox-基本概念"><a href="#2-Flexbox-基本概念" class="headerlink" title="2. Flexbox 基本概念"></a>2. Flexbox 基本概念</h2><p>Flexbox 佈局的核心概念是 <strong>容器（container）</strong> 和 <strong>子項目（items）</strong>。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>一旦對容器使用 <code>display: flex</code>，其內部的子元素將自動變成 Flex 子項目，並受 Flex 佈局影響。</p>
-<h2 id="3-Flex-容器屬性"><a href="#3-Flex-容器屬性" class="headerlink" title="3. Flex 容器屬性"></a>3. Flex 容器屬性</h2><h3 id="3-1-flex-direction"><a href="#3-1-flex-direction" class="headerlink" title="3.1 flex-direction"></a>3.1 <code>flex-direction</code></h3><p>決定主軸（main axis）方向。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row; <span class="comment">/* 預設值，水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse; <span class="comment">/* 反向水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column; <span class="comment">/* 垂直排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse; <span class="comment">/* 反向垂直排列 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-justify-content"><a href="#3-2-justify-content" class="headerlink" title="3.2 justify-content"></a>3.2 <code>justify-content</code></h3><p>控制子項目在主軸上的對齊方式。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start; <span class="comment">/* 預設，從左到右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end; <span class="comment">/* 靠右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: center; <span class="comment">/* 置中排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-between; <span class="comment">/* 兩端對齊，間距平均分布 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-around; <span class="comment">/* 子項目兩側有相等的間距 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-evenly; <span class="comment">/* 所有間距均等 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-align-items"><a href="#3-3-align-items" class="headerlink" title="3.3 align-items"></a>3.3 <code>align-items</code></h3><p>控制子項目在交叉軸（cross axis）上的對齊方式。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start; <span class="comment">/* 靠起始位置對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: flex-end; <span class="comment">/* 靠末端對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: center; <span class="comment">/* 垂直置中對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: stretch; <span class="comment">/* 預設，撐滿高度 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: baseline; <span class="comment">/* 依據文本基線對齊 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-4-align-content"><a href="#3-4-align-content" class="headerlink" title="3.4 align-content"></a>3.4 <code>align-content</code></h3><p>適用於多行佈局，控制多行之間的間距。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-end;</span><br><span class="line">  <span class="attribute">align-content</span>: center;</span><br><span class="line">  <span class="attribute">align-content</span>: space-between;</span><br><span class="line">  <span class="attribute">align-content</span>: space-around;</span><br><span class="line">  <span class="attribute">align-content</span>: space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-Flex-子項目屬性"><a href="#4-Flex-子項目屬性" class="headerlink" title="4. Flex 子項目屬性"></a>4. Flex 子項目屬性</h2><h3 id="4-1-flex-grow"><a href="#4-1-flex-grow" class="headerlink" title="4.1 flex-grow"></a>4.1 <code>flex-grow</code></h3><p>設定子項目如何分配多餘空間。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-grow</span>: <span class="number">1</span>; <span class="comment">/* 所有子項目平均分配空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-flex-shrink"><a href="#4-2-flex-shrink" class="headerlink" title="4.2 flex-shrink"></a>4.2 <code>flex-shrink</code></h3><p>控制子項目如何縮小。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-shrink</span>: <span class="number">0</span>; <span class="comment">/* 防止縮小 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-3-flex-basis"><a href="#4-3-flex-basis" class="headerlink" title="4.3 flex-basis"></a>4.3 <code>flex-basis</code></h3><p>設定子項目的初始大小。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-basis</span>: <span class="number">200px</span>; <span class="comment">/* 設定初始寬度或高度 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-4-flex"><a href="#4-4-flex" class="headerlink" title="4.4 flex"></a>4.4 <code>flex</code></h3><p>綜合 <code>flex-grow</code>、<code>flex-shrink</code> 和 <code>flex-basis</code>。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span> <span class="number">1</span> <span class="number">100px</span>; <span class="comment">/* grow, shrink, basis */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-Flexbox-常見佈局範例"><a href="#5-Flexbox-常見佈局範例" class="headerlink" title="5. Flexbox 常見佈局範例"></a>5. Flexbox 常見佈局範例</h2><h3 id="5-1-水平置中"><a href="#5-1-水平置中" class="headerlink" title="5.1 水平置中"></a>5.1 水平置中</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-2-等寬三欄佈局"><a href="#5-2-等寬三欄佈局" class="headerlink" title="5.2 等寬三欄佈局"></a>5.2 等寬三欄佈局</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-3-兩欄固定-自適應"><a href="#5-3-兩欄固定-自適應" class="headerlink" title="5.3 兩欄固定 + 自適應"></a>5.3 兩欄固定 + 自適應</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">200px</span>; <span class="comment">/* 固定 200px */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>; <span class="comment">/* 佔滿剩餘空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-結論"><a href="#6-結論" class="headerlink" title="6. 結論"></a>6. 結論</h2><p>Flexbox 是一種強大且直觀的 CSS 佈局方式，能夠解決傳統排版難題，使開發者能夠輕鬆實現響應式佈局與對齊方式。本篇筆記介紹了 Flexbox 的基本屬性及常見佈局範例，進一步學習可以研究 CSS Grid 和更進階的排版技巧。</p>
-]]></content>
-      <tags>
-        <tag>css</tag>
-        <tag>Flexbox</tag>
-        <tag>排版</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Flexbox Froggy 入門教學筆記 | 學習筆記</title>
     <url>/2024/07/10/learning-notes-css-flexbox-froggy-tutorial/</url>
     <content><![CDATA[<h1 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h1><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
@@ -1163,8 +1112,59 @@
 ]]></content>
       <tags>
         <tag>CSS</tag>
-        <tag>Flexbox</tag>
         <tag>Flexbox Froggy</tag>
+        <tag>Flexbox</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flexbox 網頁排版技巧入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/14/learning-notes-css-flexbox-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h2><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
+<h3 id="1-1-為何使用-Flexbox？"><a href="#1-1-為何使用-Flexbox？" class="headerlink" title="1.1 為何使用 Flexbox？"></a>1.1 為何使用 Flexbox？</h3><ul>
+<li><strong>彈性調整</strong>：元素可根據可用空間動態調整大小。</li>
+<li><strong>簡化佈局</strong>：減少對 <code>float</code>、<code>inline-block</code> 及 <code>position</code> 依賴。</li>
+<li><strong>更好的對齊方式</strong>：內建強大的對齊與分佈控制。</li>
+</ul>
+<h2 id="2-Flexbox-基本概念"><a href="#2-Flexbox-基本概念" class="headerlink" title="2. Flexbox 基本概念"></a>2. Flexbox 基本概念</h2><p>Flexbox 佈局的核心概念是 <strong>容器（container）</strong> 和 <strong>子項目（items）</strong>。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一旦對容器使用 <code>display: flex</code>，其內部的子元素將自動變成 Flex 子項目，並受 Flex 佈局影響。</p>
+<h2 id="3-Flex-容器屬性"><a href="#3-Flex-容器屬性" class="headerlink" title="3. Flex 容器屬性"></a>3. Flex 容器屬性</h2><h3 id="3-1-flex-direction"><a href="#3-1-flex-direction" class="headerlink" title="3.1 flex-direction"></a>3.1 <code>flex-direction</code></h3><p>決定主軸（main axis）方向。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row; <span class="comment">/* 預設值，水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse; <span class="comment">/* 反向水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column; <span class="comment">/* 垂直排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse; <span class="comment">/* 反向垂直排列 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-justify-content"><a href="#3-2-justify-content" class="headerlink" title="3.2 justify-content"></a>3.2 <code>justify-content</code></h3><p>控制子項目在主軸上的對齊方式。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start; <span class="comment">/* 預設，從左到右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end; <span class="comment">/* 靠右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: center; <span class="comment">/* 置中排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-between; <span class="comment">/* 兩端對齊，間距平均分布 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-around; <span class="comment">/* 子項目兩側有相等的間距 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-evenly; <span class="comment">/* 所有間距均等 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-align-items"><a href="#3-3-align-items" class="headerlink" title="3.3 align-items"></a>3.3 <code>align-items</code></h3><p>控制子項目在交叉軸（cross axis）上的對齊方式。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start; <span class="comment">/* 靠起始位置對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: flex-end; <span class="comment">/* 靠末端對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: center; <span class="comment">/* 垂直置中對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: stretch; <span class="comment">/* 預設，撐滿高度 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: baseline; <span class="comment">/* 依據文本基線對齊 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-align-content"><a href="#3-4-align-content" class="headerlink" title="3.4 align-content"></a>3.4 <code>align-content</code></h3><p>適用於多行佈局，控制多行之間的間距。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-end;</span><br><span class="line">  <span class="attribute">align-content</span>: center;</span><br><span class="line">  <span class="attribute">align-content</span>: space-between;</span><br><span class="line">  <span class="attribute">align-content</span>: space-around;</span><br><span class="line">  <span class="attribute">align-content</span>: space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-Flex-子項目屬性"><a href="#4-Flex-子項目屬性" class="headerlink" title="4. Flex 子項目屬性"></a>4. Flex 子項目屬性</h2><h3 id="4-1-flex-grow"><a href="#4-1-flex-grow" class="headerlink" title="4.1 flex-grow"></a>4.1 <code>flex-grow</code></h3><p>設定子項目如何分配多餘空間。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-grow</span>: <span class="number">1</span>; <span class="comment">/* 所有子項目平均分配空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-flex-shrink"><a href="#4-2-flex-shrink" class="headerlink" title="4.2 flex-shrink"></a>4.2 <code>flex-shrink</code></h3><p>控制子項目如何縮小。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-shrink</span>: <span class="number">0</span>; <span class="comment">/* 防止縮小 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-flex-basis"><a href="#4-3-flex-basis" class="headerlink" title="4.3 flex-basis"></a>4.3 <code>flex-basis</code></h3><p>設定子項目的初始大小。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-basis</span>: <span class="number">200px</span>; <span class="comment">/* 設定初始寬度或高度 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-4-flex"><a href="#4-4-flex" class="headerlink" title="4.4 flex"></a>4.4 <code>flex</code></h3><p>綜合 <code>flex-grow</code>、<code>flex-shrink</code> 和 <code>flex-basis</code>。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span> <span class="number">1</span> <span class="number">100px</span>; <span class="comment">/* grow, shrink, basis */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-Flexbox-常見佈局範例"><a href="#5-Flexbox-常見佈局範例" class="headerlink" title="5. Flexbox 常見佈局範例"></a>5. Flexbox 常見佈局範例</h2><h3 id="5-1-水平置中"><a href="#5-1-水平置中" class="headerlink" title="5.1 水平置中"></a>5.1 水平置中</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-等寬三欄佈局"><a href="#5-2-等寬三欄佈局" class="headerlink" title="5.2 等寬三欄佈局"></a>5.2 等寬三欄佈局</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-兩欄固定-自適應"><a href="#5-3-兩欄固定-自適應" class="headerlink" title="5.3 兩欄固定 + 自適應"></a>5.3 兩欄固定 + 自適應</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">200px</span>; <span class="comment">/* 固定 200px */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>; <span class="comment">/* 佔滿剩餘空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-結論"><a href="#6-結論" class="headerlink" title="6. 結論"></a>6. 結論</h2><p>Flexbox 是一種強大且直觀的 CSS 佈局方式，能夠解決傳統排版難題，使開發者能夠輕鬆實現響應式佈局與對齊方式。本篇筆記介紹了 Flexbox 的基本屬性及常見佈局範例，進一步學習可以研究 CSS Grid 和更進階的排版技巧。</p>
+]]></content>
+      <tags>
+        <tag>css</tag>
+        <tag>Flexbox</tag>
+        <tag>排版</tag>
       </tags>
   </entry>
   <entry>
@@ -1653,6 +1653,72 @@
       </tags>
   </entry>
   <entry>
+    <title>CSS Stacking Context 入門教學筆記 | 學習筆記</title>
+    <url>/2021/12/14/learning-notes-css-stacking-context-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在網頁開發中，當多個 HTML 元素重疊時，決定它們顯示順序的機制稱為 <strong>Stacking Context（堆疊上下文）</strong>。這是一個重要概念，影響 <code>z-index</code> 的行為，並決定元素在畫面上的排列順序。</p>
+<hr>
+<h2 id="1-什麼是-Stacking-Context"><a href="#1-什麼是-Stacking-Context" class="headerlink" title="1. 什麼是 Stacking Context"></a><strong>1. 什麼是 Stacking Context</strong></h2><p><strong>Stacking Context</strong> 是一個獨立的層級空間，內部的元素會依照特定規則進行排序，但不會影響外部的層級。當一個元素建立了 Stacking Context，裡面的元素只會與其內部其他元素比較 <code>z-index</code>，而不會與外部的 <code>z-index</code> 直接互動。</p>
+<hr>
+<h2 id="2-Stacking-Context-的建立方式"><a href="#2-Stacking-Context-的建立方式" class="headerlink" title="2. Stacking Context 的建立方式"></a><strong>2. Stacking Context 的建立方式</strong></h2><p>某些 CSS 屬性和條件會觸發 Stacking Context 的建立，以下是常見的觸發方式：</p>
+<h3 id="2-1-根元素-lt-html-gt"><a href="#2-1-根元素-lt-html-gt" class="headerlink" title="2.1 根元素 (&lt;html&gt;)"></a><strong>2.1 根元素 (<code>&lt;html&gt;</code>)</strong></h3><p>HTML 的根元素 (<code>&lt;html&gt;</code>) 本身是一個 Stacking Context，所有的元素都在這個上下文中運作。</p>
+<h3 id="2-2-z-index-非-auto-並且-position-為-relative、absolute-或-fixed"><a href="#2-2-z-index-非-auto-並且-position-為-relative、absolute-或-fixed" class="headerlink" title="2.2 z-index 非 auto 並且 position 為 relative、absolute 或 fixed"></a><strong>2.2 <code>z-index</code> 非 <code>auto</code> 並且 <code>position</code> 為 <code>relative</code>、<code>absolute</code> 或 <code>fixed</code></strong></h3><p>當 <code>position</code> 為 <code>relative</code>、<code>absolute</code> 或 <code>fixed</code>，且 <code>z-index</code> 設定為非 <code>auto</code> 時，該元素會創建新的 Stacking Context。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">10</span>; <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-opacity-小於-1"><a href="#2-3-opacity-小於-1" class="headerlink" title="2.3 opacity 小於 1"></a><strong>2.3 <code>opacity</code> 小於 1</strong></h3><p>任何 <code>opacity</code> 設定小於 <code>1</code>（但大於 <code>0</code>）的元素都會建立新的 Stacking Context。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.transparent-box</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0.9</span>; <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4-transform、filter、clip-path、perspective-不為-none"><a href="#2-4-transform、filter、clip-path、perspective-不為-none" class="headerlink" title="2.4 transform、filter、clip-path、perspective 不為 none"></a><strong>2.4 <code>transform</code>、<code>filter</code>、<code>clip-path</code>、<code>perspective</code> 不為 <code>none</code></strong></h3><p>只要元素應用了 <code>transform</code>（例如 <code>scale</code>、<code>rotate</code>）、<code>filter</code> 或 <code>clip-path</code>，它就會建立新的 Stacking Context。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.transformed-box</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">50px</span>); <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-5-will-change-設定特定值"><a href="#2-5-will-change-設定特定值" class="headerlink" title="2.5 will-change 設定特定值"></a><strong>2.5 <code>will-change</code> 設定特定值</strong></h3><p>如果 <code>will-change</code> 被設定為 <code>transform</code>、<code>opacity</code>、<code>filter</code> 這類的屬性，該元素會創建新的 Stacking Context。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.optimized-box</span> &#123;</span><br><span class="line">    <span class="attribute">will-change</span>: transform; <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="3-Stacking-Context-的影響"><a href="#3-Stacking-Context-的影響" class="headerlink" title="3. Stacking Context 的影響"></a><strong>3. Stacking Context 的影響</strong></h2><h3 id="3-1-z-index-影響範圍"><a href="#3-1-z-index-影響範圍" class="headerlink" title="3.1 z-index 影響範圍"></a><strong>3.1 <code>z-index</code> 影響範圍</strong></h3><p>如果某個元素在新的 Stacking Context 中，即使它的 <code>z-index</code> 設定得很高，也不會超過它所在的 Stacking Context。這意味著：</p>
+<ul>
+<li>內部 <code>z-index</code> 的值 <strong>只在該 Stacking Context 內比較</strong>。</li>
+<li>外部的元素如果 <code>z-index</code> 更高，仍然可能覆蓋內部 Stacking Context 內的元素。</li>
+</ul>
+<h3 id="範例：z-index-失效的情境"><a href="#範例：z-index-失效的情境" class="headerlink" title="範例：z-index 失效的情境"></a><strong>範例：z-index 失效的情境</strong></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;parent&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;child&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;outside&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">10</span>; <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">9999</span>; <span class="comment">/* 只在 .parent 內生效 */</span></span><br><span class="line">    <span class="attribute">background</span>: red;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.outside</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">20</span>;</span><br><span class="line">    <span class="attribute">background</span>: blue;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>結果：</strong></p>
+<ul>
+<li><code>.child</code> 的 <code>z-index: 9999</code> 只在 <code>.parent</code> 內生效。</li>
+<li><code>.outside</code> 的 <code>z-index: 20</code> 屬於 <code>html</code> 根 Stacking Context，所以 <code>.outside</code> 會蓋住 <code>.child</code>。</li>
+</ul>
+<hr>
+<h2 id="4-如何-Debug-Stacking-Context"><a href="#4-如何-Debug-Stacking-Context" class="headerlink" title="4. 如何 Debug Stacking Context"></a><strong>4. 如何 Debug Stacking Context</strong></h2><p>當 <code>z-index</code> 沒有如預期運作時，可以用以下方式檢查：</p>
+<h3 id="4-1-使用開發者工具"><a href="#4-1-使用開發者工具" class="headerlink" title="4.1 使用開發者工具"></a><strong>4.1 使用開發者工具</strong></h3><ul>
+<li>在 <strong>Chrome 開發者工具</strong>（F12）內，檢查 <code>z-index</code> 的層級。</li>
+<li>在「Elements」面板檢查 <code>z-index</code> 及是否有 <code>opacity</code>、<code>transform</code> 等影響屬性。</li>
+</ul>
+<h3 id="4-2-確保-Stacking-Context"><a href="#4-2-確保-Stacking-Context" class="headerlink" title="4.2 確保 Stacking Context"></a><strong>4.2 確保 Stacking Context</strong></h3><p>如果發現 <code>z-index</code> 設定沒有影響，可以：</p>
+<ol>
+<li>確認父元素是否創建了新的 Stacking Context。</li>
+<li>嘗試移除 <code>transform</code>、<code>opacity</code> 或 <code>filter</code>，看看是否影響 <code>z-index</code>。</li>
+</ol>
+<hr>
+<h2 id="5-Stacking-Context-的應用場景"><a href="#5-Stacking-Context-的應用場景" class="headerlink" title="5. Stacking Context 的應用場景"></a><strong>5. Stacking Context 的應用場景</strong></h2><h3 id="5-1-固定導覽列與內容遮罩"><a href="#5-1-固定導覽列與內容遮罩" class="headerlink" title="5.1 固定導覽列與內容遮罩"></a><strong>5.1 固定導覽列與內容遮罩</strong></h3><p>當 <code>position: fixed</code> 的導覽列無法覆蓋其他元素時，可以確保它擁有較高 <code>z-index</code>，並避免它被無意創建的 Stacking Context 影響。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.navbar</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">background</span>: black;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">1000</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-Modal（模態視窗）"><a href="#5-2-Modal（模態視窗）" class="headerlink" title="5.2 Modal（模態視窗）"></a><strong>5.2 Modal（模態視窗）</strong></h3><p>確保 <code>modal</code> 的 <code>z-index</code> 高於其他元素，並避免 <code>opacity</code> 或 <code>transform</code> 影響 <code>z-index</code>。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.modal</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">2000</span>;</span><br><span class="line">    <span class="attribute">background</span>: white;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">4px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.3</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a><strong>6. 總結</strong></h2><ul>
+<li><strong>Stacking Context</strong> 影響 <code>z-index</code> 的作用範圍，讓 <code>z-index</code> 不總是依照數值大小決定順序。</li>
+<li>多種 CSS 屬性（如 <code>opacity</code>、<code>transform</code>）會創建 Stacking Context，可能影響層級渲染結果。</li>
+<li><strong>在開發時，應注意哪些元素創建了 Stacking Context，以確保 <code>z-index</code> 如預期運作</strong>。</li>
+</ul>
+<p>透過以上概念與技巧，可以更靈活地管理 HTML 元素的層級關係，確保視覺效果正確。</p>
+]]></content>
+      <tags>
+        <tag>css</tag>
+        <tag>stylesheet</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS transform 入門教學筆記 | 學習筆記</title>
     <url>/2021/12/13/learning-notes-css-transform-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>CSS <code>transform</code> 屬性是一個強大的工具，可以用來對 HTML 元素進行旋轉、縮放、移動及傾斜等變換，而不會影響其他元素的佈局。這使得 <code>transform</code> 非常適合用來建立動畫效果、視覺調整以及 UI 微調。</p>
@@ -1726,72 +1792,6 @@
         <tag>css</tag>
         <tag>transform</tag>
         <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS Stacking Context 入門教學筆記 | 學習筆記</title>
-    <url>/2021/12/14/learning-notes-css-stacking-context-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在網頁開發中，當多個 HTML 元素重疊時，決定它們顯示順序的機制稱為 <strong>Stacking Context（堆疊上下文）</strong>。這是一個重要概念，影響 <code>z-index</code> 的行為，並決定元素在畫面上的排列順序。</p>
-<hr>
-<h2 id="1-什麼是-Stacking-Context"><a href="#1-什麼是-Stacking-Context" class="headerlink" title="1. 什麼是 Stacking Context"></a><strong>1. 什麼是 Stacking Context</strong></h2><p><strong>Stacking Context</strong> 是一個獨立的層級空間，內部的元素會依照特定規則進行排序，但不會影響外部的層級。當一個元素建立了 Stacking Context，裡面的元素只會與其內部其他元素比較 <code>z-index</code>，而不會與外部的 <code>z-index</code> 直接互動。</p>
-<hr>
-<h2 id="2-Stacking-Context-的建立方式"><a href="#2-Stacking-Context-的建立方式" class="headerlink" title="2. Stacking Context 的建立方式"></a><strong>2. Stacking Context 的建立方式</strong></h2><p>某些 CSS 屬性和條件會觸發 Stacking Context 的建立，以下是常見的觸發方式：</p>
-<h3 id="2-1-根元素-lt-html-gt"><a href="#2-1-根元素-lt-html-gt" class="headerlink" title="2.1 根元素 (&lt;html&gt;)"></a><strong>2.1 根元素 (<code>&lt;html&gt;</code>)</strong></h3><p>HTML 的根元素 (<code>&lt;html&gt;</code>) 本身是一個 Stacking Context，所有的元素都在這個上下文中運作。</p>
-<h3 id="2-2-z-index-非-auto-並且-position-為-relative、absolute-或-fixed"><a href="#2-2-z-index-非-auto-並且-position-為-relative、absolute-或-fixed" class="headerlink" title="2.2 z-index 非 auto 並且 position 為 relative、absolute 或 fixed"></a><strong>2.2 <code>z-index</code> 非 <code>auto</code> 並且 <code>position</code> 為 <code>relative</code>、<code>absolute</code> 或 <code>fixed</code></strong></h3><p>當 <code>position</code> 為 <code>relative</code>、<code>absolute</code> 或 <code>fixed</code>，且 <code>z-index</code> 設定為非 <code>auto</code> 時，該元素會創建新的 Stacking Context。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">10</span>; <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-3-opacity-小於-1"><a href="#2-3-opacity-小於-1" class="headerlink" title="2.3 opacity 小於 1"></a><strong>2.3 <code>opacity</code> 小於 1</strong></h3><p>任何 <code>opacity</code> 設定小於 <code>1</code>（但大於 <code>0</code>）的元素都會建立新的 Stacking Context。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.transparent-box</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0.9</span>; <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-4-transform、filter、clip-path、perspective-不為-none"><a href="#2-4-transform、filter、clip-path、perspective-不為-none" class="headerlink" title="2.4 transform、filter、clip-path、perspective 不為 none"></a><strong>2.4 <code>transform</code>、<code>filter</code>、<code>clip-path</code>、<code>perspective</code> 不為 <code>none</code></strong></h3><p>只要元素應用了 <code>transform</code>（例如 <code>scale</code>、<code>rotate</code>）、<code>filter</code> 或 <code>clip-path</code>，它就會建立新的 Stacking Context。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.transformed-box</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">50px</span>); <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-5-will-change-設定特定值"><a href="#2-5-will-change-設定特定值" class="headerlink" title="2.5 will-change 設定特定值"></a><strong>2.5 <code>will-change</code> 設定特定值</strong></h3><p>如果 <code>will-change</code> 被設定為 <code>transform</code>、<code>opacity</code>、<code>filter</code> 這類的屬性，該元素會創建新的 Stacking Context。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.optimized-box</span> &#123;</span><br><span class="line">    <span class="attribute">will-change</span>: transform; <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="3-Stacking-Context-的影響"><a href="#3-Stacking-Context-的影響" class="headerlink" title="3. Stacking Context 的影響"></a><strong>3. Stacking Context 的影響</strong></h2><h3 id="3-1-z-index-影響範圍"><a href="#3-1-z-index-影響範圍" class="headerlink" title="3.1 z-index 影響範圍"></a><strong>3.1 <code>z-index</code> 影響範圍</strong></h3><p>如果某個元素在新的 Stacking Context 中，即使它的 <code>z-index</code> 設定得很高，也不會超過它所在的 Stacking Context。這意味著：</p>
-<ul>
-<li>內部 <code>z-index</code> 的值 <strong>只在該 Stacking Context 內比較</strong>。</li>
-<li>外部的元素如果 <code>z-index</code> 更高，仍然可能覆蓋內部 Stacking Context 內的元素。</li>
-</ul>
-<h3 id="範例：z-index-失效的情境"><a href="#範例：z-index-失效的情境" class="headerlink" title="範例：z-index 失效的情境"></a><strong>範例：z-index 失效的情境</strong></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;parent&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;child&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;outside&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">10</span>; <span class="comment">/* 創建 Stacking Context */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">9999</span>; <span class="comment">/* 只在 .parent 內生效 */</span></span><br><span class="line">    <span class="attribute">background</span>: red;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.outside</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">20</span>;</span><br><span class="line">    <span class="attribute">background</span>: blue;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>結果：</strong></p>
-<ul>
-<li><code>.child</code> 的 <code>z-index: 9999</code> 只在 <code>.parent</code> 內生效。</li>
-<li><code>.outside</code> 的 <code>z-index: 20</code> 屬於 <code>html</code> 根 Stacking Context，所以 <code>.outside</code> 會蓋住 <code>.child</code>。</li>
-</ul>
-<hr>
-<h2 id="4-如何-Debug-Stacking-Context"><a href="#4-如何-Debug-Stacking-Context" class="headerlink" title="4. 如何 Debug Stacking Context"></a><strong>4. 如何 Debug Stacking Context</strong></h2><p>當 <code>z-index</code> 沒有如預期運作時，可以用以下方式檢查：</p>
-<h3 id="4-1-使用開發者工具"><a href="#4-1-使用開發者工具" class="headerlink" title="4.1 使用開發者工具"></a><strong>4.1 使用開發者工具</strong></h3><ul>
-<li>在 <strong>Chrome 開發者工具</strong>（F12）內，檢查 <code>z-index</code> 的層級。</li>
-<li>在「Elements」面板檢查 <code>z-index</code> 及是否有 <code>opacity</code>、<code>transform</code> 等影響屬性。</li>
-</ul>
-<h3 id="4-2-確保-Stacking-Context"><a href="#4-2-確保-Stacking-Context" class="headerlink" title="4.2 確保 Stacking Context"></a><strong>4.2 確保 Stacking Context</strong></h3><p>如果發現 <code>z-index</code> 設定沒有影響，可以：</p>
-<ol>
-<li>確認父元素是否創建了新的 Stacking Context。</li>
-<li>嘗試移除 <code>transform</code>、<code>opacity</code> 或 <code>filter</code>，看看是否影響 <code>z-index</code>。</li>
-</ol>
-<hr>
-<h2 id="5-Stacking-Context-的應用場景"><a href="#5-Stacking-Context-的應用場景" class="headerlink" title="5. Stacking Context 的應用場景"></a><strong>5. Stacking Context 的應用場景</strong></h2><h3 id="5-1-固定導覽列與內容遮罩"><a href="#5-1-固定導覽列與內容遮罩" class="headerlink" title="5.1 固定導覽列與內容遮罩"></a><strong>5.1 固定導覽列與內容遮罩</strong></h3><p>當 <code>position: fixed</code> 的導覽列無法覆蓋其他元素時，可以確保它擁有較高 <code>z-index</code>，並避免它被無意創建的 Stacking Context 影響。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.navbar</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">background</span>: black;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">1000</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-2-Modal（模態視窗）"><a href="#5-2-Modal（模態視窗）" class="headerlink" title="5.2 Modal（模態視窗）"></a><strong>5.2 Modal（模態視窗）</strong></h3><p>確保 <code>modal</code> 的 <code>z-index</code> 高於其他元素，並避免 <code>opacity</code> 或 <code>transform</code> 影響 <code>z-index</code>。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.modal</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">2000</span>;</span><br><span class="line">    <span class="attribute">background</span>: white;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">4px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.3</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a><strong>6. 總結</strong></h2><ul>
-<li><strong>Stacking Context</strong> 影響 <code>z-index</code> 的作用範圍，讓 <code>z-index</code> 不總是依照數值大小決定順序。</li>
-<li>多種 CSS 屬性（如 <code>opacity</code>、<code>transform</code>）會創建 Stacking Context，可能影響層級渲染結果。</li>
-<li><strong>在開發時，應注意哪些元素創建了 Stacking Context，以確保 <code>z-index</code> 如預期運作</strong>。</li>
-</ul>
-<p>透過以上概念與技巧，可以更靈活地管理 HTML 元素的層級關係，確保視覺效果正確。</p>
-]]></content>
-      <tags>
-        <tag>css</tag>
-        <tag>stylesheet</tag>
       </tags>
   </entry>
   <entry>
@@ -3727,65 +3727,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JavaScript 可選鏈接運算符（Optional Chaining）介紹與入門教學 | 學習筆記</title>
-    <url>/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 <code>JavaScript</code> 中，處理深層嵌套結構時，我們經常會遇到 <code>null</code> 或 <code>undefined</code> 的問題。例如，當我們需要訪問一個對象的屬性，而該屬性本身可能不存在時，傳統的做法會導致錯誤，這樣的情況會非常繁瑣。為了解決這個問題，JavaScript 引入了 <strong>可選鏈接運算符（Optional Chaining）</strong>，簡化了屬性訪問過程，並防止了因為屬性為 <code>null</code> 或 <code>undefined</code> 造成的錯誤。</p>
-<p>本文將詳細介紹可選鏈接運算符的概念、用法以及常見的實際應用場景。</p>
-<h3 id="1-可選鏈接運算符的基本語法"><a href="#1-可選鏈接運算符的基本語法" class="headerlink" title="1. 可選鏈接運算符的基本語法"></a>1. 可選鏈接運算符的基本語法</h3><p><strong>可選鏈接運算符（<code>?.</code>）</strong> 是 JavaScript 中一種新的語法，通過它我們可以安全地訪問對象的屬性，並且在中途如果遇到 <code>null</code> 或 <code>undefined</code>，就會停止執行並返回 <code>undefined</code>，而不是拋出錯誤。</p>
-<p>基本語法結構如下：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">object?.<span class="property">property</span></span><br><span class="line">object?.[key]</span><br><span class="line">object?.<span class="title function_">method</span>()</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>object?.property</code>：如果 <code>object</code> 為 <code>null</code> 或 <code>undefined</code>，則返回 <code>undefined</code>，否則返回對象的 <code>property</code> 屬性。</li>
-<li><code>object?.[key]</code>：這是動態屬性名的情況，與 <code>object?.property</code> 類似，當 <code>key</code> 是變數或表達式時，這種語法很有用。</li>
-<li><code>object?.method()</code>：如果 <code>object</code> 或 <code>method</code> 為 <code>null</code> 或 <code>undefined</code>，則返回 <code>undefined</code>，不會調用該方法。</li>
-</ul>
-<h3 id="2-為什麼需要可選鏈接運算符？"><a href="#2-為什麼需要可選鏈接運算符？" class="headerlink" title="2. 為什麼需要可選鏈接運算符？"></a>2. 為什麼需要可選鏈接運算符？</h3><p>在傳統 JavaScript 中，當我們處理嵌套對象的屬性時，若某個屬性不存在或是 <code>null</code>、<code>undefined</code>，我們會遇到錯誤。例如：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">address</span>: &#123;</span><br><span class="line">    <span class="attr">street</span>: <span class="string">&#x27;123 Main St&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">address</span>.<span class="property">street</span>); <span class="comment">// &quot;123 Main St&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">phone</span>.<span class="property">number</span>); <span class="comment">// TypeError: Cannot read property &#x27;number&#x27; of undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>在這個例子中，當我們嘗試訪問 <code>user.phone.number</code> 時，由於 <code>phone</code> 屬性不存在，會拋出錯誤。為了解決這個問題，通常我們需要進行多層檢查：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user &amp;&amp; user.<span class="property">phone</span> &amp;&amp; user.<span class="property">phone</span>.<span class="property">number</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>這樣的寫法看起來雜亂，並且很難處理更深層次的嵌套。可選鏈接運算符解決了這個問題，使得代碼更加簡潔和安全。</p>
-<h3 id="3-可選鏈接運算符的應用場景"><a href="#3-可選鏈接運算符的應用場景" class="headerlink" title="3. 可選鏈接運算符的應用場景"></a>3. 可選鏈接運算符的應用場景</h3><h4 id="3-1-訪問對象屬性"><a href="#3-1-訪問對象屬性" class="headerlink" title="3.1 訪問對象屬性"></a>3.1 訪問對象屬性</h4><p>當我們需要訪問對象的某一層屬性時，如果中間層級的某個屬性為 <code>null</code> 或 <code>undefined</code>，那麼使用可選鏈接運算符就能防止錯誤的拋出。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">address</span>: &#123;</span><br><span class="line">    <span class="attr">street</span>: <span class="string">&#x27;123 Main St&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">address</span>?.<span class="property">street</span>); <span class="comment">// &quot;123 Main St&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">phone</span>?.<span class="property">number</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>在這個例子中，<code>user?.address?.street</code> 會安全地返回 <code>street</code> 屬性，而 <code>user?.phone?.number</code> 會返回 <code>undefined</code>，因為 <code>phone</code> 屬性並不存在。</p>
-<h4 id="3-2-訪問數組元素"><a href="#3-2-訪問數組元素" class="headerlink" title="3.2 訪問數組元素"></a>3.2 訪問數組元素</h4><p>在操作數組時，如果我們想訪問某個索引的元素，也可以使用可選鏈接運算符來避免錯誤。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(array?.[<span class="number">1</span>]); <span class="comment">// 2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(array?.[<span class="number">10</span>]); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>這裡，<code>array?.[1]</code> 會返回 <code>2</code>，而 <code>array?.[10]</code> 會返回 <code>undefined</code>，即使索引超出了數組的範圍。</p>
-<h4 id="3-3-調用對象方法"><a href="#3-3-調用對象方法" class="headerlink" title="3.3 調用對象方法"></a>3.3 調用對象方法</h4><p>如果對象的方法不存在，使用可選鏈接運算符可以避免拋出錯誤，並且返回 <code>undefined</code>。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="title function_">greet</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello!&#x27;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">user?.<span class="title function_">greet</span>(); <span class="comment">// &quot;Hello!&quot;</span></span><br><span class="line">user?.<span class="title function_">sayGoodbye</span>(); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>在這個例子中，<code>user?.greet()</code> 會調用 <code>greet</code> 方法並顯示 “Hello!”，而 <code>user?.sayGoodbye()</code> 則返回 <code>undefined</code>，因為 <code>sayGoodbye</code> 方法不存在。</p>
-<h4 id="3-4-動態屬性名"><a href="#3-4-動態屬性名" class="headerlink" title="3.4 動態屬性名"></a>3.4 動態屬性名</h4><p>可選鏈接運算符也支持用動態屬性名來訪問對象屬性，這在處理具有不確定屬性的對象時非常有用。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">preferences</span>: &#123;</span><br><span class="line">    <span class="attr">theme</span>: <span class="string">&#x27;dark&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> key = <span class="string">&#x27;theme&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">preferences</span>?.[key]); <span class="comment">// &quot;dark&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>在這個例子中，<code>key</code> 是一個變量，表示要訪問的屬性名，<code>user?.preferences?.[key]</code> 可以安全地獲取 <code>preferences</code> 中的 <code>theme</code> 屬性。</p>
-<h3 id="4-與傳統方法的比較"><a href="#4-與傳統方法的比較" class="headerlink" title="4. 與傳統方法的比較"></a>4. 與傳統方法的比較</h3><p>使用可選鏈接運算符，我們的代碼變得更加簡潔，減少了不必要的檢查。傳統的方式可能需要多次檢查對象的存在，才能安全地訪問某個屬性，而可選鏈接運算符讓這一過程變得直觀且易於維護。</p>
-<p>傳統方法：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (user &amp;&amp; user.<span class="property">address</span> &amp;&amp; user.<span class="property">address</span>.<span class="property">street</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">address</span>.<span class="property">street</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用可選鏈接運算符：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">address</span>?.<span class="property">street</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-可選鏈接運算符與-null-合併運算符（-）"><a href="#5-可選鏈接運算符與-null-合併運算符（-）" class="headerlink" title="5. 可選鏈接運算符與 null 合併運算符（??）"></a>5. 可選鏈接運算符與 <code>null</code> 合併運算符（<code>??</code>）</h3><p>可選鏈接運算符經常與 <code>null</code> 合併運算符（<code>??</code>）一起使用。<code>??</code> 用來返回當前值是否為 <code>null</code> 或 <code>undefined</code>，如果是則返回其右側的值，否則返回當前值。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">const</span> name = user?.<span class="property">name</span> ?? <span class="string">&#x27;Default Name&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name); <span class="comment">// &quot;Default Name&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>在這裡，<code>user?.name</code> 會返回 <code>undefined</code>，因為 <code>user</code> 是 <code>null</code>，而 <code>??</code> 會將其替換為 <code>&#39;Default Name&#39;</code>。</p>
-<h3 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h3><p>可選鏈接運算符（<code>?.</code>）是 JavaScript 中非常實用的一個特性，它簡化了嵌套對象屬性訪問的邏輯，避免了 <code>null</code> 或 <code>undefined</code> 帶來的錯誤，使代碼更加簡潔且容易理解。無論是在處理複雜的 API 返回數據還是操作動態結構的對象時，可選鏈接運算符都能發揮重要作用。在日常開發中，我們可以利用它來編寫更健壯、可讀性更強的代碼。</p>
-]]></content>
-      <tags>
-        <tag>javascript</tag>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>Optional Chaining</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript 物件導向（Object-oriented programming）入門教學筆記 | 學習筆記</title>
     <url>/2021/01/16/learning-notes-javascript-object-oriented-programming-intro-tutorial/</url>
     <content><![CDATA[<h2 id="1-物件導向與-new-關鍵字"><a href="#1-物件導向與-new-關鍵字" class="headerlink" title="1. 物件導向與 new 關鍵字"></a>1. 物件導向與 <code>new</code> 關鍵字</h2><p>JavaScript 是基於 <strong>原型 (Prototype)</strong> 的物件導向語言，而非典型的 <strong>類別 (Class)</strong> 為基礎的語言。但 ES6 之後，JavaScript 引入了 <code>class</code> 語法，使其更接近傳統的物件導向語言，如 Java 或 C++。</p>
@@ -3891,6 +3832,65 @@
         <tag>this</tag>
         <tag>OOP</tag>
         <tag>Object-oriented programming</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript 可選鏈接運算符（Optional Chaining）介紹與入門教學 | 學習筆記</title>
+    <url>/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 <code>JavaScript</code> 中，處理深層嵌套結構時，我們經常會遇到 <code>null</code> 或 <code>undefined</code> 的問題。例如，當我們需要訪問一個對象的屬性，而該屬性本身可能不存在時，傳統的做法會導致錯誤，這樣的情況會非常繁瑣。為了解決這個問題，JavaScript 引入了 <strong>可選鏈接運算符（Optional Chaining）</strong>，簡化了屬性訪問過程，並防止了因為屬性為 <code>null</code> 或 <code>undefined</code> 造成的錯誤。</p>
+<p>本文將詳細介紹可選鏈接運算符的概念、用法以及常見的實際應用場景。</p>
+<h3 id="1-可選鏈接運算符的基本語法"><a href="#1-可選鏈接運算符的基本語法" class="headerlink" title="1. 可選鏈接運算符的基本語法"></a>1. 可選鏈接運算符的基本語法</h3><p><strong>可選鏈接運算符（<code>?.</code>）</strong> 是 JavaScript 中一種新的語法，通過它我們可以安全地訪問對象的屬性，並且在中途如果遇到 <code>null</code> 或 <code>undefined</code>，就會停止執行並返回 <code>undefined</code>，而不是拋出錯誤。</p>
+<p>基本語法結構如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">object?.<span class="property">property</span></span><br><span class="line">object?.[key]</span><br><span class="line">object?.<span class="title function_">method</span>()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>object?.property</code>：如果 <code>object</code> 為 <code>null</code> 或 <code>undefined</code>，則返回 <code>undefined</code>，否則返回對象的 <code>property</code> 屬性。</li>
+<li><code>object?.[key]</code>：這是動態屬性名的情況，與 <code>object?.property</code> 類似，當 <code>key</code> 是變數或表達式時，這種語法很有用。</li>
+<li><code>object?.method()</code>：如果 <code>object</code> 或 <code>method</code> 為 <code>null</code> 或 <code>undefined</code>，則返回 <code>undefined</code>，不會調用該方法。</li>
+</ul>
+<h3 id="2-為什麼需要可選鏈接運算符？"><a href="#2-為什麼需要可選鏈接運算符？" class="headerlink" title="2. 為什麼需要可選鏈接運算符？"></a>2. 為什麼需要可選鏈接運算符？</h3><p>在傳統 JavaScript 中，當我們處理嵌套對象的屬性時，若某個屬性不存在或是 <code>null</code>、<code>undefined</code>，我們會遇到錯誤。例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">address</span>: &#123;</span><br><span class="line">    <span class="attr">street</span>: <span class="string">&#x27;123 Main St&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">address</span>.<span class="property">street</span>); <span class="comment">// &quot;123 Main St&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">phone</span>.<span class="property">number</span>); <span class="comment">// TypeError: Cannot read property &#x27;number&#x27; of undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>在這個例子中，當我們嘗試訪問 <code>user.phone.number</code> 時，由於 <code>phone</code> 屬性不存在，會拋出錯誤。為了解決這個問題，通常我們需要進行多層檢查：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user &amp;&amp; user.<span class="property">phone</span> &amp;&amp; user.<span class="property">phone</span>.<span class="property">number</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>這樣的寫法看起來雜亂，並且很難處理更深層次的嵌套。可選鏈接運算符解決了這個問題，使得代碼更加簡潔和安全。</p>
+<h3 id="3-可選鏈接運算符的應用場景"><a href="#3-可選鏈接運算符的應用場景" class="headerlink" title="3. 可選鏈接運算符的應用場景"></a>3. 可選鏈接運算符的應用場景</h3><h4 id="3-1-訪問對象屬性"><a href="#3-1-訪問對象屬性" class="headerlink" title="3.1 訪問對象屬性"></a>3.1 訪問對象屬性</h4><p>當我們需要訪問對象的某一層屬性時，如果中間層級的某個屬性為 <code>null</code> 或 <code>undefined</code>，那麼使用可選鏈接運算符就能防止錯誤的拋出。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">address</span>: &#123;</span><br><span class="line">    <span class="attr">street</span>: <span class="string">&#x27;123 Main St&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">address</span>?.<span class="property">street</span>); <span class="comment">// &quot;123 Main St&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">phone</span>?.<span class="property">number</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>在這個例子中，<code>user?.address?.street</code> 會安全地返回 <code>street</code> 屬性，而 <code>user?.phone?.number</code> 會返回 <code>undefined</code>，因為 <code>phone</code> 屬性並不存在。</p>
+<h4 id="3-2-訪問數組元素"><a href="#3-2-訪問數組元素" class="headerlink" title="3.2 訪問數組元素"></a>3.2 訪問數組元素</h4><p>在操作數組時，如果我們想訪問某個索引的元素，也可以使用可選鏈接運算符來避免錯誤。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(array?.[<span class="number">1</span>]); <span class="comment">// 2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(array?.[<span class="number">10</span>]); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>這裡，<code>array?.[1]</code> 會返回 <code>2</code>，而 <code>array?.[10]</code> 會返回 <code>undefined</code>，即使索引超出了數組的範圍。</p>
+<h4 id="3-3-調用對象方法"><a href="#3-3-調用對象方法" class="headerlink" title="3.3 調用對象方法"></a>3.3 調用對象方法</h4><p>如果對象的方法不存在，使用可選鏈接運算符可以避免拋出錯誤，並且返回 <code>undefined</code>。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="title function_">greet</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello!&#x27;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">user?.<span class="title function_">greet</span>(); <span class="comment">// &quot;Hello!&quot;</span></span><br><span class="line">user?.<span class="title function_">sayGoodbye</span>(); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>在這個例子中，<code>user?.greet()</code> 會調用 <code>greet</code> 方法並顯示 “Hello!”，而 <code>user?.sayGoodbye()</code> 則返回 <code>undefined</code>，因為 <code>sayGoodbye</code> 方法不存在。</p>
+<h4 id="3-4-動態屬性名"><a href="#3-4-動態屬性名" class="headerlink" title="3.4 動態屬性名"></a>3.4 動態屬性名</h4><p>可選鏈接運算符也支持用動態屬性名來訪問對象屬性，這在處理具有不確定屬性的對象時非常有用。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">preferences</span>: &#123;</span><br><span class="line">    <span class="attr">theme</span>: <span class="string">&#x27;dark&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> key = <span class="string">&#x27;theme&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">preferences</span>?.[key]); <span class="comment">// &quot;dark&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>在這個例子中，<code>key</code> 是一個變量，表示要訪問的屬性名，<code>user?.preferences?.[key]</code> 可以安全地獲取 <code>preferences</code> 中的 <code>theme</code> 屬性。</p>
+<h3 id="4-與傳統方法的比較"><a href="#4-與傳統方法的比較" class="headerlink" title="4. 與傳統方法的比較"></a>4. 與傳統方法的比較</h3><p>使用可選鏈接運算符，我們的代碼變得更加簡潔，減少了不必要的檢查。傳統的方式可能需要多次檢查對象的存在，才能安全地訪問某個屬性，而可選鏈接運算符讓這一過程變得直觀且易於維護。</p>
+<p>傳統方法：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (user &amp;&amp; user.<span class="property">address</span> &amp;&amp; user.<span class="property">address</span>.<span class="property">street</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">address</span>.<span class="property">street</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用可選鏈接運算符：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user?.<span class="property">address</span>?.<span class="property">street</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-可選鏈接運算符與-null-合併運算符（-）"><a href="#5-可選鏈接運算符與-null-合併運算符（-）" class="headerlink" title="5. 可選鏈接運算符與 null 合併運算符（??）"></a>5. 可選鏈接運算符與 <code>null</code> 合併運算符（<code>??</code>）</h3><p>可選鏈接運算符經常與 <code>null</code> 合併運算符（<code>??</code>）一起使用。<code>??</code> 用來返回當前值是否為 <code>null</code> 或 <code>undefined</code>，如果是則返回其右側的值，否則返回當前值。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">const</span> name = user?.<span class="property">name</span> ?? <span class="string">&#x27;Default Name&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name); <span class="comment">// &quot;Default Name&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>在這裡，<code>user?.name</code> 會返回 <code>undefined</code>，因為 <code>user</code> 是 <code>null</code>，而 <code>??</code> 會將其替換為 <code>&#39;Default Name&#39;</code>。</p>
+<h3 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h3><p>可選鏈接運算符（<code>?.</code>）是 JavaScript 中非常實用的一個特性，它簡化了嵌套對象屬性訪問的邏輯，避免了 <code>null</code> 或 <code>undefined</code> 帶來的錯誤，使代碼更加簡潔且容易理解。無論是在處理複雜的 API 返回數據還是操作動態結構的對象時，可選鏈接運算符都能發揮重要作用。在日常開發中，我們可以利用它來編寫更健壯、可讀性更強的代碼。</p>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>Optional Chaining</tag>
       </tags>
   </entry>
   <entry>
@@ -6473,118 +6473,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue ref 與 reactive 入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 Vue 3 中，<code>ref</code> 與 <code>reactive</code> 都是用來創建<strong>響應式資料</strong>的工具，但它們適用的情境略有不同。以下是清楚的比較與實際使用範例，幫助你理解什麼時候該用哪一個。</p>
-<hr>
-<h2 id="ref-使用情境"><a href="#ref-使用情境" class="headerlink" title="ref 使用情境"></a><code>ref</code> 使用情境</h2><h3 id="適用於："><a href="#適用於：" class="headerlink" title="適用於："></a>適用於：</h3><ul>
-<li><strong>原始資料型別</strong>：如 <code>Number</code>、<code>String</code>、<code>Boolean</code>、<code>Date</code> 等。</li>
-<li>你只需要追蹤單一值。</li>
-<li>當你需要某個變數傳遞到 <code>&lt;template&gt;</code> 或函式中。</li>
-</ul>
-<h3 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span><br><span class="line">count.<span class="property">value</span>++ <span class="comment">// 需要用 .value 訪問或修改</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="範例："><a href="#範例：" class="headerlink" title="範例："></a>範例：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const message = ref(&#x27;Hello&#x27;)</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">const updateMessage = () =&gt; &#123;</span><br><span class="line">  message.value = &#x27;Hi Vue 3&#x27;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="reactive-使用情境"><a href="#reactive-使用情境" class="headerlink" title="reactive 使用情境"></a><code>reactive</code> 使用情境</h2><h3 id="適用於：-1"><a href="#適用於：-1" class="headerlink" title="適用於："></a>適用於：</h3><ul>
-<li><strong>物件或陣列</strong>：需要操作多個屬性的資料結構。</li>
-<li>多層巢狀資料或你希望所有屬性都具有響應性。</li>
-<li>表單資料、設定物件等複雜狀態管理。</li>
-</ul>
-<h3 id="語法：-1"><a href="#語法：-1" class="headerlink" title="語法："></a>語法：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; reactive &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> user = <span class="title function_">reactive</span>(&#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Daniel&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">30</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">user.<span class="property">age</span>++ <span class="comment">// 直接修改即可，無需 .value</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="範例：-1"><a href="#範例：-1" class="headerlink" title="範例："></a>範例：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; reactive &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const form = reactive(&#123;</span><br><span class="line">  username: &#x27;&#x27;,</span><br><span class="line">  email: &#x27;&#x27;,</span><br><span class="line">  isSubscribed: false</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const submitForm = () =&gt; &#123;</span><br><span class="line">  console.log(form.username, form.email, form.isSubscribed)</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="⚠️-ref-包物件-vs-reactive"><a href="#⚠️-ref-包物件-vs-reactive" class="headerlink" title="⚠️ ref 包物件 vs reactive"></a>⚠️ <code>ref</code> 包物件 vs <code>reactive</code></h2><p>雖然你也可以這樣用：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = <span class="title function_">ref</span>(&#123; <span class="attr">name</span>: <span class="string">&#x27;Daniel&#x27;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;)</span><br></pre></td></tr></table></figure>
-
-<p>但要存取時就需要：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">user.<span class="property">value</span>.<span class="property">name</span> = <span class="string">&#x27;John&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>用 <code>reactive</code> 則可以直接操作：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">user.<span class="property">name</span> = <span class="string">&#x27;John&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>所以若你有<strong>物件資料</strong>，通常選擇 <code>reactive</code> 更直覺。</p>
-<hr>
-<h2 id="建議使用方式整理："><a href="#建議使用方式整理：" class="headerlink" title="建議使用方式整理："></a>建議使用方式整理：</h2><table>
-<thead>
-<tr>
-<th>類型</th>
-<th>建議使用方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>單一變數（數字、字串）</td>
-<td><code>ref</code></td>
-</tr>
-<tr>
-<td>多欄位表單資料</td>
-<td><code>reactive</code></td>
-</tr>
-<tr>
-<td>陣列、物件、巢狀結構</td>
-<td><code>reactive</code></td>
-</tr>
-<tr>
-<td>要被 <code>watch</code> 或 <code>computed</code> 的原始值</td>
-<td><code>ref</code></td>
-</tr>
-</tbody></table>
-<hr>
-]]></content>
-      <tags>
-        <tag>vue</tag>
-        <tag>vue.js</tag>
-        <tag>ref</tag>
-        <tag>reactive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue 正確新增或修改物件屬性入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/14/learning-notes-vue-set-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 Vue 2（Options API）中，<code>this.$set</code> 是用來<strong>在響應式系統中正確新增或修改物件屬性</strong>的方法。這對於<strong>動態新增屬性或修改陣列的指定索引值</strong>特別有用。</p>
-<hr>
-<h2 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(target, propertyName/index, value)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>target</code>：要修改的對象或陣列</li>
-<li><code>propertyName</code>（物件）或 <code>index</code>（陣列）</li>
-<li><code>value</code>：要設的值</li>
-</ul>
-<hr>
-<h2 id="為什麼需要-this-set？"><a href="#為什麼需要-this-set？" class="headerlink" title="為什麼需要 this.$set？"></a>為什麼需要 <code>this.$set</code>？</h2><p>Vue 2 的 reactivity（響應式系統）使用 <code>Object.defineProperty</code>，它<strong>無法偵測到新加的屬性</strong>或是直接對陣列用索引來賦值。</p>
-<p>例如，下面的程式碼是不會觸發畫面更新的：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">someObj</span>.<span class="property">newKey</span> = <span class="string">&#x27;value&#x27;</span>      <span class="comment">// 不會觸發更新</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">someArray</span>[<span class="number">1</span>] = <span class="string">&#x27;changed&#x27;</span>      <span class="comment">// 不會觸發更新</span></span><br></pre></td></tr></table></figure>
-
-<p>必須改成：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">someObj</span>, <span class="string">&#x27;newKey&#x27;</span>, <span class="string">&#x27;value&#x27;</span>)      <span class="comment">// 會觸發更新</span></span><br><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">someArray</span>, <span class="number">1</span>, <span class="string">&#x27;changed&#x27;</span>)         <span class="comment">// 會觸發更新</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="範例一：對物件新增屬性"><a href="#範例一：對物件新增屬性" class="headerlink" title="範例一：對物件新增屬性"></a>範例一：對物件新增屬性</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">user</span>: &#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;小明&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">user</span>, <span class="string">&#x27;age&#x27;</span>, <span class="number">30</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這樣才能讓 <code>user.age</code> 成為響應式屬性，更新時畫面才會重新渲染。</p>
-<hr>
-<h2 id="範例二：修改陣列中的值"><a href="#範例二：修改陣列中的值" class="headerlink" title="範例二：修改陣列中的值"></a>範例二：修改陣列中的值</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">items</span>: [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">methods</span>: &#123;</span><br><span class="line">  <span class="title function_">updateItem</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">items</span>, <span class="number">1</span>, <span class="string">&#x27;changed&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Vue-3-呢？"><a href="#Vue-3-呢？" class="headerlink" title="Vue 3 呢？"></a>Vue 3 呢？</h2><p>在 Vue 3 裡，因為 reactivity 系統改用 <strong>Proxy</strong>，所以可以直接新增或修改屬性，不需要 <code>this.$set</code> 了：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">someObj</span>.<span class="property">newKey</span> = <span class="string">&#x27;value&#x27;</span>   <span class="comment">// Vue 3 沒問題</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">someArray</span>[<span class="number">1</span>] = <span class="string">&#x27;changed&#x27;</span>   <span class="comment">// Vue 3 沒問題</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>如果你正在寫 Vue 2 的 Tic Tac Toe 遊戲，當你要動態更新棋盤的某個格子時，這樣做就是對的：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">board</span>[row], col, <span class="string">&#x27;X&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>這樣才能確保畫面能即時更新。</p>
-]]></content>
-      <tags>
-        <tag>vue</tag>
-        <tag>vue.js</tag>
-        <tag>this.$set</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue Router 入門教學筆記 | 學習筆記</title>
     <url>/2024/11/16/learning-notes-vue-router-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Vue Router 是 Vue.js 官方提供的前端路由解決方案，專為構建單頁應用（SPA, Single Page Application）而設計。它讓我們可以根據網址變化動態切換畫面而不重新載入頁面，是開發 Vue 應用不可或缺的工具之一。</p>
@@ -6699,6 +6587,118 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue ref 與 reactive 入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 Vue 3 中，<code>ref</code> 與 <code>reactive</code> 都是用來創建<strong>響應式資料</strong>的工具，但它們適用的情境略有不同。以下是清楚的比較與實際使用範例，幫助你理解什麼時候該用哪一個。</p>
+<hr>
+<h2 id="ref-使用情境"><a href="#ref-使用情境" class="headerlink" title="ref 使用情境"></a><code>ref</code> 使用情境</h2><h3 id="適用於："><a href="#適用於：" class="headerlink" title="適用於："></a>適用於：</h3><ul>
+<li><strong>原始資料型別</strong>：如 <code>Number</code>、<code>String</code>、<code>Boolean</code>、<code>Date</code> 等。</li>
+<li>你只需要追蹤單一值。</li>
+<li>當你需要某個變數傳遞到 <code>&lt;template&gt;</code> 或函式中。</li>
+</ul>
+<h3 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span><br><span class="line">count.<span class="property">value</span>++ <span class="comment">// 需要用 .value 訪問或修改</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="範例："><a href="#範例：" class="headerlink" title="範例："></a>範例：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const message = ref(&#x27;Hello&#x27;)</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">const updateMessage = () =&gt; &#123;</span><br><span class="line">  message.value = &#x27;Hi Vue 3&#x27;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="reactive-使用情境"><a href="#reactive-使用情境" class="headerlink" title="reactive 使用情境"></a><code>reactive</code> 使用情境</h2><h3 id="適用於：-1"><a href="#適用於：-1" class="headerlink" title="適用於："></a>適用於：</h3><ul>
+<li><strong>物件或陣列</strong>：需要操作多個屬性的資料結構。</li>
+<li>多層巢狀資料或你希望所有屬性都具有響應性。</li>
+<li>表單資料、設定物件等複雜狀態管理。</li>
+</ul>
+<h3 id="語法：-1"><a href="#語法：-1" class="headerlink" title="語法："></a>語法：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; reactive &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> user = <span class="title function_">reactive</span>(&#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Daniel&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">30</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">user.<span class="property">age</span>++ <span class="comment">// 直接修改即可，無需 .value</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="範例：-1"><a href="#範例：-1" class="headerlink" title="範例："></a>範例：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; reactive &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const form = reactive(&#123;</span><br><span class="line">  username: &#x27;&#x27;,</span><br><span class="line">  email: &#x27;&#x27;,</span><br><span class="line">  isSubscribed: false</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const submitForm = () =&gt; &#123;</span><br><span class="line">  console.log(form.username, form.email, form.isSubscribed)</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="⚠️-ref-包物件-vs-reactive"><a href="#⚠️-ref-包物件-vs-reactive" class="headerlink" title="⚠️ ref 包物件 vs reactive"></a>⚠️ <code>ref</code> 包物件 vs <code>reactive</code></h2><p>雖然你也可以這樣用：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = <span class="title function_">ref</span>(&#123; <span class="attr">name</span>: <span class="string">&#x27;Daniel&#x27;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>但要存取時就需要：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">user.<span class="property">value</span>.<span class="property">name</span> = <span class="string">&#x27;John&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>用 <code>reactive</code> 則可以直接操作：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">user.<span class="property">name</span> = <span class="string">&#x27;John&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>所以若你有<strong>物件資料</strong>，通常選擇 <code>reactive</code> 更直覺。</p>
+<hr>
+<h2 id="建議使用方式整理："><a href="#建議使用方式整理：" class="headerlink" title="建議使用方式整理："></a>建議使用方式整理：</h2><table>
+<thead>
+<tr>
+<th>類型</th>
+<th>建議使用方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>單一變數（數字、字串）</td>
+<td><code>ref</code></td>
+</tr>
+<tr>
+<td>多欄位表單資料</td>
+<td><code>reactive</code></td>
+</tr>
+<tr>
+<td>陣列、物件、巢狀結構</td>
+<td><code>reactive</code></td>
+</tr>
+<tr>
+<td>要被 <code>watch</code> 或 <code>computed</code> 的原始值</td>
+<td><code>ref</code></td>
+</tr>
+</tbody></table>
+<hr>
+]]></content>
+      <tags>
+        <tag>vue</tag>
+        <tag>vue.js</tag>
+        <tag>ref</tag>
+        <tag>reactive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue 正確新增或修改物件屬性入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/14/learning-notes-vue-set-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 Vue 2（Options API）中，<code>this.$set</code> 是用來<strong>在響應式系統中正確新增或修改物件屬性</strong>的方法。這對於<strong>動態新增屬性或修改陣列的指定索引值</strong>特別有用。</p>
+<hr>
+<h2 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(target, propertyName/index, value)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>target</code>：要修改的對象或陣列</li>
+<li><code>propertyName</code>（物件）或 <code>index</code>（陣列）</li>
+<li><code>value</code>：要設的值</li>
+</ul>
+<hr>
+<h2 id="為什麼需要-this-set？"><a href="#為什麼需要-this-set？" class="headerlink" title="為什麼需要 this.$set？"></a>為什麼需要 <code>this.$set</code>？</h2><p>Vue 2 的 reactivity（響應式系統）使用 <code>Object.defineProperty</code>，它<strong>無法偵測到新加的屬性</strong>或是直接對陣列用索引來賦值。</p>
+<p>例如，下面的程式碼是不會觸發畫面更新的：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">someObj</span>.<span class="property">newKey</span> = <span class="string">&#x27;value&#x27;</span>      <span class="comment">// 不會觸發更新</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">someArray</span>[<span class="number">1</span>] = <span class="string">&#x27;changed&#x27;</span>      <span class="comment">// 不會觸發更新</span></span><br></pre></td></tr></table></figure>
+
+<p>必須改成：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">someObj</span>, <span class="string">&#x27;newKey&#x27;</span>, <span class="string">&#x27;value&#x27;</span>)      <span class="comment">// 會觸發更新</span></span><br><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">someArray</span>, <span class="number">1</span>, <span class="string">&#x27;changed&#x27;</span>)         <span class="comment">// 會觸發更新</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="範例一：對物件新增屬性"><a href="#範例一：對物件新增屬性" class="headerlink" title="範例一：對物件新增屬性"></a>範例一：對物件新增屬性</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">user</span>: &#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;小明&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">user</span>, <span class="string">&#x27;age&#x27;</span>, <span class="number">30</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣才能讓 <code>user.age</code> 成為響應式屬性，更新時畫面才會重新渲染。</p>
+<hr>
+<h2 id="範例二：修改陣列中的值"><a href="#範例二：修改陣列中的值" class="headerlink" title="範例二：修改陣列中的值"></a>範例二：修改陣列中的值</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">items</span>: [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">methods</span>: &#123;</span><br><span class="line">  <span class="title function_">updateItem</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">items</span>, <span class="number">1</span>, <span class="string">&#x27;changed&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Vue-3-呢？"><a href="#Vue-3-呢？" class="headerlink" title="Vue 3 呢？"></a>Vue 3 呢？</h2><p>在 Vue 3 裡，因為 reactivity 系統改用 <strong>Proxy</strong>，所以可以直接新增或修改屬性，不需要 <code>this.$set</code> 了：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">someObj</span>.<span class="property">newKey</span> = <span class="string">&#x27;value&#x27;</span>   <span class="comment">// Vue 3 沒問題</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">someArray</span>[<span class="number">1</span>] = <span class="string">&#x27;changed&#x27;</span>   <span class="comment">// Vue 3 沒問題</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>如果你正在寫 Vue 2 的 Tic Tac Toe 遊戲，當你要動態更新棋盤的某個格子時，這樣做就是對的：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">board</span>[row], col, <span class="string">&#x27;X&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>這樣才能確保畫面能即時更新。</p>
+]]></content>
+      <tags>
+        <tag>vue</tag>
+        <tag>vue.js</tag>
+        <tag>this.$set</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>將 Vue 3 應用部署到 GitHub Pages 入門語法教學筆記 | 學習筆記</title>
     <url>/2018/02/01/learning-notes-vue3-app-github-pages-deploy-intro-tutorial%20copy/</url>
     <content><![CDATA[<p>要將 Vue 3 應用部署到 GitHub Pages，這裡有一個詳細的步驟說明，指導你如何使用 <code>gh-pages</code> 部署你的應用。</p>
@@ -6807,19 +6807,17 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記</title>
-    <url>/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/</url>
-    <content><![CDATA[<h1 id="Props-屬性"><a href="#Props-屬性" class="headerlink" title="Props 屬性"></a>Props 屬性</h1><p>子元件可以透過 Props 接收來自父元件的輸入。首先，子元件需要宣告它所接收的 Props：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- ChildComp.vue --&gt;</span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const props = defineProps(&#123;</span><br><span class="line">  msg: String</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+    <title>Vue.js 3 官方入門語法教學筆記 [12] - Emits 事件傳遞 | 學習筆記</title>
+    <url>/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/</url>
+    <content><![CDATA[<h1 id="Emits-事件傳遞"><a href="#Emits-事件傳遞" class="headerlink" title="Emits 事件傳遞"></a>Emits 事件傳遞</h1><p>除了接收 Props 之外，子元件也可以向父元件觸發事件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">// 宣告要觸發的事件</span><br><span class="line">const emit = defineEmits([&#x27;response&#x27;])</span><br><span class="line"></span><br><span class="line">// 觸發事件並傳遞參數</span><br><span class="line">emit(&#x27;response&#x27;, &#x27;hello from child&#x27;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<p>注意，<code>defineProps()</code> 是一個編譯時的巨集，不需要額外匯入。一旦宣告後，<code>msg</code> Prop 就可以在子元件的模板中使用，也可以透過 <code>defineProps()</code> 返回的物件在 JavaScript 中存取。</p>
-<p>父元件可以像設定屬性一樣，將 Prop 傳遞給子元件。若要傳遞動態值，也可以使用 <code>v-bind</code> 語法：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp :msg=&quot;greeting&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p><code>emit()</code> 的第一個參數是事件名稱，任何額外的參數都會傳遞給事件監聽器。</p>
+<p>父元件可以使用 <code>v-on</code> 來監聽子元件觸發的事件——如下範例中，處理函式接收來自子元件 <code>emit</code> 的額外參數，並將其賦值給本地狀態：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp @response=&quot;(msg) =&gt; childMsg = msg&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
 
-<p>我們現在在編輯器中試試看吧！</p>
-<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> greeting = <span class="title function_">ref</span>(<span class="string">&#x27;Hello from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> <span class="attr">:msg</span>=<span class="string">&quot;greeting&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> props = <span class="title function_">defineProps</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="attr">msg</span>: <span class="title class_">String</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123; msg || &#x27;No props passed yet&#x27; &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+<p>現在我們在編輯器中試試看吧！</p>
+]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -6833,17 +6831,19 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [12] - Emits 事件傳遞 | 學習筆記</title>
-    <url>/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/</url>
-    <content><![CDATA[<h1 id="Emits-事件傳遞"><a href="#Emits-事件傳遞" class="headerlink" title="Emits 事件傳遞"></a>Emits 事件傳遞</h1><p>除了接收 Props 之外，子元件也可以向父元件觸發事件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">// 宣告要觸發的事件</span><br><span class="line">const emit = defineEmits([&#x27;response&#x27;])</span><br><span class="line"></span><br><span class="line">// 觸發事件並傳遞參數</span><br><span class="line">emit(&#x27;response&#x27;, &#x27;hello from child&#x27;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+    <title>Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記</title>
+    <url>/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/</url>
+    <content><![CDATA[<h1 id="Props-屬性"><a href="#Props-屬性" class="headerlink" title="Props 屬性"></a>Props 屬性</h1><p>子元件可以透過 Props 接收來自父元件的輸入。首先，子元件需要宣告它所接收的 Props：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- ChildComp.vue --&gt;</span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const props = defineProps(&#123;</span><br><span class="line">  msg: String</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<p><code>emit()</code> 的第一個參數是事件名稱，任何額外的參數都會傳遞給事件監聽器。</p>
-<p>父元件可以使用 <code>v-on</code> 來監聽子元件觸發的事件——如下範例中，處理函式接收來自子元件 <code>emit</code> 的額外參數，並將其賦值給本地狀態：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp @response=&quot;(msg) =&gt; childMsg = msg&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p>注意，<code>defineProps()</code> 是一個編譯時的巨集，不需要額外匯入。一旦宣告後，<code>msg</code> Prop 就可以在子元件的模板中使用，也可以透過 <code>defineProps()</code> 返回的物件在 JavaScript 中存取。</p>
+<p>父元件可以像設定屬性一樣，將 Prop 傳遞給子元件。若要傳遞動態值，也可以使用 <code>v-bind</code> 語法：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp :msg=&quot;greeting&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
 
-<p>現在我們在編輯器中試試看吧！</p>
-]]></content>
+<p>我們現在在編輯器中試試看吧！</p>
+<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> greeting = <span class="title function_">ref</span>(<span class="string">&#x27;Hello from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> <span class="attr">:msg</span>=<span class="string">&quot;greeting&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> props = <span class="title function_">defineProps</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="attr">msg</span>: <span class="title class_">String</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123; msg || &#x27;No props passed yet&#x27; &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -7366,6 +7366,97 @@
       </tags>
   </entry>
   <entry>
+    <title>Web 資訊安全入門教學筆記 | 學習筆記</title>
+    <url>/2024/10/16/learning-notes-web-security-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在現代網頁應用中，資安問題層出不窮，從簡單的跨站攻擊（XSS）到複雜的憑證竊取、身份偽造（CSRF），都可能導致個資外洩、系統遭入侵甚至企業商譽受損。</p>
+<p>本篇筆記將從實務角度出發，介紹幾種常見 Web 資安風險及其防範策略，讓你能以最基本的方式保護網站與使用者安全。</p>
+<hr>
+<h2 id="一、常見-Web-資安威脅類型"><a href="#一、常見-Web-資安威脅類型" class="headerlink" title="一、常見 Web 資安威脅類型"></a>一、常見 Web 資安威脅類型</h2><h3 id="1-XSS（Cross-Site-Scripting，跨站腳本攻擊）"><a href="#1-XSS（Cross-Site-Scripting，跨站腳本攻擊）" class="headerlink" title="1. XSS（Cross-Site Scripting，跨站腳本攻擊）"></a>1. XSS（Cross-Site Scripting，跨站腳本攻擊）</h3><p><strong>原理</strong>：攻擊者將惡意腳本注入至網站，當其他使用者瀏覽該頁面時，惡意腳本便會在其瀏覽器上執行，例如竊取 cookie、冒充使用者操作等。</p>
+<h3 id="實例："><a href="#實例：" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 攻擊者輸入的留言內容 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="title function_">alert</span>(<span class="string">&#x27;你被 XSS 攻擊了&#x27;</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>若網站未正確處理輸入，這段 JavaScript 就會直接被執行。</p>
+<h3 id="防範方式："><a href="#防範方式：" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>對所有輸入進行 <strong>轉義（Escape）</strong></li>
+<li>使用前端框架自動編碼機制（如 React 的 JSX）</li>
+<li>避免使用 <code>innerHTML</code> 插入未清洗的資料</li>
+</ul>
+<h4 id="範例（JavaScript-轉義文字）："><a href="#範例（JavaScript-轉義文字）：" class="headerlink" title="範例（JavaScript 轉義文字）："></a>範例（JavaScript 轉義文字）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">escapeHtml</span>(<span class="params">str</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> str</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&amp;/g</span>, <span class="string">&quot;&amp;amp;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&lt;/g</span>, <span class="string">&quot;&amp;lt;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&gt;/g</span>, <span class="string">&quot;&amp;gt;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&quot;/g</span>, <span class="string">&quot;&amp;quot;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&#x27;/g</span>, <span class="string">&quot;&amp;#039;&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-CSRF（Cross-Site-Request-Forgery，跨站請求偽造）"><a href="#2-CSRF（Cross-Site-Request-Forgery，跨站請求偽造）" class="headerlink" title="2. CSRF（Cross-Site Request Forgery，跨站請求偽造）"></a>2. CSRF（Cross-Site Request Forgery，跨站請求偽造）</h3><p><strong>原理</strong>：攻擊者引導使用者點擊惡意連結或載入圖片，使其在未察覺情況下對已登入的網站發送請求，進而竄改資料或觸發操作。</p>
+<h3 id="實例：-1"><a href="#實例：-1" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 攻擊者網站中隱藏圖片，觸發某網站的轉帳請求 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://bank.com/transfer?amount=1000&amp;to=attacker&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果使用者已登入 <code>bank.com</code> 且未防範 CSRF，就可能無意間轉帳。</p>
+<h3 id="防範方式：-1"><a href="#防範方式：-1" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>後端驗證 <strong>CSRF Token</strong></li>
+<li>使用 <strong>SameSite Cookie 屬性</strong></li>
+<li>僅允許 POST &#x2F; PATCH &#x2F; DELETE 操作變更狀態</li>
+<li>驗證 Referer &#x2F; Origin 標頭（有風險）</li>
+</ul>
+<h4 id="範例（Express-CSRF-Token）："><a href="#範例（Express-CSRF-Token）：" class="headerlink" title="範例（Express + CSRF Token）："></a>範例（Express + CSRF Token）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> csrf = <span class="built_in">require</span>(<span class="string">&quot;csurf&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> cookieParser = <span class="built_in">require</span>(<span class="string">&quot;cookie-parser&quot;</span>);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">cookieParser</span>());</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">csrf</span>(&#123; <span class="attr">cookie</span>: <span class="literal">true</span> &#125;));</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&quot;/form&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&quot;form&quot;</span>, &#123; <span class="attr">csrfToken</span>: req.<span class="title function_">csrfToken</span>() &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-SQL-Injection（SQL-注入）"><a href="#3-SQL-Injection（SQL-注入）" class="headerlink" title="3. SQL Injection（SQL 注入）"></a>3. SQL Injection（SQL 注入）</h3><p><strong>原理</strong>：透過惡意輸入拼接 SQL 查詢語句，導致資料庫查詢異常，甚至刪除資料。</p>
+<h3 id="實例：-2"><a href="#實例：-2" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 假設未使用參數化查詢</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> username <span class="operator">=</span> <span class="string">&#x27;&#x27;</span> <span class="keyword">OR</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>攻擊者輸入 <code>&#39; OR 1=1; --</code> 可繞過認證邏輯，取得所有帳戶資料。</p>
+<h3 id="防範方式：-2"><a href="#防範方式：-2" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>使用 ORM 或預處理語句（Prepared Statement）</li>
+<li>不拼接 SQL 字串，改用參數綁定</li>
+<li>限制資料庫帳號權限</li>
+</ul>
+<h4 id="範例（Node-js-MySQL）："><a href="#範例（Node-js-MySQL）：" class="headerlink" title="範例（Node.js + MySQL）："></a>範例（Node.js + MySQL）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> username = req.<span class="property">body</span>.<span class="property">username</span>;</span><br><span class="line"><span class="keyword">const</span> password = req.<span class="property">body</span>.<span class="property">password</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> query = <span class="string">&quot;SELECT * FROM users WHERE username = ? AND password = ?&quot;</span>;</span><br><span class="line">connection.<span class="title function_">query</span>(query, [username, password], <span class="keyword">function</span> (<span class="params">err, results</span>) &#123;</span><br><span class="line">  <span class="comment">// 安全地查詢</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="4-資料傳輸未加密（缺少-HTTPS）"><a href="#4-資料傳輸未加密（缺少-HTTPS）" class="headerlink" title="4. 資料傳輸未加密（缺少 HTTPS）"></a>4. 資料傳輸未加密（缺少 HTTPS）</h3><p><strong>原理</strong>：若網站使用 HTTP，使用者資料（如帳號密碼、金流資訊）在傳輸過程中可能被中間人攔截（Man-in-the-Middle attack）。</p>
+<h3 id="防範方式：-3"><a href="#防範方式：-3" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>強制使用 HTTPS（導入憑證）</li>
+<li>使用 HSTS（HTTP Strict Transport Security）</li>
+<li>移除 HTTP 存取（使用 301 重導）</li>
+</ul>
+<h4 id="範例（NGINX-強制-HTTPS）："><a href="#範例（NGINX-強制-HTTPS）：" class="headerlink" title="範例（NGINX 強制 HTTPS）："></a>範例（NGINX 強制 HTTPS）：</h4><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">  <span class="attribute">server_name</span> example.com;</span><br><span class="line">  <span class="attribute">return</span> <span class="number">301</span> https://<span class="variable">$host</span><span class="variable">$request_uri</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="5-檔案上傳風險"><a href="#5-檔案上傳風險" class="headerlink" title="5. 檔案上傳風險"></a>5. 檔案上傳風險</h3><p><strong>原理</strong>：攻擊者透過檔案上傳功能傳入惡意腳本（如 <code>.php</code>、<code>.jsp</code>），若伺服器未阻擋，可能導致遠端代碼執行。</p>
+<h3 id="防範方式：-4"><a href="#防範方式：-4" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
+<li>限制可上傳的檔案類型與副檔名</li>
+<li>不讓使用者可直接存取上傳目錄</li>
+<li>使用 UUID 改名，避免原檔名執行</li>
+</ul>
+<hr>
+<h2 id="附加安全性強化機制"><a href="#附加安全性強化機制" class="headerlink" title="附加安全性強化機制"></a>附加安全性強化機制</h2><h3 id="HTTP-安全標頭設定（Security-Headers）"><a href="#HTTP-安全標頭設定（Security-Headers）" class="headerlink" title="HTTP 安全標頭設定（Security Headers）"></a>HTTP 安全標頭設定（Security Headers）</h3><p>使用如 Helmet（Express.js 中間件）快速加入以下標頭：</p>
+<ul>
+<li><code>Content-Security-Policy</code>：防止 XSS 和資源注入</li>
+<li><code>X-Frame-Options</code>：防止點擊劫持（Clickjacking）</li>
+<li><code>X-Content-Type-Options</code>：避免 MIME 類型混淆</li>
+<li><code>Strict-Transport-Security</code>：強制 HTTPS</li>
+</ul>
+<h4 id="範例（Node-js-Helmet）："><a href="#範例（Node-js-Helmet）：" class="headerlink" title="範例（Node.js + Helmet）："></a>範例（Node.js + Helmet）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> helmet = <span class="built_in">require</span>(<span class="string">&quot;helmet&quot;</span>);</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">helmet</span>());</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="總結與建議實作順序"><a href="#總結與建議實作順序" class="headerlink" title="總結與建議實作順序"></a>總結與建議實作順序</h2><p>如果剛開始建立 Web 專案，可以按照以下步驟檢查安全性：</p>
+<ol>
+<li>輸入驗證與輸出轉義，防範 XSS</li>
+<li>加入 CSRF Token 機制</li>
+<li>資料庫查詢全面使用預處理語句</li>
+<li>部署 HTTPS 並強制重導</li>
+<li>使用 Helmet 加強安全標頭</li>
+<li>定期檢查依賴套件漏洞（如 <code>npm audit</code>）</li>
+</ol>
+<p>資訊安全並非一勞永逸，而是一種持續維護的工作。建議我們可以將資安意識融入日常開發流程中，隨時更新資安知識與工具。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>web</tag>
+        <tag>資訊安全</tag>
+        <tag>Web 資訊安全</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Web 前端效能優化入門教學筆記 | 學習筆記</title>
     <url>/2024/10/16/learning-notes-web-client-performance-optimization-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在網頁開發中，效能優化是一個不可忽視的重要課題。無論是企業網站、單頁應用（SPA），或是電商平台，效能表現都直接影響使用者體驗與轉換率。</p>
@@ -7462,97 +7553,6 @@
         <tag>css</tag>
         <tag>web</tag>
         <tag>前端效能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Web 資訊安全入門教學筆記 | 學習筆記</title>
-    <url>/2024/10/16/learning-notes-web-security-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在現代網頁應用中，資安問題層出不窮，從簡單的跨站攻擊（XSS）到複雜的憑證竊取、身份偽造（CSRF），都可能導致個資外洩、系統遭入侵甚至企業商譽受損。</p>
-<p>本篇筆記將從實務角度出發，介紹幾種常見 Web 資安風險及其防範策略，讓你能以最基本的方式保護網站與使用者安全。</p>
-<hr>
-<h2 id="一、常見-Web-資安威脅類型"><a href="#一、常見-Web-資安威脅類型" class="headerlink" title="一、常見 Web 資安威脅類型"></a>一、常見 Web 資安威脅類型</h2><h3 id="1-XSS（Cross-Site-Scripting，跨站腳本攻擊）"><a href="#1-XSS（Cross-Site-Scripting，跨站腳本攻擊）" class="headerlink" title="1. XSS（Cross-Site Scripting，跨站腳本攻擊）"></a>1. XSS（Cross-Site Scripting，跨站腳本攻擊）</h3><p><strong>原理</strong>：攻擊者將惡意腳本注入至網站，當其他使用者瀏覽該頁面時，惡意腳本便會在其瀏覽器上執行，例如竊取 cookie、冒充使用者操作等。</p>
-<h3 id="實例："><a href="#實例：" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 攻擊者輸入的留言內容 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="title function_">alert</span>(<span class="string">&#x27;你被 XSS 攻擊了&#x27;</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>若網站未正確處理輸入，這段 JavaScript 就會直接被執行。</p>
-<h3 id="防範方式："><a href="#防範方式：" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>對所有輸入進行 <strong>轉義（Escape）</strong></li>
-<li>使用前端框架自動編碼機制（如 React 的 JSX）</li>
-<li>避免使用 <code>innerHTML</code> 插入未清洗的資料</li>
-</ul>
-<h4 id="範例（JavaScript-轉義文字）："><a href="#範例（JavaScript-轉義文字）：" class="headerlink" title="範例（JavaScript 轉義文字）："></a>範例（JavaScript 轉義文字）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">escapeHtml</span>(<span class="params">str</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> str</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&amp;/g</span>, <span class="string">&quot;&amp;amp;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&lt;/g</span>, <span class="string">&quot;&amp;lt;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&gt;/g</span>, <span class="string">&quot;&amp;gt;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&quot;/g</span>, <span class="string">&quot;&amp;quot;&quot;</span>)</span><br><span class="line">    .<span class="title function_">replace</span>(<span class="regexp">/&#x27;/g</span>, <span class="string">&quot;&amp;#039;&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="2-CSRF（Cross-Site-Request-Forgery，跨站請求偽造）"><a href="#2-CSRF（Cross-Site-Request-Forgery，跨站請求偽造）" class="headerlink" title="2. CSRF（Cross-Site Request Forgery，跨站請求偽造）"></a>2. CSRF（Cross-Site Request Forgery，跨站請求偽造）</h3><p><strong>原理</strong>：攻擊者引導使用者點擊惡意連結或載入圖片，使其在未察覺情況下對已登入的網站發送請求，進而竄改資料或觸發操作。</p>
-<h3 id="實例：-1"><a href="#實例：-1" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 攻擊者網站中隱藏圖片，觸發某網站的轉帳請求 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://bank.com/transfer?amount=1000&amp;to=attacker&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>如果使用者已登入 <code>bank.com</code> 且未防範 CSRF，就可能無意間轉帳。</p>
-<h3 id="防範方式：-1"><a href="#防範方式：-1" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>後端驗證 <strong>CSRF Token</strong></li>
-<li>使用 <strong>SameSite Cookie 屬性</strong></li>
-<li>僅允許 POST &#x2F; PATCH &#x2F; DELETE 操作變更狀態</li>
-<li>驗證 Referer &#x2F; Origin 標頭（有風險）</li>
-</ul>
-<h4 id="範例（Express-CSRF-Token）："><a href="#範例（Express-CSRF-Token）：" class="headerlink" title="範例（Express + CSRF Token）："></a>範例（Express + CSRF Token）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> csrf = <span class="built_in">require</span>(<span class="string">&quot;csurf&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> cookieParser = <span class="built_in">require</span>(<span class="string">&quot;cookie-parser&quot;</span>);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">cookieParser</span>());</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">csrf</span>(&#123; <span class="attr">cookie</span>: <span class="literal">true</span> &#125;));</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&quot;/form&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&quot;form&quot;</span>, &#123; <span class="attr">csrfToken</span>: req.<span class="title function_">csrfToken</span>() &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="3-SQL-Injection（SQL-注入）"><a href="#3-SQL-Injection（SQL-注入）" class="headerlink" title="3. SQL Injection（SQL 注入）"></a>3. SQL Injection（SQL 注入）</h3><p><strong>原理</strong>：透過惡意輸入拼接 SQL 查詢語句，導致資料庫查詢異常，甚至刪除資料。</p>
-<h3 id="實例：-2"><a href="#實例：-2" class="headerlink" title="實例："></a>實例：</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 假設未使用參數化查詢</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> username <span class="operator">=</span> <span class="string">&#x27;&#x27;</span> <span class="keyword">OR</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<p>攻擊者輸入 <code>&#39; OR 1=1; --</code> 可繞過認證邏輯，取得所有帳戶資料。</p>
-<h3 id="防範方式：-2"><a href="#防範方式：-2" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>使用 ORM 或預處理語句（Prepared Statement）</li>
-<li>不拼接 SQL 字串，改用參數綁定</li>
-<li>限制資料庫帳號權限</li>
-</ul>
-<h4 id="範例（Node-js-MySQL）："><a href="#範例（Node-js-MySQL）：" class="headerlink" title="範例（Node.js + MySQL）："></a>範例（Node.js + MySQL）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> username = req.<span class="property">body</span>.<span class="property">username</span>;</span><br><span class="line"><span class="keyword">const</span> password = req.<span class="property">body</span>.<span class="property">password</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> query = <span class="string">&quot;SELECT * FROM users WHERE username = ? AND password = ?&quot;</span>;</span><br><span class="line">connection.<span class="title function_">query</span>(query, [username, password], <span class="keyword">function</span> (<span class="params">err, results</span>) &#123;</span><br><span class="line">  <span class="comment">// 安全地查詢</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="4-資料傳輸未加密（缺少-HTTPS）"><a href="#4-資料傳輸未加密（缺少-HTTPS）" class="headerlink" title="4. 資料傳輸未加密（缺少 HTTPS）"></a>4. 資料傳輸未加密（缺少 HTTPS）</h3><p><strong>原理</strong>：若網站使用 HTTP，使用者資料（如帳號密碼、金流資訊）在傳輸過程中可能被中間人攔截（Man-in-the-Middle attack）。</p>
-<h3 id="防範方式：-3"><a href="#防範方式：-3" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>強制使用 HTTPS（導入憑證）</li>
-<li>使用 HSTS（HTTP Strict Transport Security）</li>
-<li>移除 HTTP 存取（使用 301 重導）</li>
-</ul>
-<h4 id="範例（NGINX-強制-HTTPS）："><a href="#範例（NGINX-強制-HTTPS）：" class="headerlink" title="範例（NGINX 強制 HTTPS）："></a>範例（NGINX 強制 HTTPS）：</h4><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">  <span class="attribute">server_name</span> example.com;</span><br><span class="line">  <span class="attribute">return</span> <span class="number">301</span> https://<span class="variable">$host</span><span class="variable">$request_uri</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="5-檔案上傳風險"><a href="#5-檔案上傳風險" class="headerlink" title="5. 檔案上傳風險"></a>5. 檔案上傳風險</h3><p><strong>原理</strong>：攻擊者透過檔案上傳功能傳入惡意腳本（如 <code>.php</code>、<code>.jsp</code>），若伺服器未阻擋，可能導致遠端代碼執行。</p>
-<h3 id="防範方式：-4"><a href="#防範方式：-4" class="headerlink" title="防範方式："></a>防範方式：</h3><ul>
-<li>限制可上傳的檔案類型與副檔名</li>
-<li>不讓使用者可直接存取上傳目錄</li>
-<li>使用 UUID 改名，避免原檔名執行</li>
-</ul>
-<hr>
-<h2 id="附加安全性強化機制"><a href="#附加安全性強化機制" class="headerlink" title="附加安全性強化機制"></a>附加安全性強化機制</h2><h3 id="HTTP-安全標頭設定（Security-Headers）"><a href="#HTTP-安全標頭設定（Security-Headers）" class="headerlink" title="HTTP 安全標頭設定（Security Headers）"></a>HTTP 安全標頭設定（Security Headers）</h3><p>使用如 Helmet（Express.js 中間件）快速加入以下標頭：</p>
-<ul>
-<li><code>Content-Security-Policy</code>：防止 XSS 和資源注入</li>
-<li><code>X-Frame-Options</code>：防止點擊劫持（Clickjacking）</li>
-<li><code>X-Content-Type-Options</code>：避免 MIME 類型混淆</li>
-<li><code>Strict-Transport-Security</code>：強制 HTTPS</li>
-</ul>
-<h4 id="範例（Node-js-Helmet）："><a href="#範例（Node-js-Helmet）：" class="headerlink" title="範例（Node.js + Helmet）："></a>範例（Node.js + Helmet）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> helmet = <span class="built_in">require</span>(<span class="string">&quot;helmet&quot;</span>);</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">helmet</span>());</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="總結與建議實作順序"><a href="#總結與建議實作順序" class="headerlink" title="總結與建議實作順序"></a>總結與建議實作順序</h2><p>如果剛開始建立 Web 專案，可以按照以下步驟檢查安全性：</p>
-<ol>
-<li>輸入驗證與輸出轉義，防範 XSS</li>
-<li>加入 CSRF Token 機制</li>
-<li>資料庫查詢全面使用預處理語句</li>
-<li>部署 HTTPS 並強制重導</li>
-<li>使用 Helmet 加強安全標頭</li>
-<li>定期檢查依賴套件漏洞（如 <code>npm audit</code>）</li>
-</ol>
-<p>資訊安全並非一勞永逸，而是一種持續維護的工作。建議我們可以將資安意識融入日常開發流程中，隨時更新資安知識與工具。</p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>web</tag>
-        <tag>資訊安全</tag>
-        <tag>Web 資訊安全</tag>
       </tags>
   </entry>
   <entry>
