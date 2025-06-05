@@ -29,18 +29,19 @@ email: kdchang.net@gmail.com
 description: "KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！"
 keyword: "軟體工程, 程式設計, 程式開發, frontend, backend, web, software, software engineer, JavaScript, Python"
 
+
 # SNS settings
 # RSS: false
 # weibo_username:     Demonbane
 # zhihu_username:     Demonbane
-github_username: kdchang
-twitter_username: kaidichang
-instagram_username: kdchang_net
-facebook_username: tech.kdchang.net
+github_username:    kdchang
+twitter_username:   kaidichang
+instagram_username:   kdchang_net
+facebook_username:  tech.kdchang.net
 # linkedin_username: kaidichang
 
 # Build settings
-anchorjs: true # if you want to customize anchor. check out line:181 of `post.html`
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 # Disqus settings
 # kdchang-blog
@@ -50,40 +51,57 @@ disqus_username: kdchang-tech-blog
 # Baidu Analytics
 # ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 # Google Analytics 4
-ga_track_id: G-FN9X92SM77 # Format: UA-xxxxxx-xx
+ga_track_id: G-FN9X92SM77           # Format: UA-xxxxxx-xx
 ga_domain: tech.kdchang.net
 
+
 # Sidebar settings
-sidebar: true # whether or not using Sidebar.
+sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "KD Chang 張凱迪（@kdchang），台灣大學，主修經濟學，臺大資管所畢業。是一個軟體工程師，也是一位 PM 產品/專案經理和教育工作者。曾服務過上市網路軟體公司、上市科技電子公司、台灣 AI 人工智慧新創獨角獸公司，也曾參與數個新創組織的創辦和多個網路產品服務的開發。A Software Engineer, Product/Project Manager & Educator.:)"
-sidebar-avatar: /img/avatar.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
 
 # Featured Tags
-featured-tags: false # whether or not using Feature-Tags
-featured-condition-size: 1 # A tag will be featured if the size of it is more than this condition value
+featured-tags: false                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
 
 # Friends
-friends:
-  [
-    { title: "KD 閱讀職場人生 🔖", href: "https://www.kdchang.net" },
+friends: [
     {
-      title: "KD's Travel Blog 旅行部落格 🏔️",
-      href: "https://travel.kdchang.net",
+        title: "KD 閱讀職場人生 🔖",
+        href: "https://www.kdchang.net"
     },
     {
-      title: "聽出職場軟實力 Podcast 🎧",
-      href: "https://open.firstory.me/user/soft-skills-hacker",
+        title: "KD's Travel Blog 旅行部落格 🏔️",
+        href: "https://travel.kdchang.net"
     },
-    { title: "CoderBridge", href: "https://tw.coderbridge.com/" },
-    { title: "Yohowto", href: "https://tw.yohowto.com/" },
     {
-      title: "TechBridge Weekly 技術週刊",
-      href: "http://weekly.techbridge.cc/",
+        title: "聽出職場軟實力 Podcast 🎧",
+        href: "https://open.firstory.me/user/soft-skills-hacker"
     },
-    { title: "TechBridge Blog", href: "http://blog.techbridge.cc/" },
-  ]
+    {
+        title: "CoderBridge",
+        href: "https://tw.coderbridge.com/"
+    },
+    {
+        title: "Yohowto",
+        href: "https://tw.yohowto.com/"
+    },
+    {
+        title: "TechBridge Weekly 技術週刊",
+        href: "http://weekly.techbridge.cc/"
+    },
+    {
+        title: "TechBridge Blog",
+        href: "http://blog.techbridge.cc/"
+    }
+]
+
 
 #Custom Setting End
+
+
 
 # Directory
 source_dir: source
@@ -128,6 +146,7 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
+
 ## Google Analytics 4
 # google_analytics:
 #   enable: true
@@ -138,7 +157,8 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: huxblog
-plugins: hexo-generator-cname
+plugins:
+  hexo-generator-cname
   hexo-generator-robotstxt
 
 ## social
@@ -154,10 +174,10 @@ addthis:
 ## robots.txt
 robotstxt:
   useragent: "*"
-  disallow: ""
-  sitemap:
+  disallow: ''
+  sitemap: 
     - https://tech.kdchang.net/sitemap.xml
-  baidusitemap:
+  baidusitemap: 
     - /baidusitemap.xml
 
 ## category
@@ -171,7 +191,7 @@ archive_generator:
   monthly: true
   daily: false
 
-## Search
+## Search 
 search:
   path: search.xml
   field: post
@@ -204,13 +224,14 @@ feed:
   hub:
   content:
   content_limit: 140
-  content_limit_delim: " "
+  content_limit_delim: ' '
   order_by: -date
   icon: logo.png
   autodiscovery: true
   template:
 
-include: .nojekyll
+include:
+  .nojekyll
   CNAME
 
 index_generator:
