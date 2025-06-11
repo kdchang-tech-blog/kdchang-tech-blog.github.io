@@ -46,3 +46,9 @@ hexo server --debug
 ## deploy
 
 add empty file: `.nojekyll`
+
+Settings > Pages
+
+Build and deployment
+Source
+Branch > gh-pages
