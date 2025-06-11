@@ -6,7 +6,7 @@
   <link href="https://tech.kdchang.net/atom.xml" rel="self"/>
   
   <link href="https://tech.kdchang.net/"/>
-  <updated>2025-06-11T07:41:53.718Z</updated>
+  <updated>2025-06-11T11:33:12.403Z</updated>
   <id>https://tech.kdchang.net/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://tech.kdchang.net/2025/02/08/learning-notes-12-factor-cloud-app-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2025/02/08/learning-notes-12-factor-cloud-app-intro-tutorial/</id>
     <published>2025-02-08T18:23:41.000Z</published>
-    <updated>2025-06-11T07:41:53.718Z</updated>
+    <updated>2025-06-11T11:33:12.403Z</updated>
     
     
       
@@ -52,7 +52,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-06-11T07:41:53.720Z</updated>
+    <updated>2025-06-11T11:33:12.405Z</updated>
     
     
       
@@ -85,7 +85,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-06-11T07:41:53.721Z</updated>
+    <updated>2025-06-11T11:33:12.406Z</updated>
     
     
       
@@ -126,7 +126,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-06-11T07:41:53.722Z</updated>
+    <updated>2025-06-11T11:33:12.406Z</updated>
     
     
       
@@ -167,7 +167,7 @@
     <link href="https://tech.kdchang.net/2024/12/19/learning-notes-angular-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/19/learning-notes-angular-intro-tutorial/</id>
     <published>2024-12-19T18:23:41.000Z</published>
-    <updated>2025-06-11T07:41:53.718Z</updated>
+    <updated>2025-06-11T11:33:12.403Z</updated>
     
     
       
@@ -192,7 +192,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/</id>
     <published>2024-12-16T18:23:41.000Z</published>
-    <updated>2025-06-11T07:41:53.722Z</updated>
+    <updated>2025-06-11T11:33:12.407Z</updated>
     
     
       
@@ -221,7 +221,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-javascript-commonjs-amd-module-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-javascript-commonjs-amd-module-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-06-11T07:41:53.720Z</updated>
+    <updated>2025-06-11T11:33:12.405Z</updated>
     
     
       
@@ -262,7 +262,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-javascript-es-module-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-javascript-es-module-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-06-11T07:41:53.720Z</updated>
+    <updated>2025-06-11T11:33:12.405Z</updated>
     
     
       
@@ -299,7 +299,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-nodejs-expressjs-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-nodejs-expressjs-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-06-11T07:41:53.721Z</updated>
+    <updated>2025-06-11T11:33:12.406Z</updated>
     
     
       
@@ -338,11 +338,36 @@
   </entry>
   
   <entry>
+    <title>Bloom Filter 入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/15/learning-notes-jsx-intro-tutorial%20copy/"/>
+    <id>https://tech.kdchang.net/2024/12/15/learning-notes-jsx-intro-tutorial%20copy/</id>
+    <published>2024-12-15T18:23:41.000Z</published>
+    <updated>2025-06-11T11:33:12.405Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Bloom Filter" scheme="https://tech.kdchang.net/tags/Bloom-Filter/"/>
+    
+    <category term="布隆過濾器" scheme="https://tech.kdchang.net/tags/%E5%B8%83%E9%9A%86%E9%81%8E%E6%BF%BE%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CSS font-size 單位介紹入門教學筆記 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2024/12/14/learning-notes-css-font-size-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/14/learning-notes-css-font-size-intro-tutorial/</id>
     <published>2024-12-14T18:23:41.000Z</published>
-    <updated>2025-06-11T07:41:53.719Z</updated>
+    <updated>2025-06-11T11:33:12.403Z</updated>
     
     
       
@@ -373,7 +398,7 @@
     <link href="https://tech.kdchang.net/2024/12/14/learning-notes-vue-set-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/14/learning-notes-vue-set-intro-tutorial/</id>
     <published>2024-12-14T18:23:41.000Z</published>
-    <updated>2025-06-11T07:41:53.722Z</updated>
+    <updated>2025-06-11T11:33:12.407Z</updated>
     
     
       
@@ -400,7 +425,7 @@
     <link href="https://tech.kdchang.net/2024/12/13/learning-notes-jsx-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/13/learning-notes-jsx-intro-tutorial/</id>
     <published>2024-12-13T18:23:41.000Z</published>
-    <updated>2025-06-11T07:41:53.721Z</updated>
+    <updated>2025-06-11T11:33:12.405Z</updated>
     
     
       
@@ -425,7 +450,7 @@
     <link href="https://tech.kdchang.net/2024/12/13/learning-notes-regex-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/13/learning-notes-regex-intro-tutorial/</id>
     <published>2024-12-13T18:23:41.000Z</published>
-    <updated>2025-06-11T07:41:53.722Z</updated>
+    <updated>2025-06-11T11:33:12.406Z</updated>
     
     
       
@@ -454,7 +479,7 @@
     <link href="https://tech.kdchang.net/2024/12/12/learning-notes-backend-for-frontend-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/12/learning-notes-backend-for-frontend-intro-tutorial/</id>
     <published>2024-12-12T18:23:41.000Z</published>
-    <updated>2025-06-11T07:41:53.718Z</updated>
+    <updated>2025-06-11T11:33:12.403Z</updated>
     
     
       
@@ -481,7 +506,7 @@
     <link href="https://tech.kdchang.net/2024/12/12/learning-notes-react-redux-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/12/learning-notes-react-redux-intro-tutorial/</id>
     <published>2024-12-12T18:23:41.000Z</published>
-    <updated>2025-06-11T07:41:53.722Z</updated>
+    <updated>2025-06-11T11:33:12.406Z</updated>
     
     
       
@@ -508,7 +533,7 @@
     <link href="https://tech.kdchang.net/2024/12/12/learning-notes-spa-ssr-isr-ssg-redux-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2024/12/12/learning-notes-spa-ssr-isr-ssg-redux-intro-tutorial%20copy/</id>
     <published>2024-12-12T18:23:41.000Z</published>
-    <updated>2025-06-11T07:41:53.722Z</updated>
+    <updated>2025-06-11T11:33:12.407Z</updated>
     
     
       
@@ -535,7 +560,7 @@
     <link href="https://tech.kdchang.net/2024/12/08/learning-notes-cypress-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/08/learning-notes-cypress-intro-tutorial/</id>
     <published>2024-12-08T18:23:41.000Z</published>
-    <updated>2025-06-11T07:41:53.719Z</updated>
+    <updated>2025-06-11T11:33:12.404Z</updated>
     
     
       
@@ -564,7 +589,7 @@
     <link href="https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/08/learning-notes-node-js-intro-tutorial/</id>
     <published>2024-12-08T18:23:41.000Z</published>
-    <updated>2025-06-11T07:41:53.721Z</updated>
+    <updated>2025-06-11T11:33:12.406Z</updated>
     
     
       
@@ -591,7 +616,7 @@
     <link href="https://tech.kdchang.net/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</id>
     <published>2024-12-04T18:23:41.000Z</published>
-    <updated>2025-06-11T07:41:53.720Z</updated>
+    <updated>2025-06-11T11:33:12.404Z</updated>
     
     
       
@@ -612,41 +637,6 @@
     <category term="Git Flow" scheme="https://tech.kdchang.net/tags/Git-Flow/"/>
     
     <category term="Github Flow" scheme="https://tech.kdchang.net/tags/Github-Flow/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>滾動視差（Parallax Scrolling）網頁設計入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/</id>
-    <published>2024-12-03T18:23:41.000Z</published>
-    <updated>2025-06-11T07:41:53.721Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;一、什麼是滾動視差？&quot;&gt;&lt;a href=&quot;#一、什麼是滾動視差？&quot; class=&quot;headerlink&quot; title=&quot;一、什麼是滾動視差？&quot;&gt;&lt;/a&gt;一、什麼是滾動視差？&lt;/h1&gt;&lt;p&gt;滾動視差（&lt;code&gt;Parallax</summary>
-        
-      
-    
-    
-    
-    
-    <category term="前端" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="前端開發" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="前端工程" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
-    
-    <category term="frontend" scheme="https://tech.kdchang.net/tags/frontend/"/>
-    
-    <category term="frontend engineer" scheme="https://tech.kdchang.net/tags/frontend-engineer/"/>
-    
-    <category term="CSS" scheme="https://tech.kdchang.net/tags/CSS/"/>
-    
-    <category term="typescript" scheme="https://tech.kdchang.net/tags/typescript/"/>
     
   </entry>
   
