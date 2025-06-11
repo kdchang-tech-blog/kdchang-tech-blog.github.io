@@ -26,11 +26,11 @@
     
     <title>
         
-          使用 Nuxt 3 建立現代 Web 應用程式的基礎教學 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          Python Decorator 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/11/16/learning-notes-nuxt-crash-course-intro-tutorial/">
+    <link rel="canonical" href="https://tech.kdchang.net/2021/12/13/learning-notes-python-decorator-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="使用 Nuxt 3 建立現代 Web 應用程式的基礎教學 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="使用 Nuxt 3 建立現代 Web 應用程式的基礎教學 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="Python Decorator 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="Python Decorator 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,27 +199,21 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>使用 Nuxt 3 建立現代 Web 應用程式的基礎教學 | 學習筆記</h1>
+                    <h1>Python Decorator 入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2024-11-16
+                        2021-12-13
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
-                        
-                          <a class="tag" href="/tags/#前端開發" title="前端開發">前端開發</a>
-                        
-                          <a class="tag" href="/tags/#前端工程" title="前端工程">前端工程</a>
-                        
                           <a class="tag" href="/tags/#frontend" title="frontend">frontend</a>
                         
-                          <a class="tag" href="/tags/#frontend engineer" title="frontend engineer">frontend engineer</a>
+                          <a class="tag" href="/tags/#html" title="html">html</a>
                         
-                          <a class="tag" href="/tags/#Monorepo" title="Monorepo">Monorepo</a>
+                          <a class="tag" href="/tags/#Decorator" title="Decorator">Decorator</a>
                         
-                          <a class="tag" href="/tags/#npm" title="npm">npm</a>
+                          <a class="tag" href="/tags/#Python" title="Python">Python</a>
                         
 
                     </div>
@@ -245,13 +239,72 @@
                 </div>
                 <br>
                 <div>
-                    <h1 id="使用-Nuxt-3-建立現代-Web-應用程式的基礎教學"><a href="#使用-Nuxt-3-建立現代-Web-應用程式的基礎教學" class="headerlink" title="使用 Nuxt 3 建立現代 Web 應用程式的基礎教學"></a>使用 Nuxt 3 建立現代 Web 應用程式的基礎教學</h1><p>本教程由一位專業的 Web 開發者主講，他專注於使用 Vue.js 框架進行現代 Web 應用程式的開發。講者介紹了 Nuxt 3，這是一個基於 Vue.js 的框架，旨在提供更簡單的開發流程和更強大的功能，包括伺服器端渲染、路由自動生成和靜態網站生成等。他闡述了使用 Nuxt 的必要性，並強調了其在搜尋引擎優化和用戶體驗方面的優勢，與單獨使用 Vue.js 的方法相比，Nuxt 提供了更高效的解決方案。</p>
-<h2 id="主要重點："><a href="#主要重點：" class="headerlink" title="主要重點："></a>主要重點：</h2><p><strong>伺服器端渲染的優勢</strong><br>講者提到，Nuxt 使用伺服器端渲染（SSR）來克服單頁應用程式（SPA）在搜尋引擎優化及初始頁面渲染速度上的缺陷。與傳統的客戶端渲染相比，SSR 讓搜尋引擎更容易抓取到完整的頁面內容，從而提高網頁的可見性和排名。此外，使用者在首次訪問時能獲得更快的加載速度，改善整體用戶體驗。</p>
-<p><strong>路由自動生成的便利性</strong><br>在使用 Nuxt 開發應用程式時，講者強調了路由自動生成的特性。開發者只需在 pages 資料夾中建立頁面元件，Nuxt 便會自動為這些元件生成相應的路由，這大幅減少了手動配置的工作量，使得應用程式的開發更加高效和方便。</p>
-<p><strong>強大的佈局和錯誤處理功能</strong><br>講者介紹了 Nuxt 提供的佈局文件和錯誤處理功能，這些功能使得應用程式的結構化開發更加簡單。開發者可以根據需要創建通用佈局，並輕鬆處理應用程式中的錯誤，提升了開發過程中的可維護性和穩定性。</p>
-<p><strong>靜態網站生成的實現</strong><br>Nuxt 提供靜態網站生成的能力，講者指出這對於性能優化和 SEO 都具有重要意義。透過在建置時生成靜態頁面，使用者可以獲得更快的載入速度，同時提高網站在搜尋引擎中的排名，這對於內容驅動的網站特別重要。</p>
-<p><strong>使用 Tailwind CSS 的整合</strong><br>在課程中，講者計劃展示如何在 Nuxt 應用程式中整合 Tailwind CSS。這是一個高效的 CSS 框架，可以幫助開發者快速設計出現代化的界面，並提高開發效率。與 Nuxt 的結合將進一步簡化樣式的管理和應用。</p>
-<p><strong>學習資源和支援</strong><br>講者提供了一系列資源以幫助學習者深入了解 Nuxt 3 的使用，包括 GitHub 上的代碼範本和課程資料。這些資源將為學習者提供實踐機會，幫助他們在實際項目中應用所學知識，提升技能水平。</p>
+                    <p>以下是一篇約 1000 字的 Python decorator（裝飾器）入門教學筆記，包含前言、重點摘要與實際範例，適合作為初學者入門參考。</p>
+<hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 Python 的日常開發中，<code>decorator（裝飾器）</code> 是一個非常強大的語法工具，常用於<strong>增強函式功能</strong>，例如：記錄日誌、驗證權限、計時、快取等。在許多框架（如 Flask、Django）或第三方函式庫中，也可以經常看到裝飾器的身影。</p>
+<p>然而對初學者來說，decorator 的語法可能一開始比較難以理解，尤其涉及到函式是「第一類物件（first-class object）」、「閉包（closure）」的概念。本篇筆記將循序漸進帶你理解 decorator 的本質與應用方式。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><strong>Python 函式是第一類物件</strong>：可以作為參數傳遞、作為回傳值、賦值給變數。</li>
+<li><strong>閉包（Closure）</strong>：內部函式可以存取外部函式的變數，函式結束後變數仍可存活。</li>
+<li><strong>Decorator 是一種語法糖</strong>，本質是「接收一個函式，回傳一個新的函式」的高階函式。</li>
+<li><strong>使用 <code>@</code> 語法糖可以簡潔地套用裝飾器</strong>。</li>
+<li><strong>裝飾器可用於邏輯共用、權限驗證、效能監控、快取等實務情境</strong>。</li>
+<li><strong><code>functools.wraps</code> 可保持被裝飾函式的名稱與 docstring 資訊</strong>。</li>
+</ul>
+<hr>
+<h2 id="一、基礎概念與語法"><a href="#一、基礎概念與語法" class="headerlink" title="一、基礎概念與語法"></a>一、基礎概念與語法</h2><h3 id="1-函式是物件"><a href="#1-函式是物件" class="headerlink" title="1. 函式是物件"></a>1. 函式是物件</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">greet</span>(<span class="params">name</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;Hello, <span class="subst">&#123;name&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line">say_hello = greet</span><br><span class="line"><span class="built_in">print</span>(say_hello(<span class="string">&quot;Alice&quot;</span>))  <span class="comment"># Hello, Alice</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>函式可以被賦值給變數、作為參數傳遞，也能作為回傳值。</p>
+</blockquote>
+<hr>
+<h3 id="2-函式作為參數的例子"><a href="#2-函式作為參數的例子" class="headerlink" title="2. 函式作為參數的例子"></a>2. 函式作為參數的例子</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">do_twice</span>(<span class="params">func</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>():</span><br><span class="line">        func()</span><br><span class="line">        func()</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">say_hi</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hi!&quot;</span>)</span><br><span class="line"></span><br><span class="line">do_twice(say_hi)()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>這就是簡單的裝飾器雛形，<code>do_twice</code> 接收一個函式，回傳一個新的函式。</p>
+</blockquote>
+<hr>
+<h2 id="二、實作一個簡單-decorator"><a href="#二、實作一個簡單-decorator" class="headerlink" title="二、實作一個簡單 decorator"></a>二、實作一個簡單 decorator</h2><h3 id="1-不帶參數的-decorator"><a href="#1-不帶參數的-decorator" class="headerlink" title="1. 不帶參數的 decorator"></a>1. 不帶參數的 decorator</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">my_decorator</span>(<span class="params">func</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;執行前&quot;</span>)</span><br><span class="line">        func()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;執行後&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@my_decorator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">say_hello</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello!&quot;</span>)</span><br><span class="line"></span><br><span class="line">say_hello()</span><br></pre></td></tr></table></figure>
+
+<h4 id="輸出："><a href="#輸出：" class="headerlink" title="輸出："></a>輸出：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">執行前</span><br><span class="line">Hello!</span><br><span class="line">執行後</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>@my_decorator</code> 這行等同於 <code>say_hello = my_decorator(say_hello)</code>。裝飾器會接手原本的函式，包裝成新的邏輯後回傳。</p>
+</blockquote>
+<hr>
+<h3 id="2-處理有參數的函式"><a href="#2-處理有參數的函式" class="headerlink" title="2. 處理有參數的函式"></a>2. 處理有參數的函式</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">my_decorator</span>(<span class="params">func</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;執行前&quot;</span>)</span><br><span class="line">        result = func(*args, **kwargs)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;執行後&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@my_decorator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">greet</span>(<span class="params">name</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;Hello, <span class="subst">&#123;name&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">greet(<span class="string">&quot;KD&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用 <code>*args, **kwargs</code> 可以支援任何參數的函式。</p>
+</blockquote>
+<hr>
+<h3 id="3-保留原函式資訊：使用-functools-wraps"><a href="#3-保留原函式資訊：使用-functools-wraps" class="headerlink" title="3. 保留原函式資訊：使用 functools.wraps"></a>3. 保留原函式資訊：使用 <code>functools.wraps</code></h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">my_decorator</span>(<span class="params">func</span>):</span><br><span class="line"><span class="meta">    @functools.wraps(<span class="params">func</span>)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;執行前&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@my_decorator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x, y</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;加總兩數&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> x + y</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(add.__name__)  <span class="comment"># add</span></span><br><span class="line"><span class="built_in">print</span>(add.__doc__)   <span class="comment"># 加總兩數</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>沒有 <code>functools.wraps</code>，函式的名稱會變成 <code>wrapper</code>，容易影響除錯與文件產生。</p>
+</blockquote>
+<hr>
+<h2 id="三、實用範例：計時-decorator"><a href="#三、實用範例：計時-decorator" class="headerlink" title="三、實用範例：計時 decorator"></a>三、實用範例：計時 decorator</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">timer</span>(<span class="params">func</span>):</span><br><span class="line"><span class="meta">    @functools.wraps(<span class="params">func</span>)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">        start = time.time()</span><br><span class="line">        result = func(*args, **kwargs)</span><br><span class="line">        end = time.time()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;func.__name__&#125;</span> 執行時間：<span class="subst">&#123;end - start:<span class="number">.4</span>f&#125;</span> 秒&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@timer</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">slow_function</span>():</span><br><span class="line">    time.sleep(<span class="number">1.5</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;完成耗時操作&quot;</span>)</span><br><span class="line"></span><br><span class="line">slow_function()</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、進階：帶參數的-decorator"><a href="#四、進階：帶參數的-decorator" class="headerlink" title="四、進階：帶參數的 decorator"></a>四、進階：帶參數的 decorator</h2><p>有時我們希望 decorator 接收參數，例如指定權限等，這時候會需要再多一層函式包裝：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">repeat</span>(<span class="params">times</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">decorator</span>(<span class="params">func</span>):</span><br><span class="line"><span class="meta">        @functools.wraps(<span class="params">func</span>)</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(times):</span><br><span class="line">                func(*args, **kwargs)</span><br><span class="line">        <span class="keyword">return</span> wrapper</span><br><span class="line">    <span class="keyword">return</span> decorator</span><br><span class="line"></span><br><span class="line"><span class="meta">@repeat(<span class="params"><span class="number">3</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">say_hello</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello!&quot;</span>)</span><br><span class="line"></span><br><span class="line">say_hello()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>repeat(3)</code> 會先執行，回傳 <code>decorator(func)</code>，再包裝原函式。</p>
+</blockquote>
+<hr>
+<h2 id="五、常見應用場景"><a href="#五、常見應用場景" class="headerlink" title="五、常見應用場景"></a>五、常見應用場景</h2><ul>
+<li><strong>日誌紀錄（logging）</strong></li>
+<li><strong>權限驗證（authorization）</strong></li>
+<li><strong>執行時間分析（performance monitoring）</strong></li>
+<li><strong>快取（caching）</strong></li>
+<li><strong>API 路由（如 Flask 的 @app.route）</strong></li>
+</ul>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Python 的 decorator 是一個非常實用的語法技巧，一旦理解其本質為「函式的包裝器」，就可以在實務開發中靈活應用。它讓我們可以<strong>以簡潔的方式注入共用邏輯</strong>，大大提升程式的可讀性與可維護性。</p>
+<p>我們在練習 decorator 時，建議搭配日常開發情境，如記錄日誌、印出函式執行時間，從實作中加深理解。當你越熟悉它，便越能體會其在 Python 世界中的威力。</p>
 
                 </div>
 
@@ -268,7 +321,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-monorepo-intro-tutorial/" title="Monorepo 入門教學筆記：使用 npm Workspaces 管理多專案 | 學習筆記" rel="bookmark">Monorepo 入門教學筆記：使用 npm Workspaces 管理多專案 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/10/16/learning-notes-alpinejs-intro-tutorial/" title="Alpine.js 入門教學筆記 | 學習筆記" rel="bookmark">Alpine.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/01/learning-notes-cookie-intro-tutorial/" title="Cookie 入門教學筆記 | 學習筆記" rel="bookmark">Cookie 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-css-animation-intro-tutorial/" title="CSS Animation 入門教學筆記 | 學習筆記" rel="bookmark">CSS Animation 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial copy/" title="JavaScript ES6 入門語法教學筆記 | 學習筆記" rel="bookmark">JavaScript ES6 入門語法教學筆記 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/12/13/learning-notes-css-transform-intro-tutorial/" title="CSS transform 入門教學筆記 | 學習筆記" rel="bookmark">CSS transform 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2022/12/13/learning-notes-css-transition-intro-tutorial/" title="CSS transition 入門教學筆記 | 學習筆記" rel="bookmark">CSS transition 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/12/13/learning-notes-html-intro-tutorial/" title="HTML 入門教學筆記 | 學習筆記" rel="bookmark">HTML 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/06/13/about-frontend-engineer-10-keywords/" title="關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字" rel="bookmark">關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/10/16/learning-notes-alpinejs-intro-tutorial/" title="Alpine.js 入門教學筆記 | 學習筆記" rel="bookmark">Alpine.js 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -304,8 +357,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/11/16/learning-notes-nuxt-crash-course-intro-tutorial/";
-    var disqus_url = "https://tech.kdchang.net/2024/11/16/learning-notes-nuxt-crash-course-intro-tutorial/";
+    var disqus_identifier = "https://tech.kdchang.net/2021/12/13/learning-notes-python-decorator-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2021/12/13/learning-notes-python-decorator-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
