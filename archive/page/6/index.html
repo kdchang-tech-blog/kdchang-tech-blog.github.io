@@ -133,14 +133,14 @@
 
                         
                         <li>
-                            <a href="/search/">Search</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/search/">Search</a>
                         </li>
                         
                     
@@ -218,6 +218,55 @@
             ">
                 <!-- Main Content -->
 
+
+<div class="post-preview">
+
+    <a href="/2024/07/10/learning-notes-websocket-intro-tutorial/">
+        <h2 class="post-title">
+            WebSocket 入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            1. WebSocket 簡介WebSocket 是一種全雙工通訊協議，允許伺服器與客戶端建立持久連線，並在兩者之間即時傳輸數據。相較於傳統的 HTTP 請求-回應模式，WebSocket 提供了更低延遲的通訊方式。
+1.1 為何選擇 WebSocket？
+即時雙向通訊：適用於聊天應用、即時通知、線上遊戲等。
+減少 HTTP 開銷：不需要頻繁發送 HTTP 請求。
+降低延遲：資料可以即時傳遞......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-07-10
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2024/07/01/learning-notes-html-css-layout-intro-tutorial/">
+        <h2 class="post-title">
+            HTML & CSS 切版入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            1. HTML 基礎概念HTML（HyperText Markup Language）是網頁的基礎結構，透過標籤（Tag）定義不同的內容與結構。
+1.1 常見標籤
+&lt;!DOCTYPE html&gt;：宣告 HTML 文件類型。
+&lt;html&gt;：HTML 文件的根標籤。
+&lt;head&gt;：包含頁面設定、SEO 資訊、CSS 連結等。
+&lt;title&gt;：設定網......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-07-01
+    </p>
+
+</div>
+<hr>
 
 <div class="post-preview">
 
@@ -417,61 +466,6 @@ Ubuntu &#x2F; Debiansudo......
             前言在 JavaScript 中，箭頭函式（arrow function）與傳統函式在 this 的行為上有一些不同。箭頭函式不會創建自己的 this，而是繼承外部作用域的 this，這就是為什麼你會遇到 this 的問題。
 傳統函式中的 this在傳統的函式中，this 會指向該函式被調用時的上下文。例如，當函式作為事件處理器時，this 會指向觸發事件的元素。
 function regu......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2023-12-21
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/12/21/learning-notes-javascript-this-cases-intro-tutorial/">
-        <h2 class="post-title">
-            JavaScript 多事件處理綁定使用情境入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言在 JavaScript 中，你可以通過事件處理的方式來為多個 input 元素綁定事件處理器。這樣做可以讓你在父容器上綁定一個事件處理器，並通過 event.target 確定觸發事件的具體 input 元素，而不需要為每個 input 元素單獨綁定事件。
-事件委派的概念事件委派是一種常見的事件處理技術，它將事件綁定到父元素或容器上，然後通過 event.target 來確定哪個子元素......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2023-12-21
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/12/21/learning-notes-vuejs-pinia-store-reactive-intro-tutorial copy/">
-        <h2 class="post-title">
-            Vue pinia 保持 reactive 入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            保持 reactive 寫法：
-
-1️. 用 computedconst todos = computed(() =&gt; todoStore.todos)
-
-優點  
-
-保持 reactive  
-簡單直接  
-在 template 裡 todos 可以直接使用
-
-缺點  
-
-如果只是讀值，其實有點多餘
-
-建議用於：在 template 需要用 v-for=&quot;todo in t......
         </div>
     </a>
     <p class="post-meta">

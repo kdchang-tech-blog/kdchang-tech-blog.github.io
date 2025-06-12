@@ -26,11 +26,11 @@
     
     <title>
         
-          Bloom Filter 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          金流使用 Hash 原因入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/12/15/learning-notes-jsx-intro-tutorial copy/">
+    <link rel="canonical" href="https://tech.kdchang.net/2024/12/18/learning-notes-payment-hash-intro-tutorial copy/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="Bloom Filter 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="Bloom Filter 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="金流使用 Hash 原因入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="金流使用 Hash 原因入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -133,14 +133,14 @@
 
                         
                         <li>
-                            <a href="/search/">Search</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/search/">Search</a>
                         </li>
                         
                     
@@ -199,17 +199,23 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>Bloom Filter 入門教學筆記 | 學習筆記</h1>
+                    <h1>金流使用 Hash 原因入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2024-12-15
+                        2024-12-18
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#Bloom Filter" title="Bloom Filter">Bloom Filter</a>
+                          <a class="tag" href="/tags/#Line Pay API" title="Line Pay API">Line Pay API</a>
                         
-                          <a class="tag" href="/tags/#布隆過濾器" title="布隆過濾器">布隆過濾器</a>
+                          <a class="tag" href="/tags/#第三方支付" title="第三方支付">第三方支付</a>
+                        
+                          <a class="tag" href="/tags/#payment" title="payment">payment</a>
+                        
+                          <a class="tag" href="/tags/#Hash" title="Hash">Hash</a>
+                        
+                          <a class="tag" href="/tags/#金流" title="金流">金流</a>
                         
 
                     </div>
@@ -235,76 +241,96 @@
                 </div>
                 <br>
                 <div>
-                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在處理大數據或需要大量查詢的系統中，「是否存在某個元素」是一個常見的需求。例如：檢查某個使用者是否已註冊、某筆資料是否已儲存、或某個網址是否在黑名單中。這些操作如果都直接查詢資料庫，會造成效能瓶頸，尤其在資料量非常大的情況下。</p>
-<p>為了解決這個問題，<strong>Bloom Filter（布隆過濾器）</strong>誕生了。這是一種<strong>空間效率極高且速度快速</strong>的<strong>概率型資料結構</strong>，用於檢查元素是否在集合中。它的特點是可以節省大量記憶體與查詢時間，代價是可能會有「誤判存在」的情況，但保證不會漏判。</p>
-<p>Bloom Filter 並不是用來取代資料庫，而是作為<strong>第一層快速判斷工具</strong>，幫助系統更有效率地篩選資料，提升整體效能。</p>
+                    <p>在金流（第三方支付或自建金流）系統中使用 <strong>Hash（雜湊）</strong> 的原因，主要是為了<strong>安全性</strong>與<strong>防止資料被竄改</strong>。以下是更詳細的解釋：</p>
 <hr>
-<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
-<li><p><strong>定義</strong>：Bloom Filter 是一種用於判斷元素是否存在於集合中的資料結構，具有一定誤判率。</p>
-</li>
-<li><p><strong>特點</strong>：</p>
+<h2 id="一、為什麼金流需要-Hash？"><a href="#一、為什麼金流需要-Hash？" class="headerlink" title="一、為什麼金流需要 Hash？"></a>一、為什麼金流需要 Hash？</h2><p>金流交易涉及敏感資料（如金額、訂單編號、使用者資訊、驗證參數等），若這些資料在傳輸過程中被竄改，將造成：</p>
 <ul>
-<li>省記憶體：只使用位元陣列來表示集合</li>
-<li>查詢速度快：時間複雜度為 O(k)，k 為 hash 函數數量</li>
-<li>有誤判率：可能錯誤地認為某元素存在，但不會錯誤地排除已存在的元素</li>
-<li>不可刪除：傳統 Bloom Filter 不支援元素刪除（可改用 Counting Bloom Filter）</li>
+<li>金額錯誤（被調整為更小金額）</li>
+<li>偽造付款成功通知</li>
+<li>使用者資料外洩</li>
+<li>金流詐騙行為</li>
+</ul>
+<p>因此，<strong>金流平台與商家之間需要一種方式來驗證資料完整性與來源</strong>，這就是使用 Hash 的目的。</p>
+<hr>
+<h2 id="二、Hash-的功能與好處"><a href="#二、Hash-的功能與好處" class="headerlink" title="二、Hash 的功能與好處"></a>二、Hash 的功能與好處</h2><h3 id="1-防止資料被竄改"><a href="#1-防止資料被竄改" class="headerlink" title="1. 防止資料被竄改"></a>1. 防止資料被竄改</h3><p>將參數與商家的金鑰（如 <code>HashKey</code>, <code>HashIV</code>, <code>Secret</code>) 一起進行加密產生 Hash，當接收到資料時重新運算比對 Hash 是否一致，可判斷資料是否遭到中間人修改。</p>
+<h3 id="2-驗證資料來源（防偽）"><a href="#2-驗證資料來源（防偽）" class="headerlink" title="2. 驗證資料來源（防偽）"></a>2. 驗證資料來源（防偽）</h3><p>因為 Hash 中包含商家密鑰，只有商家與金流平台知道，第三方無法偽造相同的 Hash 值。</p>
+<h3 id="3-簽章比對（防止偽造）"><a href="#3-簽章比對（防止偽造）" class="headerlink" title="3. 簽章比對（防止偽造）"></a>3. 簽章比對（防止偽造）</h3><p>如同電子簽章，確保伺服器回傳的付款成功訊息未被偽造。</p>
+<hr>
+<h2 id="三、常見應用場景"><a href="#三、常見應用場景" class="headerlink" title="三、常見應用場景"></a>三、常見應用場景</h2><ol>
+<li><p><strong>交易請求（Payment Request）</strong></p>
+<ul>
+<li>商家送出訂單資訊與 Hash 到金流平台。</li>
+<li>金流平台驗證 Hash 是否正確。</li>
 </ul>
 </li>
-<li><p><strong>運作方式</strong>：</p>
-<ol>
-<li><p>建立一個 bit array（位元陣列），初始為全 0</p>
-</li>
-<li><p>每個元素經由多個 hash 函數映射為數個 bit 位址，並設為 1</p>
-</li>
-<li><p>查詢元素時，將元素經過相同的 hash 函數，檢查對應 bit 是否都為 1</p>
+<li><p><strong>金流回傳通知（Callback）</strong></p>
 <ul>
-<li>若任一為 0，則元素<strong>一定不存在</strong></li>
-<li>若全部為 1，則元素<strong>可能存在</strong></li>
+<li>金流平台回傳付款成功訊息與 Hash。</li>
+<li>商家伺服器驗證 Hash 是否正確，確保通知未被偽造。</li>
 </ul>
 </li>
 </ol>
-</li>
-<li><p><strong>應用場景</strong>：</p>
+<hr>
+<h2 id="四、常見演算法"><a href="#四、常見演算法" class="headerlink" title="四、常見演算法"></a>四、常見演算法</h2><p>常用於金流驗證的 Hash 演算法包括：</p>
 <ul>
-<li>快取系統的查詢優化</li>
-<li>URL 黑名單篩選</li>
-<li>防止 email 重複註冊</li>
-<li>分散式系統中的資源去重</li>
+<li><strong>SHA-256</strong>（常見於 Line Pay、藍新金流）</li>
+<li><strong>SHA-1 &#x2F; MD5</strong>（部分舊系統使用，不建議，因為已知有碰撞風險）</li>
+</ul>
+<hr>
+<h2 id="五、範例（以-SHA-256-為例）"><a href="#五、範例（以-SHA-256-為例）" class="headerlink" title="五、範例（以 SHA-256 為例）"></a>五、範例（以 SHA-256 為例）</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generate_hash</span>(<span class="params">params, hash_key, hash_iv</span>):</span><br><span class="line">    <span class="comment"># 1. 排序參數</span></span><br><span class="line">    sorted_params = <span class="built_in">sorted</span>(params.items())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 2. 組合參數字串</span></span><br><span class="line">    query = urllib.parse.urlencode(sorted_params)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 3. 加入 HashKey 和 HashIV</span></span><br><span class="line">    raw = <span class="string">f&quot;HashKey=<span class="subst">&#123;hash_key&#125;</span>&amp;<span class="subst">&#123;query&#125;</span>&amp;HashIV=<span class="subst">&#123;hash_iv&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 4. URL encode 並轉為小寫</span></span><br><span class="line">    encoded = urllib.parse.quote_plus(raw).lower()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 5. SHA-256 雜湊後轉大寫</span></span><br><span class="line">    hash_value = hashlib.sha256(encoded.encode(<span class="string">&#x27;utf-8&#x27;</span>)).hexdigest().upper()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> hash_value</span><br></pre></td></tr></table></figure>
+
+<h2 id="六、重點摘要"><a href="#六、重點摘要" class="headerlink" title="六、重點摘要"></a>六、重點摘要</h2><ul>
+<li><p><strong>什麼是 Hash？</strong></p>
+<ul>
+<li>一種不可逆的單向編碼函數。</li>
+<li>輸入內容不論長短，輸出皆為固定長度的字串（雜湊值）。</li>
+</ul>
+</li>
+<li><p><strong>Hash 的特性</strong></p>
+<ul>
+<li>不可逆性（無法由輸出推回輸入）。</li>
+<li>輸入微幅變動會產生截然不同的結果。</li>
+<li>相同輸入會產生相同輸出（穩定性）。</li>
+</ul>
+</li>
+<li><p><strong>金流為何需要 Hash？</strong></p>
+<ol>
+<li><strong>資料驗證</strong>：確保交易資料在傳送過程未遭竄改。</li>
+<li><strong>身份驗證</strong>：用來確認請求是否來自可信來源（如商家端或金流平台）。</li>
+<li><strong>防止偽造</strong>：Hash 搭配密鑰可防止惡意第三方偽造交易請求。</li>
+<li><strong>簽章與紀錄</strong>：用於產生交易紀錄摘要，利於日後比對查核。</li>
+</ol>
+</li>
+<li><p><strong>常見應用場景</strong></p>
+<ul>
+<li>第三方金流（如：藍新、綠界、Line Pay）API 請求驗證。</li>
+<li>商店端對回傳交易結果進行驗證（例如 callback 處理）。</li>
+<li>加密交易參數避免資料外洩。</li>
 </ul>
 </li>
 </ul>
 <hr>
-<h2 id="實際範例（Python-語言）"><a href="#實際範例（Python-語言）" class="headerlink" title="實際範例（Python 語言）"></a>實際範例（Python 語言）</h2><p>以下示範如何使用 Python 實作 Bloom Filter，並透過 <code>pybloom-live</code> 套件進行簡易操作。</p>
-<h3 id="安裝套件"><a href="#安裝套件" class="headerlink" title="安裝套件"></a>安裝套件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pybloom-live</span><br></pre></td></tr></table></figure>
+<h2 id="實際範例"><a href="#實際範例" class="headerlink" title="實際範例"></a>實際範例</h2><p>以下以台灣常見的金流服務商 <strong>綠界科技（ECPay）</strong> 為例，說明 Hash 如何在金流流程中使用。</p>
+<h3 id="📌-模擬付款請求流程中的-Hash-機制"><a href="#📌-模擬付款請求流程中的-Hash-機制" class="headerlink" title="📌 模擬付款請求流程中的 Hash 機制"></a>📌 模擬付款請求流程中的 Hash 機制</h3><p>假設我們要透過金流平台建立一筆訂單，商家需呼叫綠界的 API 送出交易請求，為確保資料未被竄改，綠界要求每筆請求需附帶經 Hash 加密的驗證碼（CheckMacValue）。</p>
+<h3 id="1-建立交易資料"><a href="#1-建立交易資料" class="headerlink" title="1. 建立交易資料"></a>1. 建立交易資料</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MerchantID=2000132</span><br><span class="line">MerchantTradeNo=KD123456789</span><br><span class="line">MerchantTradeDate=2025/06/12 15:00:00</span><br><span class="line">PaymentType=aio</span><br><span class="line">TotalAmount=1000</span><br><span class="line">TradeDesc=測試交易</span><br><span class="line">ItemName=測試商品1件</span><br><span class="line">ReturnURL=https://www.kdchang.me/callback</span><br><span class="line">ChoosePayment=ALL</span><br></pre></td></tr></table></figure>
 
-<h3 id="基本使用範例"><a href="#基本使用範例" class="headerlink" title="基本使用範例"></a>基本使用範例</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pybloom_live <span class="keyword">import</span> BloomFilter</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立一個 Bloom Filter，容量為 10000 筆，容忍誤判率為 1%</span></span><br><span class="line">bloom = BloomFilter(capacity=<span class="number">10000</span>, error_rate=<span class="number">0.01</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加入元素</span></span><br><span class="line">bloom.add(<span class="string">&quot;apple&quot;</span>)</span><br><span class="line">bloom.add(<span class="string">&quot;banana&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查詢元素是否存在</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;apple&quot;</span> <span class="keyword">in</span> bloom)   <span class="comment"># True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;banana&quot;</span> <span class="keyword">in</span> bloom)  <span class="comment"># True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;grape&quot;</span> <span class="keyword">in</span> bloom)   <span class="comment"># False（或可能 True，機率很小）</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-組合字串（需加上-HashKey-與-HashIV）"><a href="#2-組合字串（需加上-HashKey-與-HashIV）" class="headerlink" title="2. 組合字串（需加上 HashKey 與 HashIV）"></a>2. 組合字串（需加上 HashKey 與 HashIV）</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HashKey=5294y06JbISpM5x9</span><br><span class="line">HashIV=v77hoKGq4kWxNNIS</span><br><span class="line"></span><br><span class="line">組合前格式如下（依照參數 ASCII 排序）：</span><br><span class="line">HashKey=5294y06JbISpM5x9&amp;ChoosePayment=ALL&amp;ItemName=測試商品1件&amp;MerchantID=2000132&amp;MerchantTradeDate=2025/06/12 15:00:00&amp;MerchantTradeNo=KD123456789&amp;PaymentType=aio&amp;ReturnURL=https://www.kdchang.me/callback&amp;TotalAmount=1000&amp;TradeDesc=測試交易&amp;HashIV=v77hoKGq4kWxNNIS</span><br></pre></td></tr></table></figure>
 
-<h3 id="解釋程式碼"><a href="#解釋程式碼" class="headerlink" title="解釋程式碼"></a>解釋程式碼</h3><ul>
-<li><code>capacity</code>: 預估將要儲存的元素數量，Bloom Filter 的大小與 hash 數量會依此設定</li>
-<li><code>error_rate</code>: 容許誤判率（預測某元素在集合中時，實際不在）</li>
-<li><code>.add()</code>: 將元素加入 Bloom Filter</li>
-<li><code>in</code>: 使用 Python 語法糖來查詢元素是否在 Bloom Filter 中</li>
-</ul>
-<h3 id="模擬誤判情況"><a href="#模擬誤判情況" class="headerlink" title="模擬誤判情況"></a>模擬誤判情況</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">false_positives = <span class="number">0</span></span><br><span class="line">test_data = [<span class="string">&quot;item&quot;</span> + <span class="built_in">str</span>(i) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10000</span>, <span class="number">10100</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> test_data:</span><br><span class="line">    <span class="keyword">if</span> item <span class="keyword">in</span> bloom:</span><br><span class="line">        false_positives += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;誤判次數：<span class="subst">&#123;false_positives&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="3-進行-URL-Encode-與轉成小寫，再做-Hash（通常使用-SHA256）"><a href="#3-進行-URL-Encode-與轉成小寫，再做-Hash（通常使用-SHA256）" class="headerlink" title="3. 進行 URL Encode 與轉成小寫，再做 Hash（通常使用 SHA256）"></a>3. 進行 URL Encode 與轉成小寫，再做 Hash（通常使用 SHA256）</h3><p>經過 SHA256 計算後會得到一段長度為 64 字元的十六進位字串：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckMacValue=5F8BCE79E9D2748F443D751B34EC5085EDB8C52265521FC42D6F807F208F47D2</span><br></pre></td></tr></table></figure>
 
-<p>這段程式碼將檢查 100 筆從未加入過的資料，看有多少筆被錯誤地判斷為「已存在」。由於設定誤判率為 1%，實際誤判筆數大致會落在 0~2 筆之間。</p>
+<p>此值將作為驗證碼隨交易資料一併傳送至金流平台。</p>
+<h3 id="4-綠界端驗證流程"><a href="#4-綠界端驗證流程" class="headerlink" title="4. 綠界端驗證流程"></a>4. 綠界端驗證流程</h3><p>綠界收到資料後，會根據相同的規則計算一次 Hash 值並與商家提供的 CheckMacValue 比對，若一致，才表示資料未遭竄改，交易請求才會被接受。</p>
 <hr>
-<h2 id="進階補充：Bloom-Filter-的數學基礎"><a href="#進階補充：Bloom-Filter-的數學基礎" class="headerlink" title="進階補充：Bloom Filter 的數學基礎"></a>進階補充：Bloom Filter 的數學基礎</h2><p>假設：</p>
+<h3 id="延伸說明：為什麼不用密碼明文？"><a href="#延伸說明：為什麼不用密碼明文？" class="headerlink" title="延伸說明：為什麼不用密碼明文？"></a>延伸說明：為什麼不用密碼明文？</h3><p>有些人可能會問：「為何不直接傳送密碼或 token 來驗證身分？」原因在於：</p>
 <ul>
-<li><code>n</code> 為預估儲存的元素數量</li>
-<li><code>m</code> 為 bit 陣列大小</li>
-<li><code>k</code> 為 hash 函數數量</li>
+<li>密碼若明文傳輸容易被攔截。</li>
+<li>即使是 HTTPS 傳輸，也無法防止伺服器端遭駭後資料外洩。</li>
+<li>Hash 機制能將敏感資訊加密為單向摘要，即使外洩也難以還原原始資料。</li>
 </ul>
-<p>則誤判率約為：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(1 - e^(-kn/m))^k</span><br></pre></td></tr></table></figure>
-
-<p>透過微積分分析，可以得出在給定 <code>m</code> 與 <code>n</code> 的情況下，最理想的 hash 函數數量為：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">k = (m/n) * ln(2)</span><br></pre></td></tr></table></figure>
-
-<p>Bloom Filter 的實作常會根據這些公式自動配置最佳參數。</p>
-<hr>
-<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Bloom Filter 是一個非常實用的資料結構，適合用於需要<strong>高效率查詢與記憶體節省</strong>的場景。雖然它無法完全準確地判斷元素是否存在，但在可以接受少量誤判的場景（例如快取、URL 過濾、黑名單系統等）中，它是非常有效率的選擇。</p>
-<p>理解 Bloom Filter 的基本概念與限制，可以幫助我們在設計大型系統時做出更合適的架構選擇。如果你正在處理大量資料或需要快速查詢的場景，不妨試著將 Bloom Filter 納入考量。</p>
+<p>若搭配 <strong>時間戳記</strong>、<strong>一次性 token</strong> 或 <strong>HMAC</strong>（含密鑰的 Hash），可大幅提升安全性。</p>
+<h2 id="七、總結"><a href="#七、總結" class="headerlink" title="七、總結"></a>七、總結</h2><p>金流使用 Hash 的核心目的是「<strong>確保資料未被篡改並驗證來源合法性</strong>」。它就像資料的「指紋」，能保證交易資訊的完整性與安全性。若缺乏這種驗證機制，金流系統就容易遭受攻擊或詐騙，對商家與消費者都造成風險。</p>
+<p>因此，不論是在串接金流 API、處理回傳通知或比對訂單資訊時，<strong>妥善處理 Hash 的生成與比對，是金流串接不可忽略的重要環節。</strong></p>
 
                 </div>
 
@@ -321,7 +347,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/16/learning-notes-line-pay-api-intro-tutorial/" title="LINE Pay API 入門教學筆記 | 學習筆記" rel="bookmark">LINE Pay API 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -357,8 +383,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/12/15/learning-notes-jsx-intro-tutorial%20copy/";
-    var disqus_url = "https://tech.kdchang.net/2024/12/15/learning-notes-jsx-intro-tutorial%20copy/";
+    var disqus_identifier = "https://tech.kdchang.net/2024/12/18/learning-notes-payment-hash-intro-tutorial%20copy/";
+    var disqus_url = "https://tech.kdchang.net/2024/12/18/learning-notes-payment-hash-intro-tutorial%20copy/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

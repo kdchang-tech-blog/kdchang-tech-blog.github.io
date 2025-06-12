@@ -133,14 +133,14 @@
 
                         
                         <li>
-                            <a href="/search/">Search</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/search/">Search</a>
                         </li>
                         
                     
@@ -305,6 +305,56 @@ Ang......
 
 <div class="post-preview">
 
+    <a href="/2024/12/18/learning-notes-payment-hash-intro-tutorial copy/">
+        <h2 class="post-title">
+            金流使用 Hash 原因入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            在金流（第三方支付或自建金流）系統中使用 Hash（雜湊） 的原因，主要是為了安全性與防止資料被竄改。以下是更詳細的解釋：
+
+一、為什麼金流需要 Hash？金流交易涉及敏感資料（如金額、訂單編號、使用者資訊、驗證參數等），若這些資料在傳輸過程中被竄改，將造成：
+
+金額錯誤（被調整為更小金額）
+偽造付款成功通知
+使用者資料外洩
+金流詐騙行為
+
+因此，金流平台與商家之間需要一種方式來驗證資料完整......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-12-18
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2024/12/16/learning-notes-line-pay-api-intro-tutorial/">
+        <h2 class="post-title">
+            LINE Pay API 入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            一、前言在電子商務與線上交易日益普及的今天，提供穩定又方便的金流服務已成為網站與應用程式不可或缺的一環。LINE Pay 是由 LINE Corporation 推出的行動支付平台，除了在線上與實體店面支援消費者付款外，也提供開發者 API 介面來整合第三方商務服務，使開發者可以在網站或應用程式中無縫串接付款功能。
+本篇教學筆記將帶你了解 LINE Pay API 的基本觀念、運作流程，以及......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-12-16
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/">
         <h2 class="post-title">
             Vue ref 與 reactive 入門教學筆記 | 學習筆記
@@ -394,59 +444,6 @@ ref 使用情境適用於：
     <p class="post-meta">
         Posted by kdchang on
         2024-12-16
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2024/12/15/learning-notes-jsx-intro-tutorial copy/">
-        <h2 class="post-title">
-            Bloom Filter 入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言在處理大數據或需要大量查詢的系統中，「是否存在某個元素」是一個常見的需求。例如：檢查某個使用者是否已註冊、某筆資料是否已儲存、或某個網址是否在黑名單中。這些操作如果都直接查詢資料庫，會造成效能瓶頸，尤其在資料量非常大的情況下。
-為了解決這個問題，Bloom Filter（布隆過濾器）誕生了。這是一種空間效率極高且速度快速的概率型資料結構，用於檢查元素是否在集合中。它的特點是可以節省大量記......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2024-12-15
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2024/12/14/learning-notes-css-font-size-intro-tutorial/">
-        <h2 class="post-title">
-            CSS font-size 單位介紹入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            在 CSS 中，px、rem、em 和 vh 都可以用來設定 font-size，但它們的用途和適用場景不同。以下是詳細解析與使用建議：
-
-1️. px（像素，固定單位）特性
-絕對單位，與螢幕解析度無關。
-不會受父元素影響，設定多少就是多少。
-
-適用場景精確控制字體大小，例如：
-
-Logo、按鈕字體
-小型 UI 元素（如標籤、提示訊息）
-避免字體大小變動的情境
-
-範例h1 &#123; fo......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2024-12-14
     </p>
 
 </div>
