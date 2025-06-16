@@ -26,7 +26,7 @@
     
     <title>
         
-          WebSocket 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          WebSocket 入門教學筆記（ESM 模組版） | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="WebSocket 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="WebSocket 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="WebSocket 入門教學筆記（ESM 模組版） | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="WebSocket 入門教學筆記（ESM 模組版） | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -133,14 +133,14 @@
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/search/">Search</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/search/">Search</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -199,7 +199,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>WebSocket 入門教學筆記 | 學習筆記</h1>
+                    <h1>WebSocket 入門教學筆記（ESM 模組版） | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
                         2024-07-10
@@ -237,39 +237,100 @@
                 </div>
                 <br>
                 <div>
-                    <h1 id="1-WebSocket-簡介"><a href="#1-WebSocket-簡介" class="headerlink" title="1. WebSocket 簡介"></a>1. WebSocket 簡介</h1><p><code>WebSocket</code> 是一種全雙工通訊協議，允許伺服器與客戶端建立持久連線，並在兩者之間即時傳輸數據。相較於傳統的 HTTP 請求-回應模式，WebSocket 提供了更低延遲的通訊方式。</p>
-<h3 id="1-1-為何選擇-WebSocket？"><a href="#1-1-為何選擇-WebSocket？" class="headerlink" title="1.1 為何選擇 WebSocket？"></a>1.1 為何選擇 WebSocket？</h3><ul>
-<li><strong>即時雙向通訊</strong>：適用於聊天應用、即時通知、線上遊戲等。</li>
-<li><strong>減少 HTTP 開銷</strong>：不需要頻繁發送 HTTP 請求。</li>
-<li><strong>降低延遲</strong>：資料可以即時傳遞，避免輪詢 (polling) 的延遲問題。</li>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在現代前端與全端開發中，許多應用需求都仰賴即時資料傳輸，例如即時聊天、線上協作、股票報價、IoT 裝置通訊等。而傳統的 HTTP 協定採用「請求－回應」模式，並不適合雙向即時通訊。這時，WebSocket 協定就成為更有效率的替代方案。</p>
+<p><strong>WebSocket</strong> 是 HTML5 標準的一部分，它允許在用戶端與伺服器之間建立一條持久的雙向連線。這使得伺服器能即時推播資料給客戶端，而非只能等待客戶端請求，適合實作低延遲、高互動的應用場景。</p>
+<p>本教學將透過現代的 <strong>ESM（ECMAScript Module）語法</strong>，介紹如何在 Node.js 環境中建立 WebSocket 應用，並搭配 HTML 客戶端示範雙向通訊流程。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p><strong>WebSocket 是什麼？</strong><br>一種基於 TCP 的雙向通訊協定，可在瀏覽器與伺服器之間建立長連線。</p>
+</li>
+<li><p><strong>優點</strong></p>
+<ul>
+<li>持久連線，不需每次重複建立與關閉連線</li>
+<li>支援伺服器主動推播資料給客戶端</li>
+<li>節省頻寬與延遲</li>
+<li>適用於高即時性場景</li>
 </ul>
-<h1 id="2-建立-WebSocket-伺服器"><a href="#2-建立-WebSocket-伺服器" class="headerlink" title="2. 建立 WebSocket 伺服器"></a>2. 建立 WebSocket 伺服器</h1><h3 id="2-1-安裝-WebSocket-套件"><a href="#2-1-安裝-WebSocket-套件" class="headerlink" title="2.1 安裝 WebSocket 套件"></a>2.1 安裝 WebSocket 套件</h3><p>使用 Node.js 建立 WebSocket 伺服器，首先安裝 <code>ws</code> 套件：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install ws</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-2-建立基本-WebSocket-伺服器"><a href="#2-2-建立基本-WebSocket-伺服器" class="headerlink" title="2.2 建立基本 WebSocket 伺服器"></a>2.2 建立基本 WebSocket 伺服器</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">WebSocket</span> = <span class="built_in">require</span>(<span class="string">&#x27;ws&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> server = <span class="keyword">new</span> <span class="title class_">WebSocket</span>.<span class="title class_">Server</span>(&#123; <span class="attr">port</span>: <span class="number">8080</span> &#125;);</span><br><span class="line"></span><br><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;connection&#x27;</span>, <span class="function">(<span class="params">ws</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Client connected&#x27;</span>);</span><br><span class="line">  </span><br><span class="line">  ws.<span class="title function_">on</span>(<span class="string">&#x27;message&#x27;</span>, <span class="function">(<span class="params">message</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Received: <span class="subst">$&#123;message&#125;</span>`</span>);</span><br><span class="line">    ws.<span class="title function_">send</span>(<span class="string">`Echo: <span class="subst">$&#123;message&#125;</span>`</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  ws.<span class="title function_">on</span>(<span class="string">&#x27;close&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Client disconnected&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;WebSocket server is running on ws://localhost:8080&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h1 id="3-建立-WebSocket-客戶端"><a href="#3-建立-WebSocket-客戶端" class="headerlink" title="3. 建立 WebSocket 客戶端"></a>3. 建立 WebSocket 客戶端</h1><p>可以使用 JavaScript 在前端建立 WebSocket 連線：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> socket = <span class="keyword">new</span> <span class="title class_">WebSocket</span>(<span class="string">&#x27;ws://localhost:8080&#x27;</span>);</span><br><span class="line"></span><br><span class="line">socket.<span class="property">onopen</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Connected to server&#x27;</span>);</span><br><span class="line">  socket.<span class="title function_">send</span>(<span class="string">&#x27;Hello, Server!&#x27;</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">socket.<span class="property">onmessage</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Received from server: <span class="subst">$&#123;event.data&#125;</span>`</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">socket.<span class="property">onclose</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Disconnected from server&#x27;</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="4-處理多個客戶端"><a href="#4-處理多個客戶端" class="headerlink" title="4. 處理多個客戶端"></a>4. 處理多個客戶端</h1><h3 id="4-1-廣播訊息給所有連線中的客戶端"><a href="#4-1-廣播訊息給所有連線中的客戶端" class="headerlink" title="4.1 廣播訊息給所有連線中的客戶端"></a>4.1 廣播訊息給所有連線中的客戶端</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;connection&#x27;</span>, <span class="function">(<span class="params">ws</span>) =&gt;</span> &#123;</span><br><span class="line">  ws.<span class="title function_">on</span>(<span class="string">&#x27;message&#x27;</span>, <span class="function">(<span class="params">message</span>) =&gt;</span> &#123;</span><br><span class="line">    server.<span class="property">clients</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">client</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (client.<span class="property">readyState</span> === <span class="title class_">WebSocket</span>.<span class="property">OPEN</span>) &#123;</span><br><span class="line">        client.<span class="title function_">send</span>(message);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h1 id="5-WebSocket-與-Express-整合"><a href="#5-WebSocket-與-Express-整合" class="headerlink" title="5. WebSocket 與 Express 整合"></a>5. WebSocket 與 Express 整合</h1><p>可以將 WebSocket 整合到 Express 伺服器中：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">WebSocket</span> = <span class="built_in">require</span>(<span class="string">&#x27;ws&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"><span class="keyword">const</span> server = http.<span class="title function_">createServer</span>(app);</span><br><span class="line"><span class="keyword">const</span> wss = <span class="keyword">new</span> <span class="title class_">WebSocket</span>.<span class="title class_">Server</span>(&#123; server &#125;);</span><br><span class="line"></span><br><span class="line">wss.<span class="title function_">on</span>(<span class="string">&#x27;connection&#x27;</span>, <span class="function">(<span class="params">ws</span>) =&gt;</span> &#123;</span><br><span class="line">  ws.<span class="title function_">on</span>(<span class="string">&#x27;message&#x27;</span>, <span class="function">(<span class="params">message</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Received: <span class="subst">$&#123;message&#125;</span>`</span>);</span><br><span class="line">    ws.<span class="title function_">send</span>(<span class="string">`Echo: <span class="subst">$&#123;message&#125;</span>`</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">send</span>(<span class="string">&#x27;WebSocket Server is running&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">3000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Server running on http://localhost:3000&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h1 id="6-WebSocket-安全性考量"><a href="#6-WebSocket-安全性考量" class="headerlink" title="6. WebSocket 安全性考量"></a>6. WebSocket 安全性考量</h1><ul>
-<li>**使用 WSS (WebSocket Secure)**：確保連線透過 <code>wss://</code> 加密傳輸。</li>
-<li><strong>驗證客戶端</strong>：可以使用 JWT 或 API Key 驗證使用者身份。</li>
-<li><strong>防止惡意攻擊</strong>：設定最大連線數、限制訊息大小，防止 DDoS 攻擊。</li>
+</li>
+<li><p><strong>WebSocket vs HTTP</strong></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>HTTP</th>
+<th>WebSocket</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>通訊模式</td>
+<td>客戶端請求 → 伺服器回應</td>
+<td>雙向（Client ↔ Server）</td>
+</tr>
+<tr>
+<td>連線型態</td>
+<td>短連線</td>
+<td>長連線（持續開啟）</td>
+</tr>
+<tr>
+<td>傳輸效率</td>
+<td>較低（含 header）</td>
+<td>高效（精簡封包）</td>
+</tr>
+</tbody></table>
+</li>
+<li><p><strong>常見應用情境</strong></p>
+<ul>
+<li>即時聊天系統</li>
+<li>線上遊戲同步</li>
+<li>IoT 裝置狀態回報</li>
+<li>即時儀表板或股市報價</li>
 </ul>
-<h1 id="7-部署-WebSocket-應用"><a href="#7-部署-WebSocket-應用" class="headerlink" title="7. 部署 WebSocket 應用"></a>7. 部署 WebSocket 應用</h1><h3 id="7-1-使用-PM2-管理-WebSocket-伺服器"><a href="#7-1-使用-PM2-管理-WebSocket-伺服器" class="headerlink" title="7.1 使用 PM2 管理 WebSocket 伺服器"></a>7.1 使用 PM2 管理 WebSocket 伺服器</h3><p>安裝 PM2：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -g pm2</span><br></pre></td></tr></table></figure>
-<p>啟動 WebSocket 伺服器：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pm2 start server.js --name websocket-server</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>基本 API（前端）</strong></p>
+<ul>
+<li><code>new WebSocket(url)</code>：建立連線</li>
+<li><code>socket.onopen</code>：連線成功</li>
+<li><code>socket.send()</code>：傳送資料</li>
+<li><code>socket.onmessage</code>：接收訊息</li>
+<li><code>socket.onclose</code>：連線關閉</li>
+<li><code>socket.onerror</code>：錯誤處理</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="實作範例（Node-js-ESM-原生-HTML）"><a href="#實作範例（Node-js-ESM-原生-HTML）" class="headerlink" title="實作範例（Node.js + ESM + 原生 HTML）"></a>實作範例（Node.js + ESM + 原生 HTML）</h2><h3 id="一、專案初始化"><a href="#一、專案初始化" class="headerlink" title="一、專案初始化"></a>一、專案初始化</h3><p>建立一個新的資料夾並初始化：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> websocket-esm-demo</span><br><span class="line"><span class="built_in">cd</span> websocket-esm-demo</span><br><span class="line">npm init -y</span><br><span class="line">npm install ws</span><br></pre></td></tr></table></figure>
 
-<h3 id="7-2-使用-Nginx-反向代理-WebSocket"><a href="#7-2-使用-Nginx-反向代理-WebSocket" class="headerlink" title="7.2 使用 Nginx 反向代理 WebSocket"></a>7.2 使用 Nginx 反向代理 WebSocket</h3><p>設定 Nginx 配置檔：</p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> example.com;</span><br><span class="line"></span><br><span class="line">    <span class="section">location</span> /ws/ &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://localhost:8080;</span><br><span class="line">        <span class="attribute">proxy_http_version</span> <span class="number">1</span>.<span class="number">1</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Connection <span class="string">&quot;Upgrade&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>修改 <code>package.json</code> 以啟用 ESM 模組支援：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;websocket-esm-demo&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;module&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;ws&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^8.0.0&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="8-結論"><a href="#8-結論" class="headerlink" title="8. 結論"></a>8. 結論</h1><p>這篇筆記介紹了 WebSocket 的基礎概念與實作技巧，包括如何建立 WebSocket 伺服器、處理多個客戶端、與 Express 整合、以及部署與安全性考量。建議進一步學習 WebSocket 與 Redis Pub&#x2F;Sub、負載平衡技術，提升系統可擴展性與穩定性。</p>
+<hr>
+<h3 id="二、伺服器端（使用-ESM-模組語法）"><a href="#二、伺服器端（使用-ESM-模組語法）" class="headerlink" title="二、伺服器端（使用 ESM 模組語法）"></a>二、伺服器端（使用 ESM 模組語法）</h3><p>建立 <code>server.js</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// server.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">WebSocketServer</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;ws&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> wss = <span class="keyword">new</span> <span class="title class_">WebSocketServer</span>(&#123; <span class="attr">port</span>: <span class="number">8080</span> &#125;);</span><br><span class="line"></span><br><span class="line">wss.<span class="title function_">on</span>(<span class="string">&#x27;connection&#x27;</span>, <span class="function">(<span class="params">ws</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;用戶已連線&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  ws.<span class="title function_">on</span>(<span class="string">&#x27;message&#x27;</span>, <span class="function">(<span class="params">message</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`收到用戶訊息：<span class="subst">$&#123;message&#125;</span>`</span>);</span><br><span class="line">    ws.<span class="title function_">send</span>(<span class="string">`伺服器收到：<span class="subst">$&#123;message&#125;</span>`</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  ws.<span class="title function_">on</span>(<span class="string">&#x27;close&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;連線已關閉&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  ws.<span class="title function_">on</span>(<span class="string">&#x27;error&#x27;</span>, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;WebSocket 錯誤：&#x27;</span>, err);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;WebSocket 伺服器啟動於 ws://localhost:8080&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="三、客戶端-HTML（WebSocket-客戶端）"><a href="#三、客戶端-HTML（WebSocket-客戶端）" class="headerlink" title="三、客戶端 HTML（WebSocket 客戶端）"></a>三、客戶端 HTML（WebSocket 客戶端）</h3><p>建立 <code>index.html</code>：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-Hant&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>WebSocket ESM 範例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>WebSocket 即時通訊示範<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;input&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;輸入訊息&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;sendMessage()&quot;</span>&gt;</span>送出<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;log&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> socket = <span class="keyword">new</span> <span class="title class_">WebSocket</span>(<span class="string">&#x27;ws://localhost:8080&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      socket.<span class="title function_">addEventListener</span>(<span class="string">&#x27;open&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">logMessage</span>(<span class="string">&#x27;已連線至伺服器&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">      &#125;);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      socket.<span class="title function_">addEventListener</span>(<span class="string">&#x27;message&#x27;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">logMessage</span>(<span class="string">`來自伺服器：<span class="subst">$&#123;event.data&#125;</span>`</span>);</span></span><br><span class="line"><span class="language-javascript">      &#125;);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      socket.<span class="title function_">addEventListener</span>(<span class="string">&#x27;close&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">logMessage</span>(<span class="string">&#x27;連線已關閉&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">      &#125;);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      socket.<span class="title function_">addEventListener</span>(<span class="string">&#x27;error&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">logMessage</span>(<span class="string">&#x27;連線發生錯誤&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">      &#125;);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">function</span> <span class="title function_">sendMessage</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> input = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;input&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        socket.<span class="title function_">send</span>(input.<span class="property">value</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">logMessage</span>(<span class="string">`你說：<span class="subst">$&#123;input.value&#125;</span>`</span>);</span></span><br><span class="line"><span class="language-javascript">        input.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">function</span> <span class="title function_">logMessage</span>(<span class="params">msg</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> li = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;li&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        li.<span class="property">textContent</span> = msg;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;log&#x27;</span>).<span class="title function_">appendChild</span>(li);</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="四、執行與測試"><a href="#四、執行與測試" class="headerlink" title="四、執行與測試"></a>四、執行與測試</h3><ol>
+<li>啟動伺服器：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node server.js</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>打開 <code>index.html</code>（直接用瀏覽器開啟或用 VSCode Live Server 插件）</li>
+<li>在輸入框輸入訊息，點擊「送出」，觀察瀏覽器與後端終端機回應。</li>
+</ol>
+<hr>
+<h2 id="補充與進階建議"><a href="#補充與進階建議" class="headerlink" title="補充與進階建議"></a>補充與進階建議</h2><ul>
+<li><strong>安全性：</strong> 若部署在生產環境，應使用 <code>wss://</code>（WebSocket over TLS）取代 <code>ws://</code>。</li>
+<li><strong>重連策略：</strong> 真實場景下需考慮自動重連機制（如斷線重試）。</li>
+<li><strong>認證機制：</strong> WebSocket 不支援標準 HTTP 標頭傳遞 JWT，通常可透過 URL query 傳 token，或搭配 Session Cookie。</li>
+<li><strong>整合框架：</strong> 可結合 Express、Koa、Fastify 使用同一個 HTTP 伺服器提供 HTTP 與 WS。</li>
+</ul>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>WebSocket 是實現現代即時網頁應用的重要基礎建設，能提供更快、更輕量的資料通訊方式。透過本文，你應該已能建立一個使用 ESM 寫法的簡單 WebSocket 應用，並了解其基本運作流程。未來你可以進一步探索如 Socket.IO、SignalR 或 WebRTC 等進階解決方案，以支援更多功能與兼容性需求。</p>
 
                 </div>
 

@@ -133,14 +133,14 @@
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/search/">Search</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/search/">Search</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -221,18 +221,114 @@
 
 <div class="post-preview">
 
-    <a href="/2024/07/10/learning-notes-websocket-intro-tutorial/">
+    <a href="/2024/08/31/learning-notes-python-openssl-setup-intro-tutorial/">
         <h2 class="post-title">
-            WebSocket 入門教學筆記 | 學習筆記
+            Python 指定使用 OpenSSL 介紹入門教學筆記 | 學習筆記
         </h2>
         <hr>
         
         <div class="post-content-preview">
-            1. WebSocket 簡介WebSocket 是一種全雙工通訊協議，允許伺服器與客戶端建立持久連線，並在兩者之間即時傳輸數據。相較於傳統的 HTTP 請求-回應模式，WebSocket 提供了更低延遲的通訊方式。
-1.1 為何選擇 WebSocket？
-即時雙向通訊：適用於聊天應用、即時通知、線上遊戲等。
-減少 HTTP 開銷：不需要頻繁發送 HTTP 請求。
-降低延遲：資料可以即時傳遞......
+            前言如果 python -c &quot;import ssl; print(ssl.OPENSSL_VERSION)&quot; 顯示的是 LibreSSL 2.8.3，這表示 Python 並沒有使用 Homebrew 安裝的 OpenSSL，而是使用了系統預設的 LibreSSL。這通常發生在 Python 編譯時，沒有正確地連結到 Homebrew 的 OpenSSL 庫。
+為了解決......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-08-31
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2024/07/10/learning-notes-css-flexbox-align-items-align-content-garden-tutorial/">
+        <h2 class="post-title">
+            CSS Flexbox align-items 和 align-content 入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言在 CSS Flexbox 和 Grid 佈局中，align-items 和 align-content 兩者都與「對齊」有關，但適用的情境不同（單行 vs 多行）：
+1. align-items
+作用於單行內容（單行 Flexbox 或 Grid 容器內的項目）。
+控制子元素在交叉軸（cross-axis）上的對齊方式。
+
+常見值
+
+
+值
+說明
+
+
+
+stretch
+預設值，子元素會拉......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-07-10
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2024/07/10/learning-notes-css-flexbox-froggy-tutorial/">
+        <h2 class="post-title">
+            Flexbox Froggy 入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            1. Flexbox 簡介Flexbox（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。
+Flexbox Froggy 透過小青蛙過河遊戲化方式去介紹 Flexbox 使用方式：
+Level 1Welcome to Flexbox Froggy, a game where you hel......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-07-10
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2024/07/10/learning-notes-css-grid-garden-tutorial/">
+        <h2 class="post-title">
+            Grid Garden 入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            1. Grid 簡介Grid（Grid Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。
+Grid Garden 透過花圃澆花遊戲化方式去介紹 Grid 使用方式
+Level 1Welcome to Grid Garden, where you write CSS code to grow your carrot ......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-07-10
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2024/07/10/learning-notes-websocket-intro-tutorial/">
+        <h2 class="post-title">
+            WebSocket 入門教學筆記（ESM 模組版） | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言在現代前端與全端開發中，許多應用需求都仰賴即時資料傳輸，例如即時聊天、線上協作、股票報價、IoT 裝置通訊等。而傳統的 HTTP 協定採用「請求－回應」模式，並不適合雙向即時通訊。這時，WebSocket 協定就成為更有效率的替代方案。
+WebSocket 是 HTML5 標準的一部分，它允許在用戶端與伺服器之間建立一條持久的雙向連線。這使得伺服器能即時推播資料給客戶端，而非只能等待客戶......
         </div>
     </a>
     <p class="post-meta">
@@ -374,103 +470,6 @@ C......
     <p class="post-meta">
         Posted by kdchang on
         2024-01-22
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2024/01/21/en/about-backend-engineer-10-keywords/">
-        <h2 class="post-title">
-            10 key terms related to backend engineering
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            Here are 10 key terms related to backend engineering, covering essential skills, tools, and work methodologies:  
-
-Node.js &#x2F; Python &#x2F; Java &#x2F; Ruby &#x2F; PHP – Common backend programm......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2024-01-21
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/12/21/learning-notes-git-command-intro-tutorial/">
-        <h2 class="post-title">
-            Git 指令學習筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言Git 是現代軟體開發中最常使用的分散式版本控制系統，它幫助開發者管理源代碼的版本和協作。這篇教學將從基礎開始，介紹 Git 的常用命令並提供實際範例，幫助你熟悉如何使用 Git 來進行版本控制與協作。
-1. 初始化 Git 倉庫 (git init)在專案資料夾中使用 git init 可以初始化一個新的 Git 倉庫，這樣就可以開始使用 Git 來管理專案中的檔案版本。
-git in......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2023-12-21
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/12/21/learning-notes-git-intro-tutorial/">
-        <h2 class="post-title">
-            Git 入門教學筆記：從零開始學版本控制 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            為什麼要學 Git？在軟體開發中，版本控制是一個不可或缺的工具。Git 是目前最流行的版本控制系統，它能幫助你：
-
-記錄每次修改的歷史紀錄
-回復到任一個過去的狀態
-多人協作開發不衝突
-管理分支進行實驗性開發
-
-無論是獨立開發者、團隊協作，還是參與開源專案，Git 都是你的好夥伴。
-
-一、安裝 GitmacOSbrew install git
-
-Ubuntu &#x2F; Debiansudo......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2023-12-21
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/12/21/learning-notes-javascript-event-input-intro-tutorial/">
-        <h2 class="post-title">
-            JavaScript this 使用情境入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言在 JavaScript 中，箭頭函式（arrow function）與傳統函式在 this 的行為上有一些不同。箭頭函式不會創建自己的 this，而是繼承外部作用域的 this，這就是為什麼你會遇到 this 的問題。
-傳統函式中的 this在傳統的函式中，this 會指向該函式被調用時的上下文。例如，當函式作為事件處理器時，this 會指向觸發事件的元素。
-function regu......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2023-12-21
     </p>
 
 </div>
