@@ -1,158 +1,198 @@
 ---
-title: WebSocket 入門教學筆記 | 學習筆記
+title: WebSocket 入門教學筆記（ESM 模組版） | 學習筆記
 date: 2024-07-11 02:23:41
 author: kdchang
-tags: 
-    - Node.js
-    - WebSocket
-    - NodeJS
+tags:
+  - Node.js
+  - WebSocket
+  - NodeJS
+---
+
+## 前言
+
+在現代前端與全端開發中，許多應用需求都仰賴即時資料傳輸，例如即時聊天、線上協作、股票報價、IoT 裝置通訊等。而傳統的 HTTP 協定採用「請求－回應」模式，並不適合雙向即時通訊。這時，WebSocket 協定就成為更有效率的替代方案。
+
+**WebSocket** 是 HTML5 標準的一部分，它允許在用戶端與伺服器之間建立一條持久的雙向連線。這使得伺服器能即時推播資料給客戶端，而非只能等待客戶端請求，適合實作低延遲、高互動的應用場景。
+
+本教學將透過現代的 **ESM（ECMAScript Module）語法**，介紹如何在 Node.js 環境中建立 WebSocket 應用，並搭配 HTML 客戶端示範雙向通訊流程。
 
 ---
 
-# 1. WebSocket 簡介
+## 重點摘要
 
-`WebSocket` 是一種全雙工通訊協議，允許伺服器與客戶端建立持久連線，並在兩者之間即時傳輸數據。相較於傳統的 HTTP 請求-回應模式，WebSocket 提供了更低延遲的通訊方式。
+- **WebSocket 是什麼？**
+  一種基於 TCP 的雙向通訊協定，可在瀏覽器與伺服器之間建立長連線。
 
-### 1.1 為何選擇 WebSocket？
+- **優點**
 
-- **即時雙向通訊**：適用於聊天應用、即時通知、線上遊戲等。
-- **減少 HTTP 開銷**：不需要頻繁發送 HTTP 請求。
-- **降低延遲**：資料可以即時傳遞，避免輪詢 (polling) 的延遲問題。
+  - 持久連線，不需每次重複建立與關閉連線
+  - 支援伺服器主動推播資料給客戶端
+  - 節省頻寬與延遲
+  - 適用於高即時性場景
 
-# 2. 建立 WebSocket 伺服器
+- **WebSocket vs HTTP**
 
-### 2.1 安裝 WebSocket 套件
+  | 特性     | HTTP                    | WebSocket               |
+  | -------- | ----------------------- | ----------------------- |
+  | 通訊模式 | 客戶端請求 → 伺服器回應 | 雙向（Client ↔ Server） |
+  | 連線型態 | 短連線                  | 長連線（持續開啟）      |
+  | 傳輸效率 | 較低（含 header）       | 高效（精簡封包）        |
 
-使用 Node.js 建立 WebSocket 伺服器，首先安裝 `ws` 套件：
-```sh
+- **常見應用情境**
+
+  - 即時聊天系統
+  - 線上遊戲同步
+  - IoT 裝置狀態回報
+  - 即時儀表板或股市報價
+
+- **基本 API（前端）**
+
+  - `new WebSocket(url)`：建立連線
+  - `socket.onopen`：連線成功
+  - `socket.send()`：傳送資料
+  - `socket.onmessage`：接收訊息
+  - `socket.onclose`：連線關閉
+  - `socket.onerror`：錯誤處理
+
+---
+
+## 實作範例（Node.js + ESM + 原生 HTML）
+
+### 一、專案初始化
+
+建立一個新的資料夾並初始化：
+
+```bash
+mkdir websocket-esm-demo
+cd websocket-esm-demo
+npm init -y
 npm install ws
 ```
 
-### 2.2 建立基本 WebSocket 伺服器
+修改 `package.json` 以啟用 ESM 模組支援：
 
-```js
-const WebSocket = require('ws');
-const server = new WebSocket.Server({ port: 8080 });
-
-server.on('connection', (ws) => {
-  console.log('Client connected');
-  
-  ws.on('message', (message) => {
-    console.log(`Received: ${message}`);
-    ws.send(`Echo: ${message}`);
-  });
-
-  ws.on('close', () => {
-    console.log('Client disconnected');
-  });
-});
-
-console.log('WebSocket server is running on ws://localhost:8080');
-```
-
-# 3. 建立 WebSocket 客戶端
-
-可以使用 JavaScript 在前端建立 WebSocket 連線：
-
-```js
-const socket = new WebSocket('ws://localhost:8080');
-
-socket.onopen = () => {
-  console.log('Connected to server');
-  socket.send('Hello, Server!');
-};
-
-socket.onmessage = (event) => {
-  console.log(`Received from server: ${event.data}`);
-};
-
-socket.onclose = () => {
-  console.log('Disconnected from server');
-};
-```
-
-# 4. 處理多個客戶端
-
-### 4.1 廣播訊息給所有連線中的客戶端
-
-```js
-server.on('connection', (ws) => {
-  ws.on('message', (message) => {
-    server.clients.forEach(client => {
-      if (client.readyState === WebSocket.OPEN) {
-        client.send(message);
-      }
-    });
-  });
-});
-```
-
-# 5. WebSocket 與 Express 整合
-
-可以將 WebSocket 整合到 Express 伺服器中：
-
-```js
-const express = require('express');
-const http = require('http');
-const WebSocket = require('ws');
-
-const app = express();
-const server = http.createServer(app);
-const wss = new WebSocket.Server({ server });
-
-wss.on('connection', (ws) => {
-  ws.on('message', (message) => {
-    console.log(`Received: ${message}`);
-    ws.send(`Echo: ${message}`);
-  });
-});
-
-app.get('/', (req, res) => {
-  res.send('WebSocket Server is running');
-});
-
-server.listen(3000, () => {
-  console.log('Server running on http://localhost:3000');
-});
-```
-
-# 6. WebSocket 安全性考量
-
-- **使用 WSS (WebSocket Secure)**：確保連線透過 `wss://` 加密傳輸。
-- **驗證客戶端**：可以使用 JWT 或 API Key 驗證使用者身份。
-- **防止惡意攻擊**：設定最大連線數、限制訊息大小，防止 DDoS 攻擊。
-
-# 7. 部署 WebSocket 應用
-
-### 7.1 使用 PM2 管理 WebSocket 伺服器
-
-安裝 PM2：
-```sh
-npm install -g pm2
-```
-啟動 WebSocket 伺服器：
-```sh
-pm2 start server.js --name websocket-server
-```
-
-### 7.2 使用 Nginx 反向代理 WebSocket
-
-設定 Nginx 配置檔：
-```nginx
-server {
-    listen 80;
-    server_name example.com;
-
-    location /ws/ {
-        proxy_pass http://localhost:8080;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "Upgrade";
-    }
+```json
+{
+  "name": "websocket-esm-demo",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "ws": "^8.0.0"
+  }
 }
 ```
 
-# 8. 結論
+---
 
-這篇筆記介紹了 WebSocket 的基礎概念與實作技巧，包括如何建立 WebSocket 伺服器、處理多個客戶端、與 Express 整合、以及部署與安全性考量。建議進一步學習 WebSocket 與 Redis Pub/Sub、負載平衡技術，提升系統可擴展性與穩定性。
+### 二、伺服器端（使用 ESM 模組語法）
 
+建立 `server.js`：
+
+```js
+// server.js
+import { WebSocketServer } from 'ws';
+
+const wss = new WebSocketServer({ port: 8080 });
+
+wss.on('connection', (ws) => {
+  console.log('用戶已連線');
+
+  ws.on('message', (message) => {
+    console.log(`收到用戶訊息：${message}`);
+    ws.send(`伺服器收到：${message}`);
+  });
+
+  ws.on('close', () => {
+    console.log('連線已關閉');
+  });
+
+  ws.on('error', (err) => {
+    console.error('WebSocket 錯誤：', err);
+  });
+});
+
+console.log('WebSocket 伺服器啟動於 ws://localhost:8080');
+```
+
+---
+
+### 三、客戶端 HTML（WebSocket 客戶端）
+
+建立 `index.html`：
+
+```html
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>WebSocket ESM 範例</title>
+  </head>
+  <body>
+    <h1>WebSocket 即時通訊示範</h1>
+    <input type="text" id="input" placeholder="輸入訊息" />
+    <button onclick="sendMessage()">送出</button>
+    <ul id="log"></ul>
+
+    <script>
+      const socket = new WebSocket('ws://localhost:8080');
+
+      socket.addEventListener('open', () => {
+        logMessage('已連線至伺服器');
+      });
+
+      socket.addEventListener('message', (event) => {
+        logMessage(`來自伺服器：${event.data}`);
+      });
+
+      socket.addEventListener('close', () => {
+        logMessage('連線已關閉');
+      });
+
+      socket.addEventListener('error', () => {
+        logMessage('連線發生錯誤');
+      });
+
+      function sendMessage() {
+        const input = document.getElementById('input');
+        socket.send(input.value);
+        logMessage(`你說：${input.value}`);
+        input.value = '';
+      }
+
+      function logMessage(msg) {
+        const li = document.createElement('li');
+        li.textContent = msg;
+        document.getElementById('log').appendChild(li);
+      }
+    </script>
+  </body>
+</html>
+```
+
+---
+
+### 四、執行與測試
+
+1. 啟動伺服器：
+
+```bash
+node server.js
+```
+
+2. 打開 `index.html`（直接用瀏覽器開啟或用 VSCode Live Server 插件）
+3. 在輸入框輸入訊息，點擊「送出」，觀察瀏覽器與後端終端機回應。
+
+---
+
+## 補充與進階建議
+
+- **安全性：** 若部署在生產環境，應使用 `wss://`（WebSocket over TLS）取代 `ws://`。
+- **重連策略：** 真實場景下需考慮自動重連機制（如斷線重試）。
+- **認證機制：** WebSocket 不支援標準 HTTP 標頭傳遞 JWT，通常可透過 URL query 傳 token，或搭配 Session Cookie。
+- **整合框架：** 可結合 Express、Koa、Fastify 使用同一個 HTTP 伺服器提供 HTTP 與 WS。
+
+---
+
+## 總結
+
+WebSocket 是實現現代即時網頁應用的重要基礎建設，能提供更快、更輕量的資料通訊方式。透過本文，你應該已能建立一個使用 ESM 寫法的簡單 WebSocket 應用，並了解其基本運作流程。未來你可以進一步探索如 Socket.IO、SignalR 或 WebRTC 等進階解決方案，以支援更多功能與兼容性需求。
