@@ -115,9 +115,6 @@
                     
 
                         
-                    
-
-                        
                         <li>
                             <a href="/about/">About</a>
                         </li>
@@ -142,6 +139,9 @@
                         <li>
                             <a href="/tags/">Tags</a>
                         </li>
+                        
+                    
+
                         
                     
                     <li>
@@ -221,6 +221,32 @@
 
 <div class="post-preview">
 
+    <a href="/2024/11/30/learning-notes-emotion-css-intro-tutorial/">
+        <h2 class="post-title">
+            Emotion CSS 入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            1. Emotion CSS 簡介Emotion 是一款強大的 CSS-in-JS 解決方案，提供高效能且靈活的樣式管理方式，適用於 React 應用。Emotion 支援兩種主要的使用方式：
+
+CSS Prop（使用 JSX 內嵌樣式）
+styled API（使用 styled 函式創建元件）
+
+2. 安裝 Emotion使用 npm 或 yarn 安裝 Emotion 核心套件：
+npm......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-11-30
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2024/11/30/learning-notes-tailwind-css-intro-tutorial/">
         <h2 class="post-title">
             Tailwind CSS 入門教學筆記 | 學習筆記
@@ -265,6 +291,48 @@
 
 <div class="post-preview">
 
+    <a href="/2024/11/16/learning-notes-django-middleware-intro-tutorial/">
+        <h2 class="post-title">
+            Django Middleware 入門教學筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言在 Web 應用程式中，每一次的 HTTP 請求與回應都會經過一連串的處理流程。在 Django 框架中，這些處理流程的攔截點與操作邏輯就是透過「Middleware（中介軟體）」來實現。
+Middleware 是 Django 請求與回應處理流程中一個極為關鍵的機制，允許開發者在請求進入 View 前或回應送出前進行特定操作，例如：身份驗證、日誌紀錄、權限控制、跨域處理、錯誤攔截、壓縮......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-11-16
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2024/11/16/learning-notes-django-orm-n-plus-1-intro-tutorial/">
+        <h2 class="post-title">
+            Django 中的 n+1 問題入門教學筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            Django 中的 n+1 問題入門教學筆記前言Django 作為一個功能完整的 Python Web 框架，其 ORM（Object-Relational Mapping）能讓開發者以物件導向方式操作資料庫。然而，這樣的便利也容易隱藏一些效能陷阱，其中最常見也最容易忽略的就是 n+1 查詢問題（n+1 query problem）。
+n+1 問題會導致程式在執行查詢時產生大量多餘的 SQL......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-11-16
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2024/11/16/learning-notes-graphql-intro-tutorial/">
         <h2 class="post-title">
             GraphQL 入門教學筆記（ESM 模組版）| 學習筆記
@@ -272,9 +340,8 @@
         <hr>
         
         <div class="post-content-preview">
-            以下是一篇完整的 GraphQL 入門教學筆記（ESM 模組版本），內容包含前言、重點摘要與實作範例，適合剛接觸 GraphQL 的開發者快速理解與動手實作。
-
-前言在傳統的 REST API 中，前端往往需要根據不同的需求，呼叫多個端點取得資料，有時還會遇到資料過多（Over-fetching）或不足（Under-fetching）的問題。為了解決這些痛點，Facebook 在 2015 ......
+            前言在傳統的 REST API 中，前端往往需要根據不同的需求，呼叫多個端點取得資料，有時還會遇到資料過多（Over-fetching）或不足（Under-fetching）的問題。為了解決這些痛點，Facebook 在 2015 年開源了 GraphQL，一種靈活且高效率的查詢語言。
+GraphQL 讓前端可以明確指定想要的資料欄位，伺服器僅回傳需要的資料，改善資料浪費與重複請求的問題。此......
         </div>
     </a>
     <p class="post-meta">
@@ -377,74 +444,6 @@ DRY (模組化、擅用設計模式)
 本文將介紹 Vue Router 的基本概念、安裝方式、核心語法，並透過簡單實作幫助我們快速入門。
 
 一、什麼是前端路由在傳統網頁架構中，網址......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2024-11-16
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2024/11/16/learning-notes-vuex-intro-tutorial/">
-        <h2 class="post-title">
-            Vuex 入門教學筆記：集中式狀態管理實作入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言在 Vue.js 開發中，當應用程式變得複雜，元件之間需要共享的狀態越來越多時，僅靠 props 與 events 傳遞資料會變得混亂與難以維護。這時，我們就需要一個集中式的狀態管理方案，而 Vuex 正是官方為 Vue 提供的解決方案。
-Vuex 是一個專為 Vue 應用開發的狀態管理模式。它將應用中所有的狀態集中管理，並以可預測的方式更新，便於追蹤與維護。
-
-一、Vuex 是什麼？V......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2024-11-16
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2024/11/16/learning-notes-w3schools-react-basic-intro-tutorial/">
-        <h2 class="post-title">
-            React Hooks w3schools 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言Hooks 是在 React 16.8 版本中加入的新功能。Hooks 讓你可以在「函式元件（function components）」中使用狀態（state）以及其他 React 功能。因此，自從有了 Hooks 之後，類別元件（class components）通常就不再是必要的了。
-儘管 Hooks 幾乎取代了類別元件的使用方式，但 React 團隊目前並沒有打算移除 class ......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2024-11-16
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2024/11/16/learning-notes-w3schools-react-custom-hooks-basic-intro-tutorial copy/">
-        <h2 class="post-title">
-            React Custom Hooks w3schools 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            Hooks 是可重複使用的函式當我們有一些元件邏輯需要在多個元件中共用時，我們可以將這些邏輯提取出來，寫成「自訂 Hook」。
-自定義 Hook 的命名需以 use 開頭，例如：useFetch。
-
-建立一個 Hook以下範例中，我們在 Home 元件中取得資料並顯示出來。
-這裡我們使用 JSONPlaceholder 這個免費的假資料 API 服務來模擬資料擷取。這個服務非常適合在資料尚未......
         </div>
     </a>
     <p class="post-meta">
