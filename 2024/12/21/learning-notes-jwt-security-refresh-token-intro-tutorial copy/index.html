@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword"  content="軟體工程, 程式設計, 程式開發, frontend, backend, web, software, software engineer, JavaScript, Python">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/img/logo.ico">
+    <meta name="google-site-verification" content="cMTgiEFMM7gXpRMBbu_05Lnj0scwhDPCMvpfhQOpENI" />
+    <script src="/js/search.js"></script> 
+
+    
+    
+    
+       <script type="text/javascript">      
+         var search_path = "search.xml";
+       if (search_path.length == 0) {
+         search_path = "search.xml";
+       }
+       var path = "/" + search_path;
+         searchFunc(path, 'local-search-input', 'local-search-result');
+       </script>
+    
+    <title>
+        
+          JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+        
+    </title>
+
+    <link rel="canonical" href="https://tech.kdchang.net/2024/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial copy/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/main.css?v=1">
+
+    <!-- og tag -->
+    <meta name="generator" content="KD's Tech Blog">
+    
+      <meta name="og:title" content="JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+    
+    
+      <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+      <meta name="og:description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+    
+    
+      <meta name="og:image" content="https://tech.kdchang.net/img/logo.png">
+    
+    <meta name="og:type" content="website">
+    <!--Twitter Graph-->
+    <meta name="twitter:card" content="summary" />
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<link rel="alternate" href="/atom.xml" title="KD's Tech Blog" type="application/atom+xml">
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">KD&#39;s Tech Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/books/">Books</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/search/">Search</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    <li>
+                        <a href="/atom.xml">RSS</a>
+                    </li>                 
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/cover.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+
+                    <h1>JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記</h1>
+                    <span class="meta">
+                        Posted by kdchang on
+                        2024-12-21
+                    </span>
+                    <br>
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#JWT" title="JWT">JWT</a>
+                        
+                          <a class="tag" href="/tags/#Refresh Token" title="Refresh Token">Refresh Token</a>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+                <br>
+                <div>
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.net" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+                <br>
+                <div>
+                    <h2 id="一、JWT-基本安全策略"><a href="#一、JWT-基本安全策略" class="headerlink" title="一、JWT 基本安全策略"></a>一、JWT 基本安全策略</h2><h3 id="1-使用強密鑰（Secret）或非對稱加密"><a href="#1-使用強密鑰（Secret）或非對稱加密" class="headerlink" title="1. 使用強密鑰（Secret）或非對稱加密"></a>1. <strong>使用強密鑰（Secret）或非對稱加密</strong></h3><ul>
+<li>對稱加密：使用 <code>HS256</code> 時，<code>secret</code> 應具備高強度（建議 256-bit 以上）。</li>
+<li>非對稱加密：使用 <code>RS256</code> 時，私鑰與公鑰分離，便於服務間驗證。</li>
+</ul>
+<h3 id="2-設定有效期限（exp）"><a href="#2-設定有效期限（exp）" class="headerlink" title="2. 設定有效期限（exp）"></a>2. <strong>設定有效期限（exp）</strong></h3><ul>
+<li><code>Access Token</code> 建議設為 <strong>短效（10~30 分鐘）</strong>。</li>
+<li>避免永久有效的 Token，防止被盜用後長期濫用。</li>
+</ul>
+<h3 id="3-限制-Token-權限與資訊"><a href="#3-限制-Token-權限與資訊" class="headerlink" title="3. 限制 Token 權限與資訊"></a>3. <strong>限制 Token 權限與資訊</strong></h3><ul>
+<li>Token 中只放必要資訊（例如：<code>userId</code>、<code>role</code>）。</li>
+<li><strong>不要放敏感資料</strong>（如密碼、信用卡、住址等）。</li>
+</ul>
+<h3 id="4-透過-HTTPS-傳遞-JWT"><a href="#4-透過-HTTPS-傳遞-JWT" class="headerlink" title="4. 透過 HTTPS 傳遞 JWT"></a>4. <strong>透過 HTTPS 傳遞 JWT</strong></h3><ul>
+<li>絕對 <strong>禁止在 HTTP 傳輸 JWT</strong>，避免中間人攻擊（MITM）。</li>
+<li>所有 API 傳遞 token（包括 Refresh Token）都必須走 HTTPS。</li>
+</ul>
+<h3 id="5-防範-XSS"><a href="#5-防範-XSS" class="headerlink" title="5. 防範 XSS"></a>5. <strong>防範 XSS</strong></h3><ul>
+<li>若將 <code>accessToken</code> 存放於 <code>localStorage</code>，需格外注意防止前端被注入腳本。</li>
+<li>建議使用 <code>HttpOnly</code> cookie 儲存 Refresh Token（無法被 JavaScript 存取）。</li>
+</ul>
+<hr>
+<h2 id="二、為什麼要使用-Refresh-Token？"><a href="#二、為什麼要使用-Refresh-Token？" class="headerlink" title="二、為什麼要使用 Refresh Token？"></a>二、為什麼要使用 Refresh Token？</h2><p><strong>Access Token 有效期短</strong>，提高安全性，但使用者不希望頻繁重新登入，這時就用 <strong>Refresh Token</strong> 來「悄悄地」幫用戶更新 Access Token。</p>
+<hr>
+<h2 id="三、JWT-Refresh-Token-實作架構"><a href="#三、JWT-Refresh-Token-實作架構" class="headerlink" title="三、JWT + Refresh Token 實作架構"></a>三、JWT + Refresh Token 實作架構</h2><figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">  +-------------+                      +----------------+</span><br><span class="line">  |   前端客戶端 |                      |    後端伺服器    |</span><br><span class="line">  +-------------+                      +----------------+</span><br><span class="line">       |                                       |</span><br><span class="line">       |--------&gt; /login (帳密登入) ---------&gt;|</span><br><span class="line">       |                                       |</span><br><span class="line">       |&lt;----- accessToken + refreshToken -----|</span><br><span class="line">       |                                       |</span><br><span class="line">       | 使用 accessToken 存取受保護資源          |</span><br><span class="line">       |--------&gt; /api/profile -------------&gt;|</span><br><span class="line">       |                                       |</span><br><span class="line">accessToken 過期 ↓                             |</span><br><span class="line">       |--------&gt; /refresh (更新 token) ------&gt;|</span><br><span class="line">       |&lt;------- 新的 accessToken -------------|</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、最佳實作策略詳解"><a href="#四、最佳實作策略詳解" class="headerlink" title="四、最佳實作策略詳解"></a>四、最佳實作策略詳解</h2><h3 id="1-accessToken-存放位置"><a href="#1-accessToken-存放位置" class="headerlink" title="1. accessToken 存放位置"></a>1. <strong>accessToken 存放位置</strong></h3><ul>
+<li>可存在記憶體（例如 Redux、React Context）或 <code>localStorage</code></li>
+<li>優點：操作方便</li>
+<li>缺點：暴露於 XSS 攻擊風險</li>
+</ul>
+<h3 id="2-refreshToken-存放位置"><a href="#2-refreshToken-存放位置" class="headerlink" title="2. refreshToken 存放位置"></a>2. <strong>refreshToken 存放位置</strong></h3><ul>
+<li>建議儲存在 <strong>HttpOnly、Secure 的 Cookie</strong> 中：</li>
+</ul>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Set-Cookie</span><span class="punctuation">: </span>refreshToken=xxxxx; HttpOnly; Secure; SameSite=Strict; Path=/refresh</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>前端 JavaScript 無法讀取，降低風險</li>
+<li>伺服器可以從 cookie 中自動取出 refreshToken</li>
+</ul>
+<hr>
+<h3 id="3-建立-x2F-refresh-API（專責刷新-token）"><a href="#3-建立-x2F-refresh-API（專責刷新-token）" class="headerlink" title="3. 建立 &#x2F;refresh API（專責刷新 token）"></a>3. <strong>建立 &#x2F;refresh API（專責刷新 token）</strong></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// POST /refresh</span></span><br><span class="line"><span class="keyword">import</span> jwt <span class="keyword">from</span> <span class="string">&#x27;jsonwebtoken&#x27;</span>;</span><br><span class="line"></span><br><span class="line">router.<span class="title function_">post</span>(<span class="string">&#x27;/refresh&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> refreshToken = req.<span class="property">cookies</span>.<span class="property">refreshToken</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!refreshToken) <span class="keyword">return</span> res.<span class="title function_">status</span>(<span class="number">401</span>).<span class="title function_">json</span>(&#123; <span class="attr">error</span>: <span class="string">&#x27;無 refresh token&#x27;</span> &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> decoded = jwt.<span class="title function_">verify</span>(refreshToken, process.<span class="property">env</span>.<span class="property">JWT_REFRESH_SECRET</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> newAccessToken = jwt.<span class="title function_">sign</span>(</span><br><span class="line">      &#123; <span class="attr">userId</span>: decoded.<span class="property">userId</span>, <span class="attr">username</span>: decoded.<span class="property">username</span> &#125;,</span><br><span class="line">      process.<span class="property">env</span>.<span class="property">JWT_SECRET</span>,</span><br><span class="line">      &#123; <span class="attr">expiresIn</span>: <span class="string">&#x27;15m&#x27;</span> &#125;</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    res.<span class="title function_">json</span>(&#123; <span class="attr">accessToken</span>: newAccessToken &#125;);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    <span class="keyword">return</span> res.<span class="title function_">status</span>(<span class="number">403</span>).<span class="title function_">json</span>(&#123; <span class="attr">error</span>: <span class="string">&#x27;Refresh token 無效或過期&#x27;</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="4-可選：Refresh-Token-儲存機制（實現強制登出與黑名單）"><a href="#4-可選：Refresh-Token-儲存機制（實現強制登出與黑名單）" class="headerlink" title="4. 可選：Refresh Token 儲存機制（實現強制登出與黑名單）"></a>4. <strong>可選：Refresh Token 儲存機制（實現強制登出與黑名單）</strong></h3><ul>
+<li><p><strong>資料庫方案</strong>（建議）：</p>
+<ul>
+<li>每次登入時產生唯一的 <code>refreshToken</code> 並儲存於 DB</li>
+<li>使用時驗證是否仍存在</li>
+<li>登出或異常行為時移除對應的 refreshToken</li>
+</ul>
+</li>
+<li><p><strong>Redis 快取黑名單方案</strong>（進階）：</p>
+<ul>
+<li>遇到帳號盜用或封鎖時，將 token 加入黑名單清單，後續驗證可即時攔截</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="5-登出處理（安全地移除-token）"><a href="#5-登出處理（安全地移除-token）" class="headerlink" title="5. 登出處理（安全地移除 token）"></a>5. <strong>登出處理（安全地移除 token）</strong></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">router.<span class="title function_">post</span>(<span class="string">&#x27;/logout&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">clearCookie</span>(<span class="string">&#x27;refreshToken&#x27;</span>, &#123; <span class="attr">path</span>: <span class="string">&#x27;/refresh&#x27;</span> &#125;);</span><br><span class="line">  res.<span class="title function_">json</span>(&#123; <span class="attr">message</span>: <span class="string">&#x27;已成功登出&#x27;</span> &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="五、常見攻擊防護建議"><a href="#五、常見攻擊防護建議" class="headerlink" title="五、常見攻擊防護建議"></a>五、常見攻擊防護建議</h2><table>
+<thead>
+<tr>
+<th>威脅類型</th>
+<th>防護方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>XSS</td>
+<td>不使用 localStorage 儲存 refresh token，輸出內容時做 XSS 過濾</td>
+</tr>
+<tr>
+<td>CSRF</td>
+<td>使用 SameSite&#x3D;Strict 的 cookie，或搭配 CSRF Token</td>
+</tr>
+<tr>
+<td>Token 竄改</td>
+<td>使用強加密簽章（如 HS256&#x2F;RS256）並驗證</td>
+</tr>
+<tr>
+<td>重放攻擊</td>
+<td>設定合理 <code>exp</code> 過期時間並結合裝置驗證（如 IP &#x2F; UA）</td>
+</tr>
+<tr>
+<td>Token 外洩</td>
+<td>refreshToken 實作多設備登入管理與黑名單機制</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="六、小結"><a href="#六、小結" class="headerlink" title="六、小結"></a>六、小結</h2><table>
+<thead>
+<tr>
+<th>元素</th>
+<th>實作策略</th>
+<th>優點</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Access Token</td>
+<td>存放在記憶體或 localStorage</td>
+<td>快速存取，搭配短效時安全性高</td>
+</tr>
+<tr>
+<td>Refresh Token</td>
+<td>存放於 HttpOnly Cookie</td>
+<td>避免 JS 存取，提高防護能力</td>
+</tr>
+<tr>
+<td>&#x2F;refresh API</td>
+<td>驗證 refreshToken 並產生新 accessToken</td>
+<td>提升使用者體驗與系統可用性</td>
+</tr>
+<tr>
+<td>黑名單策略</td>
+<td>儲存 refreshToken 資訊於資料庫</td>
+<td>支援強制登出與封鎖帳號</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="七、額外建議"><a href="#七、額外建議" class="headerlink" title="七、額外建議"></a>七、額外建議</h2><ul>
+<li>單一使用者只能同時登入 N 台裝置，可依照 refreshToken 綁定設備資訊。</li>
+<li>將 JWT 實作與中介層（middleware）封裝好，避免開發重複邏輯。</li>
+<li>若你使用的是框架如 Next.js、NestJS、Spring Boot，也有內建 JWT 與 Refresh 模組可以善用。</li>
+</ul>
+<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
+<li><a target="_blank" rel="noopener" href="https://www.prisma.io/docs">官方文件</a></li>
+</ol>
+
+                </div>
+
+                <br>
+                <section>
+                    歡迎分享按讚給予支持和鼓勵！
+                    <div class="fb-like" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                </section>
+                <br>
+                <div>
+                    <div class="fb-page" data-href="https://www.facebook.com/tech.kdchang.net" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/tech.kdchang.net" class="fb-xfbml-parse-ignore"><a target="_blank" rel="noopener" href="https://www.facebook.com/tech.kdchang.net">KD Chang（張凱迪）</a></blockquote></div>
+                </div>
+                <hr>
+                <div>
+                    <h3>Related Posts</h3>
+                    <div>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/21/learning-notes-jwt-intro-tutorial/" title="JWT 入門教學筆記 | 學習筆記" rel="bookmark">JWT 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/21/learning-notes-jwt-pros-intro-tutorial/" title="JWT 使用好處入門教學筆記 | 學習筆記" rel="bookmark">JWT 使用好處入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/21/learning-notes-jwt-react-intro-tutorial/" title="React 前端整合 JWT（含 Refresh Token）入門教學筆記 | 學習筆記" rel="bookmark">React 前端整合 JWT（含 Refresh Token）入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                    </div>
+                </div>
+                <!-- Tags -->
+                <h3>Comments</h3>
+                <hr>
+                
+                <!-- disqus start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus end -->
+                
+
+            </div>
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "kdchang-tech-blog";
+    var disqus_identifier = "https://tech.kdchang.net/2024/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial%20copy/";
+    var disqus_url = "https://tech.kdchang.net/2024/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial%20copy/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5728979c6a10856b"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<!-- <script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script> -->
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+<script>
+   anchors.add('h1, h2, h3');
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<a id="scroll-to-top-button">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/kaidichang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/tech.kdchang.net">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/kdchang_net">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kdchang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <hr>
+                <div class="copyright text-muted">
+                    Special thanks <a href="https://unsplash.com/@afgprogrammer" target="_blank">Mohammad Rahmani</a>、<a href="https://www.flickr.com/photos/derek-john-lee/14698093740/in/photolist-ooPzcj-r2kVt-ppV21v-brhFX3-wd3Qsy-cLiKEL-xDR92-28QCtA-29YFZZ-gzuZk-dqbhxt-9FwCBY-q57bEv-bVhZJr-dYxGXn-dxg9g7-8x7gjU-dzjMic-rQhf-9TMgJ3-mEsFjW-qbzd4p-q6cJvc-7zYttk-q2gE5S-bdb4G4-8ifmQN-eivVeg-9ZZFVz-aD6q6r-bnjfWh-qJAn2g-k22Ttf-n9Jhfj-kk4woh-sj43iz-5NYGUn-96wNhi-9ZZFz6-8DJkQf-4wQizw-3bzz8p-9yzTSd-xDQee-68Xwfp-7t5WPx-xDTM5-o5RPYA-kWihhy-7iHDEX" target="_blank">Derek</a>、<a href="https://www.flickr.com/photos/mashleymorgan/" target="_blank">mashleymorgan</a>、<a href="https://www.flickr.com/photos/mustafeez27/" target="_blank">mustafeez27</a>         
+                    and <a href="http://blog.kaijun.rocks" target="_blank">Kaijun</a>
+                    <br> 
+                    Copyright &copy; KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪 2025
+                    <hr>
+                    <!-- facebook follow -->
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.net" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+<!-- Custom Main JavaScript -->
+<script src="/js/main.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://tech.kdchang.net/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fb.js -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="X3eUifxc"></script>
+
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FN9X92SM77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FN9X92SM77');
+</script>
+
+
+
+	
+</body>
+
+</html>
