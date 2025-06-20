@@ -1572,79 +1572,6 @@
       </tags>
   </entry>
   <entry>
-    <title>CSS 權重（Specificity）入門教學筆記 | 學習筆記</title>
-    <url>/2021/12/15/learning-notes-css-specificity-tutorial/</url>
-    <content><![CDATA[<h4 id="1-什麼是-CSS-權重？"><a href="#1-什麼是-CSS-權重？" class="headerlink" title="1. 什麼是 CSS 權重？"></a>1. 什麼是 CSS 權重？</h4><p>CSS 權重（Specificity）是指當多個選擇器同時作用於同一個元素時，瀏覽器決定應用哪條 CSS 規則的優先級機制。不同選擇器具有不同的權重，權重高的樣式會覆蓋權重低的樣式。  </p>
-<hr>
-<h4 id="2-CSS-權重的計算方式"><a href="#2-CSS-權重的計算方式" class="headerlink" title="2. CSS 權重的計算方式"></a>2. CSS 權重的計算方式</h4><p>CSS 權重由四個部分組成，從高到低分別是：  </p>
-<ol>
-<li><strong>行內樣式（Inline Styles）</strong></li>
-<li><strong>ID 選擇器（ID Selectors）</strong></li>
-<li><strong>類別、偽類與屬性選擇器（Class, Pseudo-classes, Attribute Selectors）</strong></li>
-<li><strong>元素與偽元素選擇器（Element, Pseudo-elements）</strong></li>
-</ol>
-<p>每種類型的選擇器都有固定的權重值，計算時以「數值」方式比較：</p>
-<table>
-<thead>
-<tr>
-<th>選擇器類型</th>
-<th>權重值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>行內樣式（<code>style=&quot;&quot;</code>）</td>
-<td>1000</td>
-</tr>
-<tr>
-<td>ID 選擇器（<code>#id</code>）</td>
-<td>100</td>
-</tr>
-<tr>
-<td>類別選擇器（<code>.class</code>）、偽類（<code>:hover</code>）、屬性選擇器（<code>[type=&quot;text&quot;]</code>）</td>
-<td>10</td>
-</tr>
-<tr>
-<td>元素選擇器（<code>div</code>、<code>p</code>）、偽元素（<code>::before</code>、<code>::after</code>）</td>
-<td>1</td>
-</tr>
-</tbody></table>
-<hr>
-<h4 id="3-權重計算範例"><a href="#3-權重計算範例" class="headerlink" title="3. 權重計算範例"></a>3. 權重計算範例</h4><h5 id="3-1-元素選擇器-vs-類別選擇器"><a href="#3-1-元素選擇器-vs-類別選擇器" class="headerlink" title="3.1 元素選擇器 vs. 類別選擇器"></a>3.1 元素選擇器 vs. 類別選擇器</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue; <span class="comment">/* 權重 1 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red; <span class="comment">/* 權重 10 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>這段文字應該是紅色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>結果：</strong> <code>.text</code> 的權重為 10，比 <code>p</code> 的權重 1 高，因此文字顯示為紅色。</p>
-<hr>
-<h5 id="3-2-類別-vs-ID-選擇器"><a href="#3-2-類別-vs-ID-選擇器" class="headerlink" title="3.2 類別 vs. ID 選擇器"></a>3.2 類別 vs. ID 選擇器</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red; <span class="comment">/* 權重 10 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#main</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green; <span class="comment">/* 權重 100 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;main&quot;</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>這段文字應該是綠色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>結果：</strong> <code>#main</code> 的權重 100 高於 <code>.text</code> 的 10，因此文字顯示為綠色。</p>
-<hr>
-<h5 id="3-3-屬性選擇器與偽類"><a href="#3-3-屬性選擇器與偽類" class="headerlink" title="3.3 屬性選擇器與偽類"></a>3.3 屬性選擇器與偽類</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: black; <span class="comment">/* 權重 1 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue; <span class="comment">/* 權重 10 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[title]</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red; <span class="comment">/* 權重 10 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">title</span>=<span class="string">&quot;Example&quot;</span>&gt;</span>這段文字會是紅色，滑鼠懸停時變藍色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>結果：</strong> <code>p[title]</code> 與 <code>p:hover</code> 權重相同（10），但 <code>p:hover</code> 只在滑鼠懸停時生效，因此預設為紅色，懸停時變藍色。</p>
-<hr>
-<h4 id="4-多個選擇器組合計算"><a href="#4-多個選擇器組合計算" class="headerlink" title="4. 多個選擇器組合計算"></a>4. 多個選擇器組合計算</h4><p>當一個 CSS 規則包含多種選擇器時，其權重會累加計算。</p>
-<h5 id="4-1-複合選擇器"><a href="#4-1-複合選擇器" class="headerlink" title="4.1 複合選擇器"></a>4.1 複合選擇器</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue; <span class="comment">/* 權重 2 (div=1 + p=1) */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> <span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red; <span class="comment">/* 權重 11 (div=1 + .text=10) */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#container</span> <span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green; <span class="comment">/* 權重 110 (#container=100 + .text=10) */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>這段文字應該是綠色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>結果：</strong> <code>#container .text</code> 的權重 110 高於 <code>div .text</code>（11）和 <code>div p</code>（2），所以文字顯示為綠色。</p>
-<hr>
-<h5 id="4-2-important-覆蓋權重"><a href="#4-2-important-覆蓋權重" class="headerlink" title="4.2 !important 覆蓋權重"></a>4.2 !important 覆蓋權重</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#main</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;main&quot;</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>這段文字應該是紅色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>結果：</strong> 即使 <code>#main</code> 的權重較高，<code>!important</code> 仍然強制覆蓋樣式，使文字變紅。</p>
-<hr>
-<h4 id="5-權重衝突的解決策略"><a href="#5-權重衝突的解決策略" class="headerlink" title="5. 權重衝突的解決策略"></a>5. 權重衝突的解決策略</h4><ol>
-<li><strong>避免使用 <code>!important</code>，除非是必要的</strong></li>
-<li><strong>使用更具體的選擇器</strong></li>
-<li><strong>組織 CSS 層級結構</strong></li>
-<li><strong>使用適當的 CSS 預處理器（如 SCSS、LESS）</strong></li>
-</ol>
-<hr>
-<h4 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h4><p>理解 CSS 權重是撰寫高效、可維護樣式表的關鍵。透過計算選擇器的權重，可以精確控制樣式的優先級，避免不必要的覆蓋問題，提升開發效率。</p>
-]]></content>
-      <tags>
-        <tag>css</tag>
-        <tag>stylesheet</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS 入門教學筆記 | 學習筆記</title>
     <url>/2021/12/14/learning-notes-css-intro-tutorial/</url>
     <content><![CDATA[<h4 id="1-什麼是-CSS？"><a href="#1-什麼是-CSS？" class="headerlink" title="1. 什麼是 CSS？"></a>1. 什麼是 CSS？</h4><p>CSS（Cascading Style Sheets，層疊樣式表）是一種用來美化 HTML 頁面的樣式語言。透過 CSS，可以設定字體、顏色、間距、佈局等，讓網頁更具吸引力和可讀性。  </p>
@@ -1725,6 +1652,79 @@
 <p>當螢幕寬度小於 600px 時，背景變為淺灰色。</p>
 <hr>
 <h4 id="7-總結"><a href="#7-總結" class="headerlink" title="7. 總結"></a>7. 總結</h4><p>本篇筆記介紹了 CSS 的基本概念，包括選擇器、樣式屬性、盒模型與佈局技巧。熟練 CSS 之後，可以進一步學習 Flexbox、Grid、動畫（Animation）等進階技術，並與 JavaScript 結合，打造互動性更高的網頁。實際練習與製作小型專案是學習 CSS 的最佳方式。</p>
+]]></content>
+      <tags>
+        <tag>css</tag>
+        <tag>stylesheet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS 權重（Specificity）入門教學筆記 | 學習筆記</title>
+    <url>/2021/12/15/learning-notes-css-specificity-tutorial/</url>
+    <content><![CDATA[<h4 id="1-什麼是-CSS-權重？"><a href="#1-什麼是-CSS-權重？" class="headerlink" title="1. 什麼是 CSS 權重？"></a>1. 什麼是 CSS 權重？</h4><p>CSS 權重（Specificity）是指當多個選擇器同時作用於同一個元素時，瀏覽器決定應用哪條 CSS 規則的優先級機制。不同選擇器具有不同的權重，權重高的樣式會覆蓋權重低的樣式。  </p>
+<hr>
+<h4 id="2-CSS-權重的計算方式"><a href="#2-CSS-權重的計算方式" class="headerlink" title="2. CSS 權重的計算方式"></a>2. CSS 權重的計算方式</h4><p>CSS 權重由四個部分組成，從高到低分別是：  </p>
+<ol>
+<li><strong>行內樣式（Inline Styles）</strong></li>
+<li><strong>ID 選擇器（ID Selectors）</strong></li>
+<li><strong>類別、偽類與屬性選擇器（Class, Pseudo-classes, Attribute Selectors）</strong></li>
+<li><strong>元素與偽元素選擇器（Element, Pseudo-elements）</strong></li>
+</ol>
+<p>每種類型的選擇器都有固定的權重值，計算時以「數值」方式比較：</p>
+<table>
+<thead>
+<tr>
+<th>選擇器類型</th>
+<th>權重值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>行內樣式（<code>style=&quot;&quot;</code>）</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>ID 選擇器（<code>#id</code>）</td>
+<td>100</td>
+</tr>
+<tr>
+<td>類別選擇器（<code>.class</code>）、偽類（<code>:hover</code>）、屬性選擇器（<code>[type=&quot;text&quot;]</code>）</td>
+<td>10</td>
+</tr>
+<tr>
+<td>元素選擇器（<code>div</code>、<code>p</code>）、偽元素（<code>::before</code>、<code>::after</code>）</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="3-權重計算範例"><a href="#3-權重計算範例" class="headerlink" title="3. 權重計算範例"></a>3. 權重計算範例</h4><h5 id="3-1-元素選擇器-vs-類別選擇器"><a href="#3-1-元素選擇器-vs-類別選擇器" class="headerlink" title="3.1 元素選擇器 vs. 類別選擇器"></a>3.1 元素選擇器 vs. 類別選擇器</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue; <span class="comment">/* 權重 1 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red; <span class="comment">/* 權重 10 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>這段文字應該是紅色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>結果：</strong> <code>.text</code> 的權重為 10，比 <code>p</code> 的權重 1 高，因此文字顯示為紅色。</p>
+<hr>
+<h5 id="3-2-類別-vs-ID-選擇器"><a href="#3-2-類別-vs-ID-選擇器" class="headerlink" title="3.2 類別 vs. ID 選擇器"></a>3.2 類別 vs. ID 選擇器</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red; <span class="comment">/* 權重 10 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#main</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green; <span class="comment">/* 權重 100 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;main&quot;</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>這段文字應該是綠色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>結果：</strong> <code>#main</code> 的權重 100 高於 <code>.text</code> 的 10，因此文字顯示為綠色。</p>
+<hr>
+<h5 id="3-3-屬性選擇器與偽類"><a href="#3-3-屬性選擇器與偽類" class="headerlink" title="3.3 屬性選擇器與偽類"></a>3.3 屬性選擇器與偽類</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: black; <span class="comment">/* 權重 1 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue; <span class="comment">/* 權重 10 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[title]</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red; <span class="comment">/* 權重 10 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">title</span>=<span class="string">&quot;Example&quot;</span>&gt;</span>這段文字會是紅色，滑鼠懸停時變藍色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>結果：</strong> <code>p[title]</code> 與 <code>p:hover</code> 權重相同（10），但 <code>p:hover</code> 只在滑鼠懸停時生效，因此預設為紅色，懸停時變藍色。</p>
+<hr>
+<h4 id="4-多個選擇器組合計算"><a href="#4-多個選擇器組合計算" class="headerlink" title="4. 多個選擇器組合計算"></a>4. 多個選擇器組合計算</h4><p>當一個 CSS 規則包含多種選擇器時，其權重會累加計算。</p>
+<h5 id="4-1-複合選擇器"><a href="#4-1-複合選擇器" class="headerlink" title="4.1 複合選擇器"></a>4.1 複合選擇器</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue; <span class="comment">/* 權重 2 (div=1 + p=1) */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> <span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red; <span class="comment">/* 權重 11 (div=1 + .text=10) */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#container</span> <span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green; <span class="comment">/* 權重 110 (#container=100 + .text=10) */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>這段文字應該是綠色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>結果：</strong> <code>#container .text</code> 的權重 110 高於 <code>div .text</code>（11）和 <code>div p</code>（2），所以文字顯示為綠色。</p>
+<hr>
+<h5 id="4-2-important-覆蓋權重"><a href="#4-2-important-覆蓋權重" class="headerlink" title="4.2 !important 覆蓋權重"></a>4.2 !important 覆蓋權重</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#main</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;main&quot;</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>這段文字應該是紅色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>結果：</strong> 即使 <code>#main</code> 的權重較高，<code>!important</code> 仍然強制覆蓋樣式，使文字變紅。</p>
+<hr>
+<h4 id="5-權重衝突的解決策略"><a href="#5-權重衝突的解決策略" class="headerlink" title="5. 權重衝突的解決策略"></a>5. 權重衝突的解決策略</h4><ol>
+<li><strong>避免使用 <code>!important</code>，除非是必要的</strong></li>
+<li><strong>使用更具體的選擇器</strong></li>
+<li><strong>組織 CSS 層級結構</strong></li>
+<li><strong>使用適當的 CSS 預處理器（如 SCSS、LESS）</strong></li>
+</ol>
+<hr>
+<h4 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h4><p>理解 CSS 權重是撰寫高效、可維護樣式表的關鍵。透過計算選擇器的權重，可以精確控制樣式的優先級，避免不必要的覆蓋問題，提升開發效率。</p>
 ]]></content>
       <tags>
         <tag>css</tag>
@@ -1874,6 +1874,68 @@
       </tags>
   </entry>
   <entry>
+    <title>CSS transition 入門教學筆記 | 學習筆記</title>
+    <url>/2022/12/13/learning-notes-css-transition-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>CSS <code>transition</code> 屬性允許元素在狀態變化時產生平滑的動畫效果，使 UI 更加流暢和自然。這項技術通常應用於按鈕、圖片、卡片等 UI 元素的互動效果，如懸停、點擊或狀態變更。</p>
+<h2 id="1-transition-基礎概念"><a href="#1-transition-基礎概念" class="headerlink" title="1. transition 基礎概念"></a>1. <code>transition</code> 基礎概念</h2><p>CSS <code>transition</code> 屬性用於定義當元素的某些 CSS 屬性發生變化時，該變化應如何逐漸呈現，而非立即改變。基本語法如下：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">transition</span>: property duration timing-function delay;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>property</code>：指定要應用過渡效果的 CSS 屬性。</li>
+<li><code>duration</code>：設定過渡動畫的時間（如 <code>0.5s</code>、<code>200ms</code>）。</li>
+<li><code>timing-function</code>：定義動畫的速度曲線（如 <code>ease</code>、<code>linear</code>）。</li>
+<li><code>delay</code>：動畫開始前的延遲時間（可選，默認為 <code>0s</code>）。</li>
+</ul>
+<h2 id="2-transition-常見應用"><a href="#2-transition-常見應用" class="headerlink" title="2. transition 常見應用"></a>2. <code>transition</code> 常見應用</h2><h3 id="2-1-過渡單一屬性"><a href="#2-1-過渡單一屬性" class="headerlink" title="2.1 過渡單一屬性"></a>2.1 過渡單一屬性</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: blue;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">transition</span>: background-color <span class="number">0.3s</span> ease;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.button</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: darkblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>當滑鼠懸停在 <code>.button</code> 上時，背景顏色將在 <code>0.3s</code> 內從 <code>blue</code> 變為 <code>darkblue</code>。</p>
+<h3 id="2-2-過渡多個屬性"><a href="#2-2-過渡多個屬性" class="headerlink" title="2.2 過渡多個屬性"></a>2.2 過渡多個屬性</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.card</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: lightgray;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="attribute">transition</span>: background-color <span class="number">0.3s</span> ease, transform <span class="number">0.5s</span> ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.card</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: gray;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>當滑鼠懸停時，<code>.card</code> 的背景顏色會變深，並且整個卡片會放大 <code>1.1</code> 倍。</p>
+<h2 id="3-transition-進階應用"><a href="#3-transition-進階應用" class="headerlink" title="3. transition 進階應用"></a>3. <code>transition</code> 進階應用</h2><h3 id="3-1-transition-timing-function（動畫速度曲線）"><a href="#3-1-transition-timing-function（動畫速度曲線）" class="headerlink" title="3.1 transition-timing-function（動畫速度曲線）"></a>3.1 <code>transition-timing-function</code>（動畫速度曲線）</h3><p><code>timing-function</code> 用於定義動畫的速度變化方式，常見的值如下：</p>
+<ul>
+<li><code>linear</code>：等速變化。</li>
+<li><code>ease</code>（預設值）：開始與結束較慢，中間較快。</li>
+<li><code>ease-in</code>：開始較慢，之後加速。</li>
+<li><code>ease-out</code>：開始較快，最後減速。</li>
+<li><code>ease-in-out</code>：開始和結束都較慢。</li>
+</ul>
+<p>範例：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    <span class="attribute">transition</span>: transform <span class="number">1s</span> ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">200px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>當滑鼠懸停時，<code>.box</code> 會平滑地向右移動 <code>200px</code>，並且動畫在開始和結束時較慢。</p>
+<h3 id="3-2-transition-delay（延遲時間）"><a href="#3-2-transition-delay（延遲時間）" class="headerlink" title="3.2 transition-delay（延遲時間）"></a>3.2 <code>transition-delay</code>（延遲時間）</h3><p>可以設定 <code>transition-delay</code> 來延遲動畫的開始時間。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: green;</span><br><span class="line">    <span class="attribute">transition</span>: background-color <span class="number">0.5s</span> ease-in <span class="number">1s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: darkgreen;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>當滑鼠懸停時，<code>background-color</code> 會延遲 <code>1s</code> 後才開始變化。</p>
+<h2 id="4-transition-實際應用範例"><a href="#4-transition-實際應用範例" class="headerlink" title="4. transition 實際應用範例"></a>4. <code>transition</code> 實際應用範例</h2><h3 id="4-1-按鈕的點擊效果"><a href="#4-1-按鈕的點擊效果" class="headerlink" title="4.1 按鈕的點擊效果"></a>4.1 按鈕的點擊效果</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">12px</span> <span class="number">24px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#ff5733</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">    <span class="attribute">transition</span>: transform <span class="number">0.2s</span> ease-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.button</span><span class="selector-pseudo">:active</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">0.95</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>當按下 <code>.button</code> 時，按鈕會稍微縮小，產生按壓感。</p>
+<h3 id="4-2-漸變顯示效果"><a href="#4-2-漸變顯示效果" class="headerlink" title="4.2 漸變顯示效果"></a>4.2 漸變顯示效果</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.fade-box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: blue;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">transition</span>: opacity <span class="number">1s</span> ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.fade-box</span><span class="selector-class">.show</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>當 <code>.show</code> 類別被添加時，<code>.fade-box</code> 會在 <code>1s</code> 內逐漸顯示。</p>
+<h3 id="4-3-圖片放大效果"><a href="#4-3-圖片放大效果" class="headerlink" title="4.3 圖片放大效果"></a>4.3 圖片放大效果</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.image-container</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">transition</span>: width <span class="number">0.3s</span> ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.image-container</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>當滑鼠懸停時，圖片會平滑地放大。</p>
+<h2 id="5-transition-vs-animation"><a href="#5-transition-vs-animation" class="headerlink" title="5. transition vs animation"></a>5. <code>transition</code> vs <code>animation</code></h2><p>雖然 <code>transition</code> 和 <code>animation</code> 都能用來製作動畫，但它們的用途不同：</p>
+<ul>
+<li>**<code>transition</code>**：適合用於元素的狀態變更（如 <code>hover</code>、<code>focus</code>）。</li>
+<li>**<code>animation</code>**：適用於更複雜的動畫，如連續循環的動畫。</li>
+</ul>
+<p>如果需要更高級的動畫，例如無限重複、按時間順序變化的動畫，則應使用 <code>@keyframes</code> 和 <code>animation</code>。</p>
+<h2 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h2><p>CSS <code>transition</code> 是製作動畫效果最簡單且高效的方法之一。透過 <code>transition</code>，可以讓 UI 更加生動，使使用者體驗更流暢。掌握 <code>transition</code> 的基本語法與進階應用後，可以靈活運用於各種互動效果，如按鈕動畫、圖片過渡、淡入淡出等，讓網頁更加吸引人。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>css</tag>
+        <tag>transition</tag>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Cypress 測試入門教學筆記 | 學習筆記</title>
     <url>/2024/12/08/learning-notes-cypress-intro-tutorial/</url>
     <content><![CDATA[<h1 id="1-Cypress-基礎概念"><a href="#1-Cypress-基礎概念" class="headerlink" title="1. Cypress 基礎概念"></a>1. Cypress 基礎概念</h1><p><code>Cypress</code> 是一款現代化的前端自動化測試工具，主要用於測試 Web 應用程式，支援端對端（<code>E2E</code>）測試、<code>元件測試</code>等。</p>
@@ -1992,68 +2054,6 @@
         <tag>setTimeout</tag>
         <tag>for loop</tag>
         <tag>closure</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS transition 入門教學筆記 | 學習筆記</title>
-    <url>/2022/12/13/learning-notes-css-transition-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>CSS <code>transition</code> 屬性允許元素在狀態變化時產生平滑的動畫效果，使 UI 更加流暢和自然。這項技術通常應用於按鈕、圖片、卡片等 UI 元素的互動效果，如懸停、點擊或狀態變更。</p>
-<h2 id="1-transition-基礎概念"><a href="#1-transition-基礎概念" class="headerlink" title="1. transition 基礎概念"></a>1. <code>transition</code> 基礎概念</h2><p>CSS <code>transition</code> 屬性用於定義當元素的某些 CSS 屬性發生變化時，該變化應如何逐漸呈現，而非立即改變。基本語法如下：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">transition</span>: property duration timing-function delay;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>property</code>：指定要應用過渡效果的 CSS 屬性。</li>
-<li><code>duration</code>：設定過渡動畫的時間（如 <code>0.5s</code>、<code>200ms</code>）。</li>
-<li><code>timing-function</code>：定義動畫的速度曲線（如 <code>ease</code>、<code>linear</code>）。</li>
-<li><code>delay</code>：動畫開始前的延遲時間（可選，默認為 <code>0s</code>）。</li>
-</ul>
-<h2 id="2-transition-常見應用"><a href="#2-transition-常見應用" class="headerlink" title="2. transition 常見應用"></a>2. <code>transition</code> 常見應用</h2><h3 id="2-1-過渡單一屬性"><a href="#2-1-過渡單一屬性" class="headerlink" title="2.1 過渡單一屬性"></a>2.1 過渡單一屬性</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: blue;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">transition</span>: background-color <span class="number">0.3s</span> ease;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.button</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: darkblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>當滑鼠懸停在 <code>.button</code> 上時，背景顏色將在 <code>0.3s</code> 內從 <code>blue</code> 變為 <code>darkblue</code>。</p>
-<h3 id="2-2-過渡多個屬性"><a href="#2-2-過渡多個屬性" class="headerlink" title="2.2 過渡多個屬性"></a>2.2 過渡多個屬性</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.card</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: lightgray;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="attribute">transition</span>: background-color <span class="number">0.3s</span> ease, transform <span class="number">0.5s</span> ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.card</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: gray;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>當滑鼠懸停時，<code>.card</code> 的背景顏色會變深，並且整個卡片會放大 <code>1.1</code> 倍。</p>
-<h2 id="3-transition-進階應用"><a href="#3-transition-進階應用" class="headerlink" title="3. transition 進階應用"></a>3. <code>transition</code> 進階應用</h2><h3 id="3-1-transition-timing-function（動畫速度曲線）"><a href="#3-1-transition-timing-function（動畫速度曲線）" class="headerlink" title="3.1 transition-timing-function（動畫速度曲線）"></a>3.1 <code>transition-timing-function</code>（動畫速度曲線）</h3><p><code>timing-function</code> 用於定義動畫的速度變化方式，常見的值如下：</p>
-<ul>
-<li><code>linear</code>：等速變化。</li>
-<li><code>ease</code>（預設值）：開始與結束較慢，中間較快。</li>
-<li><code>ease-in</code>：開始較慢，之後加速。</li>
-<li><code>ease-out</code>：開始較快，最後減速。</li>
-<li><code>ease-in-out</code>：開始和結束都較慢。</li>
-</ul>
-<p>範例：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    <span class="attribute">transition</span>: transform <span class="number">1s</span> ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">200px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>當滑鼠懸停時，<code>.box</code> 會平滑地向右移動 <code>200px</code>，並且動畫在開始和結束時較慢。</p>
-<h3 id="3-2-transition-delay（延遲時間）"><a href="#3-2-transition-delay（延遲時間）" class="headerlink" title="3.2 transition-delay（延遲時間）"></a>3.2 <code>transition-delay</code>（延遲時間）</h3><p>可以設定 <code>transition-delay</code> 來延遲動畫的開始時間。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: green;</span><br><span class="line">    <span class="attribute">transition</span>: background-color <span class="number">0.5s</span> ease-in <span class="number">1s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: darkgreen;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>當滑鼠懸停時，<code>background-color</code> 會延遲 <code>1s</code> 後才開始變化。</p>
-<h2 id="4-transition-實際應用範例"><a href="#4-transition-實際應用範例" class="headerlink" title="4. transition 實際應用範例"></a>4. <code>transition</code> 實際應用範例</h2><h3 id="4-1-按鈕的點擊效果"><a href="#4-1-按鈕的點擊效果" class="headerlink" title="4.1 按鈕的點擊效果"></a>4.1 按鈕的點擊效果</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">12px</span> <span class="number">24px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#ff5733</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">    <span class="attribute">transition</span>: transform <span class="number">0.2s</span> ease-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.button</span><span class="selector-pseudo">:active</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">0.95</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>當按下 <code>.button</code> 時，按鈕會稍微縮小，產生按壓感。</p>
-<h3 id="4-2-漸變顯示效果"><a href="#4-2-漸變顯示效果" class="headerlink" title="4.2 漸變顯示效果"></a>4.2 漸變顯示效果</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.fade-box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: blue;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">transition</span>: opacity <span class="number">1s</span> ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.fade-box</span><span class="selector-class">.show</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>當 <code>.show</code> 類別被添加時，<code>.fade-box</code> 會在 <code>1s</code> 內逐漸顯示。</p>
-<h3 id="4-3-圖片放大效果"><a href="#4-3-圖片放大效果" class="headerlink" title="4.3 圖片放大效果"></a>4.3 圖片放大效果</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.image-container</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">transition</span>: width <span class="number">0.3s</span> ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.image-container</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>當滑鼠懸停時，圖片會平滑地放大。</p>
-<h2 id="5-transition-vs-animation"><a href="#5-transition-vs-animation" class="headerlink" title="5. transition vs animation"></a>5. <code>transition</code> vs <code>animation</code></h2><p>雖然 <code>transition</code> 和 <code>animation</code> 都能用來製作動畫，但它們的用途不同：</p>
-<ul>
-<li>**<code>transition</code>**：適合用於元素的狀態變更（如 <code>hover</code>、<code>focus</code>）。</li>
-<li>**<code>animation</code>**：適用於更複雜的動畫，如連續循環的動畫。</li>
-</ul>
-<p>如果需要更高級的動畫，例如無限重複、按時間順序變化的動畫，則應使用 <code>@keyframes</code> 和 <code>animation</code>。</p>
-<h2 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h2><p>CSS <code>transition</code> 是製作動畫效果最簡單且高效的方法之一。透過 <code>transition</code>，可以讓 UI 更加生動，使使用者體驗更流暢。掌握 <code>transition</code> 的基本語法與進階應用後，可以靈活運用於各種互動效果，如按鈕動畫、圖片過渡、淡入淡出等，讓網頁更加吸引人。</p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>css</tag>
-        <tag>transition</tag>
-        <tag>html</tag>
       </tags>
   </entry>
   <entry>
@@ -4709,7 +4709,7 @@
   </entry>
   <entry>
     <title>JWT 入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/21/learning-notes-jwt-intro-tutorial/</url>
+    <url>/2023/12/20/learning-notes-jwt-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在現代 Web 應用中，使用者認證與授權機制是系統安全的重要基礎。傳統上，我們可能使用 Session 與 Cookie 搭配伺服器端儲存進行身份驗證；但在前後端分離、多平台（Web、Mobile、API Gateway）應用日益普及的情況下，更輕量、跨平台、無狀態的驗證方案逐漸成為主流。</p>
 <p>JWT（JSON Web Token）正是這樣一種流行的解法。它是一種根據 JSON 格式加密後產生的 Token，可用來安全地在用戶與伺服器間傳遞資訊。</p>
 <hr>
@@ -4786,7 +4786,7 @@
   </entry>
   <entry>
     <title>JWT 使用好處入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/21/learning-notes-jwt-pros-intro-tutorial/</url>
+    <url>/2023/12/21/learning-notes-jwt-pros-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>JWT（JSON Web Token）</strong> 的好處在於它是輕量、跨平台、無狀態的驗證與授權機制，特別適合用於前後端分離、微服務架構與 API 驗證。以下是它的主要優點：</p>
 <h2 id="一、JWT-的-7-大好處"><a href="#一、JWT-的-7-大好處" class="headerlink" title="一、JWT 的 7 大好處"></a>一、JWT 的 7 大好處</h2><h3 id="1-無狀態（Stateless）驗證"><a href="#1-無狀態（Stateless）驗證" class="headerlink" title="1. 無狀態（Stateless）驗證"></a>1. <strong>無狀態（Stateless）驗證</strong></h3><ul>
 <li>JWT 本身就包含用戶資訊與簽名，<strong>不需要在伺服器端儲存 session</strong>。</li>
@@ -4911,7 +4911,7 @@
   </entry>
   <entry>
     <title>React 前端整合 JWT（含 Refresh Token）入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/21/learning-notes-jwt-react-intro-tutorial/</url>
+    <url>/2023/12/21/learning-notes-jwt-react-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>當你要將 <strong>JWT 驗證整合至 React 前端</strong>，並搭配 <strong>Refresh Token</strong> 或整合 <strong>OAuth（如 Google 登入）流程</strong>，你需要考慮前端的存儲方式、token 的更新機制，以及第三方登入的流程銜接。</p>
 <p>以下將分成三個部分講解：</p>
 <hr>
@@ -5018,7 +5018,7 @@
   </entry>
   <entry>
     <title>JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial%20copy/</url>
+    <url>/2023/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial%20copy/</url>
     <content><![CDATA[<h2 id="一、JWT-基本安全策略"><a href="#一、JWT-基本安全策略" class="headerlink" title="一、JWT 基本安全策略"></a>一、JWT 基本安全策略</h2><h3 id="1-使用強密鑰（Secret）或非對稱加密"><a href="#1-使用強密鑰（Secret）或非對稱加密" class="headerlink" title="1. 使用強密鑰（Secret）或非對稱加密"></a>1. <strong>使用強密鑰（Secret）或非對稱加密</strong></h3><ul>
 <li>對稱加密：使用 <code>HS256</code> 時，<code>secret</code> 應具備高強度（建議 256-bit 以上）。</li>
 <li>非對稱加密：使用 <code>RS256</code> 時，私鑰與公鑰分離，便於服務間驗證。</li>
@@ -7417,79 +7417,6 @@
       </tags>
   </entry>
   <entry>
-    <title>SQL 入門語法教學筆記 | 學習筆記</title>
-    <url>/2018/02/01/learning-notes-sql-intro-tutorial/</url>
-    <content><![CDATA[<p>SQL 是操作關聯式資料庫使用的語法。以下介紹常用 SQL 入門語法：</p>
-<h2 id="一、資料庫基本概念"><a href="#一、資料庫基本概念" class="headerlink" title="一、資料庫基本概念"></a>一、資料庫基本概念</h2><p>資料庫 (Database)：儲存資料的容器。<br>資料表 (Table)：儲存資料的表格，每列 (row) 為一筆紀錄，每欄 (column) 為一種資料屬性。</p>
-<hr>
-<h2 id="二、基本-SQL-語法"><a href="#二、基本-SQL-語法" class="headerlink" title="二、基本 SQL 語法"></a>二、基本 SQL 語法</h2><h4 id="1-建立資料庫"><a href="#1-建立資料庫" class="headerlink" title="1. 建立資料庫"></a>1. 建立資料庫</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE my_database;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-使用資料庫"><a href="#2-使用資料庫" class="headerlink" title="2. 使用資料庫"></a>2. 使用資料庫</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">USE my_database;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-建立資料表"><a href="#3-建立資料表" class="headerlink" title="3. 建立資料表"></a>3. 建立資料表</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> users (</span><br><span class="line">    id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY AUTO_INCREMENT,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">    email <span class="type">VARCHAR</span>(<span class="number">100</span>),</span><br><span class="line">    age <span class="type">INT</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-查詢資料"><a href="#4-查詢資料" class="headerlink" title="4. 查詢資料"></a>4. 查詢資料</h4><p>查詢所有欄位</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
-<p>選擇特定欄位</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-插入資料"><a href="#5-插入資料" class="headerlink" title="5. 插入資料"></a>5. 插入資料</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> users (name, email, age) <span class="keyword">VALUES</span> (<span class="string">&#x27;John&#x27;</span>, <span class="string">&#x27;john@example.com&#x27;</span>, <span class="number">25</span>);</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-更新資料"><a href="#6-更新資料" class="headerlink" title="6. 更新資料"></a>6. 更新資料</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> users <span class="keyword">SET</span> age <span class="operator">=</span> <span class="number">26</span> <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="7-刪除資料"><a href="#7-刪除資料" class="headerlink" title="7. 刪除資料"></a>7. 刪除資料</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="三、條件查詢"><a href="#三、條件查詢" class="headerlink" title="三、條件查詢"></a>三、條件查詢</h2><h4 id="1-WHERE-條件"><a href="#1-WHERE-條件" class="headerlink" title="1. WHERE 條件"></a>1. WHERE 條件</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-AND、OR、NOT"><a href="#2-AND、OR、NOT" class="headerlink" title="2. AND、OR、NOT"></a>2. AND、OR、NOT</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">20</span> <span class="keyword">AND</span> name <span class="operator">=</span> <span class="string">&#x27;John&#x27;</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">20</span> <span class="keyword">OR</span> age <span class="operator">&lt;</span> <span class="number">18</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> <span class="keyword">NOT</span> age <span class="operator">=</span> <span class="number">25</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-LIKE-模糊查詢"><a href="#3-LIKE-模糊查詢" class="headerlink" title="3. LIKE 模糊查詢"></a>3. LIKE 模糊查詢</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> name <span class="keyword">LIKE</span> <span class="string">&#x27;J%&#x27;</span>;  <span class="comment">-- 以J開頭</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> email <span class="keyword">LIKE</span> <span class="string">&#x27;%@gmail.com&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-ORDER-BY-排序"><a href="#4-ORDER-BY-排序" class="headerlink" title="4. ORDER BY 排序"></a>4. ORDER BY 排序</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">ASC</span>;  <span class="comment">-- 遞增排序</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">DESC</span>; <span class="comment">-- 遞減排序</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="5-LIMIT-限制筆數"><a href="#5-LIMIT-限制筆數" class="headerlink" title="5. LIMIT 限制筆數"></a>5. LIMIT 限制筆數</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users LIMIT <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="四、聚合函數"><a href="#四、聚合函數" class="headerlink" title="四、聚合函數"></a>四、聚合函數</h2><h4 id="1-計算筆數"><a href="#1-計算筆數" class="headerlink" title="1. 計算筆數"></a>1. 計算筆數</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-最大-x2F-最小值"><a href="#2-最大-x2F-最小值" class="headerlink" title="2. 最大&#x2F;最小值"></a>2. 最大&#x2F;最小值</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MAX</span>(age) <span class="keyword">FROM</span> users;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MIN</span>(age) <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-平均-x2F-總和"><a href="#3-平均-x2F-總和" class="headerlink" title="3. 平均&#x2F;總和"></a>3. 平均&#x2F;總和</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">AVG</span>(age) <span class="keyword">FROM</span> users;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(age) <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="五、分組查詢"><a href="#五、分組查詢" class="headerlink" title="五、分組查詢"></a>五、分組查詢</h2><h4 id="1-GROUP-BY"><a href="#1-GROUP-BY" class="headerlink" title="1. GROUP BY"></a>1. GROUP BY</h4><p><code>GROUP BY</code> 查詢欄位僅能包含 <code>GROUP BY</code> 和聚合函數</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> age, <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> users <span class="keyword">GROUP</span> <span class="keyword">BY</span> age;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-HAVING-搭配-GROUP-BY-當作查詢條件"><a href="#2-HAVING-搭配-GROUP-BY-當作查詢條件" class="headerlink" title="2. HAVING 搭配 GROUP BY 當作查詢條件"></a>2. HAVING 搭配 GROUP BY 當作查詢條件</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> age, <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> users <span class="keyword">GROUP</span> <span class="keyword">BY</span> age <span class="keyword">HAVING</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">&gt;</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="六、資料表連接-JOIN"><a href="#六、資料表連接-JOIN" class="headerlink" title="六、資料表連接 (JOIN)"></a>六、資料表連接 (JOIN)</h2><h4 id="1-INNER-JOIN"><a href="#1-INNER-JOIN" class="headerlink" title="1. INNER JOIN"></a>1. INNER JOIN</h4><p>內連接，僅返回兩個資料表中「符合交集條件」的資料。</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-LEFT-JOIN"><a href="#2-LEFT-JOIN" class="headerlink" title="2. LEFT JOIN"></a>2. LEFT JOIN</h4><p>左連接，返回左表 (users) 所有資料，即使右表 (orders) 無對應資料，也會顯示左表資料，右表無資料則會顯示 NULL。</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-RIGHT-JOIN"><a href="#3-RIGHT-JOIN" class="headerlink" title="3. RIGHT JOIN"></a>3. RIGHT JOIN</h4><p>右連接，返回右表 (orders) 所有資料，即使左表 (users) 無對應資料，也會顯示右表資料，左表無資料則會顯示 NULL。</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-FULL-JOIN-部分資料庫支援"><a href="#4-FULL-JOIN-部分資料庫支援" class="headerlink" title="4. FULL JOIN (部分資料庫支援)"></a>4. FULL JOIN (部分資料庫支援)</h4><p>全外連接，返回兩個表中所有資料，無對應資料則顯示 NULL。(MySQL 不支援 FULL JOIN，需使用 UNION 模擬)</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">FULL</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
-
-<h2 id="七、合併查詢-UNION"><a href="#七、合併查詢-UNION" class="headerlink" title="七、合併查詢 (UNION)"></a>七、合併查詢 (UNION)</h2><h4 id="1-UNION"><a href="#1-UNION" class="headerlink" title="1. UNION"></a>1. UNION</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">30</span></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&lt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
-
-<p>UNION 用於合併兩個或多個查詢的結果。<br>預設會去除重複資料。<br>欄位數量與型態須一致。</p>
-<h4 id="2-UNION-ALL"><a href="#2-UNION-ALL" class="headerlink" title="2. UNION ALL"></a>2. UNION ALL</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">30</span></span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&lt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
-
-<p>與 UNION 類似，但不會去除重複資料。</p>
-<hr>
-<p>以上整理了 SQL 入門常見的基本語法，可以基本處理資料庫操作需求。</p>
-]]></content>
-      <tags>
-        <tag>SQL</tag>
-        <tag>資料庫</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>前端渲染技術全解析：SSR、SSG、ISR、SPA 入門教學筆記 | 學習筆記</title>
     <url>/2024/12/12/learning-notes-spa-ssr-isr-ssg-redux-intro-tutorial%20copy/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在現代網站開發中，前端技術日益進步，如何選擇合適的渲染方式，將直接影響網站的效能、SEO、開發效率與使用者體驗。本文將介紹四種常見渲染技術：<strong>伺服器端渲染（SSR）</strong>、<strong>靜態網站生成（SSG）</strong>、<strong>增量靜態再生（ISR）</strong>、以及<strong>單頁應用（SPA）</strong>，並搭配實例幫助理解。</p>
@@ -7587,6 +7514,79 @@
         <tag>react</tag>
         <tag>Redux</tag>
         <tag>React Redux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SQL 入門語法教學筆記 | 學習筆記</title>
+    <url>/2018/02/01/learning-notes-sql-intro-tutorial/</url>
+    <content><![CDATA[<p>SQL 是操作關聯式資料庫使用的語法。以下介紹常用 SQL 入門語法：</p>
+<h2 id="一、資料庫基本概念"><a href="#一、資料庫基本概念" class="headerlink" title="一、資料庫基本概念"></a>一、資料庫基本概念</h2><p>資料庫 (Database)：儲存資料的容器。<br>資料表 (Table)：儲存資料的表格，每列 (row) 為一筆紀錄，每欄 (column) 為一種資料屬性。</p>
+<hr>
+<h2 id="二、基本-SQL-語法"><a href="#二、基本-SQL-語法" class="headerlink" title="二、基本 SQL 語法"></a>二、基本 SQL 語法</h2><h4 id="1-建立資料庫"><a href="#1-建立資料庫" class="headerlink" title="1. 建立資料庫"></a>1. 建立資料庫</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE my_database;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-使用資料庫"><a href="#2-使用資料庫" class="headerlink" title="2. 使用資料庫"></a>2. 使用資料庫</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">USE my_database;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-建立資料表"><a href="#3-建立資料表" class="headerlink" title="3. 建立資料表"></a>3. 建立資料表</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> users (</span><br><span class="line">    id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY AUTO_INCREMENT,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">    email <span class="type">VARCHAR</span>(<span class="number">100</span>),</span><br><span class="line">    age <span class="type">INT</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-查詢資料"><a href="#4-查詢資料" class="headerlink" title="4. 查詢資料"></a>4. 查詢資料</h4><p>查詢所有欄位</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
+<p>選擇特定欄位</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-插入資料"><a href="#5-插入資料" class="headerlink" title="5. 插入資料"></a>5. 插入資料</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> users (name, email, age) <span class="keyword">VALUES</span> (<span class="string">&#x27;John&#x27;</span>, <span class="string">&#x27;john@example.com&#x27;</span>, <span class="number">25</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-更新資料"><a href="#6-更新資料" class="headerlink" title="6. 更新資料"></a>6. 更新資料</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> users <span class="keyword">SET</span> age <span class="operator">=</span> <span class="number">26</span> <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-刪除資料"><a href="#7-刪除資料" class="headerlink" title="7. 刪除資料"></a>7. 刪除資料</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="三、條件查詢"><a href="#三、條件查詢" class="headerlink" title="三、條件查詢"></a>三、條件查詢</h2><h4 id="1-WHERE-條件"><a href="#1-WHERE-條件" class="headerlink" title="1. WHERE 條件"></a>1. WHERE 條件</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-AND、OR、NOT"><a href="#2-AND、OR、NOT" class="headerlink" title="2. AND、OR、NOT"></a>2. AND、OR、NOT</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">20</span> <span class="keyword">AND</span> name <span class="operator">=</span> <span class="string">&#x27;John&#x27;</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">20</span> <span class="keyword">OR</span> age <span class="operator">&lt;</span> <span class="number">18</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> <span class="keyword">NOT</span> age <span class="operator">=</span> <span class="number">25</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-LIKE-模糊查詢"><a href="#3-LIKE-模糊查詢" class="headerlink" title="3. LIKE 模糊查詢"></a>3. LIKE 模糊查詢</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> name <span class="keyword">LIKE</span> <span class="string">&#x27;J%&#x27;</span>;  <span class="comment">-- 以J開頭</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> email <span class="keyword">LIKE</span> <span class="string">&#x27;%@gmail.com&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-ORDER-BY-排序"><a href="#4-ORDER-BY-排序" class="headerlink" title="4. ORDER BY 排序"></a>4. ORDER BY 排序</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">ASC</span>;  <span class="comment">-- 遞增排序</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">DESC</span>; <span class="comment">-- 遞減排序</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-LIMIT-限制筆數"><a href="#5-LIMIT-限制筆數" class="headerlink" title="5. LIMIT 限制筆數"></a>5. LIMIT 限制筆數</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users LIMIT <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、聚合函數"><a href="#四、聚合函數" class="headerlink" title="四、聚合函數"></a>四、聚合函數</h2><h4 id="1-計算筆數"><a href="#1-計算筆數" class="headerlink" title="1. 計算筆數"></a>1. 計算筆數</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-最大-x2F-最小值"><a href="#2-最大-x2F-最小值" class="headerlink" title="2. 最大&#x2F;最小值"></a>2. 最大&#x2F;最小值</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MAX</span>(age) <span class="keyword">FROM</span> users;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MIN</span>(age) <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-平均-x2F-總和"><a href="#3-平均-x2F-總和" class="headerlink" title="3. 平均&#x2F;總和"></a>3. 平均&#x2F;總和</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">AVG</span>(age) <span class="keyword">FROM</span> users;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(age) <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="五、分組查詢"><a href="#五、分組查詢" class="headerlink" title="五、分組查詢"></a>五、分組查詢</h2><h4 id="1-GROUP-BY"><a href="#1-GROUP-BY" class="headerlink" title="1. GROUP BY"></a>1. GROUP BY</h4><p><code>GROUP BY</code> 查詢欄位僅能包含 <code>GROUP BY</code> 和聚合函數</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> age, <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> users <span class="keyword">GROUP</span> <span class="keyword">BY</span> age;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-HAVING-搭配-GROUP-BY-當作查詢條件"><a href="#2-HAVING-搭配-GROUP-BY-當作查詢條件" class="headerlink" title="2. HAVING 搭配 GROUP BY 當作查詢條件"></a>2. HAVING 搭配 GROUP BY 當作查詢條件</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> age, <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> users <span class="keyword">GROUP</span> <span class="keyword">BY</span> age <span class="keyword">HAVING</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">&gt;</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="六、資料表連接-JOIN"><a href="#六、資料表連接-JOIN" class="headerlink" title="六、資料表連接 (JOIN)"></a>六、資料表連接 (JOIN)</h2><h4 id="1-INNER-JOIN"><a href="#1-INNER-JOIN" class="headerlink" title="1. INNER JOIN"></a>1. INNER JOIN</h4><p>內連接，僅返回兩個資料表中「符合交集條件」的資料。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-LEFT-JOIN"><a href="#2-LEFT-JOIN" class="headerlink" title="2. LEFT JOIN"></a>2. LEFT JOIN</h4><p>左連接，返回左表 (users) 所有資料，即使右表 (orders) 無對應資料，也會顯示左表資料，右表無資料則會顯示 NULL。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-RIGHT-JOIN"><a href="#3-RIGHT-JOIN" class="headerlink" title="3. RIGHT JOIN"></a>3. RIGHT JOIN</h4><p>右連接，返回右表 (orders) 所有資料，即使左表 (users) 無對應資料，也會顯示右表資料，左表無資料則會顯示 NULL。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-FULL-JOIN-部分資料庫支援"><a href="#4-FULL-JOIN-部分資料庫支援" class="headerlink" title="4. FULL JOIN (部分資料庫支援)"></a>4. FULL JOIN (部分資料庫支援)</h4><p>全外連接，返回兩個表中所有資料，無對應資料則顯示 NULL。(MySQL 不支援 FULL JOIN，需使用 UNION 模擬)</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">FULL</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
+
+<h2 id="七、合併查詢-UNION"><a href="#七、合併查詢-UNION" class="headerlink" title="七、合併查詢 (UNION)"></a>七、合併查詢 (UNION)</h2><h4 id="1-UNION"><a href="#1-UNION" class="headerlink" title="1. UNION"></a>1. UNION</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">30</span></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&lt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
+<p>UNION 用於合併兩個或多個查詢的結果。<br>預設會去除重複資料。<br>欄位數量與型態須一致。</p>
+<h4 id="2-UNION-ALL"><a href="#2-UNION-ALL" class="headerlink" title="2. UNION ALL"></a>2. UNION ALL</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">30</span></span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&lt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
+<p>與 UNION 類似，但不會去除重複資料。</p>
+<hr>
+<p>以上整理了 SQL 入門常見的基本語法，可以基本處理資料庫操作需求。</p>
+]]></content>
+      <tags>
+        <tag>SQL</tag>
+        <tag>資料庫</tag>
       </tags>
   </entry>
   <entry>
@@ -8375,34 +8375,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [13] - Slots 插槽 | 學習筆記</title>
-    <url>/2021/02/13/learning-notes-vuejs-3-official-tutorial-13-slots/</url>
-    <content><![CDATA[<h1 id="Slots-插槽"><a href="#Slots-插槽" class="headerlink" title="Slots 插槽"></a>Slots 插槽</h1><p>除了透過 Props 傳遞資料外，父元件還可以透過插槽將模板片段傳遞給子元件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp&gt;</span><br><span class="line">    這是一些插槽內容！</span><br><span class="line">  &lt;/ChildComp&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<p>在子元件中，可以使用 <code>&lt;slot&gt;</code> 元素作為插槽來渲染父元件傳遞的內容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 子元件的模板 --&gt;</span><br><span class="line">  &lt;slot /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<p>插槽內的內容會被視為「預設內容」：當父元件沒有傳遞插槽內容時，會顯示這些預設內容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;slot&gt;預設內容&lt;/slot&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<p>目前我們尚未向 <code>&lt;ChildComp&gt;</code> 傳遞任何插槽內容，因此你應該會看到預設內容。現在試著利用父元件的 <code>msg</code> 狀態，為子元件提供一些插槽內容吧！</p>
-<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> msg = <span class="title function_">ref</span>(<span class="string">&#x27;from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span>&gt;</span>Message: &#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">ChildComp</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> msg = <span class="title function_">ref</span>(<span class="string">&#x27;from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span>&gt;</span>Message: &#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">ChildComp</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [12] - Emits 事件傳遞 | 學習筆記</title>
     <url>/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/</url>
     <content><![CDATA[<h1 id="Emits-事件傳遞"><a href="#Emits-事件傳遞" class="headerlink" title="Emits 事件傳遞"></a>Emits 事件傳遞</h1><p>除了接收 Props 之外，子元件也可以向父元件觸發事件：</p>
@@ -8427,23 +8399,21 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [3] - Event Listeners 事件監聽器 | 學習筆記</title>
-    <url>/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</url>
-    <content><![CDATA[<p><strong>Event Listeners 事件監聽器</strong><br>在 Vue 中，我們可以使用 <code>v-on</code> 指令監聽 DOM 事件：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <title>Vue.js 3 官方入門語法教學筆記 [13] - Slots 插槽 | 學習筆記</title>
+    <url>/2021/02/13/learning-notes-vuejs-3-official-tutorial-13-slots/</url>
+    <content><![CDATA[<h1 id="Slots-插槽"><a href="#Slots-插槽" class="headerlink" title="Slots 插槽"></a>Slots 插槽</h1><p>除了透過 Props 傳遞資料外，父元件還可以透過插槽將模板片段傳遞給子元件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp&gt;</span><br><span class="line">    這是一些插槽內容！</span><br><span class="line">  &lt;/ChildComp&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
 
-<p>由於 <code>v-on</code> 的使用頻率很高，Vue 提供了一個簡寫語法：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在子元件中，可以使用 <code>&lt;slot&gt;</code> 元素作為插槽來渲染父元件傳遞的內容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 子元件的模板 --&gt;</span><br><span class="line">  &lt;slot /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
 
-<p>在這裡，<code>increment</code> 是在 <code>&lt;script setup&gt;</code> 中定義的一個函式：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 定義響應式狀態</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">// 定義函式來更新狀態</span><br><span class="line">function increment() &#123;</span><br><span class="line">  // 更新組件的狀態</span><br><span class="line">  count.value++</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>插槽內的內容會被視為「預設內容」：當父元件沒有傳遞插槽內容時，會顯示這些預設內容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;slot&gt;預設內容&lt;/slot&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
 
-<p>在函式內，我們可以透過修改 <code>ref</code> 的值來更新組件的狀態。</p>
-<hr>
-<p>事件處理器也可以使用內聯表達式，並透過<strong>修飾符</strong>簡化常見任務。這些細節在<a href="https://vuejs.org/guide/essentials/event-handling.html">指南 - 事件處理</a>中有詳細說明。</p>
-<hr>
-<p>現在，我們可以試著自己實作 <code>increment</code> 函式，並使用 <code>v-on</code> 將它綁定到按鈕。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+<p>目前我們尚未向 <code>&lt;ChildComp&gt;</code> 傳遞任何插槽內容，因此你應該會看到預設內容。現在試著利用父元件的 <code>msg</code> 狀態，為子元件提供一些插槽內容吧！</p>
+<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> msg = <span class="title function_">ref</span>(<span class="string">&#x27;from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span>&gt;</span>Message: &#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">ChildComp</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> msg = <span class="title function_">ref</span>(<span class="string">&#x27;from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span>&gt;</span>Message: &#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">ChildComp</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -8553,21 +8523,23 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [7] - Computed Property 計算屬性 | 學習筆記</title>
-    <url>/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/</url>
-    <content><![CDATA[<h1 id="Computed-Property-計算屬性"><a href="#Computed-Property-計算屬性" class="headerlink" title="Computed Property 計算屬性"></a>Computed Property 計算屬性</h1><p>讓我們在前一個待辦清單的範例基礎上繼續改進。這裡，我們已經為每個待辦項目新增了切換功能 (toggle)，這是透過在每個待辦物件中新增一個 <code>done</code> 屬性，並使用 <code>v-model</code> 綁定到核取方塊來實現的：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in todos&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;todo.done&quot;</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <title>Vue.js 3 官方入門語法教學筆記 [3] - Event Listeners 事件監聽器 | 學習筆記</title>
+    <url>/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</url>
+    <content><![CDATA[<p><strong>Event Listeners 事件監聽器</strong><br>在 Vue 中，我們可以使用 <code>v-on</code> 指令監聽 DOM 事件：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>接下來我們可以進一步改進功能，新增一個按鈕來隱藏已完成的待辦項目。我們已經有一個按鈕可以切換 <code>hideCompleted</code> 狀態。但要如何根據這個狀態來動態渲染不同的待辦清單項目呢？</p>
-<p>這裡引入了 <code>computed()</code>。我們可以建立一個計算屬性，基於其他的響應式數據來源來計算它的 <code>.value</code> 值：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref, computed &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> hideCompleted = <span class="title function_">ref</span>(<span class="literal">false</span>);</span><br><span class="line"><span class="keyword">const</span> todos = <span class="title function_">ref</span>([</span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> filteredTodos = <span class="title function_">computed</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 根據 `todos.value` 和 `hideCompleted.value`</span></span><br><span class="line">  <span class="comment">// 返回篩選後的待辦項目</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>由於 <code>v-on</code> 的使用頻率很高，Vue 提供了一個簡寫語法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>我們將 <code>v-for</code> 的數據來源從原本的 <code>todos</code> 改為 <code>filteredTodos</code>：</p>
-<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- &lt;li v-for=&quot;todo in todos&quot;&gt;</span></span><br><span class="line"><span class="addition">+ &lt;li v-for=&quot;todo in filteredTodos&quot;&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在這裡，<code>increment</code> 是在 <code>&lt;script setup&gt;</code> 中定義的一個函式：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 定義響應式狀態</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">// 定義函式來更新狀態</span><br><span class="line">function increment() &#123;</span><br><span class="line">  // 更新組件的狀態</span><br><span class="line">  count.value++</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<p>計算屬性會自動追蹤其計算邏輯中使用的其他響應式數據作為依賴項目。它會快取計算結果，並在其依賴項目改變時自動更新。</p>
-<p>現在，嘗試新增一個 <code>filteredTodos</code> 計算屬性，並實現其計算邏輯！如果實現正確，當隱藏已完成項目時，勾選一個待辦項目應會立即將其隱藏。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, computed &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">let</span> id = <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> newTodo = <span class="title function_">ref</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> hideCompleted = <span class="title function_">ref</span>(<span class="literal">false</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todos = <span class="title function_">ref</span>([</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn HTML&#x27;</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn JavaScript&#x27;</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn Vue&#x27;</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;</span></span><br><span class="line"><span class="language-javascript">])</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> filteredTodos = <span class="title function_">computed</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">return</span> hideCompleted.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">    ? todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> !t.<span class="property">done</span>)</span></span><br><span class="line"><span class="language-javascript">    : todos.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">addTodo</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span>.<span class="title function_">push</span>(&#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: newTodo.<span class="property">value</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;)</span></span><br><span class="line"><span class="language-javascript">  newTodo.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">removeTodo</span>(<span class="params">todo</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span> = todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> t !== todo)</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">form</span> @<span class="attr">submit.prevent</span>=<span class="string">&quot;addTodo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;newTodo&quot;</span> <span class="attr">required</span> <span class="attr">placeholder</span>=<span class="string">&quot;new todo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in filteredTodos&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;todo.id&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;todo.done&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">:class</span>=<span class="string">&quot;&#123; done: todo.done &#125;&quot;</span>&gt;</span>&#123;&#123; todo.text &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;removeTodo(todo)&quot;</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;hideCompleted = !hideCompleted&quot;</span>&gt;</span></span><br><span class="line">    &#123;&#123; hideCompleted ? &#x27;Show all&#x27; : &#x27;Hide completed&#x27; &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.done</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">text-decoration</span>: line-through;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+<p>在函式內，我們可以透過修改 <code>ref</code> 的值來更新組件的狀態。</p>
+<hr>
+<p>事件處理器也可以使用內聯表達式，並透過<strong>修飾符</strong>簡化常見任務。這些細節在<a href="https://vuejs.org/guide/essentials/event-handling.html">指南 - 事件處理</a>中有詳細說明。</p>
+<hr>
+<p>現在，我們可以試著自己實作 <code>increment</code> 函式，並使用 <code>v-on</code> 將它綁定到按鈕。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -8618,21 +8590,21 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [8] - Lifecycle and Template Refs 生命週期與模板引用 | 學習筆記</title>
-    <url>/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/</url>
-    <content><![CDATA[<h2 id="Lifecycle-and-Template-Refs-生命週期與模板引用"><a href="#Lifecycle-and-Template-Refs-生命週期與模板引用" class="headerlink" title="Lifecycle and Template Refs 生命週期與模板引用"></a>Lifecycle and Template Refs 生命週期與模板引用</h2><p>到目前為止，Vue.js 透過響應式資料與聲明式渲染，幫助我們處理了所有的 DOM 更新。然而，無可避免地會有需要手動操作 DOM 的情況。</p>
-<p>我們可以使用特殊的 <code>ref</code> 屬性來請求模板引用 (template ref)，也就是模板中某個元素的引用：</p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">&quot;pElementRef&quot;</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <title>Vue.js 3 官方入門語法教學筆記 [7] - Computed Property 計算屬性 | 學習筆記</title>
+    <url>/2021/02/06/learning-notes-vuejs-3-official-tutorial-7-computed-property/</url>
+    <content><![CDATA[<h1 id="Computed-Property-計算屬性"><a href="#Computed-Property-計算屬性" class="headerlink" title="Computed Property 計算屬性"></a>Computed Property 計算屬性</h1><p>讓我們在前一個待辦清單的範例基礎上繼續改進。這裡，我們已經為每個待辦項目新增了切換功能 (toggle)，這是透過在每個待辦物件中新增一個 <code>done</code> 屬性，並使用 <code>v-model</code> 綁定到核取方塊來實現的：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in todos&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;todo.done&quot;</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="定義引用"><a href="#定義引用" class="headerlink" title="定義引用"></a>定義引用</h3><p>為了訪問這個引用，我們需要宣告一個名稱匹配的 <code>ref</code>：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> pElementRef = <span class="title function_">ref</span>(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
-<p>請注意，這個 <code>ref</code> 在初始化時會是 <code>null</code>，因為當 <code>&lt;script setup&gt;</code> 被執行時，對應的 DOM 元素還不存在。模板引用只有在元件掛載 (mounted) 後才能被訪問。</p>
-<h3 id="在掛載後執行程式碼"><a href="#在掛載後執行程式碼" class="headerlink" title="在掛載後執行程式碼"></a>在掛載後執行程式碼</h3><p>我們可以使用 <code>onMounted()</code> 函式在掛載後執行程式碼：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 元件已掛載完成</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>接下來我們可以進一步改進功能，新增一個按鈕來隱藏已完成的待辦項目。我們已經有一個按鈕可以切換 <code>hideCompleted</code> 狀態。但要如何根據這個狀態來動態渲染不同的待辦清單項目呢？</p>
+<p>這裡引入了 <code>computed()</code>。我們可以建立一個計算屬性，基於其他的響應式數據來源來計算它的 <code>.value</code> 值：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref, computed &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> hideCompleted = <span class="title function_">ref</span>(<span class="literal">false</span>);</span><br><span class="line"><span class="keyword">const</span> todos = <span class="title function_">ref</span>([</span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> filteredTodos = <span class="title function_">computed</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 根據 `todos.value` 和 `hideCompleted.value`</span></span><br><span class="line">  <span class="comment">// 返回篩選後的待辦項目</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h3 id="生命週期鉤子"><a href="#生命週期鉤子" class="headerlink" title="生命週期鉤子"></a>生命週期鉤子</h3><p>這稱為生命週期鉤子 (lifecycle hook)，它允許我們在元件生命週期的特定時間點註冊回呼函式。其他的生命週期鉤子還包括 <code>onUpdated</code> 和 <code>onUnmounted</code> 等。更多細節請參考官方文件 <a href="https://vuejs.org/guide/essentials/lifecycle.html">生命週期圖示</a>。</p>
-<h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>現在，我們可以嘗試添加一個 <code>onMounted</code> 鉤子，透過 <code>pElementRef.value</code> 訪問 <code>&lt;p&gt;</code> 元素，並對其進行一些直接的 DOM 操作（例如更改 <code>textContent</code>）。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> pElementRef = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  pElementRef.<span class="property">value</span>.<span class="property">textContent</span> = <span class="string">&#x27;mounted!&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">&quot;pElementRef&quot;</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+<p>我們將 <code>v-for</code> 的數據來源從原本的 <code>todos</code> 改為 <code>filteredTodos</code>：</p>
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- &lt;li v-for=&quot;todo in todos&quot;&gt;</span></span><br><span class="line"><span class="addition">+ &lt;li v-for=&quot;todo in filteredTodos&quot;&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>計算屬性會自動追蹤其計算邏輯中使用的其他響應式數據作為依賴項目。它會快取計算結果，並在其依賴項目改變時自動更新。</p>
+<p>現在，嘗試新增一個 <code>filteredTodos</code> 計算屬性，並實現其計算邏輯！如果實現正確，當隱藏已完成項目時，勾選一個待辦項目應會立即將其隱藏。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, computed &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">let</span> id = <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> newTodo = <span class="title function_">ref</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> hideCompleted = <span class="title function_">ref</span>(<span class="literal">false</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todos = <span class="title function_">ref</span>([</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn HTML&#x27;</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn JavaScript&#x27;</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: <span class="string">&#x27;Learn Vue&#x27;</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;</span></span><br><span class="line"><span class="language-javascript">])</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> filteredTodos = <span class="title function_">computed</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">return</span> hideCompleted.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">    ? todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> !t.<span class="property">done</span>)</span></span><br><span class="line"><span class="language-javascript">    : todos.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">addTodo</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span>.<span class="title function_">push</span>(&#123; <span class="attr">id</span>: id++, <span class="attr">text</span>: newTodo.<span class="property">value</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;)</span></span><br><span class="line"><span class="language-javascript">  newTodo.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">removeTodo</span>(<span class="params">todo</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todos.<span class="property">value</span> = todos.<span class="property">value</span>.<span class="title function_">filter</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> t !== todo)</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">form</span> @<span class="attr">submit.prevent</span>=<span class="string">&quot;addTodo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;newTodo&quot;</span> <span class="attr">required</span> <span class="attr">placeholder</span>=<span class="string">&quot;new todo&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in filteredTodos&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;todo.id&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;todo.done&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">:class</span>=<span class="string">&quot;&#123; done: todo.done &#125;&quot;</span>&gt;</span>&#123;&#123; todo.text &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;removeTodo(todo)&quot;</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;hideCompleted = !hideCompleted&quot;</span>&gt;</span></span><br><span class="line">    &#123;&#123; hideCompleted ? &#x27;Show all&#x27; : &#x27;Hide completed&#x27; &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.done</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">text-decoration</span>: line-through;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -8665,6 +8637,88 @@
         <tag>vue3</tag>
         <tag>vue.js</tag>
         <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [8] - Lifecycle and Template Refs 生命週期與模板引用 | 學習筆記</title>
+    <url>/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/</url>
+    <content><![CDATA[<h2 id="Lifecycle-and-Template-Refs-生命週期與模板引用"><a href="#Lifecycle-and-Template-Refs-生命週期與模板引用" class="headerlink" title="Lifecycle and Template Refs 生命週期與模板引用"></a>Lifecycle and Template Refs 生命週期與模板引用</h2><p>到目前為止，Vue.js 透過響應式資料與聲明式渲染，幫助我們處理了所有的 DOM 更新。然而，無可避免地會有需要手動操作 DOM 的情況。</p>
+<p>我們可以使用特殊的 <code>ref</code> 屬性來請求模板引用 (template ref)，也就是模板中某個元素的引用：</p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">&quot;pElementRef&quot;</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="定義引用"><a href="#定義引用" class="headerlink" title="定義引用"></a>定義引用</h3><p>為了訪問這個引用，我們需要宣告一個名稱匹配的 <code>ref</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> pElementRef = <span class="title function_">ref</span>(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+<p>請注意，這個 <code>ref</code> 在初始化時會是 <code>null</code>，因為當 <code>&lt;script setup&gt;</code> 被執行時，對應的 DOM 元素還不存在。模板引用只有在元件掛載 (mounted) 後才能被訪問。</p>
+<h3 id="在掛載後執行程式碼"><a href="#在掛載後執行程式碼" class="headerlink" title="在掛載後執行程式碼"></a>在掛載後執行程式碼</h3><p>我們可以使用 <code>onMounted()</code> 函式在掛載後執行程式碼：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 元件已掛載完成</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="生命週期鉤子"><a href="#生命週期鉤子" class="headerlink" title="生命週期鉤子"></a>生命週期鉤子</h3><p>這稱為生命週期鉤子 (lifecycle hook)，它允許我們在元件生命週期的特定時間點註冊回呼函式。其他的生命週期鉤子還包括 <code>onUpdated</code> 和 <code>onUnmounted</code> 等。更多細節請參考官方文件 <a href="https://vuejs.org/guide/essentials/lifecycle.html">生命週期圖示</a>。</p>
+<h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>現在，我們可以嘗試添加一個 <code>onMounted</code> 鉤子，透過 <code>pElementRef.value</code> 訪問 <code>&lt;p&gt;</code> 元素，並對其進行一些直接的 DOM 操作（例如更改 <code>textContent</code>）。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> pElementRef = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  pElementRef.<span class="property">value</span>.<span class="property">textContent</span> = <span class="string">&#x27;mounted!&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">&quot;pElementRef&quot;</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue3 Options API 和 Composition API 風格差異教學筆記 | 學習筆記</title>
+    <url>/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>根據<a href="https://vuejs.org/guide/introduction.html#api-styles">官方文件的說明</a>，一般來說 Vue 元件可以用兩種不同的 API 風格來撰寫：<strong>Options API</strong> 和 <strong>Composition API</strong>。</p>
+<hr>
+<h1 id="Options-API"><a href="#Options-API" class="headerlink" title="Options API"></a><strong>Options API</strong></h1><p>使用 Options API 時，我們透過一個包含 <code>data</code>、<code>methods</code> 和 <code>mounted</code> 等選項的物件來定義元件邏輯。選項中定義的屬性會在函式內透過 <code>this</code> 曝露，<code>this</code> 指向的是元件實例。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 從 data() 返回的屬性成為響應式狀態，</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 並會透過 `this` 曝露。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">count</span>: <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// Methods 是變更狀態並觸發更新的函式，</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 可作為模板中的事件處理程序綁定。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">this</span>.<span class="property">count</span>++</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 生命週期鉤子會在組件的不同階段被調用。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 此函式會在組件掛載時調用。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`初始計數值為 <span class="subst">$&#123;<span class="variable language_">this</span>.count&#125;</span>。`</span>)</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="Composition-API"><a href="#Composition-API" class="headerlink" title="Composition API"></a><strong>Composition API</strong></h1><p>使用 Composition API 時，我們透過導入的 API 函式來定義組件邏輯。在單文件組件 (SFC) 中，Composition API 通常搭配 <code>&lt;script setup&gt;</code> 使用。<code>setup</code> 屬性是一個提示，它讓 Vue 執行編譯時轉換，從而減少樣板代碼。舉例來說，在 <code>&lt;script setup&gt;</code> 中宣告的導入、第一層變數和函式可直接用於模板中。</p>
+<p>以下是相同的組件，模板保持不變，但改用 Composition API 和 <code>&lt;script setup&gt;</code>：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 響應式狀態</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 改變狀態並觸發更新的函式</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 生命週期鉤子</span></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`初始計數值為 <span class="subst">$&#123;count.value&#125;</span>。`</span>)</span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="該選擇哪種風格？"><a href="#該選擇哪種風格？" class="headerlink" title="該選擇哪種風格？"></a><strong>該選擇哪種風格？</strong></h1><p>這兩種 API 風格都能滿足常見的使用場景。它們是基於相同底層系統的不同介面。實際上，<strong>Options API 是基於 Composition API 實現的</strong>！Vue 的核心概念和知識在兩種風格中是共通的。</p>
+<ol>
+<li><p><strong>Options API</strong>  </p>
+<ul>
+<li>圍繞「組件實例」（如範例中的 <code>this</code>）進行設計，對於來自 OOP 語言背景的使用者，這種風格通常更符合以類為基礎的思維模型。</li>
+<li>初學者友好，通過選項分組的方式隱藏了響應式細節，簡化程式碼組織。</li>
+</ul>
+</li>
+<li><p><strong>Composition API</strong>  </p>
+<ul>
+<li>在函式作用域中直接宣告響應式狀態變數，並透過組合多個函式來管理複雜性。</li>
+<li>更加靈活，但需要對 Vue 的響應式機制有深入理解才能有效使用。</li>
+<li>適合組織和重用邏輯的更強大模式。</li>
+</ul>
+</li>
+</ol>
+<h1 id="學習上的建議"><a href="#學習上的建議" class="headerlink" title="學習上的建議"></a><strong>學習上的建議</strong></h1><ul>
+<li><strong>新手學習</strong>：選擇對您來說更容易理解的風格。大多數核心概念在兩種風格中是共通的，您之後可以再學習另一種風格。  </li>
+<li><strong>生產使用</strong>：  <ul>
+<li>如果不使用建構工具，或計畫主要用於低複雜度場景（如漸進式增強），建議使用 <code>Options API</code>。  </li>
+<li>如果計畫使用 Vue 構建完整應用，建議使用 <strong>Composition API + 單文件組件</strong>。</li>
+</ul>
+</li>
+</ul>
+<p>在學習階段，我們也不需要僅限於某一種風格。可以根據適合的情境使用適合的 API 風格。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+        <tag>Options API</tag>
+        <tag>Composition API</tag>
       </tags>
   </entry>
   <entry>
@@ -8757,60 +8811,6 @@
         <tag>JavaScript</tag>
         <tag>reactive</tag>
         <tag>pinia</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue3 Options API 和 Composition API 風格差異教學筆記 | 學習筆記</title>
-    <url>/2020/11/16/learning-notes-vuejs-3-whats-diff-between-options-api-composition-api/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>根據<a href="https://vuejs.org/guide/introduction.html#api-styles">官方文件的說明</a>，一般來說 Vue 元件可以用兩種不同的 API 風格來撰寫：<strong>Options API</strong> 和 <strong>Composition API</strong>。</p>
-<hr>
-<h1 id="Options-API"><a href="#Options-API" class="headerlink" title="Options API"></a><strong>Options API</strong></h1><p>使用 Options API 時，我們透過一個包含 <code>data</code>、<code>methods</code> 和 <code>mounted</code> 等選項的物件來定義元件邏輯。選項中定義的屬性會在函式內透過 <code>this</code> 曝露，<code>this</code> 指向的是元件實例。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 從 data() 返回的屬性成為響應式狀態，</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 並會透過 `this` 曝露。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">count</span>: <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// Methods 是變更狀態並觸發更新的函式，</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 可作為模板中的事件處理程序綁定。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">this</span>.<span class="property">count</span>++</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 生命週期鉤子會在組件的不同階段被調用。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// 此函式會在組件掛載時調用。</span></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`初始計數值為 <span class="subst">$&#123;<span class="variable language_">this</span>.count&#125;</span>。`</span>)</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="Composition-API"><a href="#Composition-API" class="headerlink" title="Composition API"></a><strong>Composition API</strong></h1><p>使用 Composition API 時，我們透過導入的 API 函式來定義組件邏輯。在單文件組件 (SFC) 中，Composition API 通常搭配 <code>&lt;script setup&gt;</code> 使用。<code>setup</code> 屬性是一個提示，它讓 Vue 執行編譯時轉換，從而減少樣板代碼。舉例來說，在 <code>&lt;script setup&gt;</code> 中宣告的導入、第一層變數和函式可直接用於模板中。</p>
-<p>以下是相同的組件，模板保持不變，但改用 Composition API 和 <code>&lt;script setup&gt;</code>：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 響應式狀態</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 改變狀態並觸發更新的函式</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 生命週期鉤子</span></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`初始計數值為 <span class="subst">$&#123;count.value&#125;</span>。`</span>)</span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="該選擇哪種風格？"><a href="#該選擇哪種風格？" class="headerlink" title="該選擇哪種風格？"></a><strong>該選擇哪種風格？</strong></h1><p>這兩種 API 風格都能滿足常見的使用場景。它們是基於相同底層系統的不同介面。實際上，<strong>Options API 是基於 Composition API 實現的</strong>！Vue 的核心概念和知識在兩種風格中是共通的。</p>
-<ol>
-<li><p><strong>Options API</strong>  </p>
-<ul>
-<li>圍繞「組件實例」（如範例中的 <code>this</code>）進行設計，對於來自 OOP 語言背景的使用者，這種風格通常更符合以類為基礎的思維模型。</li>
-<li>初學者友好，通過選項分組的方式隱藏了響應式細節，簡化程式碼組織。</li>
-</ul>
-</li>
-<li><p><strong>Composition API</strong>  </p>
-<ul>
-<li>在函式作用域中直接宣告響應式狀態變數，並透過組合多個函式來管理複雜性。</li>
-<li>更加靈活，但需要對 Vue 的響應式機制有深入理解才能有效使用。</li>
-<li>適合組織和重用邏輯的更強大模式。</li>
-</ul>
-</li>
-</ol>
-<h1 id="學習上的建議"><a href="#學習上的建議" class="headerlink" title="學習上的建議"></a><strong>學習上的建議</strong></h1><ul>
-<li><strong>新手學習</strong>：選擇對您來說更容易理解的風格。大多數核心概念在兩種風格中是共通的，您之後可以再學習另一種風格。  </li>
-<li><strong>生產使用</strong>：  <ul>
-<li>如果不使用建構工具，或計畫主要用於低複雜度場景（如漸進式增強），建議使用 <code>Options API</code>。  </li>
-<li>如果計畫使用 Vue 構建完整應用，建議使用 <strong>Composition API + 單文件組件</strong>。</li>
-</ul>
-</li>
-</ul>
-<p>在學習階段，我們也不需要僅限於某一種風格。可以根據適合的情境使用適合的 API 風格。</p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-        <tag>Options API</tag>
-        <tag>Composition API</tag>
       </tags>
   </entry>
   <entry>

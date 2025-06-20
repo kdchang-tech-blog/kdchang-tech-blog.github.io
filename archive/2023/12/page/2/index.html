@@ -30,7 +30,7 @@
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/archive/2024/12/page/4/">
+    <link rel="canonical" href="https://tech.kdchang.net/archive/2023/12/page/2/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -119,14 +119,14 @@
 
                         
                         <li>
-                            <a href="/books/">Books</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/books/">Books</a>
                         </li>
                         
                     
@@ -221,23 +221,75 @@
 
 <div class="post-preview">
 
-    <a href="/2024/12/01/learning-notes-python-django-db-mapping-intro-tutorial/">
+    <a href="/2023/12/21/learning-notes-vuejs-pinia-store-reactive-intro-tutorial copy/">
         <h2 class="post-title">
-            Django「一對一」、「一對多」、「多對多」關聯入門教學筆記 | 學習筆記
+            Vue pinia 保持 reactive 入門教學筆記 | 學習筆記
         </h2>
         <hr>
         
         <div class="post-content-preview">
-            前言當你在學 Django 或資料庫設計時，常會遇到「一對一」、「一對多」、「多對多」這三種關聯（Relationship）。這些是資料庫中表與表之間的關係，下面用簡單的例子幫你搞懂它們的差異：
+            保持 reactive 寫法：
 
-一對一（One-to-One）概念：一個資料只對應另一個資料，彼此之間是唯一配對的關係。
-例子：每個人都有一張身份證 → 一個人對應一張身份證，一張身份證只對應一個人。
-Django 實作：cla......
+1️. 用 computedconst todos = computed(() =&gt; todoStore.todos)
+
+優點  
+
+保持 reactive  
+簡單直接  
+在 template 裡 todos 可以直接使用
+
+缺點  
+
+如果只是讀值，其實有點多餘
+
+建議用於：在 template 需要用 v-for=&quot;todo in t......
         </div>
     </a>
     <p class="post-meta">
         Posted by kdchang on
-        2024-12-01
+        2023-12-21
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2023/12/20/learning-notes-jwt-intro-tutorial/">
+        <h2 class="post-title">
+            JWT 入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言在現代 Web 應用中，使用者認證與授權機制是系統安全的重要基礎。傳統上，我們可能使用 Session 與 Cookie 搭配伺服器端儲存進行身份驗證；但在前後端分離、多平台（Web、Mobile、API Gateway）應用日益普及的情況下，更輕量、跨平台、無狀態的驗證方案逐漸成為主流。
+JWT（JSON Web Token）正是這樣一種流行的解法。它是一種根據 JSON 格式加密後產......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2023-12-20
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2023/12/16/learning-notes-http2-intro-tutorial copy/">
+        <h2 class="post-title">
+            HTTP/2 介紹與入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            1. HTTP&#x2F;2 簡介HTTP&#x2F;2 是 HTTP&#x2F;1.1 的後繼版本，由 IETF HTTP 工作小組開發，並於 2015 年 5 月成為正式標準（RFC 7540）。HTTP&#x2F;2 的主要目標是提高 Web 的性能，減少延遲，並優化資源的傳輸方式。
+2. HTTP&#x2F;2 的核心特性2.1 二進制分幀層（Binary Framing Layer......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2023-12-16
     </p>
 
 </div>
@@ -250,7 +302,7 @@ Django 實作：cla......
 <ul class="pager">
     
         <li class="previous">
-            <a href="/archive/2024/12/page/3/">&larr; Newer Posts</a>
+            <a href="/archive/2023/12/">&larr; Newer Posts</a>
         </li>
     
     

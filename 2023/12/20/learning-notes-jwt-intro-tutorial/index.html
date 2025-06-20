@@ -26,11 +26,11 @@
     
     <title>
         
-          JWT 使用好處入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          JWT 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/12/21/learning-notes-jwt-pros-intro-tutorial/">
+    <link rel="canonical" href="https://tech.kdchang.net/2023/12/20/learning-notes-jwt-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="JWT 使用好處入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="JWT 使用好處入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="JWT 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="JWT 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -119,14 +119,14 @@
 
                         
                         <li>
-                            <a href="/books/">Books</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/books/">Books</a>
                         </li>
                         
                     
@@ -199,10 +199,10 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>JWT 使用好處入門教學筆記 | 學習筆記</h1>
+                    <h1>JWT 入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2024-12-21
+                        2023-12-20
                     </span>
                     <br>
                     <div class="tags">
@@ -235,122 +235,74 @@
                 </div>
                 <br>
                 <div>
-                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>JWT（JSON Web Token）</strong> 的好處在於它是輕量、跨平台、無狀態的驗證與授權機制，特別適合用於前後端分離、微服務架構與 API 驗證。以下是它的主要優點：</p>
-<h2 id="一、JWT-的-7-大好處"><a href="#一、JWT-的-7-大好處" class="headerlink" title="一、JWT 的 7 大好處"></a>一、JWT 的 7 大好處</h2><h3 id="1-無狀態（Stateless）驗證"><a href="#1-無狀態（Stateless）驗證" class="headerlink" title="1. 無狀態（Stateless）驗證"></a>1. <strong>無狀態（Stateless）驗證</strong></h3><ul>
-<li>JWT 本身就包含用戶資訊與簽名，<strong>不需要在伺服器端儲存 session</strong>。</li>
-<li>適合微服務或 Serverless 架構，因為伺服器不用記住誰是誰。</li>
-</ul>
-<h3 id="2-跨平台、跨語言支援"><a href="#2-跨平台、跨語言支援" class="headerlink" title="2. 跨平台、跨語言支援"></a>2. <strong>跨平台、跨語言支援</strong></h3><ul>
-<li>JWT 是一種標準格式（RFC 7519），可用於各種語言與框架（Node.js、Python、Go、Java、PHP、.NET 等）。</li>
-<li>非常適合前後端分離的架構，或多平台應用（Web + App）。</li>
-</ul>
-<h3 id="3-傳遞資訊方便"><a href="#3-傳遞資訊方便" class="headerlink" title="3. 傳遞資訊方便"></a>3. <strong>傳遞資訊方便</strong></h3><ul>
-<li>可以在 payload 中攜帶使用者角色、權限、使用者 ID 等資料，前後端都可解碼取得。</li>
-<li>節省額外查詢資料庫的頻率（如登入後不再查資料庫即可知道使用者身份）。</li>
-</ul>
-<h3 id="4-易於擴展與整合-OAuth"><a href="#4-易於擴展與整合-OAuth" class="headerlink" title="4. 易於擴展與整合 OAuth"></a>4. <strong>易於擴展與整合 OAuth</strong></h3><ul>
-<li>JWT 是 OAuth 2.0 中 Access Token 的常見格式。</li>
-<li>整合第三方登入（如 Google、Facebook、GitHub）時很常使用 JWT 作為驗證令牌。</li>
-</ul>
-<h3 id="5-高安全性（搭配正確實作）"><a href="#5-高安全性（搭配正確實作）" class="headerlink" title="5. 高安全性（搭配正確實作）"></a>5. <strong>高安全性（搭配正確實作）</strong></h3><ul>
-<li>Token 是簽名過的，<strong>無法被竄改</strong>（除非持有密鑰）。</li>
-<li>可設定有效期限（<code>exp</code>），也支援附加自訂欄位。</li>
-</ul>
-<h3 id="6-前端儲存與攜帶方便"><a href="#6-前端儲存與攜帶方便" class="headerlink" title="6. 前端儲存與攜帶方便"></a>6. <strong>前端儲存與攜帶方便</strong></h3><ul>
-<li><p>JWT 是字串格式，可透過：</p>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在現代 Web 應用中，使用者認證與授權機制是系統安全的重要基礎。傳統上，我們可能使用 Session 與 Cookie 搭配伺服器端儲存進行身份驗證；但在前後端分離、多平台（Web、Mobile、API Gateway）應用日益普及的情況下，更輕量、跨平台、無狀態的驗證方案逐漸成為主流。</p>
+<p>JWT（JSON Web Token）正是這樣一種流行的解法。它是一種根據 JSON 格式加密後產生的 Token，可用來安全地在用戶與伺服器間傳遞資訊。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p>JWT 是一種開放標準（RFC 7519），用於在雙方之間以 JSON 格式安全傳遞資訊。</p>
+</li>
+<li><p>結構由三部分組成：<code>Header</code>.<code>Payload</code>.<code>Signature</code>。</p>
+</li>
+<li><p>主要用途：</p>
 <ul>
-<li><code>Authorization</code> header：<code>Bearer &lt;token&gt;</code></li>
-<li>Cookie（推薦設為 HttpOnly + Secure）</li>
-<li>localStorage（需防範 XSS）</li>
+<li><strong>身份認證（Authentication）</strong></li>
+<li><strong>授權（Authorization）</strong></li>
 </ul>
 </li>
+<li><p>特點：</p>
+<ul>
+<li>可跨語言與平台使用</li>
+<li>支援無狀態驗證（不需伺服器端儲存 session）</li>
+<li>可設定過期時間與自訂 Payload 欄位</li>
 </ul>
-<h3 id="7-支援單一登入（SSO）"><a href="#7-支援單一登入（SSO）" class="headerlink" title="7. 支援單一登入（SSO）"></a>7. <strong>支援單一登入（SSO）</strong></h3><ul>
-<li>多個子系統共用同一套 JWT 驗證邏輯，實現單一登入（Single Sign-On）。</li>
-<li>用於企業內部系統、微服務架構特別合適。</li>
+</li>
+<li><p>常見應用場景：API Token 驗證、行動裝置登入狀態維持、OAuth 搭配使用</p>
+</li>
+<li><p>JWT 須透過 HTTPS 傳遞以避免中間人攻擊（MITM）</p>
+</li>
+<li><p>不適合儲存敏感資訊（如密碼、信用卡號）</p>
+</li>
 </ul>
 <hr>
-<h2 id="二、實際應用情境"><a href="#二、實際應用情境" class="headerlink" title="二、實際應用情境"></a>二、實際應用情境</h2><table>
-<thead>
-<tr>
-<th>應用場景</th>
-<th>優勢</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>API 驗證</td>
-<td>無狀態、易於整合</td>
-</tr>
-<tr>
-<td>單頁應用（SPA）</td>
-<td>可存取使用者資訊而不額外請求</td>
-</tr>
-<tr>
-<td>手機 App 登入</td>
-<td>移動端儲存與驗證方便</td>
-</tr>
-<tr>
-<td>微服務架構</td>
-<td>每個服務只需驗證簽章，無需共用 session</td>
-</tr>
-<tr>
-<td>OAuth 第三方登入</td>
-<td>可當作 Access Token 與 ID Token</td>
-</tr>
-</tbody></table>
+<h2 id="JWT-結構說明"><a href="#JWT-結構說明" class="headerlink" title="JWT 結構說明"></a>JWT 結構說明</h2><p>一個 JWT 字串長得像這樣：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.</span><br><span class="line">eyJ1c2VySWQiOiIxMjM0IiwibmFtZSI6IktEIiwiZXhwIjoxNzAwMDAwMDAwfQ.</span><br><span class="line">sKPXrY3AvKb0aBQKgYF3mn7ZWh9yGpyF2X2NFie5TIU</span><br></pre></td></tr></table></figure>
+
+<p>它由三個部分組成，透過 <code>.</code> 分隔：</p>
+<ol>
+<li><strong>Header</strong>：定義演算法（如 <code>HS256</code>）與類型（<code>JWT</code>）。</li>
+<li><strong>Payload</strong>：承載實際資料（如使用者 ID、帳號、過期時間）。</li>
+<li><strong>Signature</strong>：用密鑰加密前兩部分，用於驗證是否被竄改。</li>
+</ol>
 <hr>
-<h2 id="三、與-Session-的比較"><a href="#三、與-Session-的比較" class="headerlink" title="三、與 Session 的比較"></a>三、與 Session 的比較</h2><table>
-<thead>
-<tr>
-<th>項目</th>
-<th>JWT</th>
-<th>Session</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>資料儲存位置</td>
-<td>前端（Token 傳遞）</td>
-<td>後端（記憶體&#x2F;資料庫）</td>
-</tr>
-<tr>
-<td>可擴充性</td>
-<td>高（無需共享記憶體）</td>
-<td>需維護集中式 Session 儲存</td>
-</tr>
-<tr>
-<td>實作難度</td>
-<td>中（需處理 Token 過期、黑名單等）</td>
-<td>簡單（有框架支援）</td>
-</tr>
-<tr>
-<td>安全性</td>
-<td>好（但需避免 XSS 與 Token 洩露）</td>
-<td>好（但可能遭 CSRF 攻擊）</td>
-</tr>
-</tbody></table>
+<h2 id="實作範例（Node-js-ESM）"><a href="#實作範例（Node-js-ESM）" class="headerlink" title="實作範例（Node.js + ESM）"></a>實作範例（Node.js + ESM）</h2><h3 id="安裝必要套件"><a href="#安裝必要套件" class="headerlink" title="安裝必要套件"></a>安裝必要套件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install express jsonwebtoken dotenv</span><br></pre></td></tr></table></figure>
+
+<h3 id="專案架構"><a href="#專案架構" class="headerlink" title="專案架構"></a>專案架構</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project/</span><br><span class="line">├── index.js</span><br><span class="line">├── routes/</span><br><span class="line">│   └── auth.js</span><br><span class="line">├── .env</span><br></pre></td></tr></table></figure>
+
 <hr>
-<h2 id="四、常見誤解釐清"><a href="#四、常見誤解釐清" class="headerlink" title="四、常見誤解釐清"></a>四、常見誤解釐清</h2><table>
-<thead>
-<tr>
-<th>常見誤解</th>
-<th>釐清</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>JWT 是加密的</td>
-<td>錯，<strong>預設只是簽名（不可竄改），不是加密（不可閱讀）</strong></td>
-</tr>
-<tr>
-<td>JWT 安全無敵</td>
-<td>錯，若密鑰外洩，任何人都能簽 Token。需配合 HTTPS 傳輸與妥善保護密鑰</td>
-</tr>
-<tr>
-<td>JWT 不需要過期時間</td>
-<td>錯，若未設 <code>exp</code>，Token 可永久有效，極度危險</td>
-</tr>
-</tbody></table>
+<h3 id="env-檔（儲存密鑰）"><a href="#env-檔（儲存密鑰）" class="headerlink" title=".env 檔（儲存密鑰）"></a><code>.env</code> 檔（儲存密鑰）</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">JWT_SECRET=mysecretkey123</span><br></pre></td></tr></table></figure>
+
 <hr>
-<h2 id="五、總結"><a href="#五、總結" class="headerlink" title="五、總結"></a>五、總結</h2><p>JWT 的優勢在於簡潔、無狀態、可擴展，特別適合 API 驗證與前後端分離架構。然而，要發揮 JWT 的最大效益並保障安全，開發者需了解其限制，搭配正確實作（如過期、黑名單、HTTPS、Refresh Token 管理等）。</p>
+<h3 id="routes-auth-js"><a href="#routes-auth-js" class="headerlink" title="routes/auth.js"></a><code>routes/auth.js</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> express <span class="keyword">from</span> <span class="string">&#x27;express&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> jwt <span class="keyword">from</span> <span class="string">&#x27;jsonwebtoken&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> dotenv <span class="keyword">from</span> <span class="string">&#x27;dotenv&#x27;</span>;</span><br><span class="line"></span><br><span class="line">dotenv.<span class="title function_">config</span>();</span><br><span class="line"><span class="keyword">const</span> router = express.<span class="title class_">Router</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 模擬使用者登入</span></span><br><span class="line">router.<span class="title function_">post</span>(<span class="string">&#x27;/login&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; username, password &#125; = req.<span class="property">body</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 模擬帳密驗證（實際應從 DB 查詢）</span></span><br><span class="line">  <span class="keyword">if</span> (username === <span class="string">&#x27;admin&#x27;</span> &amp;&amp; password === <span class="string">&#x27;123456&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> payload = &#123;</span><br><span class="line">      <span class="attr">userId</span>: <span class="string">&#x27;abc123&#x27;</span>,</span><br><span class="line">      <span class="attr">username</span>: <span class="string">&#x27;admin&#x27;</span>,</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 簽發 Token，過期時間為 1 小時</span></span><br><span class="line">    <span class="keyword">const</span> token = jwt.<span class="title function_">sign</span>(payload, process.<span class="property">env</span>.<span class="property">JWT_SECRET</span>, &#123;</span><br><span class="line">      <span class="attr">expiresIn</span>: <span class="string">&#x27;1h&#x27;</span>,</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res.<span class="title function_">json</span>(&#123; token &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  res.<span class="title function_">status</span>(<span class="number">401</span>).<span class="title function_">json</span>(&#123; <span class="attr">error</span>: <span class="string">&#x27;帳號或密碼錯誤&#x27;</span> &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 受保護資源</span></span><br><span class="line">router.<span class="title function_">get</span>(<span class="string">&#x27;/profile&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> authHeader = req.<span class="property">headers</span>.<span class="property">authorization</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!authHeader || !authHeader.<span class="title function_">startsWith</span>(<span class="string">&#x27;Bearer &#x27;</span>)) &#123;</span><br><span class="line">    <span class="keyword">return</span> res.<span class="title function_">status</span>(<span class="number">401</span>).<span class="title function_">json</span>(&#123; <span class="attr">error</span>: <span class="string">&#x27;請提供 Token&#x27;</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> token = authHeader.<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>)[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> decoded = jwt.<span class="title function_">verify</span>(token, process.<span class="property">env</span>.<span class="property">JWT_SECRET</span>);</span><br><span class="line">    res.<span class="title function_">json</span>(&#123; <span class="attr">message</span>: <span class="string">&#x27;驗證成功&#x27;</span>, <span class="attr">user</span>: decoded &#125;);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    res.<span class="title function_">status</span>(<span class="number">401</span>).<span class="title function_">json</span>(&#123; <span class="attr">error</span>: <span class="string">&#x27;Token 無效或過期&#x27;</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a><code>index.js</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> express <span class="keyword">from</span> <span class="string">&#x27;express&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> authRouter <span class="keyword">from</span> <span class="string">&#x27;./routes/auth.js&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">json</span>());</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(<span class="string">&#x27;/api&#x27;</span>, authRouter);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PORT</span> = process.<span class="property">env</span>.<span class="property">PORT</span> || <span class="number">3000</span>;</span><br><span class="line">app.<span class="title function_">listen</span>(<span class="variable constant_">PORT</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Server running at http://localhost:<span class="subst">$&#123;PORT&#125;</span>`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="測試流程"><a href="#測試流程" class="headerlink" title="測試流程"></a>測試流程</h2><ol>
+<li>發送 <code>POST /api/login</code> 並附上正確帳密（如 <code>admin</code> &#x2F; <code>123456</code>），取得 JWT。</li>
+<li>將該 JWT 作為 <code>Authorization: Bearer &lt;token&gt;</code> 放入 Header 中，請求 <code>GET /api/profile</code>。</li>
+<li>若驗證成功，API 會回傳對應使用者資訊；若失敗，則回傳錯誤訊息。</li>
+</ol>
+<hr>
+<h2 id="常見安全注意事項"><a href="#常見安全注意事項" class="headerlink" title="常見安全注意事項"></a>常見安全注意事項</h2><ul>
+<li><strong>使用 HTTPS</strong>：JWT 應透過 HTTPS 傳輸，避免中間人攻擊。</li>
+<li><strong>設定適當過期時間</strong>：避免長期有效的 Token 被盜用。</li>
+<li><strong>避免儲存敏感資訊於 Payload</strong>：Payload 是可被解碼的（雖然不可修改），不應含有密碼、信用卡資訊等。</li>
+<li><strong>支援 Token 失效機制（如 Token 黑名單）</strong>：JWT 是無狀態的，若要強制登出或封鎖，需額外設計邏輯。</li>
+</ul>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>JWT 是實作登入與驗證的重要工具，具有無狀態、跨平台、可擴充的特性，特別適合 API 驗證場景。本文透過簡單的 Node.js + Express 實作，展示如何產生與驗證 JWT，並說明常見應用與安全注意事項。</p>
+<p>不論你是單頁應用 SPA 開發者，還是撰寫 RESTful API 的後端工程師，掌握 JWT 都將大幅提升你的系統安全與擴充能力。</p>
 
                 </div>
 
@@ -367,7 +319,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/21/learning-notes-jwt-intro-tutorial/" title="JWT 入門教學筆記 | 學習筆記" rel="bookmark">JWT 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/21/learning-notes-jwt-react-intro-tutorial/" title="React 前端整合 JWT（含 Refresh Token）入門教學筆記 | 學習筆記" rel="bookmark">React 前端整合 JWT（含 Refresh Token）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial copy/" title="JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記" rel="bookmark">JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/12/21/learning-notes-jwt-pros-intro-tutorial/" title="JWT 使用好處入門教學筆記 | 學習筆記" rel="bookmark">JWT 使用好處入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/12/21/learning-notes-jwt-react-intro-tutorial/" title="React 前端整合 JWT（含 Refresh Token）入門教學筆記 | 學習筆記" rel="bookmark">React 前端整合 JWT（含 Refresh Token）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial copy/" title="JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記" rel="bookmark">JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -403,8 +355,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/12/21/learning-notes-jwt-pros-intro-tutorial/";
-    var disqus_url = "https://tech.kdchang.net/2024/12/21/learning-notes-jwt-pros-intro-tutorial/";
+    var disqus_identifier = "https://tech.kdchang.net/2023/12/20/learning-notes-jwt-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2023/12/20/learning-notes-jwt-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

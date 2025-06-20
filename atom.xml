@@ -6,7 +6,7 @@
   <link href="https://tech.kdchang.net/atom.xml" rel="self"/>
   
   <link href="https://tech.kdchang.net/"/>
-  <updated>2025-06-20T09:50:19.481Z</updated>
+  <updated>2025-06-20T10:19:20.831Z</updated>
   <id>https://tech.kdchang.net/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://tech.kdchang.net/2025/02/08/learning-notes-12-factor-cloud-app-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2025/02/08/learning-notes-12-factor-cloud-app-intro-tutorial/</id>
     <published>2025-02-08T18:23:41.000Z</published>
-    <updated>2025-06-20T09:50:19.481Z</updated>
+    <updated>2025-06-20T10:19:20.831Z</updated>
     
     
       
@@ -52,7 +52,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-06-20T09:50:19.483Z</updated>
+    <updated>2025-06-20T10:19:20.833Z</updated>
     
     
       
@@ -81,113 +81,11 @@
   </entry>
   
   <entry>
-    <title>JWT 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/12/21/learning-notes-jwt-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2024/12/21/learning-notes-jwt-intro-tutorial/</id>
-    <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-06-20T09:50:19.484Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在現代 Web 應用中，使用者認證與授權機制是系統安全的重要基礎。傳統上，我們可能使用 Session 與 Cookie</summary>
-        
-      
-    
-    
-    
-    
-    <category term="JWT" scheme="https://tech.kdchang.net/tags/JWT/"/>
-    
-    <category term="Refresh Token" scheme="https://tech.kdchang.net/tags/Refresh-Token/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JWT 使用好處入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/12/21/learning-notes-jwt-pros-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2024/12/21/learning-notes-jwt-pros-intro-tutorial/</id>
-    <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-06-20T09:50:19.484Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;JWT（JSON Web Token）&lt;/strong&gt;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="JWT" scheme="https://tech.kdchang.net/tags/JWT/"/>
-    
-    <category term="Refresh Token" scheme="https://tech.kdchang.net/tags/Refresh-Token/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React 前端整合 JWT（含 Refresh Token）入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/12/21/learning-notes-jwt-react-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2024/12/21/learning-notes-jwt-react-intro-tutorial/</id>
-    <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-06-20T09:50:19.484Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;當你要將 &lt;strong&gt;JWT 驗證整合至 React 前端&lt;/strong&gt;，並搭配 &lt;strong&gt;Refresh</summary>
-        
-      
-    
-    
-    
-    
-    <category term="JWT" scheme="https://tech.kdchang.net/tags/JWT/"/>
-    
-    <category term="Refresh Token" scheme="https://tech.kdchang.net/tags/Refresh-Token/"/>
-    
-    <category term="React" scheme="https://tech.kdchang.net/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial%20copy/"/>
-    <id>https://tech.kdchang.net/2024/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial%20copy/</id>
-    <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-06-20T09:50:19.484Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;一、JWT-基本安全策略&quot;&gt;&lt;a href=&quot;#一、JWT-基本安全策略&quot; class=&quot;headerlink&quot; title=&quot;一、JWT 基本安全策略&quot;&gt;&lt;/a&gt;一、JWT 基本安全策略&lt;/h2&gt;&lt;h3</summary>
-        
-      
-    
-    
-    
-    
-    <category term="JWT" scheme="https://tech.kdchang.net/tags/JWT/"/>
-    
-    <category term="Refresh Token" scheme="https://tech.kdchang.net/tags/Refresh-Token/"/>
-    
-  </entry>
-  
-  <entry>
     <title>NextAuth.js 入門教學筆記 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-nextauth-js-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-nextauth-js-intro-tutorial/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-06-20T09:50:19.484Z</updated>
+    <updated>2025-06-20T10:19:20.834Z</updated>
     
     
       
@@ -212,7 +110,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-06-20T09:50:19.485Z</updated>
+    <updated>2025-06-20T10:19:20.835Z</updated>
     
     
       
@@ -253,7 +151,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-06-20T09:50:19.485Z</updated>
+    <updated>2025-06-20T10:19:20.835Z</updated>
     
     
       
@@ -294,7 +192,7 @@
     <link href="https://tech.kdchang.net/2024/12/19/learning-notes-angular-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/19/learning-notes-angular-intro-tutorial/</id>
     <published>2024-12-19T18:23:41.000Z</published>
-    <updated>2025-06-20T09:50:19.481Z</updated>
+    <updated>2025-06-20T10:19:20.831Z</updated>
     
     
       
@@ -319,7 +217,7 @@
     <link href="https://tech.kdchang.net/2024/12/18/learning-notes-payment-hash-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2024/12/18/learning-notes-payment-hash-intro-tutorial%20copy/</id>
     <published>2024-12-18T18:23:41.000Z</published>
-    <updated>2025-06-20T09:50:19.484Z</updated>
+    <updated>2025-06-20T10:19:20.834Z</updated>
     
     
       
@@ -352,7 +250,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-line-pay-api-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-line-pay-api-intro-tutorial/</id>
     <published>2024-12-16T18:23:41.000Z</published>
-    <updated>2025-06-20T09:50:19.484Z</updated>
+    <updated>2025-06-20T10:19:20.834Z</updated>
     
     
       
@@ -379,7 +277,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/</id>
     <published>2024-12-16T18:23:41.000Z</published>
-    <updated>2025-06-20T09:50:19.486Z</updated>
+    <updated>2025-06-20T10:19:20.836Z</updated>
     
     
       
@@ -408,7 +306,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-javascript-commonjs-amd-module-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-javascript-commonjs-amd-module-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-06-20T09:50:19.483Z</updated>
+    <updated>2025-06-20T10:19:20.833Z</updated>
     
     
       
@@ -449,7 +347,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-javascript-es-module-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-javascript-es-module-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-06-20T09:50:19.483Z</updated>
+    <updated>2025-06-20T10:19:20.833Z</updated>
     
     
       
@@ -486,7 +384,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-nodejs-expressjs-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-nodejs-expressjs-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-06-20T09:50:19.484Z</updated>
+    <updated>2025-06-20T10:19:20.834Z</updated>
     
     
       
@@ -529,7 +427,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-pinia-setup-store-option-store-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-pinia-setup-store-option-store-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-06-20T09:50:19.484Z</updated>
+    <updated>2025-06-20T10:19:20.835Z</updated>
     
     
       
@@ -562,7 +460,7 @@
     <link href="https://tech.kdchang.net/2024/12/15/learning-notes-bloom-filter-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/15/learning-notes-bloom-filter-intro-tutorial/</id>
     <published>2024-12-15T18:23:41.000Z</published>
-    <updated>2025-06-20T09:50:19.481Z</updated>
+    <updated>2025-06-20T10:19:20.831Z</updated>
     
     
       
@@ -587,7 +485,7 @@
     <link href="https://tech.kdchang.net/2024/12/14/learning-notes-css-font-size-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/14/learning-notes-css-font-size-intro-tutorial/</id>
     <published>2024-12-14T18:23:41.000Z</published>
-    <updated>2025-06-20T09:50:19.481Z</updated>
+    <updated>2025-06-20T10:19:20.832Z</updated>
     
     
       
@@ -618,7 +516,7 @@
     <link href="https://tech.kdchang.net/2024/12/14/learning-notes-vue-set-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/14/learning-notes-vue-set-intro-tutorial/</id>
     <published>2024-12-14T18:23:41.000Z</published>
-    <updated>2025-06-20T09:50:19.486Z</updated>
+    <updated>2025-06-20T10:19:20.836Z</updated>
     
     
       
@@ -637,6 +535,114 @@
     <category term="vue.js" scheme="https://tech.kdchang.net/tags/vue-js/"/>
     
     <category term="this.$set" scheme="https://tech.kdchang.net/tags/this-set/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JSX 入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/13/learning-notes-jsx-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/13/learning-notes-jsx-intro-tutorial/</id>
+    <published>2024-12-13T18:23:41.000Z</published>
+    <updated>2025-06-20T10:19:20.834Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-JSX-是什麼？&quot;&gt;&lt;a href=&quot;#1-JSX-是什麼？&quot; class=&quot;headerlink&quot; title=&quot;1. JSX 是什麼？&quot;&gt;&lt;/a&gt;1. JSX 是什麼？&lt;/h2&gt;&lt;p&gt;JSX（JavaScript XML）是一種語法擴展，主要用於</summary>
+        
+      
+    
+    
+    
+    
+    <category term="react" scheme="https://tech.kdchang.net/tags/react/"/>
+    
+    <category term="JSX" scheme="https://tech.kdchang.net/tags/JSX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正規表達式（Regex）入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/13/learning-notes-regex-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/13/learning-notes-regex-intro-tutorial/</id>
+    <published>2024-12-13T18:23:41.000Z</published>
+    <updated>2025-06-20T10:19:20.835Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-正規表達式簡介&quot;&gt;&lt;a href=&quot;#1-正規表達式簡介&quot; class=&quot;headerlink&quot; title=&quot;1. 正規表達式簡介&quot;&gt;&lt;/a&gt;1. 正規表達式簡介&lt;/h2&gt;&lt;p&gt;正規表達式（Regular Expression，簡稱</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Regular Expression" scheme="https://tech.kdchang.net/tags/Regular-Expression/"/>
+    
+    <category term="正則式" scheme="https://tech.kdchang.net/tags/%E6%AD%A3%E5%89%87%E5%BC%8F/"/>
+    
+    <category term="正規表達式" scheme="https://tech.kdchang.net/tags/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E9%81%94%E5%BC%8F/"/>
+    
+    <category term="Regex" scheme="https://tech.kdchang.net/tags/Regex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Backend For Frontend（BFF）入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/12/learning-notes-backend-for-frontend-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/12/learning-notes-backend-for-frontend-intro-tutorial/</id>
+    <published>2024-12-12T18:23:41.000Z</published>
+    <updated>2025-06-20T10:19:20.831Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;當今前端與後端開發越趨分離，加上行動裝置、多樣化的使用者端（Web、App、IoT 等）快速成長，&lt;strong&gt;Backend for</summary>
+        
+      
+    
+    
+    
+    
+    <category term="react" scheme="https://tech.kdchang.net/tags/react/"/>
+    
+    <category term="Redux" scheme="https://tech.kdchang.net/tags/Redux/"/>
+    
+    <category term="React Redux" scheme="https://tech.kdchang.net/tags/React-Redux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React Redux 介紹入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/12/learning-notes-react-redux-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/12/learning-notes-react-redux-intro-tutorial/</id>
+    <published>2024-12-12T18:23:41.000Z</published>
+    <updated>2025-06-20T10:19:20.835Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;1-什麼是-Redux？&quot;&gt;&lt;a href=&quot;#1-什麼是-Redux？&quot; class=&quot;headerlink&quot; title=&quot;1. 什麼是 Redux？&quot;&gt;&lt;/a&gt;1. 什麼是 Redux？&lt;/h4&gt;&lt;p&gt;&lt;code&gt;Redux&lt;/code&gt; 是</summary>
+        
+      
+    
+    
+    
+    
+    <category term="react" scheme="https://tech.kdchang.net/tags/react/"/>
+    
+    <category term="Redux" scheme="https://tech.kdchang.net/tags/Redux/"/>
+    
+    <category term="React Redux" scheme="https://tech.kdchang.net/tags/React-Redux/"/>
     
   </entry>
   

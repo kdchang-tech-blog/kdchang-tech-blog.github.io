@@ -119,14 +119,14 @@
 
                         
                         <li>
-                            <a href="/books/">Books</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/books/">Books</a>
                         </li>
                         
                     
@@ -229,106 +229,6 @@
         
         <div class="post-content-preview">
             前言在 JavaScript 中，處理深層嵌套結構時，我們經常會遇到 null 或 undefined 的問題。例如，當我們需要訪問一個對象的屬性，而該屬性本身可能不存在時，傳統的做法會導致錯誤，這樣的情況會非常繁瑣。為了解決這個問題，JavaScript 引入了 可選鏈接運算符（Optional Chaining），簡化了屬性訪問過程，並防止了因為屬性為 null 或 undefined ......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2024-12-21
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2024/12/21/learning-notes-jwt-intro-tutorial/">
-        <h2 class="post-title">
-            JWT 入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言在現代 Web 應用中，使用者認證與授權機制是系統安全的重要基礎。傳統上，我們可能使用 Session 與 Cookie 搭配伺服器端儲存進行身份驗證；但在前後端分離、多平台（Web、Mobile、API Gateway）應用日益普及的情況下，更輕量、跨平台、無狀態的驗證方案逐漸成為主流。
-JWT（JSON Web Token）正是這樣一種流行的解法。它是一種根據 JSON 格式加密後產......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2024-12-21
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2024/12/21/learning-notes-jwt-pros-intro-tutorial/">
-        <h2 class="post-title">
-            JWT 使用好處入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言JWT（JSON Web Token） 的好處在於它是輕量、跨平台、無狀態的驗證與授權機制，特別適合用於前後端分離、微服務架構與 API 驗證。以下是它的主要優點：
-一、JWT 的 7 大好處1. 無狀態（Stateless）驗證
-JWT 本身就包含用戶資訊與簽名，不需要在伺服器端儲存 session。
-適合微服務或 Serverless 架構，因為伺服器不用記住誰是誰。
-
-2. 跨平台......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2024-12-21
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2024/12/21/learning-notes-jwt-react-intro-tutorial/">
-        <h2 class="post-title">
-            React 前端整合 JWT（含 Refresh Token）入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言當你要將 JWT 驗證整合至 React 前端，並搭配 Refresh Token 或整合 OAuth（如 Google 登入）流程，你需要考慮前端的存儲方式、token 的更新機制，以及第三方登入的流程銜接。
-以下將分成三個部分講解：
-
-一、React 前端整合 JWT（含 Refresh Token）流程總覽：
-使用者輸入帳密登入，發送 /login 請求。
-
-伺服器簽發兩種 tok......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2024-12-21
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2024/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial copy/">
-        <h2 class="post-title">
-            JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            一、JWT 基本安全策略1. 使用強密鑰（Secret）或非對稱加密
-對稱加密：使用 HS256 時，secret 應具備高強度（建議 256-bit 以上）。
-非對稱加密：使用 RS256 時，私鑰與公鑰分離，便於服務間驗證。
-
-2. 設定有效期限（exp）
-Access Token 建議設為 短效（10~30 分鐘）。
-避免永久有效的 Token，防止被盜用後長期濫用。
-
-3. 限制 T......
         </div>
     </a>
     <p class="post-meta">
@@ -448,6 +348,96 @@ Ang......
     <p class="post-meta">
         Posted by kdchang on
         2024-12-18
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2024/12/16/learning-notes-line-pay-api-intro-tutorial/">
+        <h2 class="post-title">
+            LINE Pay API 入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            一、前言在電子商務與線上交易日益普及的今天，提供穩定又方便的金流服務已成為網站與應用程式不可或缺的一環。LINE Pay 是由 LINE Corporation 推出的行動支付平台，除了在線上與實體店面支援消費者付款外，也提供開發者 API 介面來整合第三方商務服務，使開發者可以在網站或應用程式中無縫串接付款功能。
+本篇教學筆記將帶你了解 LINE Pay API 的基本觀念、運作流程，以及......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-12-16
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/">
+        <h2 class="post-title">
+            Vue ref 與 reactive 入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言在 Vue 3 中，ref 與 reactive 都是用來創建響應式資料的工具，但它們適用的情境略有不同。以下是清楚的比較與實際使用範例，幫助你理解什麼時候該用哪一個。
+
+ref 使用情境適用於：
+原始資料型別：如 Number、String、Boolean、Date 等。
+你只需要追蹤單一值。
+當你需要某個變數傳遞到 &lt;template&gt; 或函式中。
+
+語法：import ......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-12-16
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2024/12/16/learning-notes-javascript-commonjs-amd-module-intro-tutorial/">
+        <h2 class="post-title">
+            JavaScript 模組系統：CommonJS 與 AMD 入門教學 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言在 JavaScript 早期，所有程式碼通常寫在單一文件中，這樣的方式在小型專案中或許可行，但當應用程式變得更大、更複雜時，這種結構會導致管理困難。因此，模組化的概念被引入，允許開發者將程式碼拆分成可重複使用的獨立部分，提高可維護性與擴展性。  
+在 ES6 標準推出之前，JavaScript 主要依賴 CommonJS（CJS） 和 Asynchronous Module Defin......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-12-16
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2024/12/16/learning-notes-javascript-es-module-intro-tutorial/">
+        <h2 class="post-title">
+            JavaScript 模組（Module）入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            1. 什麼是 JavaScript 模組？JavaScript 模組（Module）是一種將程式碼拆分成多個獨立文件，並在不同文件間共享和管理程式碼的方式。透過模組化的設計，可以讓程式碼更具結構性、可讀性與可維護性。
+在 ES6（ECMAScript 2015）之前，JavaScript 主要透過 IIFE（立即執行函式）、CommonJS 或 AMD 來模組化程式碼。而 ES6 之後，Ja......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-12-16
     </p>
 
 </div>

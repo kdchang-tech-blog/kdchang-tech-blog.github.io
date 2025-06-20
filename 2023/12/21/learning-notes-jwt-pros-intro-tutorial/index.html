@@ -26,11 +26,11 @@
     
     <title>
         
-          JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          JWT 使用好處入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial copy/">
+    <link rel="canonical" href="https://tech.kdchang.net/2023/12/21/learning-notes-jwt-pros-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="JWT 使用好處入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="JWT 使用好處入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -119,14 +119,14 @@
 
                         
                         <li>
-                            <a href="/books/">Books</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/books/">Books</a>
                         </li>
                         
                     
@@ -199,10 +199,10 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記</h1>
+                    <h1>JWT 使用好處入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2024-12-21
+                        2023-12-21
                     </span>
                     <br>
                     <div class="tags">
@@ -235,135 +235,122 @@
                 </div>
                 <br>
                 <div>
-                    <h2 id="一、JWT-基本安全策略"><a href="#一、JWT-基本安全策略" class="headerlink" title="一、JWT 基本安全策略"></a>一、JWT 基本安全策略</h2><h3 id="1-使用強密鑰（Secret）或非對稱加密"><a href="#1-使用強密鑰（Secret）或非對稱加密" class="headerlink" title="1. 使用強密鑰（Secret）或非對稱加密"></a>1. <strong>使用強密鑰（Secret）或非對稱加密</strong></h3><ul>
-<li>對稱加密：使用 <code>HS256</code> 時，<code>secret</code> 應具備高強度（建議 256-bit 以上）。</li>
-<li>非對稱加密：使用 <code>RS256</code> 時，私鑰與公鑰分離，便於服務間驗證。</li>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>JWT（JSON Web Token）</strong> 的好處在於它是輕量、跨平台、無狀態的驗證與授權機制，特別適合用於前後端分離、微服務架構與 API 驗證。以下是它的主要優點：</p>
+<h2 id="一、JWT-的-7-大好處"><a href="#一、JWT-的-7-大好處" class="headerlink" title="一、JWT 的 7 大好處"></a>一、JWT 的 7 大好處</h2><h3 id="1-無狀態（Stateless）驗證"><a href="#1-無狀態（Stateless）驗證" class="headerlink" title="1. 無狀態（Stateless）驗證"></a>1. <strong>無狀態（Stateless）驗證</strong></h3><ul>
+<li>JWT 本身就包含用戶資訊與簽名，<strong>不需要在伺服器端儲存 session</strong>。</li>
+<li>適合微服務或 Serverless 架構，因為伺服器不用記住誰是誰。</li>
 </ul>
-<h3 id="2-設定有效期限（exp）"><a href="#2-設定有效期限（exp）" class="headerlink" title="2. 設定有效期限（exp）"></a>2. <strong>設定有效期限（exp）</strong></h3><ul>
-<li><code>Access Token</code> 建議設為 <strong>短效（10~30 分鐘）</strong>。</li>
-<li>避免永久有效的 Token，防止被盜用後長期濫用。</li>
+<h3 id="2-跨平台、跨語言支援"><a href="#2-跨平台、跨語言支援" class="headerlink" title="2. 跨平台、跨語言支援"></a>2. <strong>跨平台、跨語言支援</strong></h3><ul>
+<li>JWT 是一種標準格式（RFC 7519），可用於各種語言與框架（Node.js、Python、Go、Java、PHP、.NET 等）。</li>
+<li>非常適合前後端分離的架構，或多平台應用（Web + App）。</li>
 </ul>
-<h3 id="3-限制-Token-權限與資訊"><a href="#3-限制-Token-權限與資訊" class="headerlink" title="3. 限制 Token 權限與資訊"></a>3. <strong>限制 Token 權限與資訊</strong></h3><ul>
-<li>Token 中只放必要資訊（例如：<code>userId</code>、<code>role</code>）。</li>
-<li><strong>不要放敏感資料</strong>（如密碼、信用卡、住址等）。</li>
+<h3 id="3-傳遞資訊方便"><a href="#3-傳遞資訊方便" class="headerlink" title="3. 傳遞資訊方便"></a>3. <strong>傳遞資訊方便</strong></h3><ul>
+<li>可以在 payload 中攜帶使用者角色、權限、使用者 ID 等資料，前後端都可解碼取得。</li>
+<li>節省額外查詢資料庫的頻率（如登入後不再查資料庫即可知道使用者身份）。</li>
 </ul>
-<h3 id="4-透過-HTTPS-傳遞-JWT"><a href="#4-透過-HTTPS-傳遞-JWT" class="headerlink" title="4. 透過 HTTPS 傳遞 JWT"></a>4. <strong>透過 HTTPS 傳遞 JWT</strong></h3><ul>
-<li>絕對 <strong>禁止在 HTTP 傳輸 JWT</strong>，避免中間人攻擊（MITM）。</li>
-<li>所有 API 傳遞 token（包括 Refresh Token）都必須走 HTTPS。</li>
+<h3 id="4-易於擴展與整合-OAuth"><a href="#4-易於擴展與整合-OAuth" class="headerlink" title="4. 易於擴展與整合 OAuth"></a>4. <strong>易於擴展與整合 OAuth</strong></h3><ul>
+<li>JWT 是 OAuth 2.0 中 Access Token 的常見格式。</li>
+<li>整合第三方登入（如 Google、Facebook、GitHub）時很常使用 JWT 作為驗證令牌。</li>
 </ul>
-<h3 id="5-防範-XSS"><a href="#5-防範-XSS" class="headerlink" title="5. 防範 XSS"></a>5. <strong>防範 XSS</strong></h3><ul>
-<li>若將 <code>accessToken</code> 存放於 <code>localStorage</code>，需格外注意防止前端被注入腳本。</li>
-<li>建議使用 <code>HttpOnly</code> cookie 儲存 Refresh Token（無法被 JavaScript 存取）。</li>
+<h3 id="5-高安全性（搭配正確實作）"><a href="#5-高安全性（搭配正確實作）" class="headerlink" title="5. 高安全性（搭配正確實作）"></a>5. <strong>高安全性（搭配正確實作）</strong></h3><ul>
+<li>Token 是簽名過的，<strong>無法被竄改</strong>（除非持有密鑰）。</li>
+<li>可設定有效期限（<code>exp</code>），也支援附加自訂欄位。</li>
 </ul>
-<hr>
-<h2 id="二、為什麼要使用-Refresh-Token？"><a href="#二、為什麼要使用-Refresh-Token？" class="headerlink" title="二、為什麼要使用 Refresh Token？"></a>二、為什麼要使用 Refresh Token？</h2><p><strong>Access Token 有效期短</strong>，提高安全性，但使用者不希望頻繁重新登入，這時就用 <strong>Refresh Token</strong> 來「悄悄地」幫用戶更新 Access Token。</p>
-<hr>
-<h2 id="三、JWT-Refresh-Token-實作架構"><a href="#三、JWT-Refresh-Token-實作架構" class="headerlink" title="三、JWT + Refresh Token 實作架構"></a>三、JWT + Refresh Token 實作架構</h2><figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">  +-------------+                      +----------------+</span><br><span class="line">  |   前端客戶端 |                      |    後端伺服器    |</span><br><span class="line">  +-------------+                      +----------------+</span><br><span class="line">       |                                       |</span><br><span class="line">       |--------&gt; /login (帳密登入) ---------&gt;|</span><br><span class="line">       |                                       |</span><br><span class="line">       |&lt;----- accessToken + refreshToken -----|</span><br><span class="line">       |                                       |</span><br><span class="line">       | 使用 accessToken 存取受保護資源          |</span><br><span class="line">       |--------&gt; /api/profile -------------&gt;|</span><br><span class="line">       |                                       |</span><br><span class="line">accessToken 過期 ↓                             |</span><br><span class="line">       |--------&gt; /refresh (更新 token) ------&gt;|</span><br><span class="line">       |&lt;------- 新的 accessToken -------------|</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="四、最佳實作策略詳解"><a href="#四、最佳實作策略詳解" class="headerlink" title="四、最佳實作策略詳解"></a>四、最佳實作策略詳解</h2><h3 id="1-accessToken-存放位置"><a href="#1-accessToken-存放位置" class="headerlink" title="1. accessToken 存放位置"></a>1. <strong>accessToken 存放位置</strong></h3><ul>
-<li>可存在記憶體（例如 Redux、React Context）或 <code>localStorage</code></li>
-<li>優點：操作方便</li>
-<li>缺點：暴露於 XSS 攻擊風險</li>
-</ul>
-<h3 id="2-refreshToken-存放位置"><a href="#2-refreshToken-存放位置" class="headerlink" title="2. refreshToken 存放位置"></a>2. <strong>refreshToken 存放位置</strong></h3><ul>
-<li>建議儲存在 <strong>HttpOnly、Secure 的 Cookie</strong> 中：</li>
-</ul>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Set-Cookie</span><span class="punctuation">: </span>refreshToken=xxxxx; HttpOnly; Secure; SameSite=Strict; Path=/refresh</span><br></pre></td></tr></table></figure>
-
+<h3 id="6-前端儲存與攜帶方便"><a href="#6-前端儲存與攜帶方便" class="headerlink" title="6. 前端儲存與攜帶方便"></a>6. <strong>前端儲存與攜帶方便</strong></h3><ul>
+<li><p>JWT 是字串格式，可透過：</p>
 <ul>
-<li>前端 JavaScript 無法讀取，降低風險</li>
-<li>伺服器可以從 cookie 中自動取出 refreshToken</li>
-</ul>
-<hr>
-<h3 id="3-建立-x2F-refresh-API（專責刷新-token）"><a href="#3-建立-x2F-refresh-API（專責刷新-token）" class="headerlink" title="3. 建立 &#x2F;refresh API（專責刷新 token）"></a>3. <strong>建立 &#x2F;refresh API（專責刷新 token）</strong></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// POST /refresh</span></span><br><span class="line"><span class="keyword">import</span> jwt <span class="keyword">from</span> <span class="string">&#x27;jsonwebtoken&#x27;</span>;</span><br><span class="line"></span><br><span class="line">router.<span class="title function_">post</span>(<span class="string">&#x27;/refresh&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> refreshToken = req.<span class="property">cookies</span>.<span class="property">refreshToken</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!refreshToken) <span class="keyword">return</span> res.<span class="title function_">status</span>(<span class="number">401</span>).<span class="title function_">json</span>(&#123; <span class="attr">error</span>: <span class="string">&#x27;無 refresh token&#x27;</span> &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> decoded = jwt.<span class="title function_">verify</span>(refreshToken, process.<span class="property">env</span>.<span class="property">JWT_REFRESH_SECRET</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> newAccessToken = jwt.<span class="title function_">sign</span>(</span><br><span class="line">      &#123; <span class="attr">userId</span>: decoded.<span class="property">userId</span>, <span class="attr">username</span>: decoded.<span class="property">username</span> &#125;,</span><br><span class="line">      process.<span class="property">env</span>.<span class="property">JWT_SECRET</span>,</span><br><span class="line">      &#123; <span class="attr">expiresIn</span>: <span class="string">&#x27;15m&#x27;</span> &#125;</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    res.<span class="title function_">json</span>(&#123; <span class="attr">accessToken</span>: newAccessToken &#125;);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    <span class="keyword">return</span> res.<span class="title function_">status</span>(<span class="number">403</span>).<span class="title function_">json</span>(&#123; <span class="attr">error</span>: <span class="string">&#x27;Refresh token 無效或過期&#x27;</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="4-可選：Refresh-Token-儲存機制（實現強制登出與黑名單）"><a href="#4-可選：Refresh-Token-儲存機制（實現強制登出與黑名單）" class="headerlink" title="4. 可選：Refresh Token 儲存機制（實現強制登出與黑名單）"></a>4. <strong>可選：Refresh Token 儲存機制（實現強制登出與黑名單）</strong></h3><ul>
-<li><p><strong>資料庫方案</strong>（建議）：</p>
-<ul>
-<li>每次登入時產生唯一的 <code>refreshToken</code> 並儲存於 DB</li>
-<li>使用時驗證是否仍存在</li>
-<li>登出或異常行為時移除對應的 refreshToken</li>
-</ul>
-</li>
-<li><p><strong>Redis 快取黑名單方案</strong>（進階）：</p>
-<ul>
-<li>遇到帳號盜用或封鎖時，將 token 加入黑名單清單，後續驗證可即時攔截</li>
+<li><code>Authorization</code> header：<code>Bearer &lt;token&gt;</code></li>
+<li>Cookie（推薦設為 HttpOnly + Secure）</li>
+<li>localStorage（需防範 XSS）</li>
 </ul>
 </li>
 </ul>
-<hr>
-<h3 id="5-登出處理（安全地移除-token）"><a href="#5-登出處理（安全地移除-token）" class="headerlink" title="5. 登出處理（安全地移除 token）"></a>5. <strong>登出處理（安全地移除 token）</strong></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">router.<span class="title function_">post</span>(<span class="string">&#x27;/logout&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">clearCookie</span>(<span class="string">&#x27;refreshToken&#x27;</span>, &#123; <span class="attr">path</span>: <span class="string">&#x27;/refresh&#x27;</span> &#125;);</span><br><span class="line">  res.<span class="title function_">json</span>(&#123; <span class="attr">message</span>: <span class="string">&#x27;已成功登出&#x27;</span> &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="五、常見攻擊防護建議"><a href="#五、常見攻擊防護建議" class="headerlink" title="五、常見攻擊防護建議"></a>五、常見攻擊防護建議</h2><table>
-<thead>
-<tr>
-<th>威脅類型</th>
-<th>防護方法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>XSS</td>
-<td>不使用 localStorage 儲存 refresh token，輸出內容時做 XSS 過濾</td>
-</tr>
-<tr>
-<td>CSRF</td>
-<td>使用 SameSite&#x3D;Strict 的 cookie，或搭配 CSRF Token</td>
-</tr>
-<tr>
-<td>Token 竄改</td>
-<td>使用強加密簽章（如 HS256&#x2F;RS256）並驗證</td>
-</tr>
-<tr>
-<td>重放攻擊</td>
-<td>設定合理 <code>exp</code> 過期時間並結合裝置驗證（如 IP &#x2F; UA）</td>
-</tr>
-<tr>
-<td>Token 外洩</td>
-<td>refreshToken 實作多設備登入管理與黑名單機制</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="六、小結"><a href="#六、小結" class="headerlink" title="六、小結"></a>六、小結</h2><table>
-<thead>
-<tr>
-<th>元素</th>
-<th>實作策略</th>
-<th>優點</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Access Token</td>
-<td>存放在記憶體或 localStorage</td>
-<td>快速存取，搭配短效時安全性高</td>
-</tr>
-<tr>
-<td>Refresh Token</td>
-<td>存放於 HttpOnly Cookie</td>
-<td>避免 JS 存取，提高防護能力</td>
-</tr>
-<tr>
-<td>&#x2F;refresh API</td>
-<td>驗證 refreshToken 並產生新 accessToken</td>
-<td>提升使用者體驗與系統可用性</td>
-</tr>
-<tr>
-<td>黑名單策略</td>
-<td>儲存 refreshToken 資訊於資料庫</td>
-<td>支援強制登出與封鎖帳號</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="七、額外建議"><a href="#七、額外建議" class="headerlink" title="七、額外建議"></a>七、額外建議</h2><ul>
-<li>單一使用者只能同時登入 N 台裝置，可依照 refreshToken 綁定設備資訊。</li>
-<li>將 JWT 實作與中介層（middleware）封裝好，避免開發重複邏輯。</li>
-<li>若你使用的是框架如 Next.js、NestJS、Spring Boot，也有內建 JWT 與 Refresh 模組可以善用。</li>
+<h3 id="7-支援單一登入（SSO）"><a href="#7-支援單一登入（SSO）" class="headerlink" title="7. 支援單一登入（SSO）"></a>7. <strong>支援單一登入（SSO）</strong></h3><ul>
+<li>多個子系統共用同一套 JWT 驗證邏輯，實現單一登入（Single Sign-On）。</li>
+<li>用於企業內部系統、微服務架構特別合適。</li>
 </ul>
-<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
-<li><a target="_blank" rel="noopener" href="https://www.prisma.io/docs">官方文件</a></li>
-</ol>
+<hr>
+<h2 id="二、實際應用情境"><a href="#二、實際應用情境" class="headerlink" title="二、實際應用情境"></a>二、實際應用情境</h2><table>
+<thead>
+<tr>
+<th>應用場景</th>
+<th>優勢</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>API 驗證</td>
+<td>無狀態、易於整合</td>
+</tr>
+<tr>
+<td>單頁應用（SPA）</td>
+<td>可存取使用者資訊而不額外請求</td>
+</tr>
+<tr>
+<td>手機 App 登入</td>
+<td>移動端儲存與驗證方便</td>
+</tr>
+<tr>
+<td>微服務架構</td>
+<td>每個服務只需驗證簽章，無需共用 session</td>
+</tr>
+<tr>
+<td>OAuth 第三方登入</td>
+<td>可當作 Access Token 與 ID Token</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="三、與-Session-的比較"><a href="#三、與-Session-的比較" class="headerlink" title="三、與 Session 的比較"></a>三、與 Session 的比較</h2><table>
+<thead>
+<tr>
+<th>項目</th>
+<th>JWT</th>
+<th>Session</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>資料儲存位置</td>
+<td>前端（Token 傳遞）</td>
+<td>後端（記憶體&#x2F;資料庫）</td>
+</tr>
+<tr>
+<td>可擴充性</td>
+<td>高（無需共享記憶體）</td>
+<td>需維護集中式 Session 儲存</td>
+</tr>
+<tr>
+<td>實作難度</td>
+<td>中（需處理 Token 過期、黑名單等）</td>
+<td>簡單（有框架支援）</td>
+</tr>
+<tr>
+<td>安全性</td>
+<td>好（但需避免 XSS 與 Token 洩露）</td>
+<td>好（但可能遭 CSRF 攻擊）</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="四、常見誤解釐清"><a href="#四、常見誤解釐清" class="headerlink" title="四、常見誤解釐清"></a>四、常見誤解釐清</h2><table>
+<thead>
+<tr>
+<th>常見誤解</th>
+<th>釐清</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JWT 是加密的</td>
+<td>錯，<strong>預設只是簽名（不可竄改），不是加密（不可閱讀）</strong></td>
+</tr>
+<tr>
+<td>JWT 安全無敵</td>
+<td>錯，若密鑰外洩，任何人都能簽 Token。需配合 HTTPS 傳輸與妥善保護密鑰</td>
+</tr>
+<tr>
+<td>JWT 不需要過期時間</td>
+<td>錯，若未設 <code>exp</code>，Token 可永久有效，極度危險</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="五、總結"><a href="#五、總結" class="headerlink" title="五、總結"></a>五、總結</h2><p>JWT 的優勢在於簡潔、無狀態、可擴展，特別適合 API 驗證與前後端分離架構。然而，要發揮 JWT 的最大效益並保障安全，開發者需了解其限制，搭配正確實作（如過期、黑名單、HTTPS、Refresh Token 管理等）。</p>
 
                 </div>
 
@@ -380,7 +367,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/21/learning-notes-jwt-intro-tutorial/" title="JWT 入門教學筆記 | 學習筆記" rel="bookmark">JWT 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/21/learning-notes-jwt-pros-intro-tutorial/" title="JWT 使用好處入門教學筆記 | 學習筆記" rel="bookmark">JWT 使用好處入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/21/learning-notes-jwt-react-intro-tutorial/" title="React 前端整合 JWT（含 Refresh Token）入門教學筆記 | 學習筆記" rel="bookmark">React 前端整合 JWT（含 Refresh Token）入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/12/20/learning-notes-jwt-intro-tutorial/" title="JWT 入門教學筆記 | 學習筆記" rel="bookmark">JWT 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/12/21/learning-notes-jwt-react-intro-tutorial/" title="React 前端整合 JWT（含 Refresh Token）入門教學筆記 | 學習筆記" rel="bookmark">React 前端整合 JWT（含 Refresh Token）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial copy/" title="JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記" rel="bookmark">JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -416,8 +403,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial%20copy/";
-    var disqus_url = "https://tech.kdchang.net/2024/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial%20copy/";
+    var disqus_identifier = "https://tech.kdchang.net/2023/12/21/learning-notes-jwt-pros-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2023/12/21/learning-notes-jwt-pros-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
