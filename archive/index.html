@@ -307,6 +307,78 @@
 
 <div class="post-preview">
 
+    <a href="/2024/12/20/learning-notes-chrome-extension-intro-tutorial/">
+        <h2 class="post-title">
+            Chrome Extension 入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言Chrome Extension（Chrome 擴充功能）是針對 Google Chrome 瀏覽器開發的瀏覽器插件，能夠延伸瀏覽器的功能，提供更高效的使用體驗。你可以用它來自動化操作、強化 UI、增加捷徑、記錄內容、攔截請求等等。
+本教學將介紹 Chrome Extension 的基本架構、開發流程與一個簡單的實作範例，協助你快速入門。
+
+重點摘要
+基本架構：
+
+manifest.js......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-12-20
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2024/12/20/learning-notes-chrome-extension-local-storage-intro-tutorial/">
+        <h2 class="post-title">
+            chrome.storage.local vs. localStorage：資料儲存方式差異入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言在前端與 Chrome 擴充功能（Chrome Extension）開發中，「資料儲存」是一項常見需求。開發者常見的兩種方式為：
+
+localStorage：瀏覽器原生提供的本地儲存 API
+chrome.storage.local：Chrome Extension 提供的本地儲存 API
+
+兩者名稱相似，功能也都能儲存 key-value 結構資料，但其用途、行為、效能與限制卻有顯著差......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-12-20
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2024/12/20/learning-notes-github-copilot-intro-tutorial/">
+        <h2 class="post-title">
+            GitHub Copilot 與 Copilot Agent 入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言自 2021 年推出以來，GitHub Copilot 已成為全球數百萬開發者的編程助手，能根據上下文即時補全程式碼。2024 年，GitHub 推出進階功能 Copilot Workspace 和 Copilot Agents，進一步從單一代碼補全進化為具備「理解、操作與協作」能力的智慧 AI 開發助理。
+這些新功能不僅能幫助你完成程式碼撰寫，還能協助理解需求、分析問題、規劃專案、重構......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-12-20
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/">
         <h2 class="post-title">
             React useMemo 與 useCallback 差異介紹與入門教學 | 學習筆記
@@ -317,6 +389,31 @@
             前言在使用 React hooks 進行開發時，useMemo 和 useCallback 是兩個常被提及的性能優化工具。它們都屬於 記憶化（memoization） 技術，用來避免不必要的重算與重渲染。然而，很多初學者在理解這兩者的用途與差異時常感到困惑。這篇文章將從概念出發，並搭配實際範例，幫助你掌握 useMemo 與 useCallback 的核心用途與實作方式。
 
 一、共通點：記憶......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-12-20
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2024/12/20/learning-notes-roo-code-intro-tutorial/">
+        <h2 class="post-title">
+            Roo Code 詳細介紹：AI VS Code 編輯器外掛入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言Roo Code（原名 Roo Cline）是一款嵌入於 Visual Studio Code 編輯器中的開源 AI 代理，能讀寫檔案、自動執行終端指令、操作瀏覽器，甚至整合多種 LLM 模型。無論是編寫程式、重構、除錯、架構設計，Roo Code 都能協助你提升開發效率，更像是一個智慧且自主的開發團隊成員。
+
+重點摘要
+核心功能與定位
+
+像開發團隊的 AI 助手，能讀寫檔案、執行命令、......
         </div>
     </a>
     <p class="post-meta">
@@ -343,104 +440,6 @@ Ang......
     <p class="post-meta">
         Posted by kdchang on
         2024-12-19
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2024/12/18/learning-notes-payment-hash-intro-tutorial copy/">
-        <h2 class="post-title">
-            金流使用 Hash 原因入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            在金流（第三方支付或自建金流）系統中使用 Hash（雜湊） 的原因，主要是為了安全性與防止資料被竄改。以下是更詳細的解釋：
-
-一、為什麼金流需要 Hash？金流交易涉及敏感資料（如金額、訂單編號、使用者資訊、驗證參數等），若這些資料在傳輸過程中被竄改，將造成：
-
-金額錯誤（被調整為更小金額）
-偽造付款成功通知
-使用者資料外洩
-金流詐騙行為
-
-因此，金流平台與商家之間需要一種方式來驗證資料完整......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2024-12-18
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2024/12/16/learning-notes-line-pay-api-intro-tutorial/">
-        <h2 class="post-title">
-            LINE Pay API 入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            一、前言在電子商務與線上交易日益普及的今天，提供穩定又方便的金流服務已成為網站與應用程式不可或缺的一環。LINE Pay 是由 LINE Corporation 推出的行動支付平台，除了在線上與實體店面支援消費者付款外，也提供開發者 API 介面來整合第三方商務服務，使開發者可以在網站或應用程式中無縫串接付款功能。
-本篇教學筆記將帶你了解 LINE Pay API 的基本觀念、運作流程，以及......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2024-12-16
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/">
-        <h2 class="post-title">
-            Vue ref 與 reactive 入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言在 Vue 3 中，ref 與 reactive 都是用來創建響應式資料的工具，但它們適用的情境略有不同。以下是清楚的比較與實際使用範例，幫助你理解什麼時候該用哪一個。
-
-ref 使用情境適用於：
-原始資料型別：如 Number、String、Boolean、Date 等。
-你只需要追蹤單一值。
-當你需要某個變數傳遞到 &lt;template&gt; 或函式中。
-
-語法：import ......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2024-12-16
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2024/12/16/learning-notes-javascript-commonjs-amd-module-intro-tutorial/">
-        <h2 class="post-title">
-            JavaScript 模組系統：CommonJS 與 AMD 入門教學 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言在 JavaScript 早期，所有程式碼通常寫在單一文件中，這樣的方式在小型專案中或許可行，但當應用程式變得更大、更複雜時，這種結構會導致管理困難。因此，模組化的概念被引入，允許開發者將程式碼拆分成可重複使用的獨立部分，提高可維護性與擴展性。  
-在 ES6 標準推出之前，JavaScript 主要依賴 CommonJS（CJS） 和 Asynchronous Module Defin......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2024-12-16
     </p>
 
 </div>

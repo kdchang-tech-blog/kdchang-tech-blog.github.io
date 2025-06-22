@@ -6,7 +6,7 @@
   <link href="https://tech.kdchang.net/atom.xml" rel="self"/>
   
   <link href="https://tech.kdchang.net/"/>
-  <updated>2025-06-20T10:19:20.831Z</updated>
+  <updated>2025-06-22T06:26:13.978Z</updated>
   <id>https://tech.kdchang.net/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://tech.kdchang.net/2025/02/08/learning-notes-12-factor-cloud-app-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2025/02/08/learning-notes-12-factor-cloud-app-intro-tutorial/</id>
     <published>2025-02-08T18:23:41.000Z</published>
-    <updated>2025-06-20T10:19:20.831Z</updated>
+    <updated>2025-06-22T06:26:13.978Z</updated>
     
     
       
@@ -52,7 +52,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-06-20T10:19:20.833Z</updated>
+    <updated>2025-06-22T06:26:13.981Z</updated>
     
     
       
@@ -85,7 +85,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-nextauth-js-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-nextauth-js-intro-tutorial/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-06-20T10:19:20.834Z</updated>
+    <updated>2025-06-22T06:26:13.982Z</updated>
     
     
       
@@ -110,7 +110,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-06-20T10:19:20.835Z</updated>
+    <updated>2025-06-22T06:26:13.982Z</updated>
     
     
       
@@ -147,11 +147,96 @@
   </entry>
   
   <entry>
+    <title>Chrome Extension 入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-intro-tutorial/</id>
+    <published>2024-12-20T03:33:41.000Z</published>
+    <updated>2025-06-22T06:26:13.978Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Chrome Extension（Chrome 擴充功能）是針對 Google Chrome</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Chrome Extension" scheme="https://tech.kdchang.net/tags/Chrome-Extension/"/>
+    
+    <category term="Chrome" scheme="https://tech.kdchang.net/tags/Chrome/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chrome.storage.local vs. localStorage：資料儲存方式差異入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-local-storage-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-local-storage-intro-tutorial/</id>
+    <published>2024-12-20T03:33:41.000Z</published>
+    <updated>2025-06-22T06:26:13.978Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在前端與 Chrome 擴充功能（Chrome</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Chrome Extension" scheme="https://tech.kdchang.net/tags/Chrome-Extension/"/>
+    
+    <category term="Chrome" scheme="https://tech.kdchang.net/tags/Chrome/"/>
+    
+    <category term="chrome.storage.local" scheme="https://tech.kdchang.net/tags/chrome-storage-local/"/>
+    
+    <category term="localStorage" scheme="https://tech.kdchang.net/tags/localStorage/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GitHub Copilot 與 Copilot Agent 入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/20/learning-notes-github-copilot-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/20/learning-notes-github-copilot-intro-tutorial/</id>
+    <published>2024-12-20T03:33:41.000Z</published>
+    <updated>2025-06-22T06:26:13.980Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;自 2021 年推出以來，&lt;strong&gt;GitHub Copilot&lt;/strong&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="GitHub" scheme="https://tech.kdchang.net/tags/GitHub/"/>
+    
+    <category term="GitHub Copilot" scheme="https://tech.kdchang.net/tags/GitHub-Copilot/"/>
+    
+    <category term="Copilot" scheme="https://tech.kdchang.net/tags/Copilot/"/>
+    
+    <category term="Copilot Agent" scheme="https://tech.kdchang.net/tags/Copilot-Agent/"/>
+    
+    <category term="編輯器" scheme="https://tech.kdchang.net/tags/%E7%B7%A8%E8%BC%AF%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React useMemo 與 useCallback 差異介紹與入門教學 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-06-20T10:19:20.835Z</updated>
+    <updated>2025-06-22T06:26:13.983Z</updated>
     
     
       
@@ -188,11 +273,38 @@
   </entry>
   
   <entry>
+    <title>Roo Code 詳細介紹：AI VS Code 編輯器外掛入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/20/learning-notes-roo-code-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/20/learning-notes-roo-code-intro-tutorial/</id>
+    <published>2024-12-20T03:33:41.000Z</published>
+    <updated>2025-06-22T06:26:13.983Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Roo Code（原名 Roo Cline）是一款嵌入於 Visual Studio Code 編輯器中的開源 AI</summary>
+        
+      
+    
+    
+    
+    
+    <category term="編輯器" scheme="https://tech.kdchang.net/tags/%E7%B7%A8%E8%BC%AF%E5%99%A8/"/>
+    
+    <category term="Roo Code" scheme="https://tech.kdchang.net/tags/Roo-Code/"/>
+    
+    <category term="VS Code" scheme="https://tech.kdchang.net/tags/VS-Code/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Angular 入門教學筆記 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2024/12/19/learning-notes-angular-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/19/learning-notes-angular-intro-tutorial/</id>
     <published>2024-12-19T18:23:41.000Z</published>
-    <updated>2025-06-20T10:19:20.831Z</updated>
+    <updated>2025-06-22T06:26:13.978Z</updated>
     
     
       
@@ -217,7 +329,7 @@
     <link href="https://tech.kdchang.net/2024/12/18/learning-notes-payment-hash-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2024/12/18/learning-notes-payment-hash-intro-tutorial%20copy/</id>
     <published>2024-12-18T18:23:41.000Z</published>
-    <updated>2025-06-20T10:19:20.834Z</updated>
+    <updated>2025-06-22T06:26:13.982Z</updated>
     
     
       
@@ -250,7 +362,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-line-pay-api-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-line-pay-api-intro-tutorial/</id>
     <published>2024-12-16T18:23:41.000Z</published>
-    <updated>2025-06-20T10:19:20.834Z</updated>
+    <updated>2025-06-22T06:26:13.981Z</updated>
     
     
       
@@ -277,7 +389,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/</id>
     <published>2024-12-16T18:23:41.000Z</published>
-    <updated>2025-06-20T10:19:20.836Z</updated>
+    <updated>2025-06-22T06:26:13.983Z</updated>
     
     
       
@@ -306,7 +418,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-javascript-commonjs-amd-module-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-javascript-commonjs-amd-module-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-06-20T10:19:20.833Z</updated>
+    <updated>2025-06-22T06:26:13.980Z</updated>
     
     
       
@@ -347,7 +459,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-javascript-es-module-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-javascript-es-module-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-06-20T10:19:20.833Z</updated>
+    <updated>2025-06-22T06:26:13.980Z</updated>
     
     
       
@@ -384,7 +496,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-nodejs-expressjs-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-nodejs-expressjs-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-06-20T10:19:20.834Z</updated>
+    <updated>2025-06-22T06:26:13.982Z</updated>
     
     
       
@@ -427,7 +539,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-pinia-setup-store-option-store-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-pinia-setup-store-option-store-intro-tutorial/</id>
     <published>2024-12-16T03:33:41.000Z</published>
-    <updated>2025-06-20T10:19:20.835Z</updated>
+    <updated>2025-06-22T06:26:13.982Z</updated>
     
     
       
@@ -460,7 +572,7 @@
     <link href="https://tech.kdchang.net/2024/12/15/learning-notes-bloom-filter-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/15/learning-notes-bloom-filter-intro-tutorial/</id>
     <published>2024-12-15T18:23:41.000Z</published>
-    <updated>2025-06-20T10:19:20.831Z</updated>
+    <updated>2025-06-22T06:26:13.978Z</updated>
     
     
       
@@ -485,7 +597,7 @@
     <link href="https://tech.kdchang.net/2024/12/14/learning-notes-css-font-size-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/14/learning-notes-css-font-size-intro-tutorial/</id>
     <published>2024-12-14T18:23:41.000Z</published>
-    <updated>2025-06-20T10:19:20.832Z</updated>
+    <updated>2025-06-22T06:26:13.979Z</updated>
     
     
       
@@ -516,7 +628,7 @@
     <link href="https://tech.kdchang.net/2024/12/14/learning-notes-vue-set-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/14/learning-notes-vue-set-intro-tutorial/</id>
     <published>2024-12-14T18:23:41.000Z</published>
-    <updated>2025-06-20T10:19:20.836Z</updated>
+    <updated>2025-06-22T06:26:13.983Z</updated>
     
     
       
@@ -535,114 +647,6 @@
     <category term="vue.js" scheme="https://tech.kdchang.net/tags/vue-js/"/>
     
     <category term="this.$set" scheme="https://tech.kdchang.net/tags/this-set/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JSX 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/12/13/learning-notes-jsx-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2024/12/13/learning-notes-jsx-intro-tutorial/</id>
-    <published>2024-12-13T18:23:41.000Z</published>
-    <updated>2025-06-20T10:19:20.834Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-JSX-是什麼？&quot;&gt;&lt;a href=&quot;#1-JSX-是什麼？&quot; class=&quot;headerlink&quot; title=&quot;1. JSX 是什麼？&quot;&gt;&lt;/a&gt;1. JSX 是什麼？&lt;/h2&gt;&lt;p&gt;JSX（JavaScript XML）是一種語法擴展，主要用於</summary>
-        
-      
-    
-    
-    
-    
-    <category term="react" scheme="https://tech.kdchang.net/tags/react/"/>
-    
-    <category term="JSX" scheme="https://tech.kdchang.net/tags/JSX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>正規表達式（Regex）入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/12/13/learning-notes-regex-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2024/12/13/learning-notes-regex-intro-tutorial/</id>
-    <published>2024-12-13T18:23:41.000Z</published>
-    <updated>2025-06-20T10:19:20.835Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-正規表達式簡介&quot;&gt;&lt;a href=&quot;#1-正規表達式簡介&quot; class=&quot;headerlink&quot; title=&quot;1. 正規表達式簡介&quot;&gt;&lt;/a&gt;1. 正規表達式簡介&lt;/h2&gt;&lt;p&gt;正規表達式（Regular Expression，簡稱</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Regular Expression" scheme="https://tech.kdchang.net/tags/Regular-Expression/"/>
-    
-    <category term="正則式" scheme="https://tech.kdchang.net/tags/%E6%AD%A3%E5%89%87%E5%BC%8F/"/>
-    
-    <category term="正規表達式" scheme="https://tech.kdchang.net/tags/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E9%81%94%E5%BC%8F/"/>
-    
-    <category term="Regex" scheme="https://tech.kdchang.net/tags/Regex/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Backend For Frontend（BFF）入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/12/12/learning-notes-backend-for-frontend-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2024/12/12/learning-notes-backend-for-frontend-intro-tutorial/</id>
-    <published>2024-12-12T18:23:41.000Z</published>
-    <updated>2025-06-20T10:19:20.831Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;當今前端與後端開發越趨分離，加上行動裝置、多樣化的使用者端（Web、App、IoT 等）快速成長，&lt;strong&gt;Backend for</summary>
-        
-      
-    
-    
-    
-    
-    <category term="react" scheme="https://tech.kdchang.net/tags/react/"/>
-    
-    <category term="Redux" scheme="https://tech.kdchang.net/tags/Redux/"/>
-    
-    <category term="React Redux" scheme="https://tech.kdchang.net/tags/React-Redux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React Redux 介紹入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/12/12/learning-notes-react-redux-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2024/12/12/learning-notes-react-redux-intro-tutorial/</id>
-    <published>2024-12-12T18:23:41.000Z</published>
-    <updated>2025-06-20T10:19:20.835Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;1-什麼是-Redux？&quot;&gt;&lt;a href=&quot;#1-什麼是-Redux？&quot; class=&quot;headerlink&quot; title=&quot;1. 什麼是 Redux？&quot;&gt;&lt;/a&gt;1. 什麼是 Redux？&lt;/h4&gt;&lt;p&gt;&lt;code&gt;Redux&lt;/code&gt; 是</summary>
-        
-      
-    
-    
-    
-    
-    <category term="react" scheme="https://tech.kdchang.net/tags/react/"/>
-    
-    <category term="Redux" scheme="https://tech.kdchang.net/tags/Redux/"/>
-    
-    <category term="React Redux" scheme="https://tech.kdchang.net/tags/React-Redux/"/>
     
   </entry>
   

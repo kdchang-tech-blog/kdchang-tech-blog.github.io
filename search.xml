@@ -681,6 +681,224 @@
       </tags>
   </entry>
   <entry>
+    <title>Chrome Extension 入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/20/learning-notes-chrome-extension-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Chrome Extension（Chrome 擴充功能）是針對 Google Chrome 瀏覽器開發的瀏覽器插件，能夠延伸瀏覽器的功能，提供更高效的使用體驗。你可以用它來自動化操作、強化 UI、增加捷徑、記錄內容、攔截請求等等。</p>
+<p>本教學將介紹 Chrome Extension 的基本架構、開發流程與一個簡單的實作範例，協助你快速入門。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ol>
+<li><p><strong>基本架構：</strong></p>
+<ul>
+<li><code>manifest.json</code>：擴充功能的核心設定檔</li>
+<li><code>background.js</code> &#x2F; <code>service_worker.js</code>：背景邏輯（例如攔截請求、常駐任務）</li>
+<li><code>popup.html</code> + <code>popup.js</code>：點擊圖示後的互動 UI</li>
+<li><code>content.js</code>：注入頁面的腳本，直接與 DOM 互動</li>
+</ul>
+</li>
+<li><p><strong>開發步驟：</strong></p>
+<ul>
+<li>建立資料夾結構與設定檔</li>
+<li>撰寫功能腳本與 UI</li>
+<li>在 Chrome 中載入未封裝的擴充功能</li>
+<li>測試與除錯</li>
+</ul>
+</li>
+<li><p><strong>核心權限與功能：</strong></p>
+<ul>
+<li><code>permissions</code> 欄位需指定所需功能（如 <code>tabs</code>, <code>storage</code>, <code>scripting</code>）</li>
+<li><code>host_permissions</code> 控制哪些網站允許注入腳本</li>
+<li>可與頁面雙向通訊</li>
+</ul>
+</li>
+<li><p><strong>常見用途：</strong></p>
+<ul>
+<li>提高生產力（截圖、標記、翻譯）</li>
+<li>資料擷取與分析（網頁爬蟲輔助）</li>
+<li>儲存內容（書籤、待辦清單）</li>
+<li>網站 UI 客製化</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="實際範例：儲存選取文字的小擴充功能"><a href="#實際範例：儲存選取文字的小擴充功能" class="headerlink" title="實際範例：儲存選取文字的小擴充功能"></a>實際範例：儲存選取文字的小擴充功能</h2><h3 id="功能簡介"><a href="#功能簡介" class="headerlink" title="功能簡介"></a>功能簡介</h3><p>當使用者在網頁上選取一段文字並點擊擴充功能圖示，會將選取的文字儲存到 <code>localStorage</code>，方便後續檢視。</p>
+<hr>
+<h3 id="1-專案結構"><a href="#1-專案結構" class="headerlink" title="1. 專案結構"></a>1. 專案結構</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">my-extension/</span><br><span class="line">├── manifest.json</span><br><span class="line">├── popup.html</span><br><span class="line">├── popup.js</span><br><span class="line">├── content.js</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-manifest-json"><a href="#2-manifest-json" class="headerlink" title="2. manifest.json"></a>2. manifest.json</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;manifest_version&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Save Selected Text&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;儲存網頁中選取的文字&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;permissions&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;scripting&quot;</span><span class="punctuation">,</span> <span class="string">&quot;storage&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;host_permissions&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;&lt;all_urls&gt;&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;default_popup&quot;</span><span class="punctuation">:</span> <span class="string">&quot;popup.html&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;default_icon&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;16&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icon16.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;48&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icon48.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;128&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icon128.png&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;background&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;service_worker&quot;</span><span class="punctuation">:</span> <span class="string">&quot;background.js&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;content_scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;matches&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;&lt;all_urls&gt;&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;js&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;content.js&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-popup-html"><a href="#3-popup-html" class="headerlink" title="3. popup.html"></a>3. popup.html</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>已儲存文字<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>你儲存的文字：<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;text-list&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;popup.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="4-popup-js"><a href="#4-popup-js" class="headerlink" title="4. popup.js"></a>4. popup.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  chrome.<span class="property">storage</span>.<span class="property">local</span>.<span class="title function_">get</span>([<span class="string">&#x27;savedTexts&#x27;</span>], <span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> list = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;text-list&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> texts = result.<span class="property">savedTexts</span> || [];</span><br><span class="line">    texts.<span class="title function_">forEach</span>(<span class="function">(<span class="params">text</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> li = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;li&#x27;</span>);</span><br><span class="line">      li.<span class="property">textContent</span> = text;</span><br><span class="line">      list.<span class="title function_">appendChild</span>(li);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="5-content-js"><a href="#5-content-js" class="headerlink" title="5. content.js"></a>5. content.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseup&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> selectedText = <span class="variable language_">window</span>.<span class="title function_">getSelection</span>().<span class="title function_">toString</span>().<span class="title function_">trim</span>();</span><br><span class="line">  <span class="keyword">if</span> (selectedText) &#123;</span><br><span class="line">    chrome.<span class="property">storage</span>.<span class="property">local</span>.<span class="title function_">get</span>([<span class="string">&#x27;savedTexts&#x27;</span>], <span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> current = result.<span class="property">savedTexts</span> || [];</span><br><span class="line">      current.<span class="title function_">push</span>(selectedText);</span><br><span class="line">      chrome.<span class="property">storage</span>.<span class="property">local</span>.<span class="title function_">set</span>(&#123; <span class="attr">savedTexts</span>: current &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="6-載入擴充功能"><a href="#6-載入擴充功能" class="headerlink" title="6. 載入擴充功能"></a>6. 載入擴充功能</h3><ol>
+<li>打開 Chrome 瀏覽器</li>
+<li>前往 <code>chrome://extensions/</code></li>
+<li>開啟右上角「開發人員模式」</li>
+<li>點選「載入未封裝項目」</li>
+<li>選取專案資料夾（my-extension）</li>
+</ol>
+<hr>
+<h3 id="7-測試方式"><a href="#7-測試方式" class="headerlink" title="7. 測試方式"></a>7. 測試方式</h3><ol>
+<li>任意打開一個網頁</li>
+<li>選取文字後放開滑鼠</li>
+<li>點擊瀏覽器右上角的擴充功能圖示</li>
+<li>在彈出的視窗中查看剛才儲存的文字</li>
+</ol>
+<hr>
+<h2 id="小技巧與補充"><a href="#小技巧與補充" class="headerlink" title="小技巧與補充"></a>小技巧與補充</h2><ul>
+<li><strong>使用 TypeScript</strong>：可結合 <code>Vite</code> 或 <code>webpack</code> 實現模組化開發。</li>
+<li><strong>Hot Reload</strong>：透過專案如 <code>crxjs</code> 可達成自動刷新套件。</li>
+<li><strong>權限最小化原則</strong>：僅使用必要權限以通過審核。</li>
+<li><strong>Storage API</strong>：可選擇使用 <code>localStorage</code>、<code>chrome.storage.local</code>、<code>sync</code> 等不同儲存方式。</li>
+<li><strong>message passing</strong>：背景與 content script 可用 <code>chrome.runtime.sendMessage</code> 溝通。</li>
+</ul>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Chrome Extension 是一個強大的平台，讓開發者能以 HTML、CSS、JavaScript 等前端技術打造自己的工具。無論是為了解決個人需求、改善使用體驗，還是作為產品 MVP 的雛型開發平台，Chrome Extension 都是值得投資時間學習的技術。</p>
+<p>從簡單的文字儲存開始，你可以慢慢拓展功能，加入右鍵選單、快捷鍵、網頁改寫、API 串接等高階應用，打造出屬於你自己的瀏覽器擴充小工具。</p>
+]]></content>
+      <tags>
+        <tag>Chrome Extension</tag>
+        <tag>Chrome</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>chrome.storage.local vs. localStorage：資料儲存方式差異入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/20/learning-notes-chrome-extension-local-storage-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在前端與 Chrome 擴充功能（Chrome Extension）開發中，「資料儲存」是一項常見需求。開發者常見的兩種方式為：</p>
+<ul>
+<li><code>localStorage</code>：瀏覽器原生提供的本地儲存 API</li>
+<li><code>chrome.storage.local</code>：Chrome Extension 提供的本地儲存 API</li>
+</ul>
+<p>兩者名稱相似，功能也都能儲存 key-value 結構資料，但其用途、行為、效能與限制卻有顯著差異。本篇筆記將帶你掌握這兩者的差別，並透過實作範例協助你在開發時做出正確選擇。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><h3 id="1-定義與使用場景"><a href="#1-定義與使用場景" class="headerlink" title="1. 定義與使用場景"></a>1. 定義與使用場景</h3><ul>
+<li><code>localStorage</code> 是 Web API，適用於一般網頁與 Content Script，操作簡便但同步。</li>
+<li><code>chrome.storage.local</code> 是專為 Chrome 擴充功能設計的非同步儲存 API，適用於 Background、Popup、Options、Content Script 等擴充功能組件。</li>
+</ul>
+<h3 id="2-主要差異比較"><a href="#2-主要差異比較" class="headerlink" title="2. 主要差異比較"></a>2. 主要差異比較</h3><table>
+<thead>
+<tr>
+<th>項目</th>
+<th><code>chrome.storage.local</code></th>
+<th><code>localStorage</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>API 類型</td>
+<td>非同步</td>
+<td>同步</td>
+</tr>
+<tr>
+<td>儲存容量</td>
+<td>約 5MB 以上，可依平台調整</td>
+<td>約 5MB（視瀏覽器而定）</td>
+</tr>
+<tr>
+<td>使用範圍</td>
+<td>限於 Chrome Extension</td>
+<td>網頁與 Content Script</td>
+</tr>
+<tr>
+<td>安全性與隔離性</td>
+<td>高（與其他網站與擴充隔離）</td>
+<td>中（每個 domain 隔離）</td>
+</tr>
+<tr>
+<td>可與 background&#x2F;popup 共用</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>是否支援跨裝置同步</td>
+<td>使用 <code>chrome.storage.sync</code> 可支援</td>
+<td>否</td>
+</tr>
+</tbody></table>
+<h3 id="3-實作差異"><a href="#3-實作差異" class="headerlink" title="3. 實作差異"></a>3. 實作差異</h3><ul>
+<li><code>localStorage</code> 使用方式簡單、同步，可立即取得值。</li>
+<li><code>chrome.storage.local</code> 是非同步設計，需透過 callback 或 Promise 取得值。</li>
+</ul>
+<hr>
+<h2 id="實際範例比較"><a href="#實際範例比較" class="headerlink" title="實際範例比較"></a>實際範例比較</h2><p>以下為兩者的典型儲存與讀取操作實作方式。</p>
+<hr>
+<h3 id="一、使用-localStorage（同步）"><a href="#一、使用-localStorage（同步）" class="headerlink" title="一、使用 localStorage（同步）"></a>一、使用 <code>localStorage</code>（同步）</h3><h4 id="儲存資料"><a href="#儲存資料" class="headerlink" title="儲存資料"></a>儲存資料</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;username&#x27;</span>, <span class="string">&#x27;kdchang&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="讀取資料"><a href="#讀取資料" class="headerlink" title="讀取資料"></a>讀取資料</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;username&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name); <span class="comment">// 輸出：kdchang</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="刪除資料"><a href="#刪除資料" class="headerlink" title="刪除資料"></a>刪除資料</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">localStorage</span>.<span class="title function_">removeItem</span>(<span class="string">&#x27;username&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="優點與限制"><a href="#優點與限制" class="headerlink" title="優點與限制"></a>優點與限制</h4><ul>
+<li><strong>優點</strong>：簡單、直覺、無需 callback</li>
+<li><strong>限制</strong>：無法在 background script 中使用、同步操作可能阻塞 UI、無跨 component 溝通機制</li>
+</ul>
+<hr>
+<h3 id="二、使用-chrome-storage-local（非同步）"><a href="#二、使用-chrome-storage-local（非同步）" class="headerlink" title="二、使用 chrome.storage.local（非同步）"></a>二、使用 <code>chrome.storage.local</code>（非同步）</h3><h4 id="儲存資料-1"><a href="#儲存資料-1" class="headerlink" title="儲存資料"></a>儲存資料</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">chrome.<span class="property">storage</span>.<span class="property">local</span>.<span class="title function_">set</span>(&#123; <span class="attr">username</span>: <span class="string">&#x27;kdchang&#x27;</span> &#125;, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;儲存成功&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="讀取資料-1"><a href="#讀取資料-1" class="headerlink" title="讀取資料"></a>讀取資料</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">chrome.<span class="property">storage</span>.<span class="property">local</span>.<span class="title function_">get</span>([<span class="string">&#x27;username&#x27;</span>], <span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;讀到的值:&#x27;</span>, result.<span class="property">username</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="刪除資料-1"><a href="#刪除資料-1" class="headerlink" title="刪除資料"></a>刪除資料</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">chrome.<span class="property">storage</span>.<span class="property">local</span>.<span class="title function_">remove</span>(<span class="string">&#x27;username&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;已刪除 username&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="優點與限制-1"><a href="#優點與限制-1" class="headerlink" title="優點與限制"></a>優點與限制</h4><ul>
+<li><strong>優點</strong>：資料與擴充功能隔離、安全性高、能跨組件共享</li>
+<li><strong>限制</strong>：需處理非同步流程（可用 async&#x2F;await 解決）</li>
+</ul>
+<hr>
+<h2 id="實戰應用：擴充功能記錄使用者偏好設定"><a href="#實戰應用：擴充功能記錄使用者偏好設定" class="headerlink" title="實戰應用：擴充功能記錄使用者偏好設定"></a>實戰應用：擴充功能記錄使用者偏好設定</h2><h3 id="專案背景"><a href="#專案背景" class="headerlink" title="專案背景"></a>專案背景</h3><p>你開發了一個可自訂主題配色的擴充功能，使用者可以切換「深色」或「淺色」模式，並希望記錄下來。</p>
+<hr>
+<h3 id="localStorage-實作方式（限-Content-Script）"><a href="#localStorage-實作方式（限-Content-Script）" class="headerlink" title="localStorage 實作方式（限 Content Script）"></a>localStorage 實作方式（限 Content Script）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 儲存使用者偏好</span></span><br><span class="line"><span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;theme&#x27;</span>, <span class="string">&#x27;dark&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 頁面載入時讀取</span></span><br><span class="line"><span class="keyword">const</span> theme = <span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;theme&#x27;</span>);</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">setAttribute</span>(<span class="string">&#x27;data-theme&#x27;</span>, theme);</span><br></pre></td></tr></table></figure>
+
+<p>此方法雖然簡便，但無法在 background script、popup 等元件中共用。</p>
+<hr>
+<h3 id="chrome-storage-local-實作方式（推薦）"><a href="#chrome-storage-local-實作方式（推薦）" class="headerlink" title="chrome.storage.local 實作方式（推薦）"></a>chrome.storage.local 實作方式（推薦）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 儲存</span></span><br><span class="line">chrome.<span class="property">storage</span>.<span class="property">local</span>.<span class="title function_">set</span>(&#123; <span class="attr">theme</span>: <span class="string">&#x27;dark&#x27;</span> &#125;, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;儲存主題成功&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 讀取</span></span><br><span class="line">chrome.<span class="property">storage</span>.<span class="property">local</span>.<span class="title function_">get</span>([<span class="string">&#x27;theme&#x27;</span>], <span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">setAttribute</span>(<span class="string">&#x27;data-theme&#x27;</span>, result.<span class="property">theme</span> || <span class="string">&#x27;light&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>這種方式可讓 background.js、popup.html、options.html 都能取得相同資料，並透過 message passing 進一步溝通。</p>
+<hr>
+<h2 id="使用建議與最佳實踐"><a href="#使用建議與最佳實踐" class="headerlink" title="使用建議與最佳實踐"></a>使用建議與最佳實踐</h2><h3 id="選擇依據："><a href="#選擇依據：" class="headerlink" title="選擇依據："></a>選擇依據：</h3><ul>
+<li><strong>Chrome Extension 專案開發時</strong>：建議一律使用 <code>chrome.storage.local</code>，搭配 async&#x2F;await 管理非同步流程。</li>
+<li><strong>Content Script 或網頁前端小工具</strong>：若不考慮擴充功能架構，可使用 <code>localStorage</code> 快速開發。</li>
+</ul>
+<h3 id="注意事項："><a href="#注意事項：" class="headerlink" title="注意事項："></a>注意事項：</h3><ul>
+<li><code>chrome.storage.local</code> 每次寫入都是非同步，避免過度頻繁更新（例如輸入框每秒觸發）</li>
+<li><code>localStorage</code> 資料若寫入太大或格式不當，可能造成同步錯誤或被清除</li>
+</ul>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><table>
+<thead>
+<tr>
+<th>問題</th>
+<th>建議做法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>在 popup、background、content script 共享設定資料</td>
+<td>使用 <code>chrome.storage.local</code></td>
+</tr>
+<tr>
+<td>快速暫存使用者動作、不需跨頁</td>
+<td>可用 <code>localStorage</code></td>
+</tr>
+<tr>
+<td>需考慮非同步、可擴充、跨頁共享與安全性</td>
+<td>優先使用 <code>chrome.storage.local</code></td>
+</tr>
+</tbody></table>
+<p><code>chrome.storage.local</code> 與 <code>localStorage</code> 各有適用場景與特點，選擇時需考量使用環境、效能、安全性與 API 特性。透過本文你應該能更清楚何時該用哪一種方式，並應用在擴充功能與網頁開發中，打造穩定且高效的儲存邏輯。</p>
+]]></content>
+      <tags>
+        <tag>Chrome Extension</tag>
+        <tag>Chrome</tag>
+        <tag>chrome.storage.local</tag>
+        <tag>localStorage</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>concurrently.js 入門教學筆記 | 學習筆記</title>
     <url>/2018/02/01/learning-notes-concurrently-js-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在前端與全端開發中，我們經常需要<strong>同時執行多個指令</strong>，例如一邊啟動前端開發伺服器，一邊啟動後端 API 伺服器，或一邊監看 Sass 編譯，一邊執行 TypeScript 編譯。在這樣的情境下，<code>concurrently</code> 是一個非常實用的工具，它能讓我們在同一個命令列同時執行多個命令。</p>
@@ -2585,6 +2803,66 @@
       </tags>
   </entry>
   <entry>
+    <title>Git Flow 介紹與 GitHub Flow 介紹入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在軟體開發中，版本控制是協作開發中至關重要的工具。Git 作為當前最受歡迎的版本控制系統，其強大的分支管理和版本控制功能，使得開發團隊能夠高效地進行協作。兩種常見的 Git 工作流是 Git Flow 和 GitHub Flow，這些工作流提供了清晰的分支管理策略，讓團隊可以更加有序地開發和部署代碼。本文將介紹 Git Flow 和 GitHub Flow 的基本概念、使用方法，以及它們之間的區別。</p>
+<h1 id="一、Git-Flow-介紹"><a href="#一、Git-Flow-介紹" class="headerlink" title="一、Git Flow 介紹"></a>一、Git Flow 介紹</h1><p>Git Flow 是一個基於 Git 的分支管理模型，主要由 Vincent Driessen 提出，旨在幫助開發團隊實現規範化的分支管理，並對不同開發階段的代碼進行有效的管理。Git Flow 工作流適合需要頻繁發布新版本的項目，並且開發流程中包含多個階段，如開發、測試、發佈等。其工作流程通常包含以下幾個核心分支：</p>
+<h4 id="1-1-主要分支"><a href="#1-1-主要分支" class="headerlink" title="1.1 主要分支"></a>1.1 主要分支</h4><ol>
+<li><p><strong>master 分支</strong>：<br><code>master</code> 分支是 Git Flow 中的核心分支，所有穩定的代碼都應該存在於此。每當一個新版本的代碼準備好發佈時，都會從 <code>develop</code> 分支合併到 <code>master</code>，並標記相應的版本號。這個分支通常只包含穩定的代碼，並且代表了隨時可以部署的代碼。</p>
+</li>
+<li><p><strong>develop 分支</strong>：<br><code>develop</code> 分支用於開發中的代碼。所有的功能開發都應該從這個分支進行，並且當開發完成後，合併回 <code>develop</code>。這個分支是整個項目的集成區，開發人員應該從 <code>develop</code> 分支開始開發新功能。</p>
+</li>
+</ol>
+<h4 id="1-2-輔助分支"><a href="#1-2-輔助分支" class="headerlink" title="1.2 輔助分支"></a>1.2 輔助分支</h4><ol>
+<li><p><strong>feature 分支</strong>：<br><code>feature</code> 分支用於開發新的功能。每個新功能都應該從 <code>develop</code> 分支創建一個新的 <code>feature</code> 分支，並且在功能開發完成後，將該分支合併回 <code>develop</code> 分支。<code>feature</code> 分支的命名通常為 <code>feature/&lt;功能名稱&gt;</code>。</p>
+</li>
+<li><p><strong>release 分支</strong>：<br>當 <code>develop</code> 分支上的代碼準備好進入測試階段時，會創建一個 <code>release</code> 分支。這個分支用來準備最終的發佈版本。在 <code>release</code> 分支上進行的主要工作包括 bug 修復、文檔編寫等，確保最終版本的穩定性。當測試完成並且代碼準備發佈時，<code>release</code> 分支會被合併到 <code>master</code> 和 <code>develop</code> 分支。</p>
+</li>
+<li><p><strong>hotfix 分支</strong>：<br><code>hotfix</code> 分支用於修復已經發佈到 <code>master</code> 分支的緊急錯誤。當發佈的版本發現重大問題時，可以立即從 <code>master</code> 分支創建 <code>hotfix</code> 分支，進行修復後，將其合併回 <code>master</code> 和 <code>develop</code> 分支。</p>
+</li>
+</ol>
+<h4 id="1-3-Git-Flow-的流程"><a href="#1-3-Git-Flow-的流程" class="headerlink" title="1.3 Git Flow 的流程"></a>1.3 Git Flow 的流程</h4><p>Git Flow 的流程大致如下：</p>
+<ul>
+<li>開發新功能時，從 <code>develop</code> 分支創建 <code>feature</code> 分支。</li>
+<li>當 <code>feature</code> 分支開發完成後，合併回 <code>develop</code> 分支。</li>
+<li>當代碼達到穩定版本，創建 <code>release</code> 分支，進行測試和 bug 修復。</li>
+<li>測試完成後，將 <code>release</code> 分支合併回 <code>master</code> 和 <code>develop</code> 分支，並標註版本。</li>
+<li>若發現緊急錯誤，從 <code>master</code> 分支創建 <code>hotfix</code> 分支，進行修復並合併回 <code>master</code> 和 <code>develop</code>。</li>
+</ul>
+<h1 id="二、GitHub-Flow-介紹"><a href="#二、GitHub-Flow-介紹" class="headerlink" title="二、GitHub Flow 介紹"></a>二、GitHub Flow 介紹</h1><p>GitHub Flow 是 GitHub 提出的另一種工作流，主要針對快速迭代和持續集成的開發模式。與 Git Flow 複雜的分支管理相比，GitHub Flow 更加簡單和輕量，適合需要快速交付和頻繁部署的團隊。GitHub Flow 主要有以下幾個步驟：</p>
+<h4 id="2-1-GitHub-Flow-的基本流程"><a href="#2-1-GitHub-Flow-的基本流程" class="headerlink" title="2.1 GitHub Flow 的基本流程"></a>2.1 GitHub Flow 的基本流程</h4><ol>
+<li><p><strong>創建分支</strong>：<br>每當開始一個新功能或修復一個 bug 時，都應該從 <code>main</code> 分支創建一個新的分支。這個分支通常用來開發新的特性或修復某個問題。</p>
+</li>
+<li><p><strong>開發與提交</strong>：<br>在新創建的分支上進行開發，並定期將代碼提交到遠程倉庫。這些提交應該是增量的，便於代碼審查和測試。</p>
+</li>
+<li><p><strong>發送 Pull Request</strong>：<br>當開發完成後，將自己的分支提交為 Pull Request（PR），並請求團隊成員進行代碼審查。PR 是 GitHub Flow 中的關鍵步驟，能夠確保代碼的質量和協作。</p>
+</li>
+<li><p><strong>代碼審查與測試</strong>：<br>團隊成員進行代碼審查，確保代碼的質量和功能正確性。GitHub Flow 推崇頻繁的測試和集成，因此在 Pull Request 發送後，通常會自動觸發 CI（持續集成）測試，檢查代碼是否有錯誤。</p>
+</li>
+<li><p><strong>合併分支</strong>：<br>經過代碼審查和測試後，Pull Request 被批准，並將代碼合併到 <code>main</code> 分支。此時，新的代碼版本已經可以進行部署。</p>
+</li>
+<li><p><strong>部署與發佈</strong>：<br>GitHub Flow 的一大優勢是可以實現持續部署。當代碼合併到 <code>main</code> 分支後，可以立即部署到生產環境，快速交付新版本。</p>
+</li>
+</ol>
+<h4 id="2-2-GitHub-Flow-的特點"><a href="#2-2-GitHub-Flow-的特點" class="headerlink" title="2.2 GitHub Flow 的特點"></a>2.2 GitHub Flow 的特點</h4><p>GitHub Flow 的流程非常簡單，沒有像 Git Flow 那樣的複雜分支結構，適合小型和中型的項目。它的優點在於快速迭代和持續交付，並且便於團隊成員協作。GitHub Flow 更加強調分支管理的簡化，並且強調測試和部署的自動化。</p>
+<h1 id="三、Git-Flow-與-GitHub-Flow-的比較"><a href="#三、Git-Flow-與-GitHub-Flow-的比較" class="headerlink" title="三、Git Flow 與 GitHub Flow 的比較"></a>三、Git Flow 與 GitHub Flow 的比較</h1><ul>
+<li><p><strong>分支結構</strong>：<br>Git Flow 有多個分支（<code>master</code>、<code>develop</code>、<code>feature</code>、<code>release</code>、<code>hotfix</code>），適用於需要穩定版本發佈的團隊。而 GitHub Flow 只有 <code>main</code> 分支和特性分支，適用於快速迭代和持續集成的開發模式。</p>
+</li>
+<li><p><strong>適用場景</strong>：<br>Git Flow 更適合複雜的開發流程，尤其是有多個版本和發佈周期的項目。GitHub Flow 更適合快速迭代的小型或中型項目，尤其是需要頻繁部署和交付的團隊。</p>
+</li>
+<li><p><strong>流程複雜度</strong>：<br>Git Flow 的流程較為繁瑣，對於小型團隊來說可能會顯得過於複雜。GitHub Flow 流程簡單，適合希望保持敏捷和快速交付的團隊。</p>
+</li>
+</ul>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>Git Flow 和 GitHub Flow 各有優缺點，適用的場景也有所不同。選擇哪一種工作流，應根據團隊的規模、項目的複雜度以及發佈頻率來決定。對於需要穩定發佈和多版本管理的項目，Git Flow 是一個更好的選擇。而對於需要快速迭代和頻繁部署的小型項目，GitHub Flow 則是一個更簡單有效的選擇。</p>
+]]></content>
+      <tags>
+        <tag>Git Flow</tag>
+        <tag>Github Flow</tag>
+        <tag>Github</tag>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git 指令學習筆記 | 學習筆記</title>
     <url>/2023/12/21/learning-notes-git-command-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Git 是現代軟體開發中最常使用的分散式版本控制系統，它幫助開發者管理源代碼的版本和協作。這篇教學將從基礎開始，介紹 Git 的常用命令並提供實際範例，幫助你熟悉如何使用 Git 來進行版本控制與協作。</p>
@@ -2678,66 +2956,6 @@
         <tag>Github</tag>
         <tag>Git</tag>
         <tag>版本控制</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git Flow 介紹與 GitHub Flow 介紹入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在軟體開發中，版本控制是協作開發中至關重要的工具。Git 作為當前最受歡迎的版本控制系統，其強大的分支管理和版本控制功能，使得開發團隊能夠高效地進行協作。兩種常見的 Git 工作流是 Git Flow 和 GitHub Flow，這些工作流提供了清晰的分支管理策略，讓團隊可以更加有序地開發和部署代碼。本文將介紹 Git Flow 和 GitHub Flow 的基本概念、使用方法，以及它們之間的區別。</p>
-<h1 id="一、Git-Flow-介紹"><a href="#一、Git-Flow-介紹" class="headerlink" title="一、Git Flow 介紹"></a>一、Git Flow 介紹</h1><p>Git Flow 是一個基於 Git 的分支管理模型，主要由 Vincent Driessen 提出，旨在幫助開發團隊實現規範化的分支管理，並對不同開發階段的代碼進行有效的管理。Git Flow 工作流適合需要頻繁發布新版本的項目，並且開發流程中包含多個階段，如開發、測試、發佈等。其工作流程通常包含以下幾個核心分支：</p>
-<h4 id="1-1-主要分支"><a href="#1-1-主要分支" class="headerlink" title="1.1 主要分支"></a>1.1 主要分支</h4><ol>
-<li><p><strong>master 分支</strong>：<br><code>master</code> 分支是 Git Flow 中的核心分支，所有穩定的代碼都應該存在於此。每當一個新版本的代碼準備好發佈時，都會從 <code>develop</code> 分支合併到 <code>master</code>，並標記相應的版本號。這個分支通常只包含穩定的代碼，並且代表了隨時可以部署的代碼。</p>
-</li>
-<li><p><strong>develop 分支</strong>：<br><code>develop</code> 分支用於開發中的代碼。所有的功能開發都應該從這個分支進行，並且當開發完成後，合併回 <code>develop</code>。這個分支是整個項目的集成區，開發人員應該從 <code>develop</code> 分支開始開發新功能。</p>
-</li>
-</ol>
-<h4 id="1-2-輔助分支"><a href="#1-2-輔助分支" class="headerlink" title="1.2 輔助分支"></a>1.2 輔助分支</h4><ol>
-<li><p><strong>feature 分支</strong>：<br><code>feature</code> 分支用於開發新的功能。每個新功能都應該從 <code>develop</code> 分支創建一個新的 <code>feature</code> 分支，並且在功能開發完成後，將該分支合併回 <code>develop</code> 分支。<code>feature</code> 分支的命名通常為 <code>feature/&lt;功能名稱&gt;</code>。</p>
-</li>
-<li><p><strong>release 分支</strong>：<br>當 <code>develop</code> 分支上的代碼準備好進入測試階段時，會創建一個 <code>release</code> 分支。這個分支用來準備最終的發佈版本。在 <code>release</code> 分支上進行的主要工作包括 bug 修復、文檔編寫等，確保最終版本的穩定性。當測試完成並且代碼準備發佈時，<code>release</code> 分支會被合併到 <code>master</code> 和 <code>develop</code> 分支。</p>
-</li>
-<li><p><strong>hotfix 分支</strong>：<br><code>hotfix</code> 分支用於修復已經發佈到 <code>master</code> 分支的緊急錯誤。當發佈的版本發現重大問題時，可以立即從 <code>master</code> 分支創建 <code>hotfix</code> 分支，進行修復後，將其合併回 <code>master</code> 和 <code>develop</code> 分支。</p>
-</li>
-</ol>
-<h4 id="1-3-Git-Flow-的流程"><a href="#1-3-Git-Flow-的流程" class="headerlink" title="1.3 Git Flow 的流程"></a>1.3 Git Flow 的流程</h4><p>Git Flow 的流程大致如下：</p>
-<ul>
-<li>開發新功能時，從 <code>develop</code> 分支創建 <code>feature</code> 分支。</li>
-<li>當 <code>feature</code> 分支開發完成後，合併回 <code>develop</code> 分支。</li>
-<li>當代碼達到穩定版本，創建 <code>release</code> 分支，進行測試和 bug 修復。</li>
-<li>測試完成後，將 <code>release</code> 分支合併回 <code>master</code> 和 <code>develop</code> 分支，並標註版本。</li>
-<li>若發現緊急錯誤，從 <code>master</code> 分支創建 <code>hotfix</code> 分支，進行修復並合併回 <code>master</code> 和 <code>develop</code>。</li>
-</ul>
-<h1 id="二、GitHub-Flow-介紹"><a href="#二、GitHub-Flow-介紹" class="headerlink" title="二、GitHub Flow 介紹"></a>二、GitHub Flow 介紹</h1><p>GitHub Flow 是 GitHub 提出的另一種工作流，主要針對快速迭代和持續集成的開發模式。與 Git Flow 複雜的分支管理相比，GitHub Flow 更加簡單和輕量，適合需要快速交付和頻繁部署的團隊。GitHub Flow 主要有以下幾個步驟：</p>
-<h4 id="2-1-GitHub-Flow-的基本流程"><a href="#2-1-GitHub-Flow-的基本流程" class="headerlink" title="2.1 GitHub Flow 的基本流程"></a>2.1 GitHub Flow 的基本流程</h4><ol>
-<li><p><strong>創建分支</strong>：<br>每當開始一個新功能或修復一個 bug 時，都應該從 <code>main</code> 分支創建一個新的分支。這個分支通常用來開發新的特性或修復某個問題。</p>
-</li>
-<li><p><strong>開發與提交</strong>：<br>在新創建的分支上進行開發，並定期將代碼提交到遠程倉庫。這些提交應該是增量的，便於代碼審查和測試。</p>
-</li>
-<li><p><strong>發送 Pull Request</strong>：<br>當開發完成後，將自己的分支提交為 Pull Request（PR），並請求團隊成員進行代碼審查。PR 是 GitHub Flow 中的關鍵步驟，能夠確保代碼的質量和協作。</p>
-</li>
-<li><p><strong>代碼審查與測試</strong>：<br>團隊成員進行代碼審查，確保代碼的質量和功能正確性。GitHub Flow 推崇頻繁的測試和集成，因此在 Pull Request 發送後，通常會自動觸發 CI（持續集成）測試，檢查代碼是否有錯誤。</p>
-</li>
-<li><p><strong>合併分支</strong>：<br>經過代碼審查和測試後，Pull Request 被批准，並將代碼合併到 <code>main</code> 分支。此時，新的代碼版本已經可以進行部署。</p>
-</li>
-<li><p><strong>部署與發佈</strong>：<br>GitHub Flow 的一大優勢是可以實現持續部署。當代碼合併到 <code>main</code> 分支後，可以立即部署到生產環境，快速交付新版本。</p>
-</li>
-</ol>
-<h4 id="2-2-GitHub-Flow-的特點"><a href="#2-2-GitHub-Flow-的特點" class="headerlink" title="2.2 GitHub Flow 的特點"></a>2.2 GitHub Flow 的特點</h4><p>GitHub Flow 的流程非常簡單，沒有像 Git Flow 那樣的複雜分支結構，適合小型和中型的項目。它的優點在於快速迭代和持續交付，並且便於團隊成員協作。GitHub Flow 更加強調分支管理的簡化，並且強調測試和部署的自動化。</p>
-<h1 id="三、Git-Flow-與-GitHub-Flow-的比較"><a href="#三、Git-Flow-與-GitHub-Flow-的比較" class="headerlink" title="三、Git Flow 與 GitHub Flow 的比較"></a>三、Git Flow 與 GitHub Flow 的比較</h1><ul>
-<li><p><strong>分支結構</strong>：<br>Git Flow 有多個分支（<code>master</code>、<code>develop</code>、<code>feature</code>、<code>release</code>、<code>hotfix</code>），適用於需要穩定版本發佈的團隊。而 GitHub Flow 只有 <code>main</code> 分支和特性分支，適用於快速迭代和持續集成的開發模式。</p>
-</li>
-<li><p><strong>適用場景</strong>：<br>Git Flow 更適合複雜的開發流程，尤其是有多個版本和發佈周期的項目。GitHub Flow 更適合快速迭代的小型或中型項目，尤其是需要頻繁部署和交付的團隊。</p>
-</li>
-<li><p><strong>流程複雜度</strong>：<br>Git Flow 的流程較為繁瑣，對於小型團隊來說可能會顯得過於複雜。GitHub Flow 流程簡單，適合希望保持敏捷和快速交付的團隊。</p>
-</li>
-</ul>
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>Git Flow 和 GitHub Flow 各有優缺點，適用的場景也有所不同。選擇哪一種工作流，應根據團隊的規模、項目的複雜度以及發佈頻率來決定。對於需要穩定發佈和多版本管理的項目，Git Flow 是一個更好的選擇。而對於需要快速迭代和頻繁部署的小型項目，GitHub Flow 則是一個更簡單有效的選擇。</p>
-]]></content>
-      <tags>
-        <tag>Github</tag>
-        <tag>Git</tag>
-        <tag>Git Flow</tag>
-        <tag>Github Flow</tag>
       </tags>
   </entry>
   <entry>
@@ -2840,6 +3058,115 @@
         <tag>Github</tag>
         <tag>Git</tag>
         <tag>版本控制</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GitHub Copilot 與 Copilot Agent 入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/20/learning-notes-github-copilot-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>自 2021 年推出以來，<strong>GitHub Copilot</strong> 已成為全球數百萬開發者的編程助手，能根據上下文即時補全程式碼。2024 年，GitHub 推出進階功能 <strong>Copilot Workspace</strong> 和 <strong>Copilot Agents</strong>，進一步從單一代碼補全進化為具備「理解、操作與協作」能力的智慧 AI 開發助理。</p>
+<p>這些新功能不僅能幫助你完成程式碼撰寫，還能協助理解需求、分析問題、規劃專案、重構模組，甚至提出 pull request 變更。本文將帶你全面認識 GitHub Copilot 及其 Agent 功能，從基本操作到進階應用，協助你提升開發效率與品質。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><h3 id="1-GitHub-Copilot-基本功能"><a href="#1-GitHub-Copilot-基本功能" class="headerlink" title="1. GitHub Copilot 基本功能"></a>1. GitHub Copilot 基本功能</h3><ul>
+<li>AI 程式碼補全：根據上下文推薦下一行或整段程式碼。</li>
+<li>註解驅動撰寫：使用自然語言描述意圖，自動轉換為程式碼。</li>
+<li>測試與樣板產生：自動產出單元測試與樣板邏輯。</li>
+<li>支援 VS Code、JetBrains IDE、Neovim 等。</li>
+</ul>
+<h3 id="2-Copilot-Agents-新功能"><a href="#2-Copilot-Agents-新功能" class="headerlink" title="2. Copilot Agents 新功能"></a>2. Copilot Agents 新功能</h3><ul>
+<li><strong>工作區理解（Workspace Contextualization）</strong>：理解整個專案結構，非僅單一檔案。</li>
+<li><strong>任務導向操作（Task-oriented Autonomy）</strong>：透過自然語言指令，Agent 可主動找出需要修改的檔案與程式邏輯。</li>
+<li><strong>互動式任務視窗（Copilot Workspace）</strong>：能與你共同規劃、分解、執行修改。</li>
+<li><strong>自動產生 Pull Request</strong>：Agent 能根據需求描述，自動建立符合需求的 PR 變更建議。</li>
+<li><strong>支援自然語言任務指令</strong>：如 “Add pagination to the user list page” 或 “Refactor login logic to support OAuth”。</li>
+</ul>
+<h3 id="3-適用場景"><a href="#3-適用場景" class="headerlink" title="3. 適用場景"></a>3. 適用場景</h3><ul>
+<li>新功能導入（快速建構雛型）</li>
+<li>現有程式碼重構與除錯</li>
+<li>快速理解大型專案結構</li>
+<li>撰寫測試與文件</li>
+<li>協作開發與程式碼審查輔助</li>
+</ul>
+<hr>
+<h2 id="使用條件與環境設置"><a href="#使用條件與環境設置" class="headerlink" title="使用條件與環境設置"></a>使用條件與環境設置</h2><ol>
+<li><p><strong>基本需求</strong></p>
+<ul>
+<li>GitHub 帳號</li>
+<li>VS Code 或 GitHub 官方網站（Copilot Workspace）</li>
+<li>GitHub Copilot 訂閱（個人 &#x2F; 企業方案）</li>
+</ul>
+</li>
+<li><p><strong>啟用方式</strong></p>
+<ul>
+<li>在 VS Code Marketplace 安裝「GitHub Copilot」擴充功能</li>
+<li>若已啟用 Agent 功能（目前逐步開放），將會在 Copilot 介面看到 Workspace 或 Chat 模式</li>
+</ul>
+</li>
+<li><p><strong>使用 Copilot Workspace</strong>（預設僅企業帳戶開放測試）</p>
+<ul>
+<li>登入 GitHub，進入某個 repo</li>
+<li>點擊 <code>Copilot</code> 按鈕開啟 Workspace</li>
+<li>輸入任務描述，例如：<code>Convert all date logic to use UTC</code></li>
+<li>Copilot 會分析整個程式碼庫，自動生成變更建議與 Pull Request</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="實際範例"><a href="#實際範例" class="headerlink" title="實際範例"></a>實際範例</h2><h3 id="範例一：註解驅動補全"><a href="#範例一：註解驅動補全" class="headerlink" title="範例一：註解驅動補全"></a>範例一：註解驅動補全</h3><p>輸入：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 寫一個可以將字串反轉的函式</span></span><br></pre></td></tr></table></figure>
+
+<p>Copilot 自動補全：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">reverseString</span>(<span class="params">str</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> str.<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>).<span class="title function_">reverse</span>().<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="範例二：Copilot-Chat-對話式問答"><a href="#範例二：Copilot-Chat-對話式問答" class="headerlink" title="範例二：Copilot Chat 對話式問答"></a>範例二：Copilot Chat 對話式問答</h3><p>使用快捷鍵 <code>Cmd+I</code> 或從 VS Code Copilot Chat 面板提問：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">請幫我解釋這段程式碼的作用：parseDate(input, &#x27;YYYY-MM-DD&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>Copilot 回應：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">這段程式碼會將字串 input 解析為特定格式的日期物件，格式為 &#x27;YYYY-MM-DD&#x27;，可能使用的是 dayjs 或 moment 函式庫。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="範例三：Copilot-Agent-自動任務執行（需-Workspace-模式）"><a href="#範例三：Copilot-Agent-自動任務執行（需-Workspace-模式）" class="headerlink" title="範例三：Copilot Agent 自動任務執行（需 Workspace 模式）"></a>範例三：Copilot Agent 自動任務執行（需 Workspace 模式）</h3><p>任務描述：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Refactor login controller to support Google OAuth</span><br></pre></td></tr></table></figure>
+
+<p>流程：</p>
+<ol>
+<li>Copilot 會分析 <code>controllers/login.js</code> 或相似檔案</li>
+<li>自動識別現有的登入邏輯</li>
+<li>插入 Google OAuth 處理邏輯（可能使用 passport.js 或其他第三方庫）</li>
+<li>產生變更摘要與建議 Pull Request</li>
+<li>開發者審閱後即可 merge</li>
+</ol>
+<hr>
+<h3 id="範例四：整合單元測試建議"><a href="#範例四：整合單元測試建議" class="headerlink" title="範例四：整合單元測試建議"></a>範例四：整合單元測試建議</h3><p>輸入：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">is_palindrome</span>(<span class="params">s</span>):</span><br><span class="line">    <span class="keyword">return</span> s == s[::-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<p>在測試檔案中輸入：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test_is_palindrome</span>():</span><br></pre></td></tr></table></figure>
+
+<p>Copilot 自動補全：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">assert</span> is_palindrome(<span class="string">&quot;racecar&quot;</span>) == <span class="literal">True</span></span><br><span class="line"><span class="keyword">assert</span> is_palindrome(<span class="string">&quot;hello&quot;</span>) == <span class="literal">False</span></span><br><span class="line"><span class="keyword">assert</span> is_palindrome(<span class="string">&quot;&quot;</span>) == <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="建議與最佳實踐"><a href="#建議與最佳實踐" class="headerlink" title="建議與最佳實踐"></a>建議與最佳實踐</h2><ol>
+<li><p><strong>善用自然語言描述</strong><br>Copilot Agent 具有語意理解能力，越具體的任務描述，越能產出正確結果。</p>
+</li>
+<li><p><strong>審核與測試不可省略</strong><br>AI 輔助雖強，但仍可能產生誤邏輯或不符合風格的程式碼，請務必加入測試與審查。</p>
+</li>
+<li><p><strong>適合用於重複與樣板任務</strong><br>例如 CRUD、測試、自動 refactor、邏輯轉換等。</p>
+</li>
+<li><p><strong>搭配 GitHub Actions 使用更強大</strong><br>可結合 CI&#x2F;CD 流程，自動執行 Copilot Agent 產生的 PR。</p>
+</li>
+</ol>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>GitHub Copilot 已從單純的程式補全工具，蛻變為具備理解上下文、可互動操作的智慧開發代理人。透過 Copilot Agent，你不僅能提升撰寫速度，還能更高層次地規劃、修改與維護專案。</p>
+<p>對個人開發者而言，Copilot 是每日開發的好助手；對團隊而言，Copilot Agent 更像是一位全天候不下班的開發實習生，協助你管理技術債、維護程式庫、強化開發工作流。</p>
+]]></content>
+      <tags>
+        <tag>GitHub</tag>
+        <tag>GitHub Copilot</tag>
+        <tag>Copilot</tag>
+        <tag>Copilot Agent</tag>
+        <tag>編輯器</tag>
       </tags>
   </entry>
   <entry>
@@ -7310,6 +7637,111 @@
       </tags>
   </entry>
   <entry>
+    <title>Roo Code 詳細介紹：AI VS Code 編輯器外掛入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/20/learning-notes-roo-code-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Roo Code（原名 Roo Cline）是一款嵌入於 Visual Studio Code 編輯器中的開源 AI 代理，能讀寫檔案、自動執行終端指令、操作瀏覽器，甚至整合多種 LLM 模型。無論是編寫程式、重構、除錯、架構設計，Roo Code 都能協助你提升開發效率，更像是一個智慧且自主的開發團隊成員。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ol>
+<li><p><strong>核心功能與定位</strong></p>
+<ul>
+<li>像開發團隊的 AI 助手，能讀寫檔案、執行命令、自動操作終端與瀏覽器</li>
+<li>支援自然語言溝通，整合 OpenAI、Gemini、Anthropic、Deepseek 等多種提供者</li>
+</ul>
+</li>
+<li><p><strong>多模式運作（Modes）</strong></p>
+<ul>
+<li><strong>Code Mode</strong>：主要用於撰寫與 refactor 程式碼</li>
+<li><strong>Architect Mode</strong>：聚焦系統設計與高階規劃</li>
+<li><strong>Ask Mode</strong>：解答問題、技術查詢</li>
+<li><strong>Debug Mode</strong>：專門診斷並修復錯誤</li>
+</ul>
+</li>
+<li><p><strong>工具整合</strong></p>
+<ul>
+<li>可撰寫檔案、執行 CLI 指令、操控瀏覽器</li>
+<li>支援外部工具擴充（MCP：Model Context Protocol），可接入資料庫、API、指令集</li>
+</ul>
+</li>
+<li><p><strong>客製化能力強</strong></p>
+<ul>
+<li>自訂指令與 prompt</li>
+<li>建立自訂模式，定義專屬角色（如測試工程師、設計師）</li>
+</ul>
+</li>
+<li><p><strong>專案記憶與 Context 管理</strong></p>
+<ul>
+<li>支援 context condensing 和索引技術，避免長案子失去關聯性</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="安裝與初步設置"><a href="#安裝與初步設置" class="headerlink" title="安裝與初步設置"></a>安裝與初步設置</h2><h3 id="1-安裝-Roo-Code"><a href="#1-安裝-Roo-Code" class="headerlink" title="1. 安裝 Roo Code"></a>1. 安裝 Roo Code</h3><ul>
+<li>打開 VS Code，前往 Extensions 搜尋「Roo Code」，點擊安裝</li>
+</ul>
+<h3 id="2-設定-AI-提供者"><a href="#2-設定-AI-提供者" class="headerlink" title="2. 設定 AI 提供者"></a>2. 設定 AI 提供者</h3><ul>
+<li>支援 OpenAI-compliant API，例如 OpenAI 本身、OpenRouter、Anthropic、Gemini 等</li>
+<li>透過裡面 Preferences 設定 API Key、Model ID、Mode 對應關係</li>
+</ul>
+<hr>
+<h2 id="實作範例（實際使用流程）"><a href="#實作範例（實際使用流程）" class="headerlink" title="實作範例（實際使用流程）"></a>實作範例（實際使用流程）</h2><h3 id="範例-A：建立新檔案"><a href="#範例-A：建立新檔案" class="headerlink" title="範例 A：建立新檔案"></a>範例 A：建立新檔案</h3><ol>
+<li>切換到 <strong>Code Mode</strong></li>
+<li>輸入：「Create a basic HTML template for a portfolio website」</li>
+<li>Roo Code 生成 HTML 檔案並顯示 diff</li>
+<li>審核後確定寫入實際工作區</li>
+</ol>
+<p>→ 成功驗證：可透過開啟檔案確認生成內容</p>
+<h3 id="範例-B：執行命令（CLI-x2F-Build-x2F-Test）"><a href="#範例-B：執行命令（CLI-x2F-Build-x2F-Test）" class="headerlink" title="範例 B：執行命令（CLI &#x2F; Build &#x2F; Test）"></a>範例 B：執行命令（CLI &#x2F; Build &#x2F; Test）</h3><ol>
+<li>讓 Roo 進入程式模式</li>
+<li>輸入：「Run npm install」</li>
+<li>Roo 使用終端指令完成套件安裝，且結果顯示在你的終端</li>
+</ol>
+<p>→ 驗證指令正確執行</p>
+<h3 id="範例-C：使用-Architect-Mode-規劃功能"><a href="#範例-C：使用-Architect-Mode-規劃功能" class="headerlink" title="範例 C：使用 Architect Mode 規劃功能"></a>範例 C：使用 Architect Mode 規劃功能</h3><ol>
+<li>切換至 <strong>Architect Mode</strong></li>
+<li>提出：「Help me plan data access layer for a todo application」</li>
+<li>Roo 回應並建立記錄文件（如 <code>.md</code> 記錄實作計畫），建立指引</li>
+</ol>
+<p>→ 這種模式能生成結構化內容並建立 Context 記錄</p>
+<hr>
+<h2 id="深入技巧與最佳實踐"><a href="#深入技巧與最佳實踐" class="headerlink" title="深入技巧與最佳實踐"></a>深入技巧與最佳實踐</h2><ul>
+<li><strong>啟用 Indexing &#x2F; Context Condensing</strong>：讓 Roo 在大型專案中維持上下文關聯性，有效處理長案不遺漏</li>
+<li><strong>自訂模式（Custom Modes）</strong>：為不同角色（如 QA、設計師）建立專屬對話與指令集</li>
+<li><strong>MCP 擴充</strong>：串接外部系統（如 AWS、Jira），擴展 Roo 能力</li>
+<li><strong>權限控制</strong>：設定自動執行命令範圍、上下文層級，以符合安全標準</li>
+<li><strong>模式搭配 LLM 模型</strong>：Schema 例：使用 Deepseek R1 做 code、Gigantic Gemini 做 architect、等</li>
+</ul>
+<hr>
+<h2 id="操作範例：結合免費-LLM-模型"><a href="#操作範例：結合免費-LLM-模型" class="headerlink" title="操作範例：結合免費 LLM 模型"></a>操作範例：結合免費 LLM 模型</h2><p>假設你想要整合免費模型：</p>
+<ol>
+<li><p>透過 OpenRouter 啟用 DeepSeek R1、Gemini Flash 模型</p>
+</li>
+<li><p>將 model 分配到不同模式：如 Architect 模式使用 Gemini、Code 模式使用 DeepSeek</p>
+</li>
+<li><p>透過 Roo 對話測試指令：</p>
+<ul>
+<li>“Generate React component for ToDo item list.”</li>
+<li>“Update backend schema to include due date.”</li>
+</ul>
+</li>
+</ol>
+<p>可參考 Medium 教學書寫使用細節與配置資訊</p>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Roo Code 是一款功能強大且高度可客製的 AI 編程代理工具，適合想提升開發效率、探索 AI 開發流程的人使用。核心優勢包括：</p>
+<ul>
+<li>多種工作模式切換（Code &#x2F; Architect &#x2F; Ask &#x2F; Debug）</li>
+<li>可控且安全的檔案與終端操作</li>
+<li>擴充能力強，可透過 MCP、Context Condensing、自訂模式延伸功能</li>
+<li>支援多種 LLM 提供者，具備彈性與擴充性</li>
+</ul>
+<p>由於功能豐富，建議一開始可以先安裝外掛並先從簡單任務使用起：生成範例檔案、執行終端指令，接著再進行構架規劃與系統整合。</p>
+]]></content>
+      <tags>
+        <tag>編輯器</tag>
+        <tag>Roo Code</tag>
+        <tag>VS Code</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SCSS 介紹入門教學筆記 | 學習筆記</title>
     <url>/2023/07/01/learning-notes-scss-intro-tutorial/</url>
     <content><![CDATA[<h1 id="一、SASS-是什麼？"><a href="#一、SASS-是什麼？" class="headerlink" title="一、SASS 是什麼？"></a>一、SASS 是什麼？</h1><p>SASS（Syntactically Awesome Stylesheets）是一種 CSS 預處理器（CSS Preprocessor），它擴展了 CSS 的功能，使樣式表更具可讀性、模組化和可維護性。SASS 允許使用變數、巢狀（Nesting）、混入（Mixin）、繼承（Extend）等進階特性，讓開發者能更有效率地管理 CSS。  </p>
@@ -8084,6 +8516,49 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue 正確新增或修改物件屬性入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/14/learning-notes-vue-set-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 Vue 2（Options API）中，<code>this.$set</code> 是用來<strong>在響應式系統中正確新增或修改物件屬性</strong>的方法。這對於<strong>動態新增屬性或修改陣列的指定索引值</strong>特別有用。</p>
+<hr>
+<h2 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(target, propertyName/index, value)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>target</code>：要修改的對象或陣列</li>
+<li><code>propertyName</code>（物件）或 <code>index</code>（陣列）</li>
+<li><code>value</code>：要設的值</li>
+</ul>
+<hr>
+<h2 id="為什麼需要-this-set？"><a href="#為什麼需要-this-set？" class="headerlink" title="為什麼需要 this.$set？"></a>為什麼需要 <code>this.$set</code>？</h2><p>Vue 2 的 reactivity（響應式系統）使用 <code>Object.defineProperty</code>，它<strong>無法偵測到新加的屬性</strong>或是直接對陣列用索引來賦值。</p>
+<p>例如，下面的程式碼是不會觸發畫面更新的：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">someObj</span>.<span class="property">newKey</span> = <span class="string">&#x27;value&#x27;</span>      <span class="comment">// 不會觸發更新</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">someArray</span>[<span class="number">1</span>] = <span class="string">&#x27;changed&#x27;</span>      <span class="comment">// 不會觸發更新</span></span><br></pre></td></tr></table></figure>
+
+<p>必須改成：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">someObj</span>, <span class="string">&#x27;newKey&#x27;</span>, <span class="string">&#x27;value&#x27;</span>)      <span class="comment">// 會觸發更新</span></span><br><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">someArray</span>, <span class="number">1</span>, <span class="string">&#x27;changed&#x27;</span>)         <span class="comment">// 會觸發更新</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="範例一：對物件新增屬性"><a href="#範例一：對物件新增屬性" class="headerlink" title="範例一：對物件新增屬性"></a>範例一：對物件新增屬性</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">user</span>: &#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;小明&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">user</span>, <span class="string">&#x27;age&#x27;</span>, <span class="number">30</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣才能讓 <code>user.age</code> 成為響應式屬性，更新時畫面才會重新渲染。</p>
+<hr>
+<h2 id="範例二：修改陣列中的值"><a href="#範例二：修改陣列中的值" class="headerlink" title="範例二：修改陣列中的值"></a>範例二：修改陣列中的值</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">items</span>: [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">methods</span>: &#123;</span><br><span class="line">  <span class="title function_">updateItem</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">items</span>, <span class="number">1</span>, <span class="string">&#x27;changed&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Vue-3-呢？"><a href="#Vue-3-呢？" class="headerlink" title="Vue 3 呢？"></a>Vue 3 呢？</h2><p>在 Vue 3 裡，因為 reactivity 系統改用 <strong>Proxy</strong>，所以可以直接新增或修改屬性，不需要 <code>this.$set</code> 了：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">someObj</span>.<span class="property">newKey</span> = <span class="string">&#x27;value&#x27;</span>   <span class="comment">// Vue 3 沒問題</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">someArray</span>[<span class="number">1</span>] = <span class="string">&#x27;changed&#x27;</span>   <span class="comment">// Vue 3 沒問題</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>如果你正在寫 Vue 2 的 Tic Tac Toe 遊戲，當你要動態更新棋盤的某個格子時，這樣做就是對的：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">board</span>[row], col, <span class="string">&#x27;X&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>這樣才能確保畫面能即時更新。</p>
+]]></content>
+      <tags>
+        <tag>vue</tag>
+        <tag>vue.js</tag>
+        <tag>this.$set</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue Router 入門教學筆記 | 學習筆記</title>
     <url>/2024/11/16/learning-notes-vue-router-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Vue Router 是 Vue.js 官方提供的前端路由解決方案，專為構建單頁應用（SPA, Single Page Application）而設計。它讓我們可以根據網址變化動態切換畫面而不重新載入頁面，是開發 Vue 應用不可或缺的工具之一。</p>
@@ -8195,49 +8670,6 @@
         <tag>frontend engineer</tag>
         <tag>Vue</tag>
         <tag>Vue Router</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue 正確新增或修改物件屬性入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/14/learning-notes-vue-set-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 Vue 2（Options API）中，<code>this.$set</code> 是用來<strong>在響應式系統中正確新增或修改物件屬性</strong>的方法。這對於<strong>動態新增屬性或修改陣列的指定索引值</strong>特別有用。</p>
-<hr>
-<h2 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(target, propertyName/index, value)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>target</code>：要修改的對象或陣列</li>
-<li><code>propertyName</code>（物件）或 <code>index</code>（陣列）</li>
-<li><code>value</code>：要設的值</li>
-</ul>
-<hr>
-<h2 id="為什麼需要-this-set？"><a href="#為什麼需要-this-set？" class="headerlink" title="為什麼需要 this.$set？"></a>為什麼需要 <code>this.$set</code>？</h2><p>Vue 2 的 reactivity（響應式系統）使用 <code>Object.defineProperty</code>，它<strong>無法偵測到新加的屬性</strong>或是直接對陣列用索引來賦值。</p>
-<p>例如，下面的程式碼是不會觸發畫面更新的：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">someObj</span>.<span class="property">newKey</span> = <span class="string">&#x27;value&#x27;</span>      <span class="comment">// 不會觸發更新</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">someArray</span>[<span class="number">1</span>] = <span class="string">&#x27;changed&#x27;</span>      <span class="comment">// 不會觸發更新</span></span><br></pre></td></tr></table></figure>
-
-<p>必須改成：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">someObj</span>, <span class="string">&#x27;newKey&#x27;</span>, <span class="string">&#x27;value&#x27;</span>)      <span class="comment">// 會觸發更新</span></span><br><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">someArray</span>, <span class="number">1</span>, <span class="string">&#x27;changed&#x27;</span>)         <span class="comment">// 會觸發更新</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="範例一：對物件新增屬性"><a href="#範例一：對物件新增屬性" class="headerlink" title="範例一：對物件新增屬性"></a>範例一：對物件新增屬性</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">user</span>: &#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;小明&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">user</span>, <span class="string">&#x27;age&#x27;</span>, <span class="number">30</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這樣才能讓 <code>user.age</code> 成為響應式屬性，更新時畫面才會重新渲染。</p>
-<hr>
-<h2 id="範例二：修改陣列中的值"><a href="#範例二：修改陣列中的值" class="headerlink" title="範例二：修改陣列中的值"></a>範例二：修改陣列中的值</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">items</span>: [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">methods</span>: &#123;</span><br><span class="line">  <span class="title function_">updateItem</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">items</span>, <span class="number">1</span>, <span class="string">&#x27;changed&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Vue-3-呢？"><a href="#Vue-3-呢？" class="headerlink" title="Vue 3 呢？"></a>Vue 3 呢？</h2><p>在 Vue 3 裡，因為 reactivity 系統改用 <strong>Proxy</strong>，所以可以直接新增或修改屬性，不需要 <code>this.$set</code> 了：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">someObj</span>.<span class="property">newKey</span> = <span class="string">&#x27;value&#x27;</span>   <span class="comment">// Vue 3 沒問題</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">someArray</span>[<span class="number">1</span>] = <span class="string">&#x27;changed&#x27;</span>   <span class="comment">// Vue 3 沒問題</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>如果你正在寫 Vue 2 的 Tic Tac Toe 遊戲，當你要動態更新棋盤的某個格子時，這樣做就是對的：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">board</span>[row], col, <span class="string">&#x27;X&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>這樣才能確保畫面能即時更新。</p>
-]]></content>
-      <tags>
-        <tag>vue</tag>
-        <tag>vue.js</tag>
-        <tag>this.$set</tag>
       </tags>
   </entry>
   <entry>
@@ -8453,6 +8885,36 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [3] - Event Listeners 事件監聽器 | 學習筆記</title>
+    <url>/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</url>
+    <content><![CDATA[<p><strong>Event Listeners 事件監聽器</strong><br>在 Vue 中，我們可以使用 <code>v-on</code> 指令監聽 DOM 事件：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>由於 <code>v-on</code> 的使用頻率很高，Vue 提供了一個簡寫語法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在這裡，<code>increment</code> 是在 <code>&lt;script setup&gt;</code> 中定義的一個函式：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 定義響應式狀態</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">// 定義函式來更新狀態</span><br><span class="line">function increment() &#123;</span><br><span class="line">  // 更新組件的狀態</span><br><span class="line">  count.value++</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在函式內，我們可以透過修改 <code>ref</code> 的值來更新組件的狀態。</p>
+<hr>
+<p>事件處理器也可以使用內聯表達式，並透過<strong>修飾符</strong>簡化常見任務。這些細節在<a href="https://vuejs.org/guide/essentials/event-handling.html">指南 - 事件處理</a>中有詳細說明。</p>
+<hr>
+<p>現在，我們可以試著自己實作 <code>increment</code> 函式，並使用 <code>v-on</code> 將它綁定到按鈕。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [4] - Form Bindings 表單綁定 | 學習筆記</title>
     <url>/2021/02/03/learning-notes-vuejs-3-official-tutorial-4-form-bindings/</url>
     <content><![CDATA[<p><strong>Form Bindings 表單綁定</strong><br>使用 <code>v-bind</code> 和 <code>v-on</code> 結合，我們可以對表單輸入元素創建雙向綁定：</p>
@@ -8510,36 +8972,6 @@
 <hr>
 <p>更多關於 <code>v-if</code> 的詳細內容請參閱官方<a href="https://vuejs.org/guide/essentials/conditional.html">指南 - 條件渲染</a>。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> awesome = <span class="title function_">ref</span>(<span class="literal">true</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">toggle</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  awesome.<span class="property">value</span> = !awesome.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;toggle&quot;</span>&gt;</span>Toggle<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span>Vue is awesome!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>Oh no 😢<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [3] - Event Listeners 事件監聽器 | 學習筆記</title>
-    <url>/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</url>
-    <content><![CDATA[<p><strong>Event Listeners 事件監聽器</strong><br>在 Vue 中，我們可以使用 <code>v-on</code> 指令監聽 DOM 事件：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>由於 <code>v-on</code> 的使用頻率很高，Vue 提供了一個簡寫語法：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>在這裡，<code>increment</code> 是在 <code>&lt;script setup&gt;</code> 中定義的一個函式：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 定義響應式狀態</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">// 定義函式來更新狀態</span><br><span class="line">function increment() &#123;</span><br><span class="line">  // 更新組件的狀態</span><br><span class="line">  count.value++</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>在函式內，我們可以透過修改 <code>ref</code> 的值來更新組件的狀態。</p>
-<hr>
-<p>事件處理器也可以使用內聯表達式，並透過<strong>修飾符</strong>簡化常見任務。這些細節在<a href="https://vuejs.org/guide/essentials/event-handling.html">指南 - 事件處理</a>中有詳細說明。</p>
-<hr>
-<p>現在，我們可以試著自己實作 <code>increment</code> 函式，並使用 <code>v-on</code> 將它綁定到按鈕。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -8618,28 +9050,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [9] - Watchers 觀察者 | 學習筆記</title>
-    <url>/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/</url>
-    <content><![CDATA[<h1 id="Watchers-觀察者"><a href="#Watchers-觀察者" class="headerlink" title="Watchers 觀察者"></a>Watchers 觀察者</h1><p>有時我們可能需要以反應性的方式執行「Side-effect 副作用」，例如，當一個數值改變時將其記錄到控制台。我們可以使用觀察者來實現這一點：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="title function_">watch</span>(count, <span class="function">(<span class="params">newCount</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 是的，console.log() 是一種副作用</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`新的計數是：<span class="subst">$&#123;newCount&#125;</span>`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p><code>watch()</code> 可以直接監視一個 <code>ref</code>，每當 <code>count</code> 的值改變時，回調函數就會被觸發。<code>watch()</code> 也可以監視其他類型的數據來源——更多細節請參閱指南：觀察者（Watchers）。</p>
-<p>比將訊息記錄到控制台更實用的例子，可能是當一個 ID 發生變化時，根據新 ID 獲取數據。我們的代碼目前是在元件掛載時，從一個模擬 API 獲取 <code>todos</code> 數據。此外，還有一個按鈕可以遞增應該被獲取的 <code>todo</code> ID。請嘗試實現一個觀察者，在按下按鈕時根據新 ID 獲取新的 <code>todo</code> 數據。</p>
-<p>參考範例：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoId = <span class="title function_">ref</span>(<span class="number">1</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoData = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchData</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="literal">null</span></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(</span></span><br><span class="line"><span class="language-javascript">    <span class="string">`https://jsonplaceholder.typicode.com/todos/<span class="subst">$&#123;todoId.value&#125;</span>`</span></span></span><br><span class="line"><span class="language-javascript">  )</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="keyword">await</span> res.<span class="title function_">json</span>()</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">fetchData</span>()</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">watch</span>(todoId, fetchData)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Todo id: &#123;&#123; todoId &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;todoId++&quot;</span> <span class="attr">:disabled</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Fetch next todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Loading...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">pre</span> <span class="attr">v-else</span>&gt;</span>&#123;&#123; todoData &#125;&#125;<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [8] - Lifecycle and Template Refs 生命週期與模板引用 | 學習筆記</title>
     <url>/2021/02/07/learning-notes-vuejs-3-official-tutorial-8-lifecycle-and-template-refs/</url>
     <content><![CDATA[<h2 id="Lifecycle-and-Template-Refs-生命週期與模板引用"><a href="#Lifecycle-and-Template-Refs-生命週期與模板引用" class="headerlink" title="Lifecycle and Template Refs 生命週期與模板引用"></a>Lifecycle and Template Refs 生命週期與模板引用</h2><p>到目前為止，Vue.js 透過響應式資料與聲明式渲染，幫助我們處理了所有的 DOM 更新。然而，無可避免地會有需要手動操作 DOM 的情況。</p>
@@ -8655,6 +9065,28 @@
 <h3 id="生命週期鉤子"><a href="#生命週期鉤子" class="headerlink" title="生命週期鉤子"></a>生命週期鉤子</h3><p>這稱為生命週期鉤子 (lifecycle hook)，它允許我們在元件生命週期的特定時間點註冊回呼函式。其他的生命週期鉤子還包括 <code>onUpdated</code> 和 <code>onUnmounted</code> 等。更多細節請參考官方文件 <a href="https://vuejs.org/guide/essentials/lifecycle.html">生命週期圖示</a>。</p>
 <h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>現在，我們可以嘗試添加一個 <code>onMounted</code> 鉤子，透過 <code>pElementRef.value</code> 訪問 <code>&lt;p&gt;</code> 元素，並對其進行一些直接的 DOM 操作（例如更改 <code>textContent</code>）。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> pElementRef = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  pElementRef.<span class="property">value</span>.<span class="property">textContent</span> = <span class="string">&#x27;mounted!&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">ref</span>=<span class="string">&quot;pElementRef&quot;</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [9] - Watchers 觀察者 | 學習筆記</title>
+    <url>/2021/02/08/learning-notes-vuejs-3-official-tutorial-9-watchers/</url>
+    <content><![CDATA[<h1 id="Watchers-觀察者"><a href="#Watchers-觀察者" class="headerlink" title="Watchers 觀察者"></a>Watchers 觀察者</h1><p>有時我們可能需要以反應性的方式執行「Side-effect 副作用」，例如，當一個數值改變時將其記錄到控制台。我們可以使用觀察者來實現這一點：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="title function_">watch</span>(count, <span class="function">(<span class="params">newCount</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 是的，console.log() 是一種副作用</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`新的計數是：<span class="subst">$&#123;newCount&#125;</span>`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><code>watch()</code> 可以直接監視一個 <code>ref</code>，每當 <code>count</code> 的值改變時，回調函數就會被觸發。<code>watch()</code> 也可以監視其他類型的數據來源——更多細節請參閱指南：觀察者（Watchers）。</p>
+<p>比將訊息記錄到控制台更實用的例子，可能是當一個 ID 發生變化時，根據新 ID 獲取數據。我們的代碼目前是在元件掛載時，從一個模擬 API 獲取 <code>todos</code> 數據。此外，還有一個按鈕可以遞增應該被獲取的 <code>todo</code> ID。請嘗試實現一個觀察者，在按下按鈕時根據新 ID 獲取新的 <code>todo</code> 數據。</p>
+<p>參考範例：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoId = <span class="title function_">ref</span>(<span class="number">1</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> todoData = <span class="title function_">ref</span>(<span class="literal">null</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchData</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="literal">null</span></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(</span></span><br><span class="line"><span class="language-javascript">    <span class="string">`https://jsonplaceholder.typicode.com/todos/<span class="subst">$&#123;todoId.value&#125;</span>`</span></span></span><br><span class="line"><span class="language-javascript">  )</span></span><br><span class="line"><span class="language-javascript">  todoData.<span class="property">value</span> = <span class="keyword">await</span> res.<span class="title function_">json</span>()</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">fetchData</span>()</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title function_">watch</span>(todoId, fetchData)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Todo id: &#123;&#123; todoId &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;todoId++&quot;</span> <span class="attr">:disabled</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Fetch next todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;!todoData&quot;</span>&gt;</span>Loading...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">pre</span> <span class="attr">v-else</span>&gt;</span>&#123;&#123; todoData &#125;&#125;<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
