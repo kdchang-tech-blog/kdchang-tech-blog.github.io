@@ -1,50 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</title>
-    <url>/2020/06/21/about-backend-engineer-10-keywords/</url>
-    <content><![CDATA[<p>以下整理了後端工程師相關的 10 個關鍵字，涵蓋技能、工具與工作方式：</p>
-<ol>
-<li><p><strong>Node.js &#x2F; Python &#x2F; Java &#x2F; Ruby &#x2F; PHP</strong>：常見的後端程式語言，用於構建伺服器端應用程式。</p>
-</li>
-<li><p><strong>Database</strong>（資料庫）：包括 <strong>SQL（如 MySQL, PostgreSQL）</strong> 和 <strong>NoSQL（如 MongoDB, Redis）</strong> 的操作與優化。</p>
-</li>
-<li><p><strong>REST API &#x2F; GraphQL</strong>：設計與實現伺服器端 API 以支援前端資料請求。</p>
-</li>
-<li><p><strong>Authentication &amp; Authorization</strong>（認證與授權）：如 OAuth、JWT、Session，確保使用者安全與數據保護。</p>
-</li>
-<li><p><strong>Docker &#x2F; Kubernetes</strong>：容器化與編排工具，用於應用部署與資源管理。</p>
-</li>
-<li><p><strong>Cloud Services</strong>：如 AWS、Google Cloud、Microsoft Azure，支援應用程式的雲端部署與運行。</p>
-</li>
-<li><p><strong>Microservices</strong>（微服務架構）：設計可拆分且可獨立部署的服務模組。</p>
-</li>
-<li><p><strong>Message Queues</strong>（訊息佇列）：如 RabbitMQ、Kafka，用於分布式系統的非同步通訊。</p>
-</li>
-<li><p><strong>Version Control</strong>（版本控制）：如 Git &#x2F; GitHub，用於團隊協作與程式碼管理。</p>
-</li>
-<li><p><strong>Performance Optimization</strong>（效能優化）：針對伺服器與資料庫的效能調優，提升系統效率。</p>
-</li>
-</ol>
-<p>以上關鍵字為後端工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
-]]></content>
-      <tags>
-        <tag>開發者</tag>
-        <tag>軟體工程師</tag>
-        <tag>SWE</tag>
-        <tag>Software Engineer</tag>
-        <tag>Software</tag>
-        <tag>軟體開發</tag>
-        <tag>backend</tag>
-        <tag>backend engineer</tag>
-        <tag>後端開發</tag>
-        <tag>後端工程</tag>
-        <tag>網頁後端工程師</tag>
-        <tag>後端工程師</tag>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字</title>
     <url>/2020/06/13/about-frontend-engineer-10-keywords/</url>
     <content><![CDATA[<p>以下整理了前端工程師相關的 10 個關鍵字，涵蓋技能、工具與工作方式：</p>
@@ -83,9 +39,53 @@
         <tag>Software Engineer</tag>
         <tag>Software</tag>
         <tag>軟體開發</tag>
-        <tag>Web</tag>
         <tag>網頁前端工程師</tag>
         <tag>前端工程師</tag>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</title>
+    <url>/2020/06/21/about-backend-engineer-10-keywords/</url>
+    <content><![CDATA[<p>以下整理了後端工程師相關的 10 個關鍵字，涵蓋技能、工具與工作方式：</p>
+<ol>
+<li><p><strong>Node.js &#x2F; Python &#x2F; Java &#x2F; Ruby &#x2F; PHP</strong>：常見的後端程式語言，用於構建伺服器端應用程式。</p>
+</li>
+<li><p><strong>Database</strong>（資料庫）：包括 <strong>SQL（如 MySQL, PostgreSQL）</strong> 和 <strong>NoSQL（如 MongoDB, Redis）</strong> 的操作與優化。</p>
+</li>
+<li><p><strong>REST API &#x2F; GraphQL</strong>：設計與實現伺服器端 API 以支援前端資料請求。</p>
+</li>
+<li><p><strong>Authentication &amp; Authorization</strong>（認證與授權）：如 OAuth、JWT、Session，確保使用者安全與數據保護。</p>
+</li>
+<li><p><strong>Docker &#x2F; Kubernetes</strong>：容器化與編排工具，用於應用部署與資源管理。</p>
+</li>
+<li><p><strong>Cloud Services</strong>：如 AWS、Google Cloud、Microsoft Azure，支援應用程式的雲端部署與運行。</p>
+</li>
+<li><p><strong>Microservices</strong>（微服務架構）：設計可拆分且可獨立部署的服務模組。</p>
+</li>
+<li><p><strong>Message Queues</strong>（訊息佇列）：如 RabbitMQ、Kafka，用於分布式系統的非同步通訊。</p>
+</li>
+<li><p><strong>Version Control</strong>（版本控制）：如 Git &#x2F; GitHub，用於團隊協作與程式碼管理。</p>
+</li>
+<li><p><strong>Performance Optimization</strong>（效能優化）：針對伺服器與資料庫的效能調優，提升系統效率。</p>
+</li>
+</ol>
+<p>以上關鍵字為後端工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
+]]></content>
+      <tags>
+        <tag>開發者</tag>
+        <tag>軟體工程師</tag>
+        <tag>SWE</tag>
+        <tag>Software Engineer</tag>
+        <tag>Software</tag>
+        <tag>軟體開發</tag>
+        <tag>Web</tag>
+        <tag>backend</tag>
+        <tag>backend engineer</tag>
+        <tag>後端開發</tag>
+        <tag>後端工程</tag>
+        <tag>網頁後端工程師</tag>
+        <tag>後端工程師</tag>
       </tags>
   </entry>
   <entry>
@@ -899,6 +899,100 @@
       </tags>
   </entry>
   <entry>
+    <title>Claude Code 入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/20/learning-notes-claude-code-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>隨著 AI 編程助手的發展，越來越多開發者開始使用 AI 工具來加速開發流程。由 Anthropic 推出的 <strong>Claude Code</strong>，是一個專為程式設計任務設計的生成式 AI 模型。它結合 Claude 的強大語言理解能力，專注於代碼撰寫、重構、除錯與文件生成，並支援多種程式語言。</p>
+<p>與 GitHub Copilot、ChatGPT 等工具類似，Claude Code 目標是協助開發者更有效率地完成日常開發任務。不過，它也有獨特的優勢：例如更嚴謹的安全性考量、對上下文理解的廣度，以及與 Anthropic 所提倡的 Constitutional AI 架構相結合的「安全設計」。</p>
+<p>本篇筆記將說明 Claude Code 的特色與基礎使用方式，協助你快速上手。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p><strong>Claude Code 是什麼？</strong></p>
+<ul>
+<li>由 Anthropic 推出的 AI 編程輔助模型，基於 Claude 模型微調。</li>
+<li>專注於程式碼相關任務，如生成、除錯、補完與重構。</li>
+</ul>
+</li>
+<li><p><strong>支援的平台與模式</strong></p>
+<ul>
+<li>可透過 Claude 官網、Slack 整合、API 介面使用。</li>
+<li>Claude 3 模型家族中的 Sonnet 與 Opus 皆支援 Code 能力。</li>
+</ul>
+</li>
+<li><p><strong>支援語言與任務</strong></p>
+<ul>
+<li>語言：Python、JavaScript、TypeScript、Java、C&#x2F;C++、HTML&#x2F;CSS、SQL 等。</li>
+<li>任務類型：代碼生成、文件產生、除錯、測試碼產出、重構與最佳化。</li>
+</ul>
+</li>
+<li><p><strong>與其他工具的差異</strong></p>
+<ul>
+<li>支援更長的上下文（可達 200k tokens）</li>
+<li>回應更具可讀性與解釋性</li>
+<li>Anthropic 特別強調「可控性」與「安全性」</li>
+</ul>
+</li>
+<li><p><strong>使用方式</strong></p>
+<ul>
+<li>Claude 聊天介面中貼上程式碼片段與指令</li>
+<li>使用 prompt 提示具體任務，例如 “請優化這段程式碼” 或 “請解釋下列 Python 函數的功能”</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="實際範例教學"><a href="#實際範例教學" class="headerlink" title="實際範例教學"></a>實際範例教學</h2><p>以下範例將以 Claude Code 處理 Python 程式碼為例，展示常見任務的應用。</p>
+<h3 id="1-程式碼生成"><a href="#1-程式碼生成" class="headerlink" title="1. 程式碼生成"></a>1. 程式碼生成</h3><p><strong>Prompt：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">請用 Python 寫一個函式，接收一個整數列表，回傳最大值與最小值。</span><br></pre></td></tr></table></figure>
+
+<p><strong>Claude Code 回應：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">find_min_max</span>(<span class="params">numbers</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> numbers:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span>, <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">min</span>(numbers), <span class="built_in">max</span>(numbers)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用範例</span></span><br><span class="line">nums = [<span class="number">3</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>]</span><br><span class="line">min_val, max_val = find_min_max(nums)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;最小值: <span class="subst">&#123;min_val&#125;</span>, 最大值: <span class="subst">&#123;max_val&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-程式碼除錯"><a href="#2-程式碼除錯" class="headerlink" title="2. 程式碼除錯"></a>2. 程式碼除錯</h3><p><strong>輸入錯誤程式碼：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">divide</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">return</span> a / b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(divide(<span class="number">10</span>, <span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+
+<p><strong>Prompt：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">這段程式碼會發生什麼錯誤？要怎麼修改？</span><br></pre></td></tr></table></figure>
+
+<p><strong>Claude Code 回應：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">這段程式碼會在除以 0 時產生 ZeroDivisionError 錯誤。你可以加入 try-except 來處理例外：</span><br></pre></td></tr></table></figure>
+
+<p><strong>建議修改版本：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">divide</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">return</span> a / b</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;除數不能為零&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(divide(<span class="number">10</span>, <span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-重構程式碼"><a href="#3-重構程式碼" class="headerlink" title="3. 重構程式碼"></a>3. 重構程式碼</h3><p><strong>Prompt：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">請幫我重構以下 Python 程式，使其更簡潔易讀</span><br></pre></td></tr></table></figure>
+
+<p><strong>原始程式碼：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">process</span>(<span class="params">data</span>):</span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> data:</span><br><span class="line">        <span class="keyword">if</span> item % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">            result.append(item * item)</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<p><strong>Claude Code 回應：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">process</span>(<span class="params">data</span>):</span><br><span class="line">    <span class="keyword">return</span> [item ** <span class="number">2</span> <span class="keyword">for</span> item <span class="keyword">in</span> data <span class="keyword">if</span> item % <span class="number">2</span> == <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="實用建議與提示"><a href="#實用建議與提示" class="headerlink" title="實用建議與提示"></a>實用建議與提示</h2><ul>
+<li><strong>具體的指令更有效</strong>：直接說明你要做什麼，例如「請將下列 TypeScript 重構為具名函式」，比「幫我修改程式碼」效果更好。</li>
+<li><strong>使用上下文編輯技巧</strong>：可貼上整個 class 或 module，再指明哪個函式需要優化。</li>
+<li><strong>加入期望輸出範例</strong>：讓 Claude Code 理解你的預期輸入與輸出格式。</li>
+<li><strong>搭配 API 使用</strong>：進階用戶可透過 Anthropic API 將 Claude Code 整合進開發工作流程或 IDE 插件。</li>
+</ul>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Claude Code 是新一代 AI 編程輔助工具的代表之一，其簡潔清晰的語言理解能力與較高的上下文記憶範圍，使其特別適合處理複雜的程式重構與跨檔案邏輯分析。無論你是初學者還是資深開發者，只要善用 prompt 的語言描述能力與 Claude Code 的生成特性，就能提升開發效率與程式品質。</p>
+<p>若你正尋求 Copilot 或 ChatGPT 的替代方案，Claude Code 值得一試。</p>
+<hr>
+<p>若你有特定開發環境（如 VSCode、CLI、Slack）或語言需求，我可以進一步為你量身規劃 Claude Code 的使用方式與整合建議。需要的話也可以補充教學範例。</p>
+<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
+<li><a href="https://github.com/doggy8088/github-copilot-configs">最佳 GitHub Copilot 設定</a></li>
+<li><a href="https://medium.com/@cct0201/%E5%BE%9E-%E5%AF%AB%E7%A8%8B%E5%BC%8F-%E5%88%B0-%E8%88%87-ai-%E5%85%B1%E8%88%9E-%E6%88%91%E5%9C%A8%E5%85%AC%E5%8F%B8%E6%8E%A8%E5%8B%95-vibe-coding-%E7%9A%84%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB-015e28909290">從「寫程式」到「與 AI 共舞」── 我在公司推動 Vibe Coding 的經驗分享</a></li>
+<li><a href="https://gitmind.com/tw/best-vibe-coding-tools-2025.html">2025 年最強推薦 Vibe Coding 工具一次看懂</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Claude</tag>
+        <tag>Claude Code</tag>
+        <tag>編輯器</tag>
+        <tag>AI IDE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>concurrently.js 入門教學筆記 | 學習筆記</title>
     <url>/2018/02/01/learning-notes-concurrently-js-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在前端與全端開發中，我們經常需要<strong>同時執行多個指令</strong>，例如一邊啟動前端開發伺服器，一邊啟動後端 API 伺服器，或一邊監看 Sass 編譯，一邊執行 TypeScript 編譯。在這樣的情境下，<code>concurrently</code> 是一個非常實用的工具，它能讓我們在同一個命令列同時執行多個命令。</p>
@@ -1298,6 +1392,57 @@
       </tags>
   </entry>
   <entry>
+    <title>Flexbox 網頁排版技巧入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/14/learning-notes-css-flexbox-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h2><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
+<h3 id="1-1-為何使用-Flexbox？"><a href="#1-1-為何使用-Flexbox？" class="headerlink" title="1.1 為何使用 Flexbox？"></a>1.1 為何使用 Flexbox？</h3><ul>
+<li><strong>彈性調整</strong>：元素可根據可用空間動態調整大小。</li>
+<li><strong>簡化佈局</strong>：減少對 <code>float</code>、<code>inline-block</code> 及 <code>position</code> 依賴。</li>
+<li><strong>更好的對齊方式</strong>：內建強大的對齊與分佈控制。</li>
+</ul>
+<h2 id="2-Flexbox-基本概念"><a href="#2-Flexbox-基本概念" class="headerlink" title="2. Flexbox 基本概念"></a>2. Flexbox 基本概念</h2><p>Flexbox 佈局的核心概念是 <strong>容器（container）</strong> 和 <strong>子項目（items）</strong>。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一旦對容器使用 <code>display: flex</code>，其內部的子元素將自動變成 Flex 子項目，並受 Flex 佈局影響。</p>
+<h2 id="3-Flex-容器屬性"><a href="#3-Flex-容器屬性" class="headerlink" title="3. Flex 容器屬性"></a>3. Flex 容器屬性</h2><h3 id="3-1-flex-direction"><a href="#3-1-flex-direction" class="headerlink" title="3.1 flex-direction"></a>3.1 <code>flex-direction</code></h3><p>決定主軸（main axis）方向。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row; <span class="comment">/* 預設值，水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse; <span class="comment">/* 反向水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column; <span class="comment">/* 垂直排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse; <span class="comment">/* 反向垂直排列 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-justify-content"><a href="#3-2-justify-content" class="headerlink" title="3.2 justify-content"></a>3.2 <code>justify-content</code></h3><p>控制子項目在主軸上的對齊方式。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start; <span class="comment">/* 預設，從左到右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end; <span class="comment">/* 靠右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: center; <span class="comment">/* 置中排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-between; <span class="comment">/* 兩端對齊，間距平均分布 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-around; <span class="comment">/* 子項目兩側有相等的間距 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-evenly; <span class="comment">/* 所有間距均等 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-align-items"><a href="#3-3-align-items" class="headerlink" title="3.3 align-items"></a>3.3 <code>align-items</code></h3><p>控制子項目在交叉軸（cross axis）上的對齊方式。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start; <span class="comment">/* 靠起始位置對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: flex-end; <span class="comment">/* 靠末端對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: center; <span class="comment">/* 垂直置中對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: stretch; <span class="comment">/* 預設，撐滿高度 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: baseline; <span class="comment">/* 依據文本基線對齊 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-align-content"><a href="#3-4-align-content" class="headerlink" title="3.4 align-content"></a>3.4 <code>align-content</code></h3><p>適用於多行佈局，控制多行之間的間距。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-end;</span><br><span class="line">  <span class="attribute">align-content</span>: center;</span><br><span class="line">  <span class="attribute">align-content</span>: space-between;</span><br><span class="line">  <span class="attribute">align-content</span>: space-around;</span><br><span class="line">  <span class="attribute">align-content</span>: space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-Flex-子項目屬性"><a href="#4-Flex-子項目屬性" class="headerlink" title="4. Flex 子項目屬性"></a>4. Flex 子項目屬性</h2><h3 id="4-1-flex-grow"><a href="#4-1-flex-grow" class="headerlink" title="4.1 flex-grow"></a>4.1 <code>flex-grow</code></h3><p>設定子項目如何分配多餘空間。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-grow</span>: <span class="number">1</span>; <span class="comment">/* 所有子項目平均分配空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-flex-shrink"><a href="#4-2-flex-shrink" class="headerlink" title="4.2 flex-shrink"></a>4.2 <code>flex-shrink</code></h3><p>控制子項目如何縮小。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-shrink</span>: <span class="number">0</span>; <span class="comment">/* 防止縮小 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-flex-basis"><a href="#4-3-flex-basis" class="headerlink" title="4.3 flex-basis"></a>4.3 <code>flex-basis</code></h3><p>設定子項目的初始大小。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-basis</span>: <span class="number">200px</span>; <span class="comment">/* 設定初始寬度或高度 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-4-flex"><a href="#4-4-flex" class="headerlink" title="4.4 flex"></a>4.4 <code>flex</code></h3><p>綜合 <code>flex-grow</code>、<code>flex-shrink</code> 和 <code>flex-basis</code>。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span> <span class="number">1</span> <span class="number">100px</span>; <span class="comment">/* grow, shrink, basis */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-Flexbox-常見佈局範例"><a href="#5-Flexbox-常見佈局範例" class="headerlink" title="5. Flexbox 常見佈局範例"></a>5. Flexbox 常見佈局範例</h2><h3 id="5-1-水平置中"><a href="#5-1-水平置中" class="headerlink" title="5.1 水平置中"></a>5.1 水平置中</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-等寬三欄佈局"><a href="#5-2-等寬三欄佈局" class="headerlink" title="5.2 等寬三欄佈局"></a>5.2 等寬三欄佈局</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-兩欄固定-自適應"><a href="#5-3-兩欄固定-自適應" class="headerlink" title="5.3 兩欄固定 + 自適應"></a>5.3 兩欄固定 + 自適應</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">200px</span>; <span class="comment">/* 固定 200px */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>; <span class="comment">/* 佔滿剩餘空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-結論"><a href="#6-結論" class="headerlink" title="6. 結論"></a>6. 結論</h2><p>Flexbox 是一種強大且直觀的 CSS 佈局方式，能夠解決傳統排版難題，使開發者能夠輕鬆實現響應式佈局與對齊方式。本篇筆記介紹了 Flexbox 的基本屬性及常見佈局範例，進一步學習可以研究 CSS Grid 和更進階的排版技巧。</p>
+]]></content>
+      <tags>
+        <tag>css</tag>
+        <tag>Flexbox</tag>
+        <tag>排版</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Flexbox Froggy 入門教學筆記 | 學習筆記</title>
     <url>/2024/07/10/learning-notes-css-flexbox-froggy-tutorial/</url>
     <content><![CDATA[<h1 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h1><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
@@ -1409,59 +1554,8 @@
 ]]></content>
       <tags>
         <tag>CSS</tag>
+        <tag>Flexbox</tag>
         <tag>Flexbox Froggy</tag>
-        <tag>Flexbox</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Flexbox 網頁排版技巧入門教學筆記 | 學習筆記</title>
-    <url>/2024/11/14/learning-notes-css-flexbox-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h2><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
-<h3 id="1-1-為何使用-Flexbox？"><a href="#1-1-為何使用-Flexbox？" class="headerlink" title="1.1 為何使用 Flexbox？"></a>1.1 為何使用 Flexbox？</h3><ul>
-<li><strong>彈性調整</strong>：元素可根據可用空間動態調整大小。</li>
-<li><strong>簡化佈局</strong>：減少對 <code>float</code>、<code>inline-block</code> 及 <code>position</code> 依賴。</li>
-<li><strong>更好的對齊方式</strong>：內建強大的對齊與分佈控制。</li>
-</ul>
-<h2 id="2-Flexbox-基本概念"><a href="#2-Flexbox-基本概念" class="headerlink" title="2. Flexbox 基本概念"></a>2. Flexbox 基本概念</h2><p>Flexbox 佈局的核心概念是 <strong>容器（container）</strong> 和 <strong>子項目（items）</strong>。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>一旦對容器使用 <code>display: flex</code>，其內部的子元素將自動變成 Flex 子項目，並受 Flex 佈局影響。</p>
-<h2 id="3-Flex-容器屬性"><a href="#3-Flex-容器屬性" class="headerlink" title="3. Flex 容器屬性"></a>3. Flex 容器屬性</h2><h3 id="3-1-flex-direction"><a href="#3-1-flex-direction" class="headerlink" title="3.1 flex-direction"></a>3.1 <code>flex-direction</code></h3><p>決定主軸（main axis）方向。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row; <span class="comment">/* 預設值，水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse; <span class="comment">/* 反向水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column; <span class="comment">/* 垂直排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse; <span class="comment">/* 反向垂直排列 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-justify-content"><a href="#3-2-justify-content" class="headerlink" title="3.2 justify-content"></a>3.2 <code>justify-content</code></h3><p>控制子項目在主軸上的對齊方式。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start; <span class="comment">/* 預設，從左到右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end; <span class="comment">/* 靠右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: center; <span class="comment">/* 置中排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-between; <span class="comment">/* 兩端對齊，間距平均分布 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-around; <span class="comment">/* 子項目兩側有相等的間距 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-evenly; <span class="comment">/* 所有間距均等 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-align-items"><a href="#3-3-align-items" class="headerlink" title="3.3 align-items"></a>3.3 <code>align-items</code></h3><p>控制子項目在交叉軸（cross axis）上的對齊方式。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start; <span class="comment">/* 靠起始位置對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: flex-end; <span class="comment">/* 靠末端對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: center; <span class="comment">/* 垂直置中對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: stretch; <span class="comment">/* 預設，撐滿高度 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: baseline; <span class="comment">/* 依據文本基線對齊 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-4-align-content"><a href="#3-4-align-content" class="headerlink" title="3.4 align-content"></a>3.4 <code>align-content</code></h3><p>適用於多行佈局，控制多行之間的間距。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-end;</span><br><span class="line">  <span class="attribute">align-content</span>: center;</span><br><span class="line">  <span class="attribute">align-content</span>: space-between;</span><br><span class="line">  <span class="attribute">align-content</span>: space-around;</span><br><span class="line">  <span class="attribute">align-content</span>: space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-Flex-子項目屬性"><a href="#4-Flex-子項目屬性" class="headerlink" title="4. Flex 子項目屬性"></a>4. Flex 子項目屬性</h2><h3 id="4-1-flex-grow"><a href="#4-1-flex-grow" class="headerlink" title="4.1 flex-grow"></a>4.1 <code>flex-grow</code></h3><p>設定子項目如何分配多餘空間。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-grow</span>: <span class="number">1</span>; <span class="comment">/* 所有子項目平均分配空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-flex-shrink"><a href="#4-2-flex-shrink" class="headerlink" title="4.2 flex-shrink"></a>4.2 <code>flex-shrink</code></h3><p>控制子項目如何縮小。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-shrink</span>: <span class="number">0</span>; <span class="comment">/* 防止縮小 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-3-flex-basis"><a href="#4-3-flex-basis" class="headerlink" title="4.3 flex-basis"></a>4.3 <code>flex-basis</code></h3><p>設定子項目的初始大小。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-basis</span>: <span class="number">200px</span>; <span class="comment">/* 設定初始寬度或高度 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-4-flex"><a href="#4-4-flex" class="headerlink" title="4.4 flex"></a>4.4 <code>flex</code></h3><p>綜合 <code>flex-grow</code>、<code>flex-shrink</code> 和 <code>flex-basis</code>。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span> <span class="number">1</span> <span class="number">100px</span>; <span class="comment">/* grow, shrink, basis */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-Flexbox-常見佈局範例"><a href="#5-Flexbox-常見佈局範例" class="headerlink" title="5. Flexbox 常見佈局範例"></a>5. Flexbox 常見佈局範例</h2><h3 id="5-1-水平置中"><a href="#5-1-水平置中" class="headerlink" title="5.1 水平置中"></a>5.1 水平置中</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-2-等寬三欄佈局"><a href="#5-2-等寬三欄佈局" class="headerlink" title="5.2 等寬三欄佈局"></a>5.2 等寬三欄佈局</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-3-兩欄固定-自適應"><a href="#5-3-兩欄固定-自適應" class="headerlink" title="5.3 兩欄固定 + 自適應"></a>5.3 兩欄固定 + 自適應</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">200px</span>; <span class="comment">/* 固定 200px */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>; <span class="comment">/* 佔滿剩餘空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-結論"><a href="#6-結論" class="headerlink" title="6. 結論"></a>6. 結論</h2><p>Flexbox 是一種強大且直觀的 CSS 佈局方式，能夠解決傳統排版難題，使開發者能夠輕鬆實現響應式佈局與對齊方式。本篇筆記介紹了 Flexbox 的基本屬性及常見佈局範例，進一步學習可以研究 CSS Grid 和更進階的排版技巧。</p>
-]]></content>
-      <tags>
-        <tag>css</tag>
-        <tag>Flexbox</tag>
-        <tag>排版</tag>
       </tags>
   </entry>
   <entry>
@@ -2803,66 +2897,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Git Flow 介紹與 GitHub Flow 介紹入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在軟體開發中，版本控制是協作開發中至關重要的工具。Git 作為當前最受歡迎的版本控制系統，其強大的分支管理和版本控制功能，使得開發團隊能夠高效地進行協作。兩種常見的 Git 工作流是 Git Flow 和 GitHub Flow，這些工作流提供了清晰的分支管理策略，讓團隊可以更加有序地開發和部署代碼。本文將介紹 Git Flow 和 GitHub Flow 的基本概念、使用方法，以及它們之間的區別。</p>
-<h1 id="一、Git-Flow-介紹"><a href="#一、Git-Flow-介紹" class="headerlink" title="一、Git Flow 介紹"></a>一、Git Flow 介紹</h1><p>Git Flow 是一個基於 Git 的分支管理模型，主要由 Vincent Driessen 提出，旨在幫助開發團隊實現規範化的分支管理，並對不同開發階段的代碼進行有效的管理。Git Flow 工作流適合需要頻繁發布新版本的項目，並且開發流程中包含多個階段，如開發、測試、發佈等。其工作流程通常包含以下幾個核心分支：</p>
-<h4 id="1-1-主要分支"><a href="#1-1-主要分支" class="headerlink" title="1.1 主要分支"></a>1.1 主要分支</h4><ol>
-<li><p><strong>master 分支</strong>：<br><code>master</code> 分支是 Git Flow 中的核心分支，所有穩定的代碼都應該存在於此。每當一個新版本的代碼準備好發佈時，都會從 <code>develop</code> 分支合併到 <code>master</code>，並標記相應的版本號。這個分支通常只包含穩定的代碼，並且代表了隨時可以部署的代碼。</p>
-</li>
-<li><p><strong>develop 分支</strong>：<br><code>develop</code> 分支用於開發中的代碼。所有的功能開發都應該從這個分支進行，並且當開發完成後，合併回 <code>develop</code>。這個分支是整個項目的集成區，開發人員應該從 <code>develop</code> 分支開始開發新功能。</p>
-</li>
-</ol>
-<h4 id="1-2-輔助分支"><a href="#1-2-輔助分支" class="headerlink" title="1.2 輔助分支"></a>1.2 輔助分支</h4><ol>
-<li><p><strong>feature 分支</strong>：<br><code>feature</code> 分支用於開發新的功能。每個新功能都應該從 <code>develop</code> 分支創建一個新的 <code>feature</code> 分支，並且在功能開發完成後，將該分支合併回 <code>develop</code> 分支。<code>feature</code> 分支的命名通常為 <code>feature/&lt;功能名稱&gt;</code>。</p>
-</li>
-<li><p><strong>release 分支</strong>：<br>當 <code>develop</code> 分支上的代碼準備好進入測試階段時，會創建一個 <code>release</code> 分支。這個分支用來準備最終的發佈版本。在 <code>release</code> 分支上進行的主要工作包括 bug 修復、文檔編寫等，確保最終版本的穩定性。當測試完成並且代碼準備發佈時，<code>release</code> 分支會被合併到 <code>master</code> 和 <code>develop</code> 分支。</p>
-</li>
-<li><p><strong>hotfix 分支</strong>：<br><code>hotfix</code> 分支用於修復已經發佈到 <code>master</code> 分支的緊急錯誤。當發佈的版本發現重大問題時，可以立即從 <code>master</code> 分支創建 <code>hotfix</code> 分支，進行修復後，將其合併回 <code>master</code> 和 <code>develop</code> 分支。</p>
-</li>
-</ol>
-<h4 id="1-3-Git-Flow-的流程"><a href="#1-3-Git-Flow-的流程" class="headerlink" title="1.3 Git Flow 的流程"></a>1.3 Git Flow 的流程</h4><p>Git Flow 的流程大致如下：</p>
-<ul>
-<li>開發新功能時，從 <code>develop</code> 分支創建 <code>feature</code> 分支。</li>
-<li>當 <code>feature</code> 分支開發完成後，合併回 <code>develop</code> 分支。</li>
-<li>當代碼達到穩定版本，創建 <code>release</code> 分支，進行測試和 bug 修復。</li>
-<li>測試完成後，將 <code>release</code> 分支合併回 <code>master</code> 和 <code>develop</code> 分支，並標註版本。</li>
-<li>若發現緊急錯誤，從 <code>master</code> 分支創建 <code>hotfix</code> 分支，進行修復並合併回 <code>master</code> 和 <code>develop</code>。</li>
-</ul>
-<h1 id="二、GitHub-Flow-介紹"><a href="#二、GitHub-Flow-介紹" class="headerlink" title="二、GitHub Flow 介紹"></a>二、GitHub Flow 介紹</h1><p>GitHub Flow 是 GitHub 提出的另一種工作流，主要針對快速迭代和持續集成的開發模式。與 Git Flow 複雜的分支管理相比，GitHub Flow 更加簡單和輕量，適合需要快速交付和頻繁部署的團隊。GitHub Flow 主要有以下幾個步驟：</p>
-<h4 id="2-1-GitHub-Flow-的基本流程"><a href="#2-1-GitHub-Flow-的基本流程" class="headerlink" title="2.1 GitHub Flow 的基本流程"></a>2.1 GitHub Flow 的基本流程</h4><ol>
-<li><p><strong>創建分支</strong>：<br>每當開始一個新功能或修復一個 bug 時，都應該從 <code>main</code> 分支創建一個新的分支。這個分支通常用來開發新的特性或修復某個問題。</p>
-</li>
-<li><p><strong>開發與提交</strong>：<br>在新創建的分支上進行開發，並定期將代碼提交到遠程倉庫。這些提交應該是增量的，便於代碼審查和測試。</p>
-</li>
-<li><p><strong>發送 Pull Request</strong>：<br>當開發完成後，將自己的分支提交為 Pull Request（PR），並請求團隊成員進行代碼審查。PR 是 GitHub Flow 中的關鍵步驟，能夠確保代碼的質量和協作。</p>
-</li>
-<li><p><strong>代碼審查與測試</strong>：<br>團隊成員進行代碼審查，確保代碼的質量和功能正確性。GitHub Flow 推崇頻繁的測試和集成，因此在 Pull Request 發送後，通常會自動觸發 CI（持續集成）測試，檢查代碼是否有錯誤。</p>
-</li>
-<li><p><strong>合併分支</strong>：<br>經過代碼審查和測試後，Pull Request 被批准，並將代碼合併到 <code>main</code> 分支。此時，新的代碼版本已經可以進行部署。</p>
-</li>
-<li><p><strong>部署與發佈</strong>：<br>GitHub Flow 的一大優勢是可以實現持續部署。當代碼合併到 <code>main</code> 分支後，可以立即部署到生產環境，快速交付新版本。</p>
-</li>
-</ol>
-<h4 id="2-2-GitHub-Flow-的特點"><a href="#2-2-GitHub-Flow-的特點" class="headerlink" title="2.2 GitHub Flow 的特點"></a>2.2 GitHub Flow 的特點</h4><p>GitHub Flow 的流程非常簡單，沒有像 Git Flow 那樣的複雜分支結構，適合小型和中型的項目。它的優點在於快速迭代和持續交付，並且便於團隊成員協作。GitHub Flow 更加強調分支管理的簡化，並且強調測試和部署的自動化。</p>
-<h1 id="三、Git-Flow-與-GitHub-Flow-的比較"><a href="#三、Git-Flow-與-GitHub-Flow-的比較" class="headerlink" title="三、Git Flow 與 GitHub Flow 的比較"></a>三、Git Flow 與 GitHub Flow 的比較</h1><ul>
-<li><p><strong>分支結構</strong>：<br>Git Flow 有多個分支（<code>master</code>、<code>develop</code>、<code>feature</code>、<code>release</code>、<code>hotfix</code>），適用於需要穩定版本發佈的團隊。而 GitHub Flow 只有 <code>main</code> 分支和特性分支，適用於快速迭代和持續集成的開發模式。</p>
-</li>
-<li><p><strong>適用場景</strong>：<br>Git Flow 更適合複雜的開發流程，尤其是有多個版本和發佈周期的項目。GitHub Flow 更適合快速迭代的小型或中型項目，尤其是需要頻繁部署和交付的團隊。</p>
-</li>
-<li><p><strong>流程複雜度</strong>：<br>Git Flow 的流程較為繁瑣，對於小型團隊來說可能會顯得過於複雜。GitHub Flow 流程簡單，適合希望保持敏捷和快速交付的團隊。</p>
-</li>
-</ul>
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>Git Flow 和 GitHub Flow 各有優缺點，適用的場景也有所不同。選擇哪一種工作流，應根據團隊的規模、項目的複雜度以及發佈頻率來決定。對於需要穩定發佈和多版本管理的項目，Git Flow 是一個更好的選擇。而對於需要快速迭代和頻繁部署的小型項目，GitHub Flow 則是一個更簡單有效的選擇。</p>
-]]></content>
-      <tags>
-        <tag>Git Flow</tag>
-        <tag>Github Flow</tag>
-        <tag>Github</tag>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git 指令學習筆記 | 學習筆記</title>
     <url>/2023/12/21/learning-notes-git-command-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Git 是現代軟體開發中最常使用的分散式版本控制系統，它幫助開發者管理源代碼的版本和協作。這篇教學將從基礎開始，介紹 Git 的常用命令並提供實際範例，幫助你熟悉如何使用 Git 來進行版本控制與協作。</p>
@@ -2956,6 +2990,66 @@
         <tag>Github</tag>
         <tag>Git</tag>
         <tag>版本控制</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git Flow 介紹與 GitHub Flow 介紹入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在軟體開發中，版本控制是協作開發中至關重要的工具。Git 作為當前最受歡迎的版本控制系統，其強大的分支管理和版本控制功能，使得開發團隊能夠高效地進行協作。兩種常見的 Git 工作流是 Git Flow 和 GitHub Flow，這些工作流提供了清晰的分支管理策略，讓團隊可以更加有序地開發和部署代碼。本文將介紹 Git Flow 和 GitHub Flow 的基本概念、使用方法，以及它們之間的區別。</p>
+<h1 id="一、Git-Flow-介紹"><a href="#一、Git-Flow-介紹" class="headerlink" title="一、Git Flow 介紹"></a>一、Git Flow 介紹</h1><p>Git Flow 是一個基於 Git 的分支管理模型，主要由 Vincent Driessen 提出，旨在幫助開發團隊實現規範化的分支管理，並對不同開發階段的代碼進行有效的管理。Git Flow 工作流適合需要頻繁發布新版本的項目，並且開發流程中包含多個階段，如開發、測試、發佈等。其工作流程通常包含以下幾個核心分支：</p>
+<h4 id="1-1-主要分支"><a href="#1-1-主要分支" class="headerlink" title="1.1 主要分支"></a>1.1 主要分支</h4><ol>
+<li><p><strong>master 分支</strong>：<br><code>master</code> 分支是 Git Flow 中的核心分支，所有穩定的代碼都應該存在於此。每當一個新版本的代碼準備好發佈時，都會從 <code>develop</code> 分支合併到 <code>master</code>，並標記相應的版本號。這個分支通常只包含穩定的代碼，並且代表了隨時可以部署的代碼。</p>
+</li>
+<li><p><strong>develop 分支</strong>：<br><code>develop</code> 分支用於開發中的代碼。所有的功能開發都應該從這個分支進行，並且當開發完成後，合併回 <code>develop</code>。這個分支是整個項目的集成區，開發人員應該從 <code>develop</code> 分支開始開發新功能。</p>
+</li>
+</ol>
+<h4 id="1-2-輔助分支"><a href="#1-2-輔助分支" class="headerlink" title="1.2 輔助分支"></a>1.2 輔助分支</h4><ol>
+<li><p><strong>feature 分支</strong>：<br><code>feature</code> 分支用於開發新的功能。每個新功能都應該從 <code>develop</code> 分支創建一個新的 <code>feature</code> 分支，並且在功能開發完成後，將該分支合併回 <code>develop</code> 分支。<code>feature</code> 分支的命名通常為 <code>feature/&lt;功能名稱&gt;</code>。</p>
+</li>
+<li><p><strong>release 分支</strong>：<br>當 <code>develop</code> 分支上的代碼準備好進入測試階段時，會創建一個 <code>release</code> 分支。這個分支用來準備最終的發佈版本。在 <code>release</code> 分支上進行的主要工作包括 bug 修復、文檔編寫等，確保最終版本的穩定性。當測試完成並且代碼準備發佈時，<code>release</code> 分支會被合併到 <code>master</code> 和 <code>develop</code> 分支。</p>
+</li>
+<li><p><strong>hotfix 分支</strong>：<br><code>hotfix</code> 分支用於修復已經發佈到 <code>master</code> 分支的緊急錯誤。當發佈的版本發現重大問題時，可以立即從 <code>master</code> 分支創建 <code>hotfix</code> 分支，進行修復後，將其合併回 <code>master</code> 和 <code>develop</code> 分支。</p>
+</li>
+</ol>
+<h4 id="1-3-Git-Flow-的流程"><a href="#1-3-Git-Flow-的流程" class="headerlink" title="1.3 Git Flow 的流程"></a>1.3 Git Flow 的流程</h4><p>Git Flow 的流程大致如下：</p>
+<ul>
+<li>開發新功能時，從 <code>develop</code> 分支創建 <code>feature</code> 分支。</li>
+<li>當 <code>feature</code> 分支開發完成後，合併回 <code>develop</code> 分支。</li>
+<li>當代碼達到穩定版本，創建 <code>release</code> 分支，進行測試和 bug 修復。</li>
+<li>測試完成後，將 <code>release</code> 分支合併回 <code>master</code> 和 <code>develop</code> 分支，並標註版本。</li>
+<li>若發現緊急錯誤，從 <code>master</code> 分支創建 <code>hotfix</code> 分支，進行修復並合併回 <code>master</code> 和 <code>develop</code>。</li>
+</ul>
+<h1 id="二、GitHub-Flow-介紹"><a href="#二、GitHub-Flow-介紹" class="headerlink" title="二、GitHub Flow 介紹"></a>二、GitHub Flow 介紹</h1><p>GitHub Flow 是 GitHub 提出的另一種工作流，主要針對快速迭代和持續集成的開發模式。與 Git Flow 複雜的分支管理相比，GitHub Flow 更加簡單和輕量，適合需要快速交付和頻繁部署的團隊。GitHub Flow 主要有以下幾個步驟：</p>
+<h4 id="2-1-GitHub-Flow-的基本流程"><a href="#2-1-GitHub-Flow-的基本流程" class="headerlink" title="2.1 GitHub Flow 的基本流程"></a>2.1 GitHub Flow 的基本流程</h4><ol>
+<li><p><strong>創建分支</strong>：<br>每當開始一個新功能或修復一個 bug 時，都應該從 <code>main</code> 分支創建一個新的分支。這個分支通常用來開發新的特性或修復某個問題。</p>
+</li>
+<li><p><strong>開發與提交</strong>：<br>在新創建的分支上進行開發，並定期將代碼提交到遠程倉庫。這些提交應該是增量的，便於代碼審查和測試。</p>
+</li>
+<li><p><strong>發送 Pull Request</strong>：<br>當開發完成後，將自己的分支提交為 Pull Request（PR），並請求團隊成員進行代碼審查。PR 是 GitHub Flow 中的關鍵步驟，能夠確保代碼的質量和協作。</p>
+</li>
+<li><p><strong>代碼審查與測試</strong>：<br>團隊成員進行代碼審查，確保代碼的質量和功能正確性。GitHub Flow 推崇頻繁的測試和集成，因此在 Pull Request 發送後，通常會自動觸發 CI（持續集成）測試，檢查代碼是否有錯誤。</p>
+</li>
+<li><p><strong>合併分支</strong>：<br>經過代碼審查和測試後，Pull Request 被批准，並將代碼合併到 <code>main</code> 分支。此時，新的代碼版本已經可以進行部署。</p>
+</li>
+<li><p><strong>部署與發佈</strong>：<br>GitHub Flow 的一大優勢是可以實現持續部署。當代碼合併到 <code>main</code> 分支後，可以立即部署到生產環境，快速交付新版本。</p>
+</li>
+</ol>
+<h4 id="2-2-GitHub-Flow-的特點"><a href="#2-2-GitHub-Flow-的特點" class="headerlink" title="2.2 GitHub Flow 的特點"></a>2.2 GitHub Flow 的特點</h4><p>GitHub Flow 的流程非常簡單，沒有像 Git Flow 那樣的複雜分支結構，適合小型和中型的項目。它的優點在於快速迭代和持續交付，並且便於團隊成員協作。GitHub Flow 更加強調分支管理的簡化，並且強調測試和部署的自動化。</p>
+<h1 id="三、Git-Flow-與-GitHub-Flow-的比較"><a href="#三、Git-Flow-與-GitHub-Flow-的比較" class="headerlink" title="三、Git Flow 與 GitHub Flow 的比較"></a>三、Git Flow 與 GitHub Flow 的比較</h1><ul>
+<li><p><strong>分支結構</strong>：<br>Git Flow 有多個分支（<code>master</code>、<code>develop</code>、<code>feature</code>、<code>release</code>、<code>hotfix</code>），適用於需要穩定版本發佈的團隊。而 GitHub Flow 只有 <code>main</code> 分支和特性分支，適用於快速迭代和持續集成的開發模式。</p>
+</li>
+<li><p><strong>適用場景</strong>：<br>Git Flow 更適合複雜的開發流程，尤其是有多個版本和發佈周期的項目。GitHub Flow 更適合快速迭代的小型或中型項目，尤其是需要頻繁部署和交付的團隊。</p>
+</li>
+<li><p><strong>流程複雜度</strong>：<br>Git Flow 的流程較為繁瑣，對於小型團隊來說可能會顯得過於複雜。GitHub Flow 流程簡單，適合希望保持敏捷和快速交付的團隊。</p>
+</li>
+</ul>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>Git Flow 和 GitHub Flow 各有優缺點，適用的場景也有所不同。選擇哪一種工作流，應根據團隊的規模、項目的複雜度以及發佈頻率來決定。對於需要穩定發佈和多版本管理的項目，Git Flow 是一個更好的選擇。而對於需要快速迭代和頻繁部署的小型項目，GitHub Flow 則是一個更簡單有效的選擇。</p>
+]]></content>
+      <tags>
+        <tag>Github</tag>
+        <tag>Git</tag>
+        <tag>Git Flow</tag>
+        <tag>Github Flow</tag>
       </tags>
   </entry>
   <entry>
@@ -3160,13 +3254,18 @@
 <hr>
 <h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>GitHub Copilot 已從單純的程式補全工具，蛻變為具備理解上下文、可互動操作的智慧開發代理人。透過 Copilot Agent，你不僅能提升撰寫速度，還能更高層次地規劃、修改與維護專案。</p>
 <p>對個人開發者而言，Copilot 是每日開發的好助手；對團隊而言，Copilot Agent 更像是一位全天候不下班的開發實習生，協助你管理技術債、維護程式庫、強化開發工作流。</p>
+<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
+<li><a href="https://github.com/doggy8088/github-copilot-configs">最佳 GitHub Copilot 設定</a></li>
+<li><a href="https://medium.com/@cct0201/%E5%BE%9E-%E5%AF%AB%E7%A8%8B%E5%BC%8F-%E5%88%B0-%E8%88%87-ai-%E5%85%B1%E8%88%9E-%E6%88%91%E5%9C%A8%E5%85%AC%E5%8F%B8%E6%8E%A8%E5%8B%95-vibe-coding-%E7%9A%84%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB-015e28909290">從「寫程式」到「與 AI 共舞」── 我在公司推動 Vibe Coding 的經驗分享</a></li>
+<li><a href="https://gitmind.com/tw/best-vibe-coding-tools-2025.html">2025 年最強推薦 Vibe Coding 工具一次看懂</a></li>
+</ol>
 ]]></content>
       <tags>
+        <tag>編輯器</tag>
         <tag>GitHub</tag>
         <tag>GitHub Copilot</tag>
         <tag>Copilot</tag>
         <tag>Copilot Agent</tag>
-        <tag>編輯器</tag>
       </tags>
   </entry>
   <entry>
@@ -3954,6 +4053,123 @@
       </tags>
   </entry>
   <entry>
+    <title>JavaScript this 使用情境入門教學筆記 | 學習筆記</title>
+    <url>/2023/12/21/learning-notes-javascript-event-input-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在 JavaScript 中，箭頭函式（arrow function）與傳統函式在 <code>this</code> 的行為上有一些不同。箭頭函式不會創建自己的 <code>this</code>，而是繼承外部作用域的 <code>this</code>，這就是為什麼你會遇到 <code>this</code> 的問題。</p>
+<h3 id="傳統函式中的-this"><a href="#傳統函式中的-this" class="headerlink" title="傳統函式中的 this"></a>傳統函式中的 <code>this</code></h3><p>在傳統的函式中，<code>this</code> 會指向該函式被調用時的上下文。例如，當函式作為事件處理器時，<code>this</code> 會指向觸發事件的元素。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">regularFunction</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);  <span class="comment">// &#x27;this&#x27; 是調用它的上下文</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;KD&#x27;</span>,</span><br><span class="line">  <span class="attr">show</span>: regularFunction</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">show</span>();  <span class="comment">// &#x27;this&#x27; 會指向 obj</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="箭頭函式中的-this"><a href="#箭頭函式中的-this" class="headerlink" title="箭頭函式中的 this"></a>箭頭函式中的 <code>this</code></h3><p>在箭頭函式中，<code>this</code> 並不會綁定到函式的上下文，而是繼承自外部作用域。這通常會讓箭頭函式的 <code>this</code> 變得不同於你預期的結果。</p>
+<h3 id="例子：this-的問題"><a href="#例子：this-的問題" class="headerlink" title="例子：this 的問題"></a>例子：<code>this</code> 的問題</h3><p>假設有這樣的情境，當你在一個物件的方法中使用箭頭函式作為事件處理器，<code>this</code> 會指向外部作用域，而不是該物件本身。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;KD&#x27;</span>,</span><br><span class="line">  <span class="attr">show</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 使用傳統函式作為事件處理器</span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>).<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);  <span class="comment">// &#x27;this&#x27; 指向的是 &#x27;btn&#x27; 按鈕元素</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用箭頭函式作為事件處理器</span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>).<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);  <span class="comment">// &#x27;this&#x27; 指向外部作用域，即 &#x27;obj&#x27; 物件</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">show</span>();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在傳統函式中，<code>this</code> 會指向觸發事件的 DOM 元素（這裡是 <code>btn</code> 按鈕）。</li>
+<li>在箭頭函式中，<code>this</code> 會指向外部作用域（這裡是 <code>obj</code> 物件），因為箭頭函式不會創建自己的 <code>this</code>。</li>
+</ul>
+<h3 id="解決方案：確保-this-正確指向"><a href="#解決方案：確保-this-正確指向" class="headerlink" title="解決方案：確保 this 正確指向"></a>解決方案：確保 <code>this</code> 正確指向</h3><p>如果你希望 <code>this</code> 指向物件本身，可以使用傳統函式或手動綁定 <code>this</code>。</p>
+<h4 id="使用傳統函式"><a href="#使用傳統函式" class="headerlink" title="使用傳統函式"></a>使用傳統函式</h4><p>如果你希望在事件處理器中讓 <code>this</code> 指向物件本身，可以使用傳統函式，或者使用 <code>bind</code> 顯式綁定 <code>this</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;KD&#x27;</span>,</span><br><span class="line">  <span class="attr">show</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>).<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);  <span class="comment">// &#x27;this&#x27; 指向 obj</span></span><br><span class="line">    &#125;.<span class="title function_">bind</span>(<span class="variable language_">this</span>));  <span class="comment">// 顯式綁定 &#x27;this&#x27; 到 obj</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">show</span>();</span><br></pre></td></tr></table></figure>
+
+<h4 id="另一個選項：箭頭函式和外部-this"><a href="#另一個選項：箭頭函式和外部-this" class="headerlink" title="另一個選項：箭頭函式和外部 this"></a>另一個選項：箭頭函式和外部 <code>this</code></h4><p>如果你希望繼續使用箭頭函式，你可以將物件的 <code>this</code> 儲存到外部變數中，並在箭頭函式中引用它。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;KD&#x27;</span>,</span><br><span class="line">  <span class="attr">show</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> self = <span class="variable language_">this</span>;  <span class="comment">// 保存物件的 &#x27;this&#x27;</span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>).<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(self);  <span class="comment">// 使用外部的 &#x27;self&#x27;，指向 obj</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">show</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><ul>
+<li><strong>傳統函式</strong> 會根據調用上下文決定 <code>this</code> 的值。</li>
+<li><strong>箭頭函式</strong> 會繼承外部作用域的 <code>this</code>，不會創建自己的 <code>this</code>，這樣在某些情況下會導致 <code>this</code> 不如預期。</li>
+<li>如果你需要在事件處理器中使用物件的 <code>this</code>，可以選擇使用傳統函式或顯式綁定 <code>this</code>。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>this</tag>
+        <tag>arrow function</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>setTimeout + for loop + closure 核心介紹入門教學筆記 | 學習筆記</title>
+    <url>/2023/07/01/learning-notes-javascript-event-loop-closure-problems/</url>
+    <content><![CDATA[<h3 id="一、var-和-let-的作用域差異"><a href="#一、var-和-let-的作用域差異" class="headerlink" title="一、var 和 let 的作用域差異"></a>一、<code>var</code> 和 <code>let</code> 的作用域差異</h3><table>
+<thead>
+<tr>
+<th>宣告方式</th>
+<th>作用域</th>
+<th>是否有暫時性死區（TDZ）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>var</code></td>
+<td>函式作用域</td>
+<td>否</td>
+</tr>
+<tr>
+<td><code>let</code></td>
+<td>區塊作用域</td>
+<td>是</td>
+</tr>
+<tr>
+<td><code>const</code></td>
+<td>區塊作用域</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>var</code> 宣告的變數在整個函式內都可存取</li>
+<li><code>let</code> 則只在所在區塊 <code>&#123;&#125;</code> 中有效</li>
+</ul>
+<hr>
+<h3 id="二、閉包（Closure）"><a href="#二、閉包（Closure）" class="headerlink" title="二、閉包（Closure）"></a>二、閉包（Closure）</h3><p>閉包是指「函式能記住它被定義時的作用域，即使在外部執行也能存取當時的變數」。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">outer</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> <span class="title function_">inner</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(count++);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fn = <span class="title function_">outer</span>();</span><br><span class="line"><span class="title function_">fn</span>(); <span class="comment">// 0</span></span><br><span class="line"><span class="title function_">fn</span>(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<p>這個例子中，<code>inner</code> 函式記住了 <code>outer</code> 中的 <code>count</code> 變數。</p>
+<hr>
+<h3 id="三、事件迴圈與-setTimeout"><a href="#三、事件迴圈與-setTimeout" class="headerlink" title="三、事件迴圈與 setTimeout"></a>三、事件迴圈與 <code>setTimeout</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;start&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;timeout&quot;</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;end&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>輸出順序：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">start</span><br><span class="line">end</span><br><span class="line">timeout</span><br></pre></td></tr></table></figure>
+
+<p>原因是 <code>setTimeout</code> 是非同步的，它會被放入「事件佇列」（event queue）中，等主程式執行完後才會被處理。</p>
+<hr>
+<h3 id="四、面試陷阱：var-與-setTimeout-搭配"><a href="#四、面試陷阱：var-與-setTimeout-搭配" class="headerlink" title="四、面試陷阱：var 與 setTimeout 搭配"></a>四、面試陷阱：<code>var</code> 與 <code>setTimeout</code> 搭配</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這段程式的輸出是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">3</span><br><span class="line">3</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<p>因為：</p>
+<ul>
+<li><code>var</code> 沒有區塊作用域，所有的 <code>setTimeout</code> 都引用同一個 <code>i</code></li>
+<li>當 <code>setTimeout</code> 執行時，迴圈已跑完，<code>i</code> 已是 3</li>
+</ul>
+<hr>
+<h3 id="五、正確解法：使用-let"><a href="#五、正確解法：使用-let" class="headerlink" title="五、正確解法：使用 let"></a>五、正確解法：使用 <code>let</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>輸出為：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<p>因為 <code>let</code> 有區塊作用域，每次迴圈都建立新的 <code>i</code>，閉包會記住各自的值。</p>
+<hr>
+<h3 id="六、另一個解法：IIFE（立即執行函式）"><a href="#六、另一個解法：IIFE（立即執行函式）" class="headerlink" title="六、另一個解法：IIFE（立即執行函式）"></a>六、另一個解法：IIFE（立即執行函式）</h3><p>若必須用 <code>var</code>，可以用 IIFE 綁定每次的 <code>i</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  (<span class="keyword">function</span>(<span class="params">j</span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(j);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣也會正確輸出：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="七、總結"><a href="#七、總結" class="headerlink" title="七、總結"></a>七、總結</h3><ol>
+<li><code>var</code> 是函式作用域，容易被非同步邏輯影響</li>
+<li><code>let</code> 是區塊作用域，與閉包搭配可解決常見陷阱</li>
+<li><code>setTimeout</code> 是非同步，會延遲執行</li>
+<li>通常面試會結合這些概念出題，考你對 JavaScript 執行流程、作用域與閉包的理解</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>setTimeout</tag>
+        <tag>for loop</tag>
+        <tag>closure</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript 模組（Module）入門教學筆記 | 學習筆記</title>
     <url>/2024/12/16/learning-notes-javascript-es-module-intro-tutorial/</url>
     <content><![CDATA[<h2 id="1-什麼是-JavaScript-模組？"><a href="#1-什麼是-JavaScript-模組？" class="headerlink" title="1. 什麼是 JavaScript 模組？"></a><strong>1. 什麼是 JavaScript 模組？</strong></h2><p>JavaScript 模組（Module）是一種<strong>將程式碼拆分成多個獨立文件</strong>，並在不同文件間共享和管理程式碼的方式。透過模組化的設計，可以讓程式碼更具結構性、可讀性與可維護性。</p>
@@ -4091,123 +4307,6 @@
         <tag>frontend engineer</tag>
         <tag>模組</tag>
         <tag>module</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaScript this 使用情境入門教學筆記 | 學習筆記</title>
-    <url>/2023/12/21/learning-notes-javascript-event-input-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在 JavaScript 中，箭頭函式（arrow function）與傳統函式在 <code>this</code> 的行為上有一些不同。箭頭函式不會創建自己的 <code>this</code>，而是繼承外部作用域的 <code>this</code>，這就是為什麼你會遇到 <code>this</code> 的問題。</p>
-<h3 id="傳統函式中的-this"><a href="#傳統函式中的-this" class="headerlink" title="傳統函式中的 this"></a>傳統函式中的 <code>this</code></h3><p>在傳統的函式中，<code>this</code> 會指向該函式被調用時的上下文。例如，當函式作為事件處理器時，<code>this</code> 會指向觸發事件的元素。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">regularFunction</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);  <span class="comment">// &#x27;this&#x27; 是調用它的上下文</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;KD&#x27;</span>,</span><br><span class="line">  <span class="attr">show</span>: regularFunction</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">show</span>();  <span class="comment">// &#x27;this&#x27; 會指向 obj</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="箭頭函式中的-this"><a href="#箭頭函式中的-this" class="headerlink" title="箭頭函式中的 this"></a>箭頭函式中的 <code>this</code></h3><p>在箭頭函式中，<code>this</code> 並不會綁定到函式的上下文，而是繼承自外部作用域。這通常會讓箭頭函式的 <code>this</code> 變得不同於你預期的結果。</p>
-<h3 id="例子：this-的問題"><a href="#例子：this-的問題" class="headerlink" title="例子：this 的問題"></a>例子：<code>this</code> 的問題</h3><p>假設有這樣的情境，當你在一個物件的方法中使用箭頭函式作為事件處理器，<code>this</code> 會指向外部作用域，而不是該物件本身。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;KD&#x27;</span>,</span><br><span class="line">  <span class="attr">show</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 使用傳統函式作為事件處理器</span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>).<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);  <span class="comment">// &#x27;this&#x27; 指向的是 &#x27;btn&#x27; 按鈕元素</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用箭頭函式作為事件處理器</span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>).<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);  <span class="comment">// &#x27;this&#x27; 指向外部作用域，即 &#x27;obj&#x27; 物件</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">show</span>();</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>在傳統函式中，<code>this</code> 會指向觸發事件的 DOM 元素（這裡是 <code>btn</code> 按鈕）。</li>
-<li>在箭頭函式中，<code>this</code> 會指向外部作用域（這裡是 <code>obj</code> 物件），因為箭頭函式不會創建自己的 <code>this</code>。</li>
-</ul>
-<h3 id="解決方案：確保-this-正確指向"><a href="#解決方案：確保-this-正確指向" class="headerlink" title="解決方案：確保 this 正確指向"></a>解決方案：確保 <code>this</code> 正確指向</h3><p>如果你希望 <code>this</code> 指向物件本身，可以使用傳統函式或手動綁定 <code>this</code>。</p>
-<h4 id="使用傳統函式"><a href="#使用傳統函式" class="headerlink" title="使用傳統函式"></a>使用傳統函式</h4><p>如果你希望在事件處理器中讓 <code>this</code> 指向物件本身，可以使用傳統函式，或者使用 <code>bind</code> 顯式綁定 <code>this</code>。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;KD&#x27;</span>,</span><br><span class="line">  <span class="attr">show</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>).<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);  <span class="comment">// &#x27;this&#x27; 指向 obj</span></span><br><span class="line">    &#125;.<span class="title function_">bind</span>(<span class="variable language_">this</span>));  <span class="comment">// 顯式綁定 &#x27;this&#x27; 到 obj</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">show</span>();</span><br></pre></td></tr></table></figure>
-
-<h4 id="另一個選項：箭頭函式和外部-this"><a href="#另一個選項：箭頭函式和外部-this" class="headerlink" title="另一個選項：箭頭函式和外部 this"></a>另一個選項：箭頭函式和外部 <code>this</code></h4><p>如果你希望繼續使用箭頭函式，你可以將物件的 <code>this</code> 儲存到外部變數中，並在箭頭函式中引用它。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;KD&#x27;</span>,</span><br><span class="line">  <span class="attr">show</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> self = <span class="variable language_">this</span>;  <span class="comment">// 保存物件的 &#x27;this&#x27;</span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>).<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(self);  <span class="comment">// 使用外部的 &#x27;self&#x27;，指向 obj</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">show</span>();</span><br></pre></td></tr></table></figure>
-
-<h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><ul>
-<li><strong>傳統函式</strong> 會根據調用上下文決定 <code>this</code> 的值。</li>
-<li><strong>箭頭函式</strong> 會繼承外部作用域的 <code>this</code>，不會創建自己的 <code>this</code>，這樣在某些情況下會導致 <code>this</code> 不如預期。</li>
-<li>如果你需要在事件處理器中使用物件的 <code>this</code>，可以選擇使用傳統函式或顯式綁定 <code>this</code>。</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>this</tag>
-        <tag>arrow function</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>setTimeout + for loop + closure 核心介紹入門教學筆記 | 學習筆記</title>
-    <url>/2023/07/01/learning-notes-javascript-event-loop-closure-problems/</url>
-    <content><![CDATA[<h3 id="一、var-和-let-的作用域差異"><a href="#一、var-和-let-的作用域差異" class="headerlink" title="一、var 和 let 的作用域差異"></a>一、<code>var</code> 和 <code>let</code> 的作用域差異</h3><table>
-<thead>
-<tr>
-<th>宣告方式</th>
-<th>作用域</th>
-<th>是否有暫時性死區（TDZ）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>var</code></td>
-<td>函式作用域</td>
-<td>否</td>
-</tr>
-<tr>
-<td><code>let</code></td>
-<td>區塊作用域</td>
-<td>是</td>
-</tr>
-<tr>
-<td><code>const</code></td>
-<td>區塊作用域</td>
-<td>是</td>
-</tr>
-</tbody></table>
-<ul>
-<li><code>var</code> 宣告的變數在整個函式內都可存取</li>
-<li><code>let</code> 則只在所在區塊 <code>&#123;&#125;</code> 中有效</li>
-</ul>
-<hr>
-<h3 id="二、閉包（Closure）"><a href="#二、閉包（Closure）" class="headerlink" title="二、閉包（Closure）"></a>二、閉包（Closure）</h3><p>閉包是指「函式能記住它被定義時的作用域，即使在外部執行也能存取當時的變數」。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">outer</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> <span class="title function_">inner</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(count++);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fn = <span class="title function_">outer</span>();</span><br><span class="line"><span class="title function_">fn</span>(); <span class="comment">// 0</span></span><br><span class="line"><span class="title function_">fn</span>(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-
-<p>這個例子中，<code>inner</code> 函式記住了 <code>outer</code> 中的 <code>count</code> 變數。</p>
-<hr>
-<h3 id="三、事件迴圈與-setTimeout"><a href="#三、事件迴圈與-setTimeout" class="headerlink" title="三、事件迴圈與 setTimeout"></a>三、事件迴圈與 <code>setTimeout</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;start&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;timeout&quot;</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;end&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>輸出順序：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">start</span><br><span class="line">end</span><br><span class="line">timeout</span><br></pre></td></tr></table></figure>
-
-<p>原因是 <code>setTimeout</code> 是非同步的，它會被放入「事件佇列」（event queue）中，等主程式執行完後才會被處理。</p>
-<hr>
-<h3 id="四、面試陷阱：var-與-setTimeout-搭配"><a href="#四、面試陷阱：var-與-setTimeout-搭配" class="headerlink" title="四、面試陷阱：var 與 setTimeout 搭配"></a>四、面試陷阱：<code>var</code> 與 <code>setTimeout</code> 搭配</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這段程式的輸出是：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">3</span><br><span class="line">3</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
-
-<p>因為：</p>
-<ul>
-<li><code>var</code> 沒有區塊作用域，所有的 <code>setTimeout</code> 都引用同一個 <code>i</code></li>
-<li>當 <code>setTimeout</code> 執行時，迴圈已跑完，<code>i</code> 已是 3</li>
-</ul>
-<hr>
-<h3 id="五、正確解法：使用-let"><a href="#五、正確解法：使用-let" class="headerlink" title="五、正確解法：使用 let"></a>五、正確解法：使用 <code>let</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>輸出為：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-<p>因為 <code>let</code> 有區塊作用域，每次迴圈都建立新的 <code>i</code>，閉包會記住各自的值。</p>
-<hr>
-<h3 id="六、另一個解法：IIFE（立即執行函式）"><a href="#六、另一個解法：IIFE（立即執行函式）" class="headerlink" title="六、另一個解法：IIFE（立即執行函式）"></a>六、另一個解法：IIFE（立即執行函式）</h3><p>若必須用 <code>var</code>，可以用 IIFE 綁定每次的 <code>i</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  (<span class="keyword">function</span>(<span class="params">j</span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(j);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這樣也會正確輸出：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="七、總結"><a href="#七、總結" class="headerlink" title="七、總結"></a>七、總結</h3><ol>
-<li><code>var</code> 是函式作用域，容易被非同步邏輯影響</li>
-<li><code>let</code> 是區塊作用域，與閉包搭配可解決常見陷阱</li>
-<li><code>setTimeout</code> 是非同步，會延遲執行</li>
-<li>通常面試會結合這些概念出題，考你對 JavaScript 執行流程、作用域與閉包的理解</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>javascript</tag>
-        <tag>setTimeout</tag>
-        <tag>for loop</tag>
-        <tag>closure</tag>
       </tags>
   </entry>
   <entry>
@@ -5035,83 +5134,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JWT 入門教學筆記 | 學習筆記</title>
-    <url>/2023/12/20/learning-notes-jwt-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在現代 Web 應用中，使用者認證與授權機制是系統安全的重要基礎。傳統上，我們可能使用 Session 與 Cookie 搭配伺服器端儲存進行身份驗證；但在前後端分離、多平台（Web、Mobile、API Gateway）應用日益普及的情況下，更輕量、跨平台、無狀態的驗證方案逐漸成為主流。</p>
-<p>JWT（JSON Web Token）正是這樣一種流行的解法。它是一種根據 JSON 格式加密後產生的 Token，可用來安全地在用戶與伺服器間傳遞資訊。</p>
-<hr>
-<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
-<li><p>JWT 是一種開放標準（RFC 7519），用於在雙方之間以 JSON 格式安全傳遞資訊。</p>
-</li>
-<li><p>結構由三部分組成：<code>Header</code>.<code>Payload</code>.<code>Signature</code>。</p>
-</li>
-<li><p>主要用途：</p>
-<ul>
-<li><strong>身份認證（Authentication）</strong></li>
-<li><strong>授權（Authorization）</strong></li>
-</ul>
-</li>
-<li><p>特點：</p>
-<ul>
-<li>可跨語言與平台使用</li>
-<li>支援無狀態驗證（不需伺服器端儲存 session）</li>
-<li>可設定過期時間與自訂 Payload 欄位</li>
-</ul>
-</li>
-<li><p>常見應用場景：API Token 驗證、行動裝置登入狀態維持、OAuth 搭配使用</p>
-</li>
-<li><p>JWT 須透過 HTTPS 傳遞以避免中間人攻擊（MITM）</p>
-</li>
-<li><p>不適合儲存敏感資訊（如密碼、信用卡號）</p>
-</li>
-</ul>
-<hr>
-<h2 id="JWT-結構說明"><a href="#JWT-結構說明" class="headerlink" title="JWT 結構說明"></a>JWT 結構說明</h2><p>一個 JWT 字串長得像這樣：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.</span><br><span class="line">eyJ1c2VySWQiOiIxMjM0IiwibmFtZSI6IktEIiwiZXhwIjoxNzAwMDAwMDAwfQ.</span><br><span class="line">sKPXrY3AvKb0aBQKgYF3mn7ZWh9yGpyF2X2NFie5TIU</span><br></pre></td></tr></table></figure>
-
-<p>它由三個部分組成，透過 <code>.</code> 分隔：</p>
-<ol>
-<li><strong>Header</strong>：定義演算法（如 <code>HS256</code>）與類型（<code>JWT</code>）。</li>
-<li><strong>Payload</strong>：承載實際資料（如使用者 ID、帳號、過期時間）。</li>
-<li><strong>Signature</strong>：用密鑰加密前兩部分，用於驗證是否被竄改。</li>
-</ol>
-<hr>
-<h2 id="實作範例（Node-js-ESM）"><a href="#實作範例（Node-js-ESM）" class="headerlink" title="實作範例（Node.js + ESM）"></a>實作範例（Node.js + ESM）</h2><h3 id="安裝必要套件"><a href="#安裝必要套件" class="headerlink" title="安裝必要套件"></a>安裝必要套件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install express jsonwebtoken dotenv</span><br></pre></td></tr></table></figure>
-
-<h3 id="專案架構"><a href="#專案架構" class="headerlink" title="專案架構"></a>專案架構</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project/</span><br><span class="line">├── index.js</span><br><span class="line">├── routes/</span><br><span class="line">│   └── auth.js</span><br><span class="line">├── .env</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="env-檔（儲存密鑰）"><a href="#env-檔（儲存密鑰）" class="headerlink" title=".env 檔（儲存密鑰）"></a><code>.env</code> 檔（儲存密鑰）</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">JWT_SECRET=mysecretkey123</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="routes-auth-js"><a href="#routes-auth-js" class="headerlink" title="routes/auth.js"></a><code>routes/auth.js</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> express <span class="keyword">from</span> <span class="string">&#x27;express&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> jwt <span class="keyword">from</span> <span class="string">&#x27;jsonwebtoken&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> dotenv <span class="keyword">from</span> <span class="string">&#x27;dotenv&#x27;</span>;</span><br><span class="line"></span><br><span class="line">dotenv.<span class="title function_">config</span>();</span><br><span class="line"><span class="keyword">const</span> router = express.<span class="title class_">Router</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 模擬使用者登入</span></span><br><span class="line">router.<span class="title function_">post</span>(<span class="string">&#x27;/login&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; username, password &#125; = req.<span class="property">body</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 模擬帳密驗證（實際應從 DB 查詢）</span></span><br><span class="line">  <span class="keyword">if</span> (username === <span class="string">&#x27;admin&#x27;</span> &amp;&amp; password === <span class="string">&#x27;123456&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> payload = &#123;</span><br><span class="line">      <span class="attr">userId</span>: <span class="string">&#x27;abc123&#x27;</span>,</span><br><span class="line">      <span class="attr">username</span>: <span class="string">&#x27;admin&#x27;</span>,</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 簽發 Token，過期時間為 1 小時</span></span><br><span class="line">    <span class="keyword">const</span> token = jwt.<span class="title function_">sign</span>(payload, process.<span class="property">env</span>.<span class="property">JWT_SECRET</span>, &#123;</span><br><span class="line">      <span class="attr">expiresIn</span>: <span class="string">&#x27;1h&#x27;</span>,</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res.<span class="title function_">json</span>(&#123; token &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  res.<span class="title function_">status</span>(<span class="number">401</span>).<span class="title function_">json</span>(&#123; <span class="attr">error</span>: <span class="string">&#x27;帳號或密碼錯誤&#x27;</span> &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 受保護資源</span></span><br><span class="line">router.<span class="title function_">get</span>(<span class="string">&#x27;/profile&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> authHeader = req.<span class="property">headers</span>.<span class="property">authorization</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!authHeader || !authHeader.<span class="title function_">startsWith</span>(<span class="string">&#x27;Bearer &#x27;</span>)) &#123;</span><br><span class="line">    <span class="keyword">return</span> res.<span class="title function_">status</span>(<span class="number">401</span>).<span class="title function_">json</span>(&#123; <span class="attr">error</span>: <span class="string">&#x27;請提供 Token&#x27;</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> token = authHeader.<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>)[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> decoded = jwt.<span class="title function_">verify</span>(token, process.<span class="property">env</span>.<span class="property">JWT_SECRET</span>);</span><br><span class="line">    res.<span class="title function_">json</span>(&#123; <span class="attr">message</span>: <span class="string">&#x27;驗證成功&#x27;</span>, <span class="attr">user</span>: decoded &#125;);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    res.<span class="title function_">status</span>(<span class="number">401</span>).<span class="title function_">json</span>(&#123; <span class="attr">error</span>: <span class="string">&#x27;Token 無效或過期&#x27;</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a><code>index.js</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> express <span class="keyword">from</span> <span class="string">&#x27;express&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> authRouter <span class="keyword">from</span> <span class="string">&#x27;./routes/auth.js&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">json</span>());</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(<span class="string">&#x27;/api&#x27;</span>, authRouter);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PORT</span> = process.<span class="property">env</span>.<span class="property">PORT</span> || <span class="number">3000</span>;</span><br><span class="line">app.<span class="title function_">listen</span>(<span class="variable constant_">PORT</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Server running at http://localhost:<span class="subst">$&#123;PORT&#125;</span>`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="測試流程"><a href="#測試流程" class="headerlink" title="測試流程"></a>測試流程</h2><ol>
-<li>發送 <code>POST /api/login</code> 並附上正確帳密（如 <code>admin</code> &#x2F; <code>123456</code>），取得 JWT。</li>
-<li>將該 JWT 作為 <code>Authorization: Bearer &lt;token&gt;</code> 放入 Header 中，請求 <code>GET /api/profile</code>。</li>
-<li>若驗證成功，API 會回傳對應使用者資訊；若失敗，則回傳錯誤訊息。</li>
-</ol>
-<hr>
-<h2 id="常見安全注意事項"><a href="#常見安全注意事項" class="headerlink" title="常見安全注意事項"></a>常見安全注意事項</h2><ul>
-<li><strong>使用 HTTPS</strong>：JWT 應透過 HTTPS 傳輸，避免中間人攻擊。</li>
-<li><strong>設定適當過期時間</strong>：避免長期有效的 Token 被盜用。</li>
-<li><strong>避免儲存敏感資訊於 Payload</strong>：Payload 是可被解碼的（雖然不可修改），不應含有密碼、信用卡資訊等。</li>
-<li><strong>支援 Token 失效機制（如 Token 黑名單）</strong>：JWT 是無狀態的，若要強制登出或封鎖，需額外設計邏輯。</li>
-</ul>
-<hr>
-<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>JWT 是實作登入與驗證的重要工具，具有無狀態、跨平台、可擴充的特性，特別適合 API 驗證場景。本文透過簡單的 Node.js + Express 實作，展示如何產生與驗證 JWT，並說明常見應用與安全注意事項。</p>
-<p>不論你是單頁應用 SPA 開發者，還是撰寫 RESTful API 的後端工程師，掌握 JWT 都將大幅提升你的系統安全與擴充能力。</p>
-]]></content>
-      <tags>
-        <tag>JWT</tag>
-        <tag>Refresh Token</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JWT 使用好處入門教學筆記 | 學習筆記</title>
     <url>/2023/12/21/learning-notes-jwt-pros-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>JWT（JSON Web Token）</strong> 的好處在於它是輕量、跨平台、無狀態的驗證與授權機制，特別適合用於前後端分離、微服務架構與 API 驗證。以下是它的主要優點：</p>
@@ -5230,6 +5252,83 @@
 </tbody></table>
 <hr>
 <h2 id="五、總結"><a href="#五、總結" class="headerlink" title="五、總結"></a>五、總結</h2><p>JWT 的優勢在於簡潔、無狀態、可擴展，特別適合 API 驗證與前後端分離架構。然而，要發揮 JWT 的最大效益並保障安全，開發者需了解其限制，搭配正確實作（如過期、黑名單、HTTPS、Refresh Token 管理等）。</p>
+]]></content>
+      <tags>
+        <tag>JWT</tag>
+        <tag>Refresh Token</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JWT 入門教學筆記 | 學習筆記</title>
+    <url>/2023/12/20/learning-notes-jwt-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在現代 Web 應用中，使用者認證與授權機制是系統安全的重要基礎。傳統上，我們可能使用 Session 與 Cookie 搭配伺服器端儲存進行身份驗證；但在前後端分離、多平台（Web、Mobile、API Gateway）應用日益普及的情況下，更輕量、跨平台、無狀態的驗證方案逐漸成為主流。</p>
+<p>JWT（JSON Web Token）正是這樣一種流行的解法。它是一種根據 JSON 格式加密後產生的 Token，可用來安全地在用戶與伺服器間傳遞資訊。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p>JWT 是一種開放標準（RFC 7519），用於在雙方之間以 JSON 格式安全傳遞資訊。</p>
+</li>
+<li><p>結構由三部分組成：<code>Header</code>.<code>Payload</code>.<code>Signature</code>。</p>
+</li>
+<li><p>主要用途：</p>
+<ul>
+<li><strong>身份認證（Authentication）</strong></li>
+<li><strong>授權（Authorization）</strong></li>
+</ul>
+</li>
+<li><p>特點：</p>
+<ul>
+<li>可跨語言與平台使用</li>
+<li>支援無狀態驗證（不需伺服器端儲存 session）</li>
+<li>可設定過期時間與自訂 Payload 欄位</li>
+</ul>
+</li>
+<li><p>常見應用場景：API Token 驗證、行動裝置登入狀態維持、OAuth 搭配使用</p>
+</li>
+<li><p>JWT 須透過 HTTPS 傳遞以避免中間人攻擊（MITM）</p>
+</li>
+<li><p>不適合儲存敏感資訊（如密碼、信用卡號）</p>
+</li>
+</ul>
+<hr>
+<h2 id="JWT-結構說明"><a href="#JWT-結構說明" class="headerlink" title="JWT 結構說明"></a>JWT 結構說明</h2><p>一個 JWT 字串長得像這樣：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.</span><br><span class="line">eyJ1c2VySWQiOiIxMjM0IiwibmFtZSI6IktEIiwiZXhwIjoxNzAwMDAwMDAwfQ.</span><br><span class="line">sKPXrY3AvKb0aBQKgYF3mn7ZWh9yGpyF2X2NFie5TIU</span><br></pre></td></tr></table></figure>
+
+<p>它由三個部分組成，透過 <code>.</code> 分隔：</p>
+<ol>
+<li><strong>Header</strong>：定義演算法（如 <code>HS256</code>）與類型（<code>JWT</code>）。</li>
+<li><strong>Payload</strong>：承載實際資料（如使用者 ID、帳號、過期時間）。</li>
+<li><strong>Signature</strong>：用密鑰加密前兩部分，用於驗證是否被竄改。</li>
+</ol>
+<hr>
+<h2 id="實作範例（Node-js-ESM）"><a href="#實作範例（Node-js-ESM）" class="headerlink" title="實作範例（Node.js + ESM）"></a>實作範例（Node.js + ESM）</h2><h3 id="安裝必要套件"><a href="#安裝必要套件" class="headerlink" title="安裝必要套件"></a>安裝必要套件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install express jsonwebtoken dotenv</span><br></pre></td></tr></table></figure>
+
+<h3 id="專案架構"><a href="#專案架構" class="headerlink" title="專案架構"></a>專案架構</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project/</span><br><span class="line">├── index.js</span><br><span class="line">├── routes/</span><br><span class="line">│   └── auth.js</span><br><span class="line">├── .env</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="env-檔（儲存密鑰）"><a href="#env-檔（儲存密鑰）" class="headerlink" title=".env 檔（儲存密鑰）"></a><code>.env</code> 檔（儲存密鑰）</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">JWT_SECRET=mysecretkey123</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="routes-auth-js"><a href="#routes-auth-js" class="headerlink" title="routes/auth.js"></a><code>routes/auth.js</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> express <span class="keyword">from</span> <span class="string">&#x27;express&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> jwt <span class="keyword">from</span> <span class="string">&#x27;jsonwebtoken&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> dotenv <span class="keyword">from</span> <span class="string">&#x27;dotenv&#x27;</span>;</span><br><span class="line"></span><br><span class="line">dotenv.<span class="title function_">config</span>();</span><br><span class="line"><span class="keyword">const</span> router = express.<span class="title class_">Router</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 模擬使用者登入</span></span><br><span class="line">router.<span class="title function_">post</span>(<span class="string">&#x27;/login&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; username, password &#125; = req.<span class="property">body</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 模擬帳密驗證（實際應從 DB 查詢）</span></span><br><span class="line">  <span class="keyword">if</span> (username === <span class="string">&#x27;admin&#x27;</span> &amp;&amp; password === <span class="string">&#x27;123456&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> payload = &#123;</span><br><span class="line">      <span class="attr">userId</span>: <span class="string">&#x27;abc123&#x27;</span>,</span><br><span class="line">      <span class="attr">username</span>: <span class="string">&#x27;admin&#x27;</span>,</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 簽發 Token，過期時間為 1 小時</span></span><br><span class="line">    <span class="keyword">const</span> token = jwt.<span class="title function_">sign</span>(payload, process.<span class="property">env</span>.<span class="property">JWT_SECRET</span>, &#123;</span><br><span class="line">      <span class="attr">expiresIn</span>: <span class="string">&#x27;1h&#x27;</span>,</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res.<span class="title function_">json</span>(&#123; token &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  res.<span class="title function_">status</span>(<span class="number">401</span>).<span class="title function_">json</span>(&#123; <span class="attr">error</span>: <span class="string">&#x27;帳號或密碼錯誤&#x27;</span> &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 受保護資源</span></span><br><span class="line">router.<span class="title function_">get</span>(<span class="string">&#x27;/profile&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> authHeader = req.<span class="property">headers</span>.<span class="property">authorization</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!authHeader || !authHeader.<span class="title function_">startsWith</span>(<span class="string">&#x27;Bearer &#x27;</span>)) &#123;</span><br><span class="line">    <span class="keyword">return</span> res.<span class="title function_">status</span>(<span class="number">401</span>).<span class="title function_">json</span>(&#123; <span class="attr">error</span>: <span class="string">&#x27;請提供 Token&#x27;</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> token = authHeader.<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>)[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> decoded = jwt.<span class="title function_">verify</span>(token, process.<span class="property">env</span>.<span class="property">JWT_SECRET</span>);</span><br><span class="line">    res.<span class="title function_">json</span>(&#123; <span class="attr">message</span>: <span class="string">&#x27;驗證成功&#x27;</span>, <span class="attr">user</span>: decoded &#125;);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    res.<span class="title function_">status</span>(<span class="number">401</span>).<span class="title function_">json</span>(&#123; <span class="attr">error</span>: <span class="string">&#x27;Token 無效或過期&#x27;</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a><code>index.js</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> express <span class="keyword">from</span> <span class="string">&#x27;express&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> authRouter <span class="keyword">from</span> <span class="string">&#x27;./routes/auth.js&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">json</span>());</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(<span class="string">&#x27;/api&#x27;</span>, authRouter);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PORT</span> = process.<span class="property">env</span>.<span class="property">PORT</span> || <span class="number">3000</span>;</span><br><span class="line">app.<span class="title function_">listen</span>(<span class="variable constant_">PORT</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Server running at http://localhost:<span class="subst">$&#123;PORT&#125;</span>`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="測試流程"><a href="#測試流程" class="headerlink" title="測試流程"></a>測試流程</h2><ol>
+<li>發送 <code>POST /api/login</code> 並附上正確帳密（如 <code>admin</code> &#x2F; <code>123456</code>），取得 JWT。</li>
+<li>將該 JWT 作為 <code>Authorization: Bearer &lt;token&gt;</code> 放入 Header 中，請求 <code>GET /api/profile</code>。</li>
+<li>若驗證成功，API 會回傳對應使用者資訊；若失敗，則回傳錯誤訊息。</li>
+</ol>
+<hr>
+<h2 id="常見安全注意事項"><a href="#常見安全注意事項" class="headerlink" title="常見安全注意事項"></a>常見安全注意事項</h2><ul>
+<li><strong>使用 HTTPS</strong>：JWT 應透過 HTTPS 傳輸，避免中間人攻擊。</li>
+<li><strong>設定適當過期時間</strong>：避免長期有效的 Token 被盜用。</li>
+<li><strong>避免儲存敏感資訊於 Payload</strong>：Payload 是可被解碼的（雖然不可修改），不應含有密碼、信用卡資訊等。</li>
+<li><strong>支援 Token 失效機制（如 Token 黑名單）</strong>：JWT 是無狀態的，若要強制登出或封鎖，需額外設計邏輯。</li>
+</ul>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>JWT 是實作登入與驗證的重要工具，具有無狀態、跨平台、可擴充的特性，特別適合 API 驗證場景。本文透過簡單的 Node.js + Express 實作，展示如何產生與驗證 JWT，並說明常見應用與安全注意事項。</p>
+<p>不論你是單頁應用 SPA 開發者，還是撰寫 RESTful API 的後端工程師，掌握 JWT 都將大幅提升你的系統安全與擴充能力。</p>
 ]]></content>
       <tags>
         <tag>JWT</tag>
@@ -5876,6 +5975,122 @@
         <tag>frontend engineer</tag>
         <tag>Monorepo</tag>
         <tag>npm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>n8n 入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/20/learning-notes-n8n-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在現代軟體開發與數位工作流程中，「自動化」已成為提升效率的關鍵。無論是處理 API 整合、資料同步、通知發送，或是各種無需人工介入的重複性工作，選擇一套靈活的工作流程自動化工具是必要的。</p>
+<p><strong>n8n（pronounced “n-eight-n”）</strong> 是一個強大的開源自動化工具，具備類似 Zapier 的拖拉式流程設計介面，但更強調<strong>可自建、開源、自主掌控資料與程式彈性</strong>。它支援超過 400 個內建整合（如 Slack、Google Sheets、Notion、MySQL、HTTP API 等），同時允許用戶透過 JavaScript 編寫邏輯節點，打造彈性極高的自動化流程。</p>
+<p>相較於其他自動化工具，n8n 的最大優勢在於：「你可以在本機或伺服器上自行部署，資料完全由你掌控。」這點對於重視隱私或希望建立企業內部自動化平台的團隊尤其重要。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p><strong>n8n 是什麼？</strong></p>
+<ul>
+<li>一個開源、自託管、可視化的工作流程自動化工具。</li>
+<li>名稱源自 “Node + Node &#x3D; Workflow”，以節點（Node）為單位建構流程。</li>
+</ul>
+</li>
+<li><p><strong>主要特色</strong></p>
+<ul>
+<li>開源、自託管、資料不外流。</li>
+<li>拖放式流程設計器，門檻低但彈性高。</li>
+<li>可撰寫 JavaScript 處理邏輯。</li>
+<li>支援 webhook、排程、event-based 工作流程。</li>
+<li>擁有超過 400 個現成整合節點（Google、Slack、GitHub、HTTP Request 等）。</li>
+</ul>
+</li>
+<li><p><strong>使用場景</strong></p>
+<ul>
+<li>第三方 API 整合與自動同步。</li>
+<li>資料轉換與清洗（ETL）。</li>
+<li>表單提交後自動寄信／填寫 Google Sheets。</li>
+<li>發布內容到社群平台。</li>
+<li>團隊協作通知（如 Jira、Slack 整合）。</li>
+<li>自動監控 RSS、新留言、社群評論等。</li>
+</ul>
+</li>
+<li><p><strong>部署方式</strong></p>
+<ul>
+<li>支援 Docker、本地安裝、雲端託管（n8n.cloud）、Render、Railway 等平台。</li>
+<li>可選擇免費版本或企業進階授權。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="安裝與啟用方式"><a href="#安裝與啟用方式" class="headerlink" title="安裝與啟用方式"></a>安裝與啟用方式</h2><h3 id="1-使用-Docker-部署（推薦）"><a href="#1-使用-Docker-部署（推薦）" class="headerlink" title="1. 使用 Docker 部署（推薦）"></a>1. 使用 Docker 部署（推薦）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -it --<span class="built_in">rm</span> \</span><br><span class="line">  -p 5678:5678 \</span><br><span class="line">  -v ~/.n8n:/home/node/.n8n \</span><br><span class="line">  n8nio/n8n</span><br></pre></td></tr></table></figure>
+
+<p>開啟瀏覽器進入 <a href="http://localhost:5678/">http://localhost:5678</a> 即可開始使用。</p>
+<h3 id="2-使用-npm-安裝"><a href="#2-使用-npm-安裝" class="headerlink" title="2. 使用 npm 安裝"></a>2. 使用 npm 安裝</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install n8n -g</span><br><span class="line">n8n</span><br></pre></td></tr></table></figure>
+
+<p>同樣可透過 <a href="http://localhost:5678/">http://localhost:5678</a> 開啟界面。</p>
+<hr>
+<h2 id="使用介面簡介"><a href="#使用介面簡介" class="headerlink" title="使用介面簡介"></a>使用介面簡介</h2><p>n8n 的主界面由以下幾個部分組成：</p>
+<ul>
+<li><strong>Canvas（畫布）</strong>：可拖拉節點設計流程。</li>
+<li><strong>左側工具列</strong>：內建各種整合節點分類（Webhook、HTTP Request、Email 等）。</li>
+<li><strong>節點屬性面板</strong>：選取節點後可編輯其參數設定。</li>
+<li><strong>執行與測試工具</strong>：可以逐步執行流程、查看輸入與輸出資料。</li>
+</ul>
+<hr>
+<h2 id="實際應用範例"><a href="#實際應用範例" class="headerlink" title="實際應用範例"></a>實際應用範例</h2><h3 id="範例一：接收-Webhook-並寄送-Slack-通知"><a href="#範例一：接收-Webhook-並寄送-Slack-通知" class="headerlink" title="範例一：接收 Webhook 並寄送 Slack 通知"></a>範例一：接收 Webhook 並寄送 Slack 通知</h3><p><strong>目標流程</strong>：當收到 Webhook（如表單送出），自動發送一則 Slack 通知。</p>
+<ol>
+<li><p>新增節點 <code>Webhook</code>：</p>
+<ul>
+<li>設定 HTTP 方法為 <code>POST</code></li>
+<li>指定路徑為 <code>/contact</code></li>
+</ul>
+</li>
+<li><p>新增節點 <code>Slack</code>：</p>
+<ul>
+<li>動作選擇 <code>Send Message</code></li>
+<li>填入 Slack OAuth 認證與頻道資訊</li>
+<li>訊息可使用 <code>&#123;&#123;$json["name"]&#125;&#125;</code> 這類變數取得 webhook 傳入資料</li>
+</ul>
+</li>
+<li><p>將 <code>Webhook</code> → <code>Slack</code> 連接起來。</p>
+</li>
+<li><p>啟用工作流程，對 <code>/webhook/contact</code> 發送 POST 請求，即會收到通知。</p>
+</li>
+</ol>
+<hr>
+<h3 id="範例二：每天早上-9-點將-MySQL-資料匯出至-Google-Sheets"><a href="#範例二：每天早上-9-點將-MySQL-資料匯出至-Google-Sheets" class="headerlink" title="範例二：每天早上 9 點將 MySQL 資料匯出至 Google Sheets"></a>範例二：每天早上 9 點將 MySQL 資料匯出至 Google Sheets</h3><ol>
+<li><p>使用 <code>Cron</code> 節點設定時間為每天早上 9 點。</p>
+</li>
+<li><p>使用 <code>MySQL</code> 節點撈出指定資料表的內容。</p>
+</li>
+<li><p>使用 <code>Google Sheets</code> 節點將資料新增至指定試算表。</p>
+</li>
+<li><p>可加上一個 <code>Function</code> 節點清洗或轉換資料格式。</p>
+</li>
+</ol>
+<p>這樣可輕鬆建立每日自動報表流程，無需撰寫一行 shell script 或排程任務。</p>
+<hr>
+<h3 id="範例三：API-整合流程（串接-ChatGPT-回覆留言）"><a href="#範例三：API-整合流程（串接-ChatGPT-回覆留言）" class="headerlink" title="範例三：API 整合流程（串接 ChatGPT 回覆留言）"></a>範例三：API 整合流程（串接 ChatGPT 回覆留言）</h3><ol>
+<li><p>使用 <code>Webhook</code> 節點接收前端留言內容。</p>
+</li>
+<li><p>使用 <code>OpenAI</code> 節點（或 HTTP Request + 自行送出 API 請求）傳送留言給 ChatGPT 並取得回覆。</p>
+</li>
+<li><p>使用 <code>Send Email</code> 或 <code>Telegram</code> 節點自動回覆用戶。</p>
+</li>
+</ol>
+<p>n8n 支援 JSON 處理與條件邏輯節點，讓你可根據留言內容分類處理或轉送不同部門。</p>
+<hr>
+<h2 id="實用建議"><a href="#實用建議" class="headerlink" title="實用建議"></a>實用建議</h2><ul>
+<li>建議搭配 <strong>版本控制（匯出 workflow JSON）</strong>，便於多人協作與備份。</li>
+<li>若要部署至生產環境，建議設定密碼驗證與 HTTPS 保護。</li>
+<li>可以將變數或 API key 設定為「環境變數」集中管理，提升安全性與可維護性。</li>
+<li>利用 <code>Function</code> 與 <code>Set</code> 節點進行複雜邏輯處理與欄位映射。</li>
+<li>若有即時性需求，可使用 webhook + queue-based 設計方式，避免封鎖主流程。</li>
+</ul>
+<hr>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>n8n 是一款功能強大且靈活的開源工作流程自動化工具，不僅適合開發者，也適合營運、行銷、客服等跨部門自動化需求。透過拖拉節點的方式，任何人都可以建立自動化流程，取代繁瑣重複的手動操作。</p>
+<p>與 Zapier、Make 等 SaaS 工具不同，n8n 提供了極高的可控性與可擴充性。無論是 API 整合、資料清洗、事件觸發，還是每日任務排程，n8n 都能成為你構建智慧工作流程的得力助手。</p>
+]]></content>
+      <tags>
+        <tag>n8n</tag>
+        <tag>VS Code</tag>
+        <tag>工作流程自動化工具</tag>
       </tags>
   </entry>
   <entry>
@@ -7216,78 +7431,6 @@
       </tags>
   </entry>
   <entry>
-    <title>React Redux 介紹入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/12/learning-notes-react-redux-intro-tutorial/</url>
-    <content><![CDATA[<h4 id="1-什麼是-Redux？"><a href="#1-什麼是-Redux？" class="headerlink" title="1. 什麼是 Redux？"></a>1. 什麼是 Redux？</h4><p><code>Redux</code> 是 JavaScript 應用程式的狀態管理工具，最常與 React 搭配使用。它提供一個單一的全域狀態樹，使應用程式的狀態變更更可預測、可測試、可維護。Redux 遵循 <strong>單向數據流</strong> 和 <strong>不可變狀態</strong> 的概念，適合管理大型應用的複雜狀態。  </p>
-<hr>
-<h4 id="2-Redux-核心概念"><a href="#2-Redux-核心概念" class="headerlink" title="2. Redux 核心概念"></a>2. Redux 核心概念</h4><p>Redux 的運作基礎主要由三個部分組成：  </p>
-<ol>
-<li><strong>Store（存儲狀態的地方）</strong>  <ul>
-<li>整個應用程式的狀態存儲在單一的 Store 中。</li>
-</ul>
-</li>
-<li><strong>Action（動作）</strong>  <ul>
-<li>Action 是一個 JavaScript 物件，描述了「發生了什麼事」。通常包含 <code>type</code> 屬性來表明事件類型，並可能包含 <code>payload</code> 傳遞額外數據。</li>
-</ul>
-</li>
-<li><strong>Reducer（狀態變更邏輯）</strong>  <ul>
-<li>Reducer 是一個純函式，接收當前狀態與 Action，根據 Action 類型來決定如何更新狀態。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h4 id="3-安裝-Redux-和-React-Redux"><a href="#3-安裝-Redux-和-React-Redux" class="headerlink" title="3. 安裝 Redux 和 React-Redux"></a>3. 安裝 Redux 和 React-Redux</h4><p>在 React 專案中安裝 Redux 及 React-Redux：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install @reduxjs/toolkit react-redux</span><br></pre></td></tr></table></figure>
-
-<p>Redux Toolkit（RTK）是官方推薦的 Redux 工具包，它提供更簡潔、易用的 API 來簡化 Redux 使用。  </p>
-<hr>
-<h4 id="4-創建-Redux-Store"><a href="#4-創建-Redux-Store" class="headerlink" title="4. 創建 Redux Store"></a>4. 創建 Redux Store</h4><p>在 <code>store.js</code> 檔案中，使用 <code>configureStore</code> 創建 Store：  </p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; configureStore &#125; <span class="keyword">from</span> <span class="string">&quot;@reduxjs/toolkit&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> counterReducer <span class="keyword">from</span> <span class="string">&quot;./counterSlice&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">configureStore</span>(&#123;</span><br><span class="line">  <span class="attr">reducer</span>: &#123;</span><br><span class="line">    <span class="attr">counter</span>: counterReducer,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span><br></pre></td></tr></table></figure>
-
-<p>在這裡，我們將 <code>counterReducer</code> 設定為 <code>counter</code> 這個 slice 的 reducer。</p>
-<hr>
-<h4 id="5-創建-Slice（Reducer-Action）"><a href="#5-創建-Slice（Reducer-Action）" class="headerlink" title="5. 創建 Slice（Reducer + Action）"></a>5. 創建 Slice（Reducer + Action）</h4><p>在 <code>counterSlice.js</code> 檔案中，使用 <code>createSlice</code> 定義 <code>counter</code> 相關的狀態與 reducer：  </p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createSlice &#125; <span class="keyword">from</span> <span class="string">&quot;@reduxjs/toolkit&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> counterSlice = <span class="title function_">createSlice</span>(&#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;counter&quot;</span>,</span><br><span class="line">  <span class="attr">initialState</span>: &#123; <span class="attr">value</span>: <span class="number">0</span> &#125;,</span><br><span class="line">  <span class="attr">reducers</span>: &#123;</span><br><span class="line">    <span class="attr">increment</span>: <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">value</span> += <span class="number">1</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">decrement</span>: <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">value</span> -= <span class="number">1</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">incrementByAmount</span>: <span class="function">(<span class="params">state, action</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">value</span> += action.<span class="property">payload</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> &#123; increment, decrement, incrementByAmount &#125; = counterSlice.<span class="property">actions</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> counterSlice.<span class="property">reducer</span>;</span><br></pre></td></tr></table></figure>
-
-<p>這裡的 <code>createSlice</code> 幫助我們：  </p>
-<ul>
-<li>定義狀態的初始值（<code>initialState</code>）  </li>
-<li>自動生成 <code>reducer</code>  </li>
-<li>自動產生對應的 Action</li>
-</ul>
-<hr>
-<h4 id="6-設置-Store-提供給-React"><a href="#6-設置-Store-提供給-React" class="headerlink" title="6. 設置 Store 提供給 React"></a>6. 設置 Store 提供給 React</h4><p>在 <code>index.js</code> 檔案中使用 <code>Provider</code> 讓整個 React 應用可以存取 Redux Store：  </p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&quot;react-dom&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Provider</span> &#125; <span class="keyword">from</span> <span class="string">&quot;react-redux&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&quot;./store&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&quot;./App&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">App</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">Provider</span>&gt;</span></span>,</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;root&quot;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<p>這樣 <code>App</code> 及其所有子元件都可以存取 Redux Store。</p>
-<hr>
-<h4 id="7-在-React-組件中使用-Redux"><a href="#7-在-React-組件中使用-Redux" class="headerlink" title="7. 在 React 組件中使用 Redux"></a>7. 在 React 組件中使用 Redux</h4><p>在 <code>Counter.js</code> 中使用 Redux Store 來讀取與修改 <code>counter</code> 的值：  </p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useSelector, useDispatch &#125; <span class="keyword">from</span> <span class="string">&quot;react-redux&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; increment, decrement, incrementByAmount &#125; <span class="keyword">from</span> <span class="string">&quot;./counterSlice&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Counter</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> count = <span class="title function_">useSelector</span>(<span class="function">(<span class="params">state</span>) =&gt;</span> state.<span class="property">counter</span>.<span class="property">value</span>);</span><br><span class="line">  <span class="keyword">const</span> dispatch = <span class="title function_">useDispatch</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>計數器：&#123;count&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> dispatch(increment())&#125;&gt;增加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> dispatch(decrement())&#125;&gt;減少<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> dispatch(incrementByAmount(5))&#125;&gt;增加 5<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Counter</span>;</span><br></pre></td></tr></table></figure>
-
-<p>在這個範例中：  </p>
-<ul>
-<li><code>useSelector(state =&gt; state.counter.value)</code> 取得 Store 內的 <code>counter</code> 值。  </li>
-<li><code>useDispatch()</code> 取得 Redux 的 <code>dispatch</code> 函式，發送 Action 來更新狀態。  </li>
-<li>點擊按鈕時，對應的 Action 會發送給 Reducer，修改狀態。</li>
-</ul>
-<hr>
-<h4 id="8-使用-Redux-DevTools-進行除錯"><a href="#8-使用-Redux-DevTools-進行除錯" class="headerlink" title="8. 使用 Redux DevTools 進行除錯"></a>8. 使用 Redux DevTools 進行除錯</h4><p>Redux Toolkit 內建支援 Redux DevTools，可以在瀏覽器中查看 Redux 狀態變更的歷史紀錄，方便除錯。安裝 <a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd">Redux DevTools</a>，並開啟瀏覽器的 <code>Redux</code> 分頁來觀察 Action 和 State 變化。</p>
-<hr>
-<h4 id="9-總結"><a href="#9-總結" class="headerlink" title="9. 總結"></a>9. 總結</h4><p>Redux 提供了一個強大的狀態管理方式，適合中大型應用。在 Redux Toolkit 的幫助下，開發 Redux 應用變得更加直觀與簡潔。本篇介紹了 Redux 的基本概念，並透過實際範例展示如何在 React 中整合 Redux。如果你的應用狀態複雜，需要跨組件共享，Redux 會是很好的選擇。</p>
-<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
-<li><a href="https://blog.typeart.cc/redux-vs-use-congtext-use-reducer-and-which-one/">redux vs useContext, useReducer，該怎麼選擇？</a></li>
-<li><a href="https://leewarrick.com/blog/the-problem-with-context/">The Problem with React’s Context API</a></li>
-<li><a href="https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/a-comparison-of-react-state-management-libraries-ba61db07332b">React 狀態管理套件比較與原理實現 feat. Redux, Zustand, Jotai, Recoil, MobX, Valtio</a></li>
-<li><a href="https://www.cythilya.tw/2023/05/25/implement-redux-by-react-context-api-and-useReducer/">利用 React Context API + useReducer 實作 Redux</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>react</tag>
-        <tag>Redux</tag>
-        <tag>React Redux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>React useMemo 與 useCallback 差異介紹與入門教學 | 學習筆記</title>
     <url>/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用 React hooks 進行開發時，<code>useMemo</code> 和 <code>useCallback</code> 是兩個常被提及的性能優化工具。它們都屬於 <strong>記憶化（memoization）</strong> 技術，用來避免不必要的重算與重渲染。然而，很多初學者在理解這兩者的用途與差異時常感到困惑。這篇文章將從概念出發，並搭配實際範例，幫助你掌握 <code>useMemo</code> 與 <code>useCallback</code> 的核心用途與實作方式。</p>
@@ -7363,6 +7506,78 @@
         <tag>ReactJS</tag>
         <tag>useMemo</tag>
         <tag>useCallback</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>React Redux 介紹入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/12/learning-notes-react-redux-intro-tutorial/</url>
+    <content><![CDATA[<h4 id="1-什麼是-Redux？"><a href="#1-什麼是-Redux？" class="headerlink" title="1. 什麼是 Redux？"></a>1. 什麼是 Redux？</h4><p><code>Redux</code> 是 JavaScript 應用程式的狀態管理工具，最常與 React 搭配使用。它提供一個單一的全域狀態樹，使應用程式的狀態變更更可預測、可測試、可維護。Redux 遵循 <strong>單向數據流</strong> 和 <strong>不可變狀態</strong> 的概念，適合管理大型應用的複雜狀態。  </p>
+<hr>
+<h4 id="2-Redux-核心概念"><a href="#2-Redux-核心概念" class="headerlink" title="2. Redux 核心概念"></a>2. Redux 核心概念</h4><p>Redux 的運作基礎主要由三個部分組成：  </p>
+<ol>
+<li><strong>Store（存儲狀態的地方）</strong>  <ul>
+<li>整個應用程式的狀態存儲在單一的 Store 中。</li>
+</ul>
+</li>
+<li><strong>Action（動作）</strong>  <ul>
+<li>Action 是一個 JavaScript 物件，描述了「發生了什麼事」。通常包含 <code>type</code> 屬性來表明事件類型，並可能包含 <code>payload</code> 傳遞額外數據。</li>
+</ul>
+</li>
+<li><strong>Reducer（狀態變更邏輯）</strong>  <ul>
+<li>Reducer 是一個純函式，接收當前狀態與 Action，根據 Action 類型來決定如何更新狀態。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="3-安裝-Redux-和-React-Redux"><a href="#3-安裝-Redux-和-React-Redux" class="headerlink" title="3. 安裝 Redux 和 React-Redux"></a>3. 安裝 Redux 和 React-Redux</h4><p>在 React 專案中安裝 Redux 及 React-Redux：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install @reduxjs/toolkit react-redux</span><br></pre></td></tr></table></figure>
+
+<p>Redux Toolkit（RTK）是官方推薦的 Redux 工具包，它提供更簡潔、易用的 API 來簡化 Redux 使用。  </p>
+<hr>
+<h4 id="4-創建-Redux-Store"><a href="#4-創建-Redux-Store" class="headerlink" title="4. 創建 Redux Store"></a>4. 創建 Redux Store</h4><p>在 <code>store.js</code> 檔案中，使用 <code>configureStore</code> 創建 Store：  </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; configureStore &#125; <span class="keyword">from</span> <span class="string">&quot;@reduxjs/toolkit&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> counterReducer <span class="keyword">from</span> <span class="string">&quot;./counterSlice&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">configureStore</span>(&#123;</span><br><span class="line">  <span class="attr">reducer</span>: &#123;</span><br><span class="line">    <span class="attr">counter</span>: counterReducer,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span><br></pre></td></tr></table></figure>
+
+<p>在這裡，我們將 <code>counterReducer</code> 設定為 <code>counter</code> 這個 slice 的 reducer。</p>
+<hr>
+<h4 id="5-創建-Slice（Reducer-Action）"><a href="#5-創建-Slice（Reducer-Action）" class="headerlink" title="5. 創建 Slice（Reducer + Action）"></a>5. 創建 Slice（Reducer + Action）</h4><p>在 <code>counterSlice.js</code> 檔案中，使用 <code>createSlice</code> 定義 <code>counter</code> 相關的狀態與 reducer：  </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createSlice &#125; <span class="keyword">from</span> <span class="string">&quot;@reduxjs/toolkit&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> counterSlice = <span class="title function_">createSlice</span>(&#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;counter&quot;</span>,</span><br><span class="line">  <span class="attr">initialState</span>: &#123; <span class="attr">value</span>: <span class="number">0</span> &#125;,</span><br><span class="line">  <span class="attr">reducers</span>: &#123;</span><br><span class="line">    <span class="attr">increment</span>: <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">value</span> += <span class="number">1</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">decrement</span>: <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">value</span> -= <span class="number">1</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">incrementByAmount</span>: <span class="function">(<span class="params">state, action</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">value</span> += action.<span class="property">payload</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> &#123; increment, decrement, incrementByAmount &#125; = counterSlice.<span class="property">actions</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> counterSlice.<span class="property">reducer</span>;</span><br></pre></td></tr></table></figure>
+
+<p>這裡的 <code>createSlice</code> 幫助我們：  </p>
+<ul>
+<li>定義狀態的初始值（<code>initialState</code>）  </li>
+<li>自動生成 <code>reducer</code>  </li>
+<li>自動產生對應的 Action</li>
+</ul>
+<hr>
+<h4 id="6-設置-Store-提供給-React"><a href="#6-設置-Store-提供給-React" class="headerlink" title="6. 設置 Store 提供給 React"></a>6. 設置 Store 提供給 React</h4><p>在 <code>index.js</code> 檔案中使用 <code>Provider</code> 讓整個 React 應用可以存取 Redux Store：  </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&quot;react-dom&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Provider</span> &#125; <span class="keyword">from</span> <span class="string">&quot;react-redux&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&quot;./store&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&quot;./App&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">App</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">Provider</span>&gt;</span></span>,</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;root&quot;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>這樣 <code>App</code> 及其所有子元件都可以存取 Redux Store。</p>
+<hr>
+<h4 id="7-在-React-組件中使用-Redux"><a href="#7-在-React-組件中使用-Redux" class="headerlink" title="7. 在 React 組件中使用 Redux"></a>7. 在 React 組件中使用 Redux</h4><p>在 <code>Counter.js</code> 中使用 Redux Store 來讀取與修改 <code>counter</code> 的值：  </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useSelector, useDispatch &#125; <span class="keyword">from</span> <span class="string">&quot;react-redux&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; increment, decrement, incrementByAmount &#125; <span class="keyword">from</span> <span class="string">&quot;./counterSlice&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Counter</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> count = <span class="title function_">useSelector</span>(<span class="function">(<span class="params">state</span>) =&gt;</span> state.<span class="property">counter</span>.<span class="property">value</span>);</span><br><span class="line">  <span class="keyword">const</span> dispatch = <span class="title function_">useDispatch</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>計數器：&#123;count&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> dispatch(increment())&#125;&gt;增加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> dispatch(decrement())&#125;&gt;減少<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> dispatch(incrementByAmount(5))&#125;&gt;增加 5<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Counter</span>;</span><br></pre></td></tr></table></figure>
+
+<p>在這個範例中：  </p>
+<ul>
+<li><code>useSelector(state =&gt; state.counter.value)</code> 取得 Store 內的 <code>counter</code> 值。  </li>
+<li><code>useDispatch()</code> 取得 Redux 的 <code>dispatch</code> 函式，發送 Action 來更新狀態。  </li>
+<li>點擊按鈕時，對應的 Action 會發送給 Reducer，修改狀態。</li>
+</ul>
+<hr>
+<h4 id="8-使用-Redux-DevTools-進行除錯"><a href="#8-使用-Redux-DevTools-進行除錯" class="headerlink" title="8. 使用 Redux DevTools 進行除錯"></a>8. 使用 Redux DevTools 進行除錯</h4><p>Redux Toolkit 內建支援 Redux DevTools，可以在瀏覽器中查看 Redux 狀態變更的歷史紀錄，方便除錯。安裝 <a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd">Redux DevTools</a>，並開啟瀏覽器的 <code>Redux</code> 分頁來觀察 Action 和 State 變化。</p>
+<hr>
+<h4 id="9-總結"><a href="#9-總結" class="headerlink" title="9. 總結"></a>9. 總結</h4><p>Redux 提供了一個強大的狀態管理方式，適合中大型應用。在 Redux Toolkit 的幫助下，開發 Redux 應用變得更加直觀與簡潔。本篇介紹了 Redux 的基本概念，並透過實際範例展示如何在 React 中整合 Redux。如果你的應用狀態複雜，需要跨組件共享，Redux 會是很好的選擇。</p>
+<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
+<li><a href="https://blog.typeart.cc/redux-vs-use-congtext-use-reducer-and-which-one/">redux vs useContext, useReducer，該怎麼選擇？</a></li>
+<li><a href="https://leewarrick.com/blog/the-problem-with-context/">The Problem with React’s Context API</a></li>
+<li><a href="https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/a-comparison-of-react-state-management-libraries-ba61db07332b">React 狀態管理套件比較與原理實現 feat. Redux, Zustand, Jotai, Recoil, MobX, Valtio</a></li>
+<li><a href="https://www.cythilya.tw/2023/05/25/implement-redux-by-react-context-api-and-useReducer/">利用 React Context API + useReducer 實作 Redux</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>react</tag>
+        <tag>Redux</tag>
+        <tag>React Redux</tag>
       </tags>
   </entry>
   <entry>
@@ -7586,57 +7801,6 @@
       </tags>
   </entry>
   <entry>
-    <title>SASS 語法介紹入門教學筆記 | 學習筆記</title>
-    <url>/2024/06/30/learning-notes-sass-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="什麼是-SASS？"><a href="#什麼是-SASS？" class="headerlink" title="什麼是 SASS？"></a>什麼是 SASS？</h1><p><code>SASS</code>（Syntactically Awesome Style Sheets）是一種 CSS 預處理器，旨在提升 CSS 的功能性，讓開發者能夠以更加靈活和高效的方式編寫樣式表。它提供了許多比 CSS 更強大的功能，例如變數、巢狀規則、混合（mixins）、繼承等。SASS 語法有兩種主要形式：一種是較為常見的 SCSS（<code>Sassy CSS</code>），另一種則是 <code>SASS</code>，本文將主要介紹 SASS 語法。</p>
-<p>與 SCSS 不同，SASS 語法採用的是縮排語法，即不使用大括號和分號，而是利用縮排來結構化程式碼。這種語法更簡潔，對於習慣 Python 等語言的開發者來說，學習曲線較為平滑。</p>
-<h1 id="安裝與設置"><a href="#安裝與設置" class="headerlink" title="安裝與設置"></a>安裝與設置</h1><p>要開始使用 SASS，首先需要安裝 SASS 編譯器。最常見的安裝方式是透過 Node.js 的 npm（Node Package Manager）。請按照以下步驟進行安裝：</p>
-<ol>
-<li><p>確保已經安裝了 Node.js 和 npm。</p>
-</li>
-<li><p>打開終端機，並在專案資料夾中執行以下命令來安裝 SASS：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g sass</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安裝完成後，可以通過命令行執行 SASS 編譯命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sass input.sass output.css</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>這樣，<code>input.sass</code> 就會被編譯為標準的 <code>output.css</code> 檔案。</p>
-<h1 id="SASS-語法介紹"><a href="#SASS-語法介紹" class="headerlink" title="SASS 語法介紹"></a>SASS 語法介紹</h1><h3 id="1-變數（Variables）"><a href="#1-變數（Variables）" class="headerlink" title="1. 變數（Variables）"></a>1. 變數（Variables）</h3><p>SASS 的變數功能讓開發者可以將顏色、字體大小、間距等常用值儲存在變數中，這樣能夠提高樣式的可重用性，並讓程式碼更具維護性。在 SASS 中，變數以 <code>$</code> 符號開頭。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$primary-color: #3498db</span><br><span class="line">$font-size: 16px</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  font-size: $font-size</span><br><span class="line">  color: $primary-color</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，我們定義了 <code>$primary-color</code> 和 <code>$font-size</code> 兩個變數，並將其應用於 <code>body</code> 樣式中。這樣，只需要修改變數的值，即可全局更新相應的樣式。</p>
-<h3 id="2-巢狀規則（Nesting）"><a href="#2-巢狀規則（Nesting）" class="headerlink" title="2. 巢狀規則（Nesting）"></a>2. 巢狀規則（Nesting）</h3><p>SASS 支援巢狀規則，這樣可以讓樣式更加結構化，並且簡化對於子元素樣式的編寫。SASS 使用縮排來表示層級關係，這一點與傳統的 CSS 需要寫出完整選擇器有所不同。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nav</span><br><span class="line">  background-color: #333</span><br><span class="line">  ul</span><br><span class="line">    list-style-type: none</span><br><span class="line">    padding: 0</span><br><span class="line">  li</span><br><span class="line">    display: inline-block</span><br><span class="line">  a</span><br><span class="line">    color: white</span><br><span class="line">    text-decoration: none</span><br></pre></td></tr></table></figure>
-
-<p>這段程式碼會被編譯為：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">list-style-type</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這樣的寫法可以避免寫重複的選擇器，並且清晰地表現出元素之間的層級結構。</p>
-<h3 id="3-混合（Mixins）"><a href="#3-混合（Mixins）" class="headerlink" title="3. 混合（Mixins）"></a>3. 混合（Mixins）</h3><p>混合是 SASS 中一個非常有用的功能，它可以將一段可重用的樣式封裝成一個混合，並且可以接受參數，實現樣式的動態應用。混合類似於函數，能夠在不同地方重複使用。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">=mixin border-radius($radius)</span><br><span class="line">  -webkit-border-radius: $radius</span><br><span class="line">  -moz-border-radius: $radius</span><br><span class="line">  border-radius: $radius</span><br><span class="line"></span><br><span class="line">.box</span><br><span class="line">  @include border-radius(10px)</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，我們定義了一個名為 <code>border-radius</code> 的混合，接受一個 <code>$radius</code> 參數，用來設置元素的邊框圓角。然後，我們在 <code>.box</code> 中使用 <code>@include</code> 引入這個混合，並傳遞具體的參數。這樣，當需要改變邊框圓角的樣式時，只需要修改混合的參數，而不需要在多個地方重複編寫。</p>
-<h3 id="4-繼承（Inheritance）"><a href="#4-繼承（Inheritance）" class="headerlink" title="4. 繼承（Inheritance）"></a>4. 繼承（Inheritance）</h3><p>SASS 提供了繼承功能，使得一個選擇器可以繼承另一個選擇器的樣式。這有助於減少樣式重複，並保持程式碼的整潔性。SASS 使用 <code>@extend</code> 指令來實現繼承。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%button-base</span><br><span class="line">  padding: 10px 15px</span><br><span class="line">  background-color: #3498db</span><br><span class="line">  color: white</span><br><span class="line">  border: none</span><br><span class="line">  border-radius: 5px</span><br><span class="line"></span><br><span class="line">.button-primary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #1abc9c</span><br><span class="line"></span><br><span class="line">.button-secondary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #f39c12</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，我們定義了一個 <code>%button-base</code> 共享樣式，然後讓 <code>.button-primary</code> 和 <code>.button-secondary</code> 繼承這些樣式，並根據需要進行自定義修改。使用繼承的方式可以減少代碼重複，提高樣式的可維護性。</p>
-<h3 id="5-條件語句（Conditionals）"><a href="#5-條件語句（Conditionals）" class="headerlink" title="5. 條件語句（Conditionals）"></a>5. 條件語句（Conditionals）</h3><p>SASS 支援條件語句，這讓我們可以根據某些條件選擇性地應用不同的樣式。這樣可以使樣式表更具動態性，根據不同情境調整顯示效果。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$theme: light</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  @if $theme == light</span><br><span class="line">    background-color: #fff</span><br><span class="line">    color: #333</span><br><span class="line">  @else</span><br><span class="line">    background-color: #333</span><br><span class="line">    color: #fff</span><br></pre></td></tr></table></figure>
-
-<p>這段程式碼中，根據變數 <code>$theme</code> 的值，條件地設定 <code>body</code> 的背景顏色和文字顏色。如果 <code>$theme</code> 為 <code>light</code>，則使用淺色背景和深色文字；否則，使用深色背景和淺色文字。</p>
-<h3 id="6-循環（Loops）"><a href="#6-循環（Loops）" class="headerlink" title="6. 循環（Loops）"></a>6. 循環（Loops）</h3><p>SASS 還支援循環語句，這在需要根據某些條件自動生成多個樣式時非常有用。SASS 的循環可以遍歷一個列表，並生成對應的樣式。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$colors: red, green, blue</span><br><span class="line"></span><br><span class="line">@each $color in $colors</span><br><span class="line">  .#&#123;$color&#125;-box</span><br><span class="line">    background-color: $color</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，<code>@each</code> 循環將遍歷 <code>$colors</code> 列表，並為每個顏色生成一個相應的類別 <code>.red-box</code>、<code>.green-box</code> 和 <code>.blue-box</code>，並將其背景顏色設置為對應的顏色。</p>
-<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>SASS 的 SASS 語法是一種簡潔且強大的 CSS 編寫方式，通過簡單的縮排結構，讓開發者能夠更有效率地編寫和維護樣式。SASS 提供的變數、巢狀規則、混合、繼承等功能，能夠使樣式更加模組化、動態化，並大大減少冗餘代碼。學會 SASS 語法後，你可以更靈活地處理大型專案中的 CSS，提升工作效率。如果你還沒有開始使用 SASS，不妨從這些基礎語法開始，體驗它帶來的便利。</p>
-]]></content>
-      <tags>
-        <tag>CSS</tag>
-        <tag>SASS</tag>
-        <tag>SCSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Roo Code 詳細介紹：AI VS Code 編輯器外掛入門教學筆記 | 學習筆記</title>
     <url>/2024/12/20/learning-notes-roo-code-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Roo Code（原名 Roo Cline）是一款嵌入於 Visual Studio Code 編輯器中的開源 AI 代理，能讀寫檔案、自動執行終端指令、操作瀏覽器，甚至整合多種 LLM 模型。無論是編寫程式、重構、除錯、架構設計，Roo Code 都能協助你提升開發效率，更像是一個智慧且自主的開發團隊成員。</p>
@@ -7728,17 +7892,74 @@
 <hr>
 <h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Roo Code 是一款功能強大且高度可客製的 AI 編程代理工具，適合想提升開發效率、探索 AI 開發流程的人使用。核心優勢包括：</p>
 <ul>
-<li>多種工作模式切換（Code &#x2F; Architect &#x2F; Ask &#x2F; Debug）</li>
+<li>多種工作模式切換（<code>Code</code> &#x2F; <code>Architect</code> &#x2F; <code>Ask</code> &#x2F; <code>Debug</code>）</li>
 <li>可控且安全的檔案與終端操作</li>
 <li>擴充能力強，可透過 MCP、Context Condensing、自訂模式延伸功能</li>
 <li>支援多種 LLM 提供者，具備彈性與擴充性</li>
 </ul>
 <p>由於功能豐富，建議一開始可以先安裝外掛並先從簡單任務使用起：生成範例檔案、執行終端指令，接著再進行構架規劃與系統整合。</p>
+<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
+<li><a href="https://help.apiyi.com/roo-code-claude-api-integration-guide.html">Roo Code 接入 Claude API 完全指南：无惧官网限制而快速用上</a></li>
+<li><a href="https://www.youtube.com/watch?v=c5pDWj-zLDQ">【Vibe Coding 神器】VS Code 超強 AI 插件 Roo Code 實作教學：Ask 模式分析專案、協調器模式開發全新專案、Debug 模式進行除錯！</a></li>
+<li><a href="https://www.youtube.com/watch?v=Vb8Vgs5sZiA">Vibe Coding 真的這麼神？上集 來自開發團隊的真實導入經驗 聊聊實踐與成效｜#VibeCoding #AI #軟體開發 #開發團隊｜ JUGG 聊敏捷#22</a></li>
+<li><a href="https://www.youtube.com/watch?v=eZWVzTd3mkU">Vibe Coding 真的這麼神？下集 來自開發團隊的真實導入對談｜導入的坑、文化與建議｜#VibeCoding #AI #軟體開發 #開發團隊 #AI 導入｜ JUGG 聊敏捷#23</a></li>
+</ol>
 ]]></content>
       <tags>
         <tag>編輯器</tag>
-        <tag>Roo Code</tag>
         <tag>VS Code</tag>
+        <tag>Roo Code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SASS 語法介紹入門教學筆記 | 學習筆記</title>
+    <url>/2024/06/30/learning-notes-sass-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="什麼是-SASS？"><a href="#什麼是-SASS？" class="headerlink" title="什麼是 SASS？"></a>什麼是 SASS？</h1><p><code>SASS</code>（Syntactically Awesome Style Sheets）是一種 CSS 預處理器，旨在提升 CSS 的功能性，讓開發者能夠以更加靈活和高效的方式編寫樣式表。它提供了許多比 CSS 更強大的功能，例如變數、巢狀規則、混合（mixins）、繼承等。SASS 語法有兩種主要形式：一種是較為常見的 SCSS（<code>Sassy CSS</code>），另一種則是 <code>SASS</code>，本文將主要介紹 SASS 語法。</p>
+<p>與 SCSS 不同，SASS 語法採用的是縮排語法，即不使用大括號和分號，而是利用縮排來結構化程式碼。這種語法更簡潔，對於習慣 Python 等語言的開發者來說，學習曲線較為平滑。</p>
+<h1 id="安裝與設置"><a href="#安裝與設置" class="headerlink" title="安裝與設置"></a>安裝與設置</h1><p>要開始使用 SASS，首先需要安裝 SASS 編譯器。最常見的安裝方式是透過 Node.js 的 npm（Node Package Manager）。請按照以下步驟進行安裝：</p>
+<ol>
+<li><p>確保已經安裝了 Node.js 和 npm。</p>
+</li>
+<li><p>打開終端機，並在專案資料夾中執行以下命令來安裝 SASS：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g sass</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安裝完成後，可以通過命令行執行 SASS 編譯命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sass input.sass output.css</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>這樣，<code>input.sass</code> 就會被編譯為標準的 <code>output.css</code> 檔案。</p>
+<h1 id="SASS-語法介紹"><a href="#SASS-語法介紹" class="headerlink" title="SASS 語法介紹"></a>SASS 語法介紹</h1><h3 id="1-變數（Variables）"><a href="#1-變數（Variables）" class="headerlink" title="1. 變數（Variables）"></a>1. 變數（Variables）</h3><p>SASS 的變數功能讓開發者可以將顏色、字體大小、間距等常用值儲存在變數中，這樣能夠提高樣式的可重用性，並讓程式碼更具維護性。在 SASS 中，變數以 <code>$</code> 符號開頭。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$primary-color: #3498db</span><br><span class="line">$font-size: 16px</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  font-size: $font-size</span><br><span class="line">  color: $primary-color</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了 <code>$primary-color</code> 和 <code>$font-size</code> 兩個變數，並將其應用於 <code>body</code> 樣式中。這樣，只需要修改變數的值，即可全局更新相應的樣式。</p>
+<h3 id="2-巢狀規則（Nesting）"><a href="#2-巢狀規則（Nesting）" class="headerlink" title="2. 巢狀規則（Nesting）"></a>2. 巢狀規則（Nesting）</h3><p>SASS 支援巢狀規則，這樣可以讓樣式更加結構化，並且簡化對於子元素樣式的編寫。SASS 使用縮排來表示層級關係，這一點與傳統的 CSS 需要寫出完整選擇器有所不同。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nav</span><br><span class="line">  background-color: #333</span><br><span class="line">  ul</span><br><span class="line">    list-style-type: none</span><br><span class="line">    padding: 0</span><br><span class="line">  li</span><br><span class="line">    display: inline-block</span><br><span class="line">  a</span><br><span class="line">    color: white</span><br><span class="line">    text-decoration: none</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼會被編譯為：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">list-style-type</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣的寫法可以避免寫重複的選擇器，並且清晰地表現出元素之間的層級結構。</p>
+<h3 id="3-混合（Mixins）"><a href="#3-混合（Mixins）" class="headerlink" title="3. 混合（Mixins）"></a>3. 混合（Mixins）</h3><p>混合是 SASS 中一個非常有用的功能，它可以將一段可重用的樣式封裝成一個混合，並且可以接受參數，實現樣式的動態應用。混合類似於函數，能夠在不同地方重複使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">=mixin border-radius($radius)</span><br><span class="line">  -webkit-border-radius: $radius</span><br><span class="line">  -moz-border-radius: $radius</span><br><span class="line">  border-radius: $radius</span><br><span class="line"></span><br><span class="line">.box</span><br><span class="line">  @include border-radius(10px)</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了一個名為 <code>border-radius</code> 的混合，接受一個 <code>$radius</code> 參數，用來設置元素的邊框圓角。然後，我們在 <code>.box</code> 中使用 <code>@include</code> 引入這個混合，並傳遞具體的參數。這樣，當需要改變邊框圓角的樣式時，只需要修改混合的參數，而不需要在多個地方重複編寫。</p>
+<h3 id="4-繼承（Inheritance）"><a href="#4-繼承（Inheritance）" class="headerlink" title="4. 繼承（Inheritance）"></a>4. 繼承（Inheritance）</h3><p>SASS 提供了繼承功能，使得一個選擇器可以繼承另一個選擇器的樣式。這有助於減少樣式重複，並保持程式碼的整潔性。SASS 使用 <code>@extend</code> 指令來實現繼承。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%button-base</span><br><span class="line">  padding: 10px 15px</span><br><span class="line">  background-color: #3498db</span><br><span class="line">  color: white</span><br><span class="line">  border: none</span><br><span class="line">  border-radius: 5px</span><br><span class="line"></span><br><span class="line">.button-primary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #1abc9c</span><br><span class="line"></span><br><span class="line">.button-secondary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #f39c12</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了一個 <code>%button-base</code> 共享樣式，然後讓 <code>.button-primary</code> 和 <code>.button-secondary</code> 繼承這些樣式，並根據需要進行自定義修改。使用繼承的方式可以減少代碼重複，提高樣式的可維護性。</p>
+<h3 id="5-條件語句（Conditionals）"><a href="#5-條件語句（Conditionals）" class="headerlink" title="5. 條件語句（Conditionals）"></a>5. 條件語句（Conditionals）</h3><p>SASS 支援條件語句，這讓我們可以根據某些條件選擇性地應用不同的樣式。這樣可以使樣式表更具動態性，根據不同情境調整顯示效果。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$theme: light</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  @if $theme == light</span><br><span class="line">    background-color: #fff</span><br><span class="line">    color: #333</span><br><span class="line">  @else</span><br><span class="line">    background-color: #333</span><br><span class="line">    color: #fff</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼中，根據變數 <code>$theme</code> 的值，條件地設定 <code>body</code> 的背景顏色和文字顏色。如果 <code>$theme</code> 為 <code>light</code>，則使用淺色背景和深色文字；否則，使用深色背景和淺色文字。</p>
+<h3 id="6-循環（Loops）"><a href="#6-循環（Loops）" class="headerlink" title="6. 循環（Loops）"></a>6. 循環（Loops）</h3><p>SASS 還支援循環語句，這在需要根據某些條件自動生成多個樣式時非常有用。SASS 的循環可以遍歷一個列表，並生成對應的樣式。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$colors: red, green, blue</span><br><span class="line"></span><br><span class="line">@each $color in $colors</span><br><span class="line">  .#&#123;$color&#125;-box</span><br><span class="line">    background-color: $color</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，<code>@each</code> 循環將遍歷 <code>$colors</code> 列表，並為每個顏色生成一個相應的類別 <code>.red-box</code>、<code>.green-box</code> 和 <code>.blue-box</code>，並將其背景顏色設置為對應的顏色。</p>
+<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>SASS 的 SASS 語法是一種簡潔且強大的 CSS 編寫方式，通過簡單的縮排結構，讓開發者能夠更有效率地編寫和維護樣式。SASS 提供的變數、巢狀規則、混合、繼承等功能，能夠使樣式更加模組化、動態化，並大大減少冗餘代碼。學會 SASS 語法後，你可以更靈活地處理大型專案中的 CSS，提升工作效率。如果你還沒有開始使用 SASS，不妨從這些基礎語法開始，體驗它帶來的便利。</p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>SASS</tag>
+        <tag>SCSS</tag>
       </tags>
   </entry>
   <entry>
@@ -7849,6 +8070,79 @@
       </tags>
   </entry>
   <entry>
+    <title>SQL 入門語法教學筆記 | 學習筆記</title>
+    <url>/2018/02/01/learning-notes-sql-intro-tutorial/</url>
+    <content><![CDATA[<p>SQL 是操作關聯式資料庫使用的語法。以下介紹常用 SQL 入門語法：</p>
+<h2 id="一、資料庫基本概念"><a href="#一、資料庫基本概念" class="headerlink" title="一、資料庫基本概念"></a>一、資料庫基本概念</h2><p>資料庫 (Database)：儲存資料的容器。<br>資料表 (Table)：儲存資料的表格，每列 (row) 為一筆紀錄，每欄 (column) 為一種資料屬性。</p>
+<hr>
+<h2 id="二、基本-SQL-語法"><a href="#二、基本-SQL-語法" class="headerlink" title="二、基本 SQL 語法"></a>二、基本 SQL 語法</h2><h4 id="1-建立資料庫"><a href="#1-建立資料庫" class="headerlink" title="1. 建立資料庫"></a>1. 建立資料庫</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE my_database;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-使用資料庫"><a href="#2-使用資料庫" class="headerlink" title="2. 使用資料庫"></a>2. 使用資料庫</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">USE my_database;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-建立資料表"><a href="#3-建立資料表" class="headerlink" title="3. 建立資料表"></a>3. 建立資料表</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> users (</span><br><span class="line">    id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY AUTO_INCREMENT,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">    email <span class="type">VARCHAR</span>(<span class="number">100</span>),</span><br><span class="line">    age <span class="type">INT</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-查詢資料"><a href="#4-查詢資料" class="headerlink" title="4. 查詢資料"></a>4. 查詢資料</h4><p>查詢所有欄位</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
+<p>選擇特定欄位</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-插入資料"><a href="#5-插入資料" class="headerlink" title="5. 插入資料"></a>5. 插入資料</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> users (name, email, age) <span class="keyword">VALUES</span> (<span class="string">&#x27;John&#x27;</span>, <span class="string">&#x27;john@example.com&#x27;</span>, <span class="number">25</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-更新資料"><a href="#6-更新資料" class="headerlink" title="6. 更新資料"></a>6. 更新資料</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> users <span class="keyword">SET</span> age <span class="operator">=</span> <span class="number">26</span> <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-刪除資料"><a href="#7-刪除資料" class="headerlink" title="7. 刪除資料"></a>7. 刪除資料</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="三、條件查詢"><a href="#三、條件查詢" class="headerlink" title="三、條件查詢"></a>三、條件查詢</h2><h4 id="1-WHERE-條件"><a href="#1-WHERE-條件" class="headerlink" title="1. WHERE 條件"></a>1. WHERE 條件</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-AND、OR、NOT"><a href="#2-AND、OR、NOT" class="headerlink" title="2. AND、OR、NOT"></a>2. AND、OR、NOT</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">20</span> <span class="keyword">AND</span> name <span class="operator">=</span> <span class="string">&#x27;John&#x27;</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">20</span> <span class="keyword">OR</span> age <span class="operator">&lt;</span> <span class="number">18</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> <span class="keyword">NOT</span> age <span class="operator">=</span> <span class="number">25</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-LIKE-模糊查詢"><a href="#3-LIKE-模糊查詢" class="headerlink" title="3. LIKE 模糊查詢"></a>3. LIKE 模糊查詢</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> name <span class="keyword">LIKE</span> <span class="string">&#x27;J%&#x27;</span>;  <span class="comment">-- 以J開頭</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> email <span class="keyword">LIKE</span> <span class="string">&#x27;%@gmail.com&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-ORDER-BY-排序"><a href="#4-ORDER-BY-排序" class="headerlink" title="4. ORDER BY 排序"></a>4. ORDER BY 排序</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">ASC</span>;  <span class="comment">-- 遞增排序</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">DESC</span>; <span class="comment">-- 遞減排序</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-LIMIT-限制筆數"><a href="#5-LIMIT-限制筆數" class="headerlink" title="5. LIMIT 限制筆數"></a>5. LIMIT 限制筆數</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users LIMIT <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、聚合函數"><a href="#四、聚合函數" class="headerlink" title="四、聚合函數"></a>四、聚合函數</h2><h4 id="1-計算筆數"><a href="#1-計算筆數" class="headerlink" title="1. 計算筆數"></a>1. 計算筆數</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-最大-x2F-最小值"><a href="#2-最大-x2F-最小值" class="headerlink" title="2. 最大&#x2F;最小值"></a>2. 最大&#x2F;最小值</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MAX</span>(age) <span class="keyword">FROM</span> users;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MIN</span>(age) <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-平均-x2F-總和"><a href="#3-平均-x2F-總和" class="headerlink" title="3. 平均&#x2F;總和"></a>3. 平均&#x2F;總和</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">AVG</span>(age) <span class="keyword">FROM</span> users;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(age) <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="五、分組查詢"><a href="#五、分組查詢" class="headerlink" title="五、分組查詢"></a>五、分組查詢</h2><h4 id="1-GROUP-BY"><a href="#1-GROUP-BY" class="headerlink" title="1. GROUP BY"></a>1. GROUP BY</h4><p><code>GROUP BY</code> 查詢欄位僅能包含 <code>GROUP BY</code> 和聚合函數</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> age, <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> users <span class="keyword">GROUP</span> <span class="keyword">BY</span> age;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-HAVING-搭配-GROUP-BY-當作查詢條件"><a href="#2-HAVING-搭配-GROUP-BY-當作查詢條件" class="headerlink" title="2. HAVING 搭配 GROUP BY 當作查詢條件"></a>2. HAVING 搭配 GROUP BY 當作查詢條件</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> age, <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> users <span class="keyword">GROUP</span> <span class="keyword">BY</span> age <span class="keyword">HAVING</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">&gt;</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="六、資料表連接-JOIN"><a href="#六、資料表連接-JOIN" class="headerlink" title="六、資料表連接 (JOIN)"></a>六、資料表連接 (JOIN)</h2><h4 id="1-INNER-JOIN"><a href="#1-INNER-JOIN" class="headerlink" title="1. INNER JOIN"></a>1. INNER JOIN</h4><p>內連接，僅返回兩個資料表中「符合交集條件」的資料。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-LEFT-JOIN"><a href="#2-LEFT-JOIN" class="headerlink" title="2. LEFT JOIN"></a>2. LEFT JOIN</h4><p>左連接，返回左表 (users) 所有資料，即使右表 (orders) 無對應資料，也會顯示左表資料，右表無資料則會顯示 NULL。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-RIGHT-JOIN"><a href="#3-RIGHT-JOIN" class="headerlink" title="3. RIGHT JOIN"></a>3. RIGHT JOIN</h4><p>右連接，返回右表 (orders) 所有資料，即使左表 (users) 無對應資料，也會顯示右表資料，左表無資料則會顯示 NULL。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-FULL-JOIN-部分資料庫支援"><a href="#4-FULL-JOIN-部分資料庫支援" class="headerlink" title="4. FULL JOIN (部分資料庫支援)"></a>4. FULL JOIN (部分資料庫支援)</h4><p>全外連接，返回兩個表中所有資料，無對應資料則顯示 NULL。(MySQL 不支援 FULL JOIN，需使用 UNION 模擬)</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">FULL</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
+
+<h2 id="七、合併查詢-UNION"><a href="#七、合併查詢-UNION" class="headerlink" title="七、合併查詢 (UNION)"></a>七、合併查詢 (UNION)</h2><h4 id="1-UNION"><a href="#1-UNION" class="headerlink" title="1. UNION"></a>1. UNION</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">30</span></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&lt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
+<p>UNION 用於合併兩個或多個查詢的結果。<br>預設會去除重複資料。<br>欄位數量與型態須一致。</p>
+<h4 id="2-UNION-ALL"><a href="#2-UNION-ALL" class="headerlink" title="2. UNION ALL"></a>2. UNION ALL</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">30</span></span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&lt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
+<p>與 UNION 類似，但不會去除重複資料。</p>
+<hr>
+<p>以上整理了 SQL 入門常見的基本語法，可以基本處理資料庫操作需求。</p>
+]]></content>
+      <tags>
+        <tag>SQL</tag>
+        <tag>資料庫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>前端渲染技術全解析：SSR、SSG、ISR、SPA 入門教學筆記 | 學習筆記</title>
     <url>/2024/12/12/learning-notes-spa-ssr-isr-ssg-redux-intro-tutorial%20copy/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在現代網站開發中，前端技術日益進步，如何選擇合適的渲染方式，將直接影響網站的效能、SEO、開發效率與使用者體驗。本文將介紹四種常見渲染技術：<strong>伺服器端渲染（SSR）</strong>、<strong>靜態網站生成（SSG）</strong>、<strong>增量靜態再生（ISR）</strong>、以及<strong>單頁應用（SPA）</strong>，並搭配實例幫助理解。</p>
@@ -7946,79 +8240,6 @@
         <tag>react</tag>
         <tag>Redux</tag>
         <tag>React Redux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SQL 入門語法教學筆記 | 學習筆記</title>
-    <url>/2018/02/01/learning-notes-sql-intro-tutorial/</url>
-    <content><![CDATA[<p>SQL 是操作關聯式資料庫使用的語法。以下介紹常用 SQL 入門語法：</p>
-<h2 id="一、資料庫基本概念"><a href="#一、資料庫基本概念" class="headerlink" title="一、資料庫基本概念"></a>一、資料庫基本概念</h2><p>資料庫 (Database)：儲存資料的容器。<br>資料表 (Table)：儲存資料的表格，每列 (row) 為一筆紀錄，每欄 (column) 為一種資料屬性。</p>
-<hr>
-<h2 id="二、基本-SQL-語法"><a href="#二、基本-SQL-語法" class="headerlink" title="二、基本 SQL 語法"></a>二、基本 SQL 語法</h2><h4 id="1-建立資料庫"><a href="#1-建立資料庫" class="headerlink" title="1. 建立資料庫"></a>1. 建立資料庫</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE my_database;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-使用資料庫"><a href="#2-使用資料庫" class="headerlink" title="2. 使用資料庫"></a>2. 使用資料庫</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">USE my_database;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-建立資料表"><a href="#3-建立資料表" class="headerlink" title="3. 建立資料表"></a>3. 建立資料表</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> users (</span><br><span class="line">    id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY AUTO_INCREMENT,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">    email <span class="type">VARCHAR</span>(<span class="number">100</span>),</span><br><span class="line">    age <span class="type">INT</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-查詢資料"><a href="#4-查詢資料" class="headerlink" title="4. 查詢資料"></a>4. 查詢資料</h4><p>查詢所有欄位</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
-<p>選擇特定欄位</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-插入資料"><a href="#5-插入資料" class="headerlink" title="5. 插入資料"></a>5. 插入資料</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> users (name, email, age) <span class="keyword">VALUES</span> (<span class="string">&#x27;John&#x27;</span>, <span class="string">&#x27;john@example.com&#x27;</span>, <span class="number">25</span>);</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-更新資料"><a href="#6-更新資料" class="headerlink" title="6. 更新資料"></a>6. 更新資料</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> users <span class="keyword">SET</span> age <span class="operator">=</span> <span class="number">26</span> <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="7-刪除資料"><a href="#7-刪除資料" class="headerlink" title="7. 刪除資料"></a>7. 刪除資料</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="三、條件查詢"><a href="#三、條件查詢" class="headerlink" title="三、條件查詢"></a>三、條件查詢</h2><h4 id="1-WHERE-條件"><a href="#1-WHERE-條件" class="headerlink" title="1. WHERE 條件"></a>1. WHERE 條件</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-AND、OR、NOT"><a href="#2-AND、OR、NOT" class="headerlink" title="2. AND、OR、NOT"></a>2. AND、OR、NOT</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">20</span> <span class="keyword">AND</span> name <span class="operator">=</span> <span class="string">&#x27;John&#x27;</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">20</span> <span class="keyword">OR</span> age <span class="operator">&lt;</span> <span class="number">18</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> <span class="keyword">NOT</span> age <span class="operator">=</span> <span class="number">25</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-LIKE-模糊查詢"><a href="#3-LIKE-模糊查詢" class="headerlink" title="3. LIKE 模糊查詢"></a>3. LIKE 模糊查詢</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> name <span class="keyword">LIKE</span> <span class="string">&#x27;J%&#x27;</span>;  <span class="comment">-- 以J開頭</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> email <span class="keyword">LIKE</span> <span class="string">&#x27;%@gmail.com&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-ORDER-BY-排序"><a href="#4-ORDER-BY-排序" class="headerlink" title="4. ORDER BY 排序"></a>4. ORDER BY 排序</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">ASC</span>;  <span class="comment">-- 遞增排序</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">DESC</span>; <span class="comment">-- 遞減排序</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="5-LIMIT-限制筆數"><a href="#5-LIMIT-限制筆數" class="headerlink" title="5. LIMIT 限制筆數"></a>5. LIMIT 限制筆數</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users LIMIT <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="四、聚合函數"><a href="#四、聚合函數" class="headerlink" title="四、聚合函數"></a>四、聚合函數</h2><h4 id="1-計算筆數"><a href="#1-計算筆數" class="headerlink" title="1. 計算筆數"></a>1. 計算筆數</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-最大-x2F-最小值"><a href="#2-最大-x2F-最小值" class="headerlink" title="2. 最大&#x2F;最小值"></a>2. 最大&#x2F;最小值</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MAX</span>(age) <span class="keyword">FROM</span> users;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MIN</span>(age) <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-平均-x2F-總和"><a href="#3-平均-x2F-總和" class="headerlink" title="3. 平均&#x2F;總和"></a>3. 平均&#x2F;總和</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">AVG</span>(age) <span class="keyword">FROM</span> users;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(age) <span class="keyword">FROM</span> users;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="五、分組查詢"><a href="#五、分組查詢" class="headerlink" title="五、分組查詢"></a>五、分組查詢</h2><h4 id="1-GROUP-BY"><a href="#1-GROUP-BY" class="headerlink" title="1. GROUP BY"></a>1. GROUP BY</h4><p><code>GROUP BY</code> 查詢欄位僅能包含 <code>GROUP BY</code> 和聚合函數</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> age, <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> users <span class="keyword">GROUP</span> <span class="keyword">BY</span> age;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-HAVING-搭配-GROUP-BY-當作查詢條件"><a href="#2-HAVING-搭配-GROUP-BY-當作查詢條件" class="headerlink" title="2. HAVING 搭配 GROUP BY 當作查詢條件"></a>2. HAVING 搭配 GROUP BY 當作查詢條件</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> age, <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> users <span class="keyword">GROUP</span> <span class="keyword">BY</span> age <span class="keyword">HAVING</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">&gt;</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="六、資料表連接-JOIN"><a href="#六、資料表連接-JOIN" class="headerlink" title="六、資料表連接 (JOIN)"></a>六、資料表連接 (JOIN)</h2><h4 id="1-INNER-JOIN"><a href="#1-INNER-JOIN" class="headerlink" title="1. INNER JOIN"></a>1. INNER JOIN</h4><p>內連接，僅返回兩個資料表中「符合交集條件」的資料。</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-LEFT-JOIN"><a href="#2-LEFT-JOIN" class="headerlink" title="2. LEFT JOIN"></a>2. LEFT JOIN</h4><p>左連接，返回左表 (users) 所有資料，即使右表 (orders) 無對應資料，也會顯示左表資料，右表無資料則會顯示 NULL。</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-RIGHT-JOIN"><a href="#3-RIGHT-JOIN" class="headerlink" title="3. RIGHT JOIN"></a>3. RIGHT JOIN</h4><p>右連接，返回右表 (orders) 所有資料，即使左表 (users) 無對應資料，也會顯示右表資料，左表無資料則會顯示 NULL。</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-FULL-JOIN-部分資料庫支援"><a href="#4-FULL-JOIN-部分資料庫支援" class="headerlink" title="4. FULL JOIN (部分資料庫支援)"></a>4. FULL JOIN (部分資料庫支援)</h4><p>全外連接，返回兩個表中所有資料，無對應資料則顯示 NULL。(MySQL 不支援 FULL JOIN，需使用 UNION 模擬)</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.id, users.name, orders.amount </span><br><span class="line"><span class="keyword">FROM</span> users </span><br><span class="line"><span class="keyword">FULL</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure>
-
-<h2 id="七、合併查詢-UNION"><a href="#七、合併查詢-UNION" class="headerlink" title="七、合併查詢 (UNION)"></a>七、合併查詢 (UNION)</h2><h4 id="1-UNION"><a href="#1-UNION" class="headerlink" title="1. UNION"></a>1. UNION</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">30</span></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&lt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
-
-<p>UNION 用於合併兩個或多個查詢的結果。<br>預設會去除重複資料。<br>欄位數量與型態須一致。</p>
-<h4 id="2-UNION-ALL"><a href="#2-UNION-ALL" class="headerlink" title="2. UNION ALL"></a>2. UNION ALL</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&gt;</span> <span class="number">30</span></span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"><span class="keyword">SELECT</span> name, email <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">&lt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
-
-<p>與 UNION 類似，但不會去除重複資料。</p>
-<hr>
-<p>以上整理了 SQL 入門常見的基本語法，可以基本處理資料庫操作需求。</p>
-]]></content>
-      <tags>
-        <tag>SQL</tag>
-        <tag>資料庫</tag>
       </tags>
   </entry>
   <entry>
@@ -8516,49 +8737,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue 正確新增或修改物件屬性入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/14/learning-notes-vue-set-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 Vue 2（Options API）中，<code>this.$set</code> 是用來<strong>在響應式系統中正確新增或修改物件屬性</strong>的方法。這對於<strong>動態新增屬性或修改陣列的指定索引值</strong>特別有用。</p>
-<hr>
-<h2 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(target, propertyName/index, value)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>target</code>：要修改的對象或陣列</li>
-<li><code>propertyName</code>（物件）或 <code>index</code>（陣列）</li>
-<li><code>value</code>：要設的值</li>
-</ul>
-<hr>
-<h2 id="為什麼需要-this-set？"><a href="#為什麼需要-this-set？" class="headerlink" title="為什麼需要 this.$set？"></a>為什麼需要 <code>this.$set</code>？</h2><p>Vue 2 的 reactivity（響應式系統）使用 <code>Object.defineProperty</code>，它<strong>無法偵測到新加的屬性</strong>或是直接對陣列用索引來賦值。</p>
-<p>例如，下面的程式碼是不會觸發畫面更新的：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">someObj</span>.<span class="property">newKey</span> = <span class="string">&#x27;value&#x27;</span>      <span class="comment">// 不會觸發更新</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">someArray</span>[<span class="number">1</span>] = <span class="string">&#x27;changed&#x27;</span>      <span class="comment">// 不會觸發更新</span></span><br></pre></td></tr></table></figure>
-
-<p>必須改成：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">someObj</span>, <span class="string">&#x27;newKey&#x27;</span>, <span class="string">&#x27;value&#x27;</span>)      <span class="comment">// 會觸發更新</span></span><br><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">someArray</span>, <span class="number">1</span>, <span class="string">&#x27;changed&#x27;</span>)         <span class="comment">// 會觸發更新</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="範例一：對物件新增屬性"><a href="#範例一：對物件新增屬性" class="headerlink" title="範例一：對物件新增屬性"></a>範例一：對物件新增屬性</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">user</span>: &#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;小明&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">user</span>, <span class="string">&#x27;age&#x27;</span>, <span class="number">30</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這樣才能讓 <code>user.age</code> 成為響應式屬性，更新時畫面才會重新渲染。</p>
-<hr>
-<h2 id="範例二：修改陣列中的值"><a href="#範例二：修改陣列中的值" class="headerlink" title="範例二：修改陣列中的值"></a>範例二：修改陣列中的值</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">items</span>: [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">methods</span>: &#123;</span><br><span class="line">  <span class="title function_">updateItem</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">items</span>, <span class="number">1</span>, <span class="string">&#x27;changed&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Vue-3-呢？"><a href="#Vue-3-呢？" class="headerlink" title="Vue 3 呢？"></a>Vue 3 呢？</h2><p>在 Vue 3 裡，因為 reactivity 系統改用 <strong>Proxy</strong>，所以可以直接新增或修改屬性，不需要 <code>this.$set</code> 了：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">someObj</span>.<span class="property">newKey</span> = <span class="string">&#x27;value&#x27;</span>   <span class="comment">// Vue 3 沒問題</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">someArray</span>[<span class="number">1</span>] = <span class="string">&#x27;changed&#x27;</span>   <span class="comment">// Vue 3 沒問題</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>如果你正在寫 Vue 2 的 Tic Tac Toe 遊戲，當你要動態更新棋盤的某個格子時，這樣做就是對的：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">board</span>[row], col, <span class="string">&#x27;X&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>這樣才能確保畫面能即時更新。</p>
-]]></content>
-      <tags>
-        <tag>vue</tag>
-        <tag>vue.js</tag>
-        <tag>this.$set</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue Router 入門教學筆記 | 學習筆記</title>
     <url>/2024/11/16/learning-notes-vue-router-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Vue Router 是 Vue.js 官方提供的前端路由解決方案，專為構建單頁應用（SPA, Single Page Application）而設計。它讓我們可以根據網址變化動態切換畫面而不重新載入頁面，是開發 Vue 應用不可或缺的工具之一。</p>
@@ -8670,6 +8848,49 @@
         <tag>frontend engineer</tag>
         <tag>Vue</tag>
         <tag>Vue Router</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue 正確新增或修改物件屬性入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/14/learning-notes-vue-set-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 Vue 2（Options API）中，<code>this.$set</code> 是用來<strong>在響應式系統中正確新增或修改物件屬性</strong>的方法。這對於<strong>動態新增屬性或修改陣列的指定索引值</strong>特別有用。</p>
+<hr>
+<h2 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(target, propertyName/index, value)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>target</code>：要修改的對象或陣列</li>
+<li><code>propertyName</code>（物件）或 <code>index</code>（陣列）</li>
+<li><code>value</code>：要設的值</li>
+</ul>
+<hr>
+<h2 id="為什麼需要-this-set？"><a href="#為什麼需要-this-set？" class="headerlink" title="為什麼需要 this.$set？"></a>為什麼需要 <code>this.$set</code>？</h2><p>Vue 2 的 reactivity（響應式系統）使用 <code>Object.defineProperty</code>，它<strong>無法偵測到新加的屬性</strong>或是直接對陣列用索引來賦值。</p>
+<p>例如，下面的程式碼是不會觸發畫面更新的：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">someObj</span>.<span class="property">newKey</span> = <span class="string">&#x27;value&#x27;</span>      <span class="comment">// 不會觸發更新</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">someArray</span>[<span class="number">1</span>] = <span class="string">&#x27;changed&#x27;</span>      <span class="comment">// 不會觸發更新</span></span><br></pre></td></tr></table></figure>
+
+<p>必須改成：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">someObj</span>, <span class="string">&#x27;newKey&#x27;</span>, <span class="string">&#x27;value&#x27;</span>)      <span class="comment">// 會觸發更新</span></span><br><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">someArray</span>, <span class="number">1</span>, <span class="string">&#x27;changed&#x27;</span>)         <span class="comment">// 會觸發更新</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="範例一：對物件新增屬性"><a href="#範例一：對物件新增屬性" class="headerlink" title="範例一：對物件新增屬性"></a>範例一：對物件新增屬性</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">user</span>: &#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;小明&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">user</span>, <span class="string">&#x27;age&#x27;</span>, <span class="number">30</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣才能讓 <code>user.age</code> 成為響應式屬性，更新時畫面才會重新渲染。</p>
+<hr>
+<h2 id="範例二：修改陣列中的值"><a href="#範例二：修改陣列中的值" class="headerlink" title="範例二：修改陣列中的值"></a>範例二：修改陣列中的值</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">items</span>: [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">methods</span>: &#123;</span><br><span class="line">  <span class="title function_">updateItem</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">items</span>, <span class="number">1</span>, <span class="string">&#x27;changed&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Vue-3-呢？"><a href="#Vue-3-呢？" class="headerlink" title="Vue 3 呢？"></a>Vue 3 呢？</h2><p>在 Vue 3 裡，因為 reactivity 系統改用 <strong>Proxy</strong>，所以可以直接新增或修改屬性，不需要 <code>this.$set</code> 了：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">someObj</span>.<span class="property">newKey</span> = <span class="string">&#x27;value&#x27;</span>   <span class="comment">// Vue 3 沒問題</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">someArray</span>[<span class="number">1</span>] = <span class="string">&#x27;changed&#x27;</span>   <span class="comment">// Vue 3 沒問題</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>如果你正在寫 Vue 2 的 Tic Tac Toe 遊戲，當你要動態更新棋盤的某個格子時，這樣做就是對的：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">board</span>[row], col, <span class="string">&#x27;X&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>這樣才能確保畫面能即時更新。</p>
+]]></content>
+      <tags>
+        <tag>vue</tag>
+        <tag>vue.js</tag>
+        <tag>this.$set</tag>
       </tags>
   </entry>
   <entry>
@@ -10038,8 +10259,8 @@
         <tag>前端工程</tag>
         <tag>軟體工程師</tag>
         <tag>Software Engineer</tag>
-        <tag>Web</tag>
         <tag>前端工程師</tag>
+        <tag>Web</tag>
         <tag>軟體工程</tag>
         <tag>Frontend Roadmap</tag>
         <tag>網頁開發</tag>
@@ -10466,9 +10687,9 @@
         <tag>SWE</tag>
         <tag>Software Engineer</tag>
         <tag>Software</tag>
+        <tag>Web</tag>
         <tag>backend</tag>
         <tag>backend engineer</tag>
-        <tag>Web</tag>
       </tags>
   </entry>
 </search>

@@ -26,11 +26,11 @@
     
     <title>
         
-          關於軟體工程師 Software Engineer 的 10 個關鍵字 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          n8n 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2015/01/22/about-software-engineer-10-keywords/">
+    <link rel="canonical" href="https://tech.kdchang.net/2024/12/20/learning-notes-n8n-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="關於軟體工程師 Software Engineer 的 10 個關鍵字 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="關於軟體工程師 Software Engineer 的 10 個關鍵字 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="n8n 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="n8n 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,25 +199,19 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>關於軟體工程師 Software Engineer 的 10 個關鍵字</h1>
+                    <h1>n8n 入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2015-01-22
+                        2024-12-20
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#開發者" title="開發者">開發者</a>
+                          <a class="tag" href="/tags/#n8n" title="n8n">n8n</a>
                         
-                          <a class="tag" href="/tags/#軟體工程師" title="軟體工程師">軟體工程師</a>
+                          <a class="tag" href="/tags/#VS Code" title="VS Code">VS Code</a>
                         
-                          <a class="tag" href="/tags/#SWE" title="SWE">SWE</a>
-                        
-                          <a class="tag" href="/tags/#Software Engineer" title="Software Engineer">Software Engineer</a>
-                        
-                          <a class="tag" href="/tags/#Software" title="Software">Software</a>
-                        
-                          <a class="tag" href="/tags/#軟體開發" title="軟體開發">軟體開發</a>
+                          <a class="tag" href="/tags/#工作流程自動化工具" title="工作流程自動化工具">工作流程自動化工具</a>
                         
 
                     </div>
@@ -243,20 +237,112 @@
                 </div>
                 <br>
                 <div>
-                    <p>以下整理了軟體工程師相關的十個關鍵字，涵蓋技能、工具與工作方式：</p>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在現代軟體開發與數位工作流程中，「自動化」已成為提升效率的關鍵。無論是處理 API 整合、資料同步、通知發送，或是各種無需人工介入的重複性工作，選擇一套靈活的工作流程自動化工具是必要的。</p>
+<p><strong>n8n（pronounced “n-eight-n”）</strong> 是一個強大的開源自動化工具，具備類似 Zapier 的拖拉式流程設計介面，但更強調<strong>可自建、開源、自主掌控資料與程式彈性</strong>。它支援超過 400 個內建整合（如 Slack、Google Sheets、Notion、MySQL、HTTP API 等），同時允許用戶透過 JavaScript 編寫邏輯節點，打造彈性極高的自動化流程。</p>
+<p>相較於其他自動化工具，n8n 的最大優勢在於：「你可以在本機或伺服器上自行部署，資料完全由你掌控。」這點對於重視隱私或希望建立企業內部自動化平台的團隊尤其重要。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p><strong>n8n 是什麼？</strong></p>
+<ul>
+<li>一個開源、自託管、可視化的工作流程自動化工具。</li>
+<li>名稱源自 “Node + Node &#x3D; Workflow”，以節點（Node）為單位建構流程。</li>
+</ul>
+</li>
+<li><p><strong>主要特色</strong></p>
+<ul>
+<li>開源、自託管、資料不外流。</li>
+<li>拖放式流程設計器，門檻低但彈性高。</li>
+<li>可撰寫 JavaScript 處理邏輯。</li>
+<li>支援 webhook、排程、event-based 工作流程。</li>
+<li>擁有超過 400 個現成整合節點（Google、Slack、GitHub、HTTP Request 等）。</li>
+</ul>
+</li>
+<li><p><strong>使用場景</strong></p>
+<ul>
+<li>第三方 API 整合與自動同步。</li>
+<li>資料轉換與清洗（ETL）。</li>
+<li>表單提交後自動寄信／填寫 Google Sheets。</li>
+<li>發布內容到社群平台。</li>
+<li>團隊協作通知（如 Jira、Slack 整合）。</li>
+<li>自動監控 RSS、新留言、社群評論等。</li>
+</ul>
+</li>
+<li><p><strong>部署方式</strong></p>
+<ul>
+<li>支援 Docker、本地安裝、雲端託管（n8n.cloud）、Render、Railway 等平台。</li>
+<li>可選擇免費版本或企業進階授權。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="安裝與啟用方式"><a href="#安裝與啟用方式" class="headerlink" title="安裝與啟用方式"></a>安裝與啟用方式</h2><h3 id="1-使用-Docker-部署（推薦）"><a href="#1-使用-Docker-部署（推薦）" class="headerlink" title="1. 使用 Docker 部署（推薦）"></a>1. 使用 Docker 部署（推薦）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -it --<span class="built_in">rm</span> \</span><br><span class="line">  -p 5678:5678 \</span><br><span class="line">  -v ~/.n8n:/home/node/.n8n \</span><br><span class="line">  n8nio/n8n</span><br></pre></td></tr></table></figure>
+
+<p>開啟瀏覽器進入 <a target="_blank" rel="noopener" href="http://localhost:5678/">http://localhost:5678</a> 即可開始使用。</p>
+<h3 id="2-使用-npm-安裝"><a href="#2-使用-npm-安裝" class="headerlink" title="2. 使用 npm 安裝"></a>2. 使用 npm 安裝</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install n8n -g</span><br><span class="line">n8n</span><br></pre></td></tr></table></figure>
+
+<p>同樣可透過 <a target="_blank" rel="noopener" href="http://localhost:5678/">http://localhost:5678</a> 開啟界面。</p>
+<hr>
+<h2 id="使用介面簡介"><a href="#使用介面簡介" class="headerlink" title="使用介面簡介"></a>使用介面簡介</h2><p>n8n 的主界面由以下幾個部分組成：</p>
+<ul>
+<li><strong>Canvas（畫布）</strong>：可拖拉節點設計流程。</li>
+<li><strong>左側工具列</strong>：內建各種整合節點分類（Webhook、HTTP Request、Email 等）。</li>
+<li><strong>節點屬性面板</strong>：選取節點後可編輯其參數設定。</li>
+<li><strong>執行與測試工具</strong>：可以逐步執行流程、查看輸入與輸出資料。</li>
+</ul>
+<hr>
+<h2 id="實際應用範例"><a href="#實際應用範例" class="headerlink" title="實際應用範例"></a>實際應用範例</h2><h3 id="範例一：接收-Webhook-並寄送-Slack-通知"><a href="#範例一：接收-Webhook-並寄送-Slack-通知" class="headerlink" title="範例一：接收 Webhook 並寄送 Slack 通知"></a>範例一：接收 Webhook 並寄送 Slack 通知</h3><p><strong>目標流程</strong>：當收到 Webhook（如表單送出），自動發送一則 Slack 通知。</p>
 <ol>
-<li><strong>程式語言 (Programming Language)</strong> - 如 Python、Java、C++、JavaScript 等。  </li>
-<li><strong>版本控制 (Version Control)</strong> - 例如 Git、GitHub（平台）、GitLab（平台）。  </li>
-<li><strong>測試 (Testing)</strong> - 單元測試 (Unit Testing)、整合測試 (Integration Testing)。  </li>
-<li><strong>敏捷開發 (Agile Development)</strong> - Scrum、Kanban 等工作方法。  </li>
-<li><strong>架構設計和系統設計 (Architecture Design、System Design)</strong> - 微服務 (Microservices)、單體架構 (Monolithic Architecture)。  </li>
-<li><strong>資料庫 (Database)</strong> - SQL、NoSQL (如 MongoDB)。  </li>
-<li><strong>雲端運算 (Cloud Computing)</strong> - AWS、Azure、Google Cloud。  </li>
-<li><strong>DevOps</strong> - CI&#x2F;CD、自動化部署 (Automation Deployment)。  </li>
-<li><strong>演算法 (Algorithm)</strong> - 演算法、資料結構、問題解決能力。  </li>
-<li><strong>團隊合作 (Collaboration)</strong> - 跨部門溝通、工具 (如 JIRA、Confluence)。</li>
+<li><p>新增節點 <code>Webhook</code>：</p>
+<ul>
+<li>設定 HTTP 方法為 <code>POST</code></li>
+<li>指定路徑為 <code>/contact</code></li>
+</ul>
+</li>
+<li><p>新增節點 <code>Slack</code>：</p>
+<ul>
+<li>動作選擇 <code>Send Message</code></li>
+<li>填入 Slack OAuth 認證與頻道資訊</li>
+<li>訊息可使用 <code>&#123;&#123;$json["name"]&#125;&#125;</code> 這類變數取得 webhook 傳入資料</li>
+</ul>
+</li>
+<li><p>將 <code>Webhook</code> → <code>Slack</code> 連接起來。</p>
+</li>
+<li><p>啟用工作流程，對 <code>/webhook/contact</code> 發送 POST 請求，即會收到通知。</p>
+</li>
 </ol>
-<p>以上關鍵字為軟體工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
+<hr>
+<h3 id="範例二：每天早上-9-點將-MySQL-資料匯出至-Google-Sheets"><a href="#範例二：每天早上-9-點將-MySQL-資料匯出至-Google-Sheets" class="headerlink" title="範例二：每天早上 9 點將 MySQL 資料匯出至 Google Sheets"></a>範例二：每天早上 9 點將 MySQL 資料匯出至 Google Sheets</h3><ol>
+<li><p>使用 <code>Cron</code> 節點設定時間為每天早上 9 點。</p>
+</li>
+<li><p>使用 <code>MySQL</code> 節點撈出指定資料表的內容。</p>
+</li>
+<li><p>使用 <code>Google Sheets</code> 節點將資料新增至指定試算表。</p>
+</li>
+<li><p>可加上一個 <code>Function</code> 節點清洗或轉換資料格式。</p>
+</li>
+</ol>
+<p>這樣可輕鬆建立每日自動報表流程，無需撰寫一行 shell script 或排程任務。</p>
+<hr>
+<h3 id="範例三：API-整合流程（串接-ChatGPT-回覆留言）"><a href="#範例三：API-整合流程（串接-ChatGPT-回覆留言）" class="headerlink" title="範例三：API 整合流程（串接 ChatGPT 回覆留言）"></a>範例三：API 整合流程（串接 ChatGPT 回覆留言）</h3><ol>
+<li><p>使用 <code>Webhook</code> 節點接收前端留言內容。</p>
+</li>
+<li><p>使用 <code>OpenAI</code> 節點（或 HTTP Request + 自行送出 API 請求）傳送留言給 ChatGPT 並取得回覆。</p>
+</li>
+<li><p>使用 <code>Send Email</code> 或 <code>Telegram</code> 節點自動回覆用戶。</p>
+</li>
+</ol>
+<p>n8n 支援 JSON 處理與條件邏輯節點，讓你可根據留言內容分類處理或轉送不同部門。</p>
+<hr>
+<h2 id="實用建議"><a href="#實用建議" class="headerlink" title="實用建議"></a>實用建議</h2><ul>
+<li>建議搭配 <strong>版本控制（匯出 workflow JSON）</strong>，便於多人協作與備份。</li>
+<li>若要部署至生產環境，建議設定密碼驗證與 HTTPS 保護。</li>
+<li>可以將變數或 API key 設定為「環境變數」集中管理，提升安全性與可維護性。</li>
+<li>利用 <code>Function</code> 與 <code>Set</code> 節點進行複雜邏輯處理與欄位映射。</li>
+<li>若有即時性需求，可使用 webhook + queue-based 設計方式，避免封鎖主流程。</li>
+</ul>
+<hr>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>n8n 是一款功能強大且靈活的開源工作流程自動化工具，不僅適合開發者，也適合營運、行銷、客服等跨部門自動化需求。透過拖拉節點的方式，任何人都可以建立自動化流程，取代繁瑣重複的手動操作。</p>
+<p>與 Zapier、Make 等 SaaS 工具不同，n8n 提供了極高的可控性與可擴充性。無論是 API 整合、資料清洗、事件觸發，還是每日任務排程，n8n 都能成為你構建智慧工作流程的得力助手。</p>
 
                 </div>
 
@@ -273,7 +359,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/06/13/about-frontend-engineer-10-keywords/" title="關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字" rel="bookmark">關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/06/21/about-backend-engineer-10-keywords/" title="關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字" rel="bookmark">關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/21/en/about-backend-engineer-10-keywords/" title="10 key terms related to backend engineering" rel="bookmark">10 key terms related to backend engineering</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/03/22/software-engineering-web-dev-tools-resources/" title="常見軟體工程師/網頁開發工具和學習資源整理" rel="bookmark">常見軟體工程師/網頁開發工具和學習資源整理</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/06/22/software-engineer-and-web-develement-skill-tree/" title="軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）" rel="bookmark">軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/20/learning-notes-roo-code-intro-tutorial/" title="Roo Code 詳細介紹：AI VS Code 編輯器外掛入門教學筆記 | 學習筆記" rel="bookmark">Roo Code 詳細介紹：AI VS Code 編輯器外掛入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -309,8 +395,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2015/01/22/about-software-engineer-10-keywords/";
-    var disqus_url = "https://tech.kdchang.net/2015/01/22/about-software-engineer-10-keywords/";
+    var disqus_identifier = "https://tech.kdchang.net/2024/12/20/learning-notes-n8n-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2024/12/20/learning-notes-n8n-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

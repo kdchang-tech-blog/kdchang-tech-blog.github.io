@@ -26,11 +26,11 @@
     
     <title>
         
-          關於軟體工程師 Software Engineer 的 10 個關鍵字 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          Claude Code 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2015/01/22/about-software-engineer-10-keywords/">
+    <link rel="canonical" href="https://tech.kdchang.net/2024/12/20/learning-notes-claude-code-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="關於軟體工程師 Software Engineer 的 10 個關鍵字 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="關於軟體工程師 Software Engineer 的 10 個關鍵字 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="Claude Code 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="Claude Code 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,25 +199,21 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>關於軟體工程師 Software Engineer 的 10 個關鍵字</h1>
+                    <h1>Claude Code 入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2015-01-22
+                        2024-12-20
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#開發者" title="開發者">開發者</a>
+                          <a class="tag" href="/tags/#Claude" title="Claude">Claude</a>
                         
-                          <a class="tag" href="/tags/#軟體工程師" title="軟體工程師">軟體工程師</a>
+                          <a class="tag" href="/tags/#Claude Code" title="Claude Code">Claude Code</a>
                         
-                          <a class="tag" href="/tags/#SWE" title="SWE">SWE</a>
+                          <a class="tag" href="/tags/#編輯器" title="編輯器">編輯器</a>
                         
-                          <a class="tag" href="/tags/#Software Engineer" title="Software Engineer">Software Engineer</a>
-                        
-                          <a class="tag" href="/tags/#Software" title="Software">Software</a>
-                        
-                          <a class="tag" href="/tags/#軟體開發" title="軟體開發">軟體開發</a>
+                          <a class="tag" href="/tags/#AI IDE" title="AI IDE">AI IDE</a>
                         
 
                     </div>
@@ -243,20 +239,89 @@
                 </div>
                 <br>
                 <div>
-                    <p>以下整理了軟體工程師相關的十個關鍵字，涵蓋技能、工具與工作方式：</p>
-<ol>
-<li><strong>程式語言 (Programming Language)</strong> - 如 Python、Java、C++、JavaScript 等。  </li>
-<li><strong>版本控制 (Version Control)</strong> - 例如 Git、GitHub（平台）、GitLab（平台）。  </li>
-<li><strong>測試 (Testing)</strong> - 單元測試 (Unit Testing)、整合測試 (Integration Testing)。  </li>
-<li><strong>敏捷開發 (Agile Development)</strong> - Scrum、Kanban 等工作方法。  </li>
-<li><strong>架構設計和系統設計 (Architecture Design、System Design)</strong> - 微服務 (Microservices)、單體架構 (Monolithic Architecture)。  </li>
-<li><strong>資料庫 (Database)</strong> - SQL、NoSQL (如 MongoDB)。  </li>
-<li><strong>雲端運算 (Cloud Computing)</strong> - AWS、Azure、Google Cloud。  </li>
-<li><strong>DevOps</strong> - CI&#x2F;CD、自動化部署 (Automation Deployment)。  </li>
-<li><strong>演算法 (Algorithm)</strong> - 演算法、資料結構、問題解決能力。  </li>
-<li><strong>團隊合作 (Collaboration)</strong> - 跨部門溝通、工具 (如 JIRA、Confluence)。</li>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>隨著 AI 編程助手的發展，越來越多開發者開始使用 AI 工具來加速開發流程。由 Anthropic 推出的 <strong>Claude Code</strong>，是一個專為程式設計任務設計的生成式 AI 模型。它結合 Claude 的強大語言理解能力，專注於代碼撰寫、重構、除錯與文件生成，並支援多種程式語言。</p>
+<p>與 GitHub Copilot、ChatGPT 等工具類似，Claude Code 目標是協助開發者更有效率地完成日常開發任務。不過，它也有獨特的優勢：例如更嚴謹的安全性考量、對上下文理解的廣度，以及與 Anthropic 所提倡的 Constitutional AI 架構相結合的「安全設計」。</p>
+<p>本篇筆記將說明 Claude Code 的特色與基礎使用方式，協助你快速上手。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p><strong>Claude Code 是什麼？</strong></p>
+<ul>
+<li>由 Anthropic 推出的 AI 編程輔助模型，基於 Claude 模型微調。</li>
+<li>專注於程式碼相關任務，如生成、除錯、補完與重構。</li>
+</ul>
+</li>
+<li><p><strong>支援的平台與模式</strong></p>
+<ul>
+<li>可透過 Claude 官網、Slack 整合、API 介面使用。</li>
+<li>Claude 3 模型家族中的 Sonnet 與 Opus 皆支援 Code 能力。</li>
+</ul>
+</li>
+<li><p><strong>支援語言與任務</strong></p>
+<ul>
+<li>語言：Python、JavaScript、TypeScript、Java、C&#x2F;C++、HTML&#x2F;CSS、SQL 等。</li>
+<li>任務類型：代碼生成、文件產生、除錯、測試碼產出、重構與最佳化。</li>
+</ul>
+</li>
+<li><p><strong>與其他工具的差異</strong></p>
+<ul>
+<li>支援更長的上下文（可達 200k tokens）</li>
+<li>回應更具可讀性與解釋性</li>
+<li>Anthropic 特別強調「可控性」與「安全性」</li>
+</ul>
+</li>
+<li><p><strong>使用方式</strong></p>
+<ul>
+<li>Claude 聊天介面中貼上程式碼片段與指令</li>
+<li>使用 prompt 提示具體任務，例如 “請優化這段程式碼” 或 “請解釋下列 Python 函數的功能”</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="實際範例教學"><a href="#實際範例教學" class="headerlink" title="實際範例教學"></a>實際範例教學</h2><p>以下範例將以 Claude Code 處理 Python 程式碼為例，展示常見任務的應用。</p>
+<h3 id="1-程式碼生成"><a href="#1-程式碼生成" class="headerlink" title="1. 程式碼生成"></a>1. 程式碼生成</h3><p><strong>Prompt：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">請用 Python 寫一個函式，接收一個整數列表，回傳最大值與最小值。</span><br></pre></td></tr></table></figure>
+
+<p><strong>Claude Code 回應：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">find_min_max</span>(<span class="params">numbers</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> numbers:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span>, <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">min</span>(numbers), <span class="built_in">max</span>(numbers)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用範例</span></span><br><span class="line">nums = [<span class="number">3</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>]</span><br><span class="line">min_val, max_val = find_min_max(nums)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;最小值: <span class="subst">&#123;min_val&#125;</span>, 最大值: <span class="subst">&#123;max_val&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-程式碼除錯"><a href="#2-程式碼除錯" class="headerlink" title="2. 程式碼除錯"></a>2. 程式碼除錯</h3><p><strong>輸入錯誤程式碼：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">divide</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">return</span> a / b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(divide(<span class="number">10</span>, <span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+
+<p><strong>Prompt：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">這段程式碼會發生什麼錯誤？要怎麼修改？</span><br></pre></td></tr></table></figure>
+
+<p><strong>Claude Code 回應：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">這段程式碼會在除以 0 時產生 ZeroDivisionError 錯誤。你可以加入 try-except 來處理例外：</span><br></pre></td></tr></table></figure>
+
+<p><strong>建議修改版本：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">divide</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">return</span> a / b</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;除數不能為零&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(divide(<span class="number">10</span>, <span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-重構程式碼"><a href="#3-重構程式碼" class="headerlink" title="3. 重構程式碼"></a>3. 重構程式碼</h3><p><strong>Prompt：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">請幫我重構以下 Python 程式，使其更簡潔易讀</span><br></pre></td></tr></table></figure>
+
+<p><strong>原始程式碼：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">process</span>(<span class="params">data</span>):</span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> data:</span><br><span class="line">        <span class="keyword">if</span> item % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">            result.append(item * item)</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<p><strong>Claude Code 回應：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">process</span>(<span class="params">data</span>):</span><br><span class="line">    <span class="keyword">return</span> [item ** <span class="number">2</span> <span class="keyword">for</span> item <span class="keyword">in</span> data <span class="keyword">if</span> item % <span class="number">2</span> == <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="實用建議與提示"><a href="#實用建議與提示" class="headerlink" title="實用建議與提示"></a>實用建議與提示</h2><ul>
+<li><strong>具體的指令更有效</strong>：直接說明你要做什麼，例如「請將下列 TypeScript 重構為具名函式」，比「幫我修改程式碼」效果更好。</li>
+<li><strong>使用上下文編輯技巧</strong>：可貼上整個 class 或 module，再指明哪個函式需要優化。</li>
+<li><strong>加入期望輸出範例</strong>：讓 Claude Code 理解你的預期輸入與輸出格式。</li>
+<li><strong>搭配 API 使用</strong>：進階用戶可透過 Anthropic API 將 Claude Code 整合進開發工作流程或 IDE 插件。</li>
+</ul>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Claude Code 是新一代 AI 編程輔助工具的代表之一，其簡潔清晰的語言理解能力與較高的上下文記憶範圍，使其特別適合處理複雜的程式重構與跨檔案邏輯分析。無論你是初學者還是資深開發者，只要善用 prompt 的語言描述能力與 Claude Code 的生成特性，就能提升開發效率與程式品質。</p>
+<p>若你正尋求 Copilot 或 ChatGPT 的替代方案，Claude Code 值得一試。</p>
+<hr>
+<p>若你有特定開發環境（如 VSCode、CLI、Slack）或語言需求，我可以進一步為你量身規劃 Claude Code 的使用方式與整合建議。需要的話也可以補充教學範例。</p>
+<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/doggy8088/github-copilot-configs">最佳 GitHub Copilot 設定</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@cct0201/%E5%BE%9E-%E5%AF%AB%E7%A8%8B%E5%BC%8F-%E5%88%B0-%E8%88%87-ai-%E5%85%B1%E8%88%9E-%E6%88%91%E5%9C%A8%E5%85%AC%E5%8F%B8%E6%8E%A8%E5%8B%95-vibe-coding-%E7%9A%84%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB-015e28909290">從「寫程式」到「與 AI 共舞」── 我在公司推動 Vibe Coding 的經驗分享</a></li>
+<li><a target="_blank" rel="noopener" href="https://gitmind.com/tw/best-vibe-coding-tools-2025.html">2025 年最強推薦 Vibe Coding 工具一次看懂</a></li>
 </ol>
-<p>以上關鍵字為軟體工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
 
                 </div>
 
@@ -273,7 +338,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/06/13/about-frontend-engineer-10-keywords/" title="關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字" rel="bookmark">關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/06/21/about-backend-engineer-10-keywords/" title="關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字" rel="bookmark">關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/21/en/about-backend-engineer-10-keywords/" title="10 key terms related to backend engineering" rel="bookmark">10 key terms related to backend engineering</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/03/22/software-engineering-web-dev-tools-resources/" title="常見軟體工程師/網頁開發工具和學習資源整理" rel="bookmark">常見軟體工程師/網頁開發工具和學習資源整理</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/06/22/software-engineer-and-web-develement-skill-tree/" title="軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）" rel="bookmark">軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/20/learning-notes-github-copilot-intro-tutorial/" title="GitHub Copilot 與 Copilot Agent 入門教學筆記 | 學習筆記" rel="bookmark">GitHub Copilot 與 Copilot Agent 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/20/learning-notes-roo-code-intro-tutorial/" title="Roo Code 詳細介紹：AI VS Code 編輯器外掛入門教學筆記 | 學習筆記" rel="bookmark">Roo Code 詳細介紹：AI VS Code 編輯器外掛入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -309,8 +374,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2015/01/22/about-software-engineer-10-keywords/";
-    var disqus_url = "https://tech.kdchang.net/2015/01/22/about-software-engineer-10-keywords/";
+    var disqus_identifier = "https://tech.kdchang.net/2024/12/20/learning-notes-claude-code-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2024/12/20/learning-notes-claude-code-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
