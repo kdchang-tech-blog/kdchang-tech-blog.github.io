@@ -167,3 +167,9 @@ Copilot 自動補全：
 GitHub Copilot 已從單純的程式補全工具，蛻變為具備理解上下文、可互動操作的智慧開發代理人。透過 Copilot Agent，你不僅能提升撰寫速度，還能更高層次地規劃、修改與維護專案。
 
 對個人開發者而言，Copilot 是每日開發的好助手；對團隊而言，Copilot Agent 更像是一位全天候不下班的開發實習生，協助你管理技術債、維護程式庫、強化開發工作流。
+
+## 參考文件
+
+1. [最佳 GitHub Copilot 設定](https://github.com/doggy8088/github-copilot-configs)
+2. [從「寫程式」到「與 AI 共舞」── 我在公司推動 Vibe Coding 的經驗分享](https://medium.com/@cct0201/%E5%BE%9E-%E5%AF%AB%E7%A8%8B%E5%BC%8F-%E5%88%B0-%E8%88%87-ai-%E5%85%B1%E8%88%9E-%E6%88%91%E5%9C%A8%E5%85%AC%E5%8F%B8%E6%8E%A8%E5%8B%95-vibe-coding-%E7%9A%84%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB-015e28909290)
+3. [2025 年最強推薦 Vibe Coding 工具一次看懂](https://gitmind.com/tw/best-vibe-coding-tools-2025.html)
