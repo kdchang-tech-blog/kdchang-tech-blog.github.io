@@ -143,7 +143,7 @@ root.render(<Home />);
 
 ---
 
-如果你想了解更多關於資料抓取的技術細節，可以進一步學習 **JavaScript Fetch API** 的用法，並搭配錯誤處理（如 `.catch()`）與 loading 狀態等進行擴充。這將使你的 Custom Hook 更加完善與健壯。
+如果你想了解更多關於資料抓取的技術細節，可以進一步學習 **JavaScript Fetch API** 的用法，並搭配錯誤處理（如 `.catch()`）與 loading 狀態等進行擴充。這將使你的 Custom Hook 更加完善。
 
 ## 參考文件
 
