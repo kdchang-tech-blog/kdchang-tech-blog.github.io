@@ -1088,93 +1088,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Cookie 入門教學筆記 | 學習筆記</title>
-    <url>/2024/11/01/learning-notes-cookie-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Cookie 是一種儲存在使用者瀏覽器上的小型文字檔案，用於保存使用者的狀態或資訊。常見用途包含：</p>
-<p><strong>紀錄登入狀態</strong>：讓使用者在網站上保持登入，不需每次重新輸入帳號。<br><strong>使用者偏好設定</strong>：保存使用者選擇的語言、主題等個人化設定。<br><strong>追蹤使用者行為</strong>：例如分析網站流量、廣告投放追蹤等。</p>
-<h1 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h1><p>Cookie 依據不同的分類方式，可以分為以下幾種常見種類：</p>
-<h3 id="一、依用途分類："><a href="#一、依用途分類：" class="headerlink" title="一、依用途分類："></a>一、依用途分類：</h3><ol>
-<li><p><strong>功能性 Cookie（Functional Cookies）</strong>  </p>
-<ul>
-<li>主要用於提升網站使用體驗，例如記住使用者的登入狀態、語言設定、購物車內容等。</li>
-</ul>
-</li>
-<li><p><strong>必要性 Cookie（Strictly Necessary Cookies）</strong>  </p>
-<ul>
-<li>維持網站基本運作所需，例如登入認證、網頁導航等，通常無法被關閉。</li>
-</ul>
-</li>
-<li><p><strong>分析型 Cookie（Analytical&#x2F;Performance Cookies）</strong>  </p>
-<ul>
-<li>用於收集網站流量數據，分析使用者行為，幫助網站優化，例如 Google Analytics。</li>
-</ul>
-</li>
-<li><p><strong>廣告追蹤 Cookie（Advertising&#x2F;Targeting Cookies）</strong>  </p>
-<ul>
-<li>用於追蹤使用者瀏覽行為，以提供個人化廣告或推薦內容。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="二、依存放時間分類："><a href="#二、依存放時間分類：" class="headerlink" title="二、依存放時間分類："></a>二、依存放時間分類：</h3><ol>
-<li><p><strong>暫時性 Cookie（Session Cookies）</strong>  </p>
-<ul>
-<li>只在<code>使用者開啟網頁期間有效</code>，<code>關閉瀏覽器後即刪除</code>。</li>
-</ul>
-</li>
-<li><p><strong>永久性 Cookie（Persistent Cookies）</strong>  </p>
-<ul>
-<li>設定到期日期，存放於使用者裝置上，保存時間較長，即使關閉瀏覽器也不會刪除，<code>直到設定的到期日或手動刪除</code>。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="三、依來源分類："><a href="#三、依來源分類：" class="headerlink" title="三、依來源分類："></a>三、依來源分類：</h3><ol>
-<li><p><strong>第一方 Cookie（First-party Cookies）</strong>  </p>
-<ul>
-<li>由<code>使用者瀏覽的網站</code>所設定，通常用於<code>記錄該網站上的互動紀錄</code>。</li>
-</ul>
-</li>
-<li><p><strong>第三方 Cookie（Third-party Cookies）</strong>  </p>
-<ul>
-<li>由非該網站的<code>第三方</code>（如廣告商）設定，用於<code>跨網站追蹤使用者行為</code>，以<code>推送廣告</code>等。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="四、特殊類型："><a href="#四、特殊類型：" class="headerlink" title="四、特殊類型："></a>四、特殊類型：</h3><ol>
-<li><p><strong>安全性 Cookie（Secure Cookies）</strong>  </p>
-<ul>
-<li>只能透過 <code>HTTPS</code> 傳輸，避免被攔截，主要保障敏感資料安全。</li>
-</ul>
-</li>
-<li><p><strong>HttpOnly Cookie</strong>  </p>
-<ul>
-<li>僅限伺服器端存取，JavaScript 無法讀取，用於防範 <code>XSS</code> 攻擊。</li>
-</ul>
-</li>
-<li><p><strong>SameSite Cookie</strong>  </p>
-<ul>
-<li>限制跨站請求攜帶 Cookie，減少 <code>CSRF</code> 攻擊風險，值可設為：</li>
-<li><code>Strict</code>：禁止跨站請求攜帶 Cookie。</li>
-<li><code>Lax</code>：部分允許，如從第三方網站點擊連結進來時可帶 Cookie。</li>
-<li><code>None</code>：允許跨站攜帶，但須配合 Secure。</li>
-</ul>
-</li>
-</ol>
-<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>這些分類會依需求搭配使用，例如一個「<code>必要性第一方暫時性 Cookie</code>」可能用於維護<code>登入和操作狀態</code>；一個「<code>第三方廣告追蹤永久性 Cookie</code>」則可能用於<code>跨網站顯示個人化廣告</code>。</p>
-]]></content>
-      <tags>
-        <tag>javascript</tag>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>cookie</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS Animation 入門教學筆記 | 學習筆記</title>
     <url>/2024/11/16/learning-notes-css-animation-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在現代網頁開發中，動畫是一種強而有力的表現手法，能提升使用者體驗，使介面更加生動、有趣。相比 JavaScript，CSS Animation 提供一種更簡潔、性能更佳的動畫解法，尤其適合製作 UI 中的小型動畫效果。</p>
@@ -1266,6 +1179,93 @@
         <tag>Animation</tag>
         <tag>transition</tag>
         <tag>transform</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cookie 入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/01/learning-notes-cookie-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Cookie 是一種儲存在使用者瀏覽器上的小型文字檔案，用於保存使用者的狀態或資訊。常見用途包含：</p>
+<p><strong>紀錄登入狀態</strong>：讓使用者在網站上保持登入，不需每次重新輸入帳號。<br><strong>使用者偏好設定</strong>：保存使用者選擇的語言、主題等個人化設定。<br><strong>追蹤使用者行為</strong>：例如分析網站流量、廣告投放追蹤等。</p>
+<h1 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h1><p>Cookie 依據不同的分類方式，可以分為以下幾種常見種類：</p>
+<h3 id="一、依用途分類："><a href="#一、依用途分類：" class="headerlink" title="一、依用途分類："></a>一、依用途分類：</h3><ol>
+<li><p><strong>功能性 Cookie（Functional Cookies）</strong>  </p>
+<ul>
+<li>主要用於提升網站使用體驗，例如記住使用者的登入狀態、語言設定、購物車內容等。</li>
+</ul>
+</li>
+<li><p><strong>必要性 Cookie（Strictly Necessary Cookies）</strong>  </p>
+<ul>
+<li>維持網站基本運作所需，例如登入認證、網頁導航等，通常無法被關閉。</li>
+</ul>
+</li>
+<li><p><strong>分析型 Cookie（Analytical&#x2F;Performance Cookies）</strong>  </p>
+<ul>
+<li>用於收集網站流量數據，分析使用者行為，幫助網站優化，例如 Google Analytics。</li>
+</ul>
+</li>
+<li><p><strong>廣告追蹤 Cookie（Advertising&#x2F;Targeting Cookies）</strong>  </p>
+<ul>
+<li>用於追蹤使用者瀏覽行為，以提供個人化廣告或推薦內容。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="二、依存放時間分類："><a href="#二、依存放時間分類：" class="headerlink" title="二、依存放時間分類："></a>二、依存放時間分類：</h3><ol>
+<li><p><strong>暫時性 Cookie（Session Cookies）</strong>  </p>
+<ul>
+<li>只在<code>使用者開啟網頁期間有效</code>，<code>關閉瀏覽器後即刪除</code>。</li>
+</ul>
+</li>
+<li><p><strong>永久性 Cookie（Persistent Cookies）</strong>  </p>
+<ul>
+<li>設定到期日期，存放於使用者裝置上，保存時間較長，即使關閉瀏覽器也不會刪除，<code>直到設定的到期日或手動刪除</code>。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="三、依來源分類："><a href="#三、依來源分類：" class="headerlink" title="三、依來源分類："></a>三、依來源分類：</h3><ol>
+<li><p><strong>第一方 Cookie（First-party Cookies）</strong>  </p>
+<ul>
+<li>由<code>使用者瀏覽的網站</code>所設定，通常用於<code>記錄該網站上的互動紀錄</code>。</li>
+</ul>
+</li>
+<li><p><strong>第三方 Cookie（Third-party Cookies）</strong>  </p>
+<ul>
+<li>由非該網站的<code>第三方</code>（如廣告商）設定，用於<code>跨網站追蹤使用者行為</code>，以<code>推送廣告</code>等。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="四、特殊類型："><a href="#四、特殊類型：" class="headerlink" title="四、特殊類型："></a>四、特殊類型：</h3><ol>
+<li><p><strong>安全性 Cookie（Secure Cookies）</strong>  </p>
+<ul>
+<li>只能透過 <code>HTTPS</code> 傳輸，避免被攔截，主要保障敏感資料安全。</li>
+</ul>
+</li>
+<li><p><strong>HttpOnly Cookie</strong>  </p>
+<ul>
+<li>僅限伺服器端存取，JavaScript 無法讀取，用於防範 <code>XSS</code> 攻擊。</li>
+</ul>
+</li>
+<li><p><strong>SameSite Cookie</strong>  </p>
+<ul>
+<li>限制跨站請求攜帶 Cookie，減少 <code>CSRF</code> 攻擊風險，值可設為：</li>
+<li><code>Strict</code>：禁止跨站請求攜帶 Cookie。</li>
+<li><code>Lax</code>：部分允許，如從第三方網站點擊連結進來時可帶 Cookie。</li>
+<li><code>None</code>：允許跨站攜帶，但須配合 Secure。</li>
+</ul>
+</li>
+</ol>
+<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>這些分類會依需求搭配使用，例如一個「<code>必要性第一方暫時性 Cookie</code>」可能用於維護<code>登入和操作狀態</code>；一個「<code>第三方廣告追蹤永久性 Cookie</code>」則可能用於<code>跨網站顯示個人化廣告</code>。</p>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>cookie</tag>
       </tags>
   </entry>
   <entry>
@@ -1827,63 +1827,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Grid 網頁排版技巧入門教學筆記 | 學習筆記</title>
-    <url>/2024/11/15/learning-notes-css-grid-intro-tutorial/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在現今網頁設計中，排版的結構與呈現方式對於用戶體驗至關重要。隨著網頁設計的演進，CSS <code>Grid</code> 成為了最強大且靈活的排版工具之一。透過 CSS Grid，你可以輕鬆創建複雜的佈局，並且適應不同設備的需求。本文將介紹 CSS Grid 的基本概念與使用技巧，幫助你迅速掌握如何在網頁設計中使用 Grid。</p>
-<h4 id="1-什麼是-CSS-Grid？"><a href="#1-什麼是-CSS-Grid？" class="headerlink" title="1. 什麼是 CSS Grid？"></a>1. 什麼是 CSS Grid？</h4><p>CSS Grid Layout（簡稱 Grid）是 CSS3 的一個強大功能，允許開發者以列和行的方式來設計網頁佈局。它使得網頁設計更加直觀和靈活，不再需要依賴浮動（float）或定位（position）等老舊技巧，簡化了許多複雜的布局問題。</p>
-<p>Grid 是由「<code>容器</code>」和「<code>項目</code>」兩部分組成。容器定義了網格的結構，而項目則是容器內部的元素。你可以在容器內輕鬆地將項目放置在指定的網格區域中，從而創建各種排版樣式。</p>
-<h4 id="2-CSS-Grid-的基本語法"><a href="#2-CSS-Grid-的基本語法" class="headerlink" title="2. CSS Grid 的基本語法"></a>2. CSS Grid 的基本語法</h4><p>在使用 CSS Grid 時，首先需要定義一個容器元素並啟用 Grid 布局。這樣，容器內的子元素將成為 Grid 項目。以下是基本的設置步驟：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: auto;</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>display: grid;</code> 啟用容器的 Grid 布局。</li>
-<li><code>grid-template-columns: repeat(3, 1fr);</code> 設定三列，每列的寬度為等比例（<code>1fr</code>）。<code>1fr</code> 代表容器寬度的 1&#x2F;3。</li>
-<li><code>grid-template-rows: auto;</code> 使得行的高度根據內容自動調整。</li>
-<li><code>gap: 10px;</code> 定義網格項目之間的間距。</li>
-</ul>
-<h4 id="3-定義-Grid-容器的列和行"><a href="#3-定義-Grid-容器的列和行" class="headerlink" title="3. 定義 Grid 容器的列和行"></a>3. 定義 Grid 容器的列和行</h4><p>你可以使用 <code>grid-template-columns</code> 和 <code>grid-template-rows</code> 來設置容器內列和行的數量、大小及比例。</p>
-<h5 id="定義列"><a href="#定義列" class="headerlink" title="定義列"></a>定義列</h5><p>例如，若想創建四列的佈局，可以這樣寫：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> <span class="number">300px</span> <span class="number">400px</span> <span class="number">1</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這裡，我們設置了四列的寬度，前三列有固定的像素寬度，最後一列使用 <code>1fr</code>，即佔據剩餘的可用空間。</p>
-<h5 id="定義行"><a href="#定義行" class="headerlink" title="定義行"></a>定義行</h5><p>類似地，你可以設置行的大小。若要讓每一行的高度根據內容自動調整，可以使用：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">100px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這表示網格容器有兩行，第一行的高度固定為 100px，第二行的高度將根據內容自動調整。</p>
-<h4 id="4-放置-Grid-項目"><a href="#4-放置-Grid-項目" class="headerlink" title="4. 放置 Grid 項目"></a>4. 放置 Grid 項目</h4><p>Grid 容器的子元素會自動成為 Grid 項目。你可以使用 <code>grid-column</code> 和 <code>grid-row</code> 屬性來指定某個項目占據的列與行。</p>
-<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span> / <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這表示 <code>.item1</code> 元素會從第 1 列跨越到第 3 列，占據第一行。</p>
-<ul>
-<li><code>grid-column: 1 / 3;</code> 表示該元素會從第 1 列起，跨越兩列，直到第 3 列結束。</li>
-<li><code>grid-row: 1;</code> 表示該元素位於第 1 行。</li>
-</ul>
-<h4 id="5-使用-fr-單位設置比例"><a href="#5-使用-fr-單位設置比例" class="headerlink" title="5. 使用 fr 單位設置比例"></a>5. 使用 <code>fr</code> 單位設置比例</h4><p>CSS Grid 中最重要的單位之一是 <code>fr</code>（fraction，分數），它讓你可以設定元素在可用空間中所佔比例。</p>
-<p>假設你有三列，且希望第一列占 1 部分，第二列占 2 部分，第三列占 3 部分：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr <span class="number">3</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這樣會將總寬度分成六等份，其中第一列占 1 份，第二列占 2 份，第三列占 3 份。這樣的佈局適合於動態響應式設計。</p>
-<h4 id="6-設置間距"><a href="#6-設置間距" class="headerlink" title="6. 設置間距"></a>6. 設置間距</h4><p>除了 <code>gap</code> 屬性，你還可以為列與行的間距分別設置不同的值：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span> <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這裡，<code>gap: 10px 20px;</code> 的第一個數值設定了行之間的間距為 10px，第二個數值設定了列之間的間距為 20px。</p>
-<h4 id="7-嵌套-Grid"><a href="#7-嵌套-Grid" class="headerlink" title="7. 嵌套 Grid"></a>7. 嵌套 Grid</h4><p>Grid 允許你在網格項目內再次使用 Grid 佈局，這樣可以創建更複雜的排版結構。例如，假設你在某個項目內再創建一個小的網格：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在這個範例中，<code>.item1</code> 是一個 Grid 項目，它內部再次使用 Grid 排版，定義兩列，其中第一列占據 1 部分，第二列占據 2 部分。</p>
-<h4 id="8-響應式設計"><a href="#8-響應式設計" class="headerlink" title="8. 響應式設計"></a>8. 響應式設計</h4><p>Grid 讓你輕鬆應對不同設備的佈局需求。你可以使用媒體查詢來調整 Grid 排版。例如：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">4</span>, <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">2</span>, <span class="number">1</span>fr);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">480px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這段程式碼會根據螢幕寬度變化調整容器的列數：在寬度大於 768px 時顯示四列，在寬度小於 768px 時顯示兩列，在寬度小於 480px 時顯示單列。</p>
-<h4 id="9-小結"><a href="#9-小結" class="headerlink" title="9. 小結"></a>9. 小結</h4><p>CSS Grid 為現代網頁設計提供了一個簡單、強大且靈活的排版解決方案。它不僅能夠解決過去使用浮動或定位方法無法達成的複雜佈局，還能輕鬆適應響應式設計的需求。掌握 CSS Grid，你將能夠更高效地創建現代化的網頁佈局，提升設計的精確度與可維護性。希望本文的介紹能幫助你快速入門並將這項技術應用到你的項目中。</p>
-]]></content>
-      <tags>
-        <tag>css</tag>
-        <tag>Grid</tag>
-        <tag>排版</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS 入門教學筆記 | 學習筆記</title>
     <url>/2021/12/14/learning-notes-css-intro-tutorial/</url>
     <content><![CDATA[<h4 id="1-什麼是-CSS？"><a href="#1-什麼是-CSS？" class="headerlink" title="1. 什麼是 CSS？"></a>1. 什麼是 CSS？</h4><p>CSS（Cascading Style Sheets，層疊樣式表）是一種用來美化 HTML 頁面的樣式語言。透過 CSS，可以設定字體、顏色、間距、佈局等，讓網頁更具吸引力和可讀性。  </p>
@@ -2041,6 +1984,63 @@
       <tags>
         <tag>css</tag>
         <tag>stylesheet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Grid 網頁排版技巧入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/15/learning-notes-css-grid-intro-tutorial/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在現今網頁設計中，排版的結構與呈現方式對於用戶體驗至關重要。隨著網頁設計的演進，CSS <code>Grid</code> 成為了最強大且靈活的排版工具之一。透過 CSS Grid，你可以輕鬆創建複雜的佈局，並且適應不同設備的需求。本文將介紹 CSS Grid 的基本概念與使用技巧，幫助你迅速掌握如何在網頁設計中使用 Grid。</p>
+<h4 id="1-什麼是-CSS-Grid？"><a href="#1-什麼是-CSS-Grid？" class="headerlink" title="1. 什麼是 CSS Grid？"></a>1. 什麼是 CSS Grid？</h4><p>CSS Grid Layout（簡稱 Grid）是 CSS3 的一個強大功能，允許開發者以列和行的方式來設計網頁佈局。它使得網頁設計更加直觀和靈活，不再需要依賴浮動（float）或定位（position）等老舊技巧，簡化了許多複雜的布局問題。</p>
+<p>Grid 是由「<code>容器</code>」和「<code>項目</code>」兩部分組成。容器定義了網格的結構，而項目則是容器內部的元素。你可以在容器內輕鬆地將項目放置在指定的網格區域中，從而創建各種排版樣式。</p>
+<h4 id="2-CSS-Grid-的基本語法"><a href="#2-CSS-Grid-的基本語法" class="headerlink" title="2. CSS Grid 的基本語法"></a>2. CSS Grid 的基本語法</h4><p>在使用 CSS Grid 時，首先需要定義一個容器元素並啟用 Grid 布局。這樣，容器內的子元素將成為 Grid 項目。以下是基本的設置步驟：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: auto;</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>display: grid;</code> 啟用容器的 Grid 布局。</li>
+<li><code>grid-template-columns: repeat(3, 1fr);</code> 設定三列，每列的寬度為等比例（<code>1fr</code>）。<code>1fr</code> 代表容器寬度的 1&#x2F;3。</li>
+<li><code>grid-template-rows: auto;</code> 使得行的高度根據內容自動調整。</li>
+<li><code>gap: 10px;</code> 定義網格項目之間的間距。</li>
+</ul>
+<h4 id="3-定義-Grid-容器的列和行"><a href="#3-定義-Grid-容器的列和行" class="headerlink" title="3. 定義 Grid 容器的列和行"></a>3. 定義 Grid 容器的列和行</h4><p>你可以使用 <code>grid-template-columns</code> 和 <code>grid-template-rows</code> 來設置容器內列和行的數量、大小及比例。</p>
+<h5 id="定義列"><a href="#定義列" class="headerlink" title="定義列"></a>定義列</h5><p>例如，若想創建四列的佈局，可以這樣寫：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> <span class="number">300px</span> <span class="number">400px</span> <span class="number">1</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這裡，我們設置了四列的寬度，前三列有固定的像素寬度，最後一列使用 <code>1fr</code>，即佔據剩餘的可用空間。</p>
+<h5 id="定義行"><a href="#定義行" class="headerlink" title="定義行"></a>定義行</h5><p>類似地，你可以設置行的大小。若要讓每一行的高度根據內容自動調整，可以使用：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">100px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這表示網格容器有兩行，第一行的高度固定為 100px，第二行的高度將根據內容自動調整。</p>
+<h4 id="4-放置-Grid-項目"><a href="#4-放置-Grid-項目" class="headerlink" title="4. 放置 Grid 項目"></a>4. 放置 Grid 項目</h4><p>Grid 容器的子元素會自動成為 Grid 項目。你可以使用 <code>grid-column</code> 和 <code>grid-row</code> 屬性來指定某個項目占據的列與行。</p>
+<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span> / <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這表示 <code>.item1</code> 元素會從第 1 列跨越到第 3 列，占據第一行。</p>
+<ul>
+<li><code>grid-column: 1 / 3;</code> 表示該元素會從第 1 列起，跨越兩列，直到第 3 列結束。</li>
+<li><code>grid-row: 1;</code> 表示該元素位於第 1 行。</li>
+</ul>
+<h4 id="5-使用-fr-單位設置比例"><a href="#5-使用-fr-單位設置比例" class="headerlink" title="5. 使用 fr 單位設置比例"></a>5. 使用 <code>fr</code> 單位設置比例</h4><p>CSS Grid 中最重要的單位之一是 <code>fr</code>（fraction，分數），它讓你可以設定元素在可用空間中所佔比例。</p>
+<p>假設你有三列，且希望第一列占 1 部分，第二列占 2 部分，第三列占 3 部分：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr <span class="number">3</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣會將總寬度分成六等份，其中第一列占 1 份，第二列占 2 份，第三列占 3 份。這樣的佈局適合於動態響應式設計。</p>
+<h4 id="6-設置間距"><a href="#6-設置間距" class="headerlink" title="6. 設置間距"></a>6. 設置間距</h4><p>除了 <code>gap</code> 屬性，你還可以為列與行的間距分別設置不同的值：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">gap</span>: <span class="number">10px</span> <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這裡，<code>gap: 10px 20px;</code> 的第一個數值設定了行之間的間距為 10px，第二個數值設定了列之間的間距為 20px。</p>
+<h4 id="7-嵌套-Grid"><a href="#7-嵌套-Grid" class="headerlink" title="7. 嵌套 Grid"></a>7. 嵌套 Grid</h4><p>Grid 允許你在網格項目內再次使用 Grid 佈局，這樣可以創建更複雜的排版結構。例如，假設你在某個項目內再創建一個小的網格：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在這個範例中，<code>.item1</code> 是一個 Grid 項目，它內部再次使用 Grid 排版，定義兩列，其中第一列占據 1 部分，第二列占據 2 部分。</p>
+<h4 id="8-響應式設計"><a href="#8-響應式設計" class="headerlink" title="8. 響應式設計"></a>8. 響應式設計</h4><p>Grid 讓你輕鬆應對不同設備的佈局需求。你可以使用媒體查詢來調整 Grid 排版。例如：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">4</span>, <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">2</span>, <span class="number">1</span>fr);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">480px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼會根據螢幕寬度變化調整容器的列數：在寬度大於 768px 時顯示四列，在寬度小於 768px 時顯示兩列，在寬度小於 480px 時顯示單列。</p>
+<h4 id="9-小結"><a href="#9-小結" class="headerlink" title="9. 小結"></a>9. 小結</h4><p>CSS Grid 為現代網頁設計提供了一個簡單、強大且靈活的排版解決方案。它不僅能夠解決過去使用浮動或定位方法無法達成的複雜佈局，還能輕鬆適應響應式設計的需求。掌握 CSS Grid，你將能夠更高效地創建現代化的網頁佈局，提升設計的精確度與可維護性。希望本文的介紹能幫助你快速入門並將這項技術應用到你的項目中。</p>
+]]></content>
+      <tags>
+        <tag>css</tag>
+        <tag>Grid</tag>
+        <tag>排版</tag>
       </tags>
   </entry>
   <entry>
@@ -2993,6 +2993,66 @@
       </tags>
   </entry>
   <entry>
+    <title>Git Flow 介紹與 GitHub Flow 介紹入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在軟體開發中，版本控制是協作開發中至關重要的工具。Git 作為當前最受歡迎的版本控制系統，其強大的分支管理和版本控制功能，使得開發團隊能夠高效地進行協作。兩種常見的 Git 工作流是 Git Flow 和 GitHub Flow，這些工作流提供了清晰的分支管理策略，讓團隊可以更加有序地開發和部署代碼。本文將介紹 Git Flow 和 GitHub Flow 的基本概念、使用方法，以及它們之間的區別。</p>
+<h1 id="一、Git-Flow-介紹"><a href="#一、Git-Flow-介紹" class="headerlink" title="一、Git Flow 介紹"></a>一、Git Flow 介紹</h1><p>Git Flow 是一個基於 Git 的分支管理模型，主要由 Vincent Driessen 提出，旨在幫助開發團隊實現規範化的分支管理，並對不同開發階段的代碼進行有效的管理。Git Flow 工作流適合需要頻繁發布新版本的項目，並且開發流程中包含多個階段，如開發、測試、發佈等。其工作流程通常包含以下幾個核心分支：</p>
+<h4 id="1-1-主要分支"><a href="#1-1-主要分支" class="headerlink" title="1.1 主要分支"></a>1.1 主要分支</h4><ol>
+<li><p><strong>master 分支</strong>：<br><code>master</code> 分支是 Git Flow 中的核心分支，所有穩定的代碼都應該存在於此。每當一個新版本的代碼準備好發佈時，都會從 <code>develop</code> 分支合併到 <code>master</code>，並標記相應的版本號。這個分支通常只包含穩定的代碼，並且代表了隨時可以部署的代碼。</p>
+</li>
+<li><p><strong>develop 分支</strong>：<br><code>develop</code> 分支用於開發中的代碼。所有的功能開發都應該從這個分支進行，並且當開發完成後，合併回 <code>develop</code>。這個分支是整個項目的集成區，開發人員應該從 <code>develop</code> 分支開始開發新功能。</p>
+</li>
+</ol>
+<h4 id="1-2-輔助分支"><a href="#1-2-輔助分支" class="headerlink" title="1.2 輔助分支"></a>1.2 輔助分支</h4><ol>
+<li><p><strong>feature 分支</strong>：<br><code>feature</code> 分支用於開發新的功能。每個新功能都應該從 <code>develop</code> 分支創建一個新的 <code>feature</code> 分支，並且在功能開發完成後，將該分支合併回 <code>develop</code> 分支。<code>feature</code> 分支的命名通常為 <code>feature/&lt;功能名稱&gt;</code>。</p>
+</li>
+<li><p><strong>release 分支</strong>：<br>當 <code>develop</code> 分支上的代碼準備好進入測試階段時，會創建一個 <code>release</code> 分支。這個分支用來準備最終的發佈版本。在 <code>release</code> 分支上進行的主要工作包括 bug 修復、文檔編寫等，確保最終版本的穩定性。當測試完成並且代碼準備發佈時，<code>release</code> 分支會被合併到 <code>master</code> 和 <code>develop</code> 分支。</p>
+</li>
+<li><p><strong>hotfix 分支</strong>：<br><code>hotfix</code> 分支用於修復已經發佈到 <code>master</code> 分支的緊急錯誤。當發佈的版本發現重大問題時，可以立即從 <code>master</code> 分支創建 <code>hotfix</code> 分支，進行修復後，將其合併回 <code>master</code> 和 <code>develop</code> 分支。</p>
+</li>
+</ol>
+<h4 id="1-3-Git-Flow-的流程"><a href="#1-3-Git-Flow-的流程" class="headerlink" title="1.3 Git Flow 的流程"></a>1.3 Git Flow 的流程</h4><p>Git Flow 的流程大致如下：</p>
+<ul>
+<li>開發新功能時，從 <code>develop</code> 分支創建 <code>feature</code> 分支。</li>
+<li>當 <code>feature</code> 分支開發完成後，合併回 <code>develop</code> 分支。</li>
+<li>當代碼達到穩定版本，創建 <code>release</code> 分支，進行測試和 bug 修復。</li>
+<li>測試完成後，將 <code>release</code> 分支合併回 <code>master</code> 和 <code>develop</code> 分支，並標註版本。</li>
+<li>若發現緊急錯誤，從 <code>master</code> 分支創建 <code>hotfix</code> 分支，進行修復並合併回 <code>master</code> 和 <code>develop</code>。</li>
+</ul>
+<h1 id="二、GitHub-Flow-介紹"><a href="#二、GitHub-Flow-介紹" class="headerlink" title="二、GitHub Flow 介紹"></a>二、GitHub Flow 介紹</h1><p>GitHub Flow 是 GitHub 提出的另一種工作流，主要針對快速迭代和持續集成的開發模式。與 Git Flow 複雜的分支管理相比，GitHub Flow 更加簡單和輕量，適合需要快速交付和頻繁部署的團隊。GitHub Flow 主要有以下幾個步驟：</p>
+<h4 id="2-1-GitHub-Flow-的基本流程"><a href="#2-1-GitHub-Flow-的基本流程" class="headerlink" title="2.1 GitHub Flow 的基本流程"></a>2.1 GitHub Flow 的基本流程</h4><ol>
+<li><p><strong>創建分支</strong>：<br>每當開始一個新功能或修復一個 bug 時，都應該從 <code>main</code> 分支創建一個新的分支。這個分支通常用來開發新的特性或修復某個問題。</p>
+</li>
+<li><p><strong>開發與提交</strong>：<br>在新創建的分支上進行開發，並定期將代碼提交到遠程倉庫。這些提交應該是增量的，便於代碼審查和測試。</p>
+</li>
+<li><p><strong>發送 Pull Request</strong>：<br>當開發完成後，將自己的分支提交為 Pull Request（PR），並請求團隊成員進行代碼審查。PR 是 GitHub Flow 中的關鍵步驟，能夠確保代碼的質量和協作。</p>
+</li>
+<li><p><strong>代碼審查與測試</strong>：<br>團隊成員進行代碼審查，確保代碼的質量和功能正確性。GitHub Flow 推崇頻繁的測試和集成，因此在 Pull Request 發送後，通常會自動觸發 CI（持續集成）測試，檢查代碼是否有錯誤。</p>
+</li>
+<li><p><strong>合併分支</strong>：<br>經過代碼審查和測試後，Pull Request 被批准，並將代碼合併到 <code>main</code> 分支。此時，新的代碼版本已經可以進行部署。</p>
+</li>
+<li><p><strong>部署與發佈</strong>：<br>GitHub Flow 的一大優勢是可以實現持續部署。當代碼合併到 <code>main</code> 分支後，可以立即部署到生產環境，快速交付新版本。</p>
+</li>
+</ol>
+<h4 id="2-2-GitHub-Flow-的特點"><a href="#2-2-GitHub-Flow-的特點" class="headerlink" title="2.2 GitHub Flow 的特點"></a>2.2 GitHub Flow 的特點</h4><p>GitHub Flow 的流程非常簡單，沒有像 Git Flow 那樣的複雜分支結構，適合小型和中型的項目。它的優點在於快速迭代和持續交付，並且便於團隊成員協作。GitHub Flow 更加強調分支管理的簡化，並且強調測試和部署的自動化。</p>
+<h1 id="三、Git-Flow-與-GitHub-Flow-的比較"><a href="#三、Git-Flow-與-GitHub-Flow-的比較" class="headerlink" title="三、Git Flow 與 GitHub Flow 的比較"></a>三、Git Flow 與 GitHub Flow 的比較</h1><ul>
+<li><p><strong>分支結構</strong>：<br>Git Flow 有多個分支（<code>master</code>、<code>develop</code>、<code>feature</code>、<code>release</code>、<code>hotfix</code>），適用於需要穩定版本發佈的團隊。而 GitHub Flow 只有 <code>main</code> 分支和特性分支，適用於快速迭代和持續集成的開發模式。</p>
+</li>
+<li><p><strong>適用場景</strong>：<br>Git Flow 更適合複雜的開發流程，尤其是有多個版本和發佈周期的項目。GitHub Flow 更適合快速迭代的小型或中型項目，尤其是需要頻繁部署和交付的團隊。</p>
+</li>
+<li><p><strong>流程複雜度</strong>：<br>Git Flow 的流程較為繁瑣，對於小型團隊來說可能會顯得過於複雜。GitHub Flow 流程簡單，適合希望保持敏捷和快速交付的團隊。</p>
+</li>
+</ul>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>Git Flow 和 GitHub Flow 各有優缺點，適用的場景也有所不同。選擇哪一種工作流，應根據團隊的規模、項目的複雜度以及發佈頻率來決定。對於需要穩定發佈和多版本管理的項目，Git Flow 是一個更好的選擇。而對於需要快速迭代和頻繁部署的小型項目，GitHub Flow 則是一個更簡單有效的選擇。</p>
+]]></content>
+      <tags>
+        <tag>Github</tag>
+        <tag>Git</tag>
+        <tag>Git Flow</tag>
+        <tag>Github Flow</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git 入門教學筆記：從零開始學版本控制 | 學習筆記</title>
     <url>/2023/12/21/learning-notes-git-intro-tutorial/</url>
     <content><![CDATA[<h2 id="為什麼要學-Git？"><a href="#為什麼要學-Git？" class="headerlink" title="為什麼要學 Git？"></a>為什麼要學 Git？</h2><p>在軟體開發中，版本控制是一個不可或缺的工具。Git 是目前最流行的版本控制系統，它能幫助你：</p>
@@ -3092,66 +3152,6 @@
         <tag>Github</tag>
         <tag>Git</tag>
         <tag>版本控制</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git Flow 介紹與 GitHub Flow 介紹入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在軟體開發中，版本控制是協作開發中至關重要的工具。Git 作為當前最受歡迎的版本控制系統，其強大的分支管理和版本控制功能，使得開發團隊能夠高效地進行協作。兩種常見的 Git 工作流是 Git Flow 和 GitHub Flow，這些工作流提供了清晰的分支管理策略，讓團隊可以更加有序地開發和部署代碼。本文將介紹 Git Flow 和 GitHub Flow 的基本概念、使用方法，以及它們之間的區別。</p>
-<h1 id="一、Git-Flow-介紹"><a href="#一、Git-Flow-介紹" class="headerlink" title="一、Git Flow 介紹"></a>一、Git Flow 介紹</h1><p>Git Flow 是一個基於 Git 的分支管理模型，主要由 Vincent Driessen 提出，旨在幫助開發團隊實現規範化的分支管理，並對不同開發階段的代碼進行有效的管理。Git Flow 工作流適合需要頻繁發布新版本的項目，並且開發流程中包含多個階段，如開發、測試、發佈等。其工作流程通常包含以下幾個核心分支：</p>
-<h4 id="1-1-主要分支"><a href="#1-1-主要分支" class="headerlink" title="1.1 主要分支"></a>1.1 主要分支</h4><ol>
-<li><p><strong>master 分支</strong>：<br><code>master</code> 分支是 Git Flow 中的核心分支，所有穩定的代碼都應該存在於此。每當一個新版本的代碼準備好發佈時，都會從 <code>develop</code> 分支合併到 <code>master</code>，並標記相應的版本號。這個分支通常只包含穩定的代碼，並且代表了隨時可以部署的代碼。</p>
-</li>
-<li><p><strong>develop 分支</strong>：<br><code>develop</code> 分支用於開發中的代碼。所有的功能開發都應該從這個分支進行，並且當開發完成後，合併回 <code>develop</code>。這個分支是整個項目的集成區，開發人員應該從 <code>develop</code> 分支開始開發新功能。</p>
-</li>
-</ol>
-<h4 id="1-2-輔助分支"><a href="#1-2-輔助分支" class="headerlink" title="1.2 輔助分支"></a>1.2 輔助分支</h4><ol>
-<li><p><strong>feature 分支</strong>：<br><code>feature</code> 分支用於開發新的功能。每個新功能都應該從 <code>develop</code> 分支創建一個新的 <code>feature</code> 分支，並且在功能開發完成後，將該分支合併回 <code>develop</code> 分支。<code>feature</code> 分支的命名通常為 <code>feature/&lt;功能名稱&gt;</code>。</p>
-</li>
-<li><p><strong>release 分支</strong>：<br>當 <code>develop</code> 分支上的代碼準備好進入測試階段時，會創建一個 <code>release</code> 分支。這個分支用來準備最終的發佈版本。在 <code>release</code> 分支上進行的主要工作包括 bug 修復、文檔編寫等，確保最終版本的穩定性。當測試完成並且代碼準備發佈時，<code>release</code> 分支會被合併到 <code>master</code> 和 <code>develop</code> 分支。</p>
-</li>
-<li><p><strong>hotfix 分支</strong>：<br><code>hotfix</code> 分支用於修復已經發佈到 <code>master</code> 分支的緊急錯誤。當發佈的版本發現重大問題時，可以立即從 <code>master</code> 分支創建 <code>hotfix</code> 分支，進行修復後，將其合併回 <code>master</code> 和 <code>develop</code> 分支。</p>
-</li>
-</ol>
-<h4 id="1-3-Git-Flow-的流程"><a href="#1-3-Git-Flow-的流程" class="headerlink" title="1.3 Git Flow 的流程"></a>1.3 Git Flow 的流程</h4><p>Git Flow 的流程大致如下：</p>
-<ul>
-<li>開發新功能時，從 <code>develop</code> 分支創建 <code>feature</code> 分支。</li>
-<li>當 <code>feature</code> 分支開發完成後，合併回 <code>develop</code> 分支。</li>
-<li>當代碼達到穩定版本，創建 <code>release</code> 分支，進行測試和 bug 修復。</li>
-<li>測試完成後，將 <code>release</code> 分支合併回 <code>master</code> 和 <code>develop</code> 分支，並標註版本。</li>
-<li>若發現緊急錯誤，從 <code>master</code> 分支創建 <code>hotfix</code> 分支，進行修復並合併回 <code>master</code> 和 <code>develop</code>。</li>
-</ul>
-<h1 id="二、GitHub-Flow-介紹"><a href="#二、GitHub-Flow-介紹" class="headerlink" title="二、GitHub Flow 介紹"></a>二、GitHub Flow 介紹</h1><p>GitHub Flow 是 GitHub 提出的另一種工作流，主要針對快速迭代和持續集成的開發模式。與 Git Flow 複雜的分支管理相比，GitHub Flow 更加簡單和輕量，適合需要快速交付和頻繁部署的團隊。GitHub Flow 主要有以下幾個步驟：</p>
-<h4 id="2-1-GitHub-Flow-的基本流程"><a href="#2-1-GitHub-Flow-的基本流程" class="headerlink" title="2.1 GitHub Flow 的基本流程"></a>2.1 GitHub Flow 的基本流程</h4><ol>
-<li><p><strong>創建分支</strong>：<br>每當開始一個新功能或修復一個 bug 時，都應該從 <code>main</code> 分支創建一個新的分支。這個分支通常用來開發新的特性或修復某個問題。</p>
-</li>
-<li><p><strong>開發與提交</strong>：<br>在新創建的分支上進行開發，並定期將代碼提交到遠程倉庫。這些提交應該是增量的，便於代碼審查和測試。</p>
-</li>
-<li><p><strong>發送 Pull Request</strong>：<br>當開發完成後，將自己的分支提交為 Pull Request（PR），並請求團隊成員進行代碼審查。PR 是 GitHub Flow 中的關鍵步驟，能夠確保代碼的質量和協作。</p>
-</li>
-<li><p><strong>代碼審查與測試</strong>：<br>團隊成員進行代碼審查，確保代碼的質量和功能正確性。GitHub Flow 推崇頻繁的測試和集成，因此在 Pull Request 發送後，通常會自動觸發 CI（持續集成）測試，檢查代碼是否有錯誤。</p>
-</li>
-<li><p><strong>合併分支</strong>：<br>經過代碼審查和測試後，Pull Request 被批准，並將代碼合併到 <code>main</code> 分支。此時，新的代碼版本已經可以進行部署。</p>
-</li>
-<li><p><strong>部署與發佈</strong>：<br>GitHub Flow 的一大優勢是可以實現持續部署。當代碼合併到 <code>main</code> 分支後，可以立即部署到生產環境，快速交付新版本。</p>
-</li>
-</ol>
-<h4 id="2-2-GitHub-Flow-的特點"><a href="#2-2-GitHub-Flow-的特點" class="headerlink" title="2.2 GitHub Flow 的特點"></a>2.2 GitHub Flow 的特點</h4><p>GitHub Flow 的流程非常簡單，沒有像 Git Flow 那樣的複雜分支結構，適合小型和中型的項目。它的優點在於快速迭代和持續交付，並且便於團隊成員協作。GitHub Flow 更加強調分支管理的簡化，並且強調測試和部署的自動化。</p>
-<h1 id="三、Git-Flow-與-GitHub-Flow-的比較"><a href="#三、Git-Flow-與-GitHub-Flow-的比較" class="headerlink" title="三、Git Flow 與 GitHub Flow 的比較"></a>三、Git Flow 與 GitHub Flow 的比較</h1><ul>
-<li><p><strong>分支結構</strong>：<br>Git Flow 有多個分支（<code>master</code>、<code>develop</code>、<code>feature</code>、<code>release</code>、<code>hotfix</code>），適用於需要穩定版本發佈的團隊。而 GitHub Flow 只有 <code>main</code> 分支和特性分支，適用於快速迭代和持續集成的開發模式。</p>
-</li>
-<li><p><strong>適用場景</strong>：<br>Git Flow 更適合複雜的開發流程，尤其是有多個版本和發佈周期的項目。GitHub Flow 更適合快速迭代的小型或中型項目，尤其是需要頻繁部署和交付的團隊。</p>
-</li>
-<li><p><strong>流程複雜度</strong>：<br>Git Flow 的流程較為繁瑣，對於小型團隊來說可能會顯得過於複雜。GitHub Flow 流程簡單，適合希望保持敏捷和快速交付的團隊。</p>
-</li>
-</ul>
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>Git Flow 和 GitHub Flow 各有優缺點，適用的場景也有所不同。選擇哪一種工作流，應根據團隊的規模、項目的複雜度以及發佈頻率來決定。對於需要穩定發佈和多版本管理的項目，Git Flow 是一個更好的選擇。而對於需要快速迭代和頻繁部署的小型項目，GitHub Flow 則是一個更簡單有效的選擇。</p>
-]]></content>
-      <tags>
-        <tag>Github</tag>
-        <tag>Git</tag>
-        <tag>Git Flow</tag>
-        <tag>Github Flow</tag>
       </tags>
   </entry>
   <entry>
@@ -6314,61 +6314,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Node.js 入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/08/learning-notes-node-js-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="1-Node-js-簡介"><a href="#1-Node-js-簡介" class="headerlink" title="1. Node.js 簡介"></a>1. Node.js 簡介</h1><p>Node.js 是一個基於 Chrome V8 JavaScript 引擎的運行環境，可讓開發者使用 JavaScript 來撰寫後端程式。它適合用於構建高效能、非同步的網路應用。</p>
-<h3 id="1-1-為何選擇-Node-js？"><a href="#1-1-為何選擇-Node-js？" class="headerlink" title="1.1 為何選擇 Node.js？"></a>1.1 為何選擇 Node.js？</h3><ul>
-<li><strong>非同步 &amp; 事件驅動</strong>：適合 I&#x2F;O 密集型應用，如 Web 伺服器。</li>
-<li><strong>單一語言開發</strong>：可用 JavaScript 同時開發前端與後端。</li>
-<li><strong>強大的生態系統</strong>：擁有豐富的 NPM（Node Package Manager）套件。</li>
-<li><strong>高效能</strong>：基於 V8 引擎，運行速度快。</li>
-</ul>
-<h1 id="2-安裝與環境設定"><a href="#2-安裝與環境設定" class="headerlink" title="2. 安裝與環境設定"></a>2. 安裝與環境設定</h1><h3 id="2-1-安裝-Node-js"><a href="#2-1-安裝-Node-js" class="headerlink" title="2.1 安裝 Node.js"></a>2.1 安裝 Node.js</h3><p>從 <a href="https://nodejs.org/">Node.js 官方網站</a> 下載並安裝 LTS 版本。</p>
-<h3 id="2-2-檢查安裝是否成功"><a href="#2-2-檢查安裝是否成功" class="headerlink" title="2.2 檢查安裝是否成功"></a>2.2 檢查安裝是否成功</h3><p>安裝完成後，在終端機輸入以下指令：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<p>應該會顯示 Node.js 和 npm（Node 套件管理工具）的版本號。</p>
-<h1 id="3-基本應用程式"><a href="#3-基本應用程式" class="headerlink" title="3. 基本應用程式"></a>3. 基本應用程式</h1><h3 id="3-1-建立第一個-Node-js-應用"><a href="#3-1-建立第一個-Node-js-應用" class="headerlink" title="3.1 建立第一個 Node.js 應用"></a>3.1 建立第一個 Node.js 應用</h3><p>新建一個 <code>app.js</code> 檔案，並輸入：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello, Node.js!&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<p>然後在終端機執行：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">node app.js</span><br></pre></td></tr></table></figure>
-<p>應該會輸出：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hello, Node.js!</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-建立簡單的-HTTP-伺服器"><a href="#3-2-建立簡單的-HTTP-伺服器" class="headerlink" title="3.2 建立簡單的 HTTP 伺服器"></a>3.2 建立簡單的 HTTP 伺服器</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = http.<span class="title function_">createServer</span>(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">writeHead</span>(<span class="number">200</span>, &#123; <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;text/plain&#x27;</span> &#125;);</span><br><span class="line">  res.<span class="title function_">end</span>(<span class="string">&#x27;Hello, World!&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">3000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Server running at http://localhost:3000&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>執行後，開啟瀏覽器並訪問 <code>http://localhost:3000</code>，應該會看到 <code>Hello, World!</code>。</p>
-<h1 id="4-Node-js-模組"><a href="#4-Node-js-模組" class="headerlink" title="4. Node.js 模組"></a>4. Node.js 模組</h1><h3 id="4-1-內建模組"><a href="#4-1-內建模組" class="headerlink" title="4.1 內建模組"></a>4.1 內建模組</h3><p>Node.js 提供許多內建模組，例如：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>); <span class="comment">// 檔案系統</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>); <span class="comment">// 路徑處理</span></span><br><span class="line"><span class="keyword">const</span> os = <span class="built_in">require</span>(<span class="string">&#x27;os&#x27;</span>); <span class="comment">// 作業系統資訊</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-NPM-套件管理"><a href="#4-2-NPM-套件管理" class="headerlink" title="4.2 NPM 套件管理"></a>4.2 NPM 套件管理</h3><p>安裝 Express 框架：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install express</span><br></pre></td></tr></table></figure>
-
-<h1 id="5-Express-入門"><a href="#5-Express-入門" class="headerlink" title="5. Express 入門"></a>5. Express 入門</h1><h3 id="5-1-建立簡單的-Express-伺服器"><a href="#5-1-建立簡單的-Express-伺服器" class="headerlink" title="5.1 建立簡單的 Express 伺服器"></a>5.1 建立簡單的 Express 伺服器</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">send</span>(<span class="string">&#x27;Hello, Express!&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">3000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Server is running on http://localhost:3000&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h1 id="6-讀取與寫入檔案"><a href="#6-讀取與寫入檔案" class="headerlink" title="6. 讀取與寫入檔案"></a>6. 讀取與寫入檔案</h1><h3 id="6-1-讀取檔案"><a href="#6-1-讀取檔案" class="headerlink" title="6.1 讀取檔案"></a>6.1 讀取檔案</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"></span><br><span class="line">fs.<span class="title function_">readFile</span>(<span class="string">&#x27;example.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="function">(<span class="params">err, data</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-2-寫入檔案"><a href="#6-2-寫入檔案" class="headerlink" title="6.2 寫入檔案"></a>6.2 寫入檔案</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.<span class="title function_">writeFile</span>(<span class="string">&#x27;output.txt&#x27;</span>, <span class="string">&#x27;Hello, Node.js!&#x27;</span>, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;File has been saved!&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h1 id="7-連接-MongoDB-資料庫"><a href="#7-連接-MongoDB-資料庫" class="headerlink" title="7. 連接 MongoDB 資料庫"></a>7. 連接 MongoDB 資料庫</h1><h3 id="7-1-安裝-MongoDB-驅動"><a href="#7-1-安裝-MongoDB-驅動" class="headerlink" title="7.1 安裝 MongoDB 驅動"></a>7.1 安裝 MongoDB 驅動</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install mongoose</span><br></pre></td></tr></table></figure>
-
-<h3 id="7-2-連接-MongoDB"><a href="#7-2-連接-MongoDB" class="headerlink" title="7.2 連接 MongoDB"></a>7.2 連接 MongoDB</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">&#x27;mongoose&#x27;</span>);</span><br><span class="line"></span><br><span class="line">mongoose.<span class="title function_">connect</span>(<span class="string">&#x27;mongodb://localhost:27017/testDB&#x27;</span>, &#123; <span class="attr">useNewUrlParser</span>: <span class="literal">true</span>, <span class="attr">useUnifiedTopology</span>: <span class="literal">true</span> &#125;)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Connected to MongoDB&#x27;</span>))</span><br><span class="line">  .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">error</span>(err));</span><br></pre></td></tr></table></figure>
-
-<h1 id="8-部署-Node-js-應用"><a href="#8-部署-Node-js-應用" class="headerlink" title="8. 部署 Node.js 應用"></a>8. 部署 Node.js 應用</h1><h3 id="8-1-使用-PM2-管理應用"><a href="#8-1-使用-PM2-管理應用" class="headerlink" title="8.1 使用 PM2 管理應用"></a>8.1 使用 PM2 管理應用</h3><p>安裝 PM2：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -g pm2</span><br></pre></td></tr></table></figure>
-<p>啟動應用：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pm2 start app.js</span><br></pre></td></tr></table></figure>
-
-<h3 id="8-2-使用-Docker-部署"><a href="#8-2-使用-Docker-部署" class="headerlink" title="8.2 使用 Docker 部署"></a>8.2 使用 Docker 部署</h3><p>建立 <code>Dockerfile</code>：</p>
-<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">FROM</span> node:<span class="number">14</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /app</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> package.json .</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> npm install</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> . .</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;node&quot;</span>, <span class="string">&quot;app.js&quot;</span>]</span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">3000</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="9-結論"><a href="#9-結論" class="headerlink" title="9. 結論"></a>9. 結論</h1><p>透過這篇入門筆記，初學者可以快速掌握 Node.js 的基礎概念與實作技巧，包含 HTTP 伺服器、檔案操作、資料庫連接等。建議進一步學習異步程式設計、RESTful API、WebSocket 以及雲端部署技術，以提升開發能力。</p>
-]]></content>
-      <tags>
-        <tag>Node.js</tag>
-        <tag>Node</tag>
-        <tag>NodeJS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Node.js Express.js 入門教學筆記 | 學習筆記</title>
     <url>/2024/12/16/learning-notes-nodejs-expressjs-intro-tutorial/</url>
     <content><![CDATA[<h2 id="1-簡介"><a href="#1-簡介" class="headerlink" title="1. 簡介"></a>1. 簡介</h2><p>Express.js 是一個基於 Node.js 的 Web 應用框架，提供簡潔且靈活的 API，適用於建立伺服器端應用程式。它可以用來開發 RESTful API、Web 應用或後端服務。</p>
@@ -6442,6 +6387,61 @@
         <tag>mongoose</tag>
         <tag>MongoDB</tag>
         <tag>Express.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Node.js 入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/08/learning-notes-node-js-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="1-Node-js-簡介"><a href="#1-Node-js-簡介" class="headerlink" title="1. Node.js 簡介"></a>1. Node.js 簡介</h1><p>Node.js 是一個基於 Chrome V8 JavaScript 引擎的運行環境，可讓開發者使用 JavaScript 來撰寫後端程式。它適合用於構建高效能、非同步的網路應用。</p>
+<h3 id="1-1-為何選擇-Node-js？"><a href="#1-1-為何選擇-Node-js？" class="headerlink" title="1.1 為何選擇 Node.js？"></a>1.1 為何選擇 Node.js？</h3><ul>
+<li><strong>非同步 &amp; 事件驅動</strong>：適合 I&#x2F;O 密集型應用，如 Web 伺服器。</li>
+<li><strong>單一語言開發</strong>：可用 JavaScript 同時開發前端與後端。</li>
+<li><strong>強大的生態系統</strong>：擁有豐富的 NPM（Node Package Manager）套件。</li>
+<li><strong>高效能</strong>：基於 V8 引擎，運行速度快。</li>
+</ul>
+<h1 id="2-安裝與環境設定"><a href="#2-安裝與環境設定" class="headerlink" title="2. 安裝與環境設定"></a>2. 安裝與環境設定</h1><h3 id="2-1-安裝-Node-js"><a href="#2-1-安裝-Node-js" class="headerlink" title="2.1 安裝 Node.js"></a>2.1 安裝 Node.js</h3><p>從 <a href="https://nodejs.org/">Node.js 官方網站</a> 下載並安裝 LTS 版本。</p>
+<h3 id="2-2-檢查安裝是否成功"><a href="#2-2-檢查安裝是否成功" class="headerlink" title="2.2 檢查安裝是否成功"></a>2.2 檢查安裝是否成功</h3><p>安裝完成後，在終端機輸入以下指令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>應該會顯示 Node.js 和 npm（Node 套件管理工具）的版本號。</p>
+<h1 id="3-基本應用程式"><a href="#3-基本應用程式" class="headerlink" title="3. 基本應用程式"></a>3. 基本應用程式</h1><h3 id="3-1-建立第一個-Node-js-應用"><a href="#3-1-建立第一個-Node-js-應用" class="headerlink" title="3.1 建立第一個 Node.js 應用"></a>3.1 建立第一個 Node.js 應用</h3><p>新建一個 <code>app.js</code> 檔案，並輸入：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello, Node.js!&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>然後在終端機執行：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">node app.js</span><br></pre></td></tr></table></figure>
+<p>應該會輸出：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hello, Node.js!</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-建立簡單的-HTTP-伺服器"><a href="#3-2-建立簡單的-HTTP-伺服器" class="headerlink" title="3.2 建立簡單的 HTTP 伺服器"></a>3.2 建立簡單的 HTTP 伺服器</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = http.<span class="title function_">createServer</span>(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">writeHead</span>(<span class="number">200</span>, &#123; <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;text/plain&#x27;</span> &#125;);</span><br><span class="line">  res.<span class="title function_">end</span>(<span class="string">&#x27;Hello, World!&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">3000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Server running at http://localhost:3000&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>執行後，開啟瀏覽器並訪問 <code>http://localhost:3000</code>，應該會看到 <code>Hello, World!</code>。</p>
+<h1 id="4-Node-js-模組"><a href="#4-Node-js-模組" class="headerlink" title="4. Node.js 模組"></a>4. Node.js 模組</h1><h3 id="4-1-內建模組"><a href="#4-1-內建模組" class="headerlink" title="4.1 內建模組"></a>4.1 內建模組</h3><p>Node.js 提供許多內建模組，例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>); <span class="comment">// 檔案系統</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>); <span class="comment">// 路徑處理</span></span><br><span class="line"><span class="keyword">const</span> os = <span class="built_in">require</span>(<span class="string">&#x27;os&#x27;</span>); <span class="comment">// 作業系統資訊</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-NPM-套件管理"><a href="#4-2-NPM-套件管理" class="headerlink" title="4.2 NPM 套件管理"></a>4.2 NPM 套件管理</h3><p>安裝 Express 框架：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install express</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-Express-入門"><a href="#5-Express-入門" class="headerlink" title="5. Express 入門"></a>5. Express 入門</h1><h3 id="5-1-建立簡單的-Express-伺服器"><a href="#5-1-建立簡單的-Express-伺服器" class="headerlink" title="5.1 建立簡單的 Express 伺服器"></a>5.1 建立簡單的 Express 伺服器</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">send</span>(<span class="string">&#x27;Hello, Express!&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">3000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Server is running on http://localhost:3000&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="6-讀取與寫入檔案"><a href="#6-讀取與寫入檔案" class="headerlink" title="6. 讀取與寫入檔案"></a>6. 讀取與寫入檔案</h1><h3 id="6-1-讀取檔案"><a href="#6-1-讀取檔案" class="headerlink" title="6.1 讀取檔案"></a>6.1 讀取檔案</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"></span><br><span class="line">fs.<span class="title function_">readFile</span>(<span class="string">&#x27;example.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="function">(<span class="params">err, data</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-2-寫入檔案"><a href="#6-2-寫入檔案" class="headerlink" title="6.2 寫入檔案"></a>6.2 寫入檔案</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.<span class="title function_">writeFile</span>(<span class="string">&#x27;output.txt&#x27;</span>, <span class="string">&#x27;Hello, Node.js!&#x27;</span>, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;File has been saved!&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="7-連接-MongoDB-資料庫"><a href="#7-連接-MongoDB-資料庫" class="headerlink" title="7. 連接 MongoDB 資料庫"></a>7. 連接 MongoDB 資料庫</h1><h3 id="7-1-安裝-MongoDB-驅動"><a href="#7-1-安裝-MongoDB-驅動" class="headerlink" title="7.1 安裝 MongoDB 驅動"></a>7.1 安裝 MongoDB 驅動</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install mongoose</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-2-連接-MongoDB"><a href="#7-2-連接-MongoDB" class="headerlink" title="7.2 連接 MongoDB"></a>7.2 連接 MongoDB</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">&#x27;mongoose&#x27;</span>);</span><br><span class="line"></span><br><span class="line">mongoose.<span class="title function_">connect</span>(<span class="string">&#x27;mongodb://localhost:27017/testDB&#x27;</span>, &#123; <span class="attr">useNewUrlParser</span>: <span class="literal">true</span>, <span class="attr">useUnifiedTopology</span>: <span class="literal">true</span> &#125;)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Connected to MongoDB&#x27;</span>))</span><br><span class="line">  .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">error</span>(err));</span><br></pre></td></tr></table></figure>
+
+<h1 id="8-部署-Node-js-應用"><a href="#8-部署-Node-js-應用" class="headerlink" title="8. 部署 Node.js 應用"></a>8. 部署 Node.js 應用</h1><h3 id="8-1-使用-PM2-管理應用"><a href="#8-1-使用-PM2-管理應用" class="headerlink" title="8.1 使用 PM2 管理應用"></a>8.1 使用 PM2 管理應用</h3><p>安裝 PM2：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -g pm2</span><br></pre></td></tr></table></figure>
+<p>啟動應用：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pm2 start app.js</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-2-使用-Docker-部署"><a href="#8-2-使用-Docker-部署" class="headerlink" title="8.2 使用 Docker 部署"></a>8.2 使用 Docker 部署</h3><p>建立 <code>Dockerfile</code>：</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">FROM</span> node:<span class="number">14</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /app</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> package.json .</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> npm install</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> . .</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;node&quot;</span>, <span class="string">&quot;app.js&quot;</span>]</span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">3000</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="9-結論"><a href="#9-結論" class="headerlink" title="9. 結論"></a>9. 結論</h1><p>透過這篇入門筆記，初學者可以快速掌握 Node.js 的基礎概念與實作技巧，包含 HTTP 伺服器、檔案操作、資料庫連接等。建議進一步學習異步程式設計、RESTful API、WebSocket 以及雲端部署技術，以提升開發能力。</p>
+]]></content>
+      <tags>
+        <tag>Node.js</tag>
+        <tag>Node</tag>
+        <tag>NodeJS</tag>
       </tags>
   </entry>
   <entry>
@@ -7686,6 +7686,62 @@
       </tags>
   </entry>
   <entry>
+    <title>Responsive Design 響應式設計入門教學筆記 | 學習筆記</title>
+    <url>/2022/06/09/learning-notes-responsive-design-rwd/</url>
+    <content><![CDATA[<h2 id="Responsive-Design-響應式設計入門教學筆記"><a href="#Responsive-Design-響應式設計入門教學筆記" class="headerlink" title="Responsive Design 響應式設計入門教學筆記"></a>Responsive Design 響應式設計入門教學筆記</h2><h3 id="一、什麼是響應式設計"><a href="#一、什麼是響應式設計" class="headerlink" title="一、什麼是響應式設計"></a>一、什麼是響應式設計</h3><p>響應式設計 (Responsive Design) 是一種網頁設計方法，使網頁能夠根據不同裝置的螢幕尺寸與解析度，自動調整版面配置，以提供最佳的使用體驗。</p>
+<h3 id="二、響應式設計的重要概念"><a href="#二、響應式設計的重要概念" class="headerlink" title="二、響應式設計的重要概念"></a>二、響應式設計的重要概念</h3><h4 id="1-視圖-Viewport"><a href="#1-視圖-Viewport" class="headerlink" title="1. 視圖 (Viewport)"></a>1. 視圖 (Viewport)</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼放在 <head> 標籤內，能讓網頁根據不同裝置寬度調整顯示比例，是響應式設計的基本設定。</p>
+<h4 id="2-流動網格-Fluid-Grid"><a href="#2-流動網格-Fluid-Grid" class="headerlink" title="2. 流動網格 (Fluid Grid)"></a>2. 流動網格 (Fluid Grid)</h4><p>使用百分比 (%) 來設定元素的寬度，而非固定的像素 (px)，讓版面能隨螢幕大小調整。</p>
+<h4 id="3-彈性圖片-Flexible-Images"><a href="#3-彈性圖片-Flexible-Images" class="headerlink" title="3. 彈性圖片 (Flexible Images)"></a>3. 彈性圖片 (Flexible Images)</h4><p>圖片大小以百分比或 max-width 設定，避免圖片超出容器範圍。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-媒體查詢-Media-Queries"><a href="#4-媒體查詢-Media-Queries" class="headerlink" title="4. 媒體查詢 (Media Queries)"></a>4. 媒體查詢 (Media Queries)</h4><p>根據裝置螢幕大小套用不同的 CSS 樣式。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: lightgrey;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、常見的斷點-Breakpoints"><a href="#三、常見的斷點-Breakpoints" class="headerlink" title="三、常見的斷點 (Breakpoints)"></a>三、常見的斷點 (Breakpoints)</h3><p>以下為常見的螢幕寬度斷點，用來針對不同裝置設定樣式：</p>
+<table>
+<thead>
+<tr>
+<th>裝置類型</th>
+<th>斷點寬度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>手機</td>
+<td>0 - 576px</td>
+</tr>
+<tr>
+<td>平板</td>
+<td>577px - 768px</td>
+</tr>
+<tr>
+<td>小型桌面</td>
+<td>769px - 992px</td>
+</tr>
+<tr>
+<td>大型桌面</td>
+<td>993px 以上</td>
+</tr>
+</tbody></table>
+<h3 id="四、實作範例"><a href="#四、實作範例" class="headerlink" title="四、實作範例"></a>四、實作範例</h3><h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-Hant&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>響應式設計範例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>歡迎來到響應式設計範例<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>這是一個簡單的響應式網頁範例。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: Arial, sans-serif;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: lightblue;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">576px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="五、其他工具"><a href="#五、其他工具" class="headerlink" title="五、其他工具"></a>五、其他工具</h3><ol>
+<li>Bootstrap：內建響應式網格系統，方便快速開發響應式網頁。</li>
+<li>Flexbox：簡化版面排列的工具，適合處理彈性佈局。</li>
+<li>CSS Grid：強大的網格系統，用於建立複雜的版面。</li>
+</ol>
+<h3 id="六、結語"><a href="#六、結語" class="headerlink" title="六、結語"></a>六、結語</h3><p>響應式設計能提升使用者體驗，使網頁能適應不同裝置，有助於 SEO 表現，是現代網頁設計不可忽視的重要技能。</p>
+]]></content>
+      <tags>
+        <tag>Responsive Design</tag>
+        <tag>響應式設計</tag>
+        <tag>RWD</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>正規表達式（Regex）入門教學筆記 | 學習筆記</title>
     <url>/2024/12/13/learning-notes-regex-intro-tutorial/</url>
     <content><![CDATA[<h2 id="1-正規表達式簡介"><a href="#1-正規表達式簡介" class="headerlink" title="1. 正規表達式簡介"></a>1. 正規表達式簡介</h2><p>正規表達式（Regular Expression，簡稱 <code>Regex</code>）是一種用於字串匹配與處理的強大工具。它廣泛應用於文字搜尋、資料驗證、文字替換等場景。正規表達式透過特殊的語法模式來描述字串結構，並可被多種程式語言支援，如 Python、JavaScript、Java、C# 等。</p>
@@ -7850,62 +7906,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Responsive Design 響應式設計入門教學筆記 | 學習筆記</title>
-    <url>/2022/06/09/learning-notes-responsive-design-rwd/</url>
-    <content><![CDATA[<h2 id="Responsive-Design-響應式設計入門教學筆記"><a href="#Responsive-Design-響應式設計入門教學筆記" class="headerlink" title="Responsive Design 響應式設計入門教學筆記"></a>Responsive Design 響應式設計入門教學筆記</h2><h3 id="一、什麼是響應式設計"><a href="#一、什麼是響應式設計" class="headerlink" title="一、什麼是響應式設計"></a>一、什麼是響應式設計</h3><p>響應式設計 (Responsive Design) 是一種網頁設計方法，使網頁能夠根據不同裝置的螢幕尺寸與解析度，自動調整版面配置，以提供最佳的使用體驗。</p>
-<h3 id="二、響應式設計的重要概念"><a href="#二、響應式設計的重要概念" class="headerlink" title="二、響應式設計的重要概念"></a>二、響應式設計的重要概念</h3><h4 id="1-視圖-Viewport"><a href="#1-視圖-Viewport" class="headerlink" title="1. 視圖 (Viewport)"></a>1. 視圖 (Viewport)</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>這段程式碼放在 <head> 標籤內，能讓網頁根據不同裝置寬度調整顯示比例，是響應式設計的基本設定。</p>
-<h4 id="2-流動網格-Fluid-Grid"><a href="#2-流動網格-Fluid-Grid" class="headerlink" title="2. 流動網格 (Fluid Grid)"></a>2. 流動網格 (Fluid Grid)</h4><p>使用百分比 (%) 來設定元素的寬度，而非固定的像素 (px)，讓版面能隨螢幕大小調整。</p>
-<h4 id="3-彈性圖片-Flexible-Images"><a href="#3-彈性圖片-Flexible-Images" class="headerlink" title="3. 彈性圖片 (Flexible Images)"></a>3. 彈性圖片 (Flexible Images)</h4><p>圖片大小以百分比或 max-width 設定，避免圖片超出容器範圍。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-媒體查詢-Media-Queries"><a href="#4-媒體查詢-Media-Queries" class="headerlink" title="4. 媒體查詢 (Media Queries)"></a>4. 媒體查詢 (Media Queries)</h4><p>根據裝置螢幕大小套用不同的 CSS 樣式。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: lightgrey;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="三、常見的斷點-Breakpoints"><a href="#三、常見的斷點-Breakpoints" class="headerlink" title="三、常見的斷點 (Breakpoints)"></a>三、常見的斷點 (Breakpoints)</h3><p>以下為常見的螢幕寬度斷點，用來針對不同裝置設定樣式：</p>
-<table>
-<thead>
-<tr>
-<th>裝置類型</th>
-<th>斷點寬度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>手機</td>
-<td>0 - 576px</td>
-</tr>
-<tr>
-<td>平板</td>
-<td>577px - 768px</td>
-</tr>
-<tr>
-<td>小型桌面</td>
-<td>769px - 992px</td>
-</tr>
-<tr>
-<td>大型桌面</td>
-<td>993px 以上</td>
-</tr>
-</tbody></table>
-<h3 id="四、實作範例"><a href="#四、實作範例" class="headerlink" title="四、實作範例"></a>四、實作範例</h3><h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-Hant&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>響應式設計範例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>歡迎來到響應式設計範例<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>這是一個簡單的響應式網頁範例。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: Arial, sans-serif;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: lightblue;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">576px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="五、其他工具"><a href="#五、其他工具" class="headerlink" title="五、其他工具"></a>五、其他工具</h3><ol>
-<li>Bootstrap：內建響應式網格系統，方便快速開發響應式網頁。</li>
-<li>Flexbox：簡化版面排列的工具，適合處理彈性佈局。</li>
-<li>CSS Grid：強大的網格系統，用於建立複雜的版面。</li>
-</ol>
-<h3 id="六、結語"><a href="#六、結語" class="headerlink" title="六、結語"></a>六、結語</h3><p>響應式設計能提升使用者體驗，使網頁能適應不同裝置，有助於 SEO 表現，是現代網頁設計不可忽視的重要技能。</p>
-]]></content>
-      <tags>
-        <tag>Responsive Design</tag>
-        <tag>響應式設計</tag>
-        <tag>RWD</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Roo Code 詳細介紹：AI VS Code 編輯器外掛入門教學筆記 | 學習筆記</title>
     <url>/2024/12/20/learning-notes-roo-code-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Roo Code（原名 Roo Cline）是一款嵌入於 Visual Studio Code 編輯器中的開源 AI 代理，能讀寫檔案、自動執行終端指令、操作瀏覽器，甚至整合多種 LLM 模型。無論是編寫程式、重構、除錯、架構設計，Roo Code 都能協助你提升開發效率，更像是一個智慧且自主的開發團隊成員。</p>
@@ -8018,6 +8018,57 @@
       </tags>
   </entry>
   <entry>
+    <title>SASS 語法介紹入門教學筆記 | 學習筆記</title>
+    <url>/2024/06/30/learning-notes-sass-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="什麼是-SASS？"><a href="#什麼是-SASS？" class="headerlink" title="什麼是 SASS？"></a>什麼是 SASS？</h1><p><code>SASS</code>（Syntactically Awesome Style Sheets）是一種 CSS 預處理器，旨在提升 CSS 的功能性，讓開發者能夠以更加靈活和高效的方式編寫樣式表。它提供了許多比 CSS 更強大的功能，例如變數、巢狀規則、混合（mixins）、繼承等。SASS 語法有兩種主要形式：一種是較為常見的 SCSS（<code>Sassy CSS</code>），另一種則是 <code>SASS</code>，本文將主要介紹 SASS 語法。</p>
+<p>與 SCSS 不同，SASS 語法採用的是縮排語法，即不使用大括號和分號，而是利用縮排來結構化程式碼。這種語法更簡潔，對於習慣 Python 等語言的開發者來說，學習曲線較為平滑。</p>
+<h1 id="安裝與設置"><a href="#安裝與設置" class="headerlink" title="安裝與設置"></a>安裝與設置</h1><p>要開始使用 SASS，首先需要安裝 SASS 編譯器。最常見的安裝方式是透過 Node.js 的 npm（Node Package Manager）。請按照以下步驟進行安裝：</p>
+<ol>
+<li><p>確保已經安裝了 Node.js 和 npm。</p>
+</li>
+<li><p>打開終端機，並在專案資料夾中執行以下命令來安裝 SASS：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g sass</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安裝完成後，可以通過命令行執行 SASS 編譯命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sass input.sass output.css</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>這樣，<code>input.sass</code> 就會被編譯為標準的 <code>output.css</code> 檔案。</p>
+<h1 id="SASS-語法介紹"><a href="#SASS-語法介紹" class="headerlink" title="SASS 語法介紹"></a>SASS 語法介紹</h1><h3 id="1-變數（Variables）"><a href="#1-變數（Variables）" class="headerlink" title="1. 變數（Variables）"></a>1. 變數（Variables）</h3><p>SASS 的變數功能讓開發者可以將顏色、字體大小、間距等常用值儲存在變數中，這樣能夠提高樣式的可重用性，並讓程式碼更具維護性。在 SASS 中，變數以 <code>$</code> 符號開頭。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$primary-color: #3498db</span><br><span class="line">$font-size: 16px</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  font-size: $font-size</span><br><span class="line">  color: $primary-color</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了 <code>$primary-color</code> 和 <code>$font-size</code> 兩個變數，並將其應用於 <code>body</code> 樣式中。這樣，只需要修改變數的值，即可全局更新相應的樣式。</p>
+<h3 id="2-巢狀規則（Nesting）"><a href="#2-巢狀規則（Nesting）" class="headerlink" title="2. 巢狀規則（Nesting）"></a>2. 巢狀規則（Nesting）</h3><p>SASS 支援巢狀規則，這樣可以讓樣式更加結構化，並且簡化對於子元素樣式的編寫。SASS 使用縮排來表示層級關係，這一點與傳統的 CSS 需要寫出完整選擇器有所不同。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nav</span><br><span class="line">  background-color: #333</span><br><span class="line">  ul</span><br><span class="line">    list-style-type: none</span><br><span class="line">    padding: 0</span><br><span class="line">  li</span><br><span class="line">    display: inline-block</span><br><span class="line">  a</span><br><span class="line">    color: white</span><br><span class="line">    text-decoration: none</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼會被編譯為：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">list-style-type</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣的寫法可以避免寫重複的選擇器，並且清晰地表現出元素之間的層級結構。</p>
+<h3 id="3-混合（Mixins）"><a href="#3-混合（Mixins）" class="headerlink" title="3. 混合（Mixins）"></a>3. 混合（Mixins）</h3><p>混合是 SASS 中一個非常有用的功能，它可以將一段可重用的樣式封裝成一個混合，並且可以接受參數，實現樣式的動態應用。混合類似於函數，能夠在不同地方重複使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">=mixin border-radius($radius)</span><br><span class="line">  -webkit-border-radius: $radius</span><br><span class="line">  -moz-border-radius: $radius</span><br><span class="line">  border-radius: $radius</span><br><span class="line"></span><br><span class="line">.box</span><br><span class="line">  @include border-radius(10px)</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了一個名為 <code>border-radius</code> 的混合，接受一個 <code>$radius</code> 參數，用來設置元素的邊框圓角。然後，我們在 <code>.box</code> 中使用 <code>@include</code> 引入這個混合，並傳遞具體的參數。這樣，當需要改變邊框圓角的樣式時，只需要修改混合的參數，而不需要在多個地方重複編寫。</p>
+<h3 id="4-繼承（Inheritance）"><a href="#4-繼承（Inheritance）" class="headerlink" title="4. 繼承（Inheritance）"></a>4. 繼承（Inheritance）</h3><p>SASS 提供了繼承功能，使得一個選擇器可以繼承另一個選擇器的樣式。這有助於減少樣式重複，並保持程式碼的整潔性。SASS 使用 <code>@extend</code> 指令來實現繼承。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%button-base</span><br><span class="line">  padding: 10px 15px</span><br><span class="line">  background-color: #3498db</span><br><span class="line">  color: white</span><br><span class="line">  border: none</span><br><span class="line">  border-radius: 5px</span><br><span class="line"></span><br><span class="line">.button-primary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #1abc9c</span><br><span class="line"></span><br><span class="line">.button-secondary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #f39c12</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了一個 <code>%button-base</code> 共享樣式，然後讓 <code>.button-primary</code> 和 <code>.button-secondary</code> 繼承這些樣式，並根據需要進行自定義修改。使用繼承的方式可以減少代碼重複，提高樣式的可維護性。</p>
+<h3 id="5-條件語句（Conditionals）"><a href="#5-條件語句（Conditionals）" class="headerlink" title="5. 條件語句（Conditionals）"></a>5. 條件語句（Conditionals）</h3><p>SASS 支援條件語句，這讓我們可以根據某些條件選擇性地應用不同的樣式。這樣可以使樣式表更具動態性，根據不同情境調整顯示效果。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$theme: light</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  @if $theme == light</span><br><span class="line">    background-color: #fff</span><br><span class="line">    color: #333</span><br><span class="line">  @else</span><br><span class="line">    background-color: #333</span><br><span class="line">    color: #fff</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼中，根據變數 <code>$theme</code> 的值，條件地設定 <code>body</code> 的背景顏色和文字顏色。如果 <code>$theme</code> 為 <code>light</code>，則使用淺色背景和深色文字；否則，使用深色背景和淺色文字。</p>
+<h3 id="6-循環（Loops）"><a href="#6-循環（Loops）" class="headerlink" title="6. 循環（Loops）"></a>6. 循環（Loops）</h3><p>SASS 還支援循環語句，這在需要根據某些條件自動生成多個樣式時非常有用。SASS 的循環可以遍歷一個列表，並生成對應的樣式。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$colors: red, green, blue</span><br><span class="line"></span><br><span class="line">@each $color in $colors</span><br><span class="line">  .#&#123;$color&#125;-box</span><br><span class="line">    background-color: $color</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，<code>@each</code> 循環將遍歷 <code>$colors</code> 列表，並為每個顏色生成一個相應的類別 <code>.red-box</code>、<code>.green-box</code> 和 <code>.blue-box</code>，並將其背景顏色設置為對應的顏色。</p>
+<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>SASS 的 SASS 語法是一種簡潔且強大的 CSS 編寫方式，通過簡單的縮排結構，讓開發者能夠更有效率地編寫和維護樣式。SASS 提供的變數、巢狀規則、混合、繼承等功能，能夠使樣式更加模組化、動態化，並大大減少冗餘代碼。學會 SASS 語法後，你可以更靈活地處理大型專案中的 CSS，提升工作效率。如果你還沒有開始使用 SASS，不妨從這些基礎語法開始，體驗它帶來的便利。</p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>SASS</tag>
+        <tag>SCSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SCSS 介紹入門教學筆記 | 學習筆記</title>
     <url>/2023/07/01/learning-notes-scss-intro-tutorial/</url>
     <content><![CDATA[<h1 id="一、SASS-是什麼？"><a href="#一、SASS-是什麼？" class="headerlink" title="一、SASS 是什麼？"></a>一、SASS 是什麼？</h1><p>SASS（Syntactically Awesome Stylesheets）是一種 CSS 預處理器（CSS Preprocessor），它擴展了 CSS 的功能，使樣式表更具可讀性、模組化和可維護性。SASS 允許使用變數、巢狀（Nesting）、混入（Mixin）、繼承（Extend）等進階特性，讓開發者能更有效率地管理 CSS。  </p>
@@ -8122,57 +8173,6 @@
         <tag>frontend engineer</tag>
         <tag>後端</tag>
         <tag>軟體工程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SASS 語法介紹入門教學筆記 | 學習筆記</title>
-    <url>/2024/06/30/learning-notes-sass-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="什麼是-SASS？"><a href="#什麼是-SASS？" class="headerlink" title="什麼是 SASS？"></a>什麼是 SASS？</h1><p><code>SASS</code>（Syntactically Awesome Style Sheets）是一種 CSS 預處理器，旨在提升 CSS 的功能性，讓開發者能夠以更加靈活和高效的方式編寫樣式表。它提供了許多比 CSS 更強大的功能，例如變數、巢狀規則、混合（mixins）、繼承等。SASS 語法有兩種主要形式：一種是較為常見的 SCSS（<code>Sassy CSS</code>），另一種則是 <code>SASS</code>，本文將主要介紹 SASS 語法。</p>
-<p>與 SCSS 不同，SASS 語法採用的是縮排語法，即不使用大括號和分號，而是利用縮排來結構化程式碼。這種語法更簡潔，對於習慣 Python 等語言的開發者來說，學習曲線較為平滑。</p>
-<h1 id="安裝與設置"><a href="#安裝與設置" class="headerlink" title="安裝與設置"></a>安裝與設置</h1><p>要開始使用 SASS，首先需要安裝 SASS 編譯器。最常見的安裝方式是透過 Node.js 的 npm（Node Package Manager）。請按照以下步驟進行安裝：</p>
-<ol>
-<li><p>確保已經安裝了 Node.js 和 npm。</p>
-</li>
-<li><p>打開終端機，並在專案資料夾中執行以下命令來安裝 SASS：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g sass</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安裝完成後，可以通過命令行執行 SASS 編譯命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sass input.sass output.css</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>這樣，<code>input.sass</code> 就會被編譯為標準的 <code>output.css</code> 檔案。</p>
-<h1 id="SASS-語法介紹"><a href="#SASS-語法介紹" class="headerlink" title="SASS 語法介紹"></a>SASS 語法介紹</h1><h3 id="1-變數（Variables）"><a href="#1-變數（Variables）" class="headerlink" title="1. 變數（Variables）"></a>1. 變數（Variables）</h3><p>SASS 的變數功能讓開發者可以將顏色、字體大小、間距等常用值儲存在變數中，這樣能夠提高樣式的可重用性，並讓程式碼更具維護性。在 SASS 中，變數以 <code>$</code> 符號開頭。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$primary-color: #3498db</span><br><span class="line">$font-size: 16px</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  font-size: $font-size</span><br><span class="line">  color: $primary-color</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，我們定義了 <code>$primary-color</code> 和 <code>$font-size</code> 兩個變數，並將其應用於 <code>body</code> 樣式中。這樣，只需要修改變數的值，即可全局更新相應的樣式。</p>
-<h3 id="2-巢狀規則（Nesting）"><a href="#2-巢狀規則（Nesting）" class="headerlink" title="2. 巢狀規則（Nesting）"></a>2. 巢狀規則（Nesting）</h3><p>SASS 支援巢狀規則，這樣可以讓樣式更加結構化，並且簡化對於子元素樣式的編寫。SASS 使用縮排來表示層級關係，這一點與傳統的 CSS 需要寫出完整選擇器有所不同。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nav</span><br><span class="line">  background-color: #333</span><br><span class="line">  ul</span><br><span class="line">    list-style-type: none</span><br><span class="line">    padding: 0</span><br><span class="line">  li</span><br><span class="line">    display: inline-block</span><br><span class="line">  a</span><br><span class="line">    color: white</span><br><span class="line">    text-decoration: none</span><br></pre></td></tr></table></figure>
-
-<p>這段程式碼會被編譯為：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">list-style-type</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這樣的寫法可以避免寫重複的選擇器，並且清晰地表現出元素之間的層級結構。</p>
-<h3 id="3-混合（Mixins）"><a href="#3-混合（Mixins）" class="headerlink" title="3. 混合（Mixins）"></a>3. 混合（Mixins）</h3><p>混合是 SASS 中一個非常有用的功能，它可以將一段可重用的樣式封裝成一個混合，並且可以接受參數，實現樣式的動態應用。混合類似於函數，能夠在不同地方重複使用。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">=mixin border-radius($radius)</span><br><span class="line">  -webkit-border-radius: $radius</span><br><span class="line">  -moz-border-radius: $radius</span><br><span class="line">  border-radius: $radius</span><br><span class="line"></span><br><span class="line">.box</span><br><span class="line">  @include border-radius(10px)</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，我們定義了一個名為 <code>border-radius</code> 的混合，接受一個 <code>$radius</code> 參數，用來設置元素的邊框圓角。然後，我們在 <code>.box</code> 中使用 <code>@include</code> 引入這個混合，並傳遞具體的參數。這樣，當需要改變邊框圓角的樣式時，只需要修改混合的參數，而不需要在多個地方重複編寫。</p>
-<h3 id="4-繼承（Inheritance）"><a href="#4-繼承（Inheritance）" class="headerlink" title="4. 繼承（Inheritance）"></a>4. 繼承（Inheritance）</h3><p>SASS 提供了繼承功能，使得一個選擇器可以繼承另一個選擇器的樣式。這有助於減少樣式重複，並保持程式碼的整潔性。SASS 使用 <code>@extend</code> 指令來實現繼承。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%button-base</span><br><span class="line">  padding: 10px 15px</span><br><span class="line">  background-color: #3498db</span><br><span class="line">  color: white</span><br><span class="line">  border: none</span><br><span class="line">  border-radius: 5px</span><br><span class="line"></span><br><span class="line">.button-primary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #1abc9c</span><br><span class="line"></span><br><span class="line">.button-secondary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #f39c12</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，我們定義了一個 <code>%button-base</code> 共享樣式，然後讓 <code>.button-primary</code> 和 <code>.button-secondary</code> 繼承這些樣式，並根據需要進行自定義修改。使用繼承的方式可以減少代碼重複，提高樣式的可維護性。</p>
-<h3 id="5-條件語句（Conditionals）"><a href="#5-條件語句（Conditionals）" class="headerlink" title="5. 條件語句（Conditionals）"></a>5. 條件語句（Conditionals）</h3><p>SASS 支援條件語句，這讓我們可以根據某些條件選擇性地應用不同的樣式。這樣可以使樣式表更具動態性，根據不同情境調整顯示效果。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$theme: light</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  @if $theme == light</span><br><span class="line">    background-color: #fff</span><br><span class="line">    color: #333</span><br><span class="line">  @else</span><br><span class="line">    background-color: #333</span><br><span class="line">    color: #fff</span><br></pre></td></tr></table></figure>
-
-<p>這段程式碼中，根據變數 <code>$theme</code> 的值，條件地設定 <code>body</code> 的背景顏色和文字顏色。如果 <code>$theme</code> 為 <code>light</code>，則使用淺色背景和深色文字；否則，使用深色背景和淺色文字。</p>
-<h3 id="6-循環（Loops）"><a href="#6-循環（Loops）" class="headerlink" title="6. 循環（Loops）"></a>6. 循環（Loops）</h3><p>SASS 還支援循環語句，這在需要根據某些條件自動生成多個樣式時非常有用。SASS 的循環可以遍歷一個列表，並生成對應的樣式。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$colors: red, green, blue</span><br><span class="line"></span><br><span class="line">@each $color in $colors</span><br><span class="line">  .#&#123;$color&#125;-box</span><br><span class="line">    background-color: $color</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，<code>@each</code> 循環將遍歷 <code>$colors</code> 列表，並為每個顏色生成一個相應的類別 <code>.red-box</code>、<code>.green-box</code> 和 <code>.blue-box</code>，並將其背景顏色設置為對應的顏色。</p>
-<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>SASS 的 SASS 語法是一種簡潔且強大的 CSS 編寫方式，通過簡單的縮排結構，讓開發者能夠更有效率地編寫和維護樣式。SASS 提供的變數、巢狀規則、混合、繼承等功能，能夠使樣式更加模組化、動態化，並大大減少冗餘代碼。學會 SASS 語法後，你可以更靈活地處理大型專案中的 CSS，提升工作效率。如果你還沒有開始使用 SASS，不妨從這些基礎語法開始，體驗它帶來的便利。</p>
-]]></content>
-      <tags>
-        <tag>CSS</tag>
-        <tag>SASS</tag>
-        <tag>SCSS</tag>
       </tags>
   </entry>
   <entry>
@@ -8586,64 +8586,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue i18n 入門教學筆記 | 學習筆記</title>
-    <url>/2024/11/13/learning-notes-vue-i18n-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="1-Vue-I18n-簡介"><a href="#1-Vue-I18n-簡介" class="headerlink" title="1. Vue I18n 簡介"></a>1. Vue I18n 簡介</h2><p>Vue i18n 是 Vue.js 的國際化（Internationalization）解決方案，可用於管理應用程式的多語系內容。當開發需要支援不同語言的應用時，Vue i18n 提供了一個高效的方式來處理翻譯、數字格式、日期格式等。</p>
-<h3 id="1-1-為何使用-Vue-I18n？"><a href="#1-1-為何使用-Vue-I18n？" class="headerlink" title="1.1 為何使用 Vue I18n？"></a>1.1 為何使用 Vue I18n？</h3><ul>
-<li><strong>動態切換語言</strong>：讓使用者能夠即時更改語言。</li>
-<li><strong>簡化多語系管理</strong>：集中化翻譯內容，方便維護。</li>
-<li><strong>格式化支援</strong>：內建日期、時間、數字等格式化功能。</li>
-</ul>
-<h2 id="2-安裝-Vue-I18n"><a href="#2-安裝-Vue-I18n" class="headerlink" title="2. 安裝 Vue I18n"></a>2. 安裝 Vue I18n</h2><p>Vue I18n 可透過 npm 安裝，適用於 Vue 3 應用。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install vue-i18n</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-設定-Vue-I18n"><a href="#3-設定-Vue-I18n" class="headerlink" title="3. 設定 Vue I18n"></a>3. 設定 Vue I18n</h2><p>在 Vue 3 中，可以使用 <code>createI18n</code> 來設定 Vue I18n：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createApp &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createI18n &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-i18n&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> messages = &#123;</span><br><span class="line">  <span class="attr">en</span>: &#123;</span><br><span class="line">    <span class="attr">welcome</span>: <span class="string">&#x27;Welcome to Vue I18n!&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">zh</span>: &#123;</span><br><span class="line">    <span class="attr">welcome</span>: <span class="string">&#x27;歡迎使用 Vue I18n！&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>, <span class="comment">// 預設語言</span></span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>, <span class="comment">// 備用語言</span></span><br><span class="line">  messages</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">createApp</span>(<span class="title class_">App</span>);</span><br><span class="line">app.<span class="title function_">use</span>(i18n);</span><br><span class="line">app.<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-在組件中使用-Vue-I18n"><a href="#4-在組件中使用-Vue-I18n" class="headerlink" title="4. 在組件中使用 Vue I18n"></a>4. 在組件中使用 Vue I18n</h2><h3 id="4-1-使用-t-方法"><a href="#4-1-使用-t-方法" class="headerlink" title="4.1 使用 $t 方法"></a>4.1 使用 <code>$t</code> 方法</h3><p>在 Vue 組件中，可以透過 <code>$t</code> 方法來取得翻譯內容。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;h1&gt;&#123;&#123; $t(&#x27;welcome&#x27;) &#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-切換語言"><a href="#4-2-切換語言" class="headerlink" title="4.2 切換語言"></a>4.2 切換語言</h3><p>可以透過 <code>this.$i18n.locale</code> 來更改語言：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button @click=&quot;changeLanguage(&#x27;en&#x27;)&quot;&gt;English&lt;/button&gt;</span><br><span class="line">    &lt;button @click=&quot;changeLanguage(&#x27;zh&#x27;)&quot;&gt;中文&lt;/button&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; $t(&#x27;welcome&#x27;) &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    changeLanguage(lang) &#123;</span><br><span class="line">      this.$i18n.locale = lang;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-使用外部-JSON-檔案管理翻譯內容"><a href="#5-使用外部-JSON-檔案管理翻譯內容" class="headerlink" title="5. 使用外部 JSON 檔案管理翻譯內容"></a>5. 使用外部 JSON 檔案管理翻譯內容</h2><p>當專案的翻譯內容較多時，建議將翻譯字串拆分成獨立的 JSON 檔案。</p>
-<p><strong>建立語言檔案：</strong></p>
-<p><code>locales/en.json</code></p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;welcome&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Welcome to Vue I18n!&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p><code>locales/zh.json</code></p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;welcome&quot;</span><span class="punctuation">:</span> <span class="string">&quot;歡迎使用 Vue I18n！&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>修改 <code>i18n</code> 設定：</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createI18n &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-i18n&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> en <span class="keyword">from</span> <span class="string">&#x27;./locales/en.json&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> zh <span class="keyword">from</span> <span class="string">&#x27;./locales/zh.json&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>,</span><br><span class="line">  <span class="attr">messages</span>: &#123; en, zh &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-插值與變數"><a href="#6-插值與變數" class="headerlink" title="6. 插值與變數"></a>6. 插值與變數</h2><p>Vue I18n 支援在翻譯字串中插入變數。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> messages = &#123;</span><br><span class="line">  <span class="attr">en</span>: &#123;</span><br><span class="line">    <span class="attr">greeting</span>: <span class="string">&#x27;Hello, &#123;name&#125;!&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">zh</span>: &#123;</span><br><span class="line">    <span class="attr">greeting</span>: <span class="string">&#x27;你好, &#123;name&#125;!&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>在組件中使用：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123; $t(&#x27;greeting&#x27;, &#123; name: &#x27;John&#x27; &#125;) &#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="7-訊息格式化與日期、數字處理"><a href="#7-訊息格式化與日期、數字處理" class="headerlink" title="7. 訊息格式化與日期、數字處理"></a>7. 訊息格式化與日期、數字處理</h2><p>Vue I18n 內建 <code>numberFormats</code> 和 <code>datetimeFormats</code>，可用於格式化數字與日期。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>,</span><br><span class="line">  messages,</span><br><span class="line">  <span class="attr">numberFormats</span>: &#123;</span><br><span class="line">    <span class="attr">en</span>: &#123;</span><br><span class="line">      <span class="attr">currency</span>: &#123;</span><br><span class="line">        <span class="attr">style</span>: <span class="string">&#x27;currency&#x27;</span>, <span class="attr">currency</span>: <span class="string">&#x27;USD&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">zh</span>: &#123;</span><br><span class="line">      <span class="attr">currency</span>: &#123;</span><br><span class="line">        <span class="attr">style</span>: <span class="string">&#x27;currency&#x27;</span>, <span class="attr">currency</span>: <span class="string">&#x27;TWD&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>在組件中使用：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123; $n(1000, &#x27;currency&#x27;) &#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="8-延遲載入翻譯（Lazy-Loading）"><a href="#8-延遲載入翻譯（Lazy-Loading）" class="headerlink" title="8. 延遲載入翻譯（Lazy Loading）"></a>8. 延遲載入翻譯（Lazy Loading）</h2><p>當應用程式的語言檔案過多時，建議使用動態載入（Lazy Loading）來優化效能。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createI18n &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-i18n&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>,</span><br><span class="line">  <span class="attr">messages</span>: &#123;&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">loadLocaleMessages</span>(<span class="params">locale</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> messages = <span class="keyword">await</span> <span class="keyword">import</span>(<span class="string">`./locales/<span class="subst">$&#123;locale&#125;</span>.json`</span>);</span><br><span class="line">  i18n.<span class="property">global</span>.<span class="title function_">setLocaleMessage</span>(locale, messages.<span class="property">default</span>);</span><br><span class="line">  i18n.<span class="property">global</span>.<span class="property">locale</span> = locale;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="9-結論"><a href="#9-結論" class="headerlink" title="9. 結論"></a>9. 結論</h2><p>Vue I18n 是 Vue.js 中強大的國際化解決方案，透過 <code>$t</code> 方法、插值變數、外部 JSON 檔案管理，以及數字與日期格式化功能，可以讓開發者輕鬆實作多語系應用。本篇筆記介紹了 Vue I18n 的基本使用方式，進一步學習可研究動態載入、多語系 SEO 以及與 Vue Router 的結合。</p>
-]]></content>
-      <tags>
-        <tag>Vue</tag>
-        <tag>i18n</tag>
-        <tag>Vue i18n</tag>
-        <tag>多語系</tag>
-        <tag>多國語系</tag>
-        <tag>在地化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>TypeScript 入門教學筆記 | 學習筆記</title>
     <url>/2024/12/02/learning-notes-typescript-intro-tutorial/</url>
     <content><![CDATA[<h1 id="一、什麼是-TypeScript？"><a href="#一、什麼是-TypeScript？" class="headerlink" title="一、什麼是 TypeScript？"></a>一、什麼是 TypeScript？</h1><p>TypeScript 是由 Microsoft 開發的 JavaScript 超集（Superset），提供靜態型別檢查（Static Type Checking），讓開發者在編譯時發現錯誤，提升程式碼的可靠性與可維護性。TypeScript 會被編譯為標準 JavaScript，並可以運行於任何支援 JavaScript 的環境，例如瀏覽器或 Node.js。  </p>
@@ -8771,6 +8713,64 @@
         <tag>frontend engineer</tag>
         <tag>CSS</tag>
         <tag>typescript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue i18n 入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/13/learning-notes-vue-i18n-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="1-Vue-I18n-簡介"><a href="#1-Vue-I18n-簡介" class="headerlink" title="1. Vue I18n 簡介"></a>1. Vue I18n 簡介</h2><p>Vue i18n 是 Vue.js 的國際化（Internationalization）解決方案，可用於管理應用程式的多語系內容。當開發需要支援不同語言的應用時，Vue i18n 提供了一個高效的方式來處理翻譯、數字格式、日期格式等。</p>
+<h3 id="1-1-為何使用-Vue-I18n？"><a href="#1-1-為何使用-Vue-I18n？" class="headerlink" title="1.1 為何使用 Vue I18n？"></a>1.1 為何使用 Vue I18n？</h3><ul>
+<li><strong>動態切換語言</strong>：讓使用者能夠即時更改語言。</li>
+<li><strong>簡化多語系管理</strong>：集中化翻譯內容，方便維護。</li>
+<li><strong>格式化支援</strong>：內建日期、時間、數字等格式化功能。</li>
+</ul>
+<h2 id="2-安裝-Vue-I18n"><a href="#2-安裝-Vue-I18n" class="headerlink" title="2. 安裝 Vue I18n"></a>2. 安裝 Vue I18n</h2><p>Vue I18n 可透過 npm 安裝，適用於 Vue 3 應用。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install vue-i18n</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-設定-Vue-I18n"><a href="#3-設定-Vue-I18n" class="headerlink" title="3. 設定 Vue I18n"></a>3. 設定 Vue I18n</h2><p>在 Vue 3 中，可以使用 <code>createI18n</code> 來設定 Vue I18n：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createApp &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createI18n &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-i18n&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> messages = &#123;</span><br><span class="line">  <span class="attr">en</span>: &#123;</span><br><span class="line">    <span class="attr">welcome</span>: <span class="string">&#x27;Welcome to Vue I18n!&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">zh</span>: &#123;</span><br><span class="line">    <span class="attr">welcome</span>: <span class="string">&#x27;歡迎使用 Vue I18n！&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>, <span class="comment">// 預設語言</span></span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>, <span class="comment">// 備用語言</span></span><br><span class="line">  messages</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">createApp</span>(<span class="title class_">App</span>);</span><br><span class="line">app.<span class="title function_">use</span>(i18n);</span><br><span class="line">app.<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-在組件中使用-Vue-I18n"><a href="#4-在組件中使用-Vue-I18n" class="headerlink" title="4. 在組件中使用 Vue I18n"></a>4. 在組件中使用 Vue I18n</h2><h3 id="4-1-使用-t-方法"><a href="#4-1-使用-t-方法" class="headerlink" title="4.1 使用 $t 方法"></a>4.1 使用 <code>$t</code> 方法</h3><p>在 Vue 組件中，可以透過 <code>$t</code> 方法來取得翻譯內容。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;h1&gt;&#123;&#123; $t(&#x27;welcome&#x27;) &#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-切換語言"><a href="#4-2-切換語言" class="headerlink" title="4.2 切換語言"></a>4.2 切換語言</h3><p>可以透過 <code>this.$i18n.locale</code> 來更改語言：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button @click=&quot;changeLanguage(&#x27;en&#x27;)&quot;&gt;English&lt;/button&gt;</span><br><span class="line">    &lt;button @click=&quot;changeLanguage(&#x27;zh&#x27;)&quot;&gt;中文&lt;/button&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; $t(&#x27;welcome&#x27;) &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    changeLanguage(lang) &#123;</span><br><span class="line">      this.$i18n.locale = lang;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-使用外部-JSON-檔案管理翻譯內容"><a href="#5-使用外部-JSON-檔案管理翻譯內容" class="headerlink" title="5. 使用外部 JSON 檔案管理翻譯內容"></a>5. 使用外部 JSON 檔案管理翻譯內容</h2><p>當專案的翻譯內容較多時，建議將翻譯字串拆分成獨立的 JSON 檔案。</p>
+<p><strong>建立語言檔案：</strong></p>
+<p><code>locales/en.json</code></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;welcome&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Welcome to Vue I18n!&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>locales/zh.json</code></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;welcome&quot;</span><span class="punctuation">:</span> <span class="string">&quot;歡迎使用 Vue I18n！&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>修改 <code>i18n</code> 設定：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createI18n &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-i18n&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> en <span class="keyword">from</span> <span class="string">&#x27;./locales/en.json&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> zh <span class="keyword">from</span> <span class="string">&#x27;./locales/zh.json&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>,</span><br><span class="line">  <span class="attr">messages</span>: &#123; en, zh &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-插值與變數"><a href="#6-插值與變數" class="headerlink" title="6. 插值與變數"></a>6. 插值與變數</h2><p>Vue I18n 支援在翻譯字串中插入變數。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> messages = &#123;</span><br><span class="line">  <span class="attr">en</span>: &#123;</span><br><span class="line">    <span class="attr">greeting</span>: <span class="string">&#x27;Hello, &#123;name&#125;!&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">zh</span>: &#123;</span><br><span class="line">    <span class="attr">greeting</span>: <span class="string">&#x27;你好, &#123;name&#125;!&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在組件中使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123; $t(&#x27;greeting&#x27;, &#123; name: &#x27;John&#x27; &#125;) &#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-訊息格式化與日期、數字處理"><a href="#7-訊息格式化與日期、數字處理" class="headerlink" title="7. 訊息格式化與日期、數字處理"></a>7. 訊息格式化與日期、數字處理</h2><p>Vue I18n 內建 <code>numberFormats</code> 和 <code>datetimeFormats</code>，可用於格式化數字與日期。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>,</span><br><span class="line">  messages,</span><br><span class="line">  <span class="attr">numberFormats</span>: &#123;</span><br><span class="line">    <span class="attr">en</span>: &#123;</span><br><span class="line">      <span class="attr">currency</span>: &#123;</span><br><span class="line">        <span class="attr">style</span>: <span class="string">&#x27;currency&#x27;</span>, <span class="attr">currency</span>: <span class="string">&#x27;USD&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">zh</span>: &#123;</span><br><span class="line">      <span class="attr">currency</span>: &#123;</span><br><span class="line">        <span class="attr">style</span>: <span class="string">&#x27;currency&#x27;</span>, <span class="attr">currency</span>: <span class="string">&#x27;TWD&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>在組件中使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123; $n(1000, &#x27;currency&#x27;) &#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-延遲載入翻譯（Lazy-Loading）"><a href="#8-延遲載入翻譯（Lazy-Loading）" class="headerlink" title="8. 延遲載入翻譯（Lazy Loading）"></a>8. 延遲載入翻譯（Lazy Loading）</h2><p>當應用程式的語言檔案過多時，建議使用動態載入（Lazy Loading）來優化效能。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createI18n &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-i18n&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>,</span><br><span class="line">  <span class="attr">messages</span>: &#123;&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">loadLocaleMessages</span>(<span class="params">locale</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> messages = <span class="keyword">await</span> <span class="keyword">import</span>(<span class="string">`./locales/<span class="subst">$&#123;locale&#125;</span>.json`</span>);</span><br><span class="line">  i18n.<span class="property">global</span>.<span class="title function_">setLocaleMessage</span>(locale, messages.<span class="property">default</span>);</span><br><span class="line">  i18n.<span class="property">global</span>.<span class="property">locale</span> = locale;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-結論"><a href="#9-結論" class="headerlink" title="9. 結論"></a>9. 結論</h2><p>Vue I18n 是 Vue.js 中強大的國際化解決方案，透過 <code>$t</code> 方法、插值變數、外部 JSON 檔案管理，以及數字與日期格式化功能，可以讓開發者輕鬆實作多語系應用。本篇筆記介紹了 Vue I18n 的基本使用方式，進一步學習可研究動態載入、多語系 SEO 以及與 Vue Router 的結合。</p>
+]]></content>
+      <tags>
+        <tag>Vue</tag>
+        <tag>i18n</tag>
+        <tag>Vue i18n</tag>
+        <tag>多語系</tag>
+        <tag>多國語系</tag>
+        <tag>在地化</tag>
       </tags>
   </entry>
   <entry>
@@ -8957,6 +8957,47 @@
       </tags>
   </entry>
   <entry>
+    <title>將 Vue 3 應用部署到 GitHub Pages 入門語法教學筆記 | 學習筆記</title>
+    <url>/2018/02/01/learning-notes-vue3-app-github-pages-deploy-intro-tutorial%20copy/</url>
+    <content><![CDATA[<p>要將 Vue 3 應用部署到 GitHub Pages，這裡有一個詳細的步驟說明，指導你如何使用 <code>gh-pages</code> 部署你的應用。</p>
+<h3 id="1-安裝-gh-pages-套件"><a href="#1-安裝-gh-pages-套件" class="headerlink" title="1. 安裝 gh-pages 套件"></a>1. 安裝 <code>gh-pages</code> 套件</h3><p>首先，你需要安裝 <code>gh-pages</code> 套件來將你的專案部署到 GitHub Pages。</p>
+<p>在專案目錄中執行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install --save-dev gh-pages</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-配置-vite-config-js"><a href="#2-配置-vite-config-js" class="headerlink" title="2. 配置 vite.config.js"></a>2. 配置 <code>vite.config.js</code></h3><p>為了將專案部署到 GitHub Pages，你需要配置 <code>vite.config.js</code> 文件中的 <code>base</code> 屬性，讓它使用 GitHub 的存儲庫名稱作為基本路徑。</p>
+<p>打開 <code>vite.config.js</code>，並根據你的 GitHub 用戶名和存儲庫名稱來設定 <code>base</code> 屬性。假設你的 GitHub 存儲庫名稱是 <code>my-vue-app</code>，配置應該是：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// vite.config.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; defineConfig &#125; <span class="keyword">from</span> <span class="string">&quot;vite&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">  <span class="attr">base</span>: <span class="string">&quot;/my-vue-app/&quot;</span>, <span class="comment">// 用你的 GitHub repository 名稱替換</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-更新-package-json"><a href="#3-更新-package-json" class="headerlink" title="3. 更新 package.json"></a>3. 更新 <code>package.json</code></h3><p>你需要在 <code>package.json</code> 中添加兩個腳本來處理部署。打開 <code>package.json</code>，並在 <code>scripts</code> 部分添加 <code>predeploy</code> 和 <code>deploy</code> 腳本：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;dev&quot;</span><span class="punctuation">:</span> <span class="string">&quot;vite&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="string">&quot;vite build&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;predeploy&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm run build&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;deploy&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gh-pages -d dist&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>predeploy</code> 會先執行 <code>npm run build</code>，這會構建你的應用。</li>
+<li><code>deploy</code> 會將 <code>dist</code> 目錄（即構建後的文件）推送到 GitHub Pages。</li>
+</ul>
+<h3 id="4-設定-GitHub-Pages"><a href="#4-設定-GitHub-Pages" class="headerlink" title="4. 設定 GitHub Pages"></a>4. 設定 GitHub Pages</h3><p>如果你還沒設定過 GitHub Pages，請先確保你的 GitHub 存儲庫設定了 GitHub Pages。</p>
+<ol>
+<li>在 GitHub 上打開你的存儲庫。</li>
+<li>點擊 <code>Settings</code>。</li>
+<li>滾動到 <code>Pages</code> 部分，並將 <code>Source</code> 設定為 <code>gh-pages</code> 分支。</li>
+</ol>
+<h3 id="5-部署到-GitHub-Pages"><a href="#5-部署到-GitHub-Pages" class="headerlink" title="5. 部署到 GitHub Pages"></a>5. 部署到 GitHub Pages</h3><p>完成上述配置後，你就可以將專案部署到 GitHub Pages 了。</p>
+<p>執行以下命令來構建並部署專案：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm run deploy</span><br></pre></td></tr></table></figure>
+
+<p><code>gh-pages</code> 會自動將構建後的 <code>dist</code> 目錄推送到 <code>gh-pages</code> 分支。你可以在 GitHub 上查看部署情況。</p>
+<h3 id="6-訪問你的應用"><a href="#6-訪問你的應用" class="headerlink" title="6. 訪問你的應用"></a>6. 訪問你的應用</h3><p>部署完成後，你可以使用以下 URL 來訪問你的應用：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://&lt;你的 GitHub 用戶名&gt;.github.io/my-vue-app/</span><br></pre></td></tr></table></figure>
+
+<p>請將 <code>&lt;你的 GitHub 用戶名&gt;</code> 和 <code>my-vue-app</code> 替換為你實際的 GitHub 用戶名和存儲庫名稱。</p>
+<h3 id="7-自動化部署（可選）"><a href="#7-自動化部署（可選）" class="headerlink" title="7. 自動化部署（可選）"></a>7. 自動化部署（可選）</h3><p>如果我們希望每次推送代碼時自動部署到 GitHub Pages，你可以使用 GitHub Actions 來自動化這個過程。GitHub 提供了許多現成的 Actions 來進行自動部署，像是 <a href="https://github.com/marketplace/actions/deploy-to-github-pages">GitHub Action for deploying to GitHub Pages</a>。</p>
+]]></content>
+      <tags>
+        <tag>Vue</tag>
+        <tag>GitHub Pages</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue 正確新增或修改物件屬性入門教學筆記 | 學習筆記</title>
     <url>/2024/12/14/learning-notes-vue-set-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 Vue 2（Options API）中，<code>this.$set</code> 是用來<strong>在響應式系統中正確新增或修改物件屬性</strong>的方法。這對於<strong>動態新增屬性或修改陣列的指定索引值</strong>特別有用。</p>
@@ -8997,47 +9038,6 @@
         <tag>vue</tag>
         <tag>vue.js</tag>
         <tag>this.$set</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>將 Vue 3 應用部署到 GitHub Pages 入門語法教學筆記 | 學習筆記</title>
-    <url>/2018/02/01/learning-notes-vue3-app-github-pages-deploy-intro-tutorial%20copy/</url>
-    <content><![CDATA[<p>要將 Vue 3 應用部署到 GitHub Pages，這裡有一個詳細的步驟說明，指導你如何使用 <code>gh-pages</code> 部署你的應用。</p>
-<h3 id="1-安裝-gh-pages-套件"><a href="#1-安裝-gh-pages-套件" class="headerlink" title="1. 安裝 gh-pages 套件"></a>1. 安裝 <code>gh-pages</code> 套件</h3><p>首先，你需要安裝 <code>gh-pages</code> 套件來將你的專案部署到 GitHub Pages。</p>
-<p>在專案目錄中執行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install --save-dev gh-pages</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-配置-vite-config-js"><a href="#2-配置-vite-config-js" class="headerlink" title="2. 配置 vite.config.js"></a>2. 配置 <code>vite.config.js</code></h3><p>為了將專案部署到 GitHub Pages，你需要配置 <code>vite.config.js</code> 文件中的 <code>base</code> 屬性，讓它使用 GitHub 的存儲庫名稱作為基本路徑。</p>
-<p>打開 <code>vite.config.js</code>，並根據你的 GitHub 用戶名和存儲庫名稱來設定 <code>base</code> 屬性。假設你的 GitHub 存儲庫名稱是 <code>my-vue-app</code>，配置應該是：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// vite.config.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; defineConfig &#125; <span class="keyword">from</span> <span class="string">&quot;vite&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">  <span class="attr">base</span>: <span class="string">&quot;/my-vue-app/&quot;</span>, <span class="comment">// 用你的 GitHub repository 名稱替換</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-更新-package-json"><a href="#3-更新-package-json" class="headerlink" title="3. 更新 package.json"></a>3. 更新 <code>package.json</code></h3><p>你需要在 <code>package.json</code> 中添加兩個腳本來處理部署。打開 <code>package.json</code>，並在 <code>scripts</code> 部分添加 <code>predeploy</code> 和 <code>deploy</code> 腳本：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;dev&quot;</span><span class="punctuation">:</span> <span class="string">&quot;vite&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="string">&quot;vite build&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;predeploy&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm run build&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;deploy&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gh-pages -d dist&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>predeploy</code> 會先執行 <code>npm run build</code>，這會構建你的應用。</li>
-<li><code>deploy</code> 會將 <code>dist</code> 目錄（即構建後的文件）推送到 GitHub Pages。</li>
-</ul>
-<h3 id="4-設定-GitHub-Pages"><a href="#4-設定-GitHub-Pages" class="headerlink" title="4. 設定 GitHub Pages"></a>4. 設定 GitHub Pages</h3><p>如果你還沒設定過 GitHub Pages，請先確保你的 GitHub 存儲庫設定了 GitHub Pages。</p>
-<ol>
-<li>在 GitHub 上打開你的存儲庫。</li>
-<li>點擊 <code>Settings</code>。</li>
-<li>滾動到 <code>Pages</code> 部分，並將 <code>Source</code> 設定為 <code>gh-pages</code> 分支。</li>
-</ol>
-<h3 id="5-部署到-GitHub-Pages"><a href="#5-部署到-GitHub-Pages" class="headerlink" title="5. 部署到 GitHub Pages"></a>5. 部署到 GitHub Pages</h3><p>完成上述配置後，你就可以將專案部署到 GitHub Pages 了。</p>
-<p>執行以下命令來構建並部署專案：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm run deploy</span><br></pre></td></tr></table></figure>
-
-<p><code>gh-pages</code> 會自動將構建後的 <code>dist</code> 目錄推送到 <code>gh-pages</code> 分支。你可以在 GitHub 上查看部署情況。</p>
-<h3 id="6-訪問你的應用"><a href="#6-訪問你的應用" class="headerlink" title="6. 訪問你的應用"></a>6. 訪問你的應用</h3><p>部署完成後，你可以使用以下 URL 來訪問你的應用：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://&lt;你的 GitHub 用戶名&gt;.github.io/my-vue-app/</span><br></pre></td></tr></table></figure>
-
-<p>請將 <code>&lt;你的 GitHub 用戶名&gt;</code> 和 <code>my-vue-app</code> 替換為你實際的 GitHub 用戶名和存儲庫名稱。</p>
-<h3 id="7-自動化部署（可選）"><a href="#7-自動化部署（可選）" class="headerlink" title="7. 自動化部署（可選）"></a>7. 自動化部署（可選）</h3><p>如果我們希望每次推送代碼時自動部署到 GitHub Pages，你可以使用 GitHub Actions 來自動化這個過程。GitHub 提供了許多現成的 Actions 來進行自動部署，像是 <a href="https://github.com/marketplace/actions/deploy-to-github-pages">GitHub Action for deploying to GitHub Pages</a>。</p>
-]]></content>
-      <tags>
-        <tag>Vue</tag>
-        <tag>GitHub Pages</tag>
       </tags>
   </entry>
   <entry>
@@ -10211,6 +10211,48 @@
       </tags>
   </entry>
   <entry>
+    <title>React Hooks 入門教學 | w3schools 學習筆記</title>
+    <url>/2024/01/16/learning-notes-w3schools-react-hooks-intro-tutorial/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Hooks 是在 React 16.8 版本中加入的新功能。Hooks 讓你可以在「函式元件（function components）」中使用狀態（state）以及其他 React 功能。因此，自從有了 Hooks 之後，<strong>類別元件（class components）通常就不再是必要的了</strong>。</p>
+<p>儘管 Hooks 幾乎取代了類別元件的使用方式，但 React 團隊目前<strong>並沒有打算移除 class 元件</strong>的支援。</p>
+<hr>
+<h3 id="什麼是-Hook？"><a href="#什麼是-Hook？" class="headerlink" title="什麼是 Hook？"></a>什麼是 Hook？</h3><p>Hooks 讓我們能夠「掛勾（hook into）」React 的核心功能，例如 <strong>狀態管理（state）</strong> 和 <strong>生命週期方法（lifecycle methods）</strong>。</p>
+<hr>
+<h3 id="範例："><a href="#範例：" class="headerlink" title="範例："></a>範例：</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom/client&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">FavoriteColor</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [color, setColor] = <span class="title function_">useState</span>(<span class="string">&#x27;red&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>我最喜歡的顏色是 &#123;color&#125;！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;blue&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        藍色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;red&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        紅色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;pink&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        粉紅色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;green&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        綠色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">FavoriteColor</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>在這個範例中，我們透過 <code>useState</code> 這個 Hook 來追蹤應用程式的狀態。</p>
+<blockquote>
+<p><strong>狀態（State）</strong>：泛指那些會隨著使用者互動或應用邏輯而改變的資料或屬性。</p>
+</blockquote>
+<p>此外，<strong>使用 Hook 前必須先從 <code>react</code> 模組中引入對應的函式</strong>，例如這裡的 <code>useState</code>。</p>
+<hr>
+<h3 id="使用-Hook-的三大規則"><a href="#使用-Hook-的三大規則" class="headerlink" title="使用 Hook 的三大規則"></a>使用 Hook 的三大規則</h3><ol>
+<li><strong>只能在 React 的函式元件中呼叫 Hooks</strong></li>
+<li><strong>只能在元件的最上層（Top-level）呼叫</strong>，不能寫在 <code>if</code>、<code>for</code>、<code>函式</code>中等區塊內</li>
+<li><strong>不能有條件式地呼叫 Hook</strong>（例如不能寫在 <code>if</code> 判斷中）</li>
+</ol>
+<blockquote>
+<p>注意：Hooks <strong>無法</strong>在 class 類別元件中使用！</p>
+</blockquote>
+<hr>
+<h3 id="自訂-Hook（Custom-Hooks）"><a href="#自訂-Hook（Custom-Hooks）" class="headerlink" title="自訂 Hook（Custom Hooks）"></a>自訂 Hook（Custom Hooks）</h3><p>如果你有一些包含狀態的邏輯（stateful logic），需要在多個元件之間重複使用，這時可以考慮<strong>封裝成自訂 Hook</strong>，以提升可讀性與重用性。</p>
+<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
+<li><a href="https://www.w3schools.com/react/react_customhooks.asp">React Custom Hooks</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>React</tag>
+        <tag>Next.js</tag>
+        <tag>React Hooks</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>React Custom Hooks 入門教學 | w3schools 學習筆記</title>
     <url>/2024/01/23/learning-notes-w3schools-react-hooks-custom-hooks-basic-intro-tutorial/</url>
     <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在 React 應用程式中，隨著功能的增加與維護需求的提升，我們常常會遇到多個元件需要共享相同邏輯的情況。為了避免重複撰寫相似程式碼、增加維護成本，React 提供了一個優雅的解法：<strong>自訂 Hook（Custom Hook）</strong>。</p>
@@ -10249,49 +10291,7 @@
 <h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><p>自訂 Hook 是 React 開發中非常實用的工具，讓我們能夠撰寫模組化、可重複使用且容易維護的邏輯。當你在多個元件中發現重複的邏輯（如資料抓取、訂閱事件、表單處理等），就可以考慮將其封裝成一個 Custom Hook，提升程式碼品質與開發效率。</p>
 <p>透過本文介紹的 <code>useFetch</code> 範例，你應該能夠掌握如何將常見的副作用邏輯抽離為一個可重用的 Hook，也歡迎在實務中嘗試建立更多適合自己應用場景的自訂 Hook。</p>
 <hr>
-<p>如果你想了解更多關於資料抓取的技術細節，可以進一步學習 <strong>JavaScript Fetch API</strong> 的用法，並搭配錯誤處理（如 <code>.catch()</code>）與 loading 狀態等進行擴充。這將使你的 Custom Hook 更加完善與健壯。</p>
-<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
-<li><a href="https://www.w3schools.com/react/react_customhooks.asp">React Custom Hooks</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>React</tag>
-        <tag>Next.js</tag>
-        <tag>React Hooks</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>React Hooks 入門教學 | w3schools 學習筆記</title>
-    <url>/2024/01/16/learning-notes-w3schools-react-hooks-intro-tutorial/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Hooks 是在 React 16.8 版本中加入的新功能。Hooks 讓你可以在「函式元件（function components）」中使用狀態（state）以及其他 React 功能。因此，自從有了 Hooks 之後，<strong>類別元件（class components）通常就不再是必要的了</strong>。</p>
-<p>儘管 Hooks 幾乎取代了類別元件的使用方式，但 React 團隊目前<strong>並沒有打算移除 class 元件</strong>的支援。</p>
-<hr>
-<h3 id="什麼是-Hook？"><a href="#什麼是-Hook？" class="headerlink" title="什麼是 Hook？"></a>什麼是 Hook？</h3><p>Hooks 讓我們能夠「掛勾（hook into）」React 的核心功能，例如 <strong>狀態管理（state）</strong> 和 <strong>生命週期方法（lifecycle methods）</strong>。</p>
-<hr>
-<h3 id="範例："><a href="#範例：" class="headerlink" title="範例："></a>範例：</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom/client&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">FavoriteColor</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [color, setColor] = <span class="title function_">useState</span>(<span class="string">&#x27;red&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>我最喜歡的顏色是 &#123;color&#125;！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;blue&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        藍色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;red&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        紅色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;pink&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        粉紅色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;green&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        綠色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">FavoriteColor</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>在這個範例中，我們透過 <code>useState</code> 這個 Hook 來追蹤應用程式的狀態。</p>
-<blockquote>
-<p><strong>狀態（State）</strong>：泛指那些會隨著使用者互動或應用邏輯而改變的資料或屬性。</p>
-</blockquote>
-<p>此外，<strong>使用 Hook 前必須先從 <code>react</code> 模組中引入對應的函式</strong>，例如這裡的 <code>useState</code>。</p>
-<hr>
-<h3 id="使用-Hook-的三大規則"><a href="#使用-Hook-的三大規則" class="headerlink" title="使用 Hook 的三大規則"></a>使用 Hook 的三大規則</h3><ol>
-<li><strong>只能在 React 的函式元件中呼叫 Hooks</strong></li>
-<li><strong>只能在元件的最上層（Top-level）呼叫</strong>，不能寫在 <code>if</code>、<code>for</code>、<code>函式</code>中等區塊內</li>
-<li><strong>不能有條件式地呼叫 Hook</strong>（例如不能寫在 <code>if</code> 判斷中）</li>
-</ol>
-<blockquote>
-<p>注意：Hooks <strong>無法</strong>在 class 類別元件中使用！</p>
-</blockquote>
-<hr>
-<h3 id="自訂-Hook（Custom-Hooks）"><a href="#自訂-Hook（Custom-Hooks）" class="headerlink" title="自訂 Hook（Custom Hooks）"></a>自訂 Hook（Custom Hooks）</h3><p>如果你有一些包含狀態的邏輯（stateful logic），需要在多個元件之間重複使用，這時可以考慮<strong>封裝成自訂 Hook</strong>，以提升可讀性與重用性。</p>
+<p>如果你想了解更多關於資料抓取的技術細節，可以進一步學習 <strong>JavaScript Fetch API</strong> 的用法，並搭配錯誤處理（如 <code>.catch()</code>）與 loading 狀態等進行擴充。這將使你的 Custom Hook 更加完善。</p>
 <h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
 <li><a href="https://www.w3schools.com/react/react_customhooks.asp">React Custom Hooks</a></li>
 </ol>
@@ -11729,113 +11729,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Web 資訊安全（Security）簡明入門教學指南</title>
-    <url>/2016/10/10/web-security-tutorial-introduction/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>隨著越來越多的服務和資料連上網路，Web 資訊安全已經是 Web 開發中一個重要的環節，然而許多開發者往往希望專注在應用程式的研發，而忽略了資訊安全的重要性。不過若是沒有嚴謹地考慮資訊安全的問題，等到事情發生後反而會造成更嚴重的財務和名譽上的損失。本文希望整理一些 Web 常見資訊安全（Security）的議題和學習資源和讀者一起教學相長，下次建構網路服務時可以更留心 Web 的資訊安全，甚至努力成為一個好的白帽駭客（White Hat Hacker）。</p>
-<h1 id="常見-Web-資訊安全（Security）議題"><a href="#常見-Web-資訊安全（Security）議題" class="headerlink" title="常見 Web 資訊安全（Security）議題"></a>常見 Web 資訊安全（Security）議題</h1><p>一般而言 Web 資訊安全（Security）需要符合三點安全要素：</p>
-<ol>
-<li>保密性：透過加密等方法確保資料的保密性</li>
-<li>完整性：要求使用者取得的資料是完整不可被竄改的</li>
-<li>可用性：保證網站服務的持續可訪問性</li>
-</ol>
-<p>以下列出常見影響 Web 資訊安全（Security）的攻擊手法：</p>
-<ol>
-<li><p>SQL Injection</p>
-<p>使用惡意的 SQL 語法去影響資料庫內容：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span> <span class="comment">-- 為忽略掉後面的 SQL</span></span><br><span class="line"><span class="operator">/</span><span class="keyword">user</span><span class="operator">/</span>profile?id<span class="operator">=</span><span class="number">1</span>&quot;;DROP TABLE user--</span><br><span class="line"></span><br><span class="line">SELECT * FROM USER WHERE id = &quot;<span class="number">1</span>&quot;; DROP TABLE user--</span><br></pre></td></tr></table></figure>
-
-<p>使用者登入：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span> password&quot; AND 1=1--</span><br><span class="line">SELECT * FROM USER WHERE username = &quot;Mark&quot;; AND 1=1-- AND PASSWORD=&quot;<span class="number">1234</span>&quot;</span><br></pre></td></tr></table></figure>
-
-<p>簡易防範方式：不信任使用者輸入的資料，確保使用者輸入都要 <code>escape</code> 掉，目前許多成熟 Web 框架都有支援 ORM 服務，大部分都基本防範了 SQL Injection。</p>
-</li>
-<li><p>XSS（Cross-Site Scripting）<br>XSS 亦即將惡意程式碼注入到網頁，讓看到網頁的使用者會受影響，常見的受災戶包括論壇、討論區等網路服務。事實上 XSS 概念很簡單，透過表單輸入建立一些惡意網址、惡意圖片網址或是 JavsScript 程式碼在 HTML 中注入，當使用者觀看頁面時即會觸發。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;&quot;</span> <span class="attr">onerror</span>=<span class="string">&quot;alert(&#x27;XSS&#x27;)&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>更多關於 XSS 資料可以參考 <a href="https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet">XSS Filter Evasion Cheat Sheet</a>。另外也有<a href="https://jiji262.github.io/wooyun_articles/drops/XSS%20Filter%20Evasion%20Cheat%20Sheet%20%E4%B8%AD%E6%96%87%E7%89%88.html">簡體中文版</a></p>
-<p>簡易防範方式：不信任使用者輸入的資料，將所有輸入內容編碼並過濾。</p>
-</li>
-<li><p>CSRF</p>
-<p><a href="https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0">CSRF 跨站請求偽造</a> 又被稱為 one-click attack 或者 session riding，通常縮寫為 CSRF 或者 XSRF， 是一種挾制用戶在當前已登入的 Web 應用程式上執行非本意的操作的攻擊方法。</p>
-<p>舉維基百科上的例子：假如一家銀行用以執行轉帳操作的 URL 地址如下：</p>
-<p><code>http://www.examplebank.com/withdraw?account=AccoutName&amp;amount=10000&amp;for=PayeeName</code></p>
-<p>那麼，一個惡意攻擊者可以在另一個網站上放置如下代碼：</p>
-<p><code>&lt;img src=&quot;http://www.examplebank.com/withdraw?account=Mark&amp;amount=10000&amp;for=Bob&quot;&gt;</code></p>
-<p>若是使用者的登入資訊尚未過期的話就會損失 10000 元的金額。</p>
-<p>簡易防範方式：</p>
-<ol>
-<li><p>檢查 Referer 欄位<br>這是比較基本的驗證方式，通常 HTTP 標頭中有一個 Referer 欄位，其應該和 Request 位置在同一個網域下，因此可以透過驗證是否是在同一個網域來驗證是否為惡意的請求，但會有被更改偽裝的可能。</p>
-</li>
-<li><p>添加驗證 token<br>一般現在許多的 Web Framework 都有提供在表單加入由 Server 生成的隨機驗證 CSRF 的碼，可以協助防止 CSRF 攻擊。</p>
-</li>
-</ol>
-</li>
-<li><p>DoS<br><a href="https://zh.wikipedia.org/zh-tw/%E9%98%BB%E6%96%B7%E6%9C%8D%E5%8B%99%E6%94%BB%E6%93%8A">Dos 阻斷式攻擊（Denial of Service Attack）</a>又稱為洪水攻擊，是一種網路攻擊手法，其目的在於使目標電腦的網路或系統資源耗盡，使服務暫時中斷或停止，導致真正的使用者無法使用服務。</p>
-<p>根據維基百科：DoS 攻擊可以具體分成兩種形式：<code>頻寬消耗型</code> 以及 <code>資源消耗型</code>，它們都是透過大量合法或偽造的請求占用大量網路以及器材資源，以達到癱瘓網路以及系統的目的。</p>
-<p>頻寬消耗攻擊又分洪泛攻擊或放大攻擊：洪泛攻擊的特點是利用殭屍程式傳送大量流量至受損的受害者系統，目的在於堵塞其頻寬。放大攻擊和洪泛攻擊類似，是通過惡意放大流量限制受害者系統的頻寬；其特點是利用殭屍程式通過偽造的源 IP（即攻擊目標）向某些存在漏洞的伺服器傳送請求，伺服器在處理請求後向偽造的源 IP 傳送應答，由於這些服務的特殊性導致應答包比請求包更長，因此使用少量的頻寬就能使伺服器傳送大量的 Response 到目標主機上。</p>
-<p>資源消耗型又分為協定分析攻擊（SYN flood，SYN 洪水）、LAND attack、CC 攻擊、殭屍網路攻擊、Application level floods（應用程式級洪水攻擊）等。</p>
-<p>簡易防範方式：</p>
-<ol>
-<li><p>防火牆<br>設定規則阻擋簡單攻擊</p>
-</li>
-<li><p>交換機<br>大多交換機有限制存取控制功能</p>
-</li>
-<li><p>路由器<br>大多路由器有限制存取控制功能</p>
-</li>
-<li><p>黑洞啟動<br>將請求轉到空介面或是不存在的位置</p>
-</li>
-</ol>
-</li>
-<li><p>檔案上傳漏洞<br>許多網路應用程式可以讓使用者上傳檔案到伺服器端，由於我們不知道使用者會上傳什麼類型的檔案，若不留意就會造成很大的問題。</p>
-<p>簡單防範方式：</p>
-<ol>
-<li><p>阻止非法文件上傳</p>
-<ul>
-<li>設定檔名白名單</li>
-<li>文件標頭判斷</li>
-</ul>
-</li>
-<li><p>阻止非法文件執行</p>
-<ul>
-<li>存儲目錄與 Web 應用分離</li>
-<li>存儲目錄無執行權限</li>
-<li>文件重命名</li>
-<li>圖片壓縮</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>加密安全<br>有許多的網路服務有提供會員註冊的服務，當使用者使用註冊時注意不要將密碼明碼存入資料庫。若是你使用的服務會在忘記密碼時寄明碼密碼給你很有可能該服務就是使用明碼加密，此時就很容易會榮登<a href="http://plainpass.com/">我的密碼沒加密</a>的網站。不過儘管將密碼加密也未必安全，像是網路上就存在一些<a href="http://www.cmd5.com/">破解網站</a>、<a href="https://zh.wikipedia.org/wiki/%E5%BD%A9%E8%99%B9%E8%A1%A8">彩虹表</a> 可以破解加密的密碼。所以通常我們會針對不同使用者使用隨機產生的 salt 字串來加鹽後加密的方式來提高密碼的強健性。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sha3(salt + gap + password)</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="簡易資安入侵流程"><a href="#簡易資安入侵流程" class="headerlink" title="簡易資安入侵流程"></a>簡易資安入侵流程</h1><ol>
-<li><p>偵查（Reconnaissance）<br>攻擊者準備攻擊之前進行的調查，使用 Google 或是社交工程找尋目標的相關資訊，以利之後的攻擊</p>
-</li>
-<li><p>掃描（Scanning）<br>掃描目標主機的弱點，取得主機作業系統、服務和運作狀況等相關資訊</p>
-</li>
-<li><p>取得權限（Gaining Access）<br>利用系統弱點取得主機權限</p>
-</li>
-<li><p>維持權限（Maintaining Access）<br>維持目前取得的權限，以便日後再次存取而不需繁雜的步驟</p>
-</li>
-<li><p>清除足跡（Clearing Tracks）<br>清除入侵的痕跡</p>
-</li>
-</ol>
-<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>以上整理一些 Web 常見資訊安全（Security）的議題和學習資源和讀者一起教學相長，成為一個好的白帽駭客（White Hat Hacker）。隨著網路科技的發展，資訊安全的議題只會越來越重要，當下次當有產品要上線到正式環境時，不妨使用 <a href="https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md">The Security Checklist</a> 確認一下有哪些資安注意事項是我們沒有注意到的。</p>
-<h1 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h1><ol>
-<li><a href="http://newsletter.ascc.sinica.edu.tw/news/read_news.php?nid=1909">Web Security 網站安全基礎篇（一）</a></li>
-<li><a href="http://newsletter.ascc.sinica.edu.tw/news/read_news.php?nid=1917">Web Security 網站安全基礎篇（二）</a></li>
-<li><a href="https://www.qa-knowhow.com/?p=2975">3 個免費的 Web 資訊安全自動化測試工具</a></li>
-<li><a href="http://blog.orange.tw/2016/07/hitcon-2016-slides-bug-bounty-hunter.html">HITCON 2016 投影片 - Bug Bounty 獎金獵人甘苦談 那些年我回報過的漏洞</a></li>
-<li><a href="https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md">FallibleInc&#x2F;security-guide-for-developers</a></li>
-<li><a href="https://dotblogs.com.tw/jimmyyu/2009/08/16/10098">[資訊安全]防範 Cross-Site-Scripting(XSS)</a></li>
-<li><a href="http://www.ithome.com.tw/node/66888">網站防範 XSS 攻擊的關鍵思考</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Web, Security</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>常見 Web Frontend 前端工程師面試準備題目清單</title>
     <url>/2024/01/22/web-frontend-interview-question-list/</url>
     <content><![CDATA[<h1 id="前端工程面試準備清單"><a href="#前端工程面試準備清單" class="headerlink" title="前端工程面試準備清單"></a>前端工程面試準備清單</h1><ol>
@@ -12111,6 +12004,113 @@
         <tag>前端面試</tag>
         <tag>interview question</tag>
         <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Web 資訊安全（Security）簡明入門教學指南</title>
+    <url>/2016/10/10/web-security-tutorial-introduction/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>隨著越來越多的服務和資料連上網路，Web 資訊安全已經是 Web 開發中一個重要的環節，然而許多開發者往往希望專注在應用程式的研發，而忽略了資訊安全的重要性。不過若是沒有嚴謹地考慮資訊安全的問題，等到事情發生後反而會造成更嚴重的財務和名譽上的損失。本文希望整理一些 Web 常見資訊安全（Security）的議題和學習資源和讀者一起教學相長，下次建構網路服務時可以更留心 Web 的資訊安全，甚至努力成為一個好的白帽駭客（White Hat Hacker）。</p>
+<h1 id="常見-Web-資訊安全（Security）議題"><a href="#常見-Web-資訊安全（Security）議題" class="headerlink" title="常見 Web 資訊安全（Security）議題"></a>常見 Web 資訊安全（Security）議題</h1><p>一般而言 Web 資訊安全（Security）需要符合三點安全要素：</p>
+<ol>
+<li>保密性：透過加密等方法確保資料的保密性</li>
+<li>完整性：要求使用者取得的資料是完整不可被竄改的</li>
+<li>可用性：保證網站服務的持續可訪問性</li>
+</ol>
+<p>以下列出常見影響 Web 資訊安全（Security）的攻擊手法：</p>
+<ol>
+<li><p>SQL Injection</p>
+<p>使用惡意的 SQL 語法去影響資料庫內容：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span> <span class="comment">-- 為忽略掉後面的 SQL</span></span><br><span class="line"><span class="operator">/</span><span class="keyword">user</span><span class="operator">/</span>profile?id<span class="operator">=</span><span class="number">1</span>&quot;;DROP TABLE user--</span><br><span class="line"></span><br><span class="line">SELECT * FROM USER WHERE id = &quot;<span class="number">1</span>&quot;; DROP TABLE user--</span><br></pre></td></tr></table></figure>
+
+<p>使用者登入：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span> password&quot; AND 1=1--</span><br><span class="line">SELECT * FROM USER WHERE username = &quot;Mark&quot;; AND 1=1-- AND PASSWORD=&quot;<span class="number">1234</span>&quot;</span><br></pre></td></tr></table></figure>
+
+<p>簡易防範方式：不信任使用者輸入的資料，確保使用者輸入都要 <code>escape</code> 掉，目前許多成熟 Web 框架都有支援 ORM 服務，大部分都基本防範了 SQL Injection。</p>
+</li>
+<li><p>XSS（Cross-Site Scripting）<br>XSS 亦即將惡意程式碼注入到網頁，讓看到網頁的使用者會受影響，常見的受災戶包括論壇、討論區等網路服務。事實上 XSS 概念很簡單，透過表單輸入建立一些惡意網址、惡意圖片網址或是 JavsScript 程式碼在 HTML 中注入，當使用者觀看頁面時即會觸發。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;&quot;</span> <span class="attr">onerror</span>=<span class="string">&quot;alert(&#x27;XSS&#x27;)&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>更多關於 XSS 資料可以參考 <a href="https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet">XSS Filter Evasion Cheat Sheet</a>。另外也有<a href="https://jiji262.github.io/wooyun_articles/drops/XSS%20Filter%20Evasion%20Cheat%20Sheet%20%E4%B8%AD%E6%96%87%E7%89%88.html">簡體中文版</a></p>
+<p>簡易防範方式：不信任使用者輸入的資料，將所有輸入內容編碼並過濾。</p>
+</li>
+<li><p>CSRF</p>
+<p><a href="https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0">CSRF 跨站請求偽造</a> 又被稱為 one-click attack 或者 session riding，通常縮寫為 CSRF 或者 XSRF， 是一種挾制用戶在當前已登入的 Web 應用程式上執行非本意的操作的攻擊方法。</p>
+<p>舉維基百科上的例子：假如一家銀行用以執行轉帳操作的 URL 地址如下：</p>
+<p><code>http://www.examplebank.com/withdraw?account=AccoutName&amp;amount=10000&amp;for=PayeeName</code></p>
+<p>那麼，一個惡意攻擊者可以在另一個網站上放置如下代碼：</p>
+<p><code>&lt;img src=&quot;http://www.examplebank.com/withdraw?account=Mark&amp;amount=10000&amp;for=Bob&quot;&gt;</code></p>
+<p>若是使用者的登入資訊尚未過期的話就會損失 10000 元的金額。</p>
+<p>簡易防範方式：</p>
+<ol>
+<li><p>檢查 Referer 欄位<br>這是比較基本的驗證方式，通常 HTTP 標頭中有一個 Referer 欄位，其應該和 Request 位置在同一個網域下，因此可以透過驗證是否是在同一個網域來驗證是否為惡意的請求，但會有被更改偽裝的可能。</p>
+</li>
+<li><p>添加驗證 token<br>一般現在許多的 Web Framework 都有提供在表單加入由 Server 生成的隨機驗證 CSRF 的碼，可以協助防止 CSRF 攻擊。</p>
+</li>
+</ol>
+</li>
+<li><p>DoS<br><a href="https://zh.wikipedia.org/zh-tw/%E9%98%BB%E6%96%B7%E6%9C%8D%E5%8B%99%E6%94%BB%E6%93%8A">Dos 阻斷式攻擊（Denial of Service Attack）</a>又稱為洪水攻擊，是一種網路攻擊手法，其目的在於使目標電腦的網路或系統資源耗盡，使服務暫時中斷或停止，導致真正的使用者無法使用服務。</p>
+<p>根據維基百科：DoS 攻擊可以具體分成兩種形式：<code>頻寬消耗型</code> 以及 <code>資源消耗型</code>，它們都是透過大量合法或偽造的請求占用大量網路以及器材資源，以達到癱瘓網路以及系統的目的。</p>
+<p>頻寬消耗攻擊又分洪泛攻擊或放大攻擊：洪泛攻擊的特點是利用殭屍程式傳送大量流量至受損的受害者系統，目的在於堵塞其頻寬。放大攻擊和洪泛攻擊類似，是通過惡意放大流量限制受害者系統的頻寬；其特點是利用殭屍程式通過偽造的源 IP（即攻擊目標）向某些存在漏洞的伺服器傳送請求，伺服器在處理請求後向偽造的源 IP 傳送應答，由於這些服務的特殊性導致應答包比請求包更長，因此使用少量的頻寬就能使伺服器傳送大量的 Response 到目標主機上。</p>
+<p>資源消耗型又分為協定分析攻擊（SYN flood，SYN 洪水）、LAND attack、CC 攻擊、殭屍網路攻擊、Application level floods（應用程式級洪水攻擊）等。</p>
+<p>簡易防範方式：</p>
+<ol>
+<li><p>防火牆<br>設定規則阻擋簡單攻擊</p>
+</li>
+<li><p>交換機<br>大多交換機有限制存取控制功能</p>
+</li>
+<li><p>路由器<br>大多路由器有限制存取控制功能</p>
+</li>
+<li><p>黑洞啟動<br>將請求轉到空介面或是不存在的位置</p>
+</li>
+</ol>
+</li>
+<li><p>檔案上傳漏洞<br>許多網路應用程式可以讓使用者上傳檔案到伺服器端，由於我們不知道使用者會上傳什麼類型的檔案，若不留意就會造成很大的問題。</p>
+<p>簡單防範方式：</p>
+<ol>
+<li><p>阻止非法文件上傳</p>
+<ul>
+<li>設定檔名白名單</li>
+<li>文件標頭判斷</li>
+</ul>
+</li>
+<li><p>阻止非法文件執行</p>
+<ul>
+<li>存儲目錄與 Web 應用分離</li>
+<li>存儲目錄無執行權限</li>
+<li>文件重命名</li>
+<li>圖片壓縮</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>加密安全<br>有許多的網路服務有提供會員註冊的服務，當使用者使用註冊時注意不要將密碼明碼存入資料庫。若是你使用的服務會在忘記密碼時寄明碼密碼給你很有可能該服務就是使用明碼加密，此時就很容易會榮登<a href="http://plainpass.com/">我的密碼沒加密</a>的網站。不過儘管將密碼加密也未必安全，像是網路上就存在一些<a href="http://www.cmd5.com/">破解網站</a>、<a href="https://zh.wikipedia.org/wiki/%E5%BD%A9%E8%99%B9%E8%A1%A8">彩虹表</a> 可以破解加密的密碼。所以通常我們會針對不同使用者使用隨機產生的 salt 字串來加鹽後加密的方式來提高密碼的強健性。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sha3(salt + gap + password)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="簡易資安入侵流程"><a href="#簡易資安入侵流程" class="headerlink" title="簡易資安入侵流程"></a>簡易資安入侵流程</h1><ol>
+<li><p>偵查（Reconnaissance）<br>攻擊者準備攻擊之前進行的調查，使用 Google 或是社交工程找尋目標的相關資訊，以利之後的攻擊</p>
+</li>
+<li><p>掃描（Scanning）<br>掃描目標主機的弱點，取得主機作業系統、服務和運作狀況等相關資訊</p>
+</li>
+<li><p>取得權限（Gaining Access）<br>利用系統弱點取得主機權限</p>
+</li>
+<li><p>維持權限（Maintaining Access）<br>維持目前取得的權限，以便日後再次存取而不需繁雜的步驟</p>
+</li>
+<li><p>清除足跡（Clearing Tracks）<br>清除入侵的痕跡</p>
+</li>
+</ol>
+<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>以上整理一些 Web 常見資訊安全（Security）的議題和學習資源和讀者一起教學相長，成為一個好的白帽駭客（White Hat Hacker）。隨著網路科技的發展，資訊安全的議題只會越來越重要，當下次當有產品要上線到正式環境時，不妨使用 <a href="https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md">The Security Checklist</a> 確認一下有哪些資安注意事項是我們沒有注意到的。</p>
+<h1 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h1><ol>
+<li><a href="http://newsletter.ascc.sinica.edu.tw/news/read_news.php?nid=1909">Web Security 網站安全基礎篇（一）</a></li>
+<li><a href="http://newsletter.ascc.sinica.edu.tw/news/read_news.php?nid=1917">Web Security 網站安全基礎篇（二）</a></li>
+<li><a href="https://www.qa-knowhow.com/?p=2975">3 個免費的 Web 資訊安全自動化測試工具</a></li>
+<li><a href="http://blog.orange.tw/2016/07/hitcon-2016-slides-bug-bounty-hunter.html">HITCON 2016 投影片 - Bug Bounty 獎金獵人甘苦談 那些年我回報過的漏洞</a></li>
+<li><a href="https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md">FallibleInc&#x2F;security-guide-for-developers</a></li>
+<li><a href="https://dotblogs.com.tw/jimmyyu/2009/08/16/10098">[資訊安全]防範 Cross-Site-Scripting(XSS)</a></li>
+<li><a href="http://www.ithome.com.tw/node/66888">網站防範 XSS 攻擊的關鍵思考</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Web, Security</tag>
       </tags>
   </entry>
   <entry>
