@@ -26,11 +26,11 @@
     
     <title>
         
-          React Hooks w3schools 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          React 與 ES6 語法教學入門 | w3schools 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/11/16/learning-notes-w3schools-react-basic-intro-tutorial/">
+    <link rel="canonical" href="https://tech.kdchang.net/2024/01/02/learning-notes-w3schools-react-es6-basic-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="React Hooks w3schools 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="React Hooks w3schools 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="React 與 ES6 語法教學入門 | w3schools 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="React 與 ES6 語法教學入門 | w3schools 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,10 +199,10 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>React Hooks w3schools 學習筆記</h1>
+                    <h1>React 與 ES6 語法教學入門 | w3schools 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2024-11-16
+                        2024-01-02
                     </span>
                     <br>
                     <div class="tags">
@@ -247,32 +247,74 @@
                 </div>
                 <br>
                 <div>
-                    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Hooks 是在 React 16.8 版本中加入的新功能。Hooks 讓你可以在「函式元件（function components）」中使用狀態（state）以及其他 React 功能。因此，自從有了 Hooks 之後，<strong>類別元件（class components）通常就不再是必要的了</strong>。</p>
-<p>儘管 Hooks 幾乎取代了類別元件的使用方式，但 React 團隊目前<strong>並沒有打算移除 class 元件</strong>的支援。</p>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>ES6（ECMAScript 2015）是 JavaScript 的第六版，於 2015 年發布，為 JavaScript 帶來了重大語法革新。React 作為現今最受歡迎的前端框架和函式庫之一，其核心設計與語法極度依賴 ES6 的各項功能。因此，學習 React 前，理解 ES6 的語法特性將大幅提升開發效率與理解深度。</p>
+<p>本文將說明 React 常用的 ES6 特性，並透過簡明範例幫助你掌握其實作方式。</p>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p>ES6 是 ECMAScript 第六版，又稱 ECMAScript 2015。</p>
+</li>
+<li><p>React 使用大量 ES6 語法，包括：</p>
+<ul>
+<li>Class 類別</li>
+<li>箭頭函式</li>
+<li>let、const 變數宣告</li>
+<li>陣列方法（如 .map）</li>
+<li>解構（Destructuring）</li>
+<li>模組系統（import&#x2F;export）</li>
+<li>三元運算子（Ternary Operator）</li>
+<li>展開運算子（Spread Operator）</li>
+</ul>
+</li>
+</ul>
 <hr>
-<h3 id="什麼是-Hook？"><a href="#什麼是-Hook？" class="headerlink" title="什麼是 Hook？"></a>什麼是 Hook？</h3><p>Hooks 讓我們能夠「掛勾（hook into）」React 的核心功能，例如 <strong>狀態管理（state）</strong> 和 <strong>生命週期方法（lifecycle methods）</strong>。</p>
-<hr>
-<h3 id="範例："><a href="#範例：" class="headerlink" title="範例："></a>範例：</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom/client&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">FavoriteColor</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [color, setColor] = <span class="title function_">useState</span>(<span class="string">&#x27;red&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>我最喜歡的顏色是 &#123;color&#125;！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;blue&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        藍色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;red&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        紅色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;pink&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        粉紅色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;green&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        綠色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">FavoriteColor</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
+<h2 id="1-類別與繼承（Classes-amp-Inheritance）"><a href="#1-類別與繼承（Classes-amp-Inheritance）" class="headerlink" title="1. 類別與繼承（Classes &amp; Inheritance）"></a>1. 類別與繼承（Classes &amp; Inheritance）</h2><p>ES6 引入了 class 關鍵字來定義類別：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Car</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">name</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">brand</span> = name;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">present</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;I have a &#x27;</span> + <span class="variable language_">this</span>.<span class="property">brand</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mycar = <span class="keyword">new</span> <span class="title class_">Car</span>(<span class="string">&#x27;Ford&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(mycar.<span class="title function_">present</span>());</span><br></pre></td></tr></table></figure>
+
+<p>繼承使用 <code>extends</code> 關鍵字：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Model</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Car</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">name, model</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(name);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">model</span> = model;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">show</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">present</span>() + <span class="string">&#x27;, it is a &#x27;</span> + <span class="variable language_">this</span>.<span class="property">model</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mycar = <span class="keyword">new</span> <span class="title class_">Model</span>(<span class="string">&#x27;Ford&#x27;</span>, <span class="string">&#x27;Mustang&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(mycar.<span class="title function_">show</span>());</span><br></pre></td></tr></table></figure>
 
 <hr>
-<p>在這個範例中，我們透過 <code>useState</code> 這個 Hook 來追蹤應用程式的狀態。</p>
-<blockquote>
-<p><strong>狀態（State）</strong>：泛指那些會隨著使用者互動或應用邏輯而改變的資料或屬性。</p>
-</blockquote>
-<p>此外，<strong>使用 Hook 前必須先從 <code>react</code> 模組中引入對應的函式</strong>，例如這裡的 <code>useState</code>。</p>
+<h2 id="2-箭頭函式（Arrow-Functions）"><a href="#2-箭頭函式（Arrow-Functions）" class="headerlink" title="2. 箭頭函式（Arrow Functions）"></a>2. 箭頭函式（Arrow Functions）</h2><p>簡化函式的寫法：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">hello</span> = (<span class="params"></span>) =&gt; <span class="string">&#x27;Hello World!&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">greet</span> = (<span class="params">name</span>) =&gt; <span class="string">`Hello <span class="subst">$&#123;name&#125;</span>`</span>;</span><br></pre></td></tr></table></figure>
+
 <hr>
-<h3 id="使用-Hook-的三大規則"><a href="#使用-Hook-的三大規則" class="headerlink" title="使用 Hook 的三大規則"></a>使用 Hook 的三大規則</h3><ol>
-<li><strong>只能在 React 的函式元件中呼叫 Hooks</strong></li>
-<li><strong>只能在元件的最上層（Top-level）呼叫</strong>，不能寫在 <code>if</code>、<code>for</code>、<code>函式</code>中等區塊內</li>
-<li><strong>不能有條件式地呼叫 Hook</strong>（例如不能寫在 <code>if</code> 判斷中）</li>
-</ol>
-<blockquote>
-<p>注意：Hooks <strong>無法</strong>在 class 類別元件中使用！</p>
-</blockquote>
+<h2 id="3-變數宣告（let、const、var）"><a href="#3-變數宣告（let、const、var）" class="headerlink" title="3. 變數宣告（let、const、var）"></a>3. 變數宣告（let、const、var）</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>; <span class="comment">// 函式作用域</span></span><br><span class="line"><span class="keyword">let</span> y = <span class="number">10</span>; <span class="comment">// 區塊作用域</span></span><br><span class="line"><span class="keyword">const</span> z = <span class="number">15</span>; <span class="comment">// 常數，不可重新指派</span></span><br></pre></td></tr></table></figure>
+
+<p>const 宣告的是參考不可變：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">arr.<span class="title function_">push</span>(<span class="number">3</span>); <span class="comment">// 可以修改內容</span></span><br></pre></td></tr></table></figure>
+
 <hr>
-<h3 id="自訂-Hook（Custom-Hooks）"><a href="#自訂-Hook（Custom-Hooks）" class="headerlink" title="自訂 Hook（Custom Hooks）"></a>自訂 Hook（Custom Hooks）</h3><p>如果你有一些包含狀態的邏輯（stateful logic），需要在多個元件之間重複使用，這時可以考慮<strong>封裝成自訂 Hook</strong>，以提升可讀性與重用性。</p>
+<h2 id="4-陣列方法（Array-map）"><a href="#4-陣列方法（Array-map）" class="headerlink" title="4. 陣列方法（Array.map）"></a>4. 陣列方法（Array.map）</h2><p>在 React 中常用於渲染列表：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;orange&#x27;</span>];</span><br><span class="line"><span class="keyword">const</span> listItems = fruits.<span class="title function_">map</span>(<span class="function">(<span class="params">fruit</span>) =&gt;</span> <span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;fruit&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-解構賦值（Destructuring）"><a href="#5-解構賦值（Destructuring）" class="headerlink" title="5. 解構賦值（Destructuring）"></a>5. 解構賦值（Destructuring）</h2><p>解構陣列：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> vehicles = [<span class="string">&#x27;mustang&#x27;</span>, <span class="string">&#x27;f-150&#x27;</span>, <span class="string">&#x27;expedition&#x27;</span>];</span><br><span class="line"><span class="keyword">const</span> [car, , suv] = vehicles;</span><br></pre></td></tr></table></figure>
+
+<p>解構函式回傳值：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">calc</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> [a + b, a - b];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [sum, diff] = <span class="title function_">calc</span>(<span class="number">5</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="6-展開運算子（Spread-Operator）"><a href="#6-展開運算子（Spread-Operator）" class="headerlink" title="6. 展開運算子（Spread Operator）"></a>6. 展開運算子（Spread Operator）</h2><p>複製或合併陣列與物件：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers1 = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">const</span> numbers2 = [<span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">const</span> all = [...numbers1, ...numbers2];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> car = &#123; <span class="attr">brand</span>: <span class="string">&#x27;Ford&#x27;</span>, <span class="attr">color</span>: <span class="string">&#x27;red&#x27;</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> update = &#123; <span class="attr">color</span>: <span class="string">&#x27;blue&#x27;</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> updatedCar = &#123; ...car, ...update &#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="7-模組系統（Modules）"><a href="#7-模組系統（Modules）" class="headerlink" title="7. 模組系統（Modules）"></a>7. 模組系統（Modules）</h2><p><code>export</code> 和 <code>import</code> 用於模組化程式碼：</p>
+<h3 id="命名匯出："><a href="#命名匯出：" class="headerlink" title="命名匯出："></a>命名匯出：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// person.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> name = <span class="string">&#x27;Jesse&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> age = <span class="number">40</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="keyword">import</span> &#123; name, age &#125; <span class="keyword">from</span> <span class="string">&#x27;./person.js&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="預設匯出："><a href="#預設匯出：" class="headerlink" title="預設匯出："></a>預設匯出：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// message.js</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">message</span> = (<span class="params"></span>) =&gt; <span class="string">&#x27;Hello&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> message;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> message <span class="keyword">from</span> <span class="string">&#x27;./message.js&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="8-三元運算子（Ternary-Operator）"><a href="#8-三元運算子（Ternary-Operator）" class="headerlink" title="8. 三元運算子（Ternary Operator）"></a>8. 三元運算子（Ternary Operator）</h2><p>條件判斷簡化語法：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> isAuth = <span class="literal">true</span>;</span><br><span class="line">isAuth ? <span class="title function_">renderApp</span>() : <span class="title function_">renderLogin</span>();</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>ES6 為 JavaScript 帶來嶄新的語法與思維方式，也為 React 帶來強大的表達力與模組化能力。熟練掌握這些語法，將能讓你在開發 React 專案時更加順手、高效並撰寫出更具可維護性的程式碼。若你尚未熟悉這些語法，建議你從簡單的練習開始，搭配 React 實際開發經驗進行吸收與內化。</p>
 <h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://www.w3schools.com/react/react_customhooks.asp">React Custom Hooks</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.w3schools.com/react/react_es6.asp">React ES6</a></li>
 </ol>
 
                 </div>
@@ -290,7 +332,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-w3schools-react-custom-hooks-basic-intro-tutorial copy/" title="React Custom Hooks w3schools 學習筆記" rel="bookmark">React Custom Hooks w3schools 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-react-nextjs-intro-tutorial/" title="React 與 Next.js 入門教學筆記 | 學習筆記" rel="bookmark">React 與 Next.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/10/16/learning-notes-alpinejs-intro-tutorial/" title="Alpine.js 入門教學筆記 | 學習筆記" rel="bookmark">Alpine.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/01/learning-notes-cookie-intro-tutorial/" title="Cookie 入門教學筆記 | 學習筆記" rel="bookmark">Cookie 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-css-animation-intro-tutorial/" title="CSS Animation 入門教學筆記 | 學習筆記" rel="bookmark">CSS Animation 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/01/learning-notes-w3schools-react-basic-intro-tutorial/" title="React 入門教學 | w3schools 學習筆記" rel="bookmark">React 入門教學 | w3schools 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/05/learning-notes-w3schools-react-components-intro-tutorial/" title="React Components 入門教學 | w3schools 學習筆記" rel="bookmark">React Components 入門教學 | w3schools 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/08/learning-notes-w3schools-react-conditional-rendering-intro-tutorial/" title="React 條件渲染入門教學 | w3schools 學習筆記" rel="bookmark">React 條件渲染入門教學 | w3schools 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/15/learning-notes-w3schools-react-css-sass-style-intro-tutorial/" title="在 React 中使用 Sass 進行樣式設計教學 | w3schools 學習筆記" rel="bookmark">在 React 中使用 Sass 進行樣式設計教學 | w3schools 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/14/learning-notes-w3schools-react-css-style-intro-tutorial/" title="React 中使用 CSS 的三種方式教學 | w3schools 學習筆記" rel="bookmark">React 中使用 CSS 的三種方式教學 | w3schools 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -326,8 +368,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/11/16/learning-notes-w3schools-react-basic-intro-tutorial/";
-    var disqus_url = "https://tech.kdchang.net/2024/11/16/learning-notes-w3schools-react-basic-intro-tutorial/";
+    var disqus_identifier = "https://tech.kdchang.net/2024/01/02/learning-notes-w3schools-react-es6-basic-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2024/01/02/learning-notes-w3schools-react-es6-basic-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

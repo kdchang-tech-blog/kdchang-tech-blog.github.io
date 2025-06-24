@@ -26,11 +26,11 @@
     
     <title>
         
-          React Custom Hooks w3schools 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          React 入門教學 | w3schools 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/11/16/learning-notes-w3schools-react-custom-hooks-basic-intro-tutorial copy/">
+    <link rel="canonical" href="https://tech.kdchang.net/2024/01/01/learning-notes-w3schools-react-basic-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="React Custom Hooks w3schools 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="React Custom Hooks w3schools 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="React 入門教學 | w3schools 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="React 入門教學 | w3schools 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,10 +199,10 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>React Custom Hooks w3schools 學習筆記</h1>
+                    <h1>React 入門教學 | w3schools 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2024-11-16
+                        2024-01-01
                     </span>
                     <br>
                     <div class="tags">
@@ -247,33 +247,59 @@
                 </div>
                 <br>
                 <div>
-                    <h3 id="Hooks-是可重複使用的函式"><a href="#Hooks-是可重複使用的函式" class="headerlink" title="Hooks 是可重複使用的函式"></a>Hooks 是可重複使用的函式</h3><p>當我們有一些元件邏輯需要在多個元件中共用時，我們可以將這些邏輯提取出來，寫成「自訂 Hook」。</p>
-<p>自定義 Hook 的命名需以 <code>use</code> 開頭，例如：<code>useFetch</code>。</p>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在當代的前端開發中，React 是最具代表性的 JavaScript 函式庫之一。由 Facebook 軟體工程師 Jordan Walke 所開發，React 被廣泛應用於建構動態使用者介面，尤其適用於大型單頁應用（SPA, Single Page Application）。本篇文章將帶你認識 React 的核心概念、其背後的工作原理、使用前的基礎知識與發展歷史，並透過實例進行初步實作。</p>
 <hr>
-<h3 id="建立一個-Hook"><a href="#建立一個-Hook" class="headerlink" title="建立一個 Hook"></a>建立一個 Hook</h3><p>以下範例中，我們在 <code>Home</code> 元件中取得資料並顯示出來。</p>
-<p>這裡我們使用 <a target="_blank" rel="noopener" href="https://jsonplaceholder.typicode.com/">JSONPlaceholder</a> 這個免費的假資料 API 服務來模擬資料擷取。這個服務非常適合在資料尚未準備好時進行開發與測試。</p>
-<p>現在我們要使用 JSONPlaceholder 提供的「待辦事項（todo）」資料，並將它們的標題顯示在頁面上：</p>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ol>
+<li><p><strong>什麼是 React？</strong></p>
+<ul>
+<li>React 是一個前端 JavaScript 函式庫，用來建構使用者介面（UI）。</li>
+<li>React 的別稱包括 React.js 與 ReactJS。</li>
+<li>它專注於「元件化思維」，每個 UI 元素都被視為一個可重複使用的元件（Component）。</li>
+</ul>
+</li>
+<li><p><strong>React 如何運作？</strong></p>
+<ul>
+<li>React 在記憶體中建立一個「虛擬 DOM」（Virtual DOM）。</li>
+<li>所有 DOM 操作會先發生在虛擬 DOM 中，再批次更新實體 DOM。</li>
+<li>這樣的差異化更新策略可提升效能，只變更必要的部分。</li>
+</ul>
+</li>
+<li><p><strong>React 的優勢</strong></p>
+<ul>
+<li>高效能：避免不必要的 DOM 操作。</li>
+<li>組件化：提升程式碼的重用性與可維護性。</li>
+<li>單向資料流：資料流動清晰易懂。</li>
+<li>強大社群與生態圈：大量開源資源與工具支援。</li>
+</ul>
+</li>
+<li><p><strong>使用 React 前的必要基礎</strong></p>
+<ul>
+<li>熟悉 HTML 結構與語意標記。</li>
+<li>理解 CSS 排版與樣式應用。</li>
+<li>掌握 JavaScript 基本語法與函數觀念（如 ES6 語法、變數宣告、陣列方法等）。</li>
+</ul>
+</li>
+<li><p><strong>React 的發展歷程</strong></p>
+<ul>
+<li>2011 年：React 首次應用於 Facebook 的新聞動態功能（Newsfeed）。</li>
+<li>2013 年 7 月：React 對外發布首個公開版本 0.3.0。</li>
+<li>2024 年 12 月：React 最新穩定版本為 19.0.0。</li>
+</ul>
+</li>
+</ol>
 <hr>
-<h4 id="範例：建立-React-js-專案並顯示資料"><a href="#範例：建立-React-js-專案並顯示資料" class="headerlink" title="範例：建立 React.js 專案並顯示資料"></a>範例：建立 React.js 專案並顯示資料</h4><p><strong>index.js：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom/client&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Home</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> [data, setData] = <span class="title function_">useState</span>(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">  <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">fetch</span>(<span class="string">&#x27;https://jsonplaceholder.typicode.com/todos&#x27;</span>)</span><br><span class="line">      .<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> res.<span class="title function_">json</span>())</span><br><span class="line">      .<span class="title function_">then</span>(<span class="function">(<span class="params">data</span>) =&gt;</span> <span class="title function_">setData</span>(data));</span><br><span class="line">  &#125;, []);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;data &amp;&amp;</span></span><br><span class="line"><span class="language-xml">        data.map((item) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">          return <span class="tag">&lt;<span class="name">p</span> <span class="attr">key</span>=<span class="string">&#123;item.id&#125;</span>&gt;</span>&#123;item.title&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">        &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Home</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
+<h2 id="實際範例"><a href="#實際範例" class="headerlink" title="實際範例"></a>實際範例</h2><p>以下是一個簡單的 React 程式碼範例，展示如何建立與渲染一個元件。</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 引入 React 與 ReactDOM 函式庫</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom/client&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立一個簡單的元件</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Welcome</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>你好，React 世界！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在指定的 DOM 節點中渲染該元件</span></span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Welcome</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
 
+<h3 id="解說："><a href="#解說：" class="headerlink" title="解說："></a>解說：</h3><ol>
+<li><code>import React from &#39;react&#39;;</code> 是使用 React 所必須的匯入語句。</li>
+<li><code>Welcome</code> 是一個函數式元件（Functional Component），回傳的是 JSX 語法。</li>
+<li><code>ReactDOM.createRoot</code> 創建一個 root 對象，負責將元件掛載至網頁的 <code>#root</code> DOM 節點。</li>
+<li><code>root.render(&lt;Welcome /&gt;)</code> 是將我們的元件渲染到網頁中。</li>
+</ol>
 <hr>
-<p>以上的資料擷取邏輯也可能在其他元件中需要，因此我們可以把它抽出來，做成一個自訂 Hook。</p>
-<hr>
-<h3 id="抽出-fetch-邏輯成自訂-Hook"><a href="#抽出-fetch-邏輯成自訂-Hook" class="headerlink" title="抽出 fetch 邏輯成自訂 Hook"></a>抽出 fetch 邏輯成自訂 Hook</h3><p>我們將資料擷取邏輯移到另一個檔案中，以便重複使用：</p>
-<hr>
-<h4 id="範例："><a href="#範例：" class="headerlink" title="範例："></a>範例：</h4><p><strong>useFetch.js：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">useFetch</span> = (<span class="params">url</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> [data, setData] = <span class="title function_">useState</span>(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">  <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">fetch</span>(url)</span><br><span class="line">      .<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> res.<span class="title function_">json</span>())</span><br><span class="line">      .<span class="title function_">then</span>(<span class="function">(<span class="params">data</span>) =&gt;</span> <span class="title function_">setData</span>(data));</span><br><span class="line">  &#125;, [url]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> [data];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> useFetch;</span><br></pre></td></tr></table></figure>
-
-<p><strong>index.js：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom/client&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> useFetch <span class="keyword">from</span> <span class="string">&#x27;./useFetch&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Home</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> [data] = <span class="title function_">useFetch</span>(<span class="string">&#x27;https://jsonplaceholder.typicode.com/todos&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;data &amp;&amp;</span></span><br><span class="line"><span class="language-xml">        data.map((item) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">          return <span class="tag">&lt;<span class="name">p</span> <span class="attr">key</span>=<span class="string">&#123;item.id&#125;</span>&gt;</span>&#123;item.title&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">        &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Home</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="範例說明"><a href="#範例說明" class="headerlink" title="範例說明"></a>範例說明</h3><p>我們建立了一個名為 <code>useFetch.js</code> 的新檔案，裡面定義了一個名為 <code>useFetch</code> 的函式，這個函式封裝了資料擷取的邏輯。</p>
-<p>原本寫死的 URL 被改為一個參數 <code>url</code>，讓我們可以依需求傳入不同的 API 路徑。</p>
-<p>最後，我們從這個自訂 Hook 中回傳資料。</p>
-<p>在 <code>index.js</code> 中，我們像使用其他 Hook 一樣使用 <code>useFetch</code>，並傳入我們想要擷取資料的 URL。</p>
-<p>這樣一來，就能在任何元件中重複使用這個自訂 Hook 來取得不同來源的資料了。</p>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>React 是一個現代網頁開發的重要工具，特別適合構建具互動性與模組化結構的網頁。透過虛擬 DOM 技術，React 讓介面更新更有效率，並提供清晰的元件架構設計。對於有基本前端知識的開發者而言，React 是進階的最佳入門選擇之一。建議你在學習 React 前，先打好 HTML、CSS 與 JavaScript 的基礎，將能更順利掌握 React 的概念與應用。</p>
+<p>接著我們將學習 React 的 JSX 語法、狀態管理（useState）、事件處理、生命週期（useEffect）等核心概念，逐步建立自己的 React 專案。</p>
 <h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
 <li><a target="_blank" rel="noopener" href="https://www.w3schools.com/react/react_customhooks.asp">React Custom Hooks</a></li>
 </ol>
@@ -293,7 +319,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-w3schools-react-basic-intro-tutorial/" title="React Hooks w3schools 學習筆記" rel="bookmark">React Hooks w3schools 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-react-nextjs-intro-tutorial/" title="React 與 Next.js 入門教學筆記 | 學習筆記" rel="bookmark">React 與 Next.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/10/16/learning-notes-alpinejs-intro-tutorial/" title="Alpine.js 入門教學筆記 | 學習筆記" rel="bookmark">Alpine.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/01/learning-notes-cookie-intro-tutorial/" title="Cookie 入門教學筆記 | 學習筆記" rel="bookmark">Cookie 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-css-animation-intro-tutorial/" title="CSS Animation 入門教學筆記 | 學習筆記" rel="bookmark">CSS Animation 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/05/learning-notes-w3schools-react-components-intro-tutorial/" title="React Components 入門教學 | w3schools 學習筆記" rel="bookmark">React Components 入門教學 | w3schools 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/08/learning-notes-w3schools-react-conditional-rendering-intro-tutorial/" title="React 條件渲染入門教學 | w3schools 學習筆記" rel="bookmark">React 條件渲染入門教學 | w3schools 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/15/learning-notes-w3schools-react-css-sass-style-intro-tutorial/" title="在 React 中使用 Sass 進行樣式設計教學 | w3schools 學習筆記" rel="bookmark">在 React 中使用 Sass 進行樣式設計教學 | w3schools 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/14/learning-notes-w3schools-react-css-style-intro-tutorial/" title="React 中使用 CSS 的三種方式教學 | w3schools 學習筆記" rel="bookmark">React 中使用 CSS 的三種方式教學 | w3schools 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/01/learning-notes-w3schools-react-custom-hooks-basic-intro-tutorial/" title="React Custom Hooks | w3schools 學習筆記" rel="bookmark">React Custom Hooks | w3schools 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -329,8 +355,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/11/16/learning-notes-w3schools-react-custom-hooks-basic-intro-tutorial%20copy/";
-    var disqus_url = "https://tech.kdchang.net/2024/11/16/learning-notes-w3schools-react-custom-hooks-basic-intro-tutorial%20copy/";
+    var disqus_identifier = "https://tech.kdchang.net/2024/01/01/learning-notes-w3schools-react-basic-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2024/01/01/learning-notes-w3schools-react-basic-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
