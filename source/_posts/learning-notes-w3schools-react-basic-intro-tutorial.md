@@ -1,6 +1,6 @@
 ---
-title: React Hooks w3schools 學習筆記
-date: 2024-11-16 11:33:41
+title: React 入門教學 | w3schools 學習筆記
+date: 2024-01-01 11:33:41
 author: kdchang
 tags:
   - React
@@ -13,75 +13,80 @@ tags:
   - frontend engineer
 ---
 
-### 前言
+## 前言
 
-Hooks 是在 React 16.8 版本中加入的新功能。Hooks 讓你可以在「函式元件（function components）」中使用狀態（state）以及其他 React 功能。因此，自從有了 Hooks 之後，**類別元件（class components）通常就不再是必要的了**。
-
-儘管 Hooks 幾乎取代了類別元件的使用方式，但 React 團隊目前**並沒有打算移除 class 元件**的支援。
+在當代的前端開發中，React 是最具代表性的 JavaScript 函式庫之一。由 Facebook 軟體工程師 Jordan Walke 所開發，React 被廣泛應用於建構動態使用者介面，尤其適用於大型單頁應用（SPA, Single Page Application）。本篇文章將帶你認識 React 的核心概念、其背後的工作原理、使用前的基礎知識與發展歷史，並透過實例進行初步實作。
 
 ---
 
-### 什麼是 Hook？
+## 重點摘要
 
-Hooks 讓我們能夠「掛勾（hook into）」React 的核心功能，例如 **狀態管理（state）** 和 **生命週期方法（lifecycle methods）**。
+1. **什麼是 React？**
+
+   - React 是一個前端 JavaScript 函式庫，用來建構使用者介面（UI）。
+   - React 的別稱包括 React.js 與 ReactJS。
+   - 它專注於「元件化思維」，每個 UI 元素都被視為一個可重複使用的元件（Component）。
+
+2. **React 如何運作？**
+
+   - React 在記憶體中建立一個「虛擬 DOM」（Virtual DOM）。
+   - 所有 DOM 操作會先發生在虛擬 DOM 中，再批次更新實體 DOM。
+   - 這樣的差異化更新策略可提升效能，只變更必要的部分。
+
+3. **React 的優勢**
+
+   - 高效能：避免不必要的 DOM 操作。
+   - 組件化：提升程式碼的重用性與可維護性。
+   - 單向資料流：資料流動清晰易懂。
+   - 強大社群與生態圈：大量開源資源與工具支援。
+
+4. **使用 React 前的必要基礎**
+
+   - 熟悉 HTML 結構與語意標記。
+   - 理解 CSS 排版與樣式應用。
+   - 掌握 JavaScript 基本語法與函數觀念（如 ES6 語法、變數宣告、陣列方法等）。
+
+5. **React 的發展歷程**
+
+   - 2011 年：React 首次應用於 Facebook 的新聞動態功能（Newsfeed）。
+   - 2013 年 7 月：React 對外發布首個公開版本 0.3.0。
+   - 2024 年 12 月：React 最新穩定版本為 19.0.0。
 
 ---
 
-### 範例：
+## 實際範例
+
+以下是一個簡單的 React 程式碼範例，展示如何建立與渲染一個元件。
 
 ```jsx
-import React, { useState } from 'react';
+// 引入 React 與 ReactDOM 函式庫
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-function FavoriteColor() {
-  const [color, setColor] = useState('red');
-
-  return (
-    <>
-      <h1>我最喜歡的顏色是 {color}！</h1>
-      <button type="button" onClick={() => setColor('blue')}>
-        藍色
-      </button>
-      <button type="button" onClick={() => setColor('red')}>
-        紅色
-      </button>
-      <button type="button" onClick={() => setColor('pink')}>
-        粉紅色
-      </button>
-      <button type="button" onClick={() => setColor('green')}>
-        綠色
-      </button>
-    </>
-  );
+// 建立一個簡單的元件
+function Welcome() {
+  return <h1>你好，React 世界！</h1>;
 }
 
+// 在指定的 DOM 節點中渲染該元件
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<FavoriteColor />);
+root.render(<Welcome />);
 ```
 
----
+### 解說：
 
-在這個範例中，我們透過 `useState` 這個 Hook 來追蹤應用程式的狀態。
-
-> **狀態（State）**：泛指那些會隨著使用者互動或應用邏輯而改變的資料或屬性。
-
-此外，**使用 Hook 前必須先從 `react` 模組中引入對應的函式**，例如這裡的 `useState`。
-
----
-
-### 使用 Hook 的三大規則
-
-1. **只能在 React 的函式元件中呼叫 Hooks**
-2. **只能在元件的最上層（Top-level）呼叫**，不能寫在 `if`、`for`、`函式`中等區塊內
-3. **不能有條件式地呼叫 Hook**（例如不能寫在 `if` 判斷中）
-
-> 注意：Hooks **無法**在 class 類別元件中使用！
+1. `import React from 'react';` 是使用 React 所必須的匯入語句。
+2. `Welcome` 是一個函數式元件（Functional Component），回傳的是 JSX 語法。
+3. `ReactDOM.createRoot` 創建一個 root 對象，負責將元件掛載至網頁的 `#root` DOM 節點。
+4. `root.render(<Welcome />)` 是將我們的元件渲染到網頁中。
 
 ---
 
-### 自訂 Hook（Custom Hooks）
+## 總結
 
-如果你有一些包含狀態的邏輯（stateful logic），需要在多個元件之間重複使用，這時可以考慮**封裝成自訂 Hook**，以提升可讀性與重用性。
+React 是一個現代網頁開發的重要工具，特別適合構建具互動性與模組化結構的網頁。透過虛擬 DOM 技術，React 讓介面更新更有效率，並提供清晰的元件架構設計。對於有基本前端知識的開發者而言，React 是進階的最佳入門選擇之一。建議你在學習 React 前，先打好 HTML、CSS 與 JavaScript 的基礎，將能更順利掌握 React 的概念與應用。
+
+接著我們將學習 React 的 JSX 語法、狀態管理（useState）、事件處理、生命週期（useEffect）等核心概念，逐步建立自己的 React 專案。
 
 ## 參考文件
 
