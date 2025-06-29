@@ -81,6 +81,7 @@ source ~/.zshrc
 
 1. [Fake images please?](https://fakeimg.pl/)
 2. [Picsum photos](https://picsum.photos/)
+3. [placehold](https://placehold.co/)
 
 ## icon
 
@@ -173,23 +174,23 @@ source ~/.zshrc
 eslint.config.js
 
 ```js
-import js from "@eslint/js";
-import globals from "globals";
-import pluginVue from "eslint-plugin-vue";
-import { defineConfig } from "eslint/config";
+import js from '@eslint/js';
+import globals from 'globals';
+import pluginVue from 'eslint-plugin-vue';
+import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
   {
-    files: ["**/*.{js,mjs,cjs,vue}"],
-    ignores: ["dist/**", "node_modules/**"],
+    files: ['**/*.{js,mjs,cjs,vue}'],
+    ignores: ['dist/**', 'node_modules/**'],
     plugins: { js },
-    extends: ["js/recommended"],
+    extends: ['js/recommended'],
     rules: {},
   },
   {
-    files: ["**/*.{js,mjs,cjs,vue}"],
+    files: ['**/*.{js,mjs,cjs,vue}'],
     languageOptions: { globals: globals.browser },
   },
-  pluginVue.configs["flat/essential"],
+  pluginVue.configs['flat/essential'],
 ]);
 ```
