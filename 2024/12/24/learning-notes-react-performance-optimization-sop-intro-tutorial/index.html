@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword"  content="軟體工程, 程式設計, 程式開發, frontend, backend, web, software, software engineer, JavaScript, Python">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/img/logo.ico">
+    <meta name="google-site-verification" content="cMTgiEFMM7gXpRMBbu_05Lnj0scwhDPCMvpfhQOpENI" />
+    <script src="/js/search.js"></script> 
+
+    
+    
+    
+       <script type="text/javascript">      
+         var search_path = "search.xml";
+       if (search_path.length == 0) {
+         search_path = "search.xml";
+       }
+       var path = "/" + search_path;
+         searchFunc(path, 'local-search-input', 'local-search-result');
+       </script>
+    
+    <title>
+        
+          React 效能優化 SOP 檢核清單入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+        
+    </title>
+
+    <link rel="canonical" href="https://tech.kdchang.net/2024/12/24/learning-notes-react-performance-optimization-sop-intro-tutorial/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/main.css?v=1">
+
+    <!-- og tag -->
+    <meta name="generator" content="KD's Tech Blog">
+    
+      <meta name="og:title" content="React 效能優化 SOP 檢核清單入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="React 效能優化 SOP 檢核清單入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+    
+    
+      <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+      <meta name="og:description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+    
+    
+      <meta name="og:image" content="https://tech.kdchang.net/img/logo.png">
+    
+    <meta name="og:type" content="website">
+    <!--Twitter Graph-->
+    <meta name="twitter:card" content="summary" />
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<link rel="alternate" href="/atom.xml" title="KD's Tech Blog" type="application/atom+xml">
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">KD&#39;s Tech Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/books/">Books</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/search/">Search</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    <li>
+                        <a href="/atom.xml">RSS</a>
+                    </li>                 
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/cover.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+
+                    <h1>React 效能優化 SOP 檢核清單入門教學筆記 | 學習筆記</h1>
+                    <span class="meta">
+                        Posted by kdchang on
+                        2024-12-24
+                    </span>
+                    <br>
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#ES Module" title="ES Module">ES Module</a>
+                        
+                          <a class="tag" href="/tags/#React" title="React">React</a>
+                        
+                          <a class="tag" href="/tags/#Performance Optimization" title="Performance Optimization">Performance Optimization</a>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+                <br>
+                <div>
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.net" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+                <br>
+                <div>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在大型單頁應用（SPA）與複雜互動式介面中，效能瓶頸常常來自不必要的重新渲染、大型 bundle 導致的載入緩慢，以及過度操作 DOM 所造成的卡頓。建立一份標準化的「效能優化檢核清單」（SOP，Standard Operating Procedure），能夠在開發流程中明確指出應檢查的重點、落實最佳實踐，並透過持續監控與回饋，進一步強化團隊的效能意識與程式品質。</p>
+<p>本篇筆記將依照從「程式撰寫到部署」的不同階段，提出具體的檢核項目，並搭配最常見的 React 效能優化技術範例，協助你快速掌握如何在日常開發與 Code Review 中落實效能優化。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p><strong>一、避免不必要的重新渲染</strong></p>
+<ul>
+<li>使用 <code>React.memo</code> 包裹純函式元件</li>
+<li>針對函式與物件 props，使用 <code>useCallback</code>、<code>useMemo</code> 進行記憶</li>
+<li>避免 JSX inline 宣告函式或物件</li>
+</ul>
+</li>
+<li><p><strong>二、State 管理與元件分離</strong></p>
+<ul>
+<li>下放 state 至影響範圍最小的元件</li>
+<li>UI 狀態（開關、Modal 等）與業務資料分離</li>
+<li>避免全域 context 過度包覆，導致大範圍 re-render</li>
+</ul>
+</li>
+<li><p><strong>三、列表與大量資料渲染優化</strong></p>
+<ul>
+<li>確保 <code>key</code> 穩定（使用唯一 id，非 index）</li>
+<li>採用虛擬滾動（<code>react-window</code>、<code>react-virtualized</code>）</li>
+<li>分頁或懶加載機制</li>
+</ul>
+</li>
+<li><p><strong>四、Code Splitting 與懶載入</strong></p>
+<ul>
+<li>使用 <code>React.lazy</code> + <code>Suspense</code> 分割大型元件</li>
+<li>路由層級拆分，動態 <code>import()</code></li>
+<li>圖片與第三方資源延遲加載</li>
+</ul>
+</li>
+<li><p><strong>五、效能分析與監控工具</strong></p>
+<ul>
+<li>React DevTools Profiler：分析元件 render 次數與耗時</li>
+<li>Lighthouse &#x2F; Web Vitals：追蹤 FCP、LCP、TTFB 等指標</li>
+<li>Bundle 分析（Webpack Bundle Analyzer、Source Map Explorer）</li>
+</ul>
+</li>
+<li><p><strong>六、CI／Code Review 效能檢查</strong></p>
+<ul>
+<li>將檢核清單納入 Pull Request 模板</li>
+<li>自動化檢測 bundle size 變化</li>
+<li>定期性能測試腳本（Cypress、Playwright + Lighthouse）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="實際範例"><a href="#實際範例" class="headerlink" title="實際範例"></a>實際範例</h2><h3 id="範例一：避免不必要的重新渲染"><a href="#範例一：避免不必要的重新渲染" class="headerlink" title="範例一：避免不必要的重新渲染"></a>範例一：避免不必要的重新渲染</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ChildComponent.jsx</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">ChildComponent</span>(<span class="params">&#123; data, onClick &#125;</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;ChildComponent render&#x27;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">onClick</span>=<span class="string">&#123;onClick&#125;</span>&gt;</span>&#123;data.text&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">React</span>.<span class="title function_">memo</span>(<span class="title class_">ChildComponent</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ParentComponent.jsx</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState, useCallback, useMemo &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ChildComponent</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComponent&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">ParentComponent</span>(<span class="params">&#123; initialData &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// useMemo 記憶 data 物件，避免因父組件重新 render 而改變 reference</span></span><br><span class="line">  <span class="keyword">const</span> data = <span class="title function_">useMemo</span>(</span><br><span class="line">    <span class="function">() =&gt;</span> (&#123;</span><br><span class="line">      <span class="attr">text</span>: initialData,</span><br><span class="line">    &#125;),</span><br><span class="line">    [initialData]</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// useCallback 記憶函式，不會因為 count 變化而重新建立</span></span><br><span class="line">  <span class="keyword">const</span> handleClick = <span class="title function_">useCallback</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">setCount</span>(<span class="function">(<span class="params">c</span>) =&gt;</span> c + <span class="number">1</span>);</span><br><span class="line">  &#125;, []);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>點擊次數：&#123;count&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">ChildComponent</span> <span class="attr">data</span>=<span class="string">&#123;data&#125;</span> <span class="attr">onClick</span>=<span class="string">&#123;handleClick&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>檢核點</strong>：</p>
+<ul>
+<li>ChildComponent 是否用 <code>React.memo</code> 包裹？</li>
+<li>data 物件是否用 <code>useMemo</code>？</li>
+<li>onClick 是否用 <code>useCallback</code>？</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="範例二：列表虛擬化"><a href="#範例二：列表虛擬化" class="headerlink" title="範例二：列表虛擬化"></a>範例二：列表虛擬化</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ListView.jsx</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">FixedSizeList</span> <span class="keyword">as</span> <span class="title class_">List</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react-window&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Row</span> = <span class="title class_">React</span>.<span class="title function_">memo</span>(<span class="function">(<span class="params">&#123; index, style &#125;</span>) =&gt;</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;style&#125;</span>&gt;</span>列表項目 #&#123;index&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">ListView</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">List</span> <span class="attr">height</span>=<span class="string">&#123;400&#125;</span> <span class="attr">itemCount</span>=<span class="string">&#123;10000&#125;</span> <span class="attr">itemSize</span>=<span class="string">&#123;35&#125;</span> <span class="attr">width</span>=<span class="string">&#123;</span>&#x27;<span class="attr">100</span>%&#x27;&#125;&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;Row&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">List</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>檢核點</strong>：</p>
+<ul>
+<li>是否針對長列表導入虛擬化？</li>
+<li>itemSize 與 height 設定是否合理？</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="範例三：Code-Splitting-與懶載入"><a href="#範例三：Code-Splitting-與懶載入" class="headerlink" title="範例三：Code Splitting 與懶載入"></a>範例三：Code Splitting 與懶載入</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">// routes.jsx</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; <span class="title class_">Suspense</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">BrowserRouter</span> <span class="keyword">as</span> <span class="title class_">Router</span>, <span class="title class_">Route</span>, <span class="title class_">Switch</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react-router-dom&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Home</span> = <span class="title class_">React</span>.<span class="title function_">lazy</span>(<span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;./pages/Home&#x27;</span>));</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Dashboard</span> = <span class="title class_">React</span>.<span class="title function_">lazy</span>(<span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;./pages/Dashboard&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">AppRouter</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">Router</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Suspense</span> <span class="attr">fallback</span>=<span class="string">&#123;</span>&lt;<span class="attr">div</span>&gt;</span>載入中...<span class="tag">&lt;/<span class="name">div</span>&gt;</span>&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Switch</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">Route</span> <span class="attr">exact</span> <span class="attr">path</span>=<span class="string">&quot;/&quot;</span> <span class="attr">component</span>=<span class="string">&#123;Home&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;/dashboard&quot;</span> <span class="attr">component</span>=<span class="string">&#123;Dashboard&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">Switch</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Suspense</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">Router</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>檢核點</strong>：</p>
+<ul>
+<li>是否有針對路由或大型元件進行懶載入？</li>
+<li>fallback UI 是否友善？</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="範例四：效能分析"><a href="#範例四：效能分析" class="headerlink" title="範例四：效能分析"></a>範例四：效能分析</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; <span class="title class_">Profiler</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">TodoList</span> <span class="keyword">from</span> <span class="string">&#x27;./TodoList&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">onRenderCallback</span>(<span class="params">id, phase, actualDuration</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;id&#125;</span> <span class="subst">$&#123;phase&#125;</span> 耗時：<span class="subst">$&#123;actualDuration.toFixed(<span class="number">2</span>)&#125;</span>ms`</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">Profiler</span> <span class="attr">id</span>=<span class="string">&quot;TodoList&quot;</span> <span class="attr">onRender</span>=<span class="string">&#123;onRenderCallback&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">TodoList</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">Profiler</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>檢核點</strong>：</p>
+<ul>
+<li>是否使用 Profiler 區隔並記錄核心元件耗時？</li>
+<li>是否定期檢視開發者工具數據？</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>以上檢核清單涵蓋了從程式撰寫、元件切分，到效能分析與持續監控的各個面向。建議將此清單整合至 Pull Request 模板中，並在團隊中推廣效能優化文化。持續在日常開發中落實這些檢查，能確保應用在功能增長的同時仍保持流暢的使用者體驗，並降低潛在的性能退化風險。若需將本文轉為 Markdown、PDF 或 Notion 模板，歡迎隨時提出。</p>
+<h2 id="補充：React-效能優化-SOP-檢核清單"><a href="#補充：React-效能優化-SOP-檢核清單" class="headerlink" title="補充：React 效能優化 SOP 檢核清單"></a>補充：React 效能優化 SOP 檢核清單</h2><h3 id="一、避免不必要的重新渲染"><a href="#一、避免不必要的重新渲染" class="headerlink" title="一、避免不必要的重新渲染"></a>一、避免不必要的重新渲染</h3><ul>
+<li><input disabled="" type="checkbox"> 是否使用 <code>React.memo</code> 包裹純函式元件？</li>
+<li><input disabled="" type="checkbox"> 是否有使用 <code>useCallback</code> 記憶傳遞的函式 props？</li>
+<li><input disabled="" type="checkbox"> 是否有使用 <code>useMemo</code> 記憶計算結果，避免重複計算？</li>
+<li><input disabled="" type="checkbox"> 是否避免在 JSX 中直接宣告函式或物件（例如 inline style）？</li>
+</ul>
+<hr>
+<h3 id="二、State-管理與元件分離"><a href="#二、State-管理與元件分離" class="headerlink" title="二、State 管理與元件分離"></a>二、State 管理與元件分離</h3><ul>
+<li><input disabled="" type="checkbox"> 是否將狀態下放至最小影響範圍的元件中？</li>
+<li><input disabled="" type="checkbox"> 是否避免使用不必要的 lifting state up？</li>
+<li><input disabled="" type="checkbox"> 是否將 UI 狀態（如開關、hover 狀態）與全域狀態分離？</li>
+</ul>
+<hr>
+<h3 id="三、Props-傳遞與結構優化"><a href="#三、Props-傳遞與結構優化" class="headerlink" title="三、Props 傳遞與結構優化"></a>三、Props 傳遞與結構優化</h3><ul>
+<li><input disabled="" type="checkbox"> 是否控制 props 深層傳遞導致的層層 re-render？</li>
+<li><input disabled="" type="checkbox"> 是否 props 結構穩定、可預期？（避免 object&#x2F;array 每次都變）</li>
+</ul>
+<hr>
+<h3 id="四、渲染大量資料時的處理"><a href="#四、渲染大量資料時的處理" class="headerlink" title="四、渲染大量資料時的處理"></a>四、渲染大量資料時的處理</h3><ul>
+<li><input disabled="" type="checkbox"> 是否針對長列表使用虛擬化工具（如 <code>react-window</code>, <code>react-virtualized</code>）？</li>
+<li><input disabled="" type="checkbox"> 是否有合理使用 <code>key</code>（且為穩定值，例如 id 而非 index）？</li>
+</ul>
+<hr>
+<h3 id="五、資源載入與-Code-Splitting"><a href="#五、資源載入與-Code-Splitting" class="headerlink" title="五、資源載入與 Code Splitting"></a>五、資源載入與 Code Splitting</h3><ul>
+<li><input disabled="" type="checkbox"> 是否使用 <code>React.lazy</code> + <code>Suspense</code> 實現元件懶載入？</li>
+<li><input disabled="" type="checkbox"> 是否進行 route-based code splitting（使用動態 import）？</li>
+<li><input disabled="" type="checkbox"> 是否有壓縮圖片、延遲圖片載入（lazy loading）？</li>
+</ul>
+<hr>
+<h3 id="六、效能監控與分析"><a href="#六、效能監控與分析" class="headerlink" title="六、效能監控與分析"></a>六、效能監控與分析</h3><ul>
+<li><input disabled="" type="checkbox"> 是否使用 React DevTools Profiler 檢查 render 頻率與時間？</li>
+<li><input disabled="" type="checkbox"> 是否分析過 Lighthouse &#x2F; Web Vitals 的效能指標？</li>
+<li><input disabled="" type="checkbox"> 是否檢查 Bundle Size（Webpack 分析工具、SourceMap Explorer 等）？</li>
+</ul>
+<hr>
+<h3 id="七、避免常見陷阱"><a href="#七、避免常見陷阱" class="headerlink" title="七、避免常見陷阱"></a>七、避免常見陷阱</h3><ul>
+<li><input disabled="" type="checkbox"> 是否避免每次 render 都新建匿名函式？</li>
+<li><input disabled="" type="checkbox"> 是否避免重複 render 同一資料來源？</li>
+<li><input disabled="" type="checkbox"> 是否避免過度依賴 context 導致全頁重 render？</li>
+</ul>
+<hr>
+<h3 id="八、開發階段優化習慣"><a href="#八、開發階段優化習慣" class="headerlink" title="八、開發階段優化習慣"></a>八、開發階段優化習慣</h3><ul>
+<li><input disabled="" type="checkbox"> 是否將效能優化納入 Code Review 檢查點？</li>
+<li><input disabled="" type="checkbox"> 是否每個大型新元件都確認是否會引起不必要渲染？</li>
+<li><input disabled="" type="checkbox"> 是否測試過主流程在弱網或低效能設備上的表現？</li>
+</ul>
+
+                </div>
+
+                <br>
+                <section>
+                    歡迎分享按讚給予支持和鼓勵！
+                    <div class="fb-like" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                </section>
+                <br>
+                <div>
+                    <div class="fb-page" data-href="https://www.facebook.com/tech.kdchang.net" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/tech.kdchang.net" class="fb-xfbml-parse-ignore"><a target="_blank" rel="noopener" href="https://www.facebook.com/tech.kdchang.net">KD Chang（張凱迪）</a></blockquote></div>
+                </div>
+                <hr>
+                <div>
+                    <h3>Related Posts</h3>
+                    <div>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/26/learning-notes-react-lazy-loading-code-splitting-intro-tutorial/" title="React 效能優化入門教學筆記 | 學習筆記" rel="bookmark">React 效能優化入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/25/learning-notes-react-performance-optimization-intro-tutorial/" title="React 效能優化入門教學筆記 | 學習筆記" rel="bookmark">React 效能優化入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2018/02/01/learning-notes-jest-intro-tutorial/" title="Jest 使用 ES Module 入門教學筆記 | 學習筆記" rel="bookmark">Jest 使用 ES Module 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2018/02/01/learning-notes-jest-unit-test-aaa-intro-tutorial/" title="Jest AAA 測試原則入門教學筆記 | 學習筆記" rel="bookmark">Jest AAA 測試原則入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2018/02/01/learning-notes-lighthouse-intro-tutorial/" title="Google Lighthouse 介紹與入門教學筆記 | 學習筆記" rel="bookmark">Google Lighthouse 介紹與入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                    </div>
+                </div>
+                <!-- Tags -->
+                <h3>Comments</h3>
+                <hr>
+                
+                <!-- disqus start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus end -->
+                
+
+            </div>
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "kdchang-tech-blog";
+    var disqus_identifier = "https://tech.kdchang.net/2024/12/24/learning-notes-react-performance-optimization-sop-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2024/12/24/learning-notes-react-performance-optimization-sop-intro-tutorial/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5728979c6a10856b"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<!-- <script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script> -->
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+<script>
+   anchors.add('h1, h2, h3');
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<a id="scroll-to-top-button">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/kaidichang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/tech.kdchang.net">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/kdchang_net">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kdchang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <hr>
+                <div class="copyright text-muted">
+                    Special thanks <a href="https://unsplash.com/@afgprogrammer" target="_blank">Mohammad Rahmani</a>、<a href="https://www.flickr.com/photos/derek-john-lee/14698093740/in/photolist-ooPzcj-r2kVt-ppV21v-brhFX3-wd3Qsy-cLiKEL-xDR92-28QCtA-29YFZZ-gzuZk-dqbhxt-9FwCBY-q57bEv-bVhZJr-dYxGXn-dxg9g7-8x7gjU-dzjMic-rQhf-9TMgJ3-mEsFjW-qbzd4p-q6cJvc-7zYttk-q2gE5S-bdb4G4-8ifmQN-eivVeg-9ZZFVz-aD6q6r-bnjfWh-qJAn2g-k22Ttf-n9Jhfj-kk4woh-sj43iz-5NYGUn-96wNhi-9ZZFz6-8DJkQf-4wQizw-3bzz8p-9yzTSd-xDQee-68Xwfp-7t5WPx-xDTM5-o5RPYA-kWihhy-7iHDEX" target="_blank">Derek</a>、<a href="https://www.flickr.com/photos/mashleymorgan/" target="_blank">mashleymorgan</a>、<a href="https://www.flickr.com/photos/mustafeez27/" target="_blank">mustafeez27</a>         
+                    and <a href="http://blog.kaijun.rocks" target="_blank">Kaijun</a>
+                    <br> 
+                    Copyright &copy; KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪 2025
+                    <hr>
+                    <!-- facebook follow -->
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.net" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+<!-- Custom Main JavaScript -->
+<script src="/js/main.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://tech.kdchang.net/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fb.js -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="X3eUifxc"></script>
+
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FN9X92SM77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FN9X92SM77');
+</script>
+
+
+
+	
+</body>
+
+</html>

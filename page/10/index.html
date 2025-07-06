@@ -119,6 +119,13 @@
 
                         
                         <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
                             <a href="/books/">Books</a>
                         </li>
                         
@@ -127,13 +134,6 @@
                         
                         <li>
                             <a href="/search/">Search</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -218,6 +218,73 @@
             ">
                 <!-- Main Content -->
 
+
+<div class="post-preview">
+
+    <a href="/2024/01/06/learning-notes-w3schools-react-props-intro-tutorial/">
+        <h2 class="post-title">
+            React Props 入門教學 | w3schools 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言React 是一個用於建立 UI 組件的 JavaScript 函式庫，而 JSX 則是 React 中的重要語法擴充。前一章我們已學會如何使用 JSX 編寫 React 介面，本文將進一步說明 React 元件（Components）與 props 的基本觀念與應用，並介紹如何透過函式元件傳遞資料，建立更靈活的 UI 架構。
+重點摘要
+React 元件就像函式，會回傳 HTML 元素
+......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-01-06
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2024/01/05/learning-notes-w3schools-react-components-intro-tutorial/">
+        <h2 class="post-title">
+            React Components 入門教學 | w3schools 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言React 是一個用於建立 UI 組件的 JavaScript 函式庫，而 JSX 則是 React 中的重要語法擴充。前一章我們已學會如何使用 JSX 編寫 React 介面，本文將進一步說明 React 元件（Components）的基本觀念與應用，並介紹如何透過函式元件（Function Components）與類別元件（Class Components）撰寫可重用的 UI 模組。......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-01-05
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2024/01/04/learning-notes-w3schools-react-jsx-intro-tutorial/">
+        <h2 class="post-title">
+            React JSX 入門教學 | w3schools 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言React 是一個用於建立 UI 元件的 JavaScript 函式庫，而 JSX 則是屬於 React 中的一個元件模板語法糖。這篇文章將簡要介紹 JSX 是什麼，如何撰寫、條件式使用以及特殊對應，幫助初學者或 React 開發者進一步瞭解 JSX 的基礎應用。
+重點摘要
+JSX 是 JavaScript XML 的縮寫
+允許在 JavaScript 代碼中直接寫 HTML
+JSX 會......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-01-04
+    </p>
+
+</div>
+<hr>
 
 <div class="post-preview">
 
@@ -366,85 +433,6 @@ function regu......
         <div class="post-content-preview">
             前言在 JavaScript 中，你可以通過事件處理的方式來為多個 input 元素綁定事件處理器。這樣做可以讓你在父容器上綁定一個事件處理器，並通過 event.target 確定觸發事件的具體 input 元素，而不需要為每個 input 元素單獨綁定事件。
 事件委派的概念事件委派是一種常見的事件處理技術，它將事件綁定到父元素或容器上，然後通過 event.target 來確定哪個子元素......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2023-12-21
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/12/21/learning-notes-jwt-pros-intro-tutorial/">
-        <h2 class="post-title">
-            JWT 使用好處入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言JWT（JSON Web Token） 的好處在於它是輕量、跨平台、無狀態的驗證與授權機制，特別適合用於前後端分離、微服務架構與 API 驗證。以下是它的主要優點：
-一、JWT 的 7 大好處1. 無狀態（Stateless）驗證
-JWT 本身就包含用戶資訊與簽名，不需要在伺服器端儲存 session。
-適合微服務或 Serverless 架構，因為伺服器不用記住誰是誰。
-
-2. 跨平台......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2023-12-21
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/12/21/learning-notes-jwt-react-intro-tutorial/">
-        <h2 class="post-title">
-            React 前端整合 JWT（含 Refresh Token）入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言當你要將 JWT 驗證整合至 React 前端，並搭配 Refresh Token 或整合 OAuth（如 Google 登入）流程，你需要考慮前端的存儲方式、token 的更新機制，以及第三方登入的流程銜接。
-以下將分成三個部分講解：
-
-一、React 前端整合 JWT（含 Refresh Token）流程總覽：
-使用者輸入帳密登入，發送 /login 請求。
-
-伺服器簽發兩種 tok......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2023-12-21
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial copy/">
-        <h2 class="post-title">
-            JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            一、JWT 基本安全策略1. 使用強密鑰（Secret）或非對稱加密
-對稱加密：使用 HS256 時，secret 應具備高強度（建議 256-bit 以上）。
-非對稱加密：使用 RS256 時，私鑰與公鑰分離，便於服務間驗證。
-
-2. 設定有效期限（exp）
-Access Token 建議設為 短效（10~30 分鐘）。
-避免永久有效的 Token，防止被盜用後長期濫用。
-
-3. 限制 T......
         </div>
     </a>
     <p class="post-meta">
