@@ -89,33 +89,6 @@
       </tags>
   </entry>
   <entry>
-    <title>關於軟體工程師 Software Engineer 的 10 個關鍵字</title>
-    <url>/2015/01/22/about-software-engineer-10-keywords/</url>
-    <content><![CDATA[<p>以下整理了軟體工程師相關的十個關鍵字，涵蓋技能、工具與工作方式：</p>
-<ol>
-<li><strong>程式語言 (Programming Language)</strong> - 如 Python、Java、C++、JavaScript 等。  </li>
-<li><strong>版本控制 (Version Control)</strong> - 例如 Git、GitHub（平台）、GitLab（平台）。  </li>
-<li><strong>測試 (Testing)</strong> - 單元測試 (Unit Testing)、整合測試 (Integration Testing)。  </li>
-<li><strong>敏捷開發 (Agile Development)</strong> - Scrum、Kanban 等工作方法。  </li>
-<li><strong>架構設計和系統設計 (Architecture Design、System Design)</strong> - 微服務 (Microservices)、單體架構 (Monolithic Architecture)。  </li>
-<li><strong>資料庫 (Database)</strong> - SQL、NoSQL (如 MongoDB)。  </li>
-<li><strong>雲端運算 (Cloud Computing)</strong> - AWS、Azure、Google Cloud。  </li>
-<li><strong>DevOps</strong> - CI&#x2F;CD、自動化部署 (Automation Deployment)。  </li>
-<li><strong>演算法 (Algorithm)</strong> - 演算法、資料結構、問題解決能力。  </li>
-<li><strong>團隊合作 (Collaboration)</strong> - 跨部門溝通、工具 (如 JIRA、Confluence)。</li>
-</ol>
-<p>以上關鍵字為軟體工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
-]]></content>
-      <tags>
-        <tag>開發者</tag>
-        <tag>軟體工程師</tag>
-        <tag>SWE</tag>
-        <tag>Software Engineer</tag>
-        <tag>Software</tag>
-        <tag>軟體開發</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>12 Factor App 入門教學：打造現代雲端應用的十二守則教學筆記 | 學習筆記</title>
     <url>/2025/02/08/learning-notes-12-factor-cloud-app-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>12 Factor App</strong> 是由 Heroku 團隊提出的一套雲端應用架構設計原則，旨在幫助開發者打造可擴展、可維護、易部署的現代化應用程式。這些準則不限語言或框架，廣泛適用於各種 SaaS 應用、API 服務、微服務架構等場景。</p>
@@ -206,6 +179,33 @@
         <tag>SaaS</tag>
         <tag>API</tag>
         <tag>cloud</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>關於軟體工程師 Software Engineer 的 10 個關鍵字</title>
+    <url>/2015/01/22/about-software-engineer-10-keywords/</url>
+    <content><![CDATA[<p>以下整理了軟體工程師相關的十個關鍵字，涵蓋技能、工具與工作方式：</p>
+<ol>
+<li><strong>程式語言 (Programming Language)</strong> - 如 Python、Java、C++、JavaScript 等。  </li>
+<li><strong>版本控制 (Version Control)</strong> - 例如 Git、GitHub（平台）、GitLab（平台）。  </li>
+<li><strong>測試 (Testing)</strong> - 單元測試 (Unit Testing)、整合測試 (Integration Testing)。  </li>
+<li><strong>敏捷開發 (Agile Development)</strong> - Scrum、Kanban 等工作方法。  </li>
+<li><strong>架構設計和系統設計 (Architecture Design、System Design)</strong> - 微服務 (Microservices)、單體架構 (Monolithic Architecture)。  </li>
+<li><strong>資料庫 (Database)</strong> - SQL、NoSQL (如 MongoDB)。  </li>
+<li><strong>雲端運算 (Cloud Computing)</strong> - AWS、Azure、Google Cloud。  </li>
+<li><strong>DevOps</strong> - CI&#x2F;CD、自動化部署 (Automation Deployment)。  </li>
+<li><strong>演算法 (Algorithm)</strong> - 演算法、資料結構、問題解決能力。  </li>
+<li><strong>團隊合作 (Collaboration)</strong> - 跨部門溝通、工具 (如 JIRA、Confluence)。</li>
+</ol>
+<p>以上關鍵字為軟體工程師平常工作或是職涯的核心工作內容和技能樹，透過不斷累積相關經驗和專案開發能力，可以讓自己成為更優秀的軟體工程師。</p>
+]]></content>
+      <tags>
+        <tag>開發者</tag>
+        <tag>軟體工程師</tag>
+        <tag>SWE</tag>
+        <tag>Software Engineer</tag>
+        <tag>Software</tag>
+        <tag>軟體開發</tag>
       </tags>
   </entry>
   <entry>
@@ -2680,6 +2680,50 @@
       </tags>
   </entry>
   <entry>
+    <title>Emotion CSS 入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/30/learning-notes-emotion-css-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="1-Emotion-CSS-簡介"><a href="#1-Emotion-CSS-簡介" class="headerlink" title="1. Emotion CSS 簡介"></a>1. Emotion CSS 簡介</h2><p>Emotion 是一款強大的 CSS-in-JS 解決方案，提供高效能且靈活的樣式管理方式，適用於 React 應用。Emotion 支援兩種主要的使用方式：</p>
+<ol>
+<li><strong>CSS Prop</strong>（使用 JSX 內嵌樣式）</li>
+<li><strong>styled API</strong>（使用 <code>styled</code> 函式創建元件）</li>
+</ol>
+<h2 id="2-安裝-Emotion"><a href="#2-安裝-Emotion" class="headerlink" title="2. 安裝 Emotion"></a>2. 安裝 Emotion</h2><p>使用 npm 或 yarn 安裝 Emotion 核心套件：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install @emotion/react @emotion/styled</span><br></pre></td></tr></table></figure>
+
+<p>如果專案使用 Babel，建議安裝 Emotion 的 Babel 插件來提高效能：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install --save-dev @emotion/babel-plugin</span><br></pre></td></tr></table></figure>
+
+<p>並在 <code>.babelrc</code> 中添加：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;plugins&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;@emotion&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-CSS-Prop-用法"><a href="#3-CSS-Prop-用法" class="headerlink" title="3. CSS Prop 用法"></a>3. CSS Prop 用法</h2><p>CSS Prop 允許你直接在 JSX 中定義 CSS 樣式。</p>
+<h3 id="基本範例"><a href="#基本範例" class="headerlink" title="基本範例"></a>基本範例</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">/** <span class="doctag">@jsxImportSource</span> <span class="doctag">@emotion</span>/react */</span></span><br><span class="line"><span class="keyword">import</span> &#123; css &#125; <span class="keyword">from</span> <span class="string">&#x27;@emotion/react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> style = css`<span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: lightblue;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span></span><br><span class="line"><span class="language-css">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">css</span>=<span class="string">&#123;style&#125;</span>&gt;</span>Hello, Emotion!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="傳遞-props-變更樣式"><a href="#傳遞-props-變更樣式" class="headerlink" title="傳遞 props 變更樣式"></a>傳遞 props 變更樣式</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">dynamicStyle</span> = (<span class="params">color</span>) =&gt; css`<span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: </span><span class="subst">$&#123;color&#125;</span><span class="language-css">;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span></span><br><span class="line"><span class="language-css">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params">&#123; color = <span class="string">&#x27;lightblue&#x27;</span> &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">css</span>=<span class="string">&#123;dynamicStyle(color)&#125;</span>&gt;</span>Dynamic Emotion<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-styled-API-用法"><a href="#4-styled-API-用法" class="headerlink" title="4. styled API 用法"></a>4. styled API 用法</h2><p><code>styled</code> API 讓我們能夠創建具備 CSS 樣式的 React 元件。</p>
+<h3 id="基本範例-1"><a href="#基本範例-1" class="headerlink" title="基本範例"></a>基本範例</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> styled <span class="keyword">from</span> <span class="string">&#x27;@emotion/styled&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Button</span> = styled.<span class="property">button</span><span class="string">`</span></span><br><span class="line"><span class="string">  background-color: #3498db;</span></span><br><span class="line"><span class="string">  color: white;</span></span><br><span class="line"><span class="string">  padding: 10px 20px;</span></span><br><span class="line"><span class="string">  border: none;</span></span><br><span class="line"><span class="string">  border-radius: 5px;</span></span><br><span class="line"><span class="string">  cursor: pointer;</span></span><br><span class="line"><span class="string">  &amp;:hover &#123;</span></span><br><span class="line"><span class="string">    background-color: #2980b9;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Button</span>&gt;</span>Click Me<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="傳遞-props-變更樣式-1"><a href="#傳遞-props-變更樣式-1" class="headerlink" title="傳遞 props 變更樣式"></a>傳遞 props 變更樣式</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Button</span> = styled.<span class="property">button</span><span class="string">`</span></span><br><span class="line"><span class="string">  background-color: <span class="subst">$&#123;(props) =&gt; props.bg || <span class="string">&#x27;#3498db&#x27;</span>&#125;</span>;</span></span><br><span class="line"><span class="string">  color: <span class="subst">$&#123;(props) =&gt; props.color || <span class="string">&#x27;white&#x27;</span>&#125;</span>;</span></span><br><span class="line"><span class="string">  padding: 10px 20px;</span></span><br><span class="line"><span class="string">  border: none;</span></span><br><span class="line"><span class="string">  border-radius: 5px;</span></span><br><span class="line"><span class="string">  cursor: pointer;</span></span><br><span class="line"><span class="string">  &amp;:hover &#123;</span></span><br><span class="line"><span class="string">    background-color: <span class="subst">$&#123;(props) =&gt; (props.bg ? darken(<span class="number">0.1</span>, props.bg) : <span class="string">&#x27;#2980b9&#x27;</span>)&#125;</span>;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Button</span> <span class="attr">bg</span>=<span class="string">&quot;tomato&quot;</span>&gt;</span>Custom Button<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-全域樣式與-Theme"><a href="#5-全域樣式與-Theme" class="headerlink" title="5. 全域樣式與 Theme"></a>5. 全域樣式與 Theme</h2><h3 id="使用-Global-樣式"><a href="#使用-Global-樣式" class="headerlink" title="使用 Global 樣式"></a>使用 Global 樣式</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Global</span>, css &#125; <span class="keyword">from</span> <span class="string">&#x27;@emotion/react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> globalStyles = css`<span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">font-family</span>: Arial, sans-serif;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Global</span> <span class="attr">styles</span>=<span class="string">&#123;globalStyles&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello, Global Emotion!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-Theme"><a href="#使用-Theme" class="headerlink" title="使用 Theme"></a>使用 Theme</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">ThemeProvider</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@emotion/react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> styled <span class="keyword">from</span> <span class="string">&#x27;@emotion/styled&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> theme = &#123;</span><br><span class="line">  <span class="attr">colors</span>: &#123;</span><br><span class="line">    <span class="attr">primary</span>: <span class="string">&#x27;#3498db&#x27;</span>,</span><br><span class="line">    <span class="attr">secondary</span>: <span class="string">&#x27;#2ecc71&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">ThemedButton</span> = styled.<span class="property">button</span><span class="string">`</span></span><br><span class="line"><span class="string">  background-color: <span class="subst">$&#123;(props) =&gt; props.theme.colors.primary&#125;</span>;</span></span><br><span class="line"><span class="string">  color: white;</span></span><br><span class="line"><span class="string">  padding: 10px 20px;</span></span><br><span class="line"><span class="string">  border-radius: 5px;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">ThemeProvider</span> <span class="attr">theme</span>=<span class="string">&#123;theme&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">ThemedButton</span>&gt;</span>Themed Button<span class="tag">&lt;/<span class="name">ThemedButton</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">ThemeProvider</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h2><p>Emotion 是一款靈活且高效的 CSS-in-JS 解決方案，適用於 React 應用。它提供 <code>css</code> prop 以及 <code>styled</code> API 來幫助開發者管理樣式，並支援全域樣式與主題設定。這篇教學筆記涵蓋了基礎概念與常見用法，希望對你的開發過程有所幫助。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>CSS</tag>
+        <tag>Emotion CSS</tag>
+        <tag>styled</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript ES6 入門語法教學筆記 | 學習筆記</title>
     <url>/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial%20copy/</url>
     <content><![CDATA[<p>ECMAScript 6 又稱 ECMAScript 2015，是 JavaScript 語言的新一代標準，讓 JavaScript 可以更容易撰寫大型複雜的應用程式並避免不必要的錯誤。</p>
@@ -2850,50 +2894,6 @@
         <tag>ECMAScript</tag>
         <tag>ECMAScript6</tag>
         <tag>ECMAScript2015</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Emotion CSS 入門教學筆記 | 學習筆記</title>
-    <url>/2024/11/30/learning-notes-emotion-css-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="1-Emotion-CSS-簡介"><a href="#1-Emotion-CSS-簡介" class="headerlink" title="1. Emotion CSS 簡介"></a>1. Emotion CSS 簡介</h2><p>Emotion 是一款強大的 CSS-in-JS 解決方案，提供高效能且靈活的樣式管理方式，適用於 React 應用。Emotion 支援兩種主要的使用方式：</p>
-<ol>
-<li><strong>CSS Prop</strong>（使用 JSX 內嵌樣式）</li>
-<li><strong>styled API</strong>（使用 <code>styled</code> 函式創建元件）</li>
-</ol>
-<h2 id="2-安裝-Emotion"><a href="#2-安裝-Emotion" class="headerlink" title="2. 安裝 Emotion"></a>2. 安裝 Emotion</h2><p>使用 npm 或 yarn 安裝 Emotion 核心套件：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install @emotion/react @emotion/styled</span><br></pre></td></tr></table></figure>
-
-<p>如果專案使用 Babel，建議安裝 Emotion 的 Babel 插件來提高效能：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install --save-dev @emotion/babel-plugin</span><br></pre></td></tr></table></figure>
-
-<p>並在 <code>.babelrc</code> 中添加：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;plugins&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;@emotion&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="3-CSS-Prop-用法"><a href="#3-CSS-Prop-用法" class="headerlink" title="3. CSS Prop 用法"></a>3. CSS Prop 用法</h2><p>CSS Prop 允許你直接在 JSX 中定義 CSS 樣式。</p>
-<h3 id="基本範例"><a href="#基本範例" class="headerlink" title="基本範例"></a>基本範例</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">/** <span class="doctag">@jsxImportSource</span> <span class="doctag">@emotion</span>/react */</span></span><br><span class="line"><span class="keyword">import</span> &#123; css &#125; <span class="keyword">from</span> <span class="string">&#x27;@emotion/react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> style = css`<span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: lightblue;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span></span><br><span class="line"><span class="language-css">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">css</span>=<span class="string">&#123;style&#125;</span>&gt;</span>Hello, Emotion!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="傳遞-props-變更樣式"><a href="#傳遞-props-變更樣式" class="headerlink" title="傳遞 props 變更樣式"></a>傳遞 props 變更樣式</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">dynamicStyle</span> = (<span class="params">color</span>) =&gt; css`<span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: </span><span class="subst">$&#123;color&#125;</span><span class="language-css">;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span></span><br><span class="line"><span class="language-css">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params">&#123; color = <span class="string">&#x27;lightblue&#x27;</span> &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">css</span>=<span class="string">&#123;dynamicStyle(color)&#125;</span>&gt;</span>Dynamic Emotion<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-styled-API-用法"><a href="#4-styled-API-用法" class="headerlink" title="4. styled API 用法"></a>4. styled API 用法</h2><p><code>styled</code> API 讓我們能夠創建具備 CSS 樣式的 React 元件。</p>
-<h3 id="基本範例-1"><a href="#基本範例-1" class="headerlink" title="基本範例"></a>基本範例</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> styled <span class="keyword">from</span> <span class="string">&#x27;@emotion/styled&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Button</span> = styled.<span class="property">button</span><span class="string">`</span></span><br><span class="line"><span class="string">  background-color: #3498db;</span></span><br><span class="line"><span class="string">  color: white;</span></span><br><span class="line"><span class="string">  padding: 10px 20px;</span></span><br><span class="line"><span class="string">  border: none;</span></span><br><span class="line"><span class="string">  border-radius: 5px;</span></span><br><span class="line"><span class="string">  cursor: pointer;</span></span><br><span class="line"><span class="string">  &amp;:hover &#123;</span></span><br><span class="line"><span class="string">    background-color: #2980b9;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Button</span>&gt;</span>Click Me<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="傳遞-props-變更樣式-1"><a href="#傳遞-props-變更樣式-1" class="headerlink" title="傳遞 props 變更樣式"></a>傳遞 props 變更樣式</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Button</span> = styled.<span class="property">button</span><span class="string">`</span></span><br><span class="line"><span class="string">  background-color: <span class="subst">$&#123;(props) =&gt; props.bg || <span class="string">&#x27;#3498db&#x27;</span>&#125;</span>;</span></span><br><span class="line"><span class="string">  color: <span class="subst">$&#123;(props) =&gt; props.color || <span class="string">&#x27;white&#x27;</span>&#125;</span>;</span></span><br><span class="line"><span class="string">  padding: 10px 20px;</span></span><br><span class="line"><span class="string">  border: none;</span></span><br><span class="line"><span class="string">  border-radius: 5px;</span></span><br><span class="line"><span class="string">  cursor: pointer;</span></span><br><span class="line"><span class="string">  &amp;:hover &#123;</span></span><br><span class="line"><span class="string">    background-color: <span class="subst">$&#123;(props) =&gt; (props.bg ? darken(<span class="number">0.1</span>, props.bg) : <span class="string">&#x27;#2980b9&#x27;</span>)&#125;</span>;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Button</span> <span class="attr">bg</span>=<span class="string">&quot;tomato&quot;</span>&gt;</span>Custom Button<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-全域樣式與-Theme"><a href="#5-全域樣式與-Theme" class="headerlink" title="5. 全域樣式與 Theme"></a>5. 全域樣式與 Theme</h2><h3 id="使用-Global-樣式"><a href="#使用-Global-樣式" class="headerlink" title="使用 Global 樣式"></a>使用 Global 樣式</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Global</span>, css &#125; <span class="keyword">from</span> <span class="string">&#x27;@emotion/react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> globalStyles = css`<span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">font-family</span>: Arial, sans-serif;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Global</span> <span class="attr">styles</span>=<span class="string">&#123;globalStyles&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello, Global Emotion!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用-Theme"><a href="#使用-Theme" class="headerlink" title="使用 Theme"></a>使用 Theme</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">ThemeProvider</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@emotion/react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> styled <span class="keyword">from</span> <span class="string">&#x27;@emotion/styled&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> theme = &#123;</span><br><span class="line">  <span class="attr">colors</span>: &#123;</span><br><span class="line">    <span class="attr">primary</span>: <span class="string">&#x27;#3498db&#x27;</span>,</span><br><span class="line">    <span class="attr">secondary</span>: <span class="string">&#x27;#2ecc71&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">ThemedButton</span> = styled.<span class="property">button</span><span class="string">`</span></span><br><span class="line"><span class="string">  background-color: <span class="subst">$&#123;(props) =&gt; props.theme.colors.primary&#125;</span>;</span></span><br><span class="line"><span class="string">  color: white;</span></span><br><span class="line"><span class="string">  padding: 10px 20px;</span></span><br><span class="line"><span class="string">  border-radius: 5px;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">ThemeProvider</span> <span class="attr">theme</span>=<span class="string">&#123;theme&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">ThemedButton</span>&gt;</span>Themed Button<span class="tag">&lt;/<span class="name">ThemedButton</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">ThemeProvider</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h2><p>Emotion 是一款靈活且高效的 CSS-in-JS 解決方案，適用於 React 應用。它提供 <code>css</code> prop 以及 <code>styled</code> API 來幫助開發者管理樣式，並支援全域樣式與主題設定。這篇教學筆記涵蓋了基礎概念與常見用法，希望對你的開發過程有所幫助。</p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>CSS</tag>
-        <tag>Emotion CSS</tag>
-        <tag>styled</tag>
       </tags>
   </entry>
   <entry>
@@ -5048,49 +5048,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JSX 入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/13/learning-notes-jsx-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="1-JSX-是什麼？"><a href="#1-JSX-是什麼？" class="headerlink" title="1. JSX 是什麼？"></a>1. JSX 是什麼？</h2><p>JSX（JavaScript XML）是一種語法擴展，主要用於 React 函式庫中，它允許在 JavaScript 代碼中撰寫類似 HTML 的語法，使 UI 組件的編寫更加直觀。JSX 並非原生 JavaScript，需要透過 Babel 轉譯成標準 JavaScript 代碼。</p>
-<h2 id="2-為什麼使用-JSX？"><a href="#2-為什麼使用-JSX？" class="headerlink" title="2. 為什麼使用 JSX？"></a>2. 為什麼使用 JSX？</h2><p>JSX 提供了一種更加可讀、直觀的方式來描述 UI 結構，相比於傳統的 JavaScript DOM 操作，它更簡潔易懂。此外，JSX 具備以下優勢：</p>
-<ul>
-<li><strong>可讀性高</strong>：類似 HTML 的語法使 UI 組件結構清晰。</li>
-<li><strong>與 JavaScript 無縫結合</strong>：可在 JSX 中嵌入 JavaScript 表達式。</li>
-<li><strong>更安全</strong>：React 會自動處理 XSS（跨站腳本攻擊），確保數據安全。</li>
-<li><strong>高效渲染</strong>：React 使用虛擬 DOM 最小化真實 DOM 更新，提高性能。</li>
-</ul>
-<h2 id="3-基本語法"><a href="#3-基本語法" class="headerlink" title="3. 基本語法"></a>3. 基本語法</h2><h3 id="3-1-基本範例"><a href="#3-1-基本範例" class="headerlink" title="3.1 基本範例"></a>3.1 基本範例</h3><p>JSX 允許我們在 JavaScript 代碼中使用類似 HTML 的語法來描述 UI：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, JSX!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(element, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-JSX-中的-JavaScript-表達式"><a href="#3-2-JSX-中的-JavaScript-表達式" class="headerlink" title="3.2 JSX 中的 JavaScript 表達式"></a>3.2 JSX 中的 JavaScript 表達式</h3><p>JSX 允許在 <code>&#123;&#125;</code> 中插入 JavaScript 表達式，例如變數、函式調用等。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">&quot;Alice&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;name&#125;!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-JSX-屬性"><a href="#3-3-JSX-屬性" class="headerlink" title="3.3 JSX 屬性"></a>3.3 JSX 屬性</h3><p>JSX 屬性與 HTML 類似，但有些屬性名稱需使用 camelCase，例如 <code>className</code> 取代 <code>class</code>，<code>htmlFor</code> 取代 <code>for</code>。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;輸入文字&quot;</span> <span class="attr">className</span>=<span class="string">&quot;input-box&quot;</span> /&gt;</span></span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-4-JSX-內聯樣式"><a href="#3-4-JSX-內聯樣式" class="headerlink" title="3.4 JSX 內聯樣式"></a>3.4 JSX 內聯樣式</h3><p>內聯樣式需使用 JavaScript 對象，且屬性名稱為 camelCase。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> style = &#123; <span class="attr">color</span>: <span class="string">&#x27;blue&#x27;</span>, <span class="attr">fontSize</span>: <span class="string">&#x27;20px&#x27;</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&#123;style&#125;</span>&gt;</span>這是一段藍色文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-JSX-中的條件與循環"><a href="#4-JSX-中的條件與循環" class="headerlink" title="4. JSX 中的條件與循環"></a>4. JSX 中的條件與循環</h2><h3 id="4-1-條件渲染（if…else）"><a href="#4-1-條件渲染（if…else）" class="headerlink" title="4.1 條件渲染（if…else）"></a>4.1 條件渲染（if…else）</h3><p>JSX 本身不支援 <code>if...else</code>，需使用三元運算子或變數。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> isLoggedIn = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">const</span> element = isLoggedIn ? <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>歡迎回來！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span> : <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>請登入<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-使用-amp-amp-運算符"><a href="#4-2-使用-amp-amp-運算符" class="headerlink" title="4.2 使用 &amp;&amp; 運算符"></a>4.2 使用 &amp;&amp; 運算符</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> messages = [<span class="string">&#x27;新訊息1&#x27;</span>, <span class="string">&#x27;新訊息2&#x27;</span>];</span><br><span class="line"><span class="keyword">const</span> element = (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    &#123;messages.length &gt; 0 &amp;&amp; <span class="tag">&lt;<span class="name">p</span>&gt;</span>你有 &#123;messages.length&#125; 則未讀訊息。<span class="tag">&lt;/<span class="name">p</span>&gt;</span>&#125;</span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-3-迴圈渲染（map）"><a href="#4-3-迴圈渲染（map）" class="headerlink" title="4.3 迴圈渲染（map）"></a>4.3 迴圈渲染（map）</h3><p>JSX 可透過 <code>map</code> 方法來動態渲染列表。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> list = [<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Banana&#x27;</span>, <span class="string">&#x27;Cherry&#x27;</span>];</span><br><span class="line"><span class="keyword">const</span> element = (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    &#123;list.map((item, index) =&gt; <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span>)&#125;</span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-JSX-與-React-組件"><a href="#5-JSX-與-React-組件" class="headerlink" title="5. JSX 與 React 組件"></a>5. JSX 與 React 組件</h2><p>JSX 可與 React 組件結合使用，提升 UI 開發的模組化程度。</p>
-<h3 id="5-1-函式型組件"><a href="#5-1-函式型組件" class="headerlink" title="5.1 函式型組件"></a>5.1 函式型組件</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Welcome</span>(<span class="params">props</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>你好，&#123;props.name&#125;！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">Welcome</span> <span class="attr">name</span>=<span class="string">&quot;小明&quot;</span> /&gt;</span></span>;</span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(element, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-2-類別型組件"><a href="#5-2-類別型組件" class="headerlink" title="5.2 類別型組件"></a>5.2 類別型組件</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Welcome</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>你好，&#123;this.props.name&#125;！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">Welcome</span> <span class="attr">name</span>=<span class="string">&quot;小明&quot;</span> /&gt;</span></span>;</span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(element, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h2><p>JSX 是 React 開發的重要語法，它能夠讓 UI 描述更加直觀，並與 JavaScript 無縫整合。透過學習 JSX，我們可以更高效地撰寫可重用的 React 組件，提高開發效率。</p>
-]]></content>
-      <tags>
-        <tag>react</tag>
-        <tag>JSX</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Jest AAA 測試原則入門教學筆記 | 學習筆記</title>
     <url>/2018/02/01/learning-notes-jest-unit-test-aaa-intro-tutorial/</url>
     <content><![CDATA[<h3 id="範例測試：saveMoney-方法"><a href="#範例測試：saveMoney-方法" class="headerlink" title="範例測試：saveMoney 方法"></a><strong>範例測試：<code>saveMoney</code> 方法</strong></h3><p><code>atm.js</code>：</p>
@@ -5131,6 +5088,49 @@
       <tags>
         <tag>Jest</tag>
         <tag>ES Module</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JSX 入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/13/learning-notes-jsx-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="1-JSX-是什麼？"><a href="#1-JSX-是什麼？" class="headerlink" title="1. JSX 是什麼？"></a>1. JSX 是什麼？</h2><p>JSX（JavaScript XML）是一種語法擴展，主要用於 React 函式庫中，它允許在 JavaScript 代碼中撰寫類似 HTML 的語法，使 UI 組件的編寫更加直觀。JSX 並非原生 JavaScript，需要透過 Babel 轉譯成標準 JavaScript 代碼。</p>
+<h2 id="2-為什麼使用-JSX？"><a href="#2-為什麼使用-JSX？" class="headerlink" title="2. 為什麼使用 JSX？"></a>2. 為什麼使用 JSX？</h2><p>JSX 提供了一種更加可讀、直觀的方式來描述 UI 結構，相比於傳統的 JavaScript DOM 操作，它更簡潔易懂。此外，JSX 具備以下優勢：</p>
+<ul>
+<li><strong>可讀性高</strong>：類似 HTML 的語法使 UI 組件結構清晰。</li>
+<li><strong>與 JavaScript 無縫結合</strong>：可在 JSX 中嵌入 JavaScript 表達式。</li>
+<li><strong>更安全</strong>：React 會自動處理 XSS（跨站腳本攻擊），確保數據安全。</li>
+<li><strong>高效渲染</strong>：React 使用虛擬 DOM 最小化真實 DOM 更新，提高性能。</li>
+</ul>
+<h2 id="3-基本語法"><a href="#3-基本語法" class="headerlink" title="3. 基本語法"></a>3. 基本語法</h2><h3 id="3-1-基本範例"><a href="#3-1-基本範例" class="headerlink" title="3.1 基本範例"></a>3.1 基本範例</h3><p>JSX 允許我們在 JavaScript 代碼中使用類似 HTML 的語法來描述 UI：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, JSX!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(element, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-JSX-中的-JavaScript-表達式"><a href="#3-2-JSX-中的-JavaScript-表達式" class="headerlink" title="3.2 JSX 中的 JavaScript 表達式"></a>3.2 JSX 中的 JavaScript 表達式</h3><p>JSX 允許在 <code>&#123;&#125;</code> 中插入 JavaScript 表達式，例如變數、函式調用等。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">&quot;Alice&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;name&#125;!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-JSX-屬性"><a href="#3-3-JSX-屬性" class="headerlink" title="3.3 JSX 屬性"></a>3.3 JSX 屬性</h3><p>JSX 屬性與 HTML 類似，但有些屬性名稱需使用 camelCase，例如 <code>className</code> 取代 <code>class</code>，<code>htmlFor</code> 取代 <code>for</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;輸入文字&quot;</span> <span class="attr">className</span>=<span class="string">&quot;input-box&quot;</span> /&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-JSX-內聯樣式"><a href="#3-4-JSX-內聯樣式" class="headerlink" title="3.4 JSX 內聯樣式"></a>3.4 JSX 內聯樣式</h3><p>內聯樣式需使用 JavaScript 對象，且屬性名稱為 camelCase。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> style = &#123; <span class="attr">color</span>: <span class="string">&#x27;blue&#x27;</span>, <span class="attr">fontSize</span>: <span class="string">&#x27;20px&#x27;</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&#123;style&#125;</span>&gt;</span>這是一段藍色文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-JSX-中的條件與循環"><a href="#4-JSX-中的條件與循環" class="headerlink" title="4. JSX 中的條件與循環"></a>4. JSX 中的條件與循環</h2><h3 id="4-1-條件渲染（if…else）"><a href="#4-1-條件渲染（if…else）" class="headerlink" title="4.1 條件渲染（if…else）"></a>4.1 條件渲染（if…else）</h3><p>JSX 本身不支援 <code>if...else</code>，需使用三元運算子或變數。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> isLoggedIn = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">const</span> element = isLoggedIn ? <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>歡迎回來！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span> : <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>請登入<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-使用-amp-amp-運算符"><a href="#4-2-使用-amp-amp-運算符" class="headerlink" title="4.2 使用 &amp;&amp; 運算符"></a>4.2 使用 &amp;&amp; 運算符</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> messages = [<span class="string">&#x27;新訊息1&#x27;</span>, <span class="string">&#x27;新訊息2&#x27;</span>];</span><br><span class="line"><span class="keyword">const</span> element = (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    &#123;messages.length &gt; 0 &amp;&amp; <span class="tag">&lt;<span class="name">p</span>&gt;</span>你有 &#123;messages.length&#125; 則未讀訊息。<span class="tag">&lt;/<span class="name">p</span>&gt;</span>&#125;</span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-迴圈渲染（map）"><a href="#4-3-迴圈渲染（map）" class="headerlink" title="4.3 迴圈渲染（map）"></a>4.3 迴圈渲染（map）</h3><p>JSX 可透過 <code>map</code> 方法來動態渲染列表。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> list = [<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Banana&#x27;</span>, <span class="string">&#x27;Cherry&#x27;</span>];</span><br><span class="line"><span class="keyword">const</span> element = (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    &#123;list.map((item, index) =&gt; <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span>)&#125;</span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-JSX-與-React-組件"><a href="#5-JSX-與-React-組件" class="headerlink" title="5. JSX 與 React 組件"></a>5. JSX 與 React 組件</h2><p>JSX 可與 React 組件結合使用，提升 UI 開發的模組化程度。</p>
+<h3 id="5-1-函式型組件"><a href="#5-1-函式型組件" class="headerlink" title="5.1 函式型組件"></a>5.1 函式型組件</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Welcome</span>(<span class="params">props</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>你好，&#123;props.name&#125;！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">Welcome</span> <span class="attr">name</span>=<span class="string">&quot;小明&quot;</span> /&gt;</span></span>;</span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(element, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-類別型組件"><a href="#5-2-類別型組件" class="headerlink" title="5.2 類別型組件"></a>5.2 類別型組件</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Welcome</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>你好，&#123;this.props.name&#125;！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">Welcome</span> <span class="attr">name</span>=<span class="string">&quot;小明&quot;</span> /&gt;</span></span>;</span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(element, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h2><p>JSX 是 React 開發的重要語法，它能夠讓 UI 描述更加直觀，並與 JavaScript 無縫整合。透過學習 JSX，我們可以更高效地撰寫可重用的 React 組件，提高開發效率。</p>
+]]></content>
+      <tags>
+        <tag>react</tag>
+        <tag>JSX</tag>
       </tags>
   </entry>
   <entry>
@@ -7894,6 +7894,59 @@
       </tags>
   </entry>
   <entry>
+    <title>React Query 入門教學筆記 | 學習筆記</title>
+    <url>/2023/12/21/learning-notes-react-query-intro-tutorial%20copy/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>隨著前端應用程式越來越複雜，資料的取得、快取、同步更新以及狀態管理成為重要挑戰。傳統使用 <code>useEffect</code> 搭配 <code>fetch</code> 或 <code>axios</code> 取得資料，會讓程式碼變得冗長且難以維護，特別是需要處理快取、錯誤重試、背景重新整理（refetch）等功能時。</p>
+<p>React Query 是一個強大的資料同步庫，它抽象並管理伺服器狀態（server state），讓你能輕鬆完成資料抓取、快取、更新與錯誤處理。透過簡潔的 API 和自動化行為，讓前端開發者能專注於業務邏輯，而非繁瑣的資料管理。</p>
+<p>本篇教學將介紹 React Query 的核心概念，並提供簡單的實作範例，讓你快速理解如何在 React 專案中有效率且方便地使用 React Query。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p><strong>React Query 是什麼？</strong><br>專注於伺服器狀態管理的資料同步庫，提供資料取得、快取、自動重試、背景更新、分頁等功能。</p>
+</li>
+<li><p><strong>伺服器狀態（Server State） vs 本地狀態（Local State）</strong><br>React Query 管理的是伺服器端資料，不同於用 React 的 <code>useState</code> 管理元件內部的本地狀態。</p>
+</li>
+<li><p><strong>核心 Hook：<code>useQuery</code></strong><br>用來抓取和快取資料，接收一個 key 和一個 fetcher 函式，會自動處理 loading、error、資料快取。</p>
+</li>
+<li><p><strong>資料快取與自動同步</strong><br>React Query 會自動快取請求結果，並依設定自動重新抓取，保持資料最新。</p>
+</li>
+<li><p><strong>背景重新整理（Refetching）</strong><br>可設定在視窗獲得焦點時自動刷新資料，確保資料同步。</p>
+</li>
+<li><p><strong>錯誤重試機制</strong><br>請求失敗時可自動重試，避免因網路波動導致資料錯誤。</p>
+</li>
+<li><p><strong><code>useMutation</code></strong><br>用於資料變更（新增、修改、刪除）操作，並支援變更後自動重新整理相關快取。</p>
+</li>
+<li><p><strong>全域 Query Client</strong><br>使用 <code>QueryClient</code> 管理所有查詢狀態，需用 <code>QueryClientProvider</code> 包裹應用程式。</p>
+</li>
+<li><p><strong>方便整合各種請求函式庫</strong><br>可搭配 <code>fetch</code>、<code>axios</code> 等任意資料請求方式。</p>
+</li>
+</ul>
+<hr>
+<h2 id="實際範例"><a href="#實際範例" class="headerlink" title="實際範例"></a>實際範例</h2><h3 id="1-安裝"><a href="#1-安裝" class="headerlink" title="1. 安裝"></a>1. 安裝</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install @tanstack/react-query</span><br></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn add @tanstack/react-query</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-基本設定"><a href="#2-基本設定" class="headerlink" title="2. 基本設定"></a>2. 基本設定</h3><p>在 React 應用的根元件設定 <code>QueryClient</code> 與 <code>QueryClientProvider</code>：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">QueryClient</span>, <span class="title class_">QueryClientProvider</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@tanstack/react-query&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> queryClient = <span class="keyword">new</span> <span class="title class_">QueryClient</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">QueryClientProvider</span> <span class="attr">client</span>=<span class="string">&#123;queryClient&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">YourComponent</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">QueryClientProvider</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-使用-useQuery-抓取資料"><a href="#3-使用-useQuery-抓取資料" class="headerlink" title="3. 使用 useQuery 抓取資料"></a>3. 使用 <code>useQuery</code> 抓取資料</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useQuery &#125; <span class="keyword">from</span> <span class="string">&#x27;@tanstack/react-query&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 一個模擬的 fetch 函式，從 API 取得使用者清單</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchUsers</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&#x27;https://jsonplaceholder.typicode.com/users&#x27;</span>);</span><br><span class="line">  <span class="keyword">if</span> (!res.<span class="property">ok</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Network response was not ok&#x27;</span>);</span><br><span class="line">  <span class="keyword">return</span> res.<span class="title function_">json</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">UserList</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 使用 useQuery，第一參數為 key，第二參數為 fetch 函式</span></span><br><span class="line">  <span class="keyword">const</span> &#123; data, error, isLoading, isError &#125; = <span class="title function_">useQuery</span>([<span class="string">&#x27;users&#x27;</span>], fetchUsers);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (isLoading) <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>載入中...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (isError) <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>錯誤：&#123;error.message&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;data.map((user) =&gt; (</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;user.id&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          &#123;user.name&#125; (&#123;user.email&#125;)</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      ))&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">UserList</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-使用-useMutation-進行資料更新"><a href="#4-使用-useMutation-進行資料更新" class="headerlink" title="4. 使用 useMutation 進行資料更新"></a>4. 使用 <code>useMutation</code> 進行資料更新</h3><p>假設有一個新增使用者的 API，使用 <code>useMutation</code> 處理：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useMutation, useQueryClient &#125; <span class="keyword">from</span> <span class="string">&#x27;@tanstack/react-query&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">addUser</span>(<span class="params">newUser</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&#x27;https://jsonplaceholder.typicode.com/users&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">    <span class="attr">body</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(newUser),</span><br><span class="line">    <span class="attr">headers</span>: &#123; <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span> &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">if</span> (!res.<span class="property">ok</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;新增失敗&#x27;</span>);</span><br><span class="line">  <span class="keyword">return</span> res.<span class="title function_">json</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">AddUserForm</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [name, setName] = <span class="title function_">useState</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">  <span class="keyword">const</span> queryClient = <span class="title function_">useQueryClient</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> mutation = <span class="title function_">useMutation</span>(addUser, &#123;</span><br><span class="line">    <span class="attr">onSuccess</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 新增成功後，重新整理 users 快取</span></span><br><span class="line">      queryClient.<span class="title function_">invalidateQueries</span>([<span class="string">&#x27;users&#x27;</span>]);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">handleSubmit</span> = (<span class="params">e</span>) =&gt; &#123;</span><br><span class="line">    e.<span class="title function_">preventDefault</span>();</span><br><span class="line">    mutation.<span class="title function_">mutate</span>(&#123; name &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">form</span> <span class="attr">onSubmit</span>=<span class="string">&#123;handleSubmit&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">value</span>=<span class="string">&#123;name&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;(e)</span> =&gt;</span> setName(e.target.value)&#125; placeholder=&quot;使用者名稱&quot; /&gt;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>新增使用者<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;mutation.isLoading &amp;&amp; <span class="tag">&lt;<span class="name">p</span>&gt;</span>新增中...<span class="tag">&lt;/<span class="name">p</span>&gt;</span>&#125;</span></span><br><span class="line"><span class="language-xml">      &#123;mutation.isError &amp;&amp; <span class="tag">&lt;<span class="name">p</span>&gt;</span>錯誤：&#123;mutation.error.message&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span>&#125;</span></span><br><span class="line"><span class="language-xml">      &#123;mutation.isSuccess &amp;&amp; <span class="tag">&lt;<span class="name">p</span>&gt;</span>新增成功！<span class="tag">&lt;/<span class="name">p</span>&gt;</span>&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">AddUserForm</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>React Query 提供一套完整且簡潔的 API 來管理伺服器狀態，包含資料取得、快取、錯誤處理與背景更新。透過 <code>useQuery</code> 與 <code>useMutation</code>，你能輕鬆地處理資料的讀取與更新，讓 React 應用程式更穩定且易維護。</p>
+<p>建議在開發中逐步導入 React Query，取代傳統的 <code>useEffect + fetch</code> 模式，尤其是對於複雜的資料流與同步需求，能大幅提升開發效率與使用者體驗。</p>
+<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
+<li><a href="%5Bhttps://tanstack.com/query/latest">React Query 文件</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>React</tag>
+        <tag>React Query</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>React Redux 介紹入門教學筆記 | 學習筆記</title>
     <url>/2024/12/12/learning-notes-react-redux-intro-tutorial/</url>
     <content><![CDATA[<h4 id="1-什麼是-Redux？"><a href="#1-什麼是-Redux？" class="headerlink" title="1. 什麼是 Redux？"></a>1. 什麼是 Redux？</h4><p><code>Redux</code> 是 JavaScript 應用程式的狀態管理工具，最常與 React 搭配使用。它提供一個單一的全域狀態樹，使應用程式的狀態變更更可預測、可測試、可維護。Redux 遵循 <strong>單向數據流</strong> 和 <strong>不可變狀態</strong> 的概念，適合管理大型應用的複雜狀態。  </p>
@@ -8041,59 +8094,6 @@
         <tag>ReactJS</tag>
         <tag>useMemo</tag>
         <tag>useCallback</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>React Query 入門教學筆記 | 學習筆記</title>
-    <url>/2023/12/21/learning-notes-react-query-intro-tutorial%20copy/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>隨著前端應用程式越來越複雜，資料的取得、快取、同步更新以及狀態管理成為重要挑戰。傳統使用 <code>useEffect</code> 搭配 <code>fetch</code> 或 <code>axios</code> 取得資料，會讓程式碼變得冗長且難以維護，特別是需要處理快取、錯誤重試、背景重新整理（refetch）等功能時。</p>
-<p>React Query 是一個強大的資料同步庫，它抽象並管理伺服器狀態（server state），讓你能輕鬆完成資料抓取、快取、更新與錯誤處理。透過簡潔的 API 和自動化行為，讓前端開發者能專注於業務邏輯，而非繁瑣的資料管理。</p>
-<p>本篇教學將介紹 React Query 的核心概念，並提供簡單的實作範例，讓你快速理解如何在 React 專案中有效率且方便地使用 React Query。</p>
-<hr>
-<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
-<li><p><strong>React Query 是什麼？</strong><br>專注於伺服器狀態管理的資料同步庫，提供資料取得、快取、自動重試、背景更新、分頁等功能。</p>
-</li>
-<li><p><strong>伺服器狀態（Server State） vs 本地狀態（Local State）</strong><br>React Query 管理的是伺服器端資料，不同於用 React 的 <code>useState</code> 管理元件內部的本地狀態。</p>
-</li>
-<li><p><strong>核心 Hook：<code>useQuery</code></strong><br>用來抓取和快取資料，接收一個 key 和一個 fetcher 函式，會自動處理 loading、error、資料快取。</p>
-</li>
-<li><p><strong>資料快取與自動同步</strong><br>React Query 會自動快取請求結果，並依設定自動重新抓取，保持資料最新。</p>
-</li>
-<li><p><strong>背景重新整理（Refetching）</strong><br>可設定在視窗獲得焦點時自動刷新資料，確保資料同步。</p>
-</li>
-<li><p><strong>錯誤重試機制</strong><br>請求失敗時可自動重試，避免因網路波動導致資料錯誤。</p>
-</li>
-<li><p><strong><code>useMutation</code></strong><br>用於資料變更（新增、修改、刪除）操作，並支援變更後自動重新整理相關快取。</p>
-</li>
-<li><p><strong>全域 Query Client</strong><br>使用 <code>QueryClient</code> 管理所有查詢狀態，需用 <code>QueryClientProvider</code> 包裹應用程式。</p>
-</li>
-<li><p><strong>方便整合各種請求函式庫</strong><br>可搭配 <code>fetch</code>、<code>axios</code> 等任意資料請求方式。</p>
-</li>
-</ul>
-<hr>
-<h2 id="實際範例"><a href="#實際範例" class="headerlink" title="實際範例"></a>實際範例</h2><h3 id="1-安裝"><a href="#1-安裝" class="headerlink" title="1. 安裝"></a>1. 安裝</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install @tanstack/react-query</span><br></pre></td></tr></table></figure>
-
-<p>或</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn add @tanstack/react-query</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-基本設定"><a href="#2-基本設定" class="headerlink" title="2. 基本設定"></a>2. 基本設定</h3><p>在 React 應用的根元件設定 <code>QueryClient</code> 與 <code>QueryClientProvider</code>：</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">QueryClient</span>, <span class="title class_">QueryClientProvider</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@tanstack/react-query&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> queryClient = <span class="keyword">new</span> <span class="title class_">QueryClient</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">QueryClientProvider</span> <span class="attr">client</span>=<span class="string">&#123;queryClient&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">YourComponent</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">QueryClientProvider</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-使用-useQuery-抓取資料"><a href="#3-使用-useQuery-抓取資料" class="headerlink" title="3. 使用 useQuery 抓取資料"></a>3. 使用 <code>useQuery</code> 抓取資料</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useQuery &#125; <span class="keyword">from</span> <span class="string">&#x27;@tanstack/react-query&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 一個模擬的 fetch 函式，從 API 取得使用者清單</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchUsers</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&#x27;https://jsonplaceholder.typicode.com/users&#x27;</span>);</span><br><span class="line">  <span class="keyword">if</span> (!res.<span class="property">ok</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Network response was not ok&#x27;</span>);</span><br><span class="line">  <span class="keyword">return</span> res.<span class="title function_">json</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">UserList</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 使用 useQuery，第一參數為 key，第二參數為 fetch 函式</span></span><br><span class="line">  <span class="keyword">const</span> &#123; data, error, isLoading, isError &#125; = <span class="title function_">useQuery</span>([<span class="string">&#x27;users&#x27;</span>], fetchUsers);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (isLoading) <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>載入中...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (isError) <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>錯誤：&#123;error.message&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;data.map((user) =&gt; (</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;user.id&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          &#123;user.name&#125; (&#123;user.email&#125;)</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      ))&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">UserList</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-使用-useMutation-進行資料更新"><a href="#4-使用-useMutation-進行資料更新" class="headerlink" title="4. 使用 useMutation 進行資料更新"></a>4. 使用 <code>useMutation</code> 進行資料更新</h3><p>假設有一個新增使用者的 API，使用 <code>useMutation</code> 處理：</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useMutation, useQueryClient &#125; <span class="keyword">from</span> <span class="string">&#x27;@tanstack/react-query&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">addUser</span>(<span class="params">newUser</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&#x27;https://jsonplaceholder.typicode.com/users&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">    <span class="attr">body</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(newUser),</span><br><span class="line">    <span class="attr">headers</span>: &#123; <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span> &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">if</span> (!res.<span class="property">ok</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;新增失敗&#x27;</span>);</span><br><span class="line">  <span class="keyword">return</span> res.<span class="title function_">json</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">AddUserForm</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [name, setName] = <span class="title function_">useState</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">  <span class="keyword">const</span> queryClient = <span class="title function_">useQueryClient</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> mutation = <span class="title function_">useMutation</span>(addUser, &#123;</span><br><span class="line">    <span class="attr">onSuccess</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 新增成功後，重新整理 users 快取</span></span><br><span class="line">      queryClient.<span class="title function_">invalidateQueries</span>([<span class="string">&#x27;users&#x27;</span>]);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">handleSubmit</span> = (<span class="params">e</span>) =&gt; &#123;</span><br><span class="line">    e.<span class="title function_">preventDefault</span>();</span><br><span class="line">    mutation.<span class="title function_">mutate</span>(&#123; name &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">form</span> <span class="attr">onSubmit</span>=<span class="string">&#123;handleSubmit&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">value</span>=<span class="string">&#123;name&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;(e)</span> =&gt;</span> setName(e.target.value)&#125; placeholder=&quot;使用者名稱&quot; /&gt;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>新增使用者<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;mutation.isLoading &amp;&amp; <span class="tag">&lt;<span class="name">p</span>&gt;</span>新增中...<span class="tag">&lt;/<span class="name">p</span>&gt;</span>&#125;</span></span><br><span class="line"><span class="language-xml">      &#123;mutation.isError &amp;&amp; <span class="tag">&lt;<span class="name">p</span>&gt;</span>錯誤：&#123;mutation.error.message&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span>&#125;</span></span><br><span class="line"><span class="language-xml">      &#123;mutation.isSuccess &amp;&amp; <span class="tag">&lt;<span class="name">p</span>&gt;</span>新增成功！<span class="tag">&lt;/<span class="name">p</span>&gt;</span>&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">AddUserForm</span>;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>React Query 提供一套完整且簡潔的 API 來管理伺服器狀態，包含資料取得、快取、錯誤處理與背景更新。透過 <code>useQuery</code> 與 <code>useMutation</code>，你能輕鬆地處理資料的讀取與更新，讓 React 應用程式更穩定且易維護。</p>
-<p>建議在開發中逐步導入 React Query，取代傳統的 <code>useEffect + fetch</code> 模式，尤其是對於複雜的資料流與同步需求，能大幅提升開發效率與使用者體驗。</p>
-<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
-<li><a href="%5Bhttps://tanstack.com/query/latest">React Query 文件</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>React</tag>
-        <tag>React Query</tag>
       </tags>
   </entry>
   <entry>
@@ -8317,6 +8317,149 @@
       </tags>
   </entry>
   <entry>
+    <title>資料庫索引（Index）介紹入門教學筆記 | 學習筆記</title>
+    <url>/2025/02/20/learning-notes-roo-code-intro-tutorial%20copy/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在資料庫中，隨著資料筆數的增加，查詢效率成為一個重要的議題。舉例來說，若在百萬筆資料中查找某一筆特定紀錄，如果沒有任何輔助結構，資料庫就必須逐筆掃描（Full Table Scan），效率極差。為了解決這個問題，資料庫系統引入了「索引（Index）」這個概念，來加速查詢與特定操作。索引的設計與使用，是每一位軟體工程師與資料庫設計者都必須掌握的核心技能。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><p><strong>一、索引的主要功能：</strong></p>
+<ul>
+<li>加速查詢（SELECT）</li>
+<li>優化條件篩選（WHERE）</li>
+<li>提升排序效率（ORDER BY）</li>
+<li>支援唯一性約束（UNIQUE）</li>
+<li>加快資料關聯查詢（JOIN）</li>
+</ul>
+<p><strong>二、常見索引類型：</strong></p>
+<ul>
+<li>B-Tree Index：最常見的預設索引類型，適合範圍查詢。</li>
+<li>Hash Index：適合等值查詢（&#x3D;），不支援範圍查詢。</li>
+<li>Composite Index（複合索引）：由多個欄位組成，適用多條件查詢。</li>
+<li>Full-text Index：針對全文搜尋設計。</li>
+<li>Spatial Index：用於地理空間查詢。</li>
+</ul>
+<p><strong>三、索引的優點：</strong></p>
+<ul>
+<li>提升查詢速度</li>
+<li>減少 I&#x2F;O 操作</li>
+<li>加快 JOIN 與 GROUP BY 的效能</li>
+<li>強化資料的唯一性驗證</li>
+</ul>
+<p><strong>四、索引的缺點：</strong></p>
+<ul>
+<li>佔用磁碟空間</li>
+<li>寫入（INSERT&#x2F;UPDATE&#x2F;DELETE）成本增加</li>
+<li>過多或不當索引會影響效能</li>
+<li>需定期維護（如重建或重組索引）</li>
+</ul>
+<p><strong>五、何時應該使用索引：</strong></p>
+<ul>
+<li>查詢常出現的欄位（如常出現在 WHERE、JOIN、ORDER BY 中）</li>
+<li>欄位選擇性高（值分布離散，如身分證字號）</li>
+<li>查詢慢、Table Scan 明顯的情況</li>
+</ul>
+<p><strong>六、何時不應使用索引：</strong></p>
+<ul>
+<li>小資料表（資料筆數很少）</li>
+<li>經常被更新的欄位</li>
+<li>欄位選擇性低（如性別只有兩種值）</li>
+</ul>
+<hr>
+<h2 id="實際範例"><a href="#實際範例" class="headerlink" title="實際範例"></a>實際範例</h2><h3 id="1-基本使用"><a href="#1-基本使用" class="headerlink" title="1. 基本使用"></a>1. 基本使用</h3><p>以 MySQL 為例，假設有一個 <code>users</code> 表格如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> users (</span><br><span class="line">  id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY AUTO_INCREMENT,</span><br><span class="line">  name <span class="type">VARCHAR</span>(<span class="number">100</span>),</span><br><span class="line">  email <span class="type">VARCHAR</span>(<span class="number">100</span>),</span><br><span class="line">  age <span class="type">INT</span>,</span><br><span class="line">  created_at DATETIME</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>現在若經常根據 <code>email</code> 來查詢使用者：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> email <span class="operator">=</span> <span class="string">&#x27;user@example.com&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>若未建立索引，MySQL 將會進行全表掃描。為了加速查詢，我們可以加上索引：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> INDEX idx_email <span class="keyword">ON</span> users(email);</span><br></pre></td></tr></table></figure>
+
+<p>查詢效率將大幅提升，特別是在資料筆數達到十萬以上的情況。</p>
+<hr>
+<h3 id="2-複合索引"><a href="#2-複合索引" class="headerlink" title="2. 複合索引"></a>2. 複合索引</h3><p>如果我們常查詢條件如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">=</span> <span class="number">30</span> <span class="keyword">AND</span> created_at <span class="operator">&gt;</span> <span class="string">&#x27;2025-01-01&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>可以建立複合索引：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> INDEX idx_age_created <span class="keyword">ON</span> users(age, created_at);</span><br></pre></td></tr></table></figure>
+
+<p>但注意複合索引有「最左前綴原則」，必須按照索引欄位的排列順序來使用，否則可能無法被使用。</p>
+<p>例如：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 可使用 idx_age_created</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">=</span> <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 可使用 idx_age_created</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">=</span> <span class="number">30</span> <span class="keyword">AND</span> created_at <span class="operator">&gt;</span> <span class="string">&#x27;2025-01-01&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 無法使用 idx_age_created</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> created_at <span class="operator">&gt;</span> <span class="string">&#x27;2025-01-01&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-檢查查詢是否使用索引"><a href="#3-檢查查詢是否使用索引" class="headerlink" title="3. 檢查查詢是否使用索引"></a>3. 檢查查詢是否使用索引</h3><p>可以利用 <code>EXPLAIN</code> 關鍵字來檢查查詢是否有使用索引：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">EXPLAIN <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> email <span class="operator">=</span> <span class="string">&#x27;user@example.com&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>若 <code>key</code> 欄位顯示為 <code>idx_email</code>，表示查詢有使用到索引。</p>
+<hr>
+<h3 id="4-索引對寫入的影響"><a href="#4-索引對寫入的影響" class="headerlink" title="4. 索引對寫入的影響"></a>4. 索引對寫入的影響</h3><p>當對有索引的欄位進行大量更新時，索引也需要同步更新，可能導致效能下降。例如：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> users <span class="keyword">SET</span> email <span class="operator">=</span> CONCAT(email, <span class="string">&#x27;.tw&#x27;</span>) <span class="keyword">WHERE</span> age <span class="operator">=</span> <span class="number">30</span>;</span><br></pre></td></tr></table></figure>
+
+<p>此時 <code>email</code> 有索引，會導致該索引也被修改，因此執行效率會受到影響。</p>
+<hr>
+<h3 id="5-刪除不必要的索引"><a href="#5-刪除不必要的索引" class="headerlink" title="5. 刪除不必要的索引"></a>5. 刪除不必要的索引</h3><p>過多的索引會拖慢寫入效能並佔用磁碟空間。可以定期使用以下指令刪除不再使用的索引：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> INDEX idx_email <span class="keyword">ON</span> users;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>索引是資料庫查詢效能優化的關鍵利器，但同時也是一把雙面刃。正確使用索引能大幅加速系統效能，不當使用則可能導致資源浪費甚至拖慢效能。實務上應透過實際的查詢分析與監控（如慢查詢日誌、<code>EXPLAIN</code>），謹慎設計與調整索引策略，才能在讀寫效能間取得最佳平衡。</p>
+]]></content>
+      <tags>
+        <tag>編輯器</tag>
+        <tag>VS Code</tag>
+        <tag>Roo Code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SASS 語法介紹入門教學筆記 | 學習筆記</title>
+    <url>/2024/06/30/learning-notes-sass-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="什麼是-SASS？"><a href="#什麼是-SASS？" class="headerlink" title="什麼是 SASS？"></a>什麼是 SASS？</h1><p><code>SASS</code>（Syntactically Awesome Style Sheets）是一種 CSS 預處理器，旨在提升 CSS 的功能性，讓開發者能夠以更加靈活和高效的方式編寫樣式表。它提供了許多比 CSS 更強大的功能，例如變數、巢狀規則、混合（mixins）、繼承等。SASS 語法有兩種主要形式：一種是較為常見的 SCSS（<code>Sassy CSS</code>），另一種則是 <code>SASS</code>，本文將主要介紹 SASS 語法。</p>
+<p>與 SCSS 不同，SASS 語法採用的是縮排語法，即不使用大括號和分號，而是利用縮排來結構化程式碼。這種語法更簡潔，對於習慣 Python 等語言的開發者來說，學習曲線較為平滑。</p>
+<h1 id="安裝與設置"><a href="#安裝與設置" class="headerlink" title="安裝與設置"></a>安裝與設置</h1><p>要開始使用 SASS，首先需要安裝 SASS 編譯器。最常見的安裝方式是透過 Node.js 的 npm（Node Package Manager）。請按照以下步驟進行安裝：</p>
+<ol>
+<li><p>確保已經安裝了 Node.js 和 npm。</p>
+</li>
+<li><p>打開終端機，並在專案資料夾中執行以下命令來安裝 SASS：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g sass</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安裝完成後，可以通過命令行執行 SASS 編譯命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sass input.sass output.css</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>這樣，<code>input.sass</code> 就會被編譯為標準的 <code>output.css</code> 檔案。</p>
+<h1 id="SASS-語法介紹"><a href="#SASS-語法介紹" class="headerlink" title="SASS 語法介紹"></a>SASS 語法介紹</h1><h3 id="1-變數（Variables）"><a href="#1-變數（Variables）" class="headerlink" title="1. 變數（Variables）"></a>1. 變數（Variables）</h3><p>SASS 的變數功能讓開發者可以將顏色、字體大小、間距等常用值儲存在變數中，這樣能夠提高樣式的可重用性，並讓程式碼更具維護性。在 SASS 中，變數以 <code>$</code> 符號開頭。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$primary-color: #3498db</span><br><span class="line">$font-size: 16px</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  font-size: $font-size</span><br><span class="line">  color: $primary-color</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了 <code>$primary-color</code> 和 <code>$font-size</code> 兩個變數，並將其應用於 <code>body</code> 樣式中。這樣，只需要修改變數的值，即可全局更新相應的樣式。</p>
+<h3 id="2-巢狀規則（Nesting）"><a href="#2-巢狀規則（Nesting）" class="headerlink" title="2. 巢狀規則（Nesting）"></a>2. 巢狀規則（Nesting）</h3><p>SASS 支援巢狀規則，這樣可以讓樣式更加結構化，並且簡化對於子元素樣式的編寫。SASS 使用縮排來表示層級關係，這一點與傳統的 CSS 需要寫出完整選擇器有所不同。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nav</span><br><span class="line">  background-color: #333</span><br><span class="line">  ul</span><br><span class="line">    list-style-type: none</span><br><span class="line">    padding: 0</span><br><span class="line">  li</span><br><span class="line">    display: inline-block</span><br><span class="line">  a</span><br><span class="line">    color: white</span><br><span class="line">    text-decoration: none</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼會被編譯為：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">list-style-type</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣的寫法可以避免寫重複的選擇器，並且清晰地表現出元素之間的層級結構。</p>
+<h3 id="3-混合（Mixins）"><a href="#3-混合（Mixins）" class="headerlink" title="3. 混合（Mixins）"></a>3. 混合（Mixins）</h3><p>混合是 SASS 中一個非常有用的功能，它可以將一段可重用的樣式封裝成一個混合，並且可以接受參數，實現樣式的動態應用。混合類似於函數，能夠在不同地方重複使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">=mixin border-radius($radius)</span><br><span class="line">  -webkit-border-radius: $radius</span><br><span class="line">  -moz-border-radius: $radius</span><br><span class="line">  border-radius: $radius</span><br><span class="line"></span><br><span class="line">.box</span><br><span class="line">  @include border-radius(10px)</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了一個名為 <code>border-radius</code> 的混合，接受一個 <code>$radius</code> 參數，用來設置元素的邊框圓角。然後，我們在 <code>.box</code> 中使用 <code>@include</code> 引入這個混合，並傳遞具體的參數。這樣，當需要改變邊框圓角的樣式時，只需要修改混合的參數，而不需要在多個地方重複編寫。</p>
+<h3 id="4-繼承（Inheritance）"><a href="#4-繼承（Inheritance）" class="headerlink" title="4. 繼承（Inheritance）"></a>4. 繼承（Inheritance）</h3><p>SASS 提供了繼承功能，使得一個選擇器可以繼承另一個選擇器的樣式。這有助於減少樣式重複，並保持程式碼的整潔性。SASS 使用 <code>@extend</code> 指令來實現繼承。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%button-base</span><br><span class="line">  padding: 10px 15px</span><br><span class="line">  background-color: #3498db</span><br><span class="line">  color: white</span><br><span class="line">  border: none</span><br><span class="line">  border-radius: 5px</span><br><span class="line"></span><br><span class="line">.button-primary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #1abc9c</span><br><span class="line"></span><br><span class="line">.button-secondary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #f39c12</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，我們定義了一個 <code>%button-base</code> 共享樣式，然後讓 <code>.button-primary</code> 和 <code>.button-secondary</code> 繼承這些樣式，並根據需要進行自定義修改。使用繼承的方式可以減少代碼重複，提高樣式的可維護性。</p>
+<h3 id="5-條件語句（Conditionals）"><a href="#5-條件語句（Conditionals）" class="headerlink" title="5. 條件語句（Conditionals）"></a>5. 條件語句（Conditionals）</h3><p>SASS 支援條件語句，這讓我們可以根據某些條件選擇性地應用不同的樣式。這樣可以使樣式表更具動態性，根據不同情境調整顯示效果。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$theme: light</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  @if $theme == light</span><br><span class="line">    background-color: #fff</span><br><span class="line">    color: #333</span><br><span class="line">  @else</span><br><span class="line">    background-color: #333</span><br><span class="line">    color: #fff</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼中，根據變數 <code>$theme</code> 的值，條件地設定 <code>body</code> 的背景顏色和文字顏色。如果 <code>$theme</code> 為 <code>light</code>，則使用淺色背景和深色文字；否則，使用深色背景和淺色文字。</p>
+<h3 id="6-循環（Loops）"><a href="#6-循環（Loops）" class="headerlink" title="6. 循環（Loops）"></a>6. 循環（Loops）</h3><p>SASS 還支援循環語句，這在需要根據某些條件自動生成多個樣式時非常有用。SASS 的循環可以遍歷一個列表，並生成對應的樣式。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$colors: red, green, blue</span><br><span class="line"></span><br><span class="line">@each $color in $colors</span><br><span class="line">  .#&#123;$color&#125;-box</span><br><span class="line">    background-color: $color</span><br></pre></td></tr></table></figure>
+
+<p>在這段程式碼中，<code>@each</code> 循環將遍歷 <code>$colors</code> 列表，並為每個顏色生成一個相應的類別 <code>.red-box</code>、<code>.green-box</code> 和 <code>.blue-box</code>，並將其背景顏色設置為對應的顏色。</p>
+<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>SASS 的 SASS 語法是一種簡潔且強大的 CSS 編寫方式，通過簡單的縮排結構，讓開發者能夠更有效率地編寫和維護樣式。SASS 提供的變數、巢狀規則、混合、繼承等功能，能夠使樣式更加模組化、動態化，並大大減少冗餘代碼。學會 SASS 語法後，你可以更靈活地處理大型專案中的 CSS，提升工作效率。如果你還沒有開始使用 SASS，不妨從這些基礎語法開始，體驗它帶來的便利。</p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>SASS</tag>
+        <tag>SCSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Roo Code 詳細介紹：AI VS Code 編輯器外掛入門教學筆記 | 學習筆記</title>
     <url>/2025/02/20/learning-notes-roo-code-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Roo Code（原名 Roo Cline）是一款嵌入於 Visual Studio Code 編輯器中的開源 AI 代理，能讀寫檔案、自動執行終端指令、操作瀏覽器，甚至整合多種 LLM 模型。無論是編寫程式、重構、除錯、架構設計，Roo Code 都能協助你提升開發效率，更像是一個智慧且自主的開發團隊成員。</p>
@@ -8425,57 +8568,6 @@
         <tag>編輯器</tag>
         <tag>VS Code</tag>
         <tag>Roo Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SASS 語法介紹入門教學筆記 | 學習筆記</title>
-    <url>/2024/06/30/learning-notes-sass-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="什麼是-SASS？"><a href="#什麼是-SASS？" class="headerlink" title="什麼是 SASS？"></a>什麼是 SASS？</h1><p><code>SASS</code>（Syntactically Awesome Style Sheets）是一種 CSS 預處理器，旨在提升 CSS 的功能性，讓開發者能夠以更加靈活和高效的方式編寫樣式表。它提供了許多比 CSS 更強大的功能，例如變數、巢狀規則、混合（mixins）、繼承等。SASS 語法有兩種主要形式：一種是較為常見的 SCSS（<code>Sassy CSS</code>），另一種則是 <code>SASS</code>，本文將主要介紹 SASS 語法。</p>
-<p>與 SCSS 不同，SASS 語法採用的是縮排語法，即不使用大括號和分號，而是利用縮排來結構化程式碼。這種語法更簡潔，對於習慣 Python 等語言的開發者來說，學習曲線較為平滑。</p>
-<h1 id="安裝與設置"><a href="#安裝與設置" class="headerlink" title="安裝與設置"></a>安裝與設置</h1><p>要開始使用 SASS，首先需要安裝 SASS 編譯器。最常見的安裝方式是透過 Node.js 的 npm（Node Package Manager）。請按照以下步驟進行安裝：</p>
-<ol>
-<li><p>確保已經安裝了 Node.js 和 npm。</p>
-</li>
-<li><p>打開終端機，並在專案資料夾中執行以下命令來安裝 SASS：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g sass</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安裝完成後，可以通過命令行執行 SASS 編譯命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sass input.sass output.css</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>這樣，<code>input.sass</code> 就會被編譯為標準的 <code>output.css</code> 檔案。</p>
-<h1 id="SASS-語法介紹"><a href="#SASS-語法介紹" class="headerlink" title="SASS 語法介紹"></a>SASS 語法介紹</h1><h3 id="1-變數（Variables）"><a href="#1-變數（Variables）" class="headerlink" title="1. 變數（Variables）"></a>1. 變數（Variables）</h3><p>SASS 的變數功能讓開發者可以將顏色、字體大小、間距等常用值儲存在變數中，這樣能夠提高樣式的可重用性，並讓程式碼更具維護性。在 SASS 中，變數以 <code>$</code> 符號開頭。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$primary-color: #3498db</span><br><span class="line">$font-size: 16px</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  font-size: $font-size</span><br><span class="line">  color: $primary-color</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，我們定義了 <code>$primary-color</code> 和 <code>$font-size</code> 兩個變數，並將其應用於 <code>body</code> 樣式中。這樣，只需要修改變數的值，即可全局更新相應的樣式。</p>
-<h3 id="2-巢狀規則（Nesting）"><a href="#2-巢狀規則（Nesting）" class="headerlink" title="2. 巢狀規則（Nesting）"></a>2. 巢狀規則（Nesting）</h3><p>SASS 支援巢狀規則，這樣可以讓樣式更加結構化，並且簡化對於子元素樣式的編寫。SASS 使用縮排來表示層級關係，這一點與傳統的 CSS 需要寫出完整選擇器有所不同。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nav</span><br><span class="line">  background-color: #333</span><br><span class="line">  ul</span><br><span class="line">    list-style-type: none</span><br><span class="line">    padding: 0</span><br><span class="line">  li</span><br><span class="line">    display: inline-block</span><br><span class="line">  a</span><br><span class="line">    color: white</span><br><span class="line">    text-decoration: none</span><br></pre></td></tr></table></figure>
-
-<p>這段程式碼會被編譯為：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">list-style-type</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這樣的寫法可以避免寫重複的選擇器，並且清晰地表現出元素之間的層級結構。</p>
-<h3 id="3-混合（Mixins）"><a href="#3-混合（Mixins）" class="headerlink" title="3. 混合（Mixins）"></a>3. 混合（Mixins）</h3><p>混合是 SASS 中一個非常有用的功能，它可以將一段可重用的樣式封裝成一個混合，並且可以接受參數，實現樣式的動態應用。混合類似於函數，能夠在不同地方重複使用。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">=mixin border-radius($radius)</span><br><span class="line">  -webkit-border-radius: $radius</span><br><span class="line">  -moz-border-radius: $radius</span><br><span class="line">  border-radius: $radius</span><br><span class="line"></span><br><span class="line">.box</span><br><span class="line">  @include border-radius(10px)</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，我們定義了一個名為 <code>border-radius</code> 的混合，接受一個 <code>$radius</code> 參數，用來設置元素的邊框圓角。然後，我們在 <code>.box</code> 中使用 <code>@include</code> 引入這個混合，並傳遞具體的參數。這樣，當需要改變邊框圓角的樣式時，只需要修改混合的參數，而不需要在多個地方重複編寫。</p>
-<h3 id="4-繼承（Inheritance）"><a href="#4-繼承（Inheritance）" class="headerlink" title="4. 繼承（Inheritance）"></a>4. 繼承（Inheritance）</h3><p>SASS 提供了繼承功能，使得一個選擇器可以繼承另一個選擇器的樣式。這有助於減少樣式重複，並保持程式碼的整潔性。SASS 使用 <code>@extend</code> 指令來實現繼承。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%button-base</span><br><span class="line">  padding: 10px 15px</span><br><span class="line">  background-color: #3498db</span><br><span class="line">  color: white</span><br><span class="line">  border: none</span><br><span class="line">  border-radius: 5px</span><br><span class="line"></span><br><span class="line">.button-primary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #1abc9c</span><br><span class="line"></span><br><span class="line">.button-secondary</span><br><span class="line">  @extend %button-base</span><br><span class="line">  background-color: #f39c12</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，我們定義了一個 <code>%button-base</code> 共享樣式，然後讓 <code>.button-primary</code> 和 <code>.button-secondary</code> 繼承這些樣式，並根據需要進行自定義修改。使用繼承的方式可以減少代碼重複，提高樣式的可維護性。</p>
-<h3 id="5-條件語句（Conditionals）"><a href="#5-條件語句（Conditionals）" class="headerlink" title="5. 條件語句（Conditionals）"></a>5. 條件語句（Conditionals）</h3><p>SASS 支援條件語句，這讓我們可以根據某些條件選擇性地應用不同的樣式。這樣可以使樣式表更具動態性，根據不同情境調整顯示效果。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$theme: light</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  @if $theme == light</span><br><span class="line">    background-color: #fff</span><br><span class="line">    color: #333</span><br><span class="line">  @else</span><br><span class="line">    background-color: #333</span><br><span class="line">    color: #fff</span><br></pre></td></tr></table></figure>
-
-<p>這段程式碼中，根據變數 <code>$theme</code> 的值，條件地設定 <code>body</code> 的背景顏色和文字顏色。如果 <code>$theme</code> 為 <code>light</code>，則使用淺色背景和深色文字；否則，使用深色背景和淺色文字。</p>
-<h3 id="6-循環（Loops）"><a href="#6-循環（Loops）" class="headerlink" title="6. 循環（Loops）"></a>6. 循環（Loops）</h3><p>SASS 還支援循環語句，這在需要根據某些條件自動生成多個樣式時非常有用。SASS 的循環可以遍歷一個列表，並生成對應的樣式。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$colors: red, green, blue</span><br><span class="line"></span><br><span class="line">@each $color in $colors</span><br><span class="line">  .#&#123;$color&#125;-box</span><br><span class="line">    background-color: $color</span><br></pre></td></tr></table></figure>
-
-<p>在這段程式碼中，<code>@each</code> 循環將遍歷 <code>$colors</code> 列表，並為每個顏色生成一個相應的類別 <code>.red-box</code>、<code>.green-box</code> 和 <code>.blue-box</code>，並將其背景顏色設置為對應的顏色。</p>
-<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>SASS 的 SASS 語法是一種簡潔且強大的 CSS 編寫方式，通過簡單的縮排結構，讓開發者能夠更有效率地編寫和維護樣式。SASS 提供的變數、巢狀規則、混合、繼承等功能，能夠使樣式更加模組化、動態化，並大大減少冗餘代碼。學會 SASS 語法後，你可以更靈活地處理大型專案中的 CSS，提升工作效率。如果你還沒有開始使用 SASS，不妨從這些基礎語法開始，體驗它帶來的便利。</p>
-]]></content>
-      <tags>
-        <tag>CSS</tag>
-        <tag>SASS</tag>
-        <tag>SCSS</tag>
       </tags>
   </entry>
   <entry>
@@ -8996,6 +9088,64 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue i18n 入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/13/learning-notes-vue-i18n-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="1-Vue-I18n-簡介"><a href="#1-Vue-I18n-簡介" class="headerlink" title="1. Vue I18n 簡介"></a>1. Vue I18n 簡介</h2><p>Vue i18n 是 Vue.js 的國際化（Internationalization）解決方案，可用於管理應用程式的多語系內容。當開發需要支援不同語言的應用時，Vue i18n 提供了一個高效的方式來處理翻譯、數字格式、日期格式等。</p>
+<h3 id="1-1-為何使用-Vue-I18n？"><a href="#1-1-為何使用-Vue-I18n？" class="headerlink" title="1.1 為何使用 Vue I18n？"></a>1.1 為何使用 Vue I18n？</h3><ul>
+<li><strong>動態切換語言</strong>：讓使用者能夠即時更改語言。</li>
+<li><strong>簡化多語系管理</strong>：集中化翻譯內容，方便維護。</li>
+<li><strong>格式化支援</strong>：內建日期、時間、數字等格式化功能。</li>
+</ul>
+<h2 id="2-安裝-Vue-I18n"><a href="#2-安裝-Vue-I18n" class="headerlink" title="2. 安裝 Vue I18n"></a>2. 安裝 Vue I18n</h2><p>Vue I18n 可透過 npm 安裝，適用於 Vue 3 應用。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install vue-i18n</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-設定-Vue-I18n"><a href="#3-設定-Vue-I18n" class="headerlink" title="3. 設定 Vue I18n"></a>3. 設定 Vue I18n</h2><p>在 Vue 3 中，可以使用 <code>createI18n</code> 來設定 Vue I18n：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createApp &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createI18n &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-i18n&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> messages = &#123;</span><br><span class="line">  <span class="attr">en</span>: &#123;</span><br><span class="line">    <span class="attr">welcome</span>: <span class="string">&#x27;Welcome to Vue I18n!&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">zh</span>: &#123;</span><br><span class="line">    <span class="attr">welcome</span>: <span class="string">&#x27;歡迎使用 Vue I18n！&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>, <span class="comment">// 預設語言</span></span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>, <span class="comment">// 備用語言</span></span><br><span class="line">  messages</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">createApp</span>(<span class="title class_">App</span>);</span><br><span class="line">app.<span class="title function_">use</span>(i18n);</span><br><span class="line">app.<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-在組件中使用-Vue-I18n"><a href="#4-在組件中使用-Vue-I18n" class="headerlink" title="4. 在組件中使用 Vue I18n"></a>4. 在組件中使用 Vue I18n</h2><h3 id="4-1-使用-t-方法"><a href="#4-1-使用-t-方法" class="headerlink" title="4.1 使用 $t 方法"></a>4.1 使用 <code>$t</code> 方法</h3><p>在 Vue 組件中，可以透過 <code>$t</code> 方法來取得翻譯內容。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;h1&gt;&#123;&#123; $t(&#x27;welcome&#x27;) &#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-切換語言"><a href="#4-2-切換語言" class="headerlink" title="4.2 切換語言"></a>4.2 切換語言</h3><p>可以透過 <code>this.$i18n.locale</code> 來更改語言：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button @click=&quot;changeLanguage(&#x27;en&#x27;)&quot;&gt;English&lt;/button&gt;</span><br><span class="line">    &lt;button @click=&quot;changeLanguage(&#x27;zh&#x27;)&quot;&gt;中文&lt;/button&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; $t(&#x27;welcome&#x27;) &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    changeLanguage(lang) &#123;</span><br><span class="line">      this.$i18n.locale = lang;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-使用外部-JSON-檔案管理翻譯內容"><a href="#5-使用外部-JSON-檔案管理翻譯內容" class="headerlink" title="5. 使用外部 JSON 檔案管理翻譯內容"></a>5. 使用外部 JSON 檔案管理翻譯內容</h2><p>當專案的翻譯內容較多時，建議將翻譯字串拆分成獨立的 JSON 檔案。</p>
+<p><strong>建立語言檔案：</strong></p>
+<p><code>locales/en.json</code></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;welcome&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Welcome to Vue I18n!&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>locales/zh.json</code></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;welcome&quot;</span><span class="punctuation">:</span> <span class="string">&quot;歡迎使用 Vue I18n！&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>修改 <code>i18n</code> 設定：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createI18n &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-i18n&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> en <span class="keyword">from</span> <span class="string">&#x27;./locales/en.json&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> zh <span class="keyword">from</span> <span class="string">&#x27;./locales/zh.json&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>,</span><br><span class="line">  <span class="attr">messages</span>: &#123; en, zh &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-插值與變數"><a href="#6-插值與變數" class="headerlink" title="6. 插值與變數"></a>6. 插值與變數</h2><p>Vue I18n 支援在翻譯字串中插入變數。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> messages = &#123;</span><br><span class="line">  <span class="attr">en</span>: &#123;</span><br><span class="line">    <span class="attr">greeting</span>: <span class="string">&#x27;Hello, &#123;name&#125;!&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">zh</span>: &#123;</span><br><span class="line">    <span class="attr">greeting</span>: <span class="string">&#x27;你好, &#123;name&#125;!&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在組件中使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123; $t(&#x27;greeting&#x27;, &#123; name: &#x27;John&#x27; &#125;) &#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-訊息格式化與日期、數字處理"><a href="#7-訊息格式化與日期、數字處理" class="headerlink" title="7. 訊息格式化與日期、數字處理"></a>7. 訊息格式化與日期、數字處理</h2><p>Vue I18n 內建 <code>numberFormats</code> 和 <code>datetimeFormats</code>，可用於格式化數字與日期。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>,</span><br><span class="line">  messages,</span><br><span class="line">  <span class="attr">numberFormats</span>: &#123;</span><br><span class="line">    <span class="attr">en</span>: &#123;</span><br><span class="line">      <span class="attr">currency</span>: &#123;</span><br><span class="line">        <span class="attr">style</span>: <span class="string">&#x27;currency&#x27;</span>, <span class="attr">currency</span>: <span class="string">&#x27;USD&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">zh</span>: &#123;</span><br><span class="line">      <span class="attr">currency</span>: &#123;</span><br><span class="line">        <span class="attr">style</span>: <span class="string">&#x27;currency&#x27;</span>, <span class="attr">currency</span>: <span class="string">&#x27;TWD&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>在組件中使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123; $n(1000, &#x27;currency&#x27;) &#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-延遲載入翻譯（Lazy-Loading）"><a href="#8-延遲載入翻譯（Lazy-Loading）" class="headerlink" title="8. 延遲載入翻譯（Lazy Loading）"></a>8. 延遲載入翻譯（Lazy Loading）</h2><p>當應用程式的語言檔案過多時，建議使用動態載入（Lazy Loading）來優化效能。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createI18n &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-i18n&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>,</span><br><span class="line">  <span class="attr">messages</span>: &#123;&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">loadLocaleMessages</span>(<span class="params">locale</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> messages = <span class="keyword">await</span> <span class="keyword">import</span>(<span class="string">`./locales/<span class="subst">$&#123;locale&#125;</span>.json`</span>);</span><br><span class="line">  i18n.<span class="property">global</span>.<span class="title function_">setLocaleMessage</span>(locale, messages.<span class="property">default</span>);</span><br><span class="line">  i18n.<span class="property">global</span>.<span class="property">locale</span> = locale;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-結論"><a href="#9-結論" class="headerlink" title="9. 結論"></a>9. 結論</h2><p>Vue I18n 是 Vue.js 中強大的國際化解決方案，透過 <code>$t</code> 方法、插值變數、外部 JSON 檔案管理，以及數字與日期格式化功能，可以讓開發者輕鬆實作多語系應用。本篇筆記介紹了 Vue I18n 的基本使用方式，進一步學習可研究動態載入、多語系 SEO 以及與 Vue Router 的結合。</p>
+]]></content>
+      <tags>
+        <tag>Vue</tag>
+        <tag>i18n</tag>
+        <tag>Vue i18n</tag>
+        <tag>多語系</tag>
+        <tag>多國語系</tag>
+        <tag>在地化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TypeScript 入門教學筆記 | 學習筆記</title>
     <url>/2024/12/02/learning-notes-typescript-intro-tutorial/</url>
     <content><![CDATA[<h1 id="一、什麼是-TypeScript？"><a href="#一、什麼是-TypeScript？" class="headerlink" title="一、什麼是 TypeScript？"></a>一、什麼是 TypeScript？</h1><p>TypeScript 是由 Microsoft 開發的 JavaScript 超集（Superset），提供靜態型別檢查（Static Type Checking），讓開發者在編譯時發現錯誤，提升程式碼的可靠性與可維護性。TypeScript 會被編譯為標準 JavaScript，並可以運行於任何支援 JavaScript 的環境，例如瀏覽器或 Node.js。  </p>
@@ -9123,64 +9273,6 @@
         <tag>frontend engineer</tag>
         <tag>CSS</tag>
         <tag>typescript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue i18n 入門教學筆記 | 學習筆記</title>
-    <url>/2024/11/13/learning-notes-vue-i18n-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="1-Vue-I18n-簡介"><a href="#1-Vue-I18n-簡介" class="headerlink" title="1. Vue I18n 簡介"></a>1. Vue I18n 簡介</h2><p>Vue i18n 是 Vue.js 的國際化（Internationalization）解決方案，可用於管理應用程式的多語系內容。當開發需要支援不同語言的應用時，Vue i18n 提供了一個高效的方式來處理翻譯、數字格式、日期格式等。</p>
-<h3 id="1-1-為何使用-Vue-I18n？"><a href="#1-1-為何使用-Vue-I18n？" class="headerlink" title="1.1 為何使用 Vue I18n？"></a>1.1 為何使用 Vue I18n？</h3><ul>
-<li><strong>動態切換語言</strong>：讓使用者能夠即時更改語言。</li>
-<li><strong>簡化多語系管理</strong>：集中化翻譯內容，方便維護。</li>
-<li><strong>格式化支援</strong>：內建日期、時間、數字等格式化功能。</li>
-</ul>
-<h2 id="2-安裝-Vue-I18n"><a href="#2-安裝-Vue-I18n" class="headerlink" title="2. 安裝 Vue I18n"></a>2. 安裝 Vue I18n</h2><p>Vue I18n 可透過 npm 安裝，適用於 Vue 3 應用。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install vue-i18n</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-設定-Vue-I18n"><a href="#3-設定-Vue-I18n" class="headerlink" title="3. 設定 Vue I18n"></a>3. 設定 Vue I18n</h2><p>在 Vue 3 中，可以使用 <code>createI18n</code> 來設定 Vue I18n：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createApp &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createI18n &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-i18n&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> messages = &#123;</span><br><span class="line">  <span class="attr">en</span>: &#123;</span><br><span class="line">    <span class="attr">welcome</span>: <span class="string">&#x27;Welcome to Vue I18n!&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">zh</span>: &#123;</span><br><span class="line">    <span class="attr">welcome</span>: <span class="string">&#x27;歡迎使用 Vue I18n！&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>, <span class="comment">// 預設語言</span></span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>, <span class="comment">// 備用語言</span></span><br><span class="line">  messages</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">createApp</span>(<span class="title class_">App</span>);</span><br><span class="line">app.<span class="title function_">use</span>(i18n);</span><br><span class="line">app.<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-在組件中使用-Vue-I18n"><a href="#4-在組件中使用-Vue-I18n" class="headerlink" title="4. 在組件中使用 Vue I18n"></a>4. 在組件中使用 Vue I18n</h2><h3 id="4-1-使用-t-方法"><a href="#4-1-使用-t-方法" class="headerlink" title="4.1 使用 $t 方法"></a>4.1 使用 <code>$t</code> 方法</h3><p>在 Vue 組件中，可以透過 <code>$t</code> 方法來取得翻譯內容。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;h1&gt;&#123;&#123; $t(&#x27;welcome&#x27;) &#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-切換語言"><a href="#4-2-切換語言" class="headerlink" title="4.2 切換語言"></a>4.2 切換語言</h3><p>可以透過 <code>this.$i18n.locale</code> 來更改語言：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button @click=&quot;changeLanguage(&#x27;en&#x27;)&quot;&gt;English&lt;/button&gt;</span><br><span class="line">    &lt;button @click=&quot;changeLanguage(&#x27;zh&#x27;)&quot;&gt;中文&lt;/button&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; $t(&#x27;welcome&#x27;) &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    changeLanguage(lang) &#123;</span><br><span class="line">      this.$i18n.locale = lang;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-使用外部-JSON-檔案管理翻譯內容"><a href="#5-使用外部-JSON-檔案管理翻譯內容" class="headerlink" title="5. 使用外部 JSON 檔案管理翻譯內容"></a>5. 使用外部 JSON 檔案管理翻譯內容</h2><p>當專案的翻譯內容較多時，建議將翻譯字串拆分成獨立的 JSON 檔案。</p>
-<p><strong>建立語言檔案：</strong></p>
-<p><code>locales/en.json</code></p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;welcome&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Welcome to Vue I18n!&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p><code>locales/zh.json</code></p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;welcome&quot;</span><span class="punctuation">:</span> <span class="string">&quot;歡迎使用 Vue I18n！&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>修改 <code>i18n</code> 設定：</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createI18n &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-i18n&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> en <span class="keyword">from</span> <span class="string">&#x27;./locales/en.json&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> zh <span class="keyword">from</span> <span class="string">&#x27;./locales/zh.json&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>,</span><br><span class="line">  <span class="attr">messages</span>: &#123; en, zh &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-插值與變數"><a href="#6-插值與變數" class="headerlink" title="6. 插值與變數"></a>6. 插值與變數</h2><p>Vue I18n 支援在翻譯字串中插入變數。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> messages = &#123;</span><br><span class="line">  <span class="attr">en</span>: &#123;</span><br><span class="line">    <span class="attr">greeting</span>: <span class="string">&#x27;Hello, &#123;name&#125;!&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">zh</span>: &#123;</span><br><span class="line">    <span class="attr">greeting</span>: <span class="string">&#x27;你好, &#123;name&#125;!&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>在組件中使用：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123; $t(&#x27;greeting&#x27;, &#123; name: &#x27;John&#x27; &#125;) &#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="7-訊息格式化與日期、數字處理"><a href="#7-訊息格式化與日期、數字處理" class="headerlink" title="7. 訊息格式化與日期、數字處理"></a>7. 訊息格式化與日期、數字處理</h2><p>Vue I18n 內建 <code>numberFormats</code> 和 <code>datetimeFormats</code>，可用於格式化數字與日期。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>,</span><br><span class="line">  messages,</span><br><span class="line">  <span class="attr">numberFormats</span>: &#123;</span><br><span class="line">    <span class="attr">en</span>: &#123;</span><br><span class="line">      <span class="attr">currency</span>: &#123;</span><br><span class="line">        <span class="attr">style</span>: <span class="string">&#x27;currency&#x27;</span>, <span class="attr">currency</span>: <span class="string">&#x27;USD&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">zh</span>: &#123;</span><br><span class="line">      <span class="attr">currency</span>: &#123;</span><br><span class="line">        <span class="attr">style</span>: <span class="string">&#x27;currency&#x27;</span>, <span class="attr">currency</span>: <span class="string">&#x27;TWD&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>在組件中使用：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123; $n(1000, &#x27;currency&#x27;) &#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="8-延遲載入翻譯（Lazy-Loading）"><a href="#8-延遲載入翻譯（Lazy-Loading）" class="headerlink" title="8. 延遲載入翻譯（Lazy Loading）"></a>8. 延遲載入翻譯（Lazy Loading）</h2><p>當應用程式的語言檔案過多時，建議使用動態載入（Lazy Loading）來優化效能。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createI18n &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-i18n&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> i18n = <span class="title function_">createI18n</span>(&#123;</span><br><span class="line">  <span class="attr">locale</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">  <span class="attr">fallbackLocale</span>: <span class="string">&#x27;zh&#x27;</span>,</span><br><span class="line">  <span class="attr">messages</span>: &#123;&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">loadLocaleMessages</span>(<span class="params">locale</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> messages = <span class="keyword">await</span> <span class="keyword">import</span>(<span class="string">`./locales/<span class="subst">$&#123;locale&#125;</span>.json`</span>);</span><br><span class="line">  i18n.<span class="property">global</span>.<span class="title function_">setLocaleMessage</span>(locale, messages.<span class="property">default</span>);</span><br><span class="line">  i18n.<span class="property">global</span>.<span class="property">locale</span> = locale;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="9-結論"><a href="#9-結論" class="headerlink" title="9. 結論"></a>9. 結論</h2><p>Vue I18n 是 Vue.js 中強大的國際化解決方案，透過 <code>$t</code> 方法、插值變數、外部 JSON 檔案管理，以及數字與日期格式化功能，可以讓開發者輕鬆實作多語系應用。本篇筆記介紹了 Vue I18n 的基本使用方式，進一步學習可研究動態載入、多語系 SEO 以及與 Vue Router 的結合。</p>
-]]></content>
-      <tags>
-        <tag>Vue</tag>
-        <tag>i18n</tag>
-        <tag>Vue i18n</tag>
-        <tag>多語系</tag>
-        <tag>多國語系</tag>
-        <tag>在地化</tag>
       </tags>
   </entry>
   <entry>
@@ -9410,6 +9502,46 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記</title>
+    <url>/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/</url>
+    <content><![CDATA[<h1 id="Declarative-Rendering-聲明式渲染"><a href="#Declarative-Rendering-聲明式渲染" class="headerlink" title="Declarative Rendering 聲明式渲染"></a>Declarative Rendering 聲明式渲染</h1><p>在 Vue3 我們常看到的是 Vue 單文件元件 (SFC)。SFC 是一個可重用的、獨立的程式碼區塊，它將相關的 HTML、CSS 和 JavaScript 封裝在一起，並寫在一個 <code>.vue</code> 文件中。</p>
+<p>Vue 的核心特性是聲明式渲染：使用擴展 HTML 的模板語法，我們可以根據 JavaScript 的狀態描述 HTML 應該如何呈現。當狀態發生變化時，HTML 會自動更新。</p>
+<p>可以在狀態變化時觸發更新的狀態被認為是響應式的。我們可以使用 Vue 的 <code>reactive()</code> API 來聲明響應式狀態。通過 <code>reactive()</code> 創建的對象是 JavaScript 的 Proxy，它們的行為與普通物件相同：</p>
+<p>SFC 版本：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; reactive &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> counter = <span class="title function_">reactive</span>(&#123;</span><br><span class="line">  <span class="attr">count</span>: <span class="number">0</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(counter.<span class="property">count</span>) <span class="comment">// 0</span></span><br><span class="line">counter.<span class="property">count</span>++</span><br></pre></td></tr></table></figure>
+
+<p>html 版本：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;module&quot;</span>&gt;</span><br><span class="line"><span class="keyword">import</span> &#123; createApp, ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">createApp</span>(&#123;</span><br><span class="line">  <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// component logic</span></span><br><span class="line">    <span class="comment">// declare some reactive state here.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="comment">// exposed to template</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Make me dynamic!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p><code>reactive()</code> 只能作用於物件（包括陣列和內建類型如 Map 和 Set）。另一方面，<code>ref()</code> 可以接受任何類型的值並創建一物件，其內部值通過 <code>.value</code> 屬性暴露出來：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> message = <span class="title function_">ref</span>(<span class="string">&#x27;Hello World!&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(message.<span class="property">value</span>) <span class="comment">// &quot;Hello World!&quot;</span></span><br><span class="line">message.<span class="property">value</span> = <span class="string">&#x27;Changed&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>有關 <code>reactive()</code> 和 <code>ref()</code> 的更多細節，可以參考官方教學<a href="https://vuejs.org/guide/essentials/reactivity-fundamentals.html">指南 - 響應式基礎</a>。</p>
+<p>在組件的 <code>&lt;script setup&gt;</code> 區塊中聲明的響應式狀態可以直接在模板中使用。我們可以基於 <code>counter</code> 對象和 <code>message</code> 的值，使用 Mustache 語法渲染動態文字：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Count is: &#123;&#123; counter.count &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意，當在模板中訪問 <code>message</code> 的 <code>ref</code> 值時，我們不需要使用 <code>.value</code>：它會自動取值，以提供更簡潔的用法。</p>
+<p>Mustache <code>&#123;&#123; &#125;&#125;</code> 中的內容不限於標識符或路徑 —— 我們可以使用任何有效的 JavaScript 表達式：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; message.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;) &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>現在，試著自己創建一些響應式狀態，並使用它來為模板中的 <code>&lt;h1&gt;</code> 渲染動態文本內容吧！</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; reactive, ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> counter = <span class="title function_">reactive</span>(&#123; <span class="attr">count</span>: <span class="number">0</span> &#125;)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> message = <span class="title function_">ref</span>(<span class="string">&#x27;Hello World!&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Count is: &#123;&#123; counter.count &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Vue.js 3 提供了更好的性能、更靈活的 API 和更簡潔的開發體驗。無論是使用 Composition API 還是 Options API，都能快速上手並構建強大的前端應用。</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>將 Vue 3 應用部署到 GitHub Pages 入門語法教學筆記 | 學習筆記</title>
     <url>/2018/02/01/learning-notes-vue3-app-github-pages-deploy-intro-tutorial%20copy/</url>
     <content><![CDATA[<p>要將 Vue 3 應用部署到 GitHub Pages，這裡有一個詳細的步驟說明，指導你如何使用 <code>gh-pages</code> 部署你的應用。</p>
@@ -9448,46 +9580,6 @@
       <tags>
         <tag>Vue</tag>
         <tag>GitHub Pages</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記</title>
-    <url>/2021/01/31/learning-notes-vuejs-3-official-tutorial-1-declarative-rendering/</url>
-    <content><![CDATA[<h1 id="Declarative-Rendering-聲明式渲染"><a href="#Declarative-Rendering-聲明式渲染" class="headerlink" title="Declarative Rendering 聲明式渲染"></a>Declarative Rendering 聲明式渲染</h1><p>在 Vue3 我們常看到的是 Vue 單文件元件 (SFC)。SFC 是一個可重用的、獨立的程式碼區塊，它將相關的 HTML、CSS 和 JavaScript 封裝在一起，並寫在一個 <code>.vue</code> 文件中。</p>
-<p>Vue 的核心特性是聲明式渲染：使用擴展 HTML 的模板語法，我們可以根據 JavaScript 的狀態描述 HTML 應該如何呈現。當狀態發生變化時，HTML 會自動更新。</p>
-<p>可以在狀態變化時觸發更新的狀態被認為是響應式的。我們可以使用 Vue 的 <code>reactive()</code> API 來聲明響應式狀態。通過 <code>reactive()</code> 創建的對象是 JavaScript 的 Proxy，它們的行為與普通物件相同：</p>
-<p>SFC 版本：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; reactive &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> counter = <span class="title function_">reactive</span>(&#123;</span><br><span class="line">  <span class="attr">count</span>: <span class="number">0</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(counter.<span class="property">count</span>) <span class="comment">// 0</span></span><br><span class="line">counter.<span class="property">count</span>++</span><br></pre></td></tr></table></figure>
-
-<p>html 版本：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;module&quot;</span>&gt;</span><br><span class="line"><span class="keyword">import</span> &#123; createApp, ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">createApp</span>(&#123;</span><br><span class="line">  <span class="title function_">setup</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// component logic</span></span><br><span class="line">    <span class="comment">// declare some reactive state here.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="comment">// exposed to template</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Make me dynamic!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p><code>reactive()</code> 只能作用於物件（包括陣列和內建類型如 Map 和 Set）。另一方面，<code>ref()</code> 可以接受任何類型的值並創建一物件，其內部值通過 <code>.value</code> 屬性暴露出來：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> message = <span class="title function_">ref</span>(<span class="string">&#x27;Hello World!&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(message.<span class="property">value</span>) <span class="comment">// &quot;Hello World!&quot;</span></span><br><span class="line">message.<span class="property">value</span> = <span class="string">&#x27;Changed&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>有關 <code>reactive()</code> 和 <code>ref()</code> 的更多細節，可以參考官方教學<a href="https://vuejs.org/guide/essentials/reactivity-fundamentals.html">指南 - 響應式基礎</a>。</p>
-<p>在組件的 <code>&lt;script setup&gt;</code> 區塊中聲明的響應式狀態可以直接在模板中使用。我們可以基於 <code>counter</code> 對象和 <code>message</code> 的值，使用 Mustache 語法渲染動態文字：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Count is: &#123;&#123; counter.count &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>注意，當在模板中訪問 <code>message</code> 的 <code>ref</code> 值時，我們不需要使用 <code>.value</code>：它會自動取值，以提供更簡潔的用法。</p>
-<p>Mustache <code>&#123;&#123; &#125;&#125;</code> 中的內容不限於標識符或路徑 —— 我們可以使用任何有效的 JavaScript 表達式：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; message.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;) &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>現在，試著自己創建一些響應式狀態，並使用它來為模板中的 <code>&lt;h1&gt;</code> 渲染動態文本內容吧！</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; reactive, ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> counter = <span class="title function_">reactive</span>(&#123; <span class="attr">count</span>: <span class="number">0</span> &#125;)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> message = <span class="title function_">ref</span>(<span class="string">&#x27;Hello World!&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Count is: &#123;&#123; counter.count &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Vue.js 3 提供了更好的性能、更靈活的 API 和更簡潔的開發體驗。無論是使用 Composition API 還是 Options API，都能快速上手並構建強大的前端應用。</p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
       </tags>
   </entry>
   <entry>
