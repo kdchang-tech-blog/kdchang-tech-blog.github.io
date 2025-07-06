@@ -26,11 +26,11 @@
     
     <title>
         
-          資料庫索引（Index）介紹入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          瀏覽器渲染優化入門：掌握重繪、重排與合成的效能關鍵 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/02/20/learning-notes-roo-code-intro-tutorial copy/">
+    <link rel="canonical" href="https://tech.kdchang.net/2024/02/20/learning-notes-reflow-repaint-composite-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="資料庫索引（Index）介紹入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="資料庫索引（Index）介紹入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="瀏覽器渲染優化入門：掌握重繪、重排與合成的效能關鍵 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="瀏覽器渲染優化入門：掌握重繪、重排與合成的效能關鍵 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -119,14 +119,14 @@
 
                         
                         <li>
-                            <a href="/books/">Books</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/books/">Books</a>
                         </li>
                         
                     
@@ -199,7 +199,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>資料庫索引（Index）介紹入門教學筆記 | 學習筆記</h1>
+                    <h1>瀏覽器渲染優化入門：掌握重繪、重排與合成的效能關鍵 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
                         2024-02-20
@@ -207,11 +207,13 @@
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#編輯器" title="編輯器">編輯器</a>
+                          <a class="tag" href="/tags/#瀏覽器渲染" title="瀏覽器渲染">瀏覽器渲染</a>
                         
-                          <a class="tag" href="/tags/#VS Code" title="VS Code">VS Code</a>
+                          <a class="tag" href="/tags/#Reflow" title="Reflow">Reflow</a>
                         
-                          <a class="tag" href="/tags/#Roo Code" title="Roo Code">Roo Code</a>
+                          <a class="tag" href="/tags/#Repaint" title="Repaint">Repaint</a>
+                        
+                          <a class="tag" href="/tags/#Composite" title="Composite">Composite</a>
                         
 
                     </div>
@@ -237,88 +239,89 @@
                 </div>
                 <br>
                 <div>
-                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在資料庫中，隨著資料筆數的增加，查詢效率成為一個重要的議題。舉例來說，若在百萬筆資料中查找某一筆特定紀錄，如果沒有任何輔助結構，資料庫就必須逐筆掃描（Full Table Scan），效率極差。為了解決這個問題，資料庫系統引入了「索引（Index）」這個概念，來加速查詢與特定操作。索引的設計與使用，是每一位軟體工程師與資料庫設計者都必須掌握的核心技能。</p>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在現代前端開發中，良好的使用者體驗不僅來自功能與介面設計，更仰賴流暢的渲染效能。網頁在瀏覽器中的呈現涉及一連串複雜的渲染步驟，包含樣式計算、排版、繪製與合成。當我們操作 DOM、修改樣式或觸發動畫時，都可能影響這些渲染流程。如果不了解這些背後的機制，很容易造成畫面卡頓與效能瓶頸。</p>
+<p>本篇筆記將介紹瀏覽器渲染的三大核心階段：<strong>重排（Reflow）</strong>、<strong>重繪（Repaint）</strong>與<strong>合成（Composite）</strong>，並透過實際範例說明如何避免過度重排與重繪，提升整體效能。</p>
 <hr>
-<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><p><strong>一、索引的主要功能：</strong></p>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p><strong>渲染流程</strong>：瀏覽器的渲染過程包括 DOM 構建、樣式計算、布局（Reflow）、繪製（Repaint）與合成（Composite）。</p>
+</li>
+<li><p><strong>Reflow（重排）</strong>：</p>
 <ul>
-<li>加速查詢（SELECT）</li>
-<li>優化條件篩選（WHERE）</li>
-<li>提升排序效率（ORDER BY）</li>
-<li>支援唯一性約束（UNIQUE）</li>
-<li>加快資料關聯查詢（JOIN）</li>
+<li>代表重新計算元素的尺寸與位置。</li>
+<li>會影響該元素及其子元素，成本高昂。</li>
 </ul>
-<p><strong>二、常見索引類型：</strong></p>
+</li>
+<li><p><strong>Repaint（重繪）</strong>：</p>
 <ul>
-<li>B-Tree Index：最常見的預設索引類型，適合範圍查詢。</li>
-<li>Hash Index：適合等值查詢（&#x3D;），不支援範圍查詢。</li>
-<li>Composite Index（複合索引）：由多個欄位組成，適用多條件查詢。</li>
-<li>Full-text Index：針對全文搜尋設計。</li>
-<li>Spatial Index：用於地理空間查詢。</li>
+<li>改變元素的外觀但不影響佈局（如背景色、文字顏色）。</li>
+<li>相對比重排便宜，但仍需耗費資源。</li>
 </ul>
-<p><strong>三、索引的優點：</strong></p>
+</li>
+<li><p><strong>Composite（合成）</strong>：</p>
 <ul>
-<li>提升查詢速度</li>
-<li>減少 I&#x2F;O 操作</li>
-<li>加快 JOIN 與 GROUP BY 的效能</li>
-<li>強化資料的唯一性驗證</li>
+<li>將繪製後的圖層合成為畫面。</li>
+<li>常與硬體加速 GPU 合作完成，成本最低。</li>
 </ul>
-<p><strong>四、索引的缺點：</strong></p>
+</li>
+<li><p><strong>優化原則</strong>：</p>
 <ul>
-<li>佔用磁碟空間</li>
-<li>寫入（INSERT&#x2F;UPDATE&#x2F;DELETE）成本增加</li>
-<li>過多或不當索引會影響效能</li>
-<li>需定期維護（如重建或重組索引）</li>
+<li>減少 DOM 操作與樣式更動次數。</li>
+<li>使用 will-change、transform、opacity 等屬性觸發 GPU 合成。</li>
+<li>避免觸發同步 reflow（如讀寫 offsetHeight 混用）。</li>
+<li>使用 requestAnimationFrame 取代 setInterval 管理動畫。</li>
 </ul>
-<p><strong>五、何時應該使用索引：</strong></p>
-<ul>
-<li>查詢常出現的欄位（如常出現在 WHERE、JOIN、ORDER BY 中）</li>
-<li>欄位選擇性高（值分布離散，如身分證字號）</li>
-<li>查詢慢、Table Scan 明顯的情況</li>
-</ul>
-<p><strong>六、何時不應使用索引：</strong></p>
-<ul>
-<li>小資料表（資料筆數很少）</li>
-<li>經常被更新的欄位</li>
-<li>欄位選擇性低（如性別只有兩種值）</li>
+</li>
 </ul>
 <hr>
-<h2 id="實際範例"><a href="#實際範例" class="headerlink" title="實際範例"></a>實際範例</h2><h3 id="1-基本使用"><a href="#1-基本使用" class="headerlink" title="1. 基本使用"></a>1. 基本使用</h3><p>以 MySQL 為例，假設有一個 <code>users</code> 表格如下：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> users (</span><br><span class="line">  id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY AUTO_INCREMENT,</span><br><span class="line">  name <span class="type">VARCHAR</span>(<span class="number">100</span>),</span><br><span class="line">  email <span class="type">VARCHAR</span>(<span class="number">100</span>),</span><br><span class="line">  age <span class="type">INT</span>,</span><br><span class="line">  created_at DATETIME</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2 id="實際範例"><a href="#實際範例" class="headerlink" title="實際範例"></a>實際範例</h2><h3 id="1-重排（Reflow）觸發範例"><a href="#1-重排（Reflow）觸發範例" class="headerlink" title="1. 重排（Reflow）觸發範例"></a>1. <strong>重排（Reflow）觸發範例</strong></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width: 100px; height: 100px; background-color: blue;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> box = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;box&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">  box.<span class="property">style</span>.<span class="property">width</span> = <span class="string">&#x27;200px&#x27;</span>; <span class="comment">// 觸發 reflow：尺寸改變</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>現在若經常根據 <code>email</code> 來查詢使用者：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> email <span class="operator">=</span> <span class="string">&#x27;user@example.com&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>這段程式碼會導致重新計算佈局，因為改變了 box 的寬度。若該元素還包含其他內嵌元素，也會一併重新計算，對效能影響較大。</p>
+<h3 id="2-重繪（Repaint）觸發範例"><a href="#2-重繪（Repaint）觸發範例" class="headerlink" title="2. 重繪（Repaint）觸發範例"></a>2. <strong>重繪（Repaint）觸發範例</strong></h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">box.<span class="property">style</span>.<span class="property">backgroundColor</span> = <span class="string">&#x27;red&#x27;</span>; <span class="comment">// 觸發 repaint：外觀改變但位置不變</span></span><br></pre></td></tr></table></figure>
 
-<p>若未建立索引，MySQL 將會進行全表掃描。為了加速查詢，我們可以加上索引：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> INDEX idx_email <span class="keyword">ON</span> users(email);</span><br></pre></td></tr></table></figure>
+<p>這只會重新繪製背景色，不涉及位置與尺寸的計算，因此比重排快一些，但仍需資源。</p>
+<h3 id="3-合成層（Composite-Layer）優化範例"><a href="#3-合成層（Composite-Layer）優化範例" class="headerlink" title="3. 合成層（Composite Layer）優化範例"></a>3. <strong>合成層（Composite Layer）優化範例</strong></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#box</span> &#123;</span><br><span class="line">  <span class="attribute">will-change</span>: transform;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>查詢效率將大幅提升，特別是在資料筆數達到十萬以上的情況。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">box.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">&#x27;translateX(100px)&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>transform</code> 搭配 <code>will-change</code> 可以避免 reflow 與 repaint，直接由 GPU 處理合成層的位移，對效能非常有幫助，適合用於動畫或互動操作。</p>
+<h3 id="4-錯誤的讀寫順序導致多次重排"><a href="#4-錯誤的讀寫順序導致多次重排" class="headerlink" title="4. 錯誤的讀寫順序導致多次重排"></a>4. <strong>錯誤的讀寫順序導致多次重排</strong></h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> box = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;box&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 壞寫法：不當的交錯讀寫</span></span><br><span class="line">box.<span class="property">style</span>.<span class="property">width</span> = <span class="string">&#x27;300px&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> height = box.<span class="property">offsetHeight</span>; <span class="comment">// 強制同步計算 reflow</span></span><br><span class="line">box.<span class="property">style</span>.<span class="property">height</span> = height + <span class="number">10</span> + <span class="string">&#x27;px&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>這段程式碼會導致瀏覽器為了提供最新的 <code>offsetHeight</code>，先強制執行一次 reflow，然後再處理 <code>style.height</code> 的設定，又引發一次 reflow。解法如下：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 好寫法：集中寫入，延後讀取</span></span><br><span class="line">box.<span class="property">style</span>.<span class="property">width</span> = <span class="string">&#x27;300px&#x27;</span>;</span><br><span class="line"><span class="title function_">requestAnimationFrame</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> height = box.<span class="property">offsetHeight</span>;</span><br><span class="line">  box.<span class="property">style</span>.<span class="property">height</span> = height + <span class="number">10</span> + <span class="string">&#x27;px&#x27;</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>這樣可以將樣式修改與讀取解耦，避免過度同步重排。</p>
 <hr>
-<h3 id="2-複合索引"><a href="#2-複合索引" class="headerlink" title="2. 複合索引"></a>2. 複合索引</h3><p>如果我們常查詢條件如下：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">=</span> <span class="number">30</span> <span class="keyword">AND</span> created_at <span class="operator">&gt;</span> <span class="string">&#x27;2025-01-01&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>可以建立複合索引：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> INDEX idx_age_created <span class="keyword">ON</span> users(age, created_at);</span><br></pre></td></tr></table></figure>
-
-<p>但注意複合索引有「最左前綴原則」，必須按照索引欄位的排列順序來使用，否則可能無法被使用。</p>
-<p>例如：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 可使用 idx_age_created</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">=</span> <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 可使用 idx_age_created</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> age <span class="operator">=</span> <span class="number">30</span> <span class="keyword">AND</span> created_at <span class="operator">&gt;</span> <span class="string">&#x27;2025-01-01&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 無法使用 idx_age_created</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> created_at <span class="operator">&gt;</span> <span class="string">&#x27;2025-01-01&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
+<h2 id="常見優化建議"><a href="#常見優化建議" class="headerlink" title="常見優化建議"></a>常見優化建議</h2><ol>
+<li><p><strong>避免頻繁操作 DOM</strong></p>
+<ul>
+<li>將多次操作集中處理，例如使用 <code>documentFragment</code> 或暫時隱藏元素再更新。</li>
+</ul>
+</li>
+<li><p><strong>善用 CSS 動畫與硬體加速</strong></p>
+<ul>
+<li>使用 <code>transform</code> 與 <code>opacity</code> 搭配 <code>will-change</code> 避免重排。</li>
+</ul>
+</li>
+<li><p><strong>使用 requestAnimationFrame 控制動畫節奏</strong></p>
+<ul>
+<li>與瀏覽器畫面更新同步，避免畫面撕裂與卡頓。</li>
+</ul>
+</li>
+<li><p><strong>減少強制同步 reflow 操作</strong></p>
+<ul>
+<li>避免混用讀寫，例如同時使用 <code>offsetTop</code> 與 <code>style.left</code>。</li>
+</ul>
+</li>
+<li><p><strong>審慎使用大型影響範圍的樣式變更</strong></p>
+<ul>
+<li>例如更動 <code>&lt;body&gt;</code> padding 可能導致整頁重排。</li>
+</ul>
+</li>
+</ol>
 <hr>
-<h3 id="3-檢查查詢是否使用索引"><a href="#3-檢查查詢是否使用索引" class="headerlink" title="3. 檢查查詢是否使用索引"></a>3. 檢查查詢是否使用索引</h3><p>可以利用 <code>EXPLAIN</code> 關鍵字來檢查查詢是否有使用索引：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">EXPLAIN <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users <span class="keyword">WHERE</span> email <span class="operator">=</span> <span class="string">&#x27;user@example.com&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>若 <code>key</code> 欄位顯示為 <code>idx_email</code>，表示查詢有使用到索引。</p>
-<hr>
-<h3 id="4-索引對寫入的影響"><a href="#4-索引對寫入的影響" class="headerlink" title="4. 索引對寫入的影響"></a>4. 索引對寫入的影響</h3><p>當對有索引的欄位進行大量更新時，索引也需要同步更新，可能導致效能下降。例如：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> users <span class="keyword">SET</span> email <span class="operator">=</span> CONCAT(email, <span class="string">&#x27;.tw&#x27;</span>) <span class="keyword">WHERE</span> age <span class="operator">=</span> <span class="number">30</span>;</span><br></pre></td></tr></table></figure>
-
-<p>此時 <code>email</code> 有索引，會導致該索引也被修改，因此執行效率會受到影響。</p>
-<hr>
-<h3 id="5-刪除不必要的索引"><a href="#5-刪除不必要的索引" class="headerlink" title="5. 刪除不必要的索引"></a>5. 刪除不必要的索引</h3><p>過多的索引會拖慢寫入效能並佔用磁碟空間。可以定期使用以下指令刪除不再使用的索引：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> INDEX idx_email <span class="keyword">ON</span> users;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>索引是資料庫查詢效能優化的關鍵利器，但同時也是一把雙面刃。正確使用索引能大幅加速系統效能，不當使用則可能導致資源浪費甚至拖慢效能。實務上應透過實際的查詢分析與監控（如慢查詢日誌、<code>EXPLAIN</code>），謹慎設計與調整索引策略，才能在讀寫效能間取得最佳平衡。</p>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>掌握瀏覽器的渲染流程，是優化前端效能的基礎功。過度重排與重繪是畫面卡頓與耗電的主因，而合成則是成本最低的操作。了解並合理運用這三者，才能打造真正流暢、回應迅速的使用體驗。</p>
+<p>作為開發者，我們應從 DOM 操作、CSS 寫法到動畫設計，全面考量渲染機制對效能的影響。透過實踐優化策略，讓產品在各種裝置上都能展現卓越表現。</p>
+<p>若我們需要進一步探索，可研究 Chrome DevTools 的「Performance」面板，實際觀察每次重排與重繪的開銷，進一步精細調整效能瓶頸。</p>
 
                 </div>
 
@@ -335,7 +338,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2025/02/20/learning-notes-roo-code-intro-tutorial/" title="Roo Code 詳細介紹：AI VS Code 編輯器外掛入門教學筆記 | 學習筆記" rel="bookmark">Roo Code 詳細介紹：AI VS Code 編輯器外掛入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/20/learning-notes-claude-code-intro-tutorial/" title="Claude Code 入門教學筆記 | 學習筆記" rel="bookmark">Claude Code 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/20/learning-notes-github-copilot-intro-tutorial/" title="GitHub Copilot 與 Copilot Agent 入門教學筆記 | 學習筆記" rel="bookmark">GitHub Copilot 與 Copilot Agent 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/20/learning-notes-n8n-intro-tutorial/" title="n8n 入門教學筆記 | 學習筆記" rel="bookmark">n8n 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/02/20/learning-notes-vue-v-cloak-intro-tutorial/" title="Vue v-cloak 入門教學筆記 | 學習筆記" rel="bookmark">Vue v-cloak 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -371,8 +374,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/02/20/learning-notes-roo-code-intro-tutorial%20copy/";
-    var disqus_url = "https://tech.kdchang.net/2024/02/20/learning-notes-roo-code-intro-tutorial%20copy/";
+    var disqus_identifier = "https://tech.kdchang.net/2024/02/20/learning-notes-reflow-repaint-composite-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2024/02/20/learning-notes-reflow-repaint-composite-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
