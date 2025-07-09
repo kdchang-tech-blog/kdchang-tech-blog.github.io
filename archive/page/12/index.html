@@ -119,14 +119,14 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/books/">Books</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/books/">Books</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -193,7 +193,7 @@
                 <div class="site-heading">
                     <h1>KD&#39;s Tech Blog</h1>
                     <!--<hr class="small">-->
-                    <span class="subheading">Hi, 我是 KD Chang 凱迪，我在這書寫我的軟體開發/程式設計技術筆記 | KD 技術部落格</span>
+                    <span class="subheading">Hi, 我是 KD Chang 凱迪，紀錄關於軟體開發/程式設計/工程思維的技術筆記 | KD 技術部落格</span>
                 </div>
             </div>
         </div>
@@ -218,6 +218,134 @@
             ">
                 <!-- Main Content -->
 
+
+<div class="post-preview">
+
+    <a href="/2023/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial copy/">
+        <h2 class="post-title">
+            JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            一、JWT 基本安全策略1. 使用強密鑰（Secret）或非對稱加密
+對稱加密：使用 HS256 時，secret 應具備高強度（建議 256-bit 以上）。
+非對稱加密：使用 RS256 時，私鑰與公鑰分離，便於服務間驗證。
+
+2. 設定有效期限（exp）
+Access Token 建議設為 短效（10~30 分鐘）。
+避免永久有效的 Token，防止被盜用後長期濫用。
+
+3. 限制 T......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2023-12-21
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2023/12/21/learning-notes-prisma-orm-intro-tutorial/">
+        <h2 class="post-title">
+            Prisma ORM 入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言在現代 Web 應用中，資料庫與後端邏輯的整合至關重要，而 ORM（Object Relational Mapping）工具正好扮演了簡化資料操作、提升開發效率的角色。Prisma 是一個現代化的 TypeScript ORM，具有直觀的語法、自動型別生成、遷移管理與強大的查詢功能，深受開發者喜愛。
+本教學將帶你從安裝 Prisma、設定 schema、執行 migration、撰寫查詢......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2023-12-21
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2023/12/21/learning-notes-react-query-intro-tutorial copy/">
+        <h2 class="post-title">
+            React Query 入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言隨著前端應用程式越來越複雜，資料的取得、快取、同步更新以及狀態管理成為重要挑戰。傳統使用 useEffect 搭配 fetch 或 axios 取得資料，會讓程式碼變得冗長且難以維護，特別是需要處理快取、錯誤重試、背景重新整理（refetch）等功能時。
+React Query 是一個強大的資料同步庫，它抽象並管理伺服器狀態（server state），讓你能輕鬆完成資料抓取、快取、更新......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2023-12-21
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2023/12/21/learning-notes-swagger-api-doc-intro-tutorial copy/">
+        <h2 class="post-title">
+            使用 ESM 的 Swagger 入門教學（Node.js + Express） | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            前言在現代後端開發中，撰寫標準化的 API 文件是必要的工作。Swagger（OpenAPI）讓我們可以定義並分享 API 結構，也支援透過 UI 測試 API。本文將示範如何在 ESM 模組架構的 Node.js 專案中 整合 Swagger，實現互動式 API 文件。
+
+重點摘要
+使用 swagger-jsdoc 定義 API 文件（支援 YAML 格式註解）。
+使用 swagger-u......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2023-12-21
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2023/12/21/learning-notes-vuejs-pinia-store-reactive-intro-tutorial copy/">
+        <h2 class="post-title">
+            Vue pinia 保持 reactive 入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            保持 reactive 寫法：
+
+1️. 用 computedconst todos = computed(() =&gt; todoStore.todos)
+
+優點  
+
+保持 reactive  
+簡單直接  
+在 template 裡 todos 可以直接使用
+
+缺點  
+
+如果只是讀值，其實有點多餘
+
+建議用於：在 template 需要用 v-for=&quot;todo in t......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2023-12-21
+    </p>
+
+</div>
+<hr>
 
 <div class="post-preview">
 
@@ -349,135 +477,6 @@ SASS 有兩種語法：
     <p class="post-meta">
         Posted by kdchang on
         2023-07-01
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/05/31/learning-notes-less-intro-tutorial/">
-        <h2 class="post-title">
-            LESS 入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言LESS（Leaner Style Sheets）是一種 CSS 預處理器，它在 CSS 的基礎上加入了變數、嵌套、混合（Mixins）、函式等功能，使樣式表的管理更加靈活且易於維護。LESS 文件最終會被編譯成標準的 CSS，並可在瀏覽器或 Node.js 環境中使用。
-
-1. 安裝與使用LESS 可以透過以下幾種方式使用：  
-1.1 透過 LESS.js 在瀏覽器中運行這種方式適合......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2023-05-31
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/03/22/software-engineer-technical-interview-resources/">
-        <h2 class="post-title">
-            常見軟體工程師/Web 開發技術面試及學習資源整理
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            以下彙整常見軟體工程師技術面試及學習資源整理：
-程式解題網站
-coderbyte
-codility
-hackerrank
-leetcode
-codewars
-testgorilla
-WeHelp Coding 程式解題系統
-
-線上程式學習網站
-scrimba
-codecademy
-pluralsight
-teamtreehouse
-udemy
-freecodecamp
-MDN Curricu......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2023-03-22
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2022/12/13/learning-notes-css-transition-intro-tutorial/">
-        <h2 class="post-title">
-            CSS transition 入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言CSS transition 屬性允許元素在狀態變化時產生平滑的動畫效果，使 UI 更加流暢和自然。這項技術通常應用於按鈕、圖片、卡片等 UI 元素的互動效果，如懸停、點擊或狀態變更。
-1. transition 基礎概念CSS transition 屬性用於定義當元素的某些 CSS 屬性發生變化時，該變化應如何逐漸呈現，而非立即改變。基本語法如下：
-transition: proper......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2022-12-13
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2022/06/09/learning-notes-responsive-design-rwd/">
-        <h2 class="post-title">
-            Responsive Design 響應式設計入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            Responsive Design 響應式設計入門教學筆記一、什麼是響應式設計響應式設計 (Responsive Design) 是一種網頁設計方法，使網頁能夠根據不同裝置的螢幕尺寸與解析度，自動調整版面配置，以提供最佳的使用體驗。
-二、響應式設計的重要概念1. 視圖 (Viewport)&lt;meta name=&quot;viewport&quot; content=&quot;wid......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2022-06-09
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/12/15/learning-notes-css-specificity-tutorial/">
-        <h2 class="post-title">
-            CSS 權重（Specificity）入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            1. 什麼是 CSS 權重？CSS 權重（Specificity）是指當多個選擇器同時作用於同一個元素時，瀏覽器決定應用哪條 CSS 規則的優先級機制。不同選擇器具有不同的權重，權重高的樣式會覆蓋權重低的樣式。  
-
-2. CSS 權重的計算方式CSS 權重由四個部分組成，從高到低分別是：  
-
-行內樣式（Inline Styles）
-ID 選擇器（ID Selectors）
-類別、偽類與屬......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2021-12-15
     </p>
 
 </div>

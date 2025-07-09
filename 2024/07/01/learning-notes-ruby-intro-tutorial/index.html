@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword"  content="軟體工程, 程式設計, 程式開發, frontend, backend, web, software, software engineer, JavaScript, Python">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/img/logo.ico">
+    <meta name="google-site-verification" content="cMTgiEFMM7gXpRMBbu_05Lnj0scwhDPCMvpfhQOpENI" />
+    <script src="/js/search.js"></script> 
+
+    
+    
+    
+       <script type="text/javascript">      
+         var search_path = "search.xml";
+       if (search_path.length == 0) {
+         search_path = "search.xml";
+       }
+       var path = "/" + search_path;
+         searchFunc(path, 'local-search-input', 'local-search-result');
+       </script>
+    
+    <title>
+        
+          Ruby 語言介紹與入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+        
+    </title>
+
+    <link rel="canonical" href="https://tech.kdchang.net/2024/07/01/learning-notes-ruby-intro-tutorial/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/main.css?v=1">
+
+    <!-- og tag -->
+    <meta name="generator" content="KD's Tech Blog">
+    
+      <meta name="og:title" content="Ruby 語言介紹與入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="Ruby 語言介紹與入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+    
+    
+      <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+      <meta name="og:description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+    
+    
+      <meta name="og:image" content="https://tech.kdchang.net/img/logo.png">
+    
+    <meta name="og:type" content="website">
+    <!--Twitter Graph-->
+    <meta name="twitter:card" content="summary" />
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<link rel="alternate" href="/atom.xml" title="KD's Tech Blog" type="application/atom+xml">
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">KD&#39;s Tech Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/books/">Books</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/search/">Search</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    <li>
+                        <a href="/atom.xml">RSS</a>
+                    </li>                 
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/cover.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+
+                    <h1>Ruby 語言介紹與入門教學筆記 | 學習筆記</h1>
+                    <span class="meta">
+                        Posted by kdchang on
+                        2024-07-01
+                    </span>
+                    <br>
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#Ruby on Rails" title="Ruby on Rails">Ruby on Rails</a>
+                        
+                          <a class="tag" href="/tags/#Ruby" title="Ruby">Ruby</a>
+                        
+                          <a class="tag" href="/tags/#Rails" title="Rails">Rails</a>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+                <br>
+                <div>
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.net" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+                <br>
+                <div>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>Ruby</strong> 是一種純物件導向、動態型別且語法極為直覺易讀的程式語言，由日本程式設計師「<strong>松本行弘（Yukihiro Matsumoto）</strong>」於 1995 年開發推出。Ruby 的開發理念是讓程式設計變得「快樂」，它重視人類可讀性多於機器效率，因此語法貼近自然語言、少有繁複標點，受到許多開發者的喜愛。</p>
+<p>Ruby 最廣為人知的應用即是 Web 框架 <strong>Ruby on Rails</strong>，但 Ruby 本身也可應用於腳本撰寫、自動化流程、系統工具與 API 開發。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p><strong>語言特色：</strong></p>
+<ul>
+<li><strong>純物件導向</strong>：數字、字串、布林值等皆為物件。</li>
+<li><strong>語法簡潔</strong>：接近自然語言，易於閱讀與維護。</li>
+<li><strong>動態語言</strong>：變數無需預先定義型別。</li>
+<li><strong>彈性高</strong>：支援 metaprogramming、區塊、lambda。</li>
+<li><strong>龐大標準函式庫</strong>與活躍社群（Gem 套件系統）。</li>
+</ul>
+</li>
+<li><p><strong>應用領域：</strong></p>
+<ul>
+<li>Web 開發（搭配 Rails 或 Sinatra）</li>
+<li>系統腳本與自動化任務</li>
+<li>命令列工具（如 Jekyll、CocoaPods）</li>
+<li>測試工具（RSpec、Cucumber）</li>
+</ul>
+</li>
+<li><p><strong>安裝方式：</strong></p>
+<ul>
+<li>建議使用 <strong>rbenv</strong> 或 <strong>RVM</strong> 管理版本。</li>
+<li>檢查版本：<code>ruby -v</code></li>
+<li>執行程式碼：<code>ruby 檔名.rb</code> 或 <code>irb</code>（互動環境）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="語法入門實例"><a href="#語法入門實例" class="headerlink" title="語法入門實例"></a>語法入門實例</h2><p>以下是一些 Ruby 基本語法與應用的實際範例，幫助理解語言結構與特性。</p>
+<hr>
+<h3 id="1-Hello-World"><a href="#1-Hello-World" class="headerlink" title="1. Hello World"></a>1. Hello World</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">puts <span class="string">&quot;Hello, world!&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>puts</code> 印出字串到終端機。無需加分號，換行即表示語句結束。</p>
+<hr>
+<h3 id="2-變數與資料型別"><a href="#2-變數與資料型別" class="headerlink" title="2. 變數與資料型別"></a>2. 變數與資料型別</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;Alice&quot;</span></span><br><span class="line">age = <span class="number">30</span></span><br><span class="line">pi = <span class="number">3.14</span></span><br><span class="line">is_admin = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>Ruby 不需宣告型別，會根據賦值自動推斷。</p>
+<hr>
+<h3 id="3-字串操作"><a href="#3-字串操作" class="headerlink" title="3. 字串操作"></a>3. 字串操作</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">greeting = <span class="string">&quot;Hello&quot;</span></span><br><span class="line">name = <span class="string">&quot;Bob&quot;</span></span><br><span class="line"></span><br><span class="line">puts <span class="string">&quot;<span class="subst">#&#123;greeting&#125;</span>, <span class="subst">#&#123;name&#125;</span>!&quot;</span>  <span class="comment"># 字串插值</span></span><br><span class="line">puts greeting.upcase          <span class="comment"># =&gt; &quot;HELLO&quot;</span></span><br><span class="line">puts name.reverse             <span class="comment"># =&gt; &quot;boB&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>Ruby 字串是物件，具有許多內建方法如 <code>.upcase</code>、<code>.reverse</code>。</p>
+<hr>
+<h3 id="4-陣列與雜湊（Hash）"><a href="#4-陣列與雜湊（Hash）" class="headerlink" title="4. 陣列與雜湊（Hash）"></a>4. 陣列與雜湊（Hash）</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">arr &lt;&lt; <span class="number">4</span>              <span class="comment"># 加入元素</span></span><br><span class="line">puts arr[<span class="number">2</span>]           <span class="comment"># =&gt; 3</span></span><br><span class="line"></span><br><span class="line">person = &#123; <span class="symbol">name:</span> <span class="string">&quot;Tom&quot;</span>, <span class="symbol">age:</span> <span class="number">25</span> &#125;</span><br><span class="line">puts person[<span class="symbol">:name</span>]    <span class="comment"># =&gt; &quot;Tom&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>陣列可任意擴充，雜湊（Hash）類似於 JavaScript 的物件或 Python 的字典。</p>
+<hr>
+<h3 id="5-控制流程"><a href="#5-控制流程" class="headerlink" title="5. 控制流程"></a>5. 控制流程</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">score = <span class="number">85</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> score &gt;= <span class="number">90</span></span><br><span class="line">  puts <span class="string">&quot;優等&quot;</span></span><br><span class="line"><span class="keyword">elsif</span> score &gt;= <span class="number">60</span></span><br><span class="line">  puts <span class="string">&quot;及格&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  puts <span class="string">&quot;不及格&quot;</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>條件式使用 <code>if</code>、<code>elsif</code>、<code>else</code>，並以 <code>end</code> 結尾。邏輯清楚、語法簡潔。</p>
+<hr>
+<h3 id="6-迴圈與區塊"><a href="#6-迴圈與區塊" class="headerlink" title="6. 迴圈與區塊"></a>6. 迴圈與區塊</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">(<span class="number">1</span>..<span class="number">5</span>).each <span class="keyword">do</span> |<span class="params">i</span>|</span><br><span class="line">  puts <span class="string">&quot;第 <span class="subst">#&#123;i&#125;</span> 次&quot;</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p><code>(1..5)</code> 表示範圍，<code>.each</code> 是集合的遍歷方法，<code>do ... end</code> 是 Ruby 的區塊（block）。</p>
+<hr>
+<h3 id="7-方法定義"><a href="#7-方法定義" class="headerlink" title="7. 方法定義"></a>7. 方法定義</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">greet</span>(<span class="params">name</span>)</span><br><span class="line">  <span class="string">&quot;Hello, <span class="subst">#&#123;name&#125;</span>&quot;</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">puts greet(<span class="string">&quot;Ruby&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>方法以 <code>def</code> 開頭，<code>end</code> 結尾，回傳值可省略 <code>return</code>，預設回傳最後一行的值。</p>
+<hr>
+<h3 id="8-類別與物件導向"><a href="#8-類別與物件導向" class="headerlink" title="8. 類別與物件導向"></a>8. 類別與物件導向</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span></span><br><span class="line">  <span class="built_in">attr_accessor</span> <span class="symbol">:name</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">initialize</span>(<span class="params">name</span>)</span><br><span class="line">    <span class="variable">@name</span> = name</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">greet</span></span><br><span class="line">    <span class="string">&quot;Hi, I&#x27;m <span class="subst">#&#123;<span class="variable">@name</span>&#125;</span>&quot;</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">p = <span class="title class_">Person</span>.new(<span class="string">&quot;Alice&quot;</span>)</span><br><span class="line">puts p.greet   <span class="comment"># =&gt; Hi, I&#x27;m Alice</span></span><br></pre></td></tr></table></figure>
+
+<p>Ruby 是純物件導向語言，每個資料皆為物件。類別可包含建構子 <code>initialize</code> 與方法，使用 <code>@變數</code> 表示實例變數。</p>
+<hr>
+<h3 id="9-條件表達式簡寫"><a href="#9-條件表達式簡寫" class="headerlink" title="9. 條件表達式簡寫"></a>9. 條件表達式簡寫</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">puts <span class="string">&quot;你已成年&quot;</span> <span class="keyword">if</span> age &gt;= <span class="number">18</span></span><br></pre></td></tr></table></figure>
+
+<p>Ruby 支援簡化語法，條件可以寫在語句之後，提高可讀性。</p>
+<hr>
+<h3 id="10-匿名函式與-Lambda"><a href="#10-匿名函式與-Lambda" class="headerlink" title="10. 匿名函式與 Lambda"></a>10. 匿名函式與 Lambda</h3><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">double = -&gt;(x) &#123; x * <span class="number">2</span> &#125;</span><br><span class="line">puts double.call(<span class="number">5</span>)  <span class="comment"># =&gt; 10</span></span><br></pre></td></tr></table></figure>
+
+<p>Lambda 是匿名函式，可用 <code>-&gt;</code> 或 <code>lambda</code> 定義，用 <code>.call</code> 呼叫。</p>
+<hr>
+<h2 id="Ruby-工具與社群資源"><a href="#Ruby-工具與社群資源" class="headerlink" title="Ruby 工具與社群資源"></a>Ruby 工具與社群資源</h2><ul>
+<li><p><strong>Gem 套件系統</strong>：<code>gem install 套件名</code>，安裝第三方函式庫。</p>
+</li>
+<li><p><strong>irb</strong>：互動式 Ruby shell，適合練習語法。</p>
+</li>
+<li><p><strong>RDoc</strong>：內建文件系統。</p>
+</li>
+<li><p><strong>社群網站</strong>：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.ruby-lang.org/">https://www.ruby-lang.org/</a>（官方網站）</li>
+<li><a target="_blank" rel="noopener" href="https://rubygems.org/">RubyGems.org</a>（套件管理中心）</li>
+<li><a target="_blank" rel="noopener" href="https://ruby-china.org/">Ruby China</a>（中文社群）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Ruby 是一門設計優雅、語法簡潔、表達力強的程式語言，特別適合用於快速開發、腳本處理與 Web 應用。其強大的物件導向特性與彈性語法，讓程式設計不僅實用，更具美感。</p>
+<p>如果你是第一次接觸和學習程式語言，Ruby 是一個相當友善的選擇。如果你是經驗豐富的開發者，也能從 Ruby 中找到清晰表達與高層次抽象的樂趣。</p>
+
+                </div>
+
+                <br>
+                <section>
+                    歡迎分享按讚給予支持和鼓勵！
+                    <div class="fb-like" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                </section>
+                <br>
+                <div>
+                    <div class="fb-page" data-href="https://www.facebook.com/tech.kdchang.net" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/tech.kdchang.net" class="fb-xfbml-parse-ignore"><a target="_blank" rel="noopener" href="https://www.facebook.com/tech.kdchang.net">KD Chang（張凱迪）</a></blockquote></div>
+                </div>
+                <hr>
+                <div>
+                    <h3>Related Posts</h3>
+                    <div>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/07/01/learning-notes-ruby-on-rails-intro-tutorial/" title="Ruby on Rails 介紹與入門教學筆記 | 學習筆記" rel="bookmark">Ruby on Rails 介紹與入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                    </div>
+                </div>
+                <!-- Tags -->
+                <h3>Comments</h3>
+                <hr>
+                
+                <!-- disqus start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus end -->
+                
+
+            </div>
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "kdchang-tech-blog";
+    var disqus_identifier = "https://tech.kdchang.net/2024/07/01/learning-notes-ruby-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2024/07/01/learning-notes-ruby-intro-tutorial/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5728979c6a10856b"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<!-- <script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script> -->
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+<script>
+   anchors.add('h1, h2, h3');
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<a id="scroll-to-top-button">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/kaidichang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/tech.kdchang.net">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/kdchang_net">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kdchang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <hr>
+                <div class="copyright text-muted">
+                    Special thanks <a href="https://unsplash.com/@afgprogrammer" target="_blank">Mohammad Rahmani</a>、<a href="https://www.flickr.com/photos/derek-john-lee/14698093740/in/photolist-ooPzcj-r2kVt-ppV21v-brhFX3-wd3Qsy-cLiKEL-xDR92-28QCtA-29YFZZ-gzuZk-dqbhxt-9FwCBY-q57bEv-bVhZJr-dYxGXn-dxg9g7-8x7gjU-dzjMic-rQhf-9TMgJ3-mEsFjW-qbzd4p-q6cJvc-7zYttk-q2gE5S-bdb4G4-8ifmQN-eivVeg-9ZZFVz-aD6q6r-bnjfWh-qJAn2g-k22Ttf-n9Jhfj-kk4woh-sj43iz-5NYGUn-96wNhi-9ZZFz6-8DJkQf-4wQizw-3bzz8p-9yzTSd-xDQee-68Xwfp-7t5WPx-xDTM5-o5RPYA-kWihhy-7iHDEX" target="_blank">Derek</a>、<a href="https://www.flickr.com/photos/mashleymorgan/" target="_blank">mashleymorgan</a>、<a href="https://www.flickr.com/photos/mustafeez27/" target="_blank">mustafeez27</a>         
+                    and <a href="http://blog.kaijun.rocks" target="_blank">Kaijun</a>
+                    <br> 
+                    Copyright &copy; KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪 2025
+                    <hr>
+                    <!-- facebook follow -->
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.net" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+<!-- Custom Main JavaScript -->
+<script src="/js/main.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://tech.kdchang.net/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fb.js -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="X3eUifxc"></script>
+
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FN9X92SM77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FN9X92SM77');
+</script>
+
+
+
+	
+</body>
+
+</html>
