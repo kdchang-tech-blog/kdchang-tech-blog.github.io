@@ -681,94 +681,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Chrome Extension 入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/20/learning-notes-chrome-extension-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Chrome Extension（Chrome 擴充功能）是針對 Google Chrome 瀏覽器開發的瀏覽器插件，能夠延伸瀏覽器的功能，提供更高效的使用體驗。你可以用它來自動化操作、強化 UI、增加捷徑、記錄內容、攔截請求等等。</p>
-<p>本教學將介紹 Chrome Extension 的基本架構、開發流程與一個簡單的實作範例，協助你快速入門。</p>
-<hr>
-<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ol>
-<li><p><strong>基本架構：</strong></p>
-<ul>
-<li><code>manifest.json</code>：擴充功能的核心設定檔</li>
-<li><code>background.js</code> &#x2F; <code>service_worker.js</code>：背景邏輯（例如攔截請求、常駐任務）</li>
-<li><code>popup.html</code> + <code>popup.js</code>：點擊圖示後的互動 UI</li>
-<li><code>content.js</code>：注入頁面的腳本，直接與 DOM 互動</li>
-</ul>
-</li>
-<li><p><strong>開發步驟：</strong></p>
-<ul>
-<li>建立資料夾結構與設定檔</li>
-<li>撰寫功能腳本與 UI</li>
-<li>在 Chrome 中載入未封裝的擴充功能</li>
-<li>測試與除錯</li>
-</ul>
-</li>
-<li><p><strong>核心權限與功能：</strong></p>
-<ul>
-<li><code>permissions</code> 欄位需指定所需功能（如 <code>tabs</code>, <code>storage</code>, <code>scripting</code>）</li>
-<li><code>host_permissions</code> 控制哪些網站允許注入腳本</li>
-<li>可與頁面雙向通訊</li>
-</ul>
-</li>
-<li><p><strong>常見用途：</strong></p>
-<ul>
-<li>提高生產力（截圖、標記、翻譯）</li>
-<li>資料擷取與分析（網頁爬蟲輔助）</li>
-<li>儲存內容（書籤、待辦清單）</li>
-<li>網站 UI 客製化</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="實際範例：儲存選取文字的小擴充功能"><a href="#實際範例：儲存選取文字的小擴充功能" class="headerlink" title="實際範例：儲存選取文字的小擴充功能"></a>實際範例：儲存選取文字的小擴充功能</h2><h3 id="功能簡介"><a href="#功能簡介" class="headerlink" title="功能簡介"></a>功能簡介</h3><p>當使用者在網頁上選取一段文字並點擊擴充功能圖示，會將選取的文字儲存到 <code>localStorage</code>，方便後續檢視。</p>
-<hr>
-<h3 id="1-專案結構"><a href="#1-專案結構" class="headerlink" title="1. 專案結構"></a>1. 專案結構</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">my-extension/</span><br><span class="line">├── manifest.json</span><br><span class="line">├── popup.html</span><br><span class="line">├── popup.js</span><br><span class="line">├── content.js</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="2-manifest-json"><a href="#2-manifest-json" class="headerlink" title="2. manifest.json"></a>2. manifest.json</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;manifest_version&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Save Selected Text&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;儲存網頁中選取的文字&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;permissions&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;scripting&quot;</span><span class="punctuation">,</span> <span class="string">&quot;storage&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;host_permissions&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;&lt;all_urls&gt;&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;default_popup&quot;</span><span class="punctuation">:</span> <span class="string">&quot;popup.html&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;default_icon&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;16&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icon16.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;48&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icon48.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;128&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icon128.png&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;background&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;service_worker&quot;</span><span class="punctuation">:</span> <span class="string">&quot;background.js&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;content_scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;matches&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;&lt;all_urls&gt;&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;js&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;content.js&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="3-popup-html"><a href="#3-popup-html" class="headerlink" title="3. popup.html"></a>3. popup.html</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>已儲存文字<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>你儲存的文字：<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;text-list&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;popup.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="4-popup-js"><a href="#4-popup-js" class="headerlink" title="4. popup.js"></a>4. popup.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  chrome.<span class="property">storage</span>.<span class="property">local</span>.<span class="title function_">get</span>([<span class="string">&#x27;savedTexts&#x27;</span>], <span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> list = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;text-list&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> texts = result.<span class="property">savedTexts</span> || [];</span><br><span class="line">    texts.<span class="title function_">forEach</span>(<span class="function">(<span class="params">text</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> li = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;li&#x27;</span>);</span><br><span class="line">      li.<span class="property">textContent</span> = text;</span><br><span class="line">      list.<span class="title function_">appendChild</span>(li);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="5-content-js"><a href="#5-content-js" class="headerlink" title="5. content.js"></a>5. content.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseup&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> selectedText = <span class="variable language_">window</span>.<span class="title function_">getSelection</span>().<span class="title function_">toString</span>().<span class="title function_">trim</span>();</span><br><span class="line">  <span class="keyword">if</span> (selectedText) &#123;</span><br><span class="line">    chrome.<span class="property">storage</span>.<span class="property">local</span>.<span class="title function_">get</span>([<span class="string">&#x27;savedTexts&#x27;</span>], <span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> current = result.<span class="property">savedTexts</span> || [];</span><br><span class="line">      current.<span class="title function_">push</span>(selectedText);</span><br><span class="line">      chrome.<span class="property">storage</span>.<span class="property">local</span>.<span class="title function_">set</span>(&#123; <span class="attr">savedTexts</span>: current &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="6-載入擴充功能"><a href="#6-載入擴充功能" class="headerlink" title="6. 載入擴充功能"></a>6. 載入擴充功能</h3><ol>
-<li>打開 Chrome 瀏覽器</li>
-<li>前往 <code>chrome://extensions/</code></li>
-<li>開啟右上角「開發人員模式」</li>
-<li>點選「載入未封裝項目」</li>
-<li>選取專案資料夾（my-extension）</li>
-</ol>
-<hr>
-<h3 id="7-測試方式"><a href="#7-測試方式" class="headerlink" title="7. 測試方式"></a>7. 測試方式</h3><ol>
-<li>任意打開一個網頁</li>
-<li>選取文字後放開滑鼠</li>
-<li>點擊瀏覽器右上角的擴充功能圖示</li>
-<li>在彈出的視窗中查看剛才儲存的文字</li>
-</ol>
-<hr>
-<h2 id="小技巧與補充"><a href="#小技巧與補充" class="headerlink" title="小技巧與補充"></a>小技巧與補充</h2><ul>
-<li><strong>使用 TypeScript</strong>：可結合 <code>Vite</code> 或 <code>webpack</code> 實現模組化開發。</li>
-<li><strong>Hot Reload</strong>：透過專案如 <code>crxjs</code> 可達成自動刷新套件。</li>
-<li><strong>權限最小化原則</strong>：僅使用必要權限以通過審核。</li>
-<li><strong>Storage API</strong>：可選擇使用 <code>localStorage</code>、<code>chrome.storage.local</code>、<code>sync</code> 等不同儲存方式。</li>
-<li><strong>message passing</strong>：背景與 content script 可用 <code>chrome.runtime.sendMessage</code> 溝通。</li>
-</ul>
-<hr>
-<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Chrome Extension 是一個強大的平台，讓開發者能以 HTML、CSS、JavaScript 等前端技術打造自己的工具。無論是為了解決個人需求、改善使用體驗，還是作為產品 MVP 的雛型開發平台，Chrome Extension 都是值得投資時間學習的技術。</p>
-<p>從簡單的文字儲存開始，你可以慢慢拓展功能，加入右鍵選單、快捷鍵、網頁改寫、API 串接等高階應用，打造出屬於你自己的瀏覽器擴充小工具。</p>
-]]></content>
-      <tags>
-        <tag>Chrome Extension</tag>
-        <tag>Chrome</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>chrome.storage.local vs. localStorage：資料儲存方式差異入門教學筆記 | 學習筆記</title>
     <url>/2024/12/20/learning-notes-chrome-extension-local-storage-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在前端與 Chrome 擴充功能（Chrome Extension）開發中，「資料儲存」是一項常見需求。開發者常見的兩種方式為：</p>
@@ -896,6 +808,94 @@
         <tag>Chrome</tag>
         <tag>chrome.storage.local</tag>
         <tag>localStorage</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Chrome Extension 入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/20/learning-notes-chrome-extension-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Chrome Extension（Chrome 擴充功能）是針對 Google Chrome 瀏覽器開發的瀏覽器插件，能夠延伸瀏覽器的功能，提供更高效的使用體驗。你可以用它來自動化操作、強化 UI、增加捷徑、記錄內容、攔截請求等等。</p>
+<p>本教學將介紹 Chrome Extension 的基本架構、開發流程與一個簡單的實作範例，協助你快速入門。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ol>
+<li><p><strong>基本架構：</strong></p>
+<ul>
+<li><code>manifest.json</code>：擴充功能的核心設定檔</li>
+<li><code>background.js</code> &#x2F; <code>service_worker.js</code>：背景邏輯（例如攔截請求、常駐任務）</li>
+<li><code>popup.html</code> + <code>popup.js</code>：點擊圖示後的互動 UI</li>
+<li><code>content.js</code>：注入頁面的腳本，直接與 DOM 互動</li>
+</ul>
+</li>
+<li><p><strong>開發步驟：</strong></p>
+<ul>
+<li>建立資料夾結構與設定檔</li>
+<li>撰寫功能腳本與 UI</li>
+<li>在 Chrome 中載入未封裝的擴充功能</li>
+<li>測試與除錯</li>
+</ul>
+</li>
+<li><p><strong>核心權限與功能：</strong></p>
+<ul>
+<li><code>permissions</code> 欄位需指定所需功能（如 <code>tabs</code>, <code>storage</code>, <code>scripting</code>）</li>
+<li><code>host_permissions</code> 控制哪些網站允許注入腳本</li>
+<li>可與頁面雙向通訊</li>
+</ul>
+</li>
+<li><p><strong>常見用途：</strong></p>
+<ul>
+<li>提高生產力（截圖、標記、翻譯）</li>
+<li>資料擷取與分析（網頁爬蟲輔助）</li>
+<li>儲存內容（書籤、待辦清單）</li>
+<li>網站 UI 客製化</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="實際範例：儲存選取文字的小擴充功能"><a href="#實際範例：儲存選取文字的小擴充功能" class="headerlink" title="實際範例：儲存選取文字的小擴充功能"></a>實際範例：儲存選取文字的小擴充功能</h2><h3 id="功能簡介"><a href="#功能簡介" class="headerlink" title="功能簡介"></a>功能簡介</h3><p>當使用者在網頁上選取一段文字並點擊擴充功能圖示，會將選取的文字儲存到 <code>localStorage</code>，方便後續檢視。</p>
+<hr>
+<h3 id="1-專案結構"><a href="#1-專案結構" class="headerlink" title="1. 專案結構"></a>1. 專案結構</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">my-extension/</span><br><span class="line">├── manifest.json</span><br><span class="line">├── popup.html</span><br><span class="line">├── popup.js</span><br><span class="line">├── content.js</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-manifest-json"><a href="#2-manifest-json" class="headerlink" title="2. manifest.json"></a>2. manifest.json</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;manifest_version&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Save Selected Text&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;儲存網頁中選取的文字&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;permissions&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;scripting&quot;</span><span class="punctuation">,</span> <span class="string">&quot;storage&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;host_permissions&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;&lt;all_urls&gt;&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;default_popup&quot;</span><span class="punctuation">:</span> <span class="string">&quot;popup.html&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;default_icon&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;16&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icon16.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;48&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icon48.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;128&quot;</span><span class="punctuation">:</span> <span class="string">&quot;icon128.png&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;background&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;service_worker&quot;</span><span class="punctuation">:</span> <span class="string">&quot;background.js&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;content_scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;matches&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;&lt;all_urls&gt;&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;js&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;content.js&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-popup-html"><a href="#3-popup-html" class="headerlink" title="3. popup.html"></a>3. popup.html</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>已儲存文字<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>你儲存的文字：<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;text-list&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;popup.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="4-popup-js"><a href="#4-popup-js" class="headerlink" title="4. popup.js"></a>4. popup.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  chrome.<span class="property">storage</span>.<span class="property">local</span>.<span class="title function_">get</span>([<span class="string">&#x27;savedTexts&#x27;</span>], <span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> list = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;text-list&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> texts = result.<span class="property">savedTexts</span> || [];</span><br><span class="line">    texts.<span class="title function_">forEach</span>(<span class="function">(<span class="params">text</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> li = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;li&#x27;</span>);</span><br><span class="line">      li.<span class="property">textContent</span> = text;</span><br><span class="line">      list.<span class="title function_">appendChild</span>(li);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="5-content-js"><a href="#5-content-js" class="headerlink" title="5. content.js"></a>5. content.js</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseup&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> selectedText = <span class="variable language_">window</span>.<span class="title function_">getSelection</span>().<span class="title function_">toString</span>().<span class="title function_">trim</span>();</span><br><span class="line">  <span class="keyword">if</span> (selectedText) &#123;</span><br><span class="line">    chrome.<span class="property">storage</span>.<span class="property">local</span>.<span class="title function_">get</span>([<span class="string">&#x27;savedTexts&#x27;</span>], <span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> current = result.<span class="property">savedTexts</span> || [];</span><br><span class="line">      current.<span class="title function_">push</span>(selectedText);</span><br><span class="line">      chrome.<span class="property">storage</span>.<span class="property">local</span>.<span class="title function_">set</span>(&#123; <span class="attr">savedTexts</span>: current &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="6-載入擴充功能"><a href="#6-載入擴充功能" class="headerlink" title="6. 載入擴充功能"></a>6. 載入擴充功能</h3><ol>
+<li>打開 Chrome 瀏覽器</li>
+<li>前往 <code>chrome://extensions/</code></li>
+<li>開啟右上角「開發人員模式」</li>
+<li>點選「載入未封裝項目」</li>
+<li>選取專案資料夾（my-extension）</li>
+</ol>
+<hr>
+<h3 id="7-測試方式"><a href="#7-測試方式" class="headerlink" title="7. 測試方式"></a>7. 測試方式</h3><ol>
+<li>任意打開一個網頁</li>
+<li>選取文字後放開滑鼠</li>
+<li>點擊瀏覽器右上角的擴充功能圖示</li>
+<li>在彈出的視窗中查看剛才儲存的文字</li>
+</ol>
+<hr>
+<h2 id="小技巧與補充"><a href="#小技巧與補充" class="headerlink" title="小技巧與補充"></a>小技巧與補充</h2><ul>
+<li><strong>使用 TypeScript</strong>：可結合 <code>Vite</code> 或 <code>webpack</code> 實現模組化開發。</li>
+<li><strong>Hot Reload</strong>：透過專案如 <code>crxjs</code> 可達成自動刷新套件。</li>
+<li><strong>權限最小化原則</strong>：僅使用必要權限以通過審核。</li>
+<li><strong>Storage API</strong>：可選擇使用 <code>localStorage</code>、<code>chrome.storage.local</code>、<code>sync</code> 等不同儲存方式。</li>
+<li><strong>message passing</strong>：背景與 content script 可用 <code>chrome.runtime.sendMessage</code> 溝通。</li>
+</ul>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Chrome Extension 是一個強大的平台，讓開發者能以 HTML、CSS、JavaScript 等前端技術打造自己的工具。無論是為了解決個人需求、改善使用體驗，還是作為產品 MVP 的雛型開發平台，Chrome Extension 都是值得投資時間學習的技術。</p>
+<p>從簡單的文字儲存開始，你可以慢慢拓展功能，加入右鍵選單、快捷鍵、網頁改寫、API 串接等高階應用，打造出屬於你自己的瀏覽器擴充小工具。</p>
+]]></content>
+      <tags>
+        <tag>Chrome Extension</tag>
+        <tag>Chrome</tag>
       </tags>
   </entry>
   <entry>
@@ -3171,6 +3171,102 @@
       </tags>
   </entry>
   <entry>
+    <title>Git 指令學習筆記 | 學習筆記</title>
+    <url>/2023/12/21/learning-notes-git-command-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Git 是現代軟體開發中最常使用的分散式版本控制系統，它幫助開發者管理源代碼的版本和協作。這篇教學將從基礎開始，介紹 Git 的常用命令並提供實際範例，幫助你熟悉如何使用 Git 來進行版本控制與協作。</p>
+<h2 id="1-初始化-Git-倉庫-git-init"><a href="#1-初始化-Git-倉庫-git-init" class="headerlink" title="1. 初始化 Git 倉庫 (git init)"></a>1. 初始化 Git 倉庫 (<code>git init</code>)</h2><p>在專案資料夾中使用 <code>git init</code> 可以初始化一個新的 Git 倉庫，這樣就可以開始使用 Git 來管理專案中的檔案版本。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<p>執行後會在專案資料夾內建立一個 <code>.git</code> 的隱藏資料夾，這表示這個資料夾已經被 Git 所管理。</p>
+<h2 id="2-查看當前狀態-git-status"><a href="#2-查看當前狀態-git-status" class="headerlink" title="2. 查看當前狀態 (git status)"></a>2. 查看當前狀態 (<code>git status</code>)</h2><p>在進行版本控制時，使用 <code>git status</code> 可以查看專案的當前狀態。這個命令會顯示哪些檔案已經被修改、哪些檔案尚未加入版本控制。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<p>這會列出所有變更過的檔案（包括已修改、尚未追蹤的檔案等）以及當前分支的狀態。</p>
+<h2 id="3-新增檔案到暫存區-git-add"><a href="#3-新增檔案到暫存區-git-add" class="headerlink" title="3. 新增檔案到暫存區 (git add)"></a>3. 新增檔案到暫存區 (<code>git add</code>)</h2><p>修改檔案後，必須先使用 <code>git add</code> 把檔案新增到暫存區，才可以進行提交。使用 <code>git add</code> 可以指定單一檔案或多個檔案，或者一次將所有檔案加入暫存區。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add filename.txt</span><br></pre></td></tr></table></figure>
+
+<p>或將所有變更加入暫存區：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-提交變更-git-commit"><a href="#4-提交變更-git-commit" class="headerlink" title="4. 提交變更 (git commit)"></a>4. 提交變更 (<code>git commit</code>)</h2><p>將檔案從暫存區提交到本地版本庫使用 <code>git commit</code>。每次提交時，需要提供一個簡短的描述，解釋這次提交的內容。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;新增使用者登錄功能&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-設定-Git-使用者資訊-git-config"><a href="#5-設定-Git-使用者資訊-git-config" class="headerlink" title="5. 設定 Git 使用者資訊 (git config)"></a>5. 設定 Git 使用者資訊 (<code>git config</code>)</h2><p>在進行提交之前，必須設定 Git 的使用者名稱和電子郵件。這些資料會與每次提交關聯。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;your.email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>這會把你的名稱和郵箱寫入全域設定，未來每次提交都會使用這些設定。</p>
+<h2 id="6-查看提交歷史-git-log"><a href="#6-查看提交歷史-git-log" class="headerlink" title="6. 查看提交歷史 (git log)"></a>6. 查看提交歷史 (<code>git log</code>)</h2><p>使用 <code>git log</code> 可以查看專案的提交歷史。這會顯示每次提交的詳細信息，包括提交哈希值、作者、日期和提交訊息。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+
+<p>如果希望更簡潔的輸出，可以使用 <code>--oneline</code> 參數：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> --oneline</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-恢復檔案-git-restore"><a href="#7-恢復檔案-git-restore" class="headerlink" title="7. 恢復檔案 (git restore)"></a>7. 恢復檔案 (<code>git restore</code>)</h2><p>如果你修改了一些檔案並且還沒有提交，可以使用 <code>git restore</code> 恢復檔案到上次提交的狀態，撤銷變更。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git restore filename.txt</span><br></pre></td></tr></table></figure>
+
+<p>如果想撤銷暫存區的變更，可以使用：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git restore --staged filename.txt</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-追蹤檔案變動紀錄-git-blame"><a href="#8-追蹤檔案變動紀錄-git-blame" class="headerlink" title="8. 追蹤檔案變動紀錄 (git blame)"></a>8. 追蹤檔案變動紀錄 (<code>git blame</code>)</h2><p>如果你想查看某個檔案每一行是誰在什麼時候修改的，可以使用 <code>git blame</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git blame filename.txt</span><br></pre></td></tr></table></figure>
+
+<p>這會顯示每一行的修改者與修改時間，有助於了解程式碼的歷史。</p>
+<h2 id="9-建立分支-git-branch"><a href="#9-建立分支-git-branch" class="headerlink" title="9. 建立分支 (git branch)"></a>9. 建立分支 (<code>git branch</code>)</h2><p>在 Git 中，分支讓你能夠並行地進行多個工作。你可以使用 <code>git branch</code> 查看目前所有的分支。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<p>要創建新的分支：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch feature-login</span><br></pre></td></tr></table></figure>
+
+<h2 id="10-切換分支-git-switch"><a href="#10-切換分支-git-switch" class="headerlink" title="10. 切換分支 (git switch)"></a>10. 切換分支 (<code>git switch</code>)</h2><p>要切換到不同的分支，可以使用 <code>git switch</code>。例如，切換到 <code>feature-login</code> 分支：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git switch feature-login</span><br></pre></td></tr></table></figure>
+
+<p>如果你要創建並切換到一個新的分支，可以加上 <code>-c</code> 選項：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git switch -c feature-register</span><br></pre></td></tr></table></figure>
+
+<h2 id="11-切換提交紀錄或分支-git-checkout"><a href="#11-切換提交紀錄或分支-git-checkout" class="headerlink" title="11. 切換提交紀錄或分支 (git checkout)"></a>11. 切換提交紀錄或分支 (<code>git checkout</code>)</h2><p>雖然 <code>git switch</code> 是較新的命令，但仍然可以使用 <code>git checkout</code> 切換分支或還原檔案。要切換到某個分支：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout feature-login</span><br></pre></td></tr></table></figure>
+
+<p>若要還原某個檔案到指定的提交：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout &lt;commit_hash&gt; filename.txt</span><br></pre></td></tr></table></figure>
+
+<h2 id="12-合併分支-git-merge"><a href="#12-合併分支-git-merge" class="headerlink" title="12. 合併分支 (git merge)"></a>12. 合併分支 (<code>git merge</code>)</h2><p>將不同分支的更改合併回主分支可以使用 <code>git merge</code>。首先切換到目標分支（例如 <code>main</code>），然後執行合併操作：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git switch main</span><br><span class="line">git merge feature-login</span><br></pre></td></tr></table></figure>
+
+<p>如果有衝突，Git 會提示你解決衝突。</p>
+<h2 id="13-重新整理提交歷史-git-rebase"><a href="#13-重新整理提交歷史-git-rebase" class="headerlink" title="13. 重新整理提交歷史 (git rebase)"></a>13. 重新整理提交歷史 (<code>git rebase</code>)</h2><p><code>git rebase</code> 用來重新整理提交歷史，將一個分支的更改重新應用到另一個分支上，使歷史更為線性。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git switch feature-login</span><br><span class="line">git rebase main</span><br></pre></td></tr></table></figure>
+
+<p>這會將 <code>feature-login</code> 分支的變更，重新應用到 <code>main</code> 分支的最新提交上。</p>
+<h2 id="14-重置提交-git-reset"><a href="#14-重置提交-git-reset" class="headerlink" title="14. 重置提交 (git reset)"></a>14. 重置提交 (<code>git reset</code>)</h2><p>如果你想取消最近一次的提交，可以使用 <code>git reset</code>。使用 <code>--soft</code> 保留檔案變更，<code>--hard</code> 則會刪除變更：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset --soft HEAD^</span><br></pre></td></tr></table></figure>
+
+<p>這會將上一個提交撤回，但保留檔案變更；若使用 <code>--hard</code>，則會完全撤回提交及變更。</p>
+<h2 id="15-查看操作紀錄-git-reflog"><a href="#15-查看操作紀錄-git-reflog" class="headerlink" title="15. 查看操作紀錄 (git reflog)"></a>15. 查看操作紀錄 (<code>git reflog</code>)</h2><p><code>git reflog</code> 可以幫助你查看 HEAD 的操作紀錄，即便你進行了 <code>reset</code> 或 <code>checkout</code> 等操作。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+
+<p>這個命令列出所有曾經指向 HEAD 的 commit 參考，並且可以用來恢復丟失的提交。</p>
+<h2 id="16-暫存變更-git-stash"><a href="#16-暫存變更-git-stash" class="headerlink" title="16. 暫存變更 (git stash)"></a>16. 暫存變更 (<code>git stash</code>)</h2><p>如果你正在進行某些變更，但又需要切換到其他分支處理緊急問題，可以使用 <code>git stash</code> 暫時儲存未提交的變更：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
+
+<p>這會暫時保存變更，並恢復工作目錄到最後一次提交的狀態。待你完成緊急工作後，可以使用 <code>git stash pop</code> 恢復變更。</p>
+<h2 id="17-選擇性地應用提交-git-cherry-pick"><a href="#17-選擇性地應用提交-git-cherry-pick" class="headerlink" title="17. 選擇性地應用提交 (git cherry-pick)"></a>17. 選擇性地應用提交 (<code>git cherry-pick</code>)</h2><p><code>git cherry-pick</code> 讓你可以選擇性地將某個提交應用到當前分支。例如，將 <code>feature-login</code> 分支的某個提交應用到 <code>main</code> 分支：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git cherry-pick &lt;commit_hash&gt;</span><br></pre></td></tr></table></figure>
+
+<p>這對於選擇性地將某些特定變更移動到其他分支非常有用。</p>
+<h2 id="18-子模組-git-submodule"><a href="#18-子模組-git-submodule" class="headerlink" title="18. 子模組 (git submodule)"></a>18. 子模組 (<code>git submodule</code>)</h2><p>當專案中有其他專案作為依賴時，可以使用 Git 子模組來管理。首先，將子模組加入專案：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git submodule add &lt;repository_url&gt; path/to/submodule</span><br></pre></td></tr></table></figure>
+
+<p>這會在專案中加入一個指向其他 Git 倉庫的子模組。在克隆專案時，記得加上 <code>--recurse-submodules</code> 來獲取子模組的內容。</p>
+<hr>
+<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>以上介紹了 Git 中一些常用的命令，這些命令幾乎涵蓋了日常開發中的大部分需求。熟練掌握 Git 讓你在開發過程中更加高效，無論是單人開發還是團隊協作，都能大大提高工作流的順暢性。如果你還有進一步的需求或疑問，隨時可以深入學習 Git 的進階技巧。</p>
+]]></content>
+      <tags>
+        <tag>Github</tag>
+        <tag>Git</tag>
+        <tag>版本控制</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git Flow 介紹與 GitHub Flow 介紹入門教學筆記 | 學習筆記</title>
     <url>/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在軟體開發中，版本控制是協作開發中至關重要的工具。Git 作為當前最受歡迎的版本控制系統，其強大的分支管理和版本控制功能，使得開發團隊能夠高效地進行協作。兩種常見的 Git 工作流是 Git Flow 和 GitHub Flow，這些工作流提供了清晰的分支管理策略，讓團隊可以更加有序地開發和部署代碼。本文將介紹 Git Flow 和 GitHub Flow 的基本概念、使用方法，以及它們之間的區別。</p>
@@ -3224,10 +3320,10 @@
 <h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>Git Flow 和 GitHub Flow 各有優缺點，適用的場景也有所不同。選擇哪一種工作流，應根據團隊的規模、項目的複雜度以及發佈頻率來決定。對於需要穩定發佈和多版本管理的項目，Git Flow 是一個更好的選擇。而對於需要快速迭代和頻繁部署的小型項目，GitHub Flow 則是一個更簡單有效的選擇。</p>
 ]]></content>
       <tags>
-        <tag>Git Flow</tag>
-        <tag>Github Flow</tag>
         <tag>Github</tag>
         <tag>Git</tag>
+        <tag>Git Flow</tag>
+        <tag>Github Flow</tag>
       </tags>
   </entry>
   <entry>
@@ -3325,102 +3421,6 @@
 <li><a href="https://w3c.hexschool.com/git/10bf7677">git reflog - 還原大招</a></li>
 <li><a href="https://gitbook.tw/">為你自己學 Git</a></li>
 </ol>
-]]></content>
-      <tags>
-        <tag>Github</tag>
-        <tag>Git</tag>
-        <tag>版本控制</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git 指令學習筆記 | 學習筆記</title>
-    <url>/2023/12/21/learning-notes-git-command-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Git 是現代軟體開發中最常使用的分散式版本控制系統，它幫助開發者管理源代碼的版本和協作。這篇教學將從基礎開始，介紹 Git 的常用命令並提供實際範例，幫助你熟悉如何使用 Git 來進行版本控制與協作。</p>
-<h2 id="1-初始化-Git-倉庫-git-init"><a href="#1-初始化-Git-倉庫-git-init" class="headerlink" title="1. 初始化 Git 倉庫 (git init)"></a>1. 初始化 Git 倉庫 (<code>git init</code>)</h2><p>在專案資料夾中使用 <code>git init</code> 可以初始化一個新的 Git 倉庫，這樣就可以開始使用 Git 來管理專案中的檔案版本。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-
-<p>執行後會在專案資料夾內建立一個 <code>.git</code> 的隱藏資料夾，這表示這個資料夾已經被 Git 所管理。</p>
-<h2 id="2-查看當前狀態-git-status"><a href="#2-查看當前狀態-git-status" class="headerlink" title="2. 查看當前狀態 (git status)"></a>2. 查看當前狀態 (<code>git status</code>)</h2><p>在進行版本控制時，使用 <code>git status</code> 可以查看專案的當前狀態。這個命令會顯示哪些檔案已經被修改、哪些檔案尚未加入版本控制。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-<p>這會列出所有變更過的檔案（包括已修改、尚未追蹤的檔案等）以及當前分支的狀態。</p>
-<h2 id="3-新增檔案到暫存區-git-add"><a href="#3-新增檔案到暫存區-git-add" class="headerlink" title="3. 新增檔案到暫存區 (git add)"></a>3. 新增檔案到暫存區 (<code>git add</code>)</h2><p>修改檔案後，必須先使用 <code>git add</code> 把檔案新增到暫存區，才可以進行提交。使用 <code>git add</code> 可以指定單一檔案或多個檔案，或者一次將所有檔案加入暫存區。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add filename.txt</span><br></pre></td></tr></table></figure>
-
-<p>或將所有變更加入暫存區：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-提交變更-git-commit"><a href="#4-提交變更-git-commit" class="headerlink" title="4. 提交變更 (git commit)"></a>4. 提交變更 (<code>git commit</code>)</h2><p>將檔案從暫存區提交到本地版本庫使用 <code>git commit</code>。每次提交時，需要提供一個簡短的描述，解釋這次提交的內容。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;新增使用者登錄功能&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="5-設定-Git-使用者資訊-git-config"><a href="#5-設定-Git-使用者資訊-git-config" class="headerlink" title="5. 設定 Git 使用者資訊 (git config)"></a>5. 設定 Git 使用者資訊 (<code>git config</code>)</h2><p>在進行提交之前，必須設定 Git 的使用者名稱和電子郵件。這些資料會與每次提交關聯。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;your.email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>這會把你的名稱和郵箱寫入全域設定，未來每次提交都會使用這些設定。</p>
-<h2 id="6-查看提交歷史-git-log"><a href="#6-查看提交歷史-git-log" class="headerlink" title="6. 查看提交歷史 (git log)"></a>6. 查看提交歷史 (<code>git log</code>)</h2><p>使用 <code>git log</code> 可以查看專案的提交歷史。這會顯示每次提交的詳細信息，包括提交哈希值、作者、日期和提交訊息。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
-
-<p>如果希望更簡潔的輸出，可以使用 <code>--oneline</code> 參數：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> --oneline</span><br></pre></td></tr></table></figure>
-
-<h2 id="7-恢復檔案-git-restore"><a href="#7-恢復檔案-git-restore" class="headerlink" title="7. 恢復檔案 (git restore)"></a>7. 恢復檔案 (<code>git restore</code>)</h2><p>如果你修改了一些檔案並且還沒有提交，可以使用 <code>git restore</code> 恢復檔案到上次提交的狀態，撤銷變更。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git restore filename.txt</span><br></pre></td></tr></table></figure>
-
-<p>如果想撤銷暫存區的變更，可以使用：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git restore --staged filename.txt</span><br></pre></td></tr></table></figure>
-
-<h2 id="8-追蹤檔案變動紀錄-git-blame"><a href="#8-追蹤檔案變動紀錄-git-blame" class="headerlink" title="8. 追蹤檔案變動紀錄 (git blame)"></a>8. 追蹤檔案變動紀錄 (<code>git blame</code>)</h2><p>如果你想查看某個檔案每一行是誰在什麼時候修改的，可以使用 <code>git blame</code>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git blame filename.txt</span><br></pre></td></tr></table></figure>
-
-<p>這會顯示每一行的修改者與修改時間，有助於了解程式碼的歷史。</p>
-<h2 id="9-建立分支-git-branch"><a href="#9-建立分支-git-branch" class="headerlink" title="9. 建立分支 (git branch)"></a>9. 建立分支 (<code>git branch</code>)</h2><p>在 Git 中，分支讓你能夠並行地進行多個工作。你可以使用 <code>git branch</code> 查看目前所有的分支。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
-
-<p>要創建新的分支：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch feature-login</span><br></pre></td></tr></table></figure>
-
-<h2 id="10-切換分支-git-switch"><a href="#10-切換分支-git-switch" class="headerlink" title="10. 切換分支 (git switch)"></a>10. 切換分支 (<code>git switch</code>)</h2><p>要切換到不同的分支，可以使用 <code>git switch</code>。例如，切換到 <code>feature-login</code> 分支：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git switch feature-login</span><br></pre></td></tr></table></figure>
-
-<p>如果你要創建並切換到一個新的分支，可以加上 <code>-c</code> 選項：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git switch -c feature-register</span><br></pre></td></tr></table></figure>
-
-<h2 id="11-切換提交紀錄或分支-git-checkout"><a href="#11-切換提交紀錄或分支-git-checkout" class="headerlink" title="11. 切換提交紀錄或分支 (git checkout)"></a>11. 切換提交紀錄或分支 (<code>git checkout</code>)</h2><p>雖然 <code>git switch</code> 是較新的命令，但仍然可以使用 <code>git checkout</code> 切換分支或還原檔案。要切換到某個分支：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout feature-login</span><br></pre></td></tr></table></figure>
-
-<p>若要還原某個檔案到指定的提交：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout &lt;commit_hash&gt; filename.txt</span><br></pre></td></tr></table></figure>
-
-<h2 id="12-合併分支-git-merge"><a href="#12-合併分支-git-merge" class="headerlink" title="12. 合併分支 (git merge)"></a>12. 合併分支 (<code>git merge</code>)</h2><p>將不同分支的更改合併回主分支可以使用 <code>git merge</code>。首先切換到目標分支（例如 <code>main</code>），然後執行合併操作：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git switch main</span><br><span class="line">git merge feature-login</span><br></pre></td></tr></table></figure>
-
-<p>如果有衝突，Git 會提示你解決衝突。</p>
-<h2 id="13-重新整理提交歷史-git-rebase"><a href="#13-重新整理提交歷史-git-rebase" class="headerlink" title="13. 重新整理提交歷史 (git rebase)"></a>13. 重新整理提交歷史 (<code>git rebase</code>)</h2><p><code>git rebase</code> 用來重新整理提交歷史，將一個分支的更改重新應用到另一個分支上，使歷史更為線性。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git switch feature-login</span><br><span class="line">git rebase main</span><br></pre></td></tr></table></figure>
-
-<p>這會將 <code>feature-login</code> 分支的變更，重新應用到 <code>main</code> 分支的最新提交上。</p>
-<h2 id="14-重置提交-git-reset"><a href="#14-重置提交-git-reset" class="headerlink" title="14. 重置提交 (git reset)"></a>14. 重置提交 (<code>git reset</code>)</h2><p>如果你想取消最近一次的提交，可以使用 <code>git reset</code>。使用 <code>--soft</code> 保留檔案變更，<code>--hard</code> 則會刪除變更：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset --soft HEAD^</span><br></pre></td></tr></table></figure>
-
-<p>這會將上一個提交撤回，但保留檔案變更；若使用 <code>--hard</code>，則會完全撤回提交及變更。</p>
-<h2 id="15-查看操作紀錄-git-reflog"><a href="#15-查看操作紀錄-git-reflog" class="headerlink" title="15. 查看操作紀錄 (git reflog)"></a>15. 查看操作紀錄 (<code>git reflog</code>)</h2><p><code>git reflog</code> 可以幫助你查看 HEAD 的操作紀錄，即便你進行了 <code>reset</code> 或 <code>checkout</code> 等操作。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
-
-<p>這個命令列出所有曾經指向 HEAD 的 commit 參考，並且可以用來恢復丟失的提交。</p>
-<h2 id="16-暫存變更-git-stash"><a href="#16-暫存變更-git-stash" class="headerlink" title="16. 暫存變更 (git stash)"></a>16. 暫存變更 (<code>git stash</code>)</h2><p>如果你正在進行某些變更，但又需要切換到其他分支處理緊急問題，可以使用 <code>git stash</code> 暫時儲存未提交的變更：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
-
-<p>這會暫時保存變更，並恢復工作目錄到最後一次提交的狀態。待你完成緊急工作後，可以使用 <code>git stash pop</code> 恢復變更。</p>
-<h2 id="17-選擇性地應用提交-git-cherry-pick"><a href="#17-選擇性地應用提交-git-cherry-pick" class="headerlink" title="17. 選擇性地應用提交 (git cherry-pick)"></a>17. 選擇性地應用提交 (<code>git cherry-pick</code>)</h2><p><code>git cherry-pick</code> 讓你可以選擇性地將某個提交應用到當前分支。例如，將 <code>feature-login</code> 分支的某個提交應用到 <code>main</code> 分支：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git cherry-pick &lt;commit_hash&gt;</span><br></pre></td></tr></table></figure>
-
-<p>這對於選擇性地將某些特定變更移動到其他分支非常有用。</p>
-<h2 id="18-子模組-git-submodule"><a href="#18-子模組-git-submodule" class="headerlink" title="18. 子模組 (git submodule)"></a>18. 子模組 (<code>git submodule</code>)</h2><p>當專案中有其他專案作為依賴時，可以使用 Git 子模組來管理。首先，將子模組加入專案：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git submodule add &lt;repository_url&gt; path/to/submodule</span><br></pre></td></tr></table></figure>
-
-<p>這會在專案中加入一個指向其他 Git 倉庫的子模組。在克隆專案時，記得加上 <code>--recurse-submodules</code> 來獲取子模組的內容。</p>
-<hr>
-<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>以上介紹了 Git 中一些常用的命令，這些命令幾乎涵蓋了日常開發中的大部分需求。熟練掌握 Git 讓你在開發過程中更加高效，無論是單人開發還是團隊協作，都能大大提高工作流的順暢性。如果你還有進一步的需求或疑問，隨時可以深入學習 Git 的進階技巧。</p>
 ]]></content>
       <tags>
         <tag>Github</tag>
@@ -6181,70 +6181,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LINE Pay API 入門教學筆記 | 學習筆記</title>
-    <url>/2024/12/16/learning-notes-line-pay-api-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>在電子商務與線上交易日益普及的今天，提供穩定又方便的金流服務已成為網站與應用程式不可或缺的一環。LINE Pay 是由 LINE Corporation 推出的行動支付平台，除了在線上與實體店面支援消費者付款外，也提供開發者 API 介面來整合第三方商務服務，使開發者可以在網站或應用程式中無縫串接付款功能。</p>
-<p>本篇教學筆記將帶你了解 LINE Pay API 的基本觀念、運作流程，以及如何透過簡單的實作實現付款功能，協助你更快進入金流整合領域。</p>
-<hr>
-<h2 id="二、重點摘要"><a href="#二、重點摘要" class="headerlink" title="二、重點摘要"></a>二、重點摘要</h2><ul>
-<li><p>LINE Pay 是 LINE 提供的電子支付平台，可整合至網站或 App。</p>
-</li>
-<li><p>LINE Pay API 採用 RESTful 設計，以 HTTPS POST&#x2F;GET 傳遞 JSON 格式。</p>
-</li>
-<li><p>API 主要分為以下幾個步驟：</p>
-<ul>
-<li><code>Request</code>：建立付款請求</li>
-<li><code>Redirect</code>：用戶跳轉至 LINE Pay 完成付款</li>
-<li><code>Confirm</code>：付款成功後確認交易</li>
-</ul>
-</li>
-<li><p>使用前需在 <a href="https://pay.line.me/tw/developers">LINE Pay 商戶後台</a> 申請帳戶與 Channel。</p>
-</li>
-<li><p>API 使用需要 Channel ID、Channel Secret Key，以及測試或正式的 LINE Pay API Endpoint。</p>
-</li>
-<li><p>所有請求需附加簽章（Signature Header）以進行授權與安全驗證。</p>
-</li>
-<li><p>支援多種付款方式（LINE Pay 錢包、信用卡、優惠券等）。</p>
-</li>
-</ul>
-<hr>
-<h2 id="三、整體交易流程圖"><a href="#三、整體交易流程圖" class="headerlink" title="三、整體交易流程圖"></a>三、整體交易流程圖</h2><ol>
-<li>使用者在你的網站點擊「立即付款」</li>
-<li>後端呼叫 <code>request</code> API 建立交易</li>
-<li>將使用者導向 LINE Pay 的付款畫面</li>
-<li>用戶完成付款後，LINE 會導回你設定的 redirect URL</li>
-<li>你後端呼叫 <code>confirm</code> API 完成交易驗證</li>
-</ol>
-<hr>
-<h2 id="四、準備工作"><a href="#四、準備工作" class="headerlink" title="四、準備工作"></a>四、準備工作</h2><ol>
-<li><strong>註冊商戶帳號</strong>：至 <a href="https://pay.line.me/tw/developers">LINE Pay Developer Center</a> 申請開發者帳號與商戶帳戶。</li>
-<li><strong>建立 Channel</strong>：建立 LINE Pay Channel 取得 <code>Channel ID</code> 與 <code>Channel Secret Key</code>。</li>
-<li><strong>設定 Redirect URL</strong>：設置付款成功&#x2F;失敗的回傳網址。</li>
-<li><strong>測試環境</strong>：LINE Pay 提供 Sandbox 環境（沙盒），可模擬交易流程。</li>
-</ol>
-<hr>
-<h2 id="五、實際範例（使用-Python-Flask-示範）"><a href="#五、實際範例（使用-Python-Flask-示範）" class="headerlink" title="五、實際範例（使用 Python Flask 示範）"></a>五、實際範例（使用 Python Flask 示範）</h2><h3 id="1-建立付款請求：-create-payment"><a href="#1-建立付款請求：-create-payment" class="headerlink" title="1. 建立付款請求：/create_payment"></a>1. 建立付款請求：<code>/create_payment</code></h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests, json, time, hashlib, hmac</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, redirect, request</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line">CHANNEL_ID = <span class="string">&#x27;你的Channel ID&#x27;</span></span><br><span class="line">CHANNEL_SECRET = <span class="string">&#x27;你的Secret Key&#x27;</span></span><br><span class="line">LINE_PAY_ENDPOINT = <span class="string">&#x27;https://sandbox-api-pay.line.me&#x27;</span></span><br><span class="line">CONFIRM_URL = <span class="string">&#x27;https://你的網站.com/confirm_payment&#x27;</span></span><br><span class="line">RETURN_HOST = <span class="string">&#x27;https://你的網站.com&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generate_signature</span>(<span class="params">uri, body, nonce, secret</span>):</span><br><span class="line">    message = secret.encode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    raw = <span class="string">f&quot;<span class="subst">&#123;secret&#125;</span><span class="subst">&#123;uri&#125;</span><span class="subst">&#123;json.dumps(body, separators=(<span class="string">&#x27;,&#x27;</span>, <span class="string">&#x27;:&#x27;</span>))&#125;</span><span class="subst">&#123;nonce&#125;</span>&quot;</span></span><br><span class="line">    <span class="keyword">return</span> hmac.new(message, raw.encode(<span class="string">&#x27;utf-8&#x27;</span>), hashlib.sha256).hexdigest()</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/create_payment&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_payment</span>():</span><br><span class="line">    uri = <span class="string">&#x27;/v3/payments/request&#x27;</span></span><br><span class="line">    url = <span class="string">f&quot;<span class="subst">&#123;LINE_PAY_ENDPOINT&#125;</span><span class="subst">&#123;uri&#125;</span>&quot;</span></span><br><span class="line">    nonce = <span class="built_in">str</span>(<span class="built_in">int</span>(time.time() * <span class="number">1000</span>))</span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;X-LINE-ChannelId&#x27;</span>: CHANNEL_ID,</span><br><span class="line">        <span class="string">&#x27;X-LINE-Authorization-Nonce&#x27;</span>: nonce,</span><br><span class="line">        <span class="string">&#x27;X-LINE-Authorization&#x27;</span>: generate_signature(uri, &#123;</span><br><span class="line">            <span class="string">&quot;amount&quot;</span>: <span class="number">100</span>,</span><br><span class="line">            <span class="string">&quot;currency&quot;</span>: <span class="string">&quot;TWD&quot;</span>,</span><br><span class="line">            <span class="string">&quot;orderId&quot;</span>: <span class="string">&quot;ORDER123456&quot;</span>,</span><br><span class="line">            <span class="string">&quot;packages&quot;</span>: [&#123;</span><br><span class="line">                <span class="string">&quot;id&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">                <span class="string">&quot;amount&quot;</span>: <span class="number">100</span>,</span><br><span class="line">                <span class="string">&quot;name&quot;</span>: <span class="string">&quot;商品&quot;</span>,</span><br><span class="line">                <span class="string">&quot;products&quot;</span>: [&#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;測試商品&quot;</span>, <span class="string">&quot;quantity&quot;</span>: <span class="number">1</span>, <span class="string">&quot;price&quot;</span>: <span class="number">100</span>&#125;]</span><br><span class="line">            &#125;],</span><br><span class="line">            <span class="string">&quot;redirectUrls&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;confirmUrl&quot;</span>: CONFIRM_URL,</span><br><span class="line">                <span class="string">&quot;cancelUrl&quot;</span>: <span class="string">f&quot;<span class="subst">&#123;RETURN_HOST&#125;</span>/cancel&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, nonce, CHANNEL_SECRET)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    body = &#123;</span><br><span class="line">        <span class="string">&quot;amount&quot;</span>: <span class="number">100</span>,</span><br><span class="line">        <span class="string">&quot;currency&quot;</span>: <span class="string">&quot;TWD&quot;</span>,</span><br><span class="line">        <span class="string">&quot;orderId&quot;</span>: <span class="string">&quot;ORDER123456&quot;</span>,</span><br><span class="line">        <span class="string">&quot;packages&quot;</span>: [&#123;</span><br><span class="line">            <span class="string">&quot;id&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">            <span class="string">&quot;amount&quot;</span>: <span class="number">100</span>,</span><br><span class="line">            <span class="string">&quot;name&quot;</span>: <span class="string">&quot;商品&quot;</span>,</span><br><span class="line">            <span class="string">&quot;products&quot;</span>: [&#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;測試商品&quot;</span>, <span class="string">&quot;quantity&quot;</span>: <span class="number">1</span>, <span class="string">&quot;price&quot;</span>: <span class="number">100</span>&#125;]</span><br><span class="line">        &#125;],</span><br><span class="line">        <span class="string">&quot;redirectUrls&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;confirmUrl&quot;</span>: CONFIRM_URL,</span><br><span class="line">            <span class="string">&quot;cancelUrl&quot;</span>: <span class="string">f&quot;<span class="subst">&#123;RETURN_HOST&#125;</span>/cancel&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    res = requests.post(url, headers=headers, json=body)</span><br><span class="line">    res_data = res.json()</span><br><span class="line">    payment_url = res_data[<span class="string">&#x27;info&#x27;</span>][<span class="string">&#x27;paymentUrl&#x27;</span>][<span class="string">&#x27;web&#x27;</span>]</span><br><span class="line">    <span class="keyword">return</span> redirect(payment_url)</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-完成付款後確認交易：-confirm-payment"><a href="#2-完成付款後確認交易：-confirm-payment" class="headerlink" title="2. 完成付款後確認交易：/confirm_payment"></a>2. 完成付款後確認交易：<code>/confirm_payment</code></h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/confirm_payment&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">confirm_payment</span>():</span><br><span class="line">    transaction_id = request.args.get(<span class="string">&#x27;transactionId&#x27;</span>)</span><br><span class="line">    uri = <span class="string">f&quot;/v3/payments/<span class="subst">&#123;transaction_id&#125;</span>/confirm&quot;</span></span><br><span class="line">    url = <span class="string">f&quot;<span class="subst">&#123;LINE_PAY_ENDPOINT&#125;</span><span class="subst">&#123;uri&#125;</span>&quot;</span></span><br><span class="line">    nonce = <span class="built_in">str</span>(<span class="built_in">int</span>(time.time() * <span class="number">1000</span>))</span><br><span class="line">    body = &#123;</span><br><span class="line">        <span class="string">&quot;amount&quot;</span>: <span class="number">100</span>,</span><br><span class="line">        <span class="string">&quot;currency&quot;</span>: <span class="string">&quot;TWD&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;X-LINE-ChannelId&#x27;</span>: CHANNEL_ID,</span><br><span class="line">        <span class="string">&#x27;X-LINE-Authorization-Nonce&#x27;</span>: nonce,</span><br><span class="line">        <span class="string">&#x27;X-LINE-Authorization&#x27;</span>: generate_signature(uri, body, nonce, CHANNEL_SECRET)</span><br><span class="line">    &#125;</span><br><span class="line">    res = requests.post(url, headers=headers, json=body)</span><br><span class="line">    <span class="keyword">return</span> res.json()</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="六、注意事項"><a href="#六、注意事項" class="headerlink" title="六、注意事項"></a>六、注意事項</h2><ul>
-<li>所有請求必須使用 HTTPS。</li>
-<li>金額與幣別需與建立交易時一致，否則確認交易會失敗。</li>
-<li>建議使用 UUID 或時間戳記作為 <code>orderId</code> 以避免重複。</li>
-<li>正式環境與 Sandbox 的 API Endpoint 不同，測試時請使用 sandbox 網址。</li>
-</ul>
-<hr>
-<h2 id="七、總結"><a href="#七、總結" class="headerlink" title="七、總結"></a>七、總結</h2><p>LINE Pay API 提供了強大的付款整合能力，對於電商網站、小型應用或自有服務都有極大的幫助。透過良好的 API 設計與嚴謹的安全驗證，開發者可以快速、安全地建置付款機制。建議開發者先熟悉 sandbox 測試流程，再導入正式環境，以確保交易安全與穩定性。</p>
-<p>若你有更多需求，例如分期付款、自動收款、退款等，也可進一步參考官方完整文件：<a href="https://pay.line.me/tw/developers/apis/onlineApis">LINE Pay API 技術文件</a></p>
-]]></content>
-      <tags>
-        <tag>Line Pay API</tag>
-        <tag>第三方支付</tag>
-        <tag>payment</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Lodash 介紹與入門教學筆記 | 學習筆記</title>
     <url>/2024/07/01/learning-notes-lodash-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 JavaScript 的開發中，資料處理與函式操作經常需要處理陣列、物件、字串的轉換、搜尋與過濾等需求。儘管 ES6+ 提供了不少內建函式（如 <code>map</code>、<code>filter</code>、<code>reduce</code> 等），但仍有許多情境需要進階或更簡潔的處理方式。</p>
@@ -6330,6 +6266,70 @@
         <tag>JavaScript</tag>
         <tag>ES Module</tag>
         <tag>Lodash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LINE Pay API 入門教學筆記 | 學習筆記</title>
+    <url>/2024/12/16/learning-notes-line-pay-api-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>在電子商務與線上交易日益普及的今天，提供穩定又方便的金流服務已成為網站與應用程式不可或缺的一環。LINE Pay 是由 LINE Corporation 推出的行動支付平台，除了在線上與實體店面支援消費者付款外，也提供開發者 API 介面來整合第三方商務服務，使開發者可以在網站或應用程式中無縫串接付款功能。</p>
+<p>本篇教學筆記將帶你了解 LINE Pay API 的基本觀念、運作流程，以及如何透過簡單的實作實現付款功能，協助你更快進入金流整合領域。</p>
+<hr>
+<h2 id="二、重點摘要"><a href="#二、重點摘要" class="headerlink" title="二、重點摘要"></a>二、重點摘要</h2><ul>
+<li><p>LINE Pay 是 LINE 提供的電子支付平台，可整合至網站或 App。</p>
+</li>
+<li><p>LINE Pay API 採用 RESTful 設計，以 HTTPS POST&#x2F;GET 傳遞 JSON 格式。</p>
+</li>
+<li><p>API 主要分為以下幾個步驟：</p>
+<ul>
+<li><code>Request</code>：建立付款請求</li>
+<li><code>Redirect</code>：用戶跳轉至 LINE Pay 完成付款</li>
+<li><code>Confirm</code>：付款成功後確認交易</li>
+</ul>
+</li>
+<li><p>使用前需在 <a href="https://pay.line.me/tw/developers">LINE Pay 商戶後台</a> 申請帳戶與 Channel。</p>
+</li>
+<li><p>API 使用需要 Channel ID、Channel Secret Key，以及測試或正式的 LINE Pay API Endpoint。</p>
+</li>
+<li><p>所有請求需附加簽章（Signature Header）以進行授權與安全驗證。</p>
+</li>
+<li><p>支援多種付款方式（LINE Pay 錢包、信用卡、優惠券等）。</p>
+</li>
+</ul>
+<hr>
+<h2 id="三、整體交易流程圖"><a href="#三、整體交易流程圖" class="headerlink" title="三、整體交易流程圖"></a>三、整體交易流程圖</h2><ol>
+<li>使用者在你的網站點擊「立即付款」</li>
+<li>後端呼叫 <code>request</code> API 建立交易</li>
+<li>將使用者導向 LINE Pay 的付款畫面</li>
+<li>用戶完成付款後，LINE 會導回你設定的 redirect URL</li>
+<li>你後端呼叫 <code>confirm</code> API 完成交易驗證</li>
+</ol>
+<hr>
+<h2 id="四、準備工作"><a href="#四、準備工作" class="headerlink" title="四、準備工作"></a>四、準備工作</h2><ol>
+<li><strong>註冊商戶帳號</strong>：至 <a href="https://pay.line.me/tw/developers">LINE Pay Developer Center</a> 申請開發者帳號與商戶帳戶。</li>
+<li><strong>建立 Channel</strong>：建立 LINE Pay Channel 取得 <code>Channel ID</code> 與 <code>Channel Secret Key</code>。</li>
+<li><strong>設定 Redirect URL</strong>：設置付款成功&#x2F;失敗的回傳網址。</li>
+<li><strong>測試環境</strong>：LINE Pay 提供 Sandbox 環境（沙盒），可模擬交易流程。</li>
+</ol>
+<hr>
+<h2 id="五、實際範例（使用-Python-Flask-示範）"><a href="#五、實際範例（使用-Python-Flask-示範）" class="headerlink" title="五、實際範例（使用 Python Flask 示範）"></a>五、實際範例（使用 Python Flask 示範）</h2><h3 id="1-建立付款請求：-create-payment"><a href="#1-建立付款請求：-create-payment" class="headerlink" title="1. 建立付款請求：/create_payment"></a>1. 建立付款請求：<code>/create_payment</code></h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests, json, time, hashlib, hmac</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, redirect, request</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line">CHANNEL_ID = <span class="string">&#x27;你的Channel ID&#x27;</span></span><br><span class="line">CHANNEL_SECRET = <span class="string">&#x27;你的Secret Key&#x27;</span></span><br><span class="line">LINE_PAY_ENDPOINT = <span class="string">&#x27;https://sandbox-api-pay.line.me&#x27;</span></span><br><span class="line">CONFIRM_URL = <span class="string">&#x27;https://你的網站.com/confirm_payment&#x27;</span></span><br><span class="line">RETURN_HOST = <span class="string">&#x27;https://你的網站.com&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generate_signature</span>(<span class="params">uri, body, nonce, secret</span>):</span><br><span class="line">    message = secret.encode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    raw = <span class="string">f&quot;<span class="subst">&#123;secret&#125;</span><span class="subst">&#123;uri&#125;</span><span class="subst">&#123;json.dumps(body, separators=(<span class="string">&#x27;,&#x27;</span>, <span class="string">&#x27;:&#x27;</span>))&#125;</span><span class="subst">&#123;nonce&#125;</span>&quot;</span></span><br><span class="line">    <span class="keyword">return</span> hmac.new(message, raw.encode(<span class="string">&#x27;utf-8&#x27;</span>), hashlib.sha256).hexdigest()</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/create_payment&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_payment</span>():</span><br><span class="line">    uri = <span class="string">&#x27;/v3/payments/request&#x27;</span></span><br><span class="line">    url = <span class="string">f&quot;<span class="subst">&#123;LINE_PAY_ENDPOINT&#125;</span><span class="subst">&#123;uri&#125;</span>&quot;</span></span><br><span class="line">    nonce = <span class="built_in">str</span>(<span class="built_in">int</span>(time.time() * <span class="number">1000</span>))</span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;X-LINE-ChannelId&#x27;</span>: CHANNEL_ID,</span><br><span class="line">        <span class="string">&#x27;X-LINE-Authorization-Nonce&#x27;</span>: nonce,</span><br><span class="line">        <span class="string">&#x27;X-LINE-Authorization&#x27;</span>: generate_signature(uri, &#123;</span><br><span class="line">            <span class="string">&quot;amount&quot;</span>: <span class="number">100</span>,</span><br><span class="line">            <span class="string">&quot;currency&quot;</span>: <span class="string">&quot;TWD&quot;</span>,</span><br><span class="line">            <span class="string">&quot;orderId&quot;</span>: <span class="string">&quot;ORDER123456&quot;</span>,</span><br><span class="line">            <span class="string">&quot;packages&quot;</span>: [&#123;</span><br><span class="line">                <span class="string">&quot;id&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">                <span class="string">&quot;amount&quot;</span>: <span class="number">100</span>,</span><br><span class="line">                <span class="string">&quot;name&quot;</span>: <span class="string">&quot;商品&quot;</span>,</span><br><span class="line">                <span class="string">&quot;products&quot;</span>: [&#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;測試商品&quot;</span>, <span class="string">&quot;quantity&quot;</span>: <span class="number">1</span>, <span class="string">&quot;price&quot;</span>: <span class="number">100</span>&#125;]</span><br><span class="line">            &#125;],</span><br><span class="line">            <span class="string">&quot;redirectUrls&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;confirmUrl&quot;</span>: CONFIRM_URL,</span><br><span class="line">                <span class="string">&quot;cancelUrl&quot;</span>: <span class="string">f&quot;<span class="subst">&#123;RETURN_HOST&#125;</span>/cancel&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, nonce, CHANNEL_SECRET)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    body = &#123;</span><br><span class="line">        <span class="string">&quot;amount&quot;</span>: <span class="number">100</span>,</span><br><span class="line">        <span class="string">&quot;currency&quot;</span>: <span class="string">&quot;TWD&quot;</span>,</span><br><span class="line">        <span class="string">&quot;orderId&quot;</span>: <span class="string">&quot;ORDER123456&quot;</span>,</span><br><span class="line">        <span class="string">&quot;packages&quot;</span>: [&#123;</span><br><span class="line">            <span class="string">&quot;id&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">            <span class="string">&quot;amount&quot;</span>: <span class="number">100</span>,</span><br><span class="line">            <span class="string">&quot;name&quot;</span>: <span class="string">&quot;商品&quot;</span>,</span><br><span class="line">            <span class="string">&quot;products&quot;</span>: [&#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;測試商品&quot;</span>, <span class="string">&quot;quantity&quot;</span>: <span class="number">1</span>, <span class="string">&quot;price&quot;</span>: <span class="number">100</span>&#125;]</span><br><span class="line">        &#125;],</span><br><span class="line">        <span class="string">&quot;redirectUrls&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;confirmUrl&quot;</span>: CONFIRM_URL,</span><br><span class="line">            <span class="string">&quot;cancelUrl&quot;</span>: <span class="string">f&quot;<span class="subst">&#123;RETURN_HOST&#125;</span>/cancel&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    res = requests.post(url, headers=headers, json=body)</span><br><span class="line">    res_data = res.json()</span><br><span class="line">    payment_url = res_data[<span class="string">&#x27;info&#x27;</span>][<span class="string">&#x27;paymentUrl&#x27;</span>][<span class="string">&#x27;web&#x27;</span>]</span><br><span class="line">    <span class="keyword">return</span> redirect(payment_url)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-完成付款後確認交易：-confirm-payment"><a href="#2-完成付款後確認交易：-confirm-payment" class="headerlink" title="2. 完成付款後確認交易：/confirm_payment"></a>2. 完成付款後確認交易：<code>/confirm_payment</code></h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/confirm_payment&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">confirm_payment</span>():</span><br><span class="line">    transaction_id = request.args.get(<span class="string">&#x27;transactionId&#x27;</span>)</span><br><span class="line">    uri = <span class="string">f&quot;/v3/payments/<span class="subst">&#123;transaction_id&#125;</span>/confirm&quot;</span></span><br><span class="line">    url = <span class="string">f&quot;<span class="subst">&#123;LINE_PAY_ENDPOINT&#125;</span><span class="subst">&#123;uri&#125;</span>&quot;</span></span><br><span class="line">    nonce = <span class="built_in">str</span>(<span class="built_in">int</span>(time.time() * <span class="number">1000</span>))</span><br><span class="line">    body = &#123;</span><br><span class="line">        <span class="string">&quot;amount&quot;</span>: <span class="number">100</span>,</span><br><span class="line">        <span class="string">&quot;currency&quot;</span>: <span class="string">&quot;TWD&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;X-LINE-ChannelId&#x27;</span>: CHANNEL_ID,</span><br><span class="line">        <span class="string">&#x27;X-LINE-Authorization-Nonce&#x27;</span>: nonce,</span><br><span class="line">        <span class="string">&#x27;X-LINE-Authorization&#x27;</span>: generate_signature(uri, body, nonce, CHANNEL_SECRET)</span><br><span class="line">    &#125;</span><br><span class="line">    res = requests.post(url, headers=headers, json=body)</span><br><span class="line">    <span class="keyword">return</span> res.json()</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="六、注意事項"><a href="#六、注意事項" class="headerlink" title="六、注意事項"></a>六、注意事項</h2><ul>
+<li>所有請求必須使用 HTTPS。</li>
+<li>金額與幣別需與建立交易時一致，否則確認交易會失敗。</li>
+<li>建議使用 UUID 或時間戳記作為 <code>orderId</code> 以避免重複。</li>
+<li>正式環境與 Sandbox 的 API Endpoint 不同，測試時請使用 sandbox 網址。</li>
+</ul>
+<hr>
+<h2 id="七、總結"><a href="#七、總結" class="headerlink" title="七、總結"></a>七、總結</h2><p>LINE Pay API 提供了強大的付款整合能力，對於電商網站、小型應用或自有服務都有極大的幫助。透過良好的 API 設計與嚴謹的安全驗證，開發者可以快速、安全地建置付款機制。建議開發者先熟悉 sandbox 測試流程，再導入正式環境，以確保交易安全與穩定性。</p>
+<p>若你有更多需求，例如分期付款、自動收款、退款等，也可進一步參考官方完整文件：<a href="https://pay.line.me/tw/developers/apis/onlineApis">LINE Pay API 技術文件</a></p>
+]]></content>
+      <tags>
+        <tag>Line Pay API</tag>
+        <tag>第三方支付</tag>
+        <tag>payment</tag>
       </tags>
   </entry>
   <entry>
@@ -9739,7 +9739,7 @@
   </entry>
   <entry>
     <title>TanStack Query 入門教學筆記 | 學習筆記</title>
-    <url>/2018/02/01/learning-notes-tanstack-query-intro-tutorial/</url>
+    <url>/2024/02/01/learning-notes-tanstack-query-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在現代前端開發中，資料取得（Data Fetching）與狀態管理是非常重要的課題。傳統上，我們可能會使用 <code>useEffect</code> 搭配 <code>fetch</code> 或 <code>axios</code> 來手動管理資料請求，並維護載入狀態、錯誤狀態與資料快取等，但這樣往往容易導致重複程式碼、管理複雜以及效能不佳。</p>
 <p>TanStack Query（舊名 React Query）是一個專門用來管理伺服器狀態（server state）的函式庫，極大地簡化了資料抓取、快取、同步、重新整理與錯誤處理的流程。它不只支援 React，也能搭配 Vue、Svelte 等其他框架。</p>
 <p>這篇筆記將介紹 TanStack Query 的核心概念與使用方式，並提供一個簡單範例，幫助你快速上手。</p>
@@ -9825,8 +9825,8 @@
 <h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>TanStack Query 是一個強大且方便的資料狀態管理工具，解決了傳統手動管理非同步請求的種種痛點。它自動快取、背景重新整理、錯誤重試等機制，大幅提升開發效率與使用者體驗。</p>
 ]]></content>
       <tags>
-        <tag>Jest</tag>
-        <tag>ES Module</tag>
+        <tag>React Query</tag>
+        <tag>TanStack Query</tag>
       </tags>
   </entry>
   <entry>
@@ -10528,32 +10528,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記</title>
-    <url>/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/</url>
-    <content><![CDATA[<h1 id="Props-屬性"><a href="#Props-屬性" class="headerlink" title="Props 屬性"></a>Props 屬性</h1><p>子元件可以透過 Props 接收來自父元件的輸入。首先，子元件需要宣告它所接收的 Props：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- ChildComp.vue --&gt;</span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const props = defineProps(&#123;</span><br><span class="line">  msg: String</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>注意，<code>defineProps()</code> 是一個編譯時的巨集，不需要額外匯入。一旦宣告後，<code>msg</code> Prop 就可以在子元件的模板中使用，也可以透過 <code>defineProps()</code> 返回的物件在 JavaScript 中存取。</p>
-<p>父元件可以像設定屬性一樣，將 Prop 傳遞給子元件。若要傳遞動態值，也可以使用 <code>v-bind</code> 語法：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp :msg=&quot;greeting&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<p>我們現在在編輯器中試試看吧！</p>
-<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> greeting = <span class="title function_">ref</span>(<span class="string">&#x27;Hello from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> <span class="attr">:msg</span>=<span class="string">&quot;greeting&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> props = <span class="title function_">defineProps</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="attr">msg</span>: <span class="title class_">String</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123; msg || &#x27;No props passed yet&#x27; &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>vue</tag>
-        <tag>vue3</tag>
-        <tag>vue.js</tag>
-        <tag>vue.js 3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue.js 3 官方入門語法教學筆記 [10] - Components 元件 | 學習筆記</title>
     <url>/2021/02/09/learning-notes-vuejs-3-official-tutorial-10-components/</url>
     <content><![CDATA[<h1 id="Components-元件"><a href="#Components-元件" class="headerlink" title="Components 元件"></a>Components 元件</h1><p>到目前為止，我們只使用了一個單一的元件。實際的 Vue 應用程式通常是由巢狀元件所組成的。</p>
@@ -10581,17 +10555,19 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [12] - Emits 事件傳遞 | 學習筆記</title>
-    <url>/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/</url>
-    <content><![CDATA[<h1 id="Emits-事件傳遞"><a href="#Emits-事件傳遞" class="headerlink" title="Emits 事件傳遞"></a>Emits 事件傳遞</h1><p>除了接收 Props 之外，子元件也可以向父元件觸發事件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">// 宣告要觸發的事件</span><br><span class="line">const emit = defineEmits([&#x27;response&#x27;])</span><br><span class="line"></span><br><span class="line">// 觸發事件並傳遞參數</span><br><span class="line">emit(&#x27;response&#x27;, &#x27;hello from child&#x27;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+    <title>Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記</title>
+    <url>/2021/02/10/learning-notes-vuejs-3-official-tutorial-11-props/</url>
+    <content><![CDATA[<h1 id="Props-屬性"><a href="#Props-屬性" class="headerlink" title="Props 屬性"></a>Props 屬性</h1><p>子元件可以透過 Props 接收來自父元件的輸入。首先，子元件需要宣告它所接收的 Props：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- ChildComp.vue --&gt;</span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const props = defineProps(&#123;</span><br><span class="line">  msg: String</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<p><code>emit()</code> 的第一個參數是事件名稱，任何額外的參數都會傳遞給事件監聽器。</p>
-<p>父元件可以使用 <code>v-on</code> 來監聽子元件觸發的事件——如下範例中，處理函式接收來自子元件 <code>emit</code> 的額外參數，並將其賦值給本地狀態：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp @response=&quot;(msg) =&gt; childMsg = msg&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p>注意，<code>defineProps()</code> 是一個編譯時的巨集，不需要額外匯入。一旦宣告後，<code>msg</code> Prop 就可以在子元件的模板中使用，也可以透過 <code>defineProps()</code> 返回的物件在 JavaScript 中存取。</p>
+<p>父元件可以像設定屬性一樣，將 Prop 傳遞給子元件。若要傳遞動態值，也可以使用 <code>v-bind</code> 語法：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp :msg=&quot;greeting&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
 
-<p>現在我們在編輯器中試試看吧！</p>
-]]></content>
+<p>我們現在在編輯器中試試看吧！</p>
+<figure class="highlight html"><figcaption><span>App.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> <span class="title class_">ChildComp</span> <span class="keyword">from</span> <span class="string">&#x27;./ChildComp.vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> greeting = <span class="title function_">ref</span>(<span class="string">&#x27;Hello from parent&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ChildComp</span> <span class="attr">:msg</span>=<span class="string">&quot;greeting&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><figcaption><span>ChildComp.vue</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> props = <span class="title function_">defineProps</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="attr">msg</span>: <span class="title class_">String</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123; msg || &#x27;No props passed yet&#x27; &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -10633,23 +10609,17 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js 3 官方入門語法教學筆記 [3] - Event Listeners 事件監聽器 | 學習筆記</title>
-    <url>/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</url>
-    <content><![CDATA[<p><strong>Event Listeners 事件監聽器</strong><br>在 Vue 中，我們可以使用 <code>v-on</code> 指令監聽 DOM 事件：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <title>Vue.js 3 官方入門語法教學筆記 [12] - Emits 事件傳遞 | 學習筆記</title>
+    <url>/2021/02/11/learning-notes-vuejs-3-official-tutorial-12-emits/</url>
+    <content><![CDATA[<h1 id="Emits-事件傳遞"><a href="#Emits-事件傳遞" class="headerlink" title="Emits 事件傳遞"></a>Emits 事件傳遞</h1><p>除了接收 Props 之外，子元件也可以向父元件觸發事件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">// 宣告要觸發的事件</span><br><span class="line">const emit = defineEmits([&#x27;response&#x27;])</span><br><span class="line"></span><br><span class="line">// 觸發事件並傳遞參數</span><br><span class="line">emit(&#x27;response&#x27;, &#x27;hello from child&#x27;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<p>由於 <code>v-on</code> 的使用頻率很高，Vue 提供了一個簡寫語法：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>emit()</code> 的第一個參數是事件名稱，任何額外的參數都會傳遞給事件監聽器。</p>
+<p>父元件可以使用 <code>v-on</code> 來監聽子元件觸發的事件——如下範例中，處理函式接收來自子元件 <code>emit</code> 的額外參數，並將其賦值給本地狀態：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ChildComp @response=&quot;(msg) =&gt; childMsg = msg&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
 
-<p>在這裡，<code>increment</code> 是在 <code>&lt;script setup&gt;</code> 中定義的一個函式：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 定義響應式狀態</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">// 定義函式來更新狀態</span><br><span class="line">function increment() &#123;</span><br><span class="line">  // 更新組件的狀態</span><br><span class="line">  count.value++</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>在函式內，我們可以透過修改 <code>ref</code> 的值來更新組件的狀態。</p>
-<hr>
-<p>事件處理器也可以使用內聯表達式，並透過<strong>修飾符</strong>簡化常見任務。這些細節在<a href="https://vuejs.org/guide/essentials/event-handling.html">指南 - 事件處理</a>中有詳細說明。</p>
-<hr>
-<p>現在，我們可以試著自己實作 <code>increment</code> 函式，並使用 <code>v-on</code> 將它綁定到按鈕。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+<p>現在我們在編輯器中試試看吧！</p>
+]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -10676,6 +10646,36 @@
 <hr>
 <p>我們可以試著將動態類名綁定到 <code>&lt;h1&gt;</code>，使用 <code>titleClass</code> 的 <code>ref</code> 作為值。如果綁定正確，文字應該會變成紅色！</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> titleClass = <span class="title function_">ref</span>(<span class="string">&#x27;title&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">:class</span>=<span class="string">&quot;titleClass&quot;</span>&gt;</span>Make me red<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> <span class="comment">&lt;!-- add dynamic class binding here --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.title</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>vue</tag>
+        <tag>vue3</tag>
+        <tag>vue.js</tag>
+        <tag>vue.js 3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue.js 3 官方入門語法教學筆記 [3] - Event Listeners 事件監聽器 | 學習筆記</title>
+    <url>/2021/02/02/learning-notes-vuejs-3-official-tutorial-3-event-listeners/</url>
+    <content><![CDATA[<p><strong>Event Listeners 事件監聽器</strong><br>在 Vue 中，我們可以使用 <code>v-on</code> 指令監聽 DOM 事件：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>由於 <code>v-on</code> 的使用頻率很高，Vue 提供了一個簡寫語法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在這裡，<code>increment</code> 是在 <code>&lt;script setup&gt;</code> 中定義的一個函式：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 定義響應式狀態</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">// 定義函式來更新狀態</span><br><span class="line">function increment() &#123;</span><br><span class="line">  // 更新組件的狀態</span><br><span class="line">  count.value++</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在函式內，我們可以透過修改 <code>ref</code> 的值來更新組件的狀態。</p>
+<hr>
+<p>事件處理器也可以使用內聯表達式，並透過<strong>修飾符</strong>簡化常見任務。這些細節在<a href="https://vuejs.org/guide/essentials/event-handling.html">指南 - 事件處理</a>中有詳細說明。</p>
+<hr>
+<p>現在，我們可以試著自己實作 <code>increment</code> 函式，並使用 <code>v-on</code> 將它綁定到按鈕。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  count.<span class="property">value</span>++</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>前端</tag>
         <tag>前端開發</tag>
@@ -11658,6 +11658,48 @@
       </tags>
   </entry>
   <entry>
+    <title>React Hooks 入門教學 | w3schools 學習筆記</title>
+    <url>/2024/01/16/learning-notes-w3schools-react-hooks-intro-tutorial/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Hooks 是在 React 16.8 版本中加入的新功能。Hooks 讓你可以在「函式元件（function components）」中使用狀態（state）以及其他 React 功能。因此，自從有了 Hooks 之後，<strong>類別元件（class components）通常就不再是必要的了</strong>。</p>
+<p>儘管 Hooks 幾乎取代了類別元件的使用方式，但 React 團隊目前<strong>並沒有打算移除 class 元件</strong>的支援。</p>
+<hr>
+<h3 id="什麼是-Hook？"><a href="#什麼是-Hook？" class="headerlink" title="什麼是 Hook？"></a>什麼是 Hook？</h3><p>Hooks 讓我們能夠「掛勾（hook into）」React 的核心功能，例如 <strong>狀態管理（state）</strong> 和 <strong>生命週期方法（lifecycle methods）</strong>。</p>
+<hr>
+<h3 id="範例："><a href="#範例：" class="headerlink" title="範例："></a>範例：</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom/client&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">FavoriteColor</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [color, setColor] = <span class="title function_">useState</span>(<span class="string">&#x27;red&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>我最喜歡的顏色是 &#123;color&#125;！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;blue&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        藍色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;red&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        紅色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;pink&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        粉紅色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;green&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        綠色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">FavoriteColor</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>在這個範例中，我們透過 <code>useState</code> 這個 Hook 來追蹤應用程式的狀態。</p>
+<blockquote>
+<p><strong>狀態（State）</strong>：泛指那些會隨著使用者互動或應用邏輯而改變的資料或屬性。</p>
+</blockquote>
+<p>此外，<strong>使用 Hook 前必須先從 <code>react</code> 模組中引入對應的函式</strong>，例如這裡的 <code>useState</code>。</p>
+<hr>
+<h3 id="使用-Hook-的三大規則"><a href="#使用-Hook-的三大規則" class="headerlink" title="使用 Hook 的三大規則"></a>使用 Hook 的三大規則</h3><ol>
+<li><strong>只能在 React 的函式元件中呼叫 Hooks</strong></li>
+<li><strong>只能在元件的最上層（Top-level）呼叫</strong>，不能寫在 <code>if</code>、<code>for</code>、<code>函式</code>中等區塊內</li>
+<li><strong>不能有條件式地呼叫 Hook</strong>（例如不能寫在 <code>if</code> 判斷中）</li>
+</ol>
+<blockquote>
+<p>注意：Hooks <strong>無法</strong>在 class 類別元件中使用！</p>
+</blockquote>
+<hr>
+<h3 id="自訂-Hook（Custom-Hooks）"><a href="#自訂-Hook（Custom-Hooks）" class="headerlink" title="自訂 Hook（Custom Hooks）"></a>自訂 Hook（Custom Hooks）</h3><p>如果你有一些包含狀態的邏輯（stateful logic），需要在多個元件之間重複使用，這時可以考慮<strong>封裝成自訂 Hook</strong>，以提升可讀性與重用性。</p>
+<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
+<li><a href="https://www.w3schools.com/react/react_customhooks.asp">React Custom Hooks</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>React</tag>
+        <tag>Next.js</tag>
+        <tag>React Hooks</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>React Custom Hooks 入門教學 | w3schools 學習筆記</title>
     <url>/2024/01/23/learning-notes-w3schools-react-hooks-custom-hooks-basic-intro-tutorial/</url>
     <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在 React 應用程式中，隨著功能的增加與維護需求的提升，我們常常會遇到多個元件需要共享相同邏輯的情況。為了避免重複撰寫相似程式碼、增加維護成本，React 提供了一個優雅的解法：<strong>自訂 Hook（Custom Hook）</strong>。</p>
@@ -11697,48 +11739,6 @@
 <p>透過本文介紹的 <code>useFetch</code> 範例，你應該能夠掌握如何將常見的副作用邏輯抽離為一個可重用的 Hook，也歡迎在實務中嘗試建立更多適合自己應用場景的自訂 Hook。</p>
 <hr>
 <p>如果你想了解更多關於資料抓取的技術細節，可以進一步學習 <strong>JavaScript Fetch API</strong> 的用法，並搭配錯誤處理（如 <code>.catch()</code>）與 loading 狀態等進行擴充。這將使你的 Custom Hook 更加完善。</p>
-<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
-<li><a href="https://www.w3schools.com/react/react_customhooks.asp">React Custom Hooks</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>React</tag>
-        <tag>Next.js</tag>
-        <tag>React Hooks</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>React Hooks 入門教學 | w3schools 學習筆記</title>
-    <url>/2024/01/16/learning-notes-w3schools-react-hooks-intro-tutorial/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Hooks 是在 React 16.8 版本中加入的新功能。Hooks 讓你可以在「函式元件（function components）」中使用狀態（state）以及其他 React 功能。因此，自從有了 Hooks 之後，<strong>類別元件（class components）通常就不再是必要的了</strong>。</p>
-<p>儘管 Hooks 幾乎取代了類別元件的使用方式，但 React 團隊目前<strong>並沒有打算移除 class 元件</strong>的支援。</p>
-<hr>
-<h3 id="什麼是-Hook？"><a href="#什麼是-Hook？" class="headerlink" title="什麼是 Hook？"></a>什麼是 Hook？</h3><p>Hooks 讓我們能夠「掛勾（hook into）」React 的核心功能，例如 <strong>狀態管理（state）</strong> 和 <strong>生命週期方法（lifecycle methods）</strong>。</p>
-<hr>
-<h3 id="範例："><a href="#範例：" class="headerlink" title="範例："></a>範例：</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom/client&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">FavoriteColor</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [color, setColor] = <span class="title function_">useState</span>(<span class="string">&#x27;red&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>我最喜歡的顏色是 &#123;color&#125;！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;blue&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        藍色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;red&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        紅色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;pink&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        粉紅色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setColor(&#x27;green&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        綠色</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">FavoriteColor</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>在這個範例中，我們透過 <code>useState</code> 這個 Hook 來追蹤應用程式的狀態。</p>
-<blockquote>
-<p><strong>狀態（State）</strong>：泛指那些會隨著使用者互動或應用邏輯而改變的資料或屬性。</p>
-</blockquote>
-<p>此外，<strong>使用 Hook 前必須先從 <code>react</code> 模組中引入對應的函式</strong>，例如這裡的 <code>useState</code>。</p>
-<hr>
-<h3 id="使用-Hook-的三大規則"><a href="#使用-Hook-的三大規則" class="headerlink" title="使用 Hook 的三大規則"></a>使用 Hook 的三大規則</h3><ol>
-<li><strong>只能在 React 的函式元件中呼叫 Hooks</strong></li>
-<li><strong>只能在元件的最上層（Top-level）呼叫</strong>，不能寫在 <code>if</code>、<code>for</code>、<code>函式</code>中等區塊內</li>
-<li><strong>不能有條件式地呼叫 Hook</strong>（例如不能寫在 <code>if</code> 判斷中）</li>
-</ol>
-<blockquote>
-<p>注意：Hooks <strong>無法</strong>在 class 類別元件中使用！</p>
-</blockquote>
-<hr>
-<h3 id="自訂-Hook（Custom-Hooks）"><a href="#自訂-Hook（Custom-Hooks）" class="headerlink" title="自訂 Hook（Custom Hooks）"></a>自訂 Hook（Custom Hooks）</h3><p>如果你有一些包含狀態的邏輯（stateful logic），需要在多個元件之間重複使用，這時可以考慮<strong>封裝成自訂 Hook</strong>，以提升可讀性與重用性。</p>
 <h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
 <li><a href="https://www.w3schools.com/react/react_customhooks.asp">React Custom Hooks</a></li>
 </ol>
@@ -12124,83 +12124,6 @@
       </tags>
   </entry>
   <entry>
-    <title>React JSX 入門教學 | w3schools 學習筆記</title>
-    <url>/2024/01/04/learning-notes-w3schools-react-jsx-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>React 是一個用於建立 UI 元件的 JavaScript 函式庫，而 JSX 則是屬於 React 中的一個元件模板語法糖。這篇文章將簡要介紹 JSX 是什麼，如何撰寫、條件式使用以及特殊對應，幫助初學者或 React 開發者進一步瞭解 JSX 的基礎應用。</p>
-<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
-<li>JSX 是 JavaScript XML 的縮寫</li>
-<li>允許在 JavaScript 代碼中直接寫 HTML</li>
-<li>JSX 會被轉譯變成 React.createElement()</li>
-<li>JSX 中的 HTML 項目必須有唯一的層級結點</li>
-<li>可用小括號 {} 執行 JavaScript 表達式</li>
-<li>允許使用 fragment (空括號) 以避免額外 DOM 結構</li>
-<li>HTML 元素必須適當關閉，並使用 className 代替 class</li>
-<li>使用條件語句時， if 必須在 JSX 之外，可用三元表達式</li>
-</ul>
-<h2 id="實例解說"><a href="#實例解說" class="headerlink" title="實例解說"></a>實例解說</h2><ol>
-<li>JSX 與非 JSX 寫法</li>
-</ol>
-<p>使用 JSX 的方式：</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myElement = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>I Love JSX!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(myElement);</span><br></pre></td></tr></table></figure>
-
-<p>未使用 JSX 的方式：</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myElement = <span class="title class_">React</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;h1&#x27;</span>, &#123;&#125;, <span class="string">&#x27;I do not use JSX!&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(myElement);</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>JSX 表達式範例</li>
-</ol>
-<p>使用 JSX 方式計算數學表達式：</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myElement = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>React is &#123;5 + 5&#125; times better with JSX<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>多行 HTML 要用 () 包起</li>
-</ol>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myElement = (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Apples<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Bananas<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Cherries<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>唯一一層級結點要求</li>
-</ol>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myElement = (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>I am a paragraph.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>I am a paragraph too.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<p>或是使用 fragment ：</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myElement = (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>I am a paragraph.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>I am a paragraph too.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>元素必須適當關閉</li>
-</ol>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myElement = <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> /&gt;</span></span>;</span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li>使用 className 代替 class</li>
-</ol>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myElement = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">className</span>=<span class="string">&quot;myclass&quot;</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
-
-<ol start="7">
-<li>JSX 條件語句</li>
-</ol>
-<p>方式 1：使用 if 在 JSX 之外</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">let</span> text = <span class="string">&#x27;Goodbye&#x27;</span>;</span><br><span class="line"><span class="keyword">if</span> (x &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  text = <span class="string">&#x27;Hello&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> myElement = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;text&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
-
-<p>方式 2：使用三元表達式</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> myElement = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;x &lt; 10 ? &#x27;Hello&#x27; : &#x27;Goodbye&#x27;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
-<li><a href="https://www.w3schools.com/react/react_customhooks.asp">React Custom Hooks</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>JSX</tag>
-        <tag>React</tag>
-        <tag>Next.js</tag>
-        <tag>React Hooks</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>React Hooks useState 入門教學 | w3schools 學習筆記</title>
     <url>/2024/01/17/learning-notes-w3schools-react-hooks-usestate-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 React 函式元件中，<code>useState</code> 是最常用的 Hook 之一，能讓我們在無需使用 class 的情況下新增與管理元件的「狀態」（state）。狀態是指會隨著使用者互動或應用邏輯變化而更新的資料，例如：輸入框的內容、按鈕點擊次數、切換的主題顏色等。</p>
@@ -12286,6 +12209,83 @@
         <tag>前端工程</tag>
         <tag>frontend</tag>
         <tag>frontend engineer</tag>
+        <tag>React</tag>
+        <tag>Next.js</tag>
+        <tag>React Hooks</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>React JSX 入門教學 | w3schools 學習筆記</title>
+    <url>/2024/01/04/learning-notes-w3schools-react-jsx-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>React 是一個用於建立 UI 元件的 JavaScript 函式庫，而 JSX 則是屬於 React 中的一個元件模板語法糖。這篇文章將簡要介紹 JSX 是什麼，如何撰寫、條件式使用以及特殊對應，幫助初學者或 React 開發者進一步瞭解 JSX 的基礎應用。</p>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li>JSX 是 JavaScript XML 的縮寫</li>
+<li>允許在 JavaScript 代碼中直接寫 HTML</li>
+<li>JSX 會被轉譯變成 React.createElement()</li>
+<li>JSX 中的 HTML 項目必須有唯一的層級結點</li>
+<li>可用小括號 {} 執行 JavaScript 表達式</li>
+<li>允許使用 fragment (空括號) 以避免額外 DOM 結構</li>
+<li>HTML 元素必須適當關閉，並使用 className 代替 class</li>
+<li>使用條件語句時， if 必須在 JSX 之外，可用三元表達式</li>
+</ul>
+<h2 id="實例解說"><a href="#實例解說" class="headerlink" title="實例解說"></a>實例解說</h2><ol>
+<li>JSX 與非 JSX 寫法</li>
+</ol>
+<p>使用 JSX 的方式：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myElement = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>I Love JSX!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(myElement);</span><br></pre></td></tr></table></figure>
+
+<p>未使用 JSX 的方式：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myElement = <span class="title class_">React</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;h1&#x27;</span>, &#123;&#125;, <span class="string">&#x27;I do not use JSX!&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(myElement);</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>JSX 表達式範例</li>
+</ol>
+<p>使用 JSX 方式計算數學表達式：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myElement = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>React is &#123;5 + 5&#125; times better with JSX<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>多行 HTML 要用 () 包起</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myElement = (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Apples<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Bananas<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Cherries<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>唯一一層級結點要求</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myElement = (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>I am a paragraph.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>I am a paragraph too.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>或是使用 fragment ：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myElement = (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>I am a paragraph.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>I am a paragraph too.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>元素必須適當關閉</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myElement = <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> /&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>使用 className 代替 class</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myElement = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">className</span>=<span class="string">&quot;myclass&quot;</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>JSX 條件語句</li>
+</ol>
+<p>方式 1：使用 if 在 JSX 之外</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">let</span> text = <span class="string">&#x27;Goodbye&#x27;</span>;</span><br><span class="line"><span class="keyword">if</span> (x &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  text = <span class="string">&#x27;Hello&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> myElement = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;text&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>方式 2：使用三元表達式</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> myElement = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;x &lt; 10 ? &#x27;Hello&#x27; : &#x27;Goodbye&#x27;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
+<li><a href="https://www.w3schools.com/react/react_customhooks.asp">React Custom Hooks</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>JSX</tag>
         <tag>React</tag>
         <tag>Next.js</tag>
         <tag>React Hooks</tag>
@@ -12743,6 +12743,147 @@
       </tags>
   </entry>
   <entry>
+    <title>WebSocket 入門教學筆記（ESM 模組版） | 學習筆記</title>
+    <url>/2024/07/10/learning-notes-websocket-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在現代前端與全端開發中，許多應用需求都仰賴即時資料傳輸，例如即時聊天、線上協作、股票報價、IoT 裝置通訊等。而傳統的 HTTP 協定採用「請求－回應」模式，並不適合雙向即時通訊。這時，WebSocket 協定就成為更有效率的替代方案。</p>
+<p><strong>WebSocket</strong> 是 HTML5 標準的一部分，它允許在用戶端與伺服器之間建立一條持久的雙向連線。這使得伺服器能即時推播資料給客戶端，而非只能等待客戶端請求，適合實作低延遲、高互動的應用場景。</p>
+<p>本教學將透過現代的 <strong>ESM（ECMAScript Module）語法</strong>，介紹如何在 Node.js 環境中建立 WebSocket 應用，並搭配 HTML 客戶端示範雙向通訊流程。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p><strong>WebSocket 是什麼？</strong><br>一種基於 TCP 的雙向通訊協定，可在瀏覽器與伺服器之間建立長連線。</p>
+</li>
+<li><p><strong>優點</strong></p>
+<ul>
+<li>持久連線，不需每次重複建立與關閉連線</li>
+<li>支援伺服器主動推播資料給客戶端</li>
+<li>節省頻寬與延遲</li>
+<li>適用於高即時性場景</li>
+</ul>
+</li>
+<li><p><strong>WebSocket vs HTTP</strong></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>HTTP</th>
+<th>WebSocket</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>通訊模式</td>
+<td>客戶端請求 → 伺服器回應</td>
+<td>雙向（Client ↔ Server）</td>
+</tr>
+<tr>
+<td>連線型態</td>
+<td>短連線</td>
+<td>長連線（持續開啟）</td>
+</tr>
+<tr>
+<td>傳輸效率</td>
+<td>較低（含 header）</td>
+<td>高效（精簡封包）</td>
+</tr>
+</tbody></table>
+</li>
+<li><p><strong>常見應用情境</strong></p>
+<ul>
+<li>即時聊天系統</li>
+<li>線上遊戲同步</li>
+<li>IoT 裝置狀態回報</li>
+<li>即時儀表板或股市報價</li>
+</ul>
+</li>
+<li><p><strong>基本 API（前端）</strong></p>
+<ul>
+<li><code>new WebSocket(url)</code>：建立連線</li>
+<li><code>socket.onopen</code>：連線成功</li>
+<li><code>socket.send()</code>：傳送資料</li>
+<li><code>socket.onmessage</code>：接收訊息</li>
+<li><code>socket.onclose</code>：連線關閉</li>
+<li><code>socket.onerror</code>：錯誤處理</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="實作範例（Node-js-ESM-原生-HTML）"><a href="#實作範例（Node-js-ESM-原生-HTML）" class="headerlink" title="實作範例（Node.js + ESM + 原生 HTML）"></a>實作範例（Node.js + ESM + 原生 HTML）</h2><h3 id="一、專案初始化"><a href="#一、專案初始化" class="headerlink" title="一、專案初始化"></a>一、專案初始化</h3><p>建立一個新的資料夾並初始化：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> websocket-esm-demo</span><br><span class="line"><span class="built_in">cd</span> websocket-esm-demo</span><br><span class="line">npm init -y</span><br><span class="line">npm install ws</span><br></pre></td></tr></table></figure>
+
+<p>修改 <code>package.json</code> 以啟用 ESM 模組支援：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;websocket-esm-demo&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;module&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;ws&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^8.0.0&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="二、伺服器端（使用-ESM-模組語法）"><a href="#二、伺服器端（使用-ESM-模組語法）" class="headerlink" title="二、伺服器端（使用 ESM 模組語法）"></a>二、伺服器端（使用 ESM 模組語法）</h3><p>建立 <code>server.js</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// server.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">WebSocketServer</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;ws&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> wss = <span class="keyword">new</span> <span class="title class_">WebSocketServer</span>(&#123; <span class="attr">port</span>: <span class="number">8080</span> &#125;);</span><br><span class="line"></span><br><span class="line">wss.<span class="title function_">on</span>(<span class="string">&#x27;connection&#x27;</span>, <span class="function">(<span class="params">ws</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;用戶已連線&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  ws.<span class="title function_">on</span>(<span class="string">&#x27;message&#x27;</span>, <span class="function">(<span class="params">message</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`收到用戶訊息：<span class="subst">$&#123;message&#125;</span>`</span>);</span><br><span class="line">    ws.<span class="title function_">send</span>(<span class="string">`伺服器收到：<span class="subst">$&#123;message&#125;</span>`</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  ws.<span class="title function_">on</span>(<span class="string">&#x27;close&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;連線已關閉&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  ws.<span class="title function_">on</span>(<span class="string">&#x27;error&#x27;</span>, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;WebSocket 錯誤：&#x27;</span>, err);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;WebSocket 伺服器啟動於 ws://localhost:8080&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="三、客戶端-HTML（WebSocket-客戶端）"><a href="#三、客戶端-HTML（WebSocket-客戶端）" class="headerlink" title="三、客戶端 HTML（WebSocket 客戶端）"></a>三、客戶端 HTML（WebSocket 客戶端）</h3><p>建立 <code>index.html</code>：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-Hant&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>WebSocket ESM 範例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>WebSocket 即時通訊示範<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;input&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;輸入訊息&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;sendMessage()&quot;</span>&gt;</span>送出<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;log&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> socket = <span class="keyword">new</span> <span class="title class_">WebSocket</span>(<span class="string">&#x27;ws://localhost:8080&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      socket.<span class="title function_">addEventListener</span>(<span class="string">&#x27;open&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">logMessage</span>(<span class="string">&#x27;已連線至伺服器&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">      &#125;);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      socket.<span class="title function_">addEventListener</span>(<span class="string">&#x27;message&#x27;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">logMessage</span>(<span class="string">`來自伺服器：<span class="subst">$&#123;event.data&#125;</span>`</span>);</span></span><br><span class="line"><span class="language-javascript">      &#125;);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      socket.<span class="title function_">addEventListener</span>(<span class="string">&#x27;close&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">logMessage</span>(<span class="string">&#x27;連線已關閉&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">      &#125;);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      socket.<span class="title function_">addEventListener</span>(<span class="string">&#x27;error&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">logMessage</span>(<span class="string">&#x27;連線發生錯誤&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">      &#125;);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">function</span> <span class="title function_">sendMessage</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> input = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;input&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        socket.<span class="title function_">send</span>(input.<span class="property">value</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">logMessage</span>(<span class="string">`你說：<span class="subst">$&#123;input.value&#125;</span>`</span>);</span></span><br><span class="line"><span class="language-javascript">        input.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">function</span> <span class="title function_">logMessage</span>(<span class="params">msg</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> li = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;li&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        li.<span class="property">textContent</span> = msg;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;log&#x27;</span>).<span class="title function_">appendChild</span>(li);</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="四、執行與測試"><a href="#四、執行與測試" class="headerlink" title="四、執行與測試"></a>四、執行與測試</h3><ol>
+<li>啟動伺服器：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node server.js</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>打開 <code>index.html</code>（直接用瀏覽器開啟或用 VSCode Live Server 插件）</li>
+<li>在輸入框輸入訊息，點擊「送出」，觀察瀏覽器與後端終端機回應。</li>
+</ol>
+<hr>
+<h2 id="補充與進階建議"><a href="#補充與進階建議" class="headerlink" title="補充與進階建議"></a>補充與進階建議</h2><ul>
+<li><strong>安全性：</strong> 若部署在生產環境，應使用 <code>wss://</code>（WebSocket over TLS）取代 <code>ws://</code>。</li>
+<li><strong>重連策略：</strong> 真實場景下需考慮自動重連機制（如斷線重試）。</li>
+<li><strong>認證機制：</strong> WebSocket 不支援標準 HTTP 標頭傳遞 JWT，通常可透過 URL query 傳 token，或搭配 Session Cookie。</li>
+<li><strong>整合框架：</strong> 可結合 Express、Koa、Fastify 使用同一個 HTTP 伺服器提供 HTTP 與 WS。</li>
+</ul>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>WebSocket 是實現現代即時網頁應用的重要基礎建設，能提供更快、更輕量的資料通訊方式。透過本文，你應該已能建立一個使用 ESM 寫法的簡單 WebSocket 應用，並了解其基本運作流程。未來你可以進一步探索如 Socket.IO、SignalR 或 WebRTC 等進階解決方案，以支援更多功能與兼容性需求。</p>
+]]></content>
+      <tags>
+        <tag>Node.js</tag>
+        <tag>NodeJS</tag>
+        <tag>WebSocket</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</title>
+    <url>/2024/06/22/software-engineer-and-web-develement-skill-tree/</url>
+    <content><![CDATA[<h1 id="前端工程"><a href="#前端工程" class="headerlink" title="前端工程"></a>前端工程</h1><p><a href="https://roadmap.sh/frontend">Frontend Roadmap</a> &#x2F; <a href="https://roadmap.sh/frontend?r=frontend-beginner">Frontend Beginner Roadmap</a></p>
+<ol>
+<li><input checked="" disabled="" type="checkbox"> HTML</li>
+<li><input disabled="" type="checkbox"> CSS</li>
+<li><input disabled="" type="checkbox"> JavaScript</li>
+<li><input disabled="" type="checkbox"> Version Control Systems&#x2F;Git&#x2F;Github</li>
+<li><input disabled="" type="checkbox"> npm</li>
+<li><input disabled="" type="checkbox"> Vue</li>
+<li><input disabled="" type="checkbox"> React</li>
+<li><input disabled="" type="checkbox"> Angular</li>
+<li><input disabled="" type="checkbox"> TailwindCSS</li>
+<li><input disabled="" type="checkbox"> Vitest</li>
+<li><input disabled="" type="checkbox"> Cypress&#x2F;Jest</li>
+<li><input disabled="" type="checkbox"> TypeScript</li>
+<li><input disabled="" type="checkbox"> PWA</li>
+<li><input disabled="" type="checkbox"> SASS&#x2F;LESS&#x2F;PostCSS</li>
+<li><input disabled="" type="checkbox"> NodeJS</li>
+</ol>
+<h1 id="後端"><a href="#後端" class="headerlink" title="後端"></a>後端</h1><p><a href="https://roadmap.sh/backend">Backend Roadmap</a> &#x2F; <a href="https://roadmap.sh/backend?r=backend-beginner">Backend Beginner Roadmap</a></p>
+<h1 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h1><p><a href="https://roadmap.sh/devops">DevOps Roadmap</a> &#x2F; <a href="https://roadmap.sh/devops?r=devops-beginner">DevOps Beginner Roadmap</a></p>
+<h1 id="全端"><a href="#全端" class="headerlink" title="全端"></a>全端</h1><p><a href="https://roadmap.sh/full-stack">Full Stack Roadmap</a></p>
+<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
+<li><a href="https://github.com/kamranahmedse/developer-roadmap?tab=readme-ov-file">github developer-roadmap</a></li>
+<li><a href="https://hackmd.io/@were1122was/BkUpHXuAq">N+1 Queries 效能問題</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Software Engineer</tag>
+        <tag>Frontend Roadmap</tag>
+        <tag>Backend Roadmap</tag>
+        <tag>DevOps</tag>
+        <tag>Full Stack</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Webpack 入門教學筆記：現代前端建構工具的基礎與實戰 | 學習筆記</title>
     <url>/2024/11/16/learning-notes-webpack-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在前端專案日益龐大與模組化的今天，建構工具（build tools）扮演了極其關鍵的角色。而 Webpack 作為目前最主流的模組打包器（module bundler），廣泛應用於各類前端應用與框架中（如 React、Vue 等）。本篇筆記將介紹 Webpack 的基本概念、核心組件與實際範例，協助你快速理解與實作。</p>
@@ -12851,110 +12992,6 @@
       </tags>
   </entry>
   <entry>
-    <title>WebSocket 入門教學筆記（ESM 模組版） | 學習筆記</title>
-    <url>/2024/07/10/learning-notes-websocket-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在現代前端與全端開發中，許多應用需求都仰賴即時資料傳輸，例如即時聊天、線上協作、股票報價、IoT 裝置通訊等。而傳統的 HTTP 協定採用「請求－回應」模式，並不適合雙向即時通訊。這時，WebSocket 協定就成為更有效率的替代方案。</p>
-<p><strong>WebSocket</strong> 是 HTML5 標準的一部分，它允許在用戶端與伺服器之間建立一條持久的雙向連線。這使得伺服器能即時推播資料給客戶端，而非只能等待客戶端請求，適合實作低延遲、高互動的應用場景。</p>
-<p>本教學將透過現代的 <strong>ESM（ECMAScript Module）語法</strong>，介紹如何在 Node.js 環境中建立 WebSocket 應用，並搭配 HTML 客戶端示範雙向通訊流程。</p>
-<hr>
-<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
-<li><p><strong>WebSocket 是什麼？</strong><br>一種基於 TCP 的雙向通訊協定，可在瀏覽器與伺服器之間建立長連線。</p>
-</li>
-<li><p><strong>優點</strong></p>
-<ul>
-<li>持久連線，不需每次重複建立與關閉連線</li>
-<li>支援伺服器主動推播資料給客戶端</li>
-<li>節省頻寬與延遲</li>
-<li>適用於高即時性場景</li>
-</ul>
-</li>
-<li><p><strong>WebSocket vs HTTP</strong></p>
-<table>
-<thead>
-<tr>
-<th>特性</th>
-<th>HTTP</th>
-<th>WebSocket</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>通訊模式</td>
-<td>客戶端請求 → 伺服器回應</td>
-<td>雙向（Client ↔ Server）</td>
-</tr>
-<tr>
-<td>連線型態</td>
-<td>短連線</td>
-<td>長連線（持續開啟）</td>
-</tr>
-<tr>
-<td>傳輸效率</td>
-<td>較低（含 header）</td>
-<td>高效（精簡封包）</td>
-</tr>
-</tbody></table>
-</li>
-<li><p><strong>常見應用情境</strong></p>
-<ul>
-<li>即時聊天系統</li>
-<li>線上遊戲同步</li>
-<li>IoT 裝置狀態回報</li>
-<li>即時儀表板或股市報價</li>
-</ul>
-</li>
-<li><p><strong>基本 API（前端）</strong></p>
-<ul>
-<li><code>new WebSocket(url)</code>：建立連線</li>
-<li><code>socket.onopen</code>：連線成功</li>
-<li><code>socket.send()</code>：傳送資料</li>
-<li><code>socket.onmessage</code>：接收訊息</li>
-<li><code>socket.onclose</code>：連線關閉</li>
-<li><code>socket.onerror</code>：錯誤處理</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="實作範例（Node-js-ESM-原生-HTML）"><a href="#實作範例（Node-js-ESM-原生-HTML）" class="headerlink" title="實作範例（Node.js + ESM + 原生 HTML）"></a>實作範例（Node.js + ESM + 原生 HTML）</h2><h3 id="一、專案初始化"><a href="#一、專案初始化" class="headerlink" title="一、專案初始化"></a>一、專案初始化</h3><p>建立一個新的資料夾並初始化：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> websocket-esm-demo</span><br><span class="line"><span class="built_in">cd</span> websocket-esm-demo</span><br><span class="line">npm init -y</span><br><span class="line">npm install ws</span><br></pre></td></tr></table></figure>
-
-<p>修改 <code>package.json</code> 以啟用 ESM 模組支援：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;websocket-esm-demo&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;module&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;ws&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^8.0.0&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="二、伺服器端（使用-ESM-模組語法）"><a href="#二、伺服器端（使用-ESM-模組語法）" class="headerlink" title="二、伺服器端（使用 ESM 模組語法）"></a>二、伺服器端（使用 ESM 模組語法）</h3><p>建立 <code>server.js</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// server.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">WebSocketServer</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;ws&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> wss = <span class="keyword">new</span> <span class="title class_">WebSocketServer</span>(&#123; <span class="attr">port</span>: <span class="number">8080</span> &#125;);</span><br><span class="line"></span><br><span class="line">wss.<span class="title function_">on</span>(<span class="string">&#x27;connection&#x27;</span>, <span class="function">(<span class="params">ws</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;用戶已連線&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  ws.<span class="title function_">on</span>(<span class="string">&#x27;message&#x27;</span>, <span class="function">(<span class="params">message</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`收到用戶訊息：<span class="subst">$&#123;message&#125;</span>`</span>);</span><br><span class="line">    ws.<span class="title function_">send</span>(<span class="string">`伺服器收到：<span class="subst">$&#123;message&#125;</span>`</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  ws.<span class="title function_">on</span>(<span class="string">&#x27;close&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;連線已關閉&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  ws.<span class="title function_">on</span>(<span class="string">&#x27;error&#x27;</span>, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;WebSocket 錯誤：&#x27;</span>, err);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;WebSocket 伺服器啟動於 ws://localhost:8080&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="三、客戶端-HTML（WebSocket-客戶端）"><a href="#三、客戶端-HTML（WebSocket-客戶端）" class="headerlink" title="三、客戶端 HTML（WebSocket 客戶端）"></a>三、客戶端 HTML（WebSocket 客戶端）</h3><p>建立 <code>index.html</code>：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-Hant&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>WebSocket ESM 範例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>WebSocket 即時通訊示範<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;input&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;輸入訊息&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;sendMessage()&quot;</span>&gt;</span>送出<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;log&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> socket = <span class="keyword">new</span> <span class="title class_">WebSocket</span>(<span class="string">&#x27;ws://localhost:8080&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      socket.<span class="title function_">addEventListener</span>(<span class="string">&#x27;open&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">logMessage</span>(<span class="string">&#x27;已連線至伺服器&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">      &#125;);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      socket.<span class="title function_">addEventListener</span>(<span class="string">&#x27;message&#x27;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">logMessage</span>(<span class="string">`來自伺服器：<span class="subst">$&#123;event.data&#125;</span>`</span>);</span></span><br><span class="line"><span class="language-javascript">      &#125;);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      socket.<span class="title function_">addEventListener</span>(<span class="string">&#x27;close&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">logMessage</span>(<span class="string">&#x27;連線已關閉&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">      &#125;);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      socket.<span class="title function_">addEventListener</span>(<span class="string">&#x27;error&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">logMessage</span>(<span class="string">&#x27;連線發生錯誤&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">      &#125;);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">function</span> <span class="title function_">sendMessage</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> input = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;input&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        socket.<span class="title function_">send</span>(input.<span class="property">value</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">logMessage</span>(<span class="string">`你說：<span class="subst">$&#123;input.value&#125;</span>`</span>);</span></span><br><span class="line"><span class="language-javascript">        input.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">function</span> <span class="title function_">logMessage</span>(<span class="params">msg</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> li = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;li&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        li.<span class="property">textContent</span> = msg;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;log&#x27;</span>).<span class="title function_">appendChild</span>(li);</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="四、執行與測試"><a href="#四、執行與測試" class="headerlink" title="四、執行與測試"></a>四、執行與測試</h3><ol>
-<li>啟動伺服器：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node server.js</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>打開 <code>index.html</code>（直接用瀏覽器開啟或用 VSCode Live Server 插件）</li>
-<li>在輸入框輸入訊息，點擊「送出」，觀察瀏覽器與後端終端機回應。</li>
-</ol>
-<hr>
-<h2 id="補充與進階建議"><a href="#補充與進階建議" class="headerlink" title="補充與進階建議"></a>補充與進階建議</h2><ul>
-<li><strong>安全性：</strong> 若部署在生產環境，應使用 <code>wss://</code>（WebSocket over TLS）取代 <code>ws://</code>。</li>
-<li><strong>重連策略：</strong> 真實場景下需考慮自動重連機制（如斷線重試）。</li>
-<li><strong>認證機制：</strong> WebSocket 不支援標準 HTTP 標頭傳遞 JWT，通常可透過 URL query 傳 token，或搭配 Session Cookie。</li>
-<li><strong>整合框架：</strong> 可結合 Express、Koa、Fastify 使用同一個 HTTP 伺服器提供 HTTP 與 WS。</li>
-</ul>
-<hr>
-<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>WebSocket 是實現現代即時網頁應用的重要基礎建設，能提供更快、更輕量的資料通訊方式。透過本文，你應該已能建立一個使用 ESM 寫法的簡單 WebSocket 應用，並了解其基本運作流程。未來你可以進一步探索如 Socket.IO、SignalR 或 WebRTC 等進階解決方案，以支援更多功能與兼容性需求。</p>
-]]></content>
-      <tags>
-        <tag>Node.js</tag>
-        <tag>NodeJS</tag>
-        <tag>WebSocket</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>常見軟體工程師/Web 開發技術面試及學習資源整理</title>
     <url>/2023/03/22/software-engineer-technical-interview-resources/</url>
     <content><![CDATA[<p>以下彙整常見軟體工程師技術面試及學習資源整理：</p>
@@ -13015,43 +13052,6 @@
         <tag>網站開發工具</tag>
         <tag>學習資源</tag>
         <tag>技術面試</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</title>
-    <url>/2024/06/22/software-engineer-and-web-develement-skill-tree/</url>
-    <content><![CDATA[<h1 id="前端工程"><a href="#前端工程" class="headerlink" title="前端工程"></a>前端工程</h1><p><a href="https://roadmap.sh/frontend">Frontend Roadmap</a> &#x2F; <a href="https://roadmap.sh/frontend?r=frontend-beginner">Frontend Beginner Roadmap</a></p>
-<ol>
-<li><input checked="" disabled="" type="checkbox"> HTML</li>
-<li><input disabled="" type="checkbox"> CSS</li>
-<li><input disabled="" type="checkbox"> JavaScript</li>
-<li><input disabled="" type="checkbox"> Version Control Systems&#x2F;Git&#x2F;Github</li>
-<li><input disabled="" type="checkbox"> npm</li>
-<li><input disabled="" type="checkbox"> Vue</li>
-<li><input disabled="" type="checkbox"> React</li>
-<li><input disabled="" type="checkbox"> Angular</li>
-<li><input disabled="" type="checkbox"> TailwindCSS</li>
-<li><input disabled="" type="checkbox"> Vitest</li>
-<li><input disabled="" type="checkbox"> Cypress&#x2F;Jest</li>
-<li><input disabled="" type="checkbox"> TypeScript</li>
-<li><input disabled="" type="checkbox"> PWA</li>
-<li><input disabled="" type="checkbox"> SASS&#x2F;LESS&#x2F;PostCSS</li>
-<li><input disabled="" type="checkbox"> NodeJS</li>
-</ol>
-<h1 id="後端"><a href="#後端" class="headerlink" title="後端"></a>後端</h1><p><a href="https://roadmap.sh/backend">Backend Roadmap</a> &#x2F; <a href="https://roadmap.sh/backend?r=backend-beginner">Backend Beginner Roadmap</a></p>
-<h1 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h1><p><a href="https://roadmap.sh/devops">DevOps Roadmap</a> &#x2F; <a href="https://roadmap.sh/devops?r=devops-beginner">DevOps Beginner Roadmap</a></p>
-<h1 id="全端"><a href="#全端" class="headerlink" title="全端"></a>全端</h1><p><a href="https://roadmap.sh/full-stack">Full Stack Roadmap</a></p>
-<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
-<li><a href="https://github.com/kamranahmedse/developer-roadmap?tab=readme-ov-file">github developer-roadmap</a></li>
-<li><a href="https://hackmd.io/@were1122was/BkUpHXuAq">N+1 Queries 效能問題</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Software Engineer</tag>
-        <tag>Frontend Roadmap</tag>
-        <tag>Backend Roadmap</tag>
-        <tag>DevOps</tag>
-        <tag>Full Stack</tag>
       </tags>
   </entry>
   <entry>
