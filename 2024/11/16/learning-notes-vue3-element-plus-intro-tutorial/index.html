@@ -26,11 +26,11 @@
     
     <title>
         
-          concurrently.js 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          Element Plus 介紹入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2018/02/01/learning-notes-concurrently-js-intro-tutorial/">
+    <link rel="canonical" href="https://tech.kdchang.net/2024/11/16/learning-notes-vue3-element-plus-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="concurrently.js 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="concurrently.js 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="Element Plus 介紹入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="Element Plus 介紹入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,17 +199,29 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>concurrently.js 入門教學筆記 | 學習筆記</h1>
+                    <h1>Element Plus 介紹入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2018-02-01
+                        2024-11-16
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#Django" title="Django">Django</a>
+                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
                         
-                          <a class="tag" href="/tags/#RESTful" title="RESTful">RESTful</a>
+                          <a class="tag" href="/tags/#前端開發" title="前端開發">前端開發</a>
+                        
+                          <a class="tag" href="/tags/#前端工程" title="前端工程">前端工程</a>
+                        
+                          <a class="tag" href="/tags/#frontend" title="frontend">frontend</a>
+                        
+                          <a class="tag" href="/tags/#frontend engineer" title="frontend engineer">frontend engineer</a>
+                        
+                          <a class="tag" href="/tags/#Vue" title="Vue">Vue</a>
+                        
+                          <a class="tag" href="/tags/#Vue Router" title="Vue Router">Vue Router</a>
+                        
+                          <a class="tag" href="/tags/#Element Plus" title="Element Plus">Element Plus</a>
                         
 
                     </div>
@@ -235,92 +247,46 @@
                 </div>
                 <br>
                 <div>
-                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在前端與全端開發中，我們經常需要<strong>同時執行多個指令</strong>，例如一邊啟動前端開發伺服器，一邊啟動後端 API 伺服器，或一邊監看 Sass 編譯，一邊執行 TypeScript 編譯。在這樣的情境下，<code>concurrently</code> 是一個非常實用的工具，它能讓我們在同一個命令列同時執行多個命令。</p>
-<p>本篇筆記將介紹 <code>concurrently</code> 是什麼、如何安裝、基本用法，以及實際應用範例。</p>
-<hr>
-<h3 id="什麼是-concurrently？"><a href="#什麼是-concurrently？" class="headerlink" title="什麼是 concurrently？"></a>什麼是 concurrently？</h3><p><code>concurrently</code> 是一個 Node.js 套件，可以在一個命令中<strong>同時執行多個命令行指令</strong>，而且會把各個執行的結果分別以不同顏色標示，方便辨認。它常用來取代 <code>npm-run-all</code>、<code>gulp</code> 等工具中針對「平行執行任務」的需求。</p>
-<p>官方說明：<strong>“Run multiple commands concurrently.”</strong></p>
-<p>例如你想同時執行一個 React 專案的前端開發伺服器與後端 API 伺服器：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm run start-frontend &amp; npm run start-backend</span><br></pre></td></tr></table></figure>
-
-<p>在不同系統或 shell 可能有兼容性問題，用 <code>concurrently</code> 則會簡單許多。</p>
-<hr>
-<h2 id="1️⃣-安裝-concurrently"><a href="#1️⃣-安裝-concurrently" class="headerlink" title="1️⃣ 安裝 concurrently"></a>1️⃣ 安裝 concurrently</h2><p>首先，你需要在專案中安裝 <code>concurrently</code>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install concurrently --save-dev</span><br></pre></td></tr></table></figure>
-
-<p>或者使用 yarn：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn add concurrently --dev</span><br></pre></td></tr></table></figure>
-
-<p>安裝完成後，你可以在 <code>package.json</code> 的 <code>scripts</code> 區塊中使用它。</p>
-<hr>
-<h2 id="2️⃣-基本用法"><a href="#2️⃣-基本用法" class="headerlink" title="2️⃣ 基本用法"></a>2️⃣ 基本用法</h2><p>最基本的用法如下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npx concurrently <span class="string">&quot;command1&quot;</span> <span class="string">&quot;command2&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>例如，同時執行 <code>npm run server</code> 和 <code>npm run client</code>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npx concurrently <span class="string">&quot;npm run server&quot;</span> <span class="string">&quot;npm run client&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>執行時會在終端顯示兩個任務的 log，並自動用不同顏色標示來源。</p>
-<hr>
-<h2 id="3️⃣-在-package-json-中使用"><a href="#3️⃣-在-package-json-中使用" class="headerlink" title="3️⃣ 在 package.json 中使用"></a>3️⃣ 在 <code>package.json</code> 中使用</h2><p>通常我們會把 <code>concurrently</code> 寫在 <code>package.json</code> 裡的 scripts 區塊：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;server&quot;</span><span class="punctuation">:</span> <span class="string">&quot;node server.js&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;client&quot;</span><span class="punctuation">:</span> <span class="string">&quot;react-scripts start&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;dev&quot;</span><span class="punctuation">:</span> <span class="string">&quot;concurrently \&quot;npm run server\&quot; \&quot;npm run client\&quot;&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>執行 <code>npm run dev</code>，就會同時執行 <code>server.js</code>（後端）與 <code>react-scripts start</code>（前端）。</p>
-<p>這樣只需要一個指令就能同時啟動兩個服務，對開發非常方便。</p>
-<hr>
-<h2 id="4️⃣-實際範例：React-Express-同時啟動"><a href="#4️⃣-實際範例：React-Express-同時啟動" class="headerlink" title="4️⃣ 實際範例：React + Express 同時啟動"></a>4️⃣ 實際範例：React + Express 同時啟動</h2><p>假設你有一個專案結構如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">my-app/</span><br><span class="line">  client/</span><br><span class="line">    (React 專案)</span><br><span class="line">  server/</span><br><span class="line">    (Express 後端)</span><br></pre></td></tr></table></figure>
-
-<h3 id="server-package-json"><a href="#server-package-json" class="headerlink" title="server/package.json"></a><code>server/package.json</code></h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;server&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;start&quot;</span><span class="punctuation">:</span> <span class="string">&quot;node index.js&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="client-package-json"><a href="#client-package-json" class="headerlink" title="client/package.json"></a><code>client/package.json</code></h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;client&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;start&quot;</span><span class="punctuation">:</span> <span class="string">&quot;react-scripts start&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>在專案根目錄的 <code>package.json</code> 中加入：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;my-app&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;start&quot;</span><span class="punctuation">:</span> <span class="string">&quot;concurrently \&quot;npm start --prefix server\&quot; \&quot;npm start --prefix client\&quot;&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;devDependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;concurrently&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^8.0.0&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>--prefix</code> 是讓 npm 到指定資料夾執行</li>
-<li><code>npm start --prefix server</code> 會到 <code>server/</code> 資料夾執行 <code>npm start</code></li>
-<li><code>npm start --prefix client</code> 會到 <code>client/</code> 資料夾執行 <code>npm start</code></li>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在現代前端開發中，UI 框架對於提升開發效率、提升用戶體驗具有至關重要的作用。Element Plus 是一個基於 Vue 3 的開源 UI 框架，它提供了豐富的組件，並且與 Vue 3 的 Composition API 完美兼容，能幫助開發者快速構建高質量的前端應用。</p>
+<p>在筆記中，我們將使用 Vue 3 的 <code>setup()</code> 語法來講解如何在專案中使用 Element Plus，並展示如何搭配 Vue 3 的新特性來實現更加清晰和模組化的開發模式。</p>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><strong>Element Plus</strong>：基於 Vue 3 的 UI 組件庫，提供了豐富的 UI 元件，支持 Composition API 和 TypeScript。</li>
+<li><strong>Vue 3 Setup</strong>：使用 Vue 3 的 Composition API 和 <code>setup()</code> 來構建組件邏輯，並將 UI 與邏輯分開。</li>
+<li><strong>組件設置</strong>：展示如何在 <code>setup()</code> 中引入並使用 Element Plus 組件。</li>
+<li><strong>全域配置</strong>：設置 Element Plus 的全域屬性，例如默認主題或組件大小。</li>
+<li><strong>實際範例</strong>：通過簡單的範例，演示如何在 Vue 3 中使用 Element Plus 進行開發。</li>
 </ul>
-<p>此時執行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure>
+<h2 id="安裝與設置"><a href="#安裝與設置" class="headerlink" title="安裝與設置"></a>安裝與設置</h2><h3 id="安裝-Element-Plus"><a href="#安裝-Element-Plus" class="headerlink" title="安裝 Element Plus"></a>安裝 Element Plus</h3><p>在 Vue 3 專案中使用 Element Plus，首先需要安裝它。假設你的專案已經配置了 Vue 3，則可以通過以下命令安裝 Element Plus。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install element-plus --save</span><br></pre></td></tr></table></figure>
 
-<p>就會<strong>同時啟動 React 前端與 Express 後端</strong>，而且都會在終端中顯示 log，方便觀察開發情況。</p>
-<hr>
-<h2 id="5️⃣-進階用法"><a href="#5️⃣-進階用法" class="headerlink" title="5️⃣ 進階用法"></a>5️⃣ 進階用法</h2><h3 id="✅-自訂-prefix-與顏色"><a href="#✅-自訂-prefix-與顏色" class="headerlink" title="✅ 自訂 prefix 與顏色"></a>✅ 自訂 prefix 與顏色</h3><p>可以自訂 log 標籤與顏色，方便辨識哪一個 log 來自哪個指令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npx concurrently --names <span class="string">&quot;BACK,FRONT&quot;</span> --prefix-colors <span class="string">&quot;bgBlue.bold,bgMagenta.bold&quot;</span> <span class="string">&quot;npm run server&quot;</span> <span class="string">&quot;npm run client&quot;</span></span><br></pre></td></tr></table></figure>
+<p>或者使用 <code>yarn</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn add element-plus</span><br></pre></td></tr></table></figure>
 
-<p>效果：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[BACK] server running on port 5000</span><br><span class="line">[FRONT] webpack compiled successfully</span><br></pre></td></tr></table></figure>
+<h3 id="設置-Vue-3-與-Element-Plus"><a href="#設置-Vue-3-與-Element-Plus" class="headerlink" title="設置 Vue 3 與 Element Plus"></a>設置 Vue 3 與 Element Plus</h3><p>在 Vue 3 的專案中，通過 <code>setup()</code> 語法來設置 Element Plus，首先需要在 <code>main.js</code> 或 <code>main.ts</code> 中引入 Element Plus 並配置樣式：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createApp &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ElementPlus</span> <span class="keyword">from</span> <span class="string">&#x27;element-plus&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;element-plus/dist/index.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">createApp</span>(<span class="title class_">App</span>);</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title class_">ElementPlus</span>);</span><br><span class="line">app.<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
-<hr>
-<h3 id="✅-自動終止所有執行中的任務"><a href="#✅-自動終止所有執行中的任務" class="headerlink" title="✅ 自動終止所有執行中的任務"></a>✅ 自動終止所有執行中的任務</h3><p>當一個任務失敗時，讓其他任務也自動停止：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npx concurrently --kill-others <span class="string">&quot;npm run server&quot;</span> <span class="string">&quot;npm run client&quot;</span></span><br></pre></td></tr></table></figure>
+<p>這樣，Element Plus 就成功集成到你的 Vue 3 專案中，接下來可以開始使用其組件。</p>
+<h2 id="使用-Vue-3-Setup-語法進行開發"><a href="#使用-Vue-3-Setup-語法進行開發" class="headerlink" title="使用 Vue 3 Setup 語法進行開發"></a>使用 Vue 3 Setup 語法進行開發</h2><h3 id="按鈕-Button-組件"><a href="#按鈕-Button-組件" class="headerlink" title="按鈕 (Button) 組件"></a>按鈕 (Button) 組件</h3><p>在 Vue 3 中，<code>setup()</code> 是一個組件的初始化函數，所有的組件邏輯應該放在這個函數中。以下是如何在 <code>setup()</code> 中使用 Element Plus 的按鈕組件。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;el-button type=&quot;primary&quot;&gt;主要按鈕&lt;/el-button&gt;</span><br><span class="line">  &lt;el-button type=&quot;success&quot;&gt;成功按鈕&lt;/el-button&gt;</span><br><span class="line">  &lt;el-button type=&quot;danger&quot;&gt;危險按鈕&lt;/el-button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ElButton &#125; from &#x27;element-plus&#x27;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<p>當其中一個 command 錯誤，另一個也會被 kill，避免殘留無用的背景 process。</p>
-<hr>
-<h2 id="6️⃣-常見用途"><a href="#6️⃣-常見用途" class="headerlink" title="6️⃣ 常見用途"></a>6️⃣ 常見用途</h2><p><code>concurrently</code> 常見的使用情境有：</p>
-<ul>
-<li>同時啟動多個 Node.js 服務</li>
-<li>一邊監看 Sass&#x2F;LESS 編譯，一邊執行 webpack</li>
-<li>同時跑 test 與 build</li>
-<li>同時監看前端與後端程式碼</li>
-</ul>
-<p>如果你用 <code>create-react-app</code>、<code>Next.js</code>、<code>Vite</code>、<code>Express</code>、<code>NestJS</code> 這些框架開發全端應用，<code>concurrently</code> 非常適合整合開發流程。</p>
-<hr>
-<h2 id="7️⃣-與其他工具比較"><a href="#7️⃣-與其他工具比較" class="headerlink" title="7️⃣ 與其他工具比較"></a>7️⃣ 與其他工具比較</h2><p><code>concurrently</code> 的特色在於：</p>
-<ul>
-<li>簡單語法（不需要額外配置檔）</li>
-<li>支援 Windows、Linux、Mac</li>
-<li>輕量、僅做平行執行，不強制任務流程</li>
-<li>log 輸出自帶標籤與顏色</li>
-<li>可搭配 npm script 或 npx 單獨執行</li>
-</ul>
-<p>如果需要「先後順序執行多個任務」，則可以搭配 <code>npm-run-all</code>。</p>
-<hr>
-<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p><code>concurrently</code> 是一個適合在開發環境中同時執行多個命令的小工具，對需要前後端同時啟動、前端多個編譯工作並行的開發者非常實用。</p>
-<p>它用法簡單、安裝快速、跨平台，推薦將它納入專案開發腳本中，以提升開發效率。</p>
-<p>希望這篇筆記能幫助你了解 <code>concurrently</code> 的用途與基本操作！</p>
+<p>在此範例中，使用 <code>import</code> 引入 <code>ElButton</code> 組件，並在模板中直接使用。這樣，我們就能夠根據需要渲染出不同樣式的按鈕。Element Plus 的組件會自動按照設置渲染出對應的 UI。</p>
+<h3 id="對話框-Dialog-組件"><a href="#對話框-Dialog-組件" class="headerlink" title="對話框 (Dialog) 組件"></a>對話框 (Dialog) 組件</h3><p>Element Plus 提供了功能強大的對話框組件，能夠輕鬆實現彈窗效果。下面是如何在 <code>setup()</code> 中實現一個顯示對話框的功能：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;el-button @click=&quot;openDialog&quot;&gt;顯示對話框&lt;/el-button&gt;</span><br><span class="line">  &lt;el-dialog :visible.sync=&quot;dialogVisible&quot; title=&quot;對話框標題&quot;&gt;</span><br><span class="line">    &lt;p&gt;這是一個對話框示例。&lt;/p&gt;</span><br><span class="line">  &lt;/el-dialog&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;;</span><br><span class="line">import &#123; ElButton, ElDialog &#125; from &#x27;element-plus&#x27;;</span><br><span class="line"></span><br><span class="line">const dialogVisible = ref(false);</span><br><span class="line"></span><br><span class="line">const openDialog = () =&gt; &#123;</span><br><span class="line">  dialogVisible.value = true;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在這個範例中，使用 <code>ref()</code> 創建了 <code>dialogVisible</code> 這個響應式變數，並且通過按鈕的點擊事件來控制對話框的顯示和隱藏。<code>sync</code> 修飾符用來將對話框的顯示狀態與 <code>dialogVisible</code> 變數同步。</p>
+<h3 id="表單-Form-組件"><a href="#表單-Form-組件" class="headerlink" title="表單 (Form) 組件"></a>表單 (Form) 組件</h3><p>Element Plus 的表單組件支持高效的表單驗證，以下範例展示如何在 <code>setup()</code> 中使用表單組件進行資料提交。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;el-form :model=&quot;form&quot; ref=&quot;formRef&quot; label-width=&quot;120px&quot;&gt;</span><br><span class="line">    &lt;el-form-item</span><br><span class="line">      label=&quot;名稱&quot;</span><br><span class="line">      prop=&quot;name&quot;</span><br><span class="line">      :rules=&quot;[&#123; required: true, message: &#x27;請輸入名稱&#x27;, trigger: &#x27;blur&#x27; &#125;]&quot;</span><br><span class="line">    &gt;</span><br><span class="line">      &lt;el-input v-model=&quot;form.name&quot; placeholder=&quot;請輸入名稱&quot;&gt;&lt;/el-input&gt;</span><br><span class="line">    &lt;/el-form-item&gt;</span><br><span class="line">    &lt;el-form-item&gt;</span><br><span class="line">      &lt;el-button type=&quot;primary&quot; @click=&quot;submitForm&quot;&gt;提交&lt;/el-button&gt;</span><br><span class="line">    &lt;/el-form-item&gt;</span><br><span class="line">  &lt;/el-form&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;;</span><br><span class="line">import &#123; ElButton, ElForm, ElFormItem, ElInput &#125; from &#x27;element-plus&#x27;;</span><br><span class="line"></span><br><span class="line">const form = ref(&#123;</span><br><span class="line">  name: &#x27;&#x27;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const submitForm = () =&gt; &#123;</span><br><span class="line">  // 表單提交處理</span><br><span class="line">  console.log(form.value.name);</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在這個範例中，使用 <code>ref()</code> 創建表單的資料模型，並且為名稱欄位設置了必填的驗證規則。當點擊提交按鈕時，將會輸出表單中的名稱欄位值。</p>
+<h3 id="表格-Table-組件"><a href="#表格-Table-組件" class="headerlink" title="表格 (Table) 組件"></a>表格 (Table) 組件</h3><p>Element Plus 的表格組件支持展示大量數據，並且提供排序、過濾等功能。以下是如何使用 <code>setup()</code> 語法來渲染表格：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;el-table :data=&quot;tableData&quot; style=&quot;width: 100%&quot;&gt;</span><br><span class="line">    &lt;el-table-column label=&quot;姓名&quot; prop=&quot;name&quot;&gt;&lt;/el-table-column&gt;</span><br><span class="line">    &lt;el-table-column label=&quot;年齡&quot; prop=&quot;age&quot;&gt;&lt;/el-table-column&gt;</span><br><span class="line">    &lt;el-table-column label=&quot;地址&quot; prop=&quot;address&quot;&gt;&lt;/el-table-column&gt;</span><br><span class="line">  &lt;/el-table&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;;</span><br><span class="line">import &#123; ElTable, ElTableColumn &#125; from &#x27;element-plus&#x27;;</span><br><span class="line"></span><br><span class="line">const tableData = ref([</span><br><span class="line">  &#123; name: &#x27;王小明&#x27;, age: 25, address: &#x27;台北市&#x27; &#125;,</span><br><span class="line">  &#123; name: &#x27;李大華&#x27;, age: 30, address: &#x27;高雄市&#x27; &#125;,</span><br><span class="line">  &#123; name: &#x27;張三&#x27;, age: 28, address: &#x27;台中市&#x27; &#125;,</span><br><span class="line">]);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>這個範例展示了如何使用 <code>ref()</code> 創建表格的數據源，並使用 <code>ElTable</code> 和 <code>ElTableColumn</code> 來渲染表格。</p>
+<h2 id="全域配置"><a href="#全域配置" class="headerlink" title="全域配置"></a>全域配置</h2><p>Element Plus 提供了全域配置的能力，允許你在項目中設置統一的組件配置。例如，設置所有按鈕的默認大小或主題色彩等。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createApp &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ElementPlus</span> <span class="keyword">from</span> <span class="string">&#x27;element-plus&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;element-plus/dist/index.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">createApp</span>(<span class="title class_">App</span>);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(<span class="title class_">ElementPlus</span>, &#123;</span><br><span class="line">  <span class="attr">size</span>: <span class="string">&#x27;small&#x27;</span>, <span class="comment">// 設定所有組件的大小為 small</span></span><br><span class="line">  <span class="attr">zIndex</span>: <span class="number">3000</span>, <span class="comment">// 設定 z-index</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>這樣設置之後，你的所有組件將會默認使用小號尺寸，並且對話框等組件的 z-index 也會被統一設置。</p>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>Element Plus 是一個強大且易於使用的 UI 框架，與 Vue 3 的 Composition API 完美集成。通過 <code>setup()</code> 語法，開發者能夠更加簡潔且模組化地編寫組件邏輯，從而提升開發效率。無論是常見的按鈕、對話框，還是複雜的表格、表單，Element Plus 都能提供強大的支持。希望本文能幫助你快速上手 Element Plus，並利用它來構建高效、現代化的前端應用。</p>
 
                 </div>
 
@@ -337,7 +303,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-django-middleware-intro-tutorial/" title="Django Middleware 入門教學筆記" rel="bookmark">Django Middleware 入門教學筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-django-orm-n-plus-1-intro-tutorial/" title="Django 中的 n+1 問題入門教學筆記" rel="bookmark">Django 中的 n+1 問題入門教學筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2018/02/01/learning-notes-django-rest-api-framework-intro-tutorial/" title="Django RESTful API 入門教學筆記 | 學習筆記" rel="bookmark">Django RESTful API 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/08/31/learning-notes-python-django-crud-intro-tutorial/" title="Django CRUD（不使用 ModelForm）入門教學筆記 | 學習筆記" rel="bookmark">Django CRUD（不使用 ModelForm）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/01/learning-notes-python-django-db-mapping-intro-tutorial/" title="Django「一對一」、「一對多」、「多對多」關聯入門教學筆記 | 學習筆記" rel="bookmark">Django「一對一」、「一對多」、「多對多」關聯入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-vue-router-intro-tutorial/" title="Vue Router 入門教學筆記 | 學習筆記" rel="bookmark">Vue Router 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-vuex-intro-tutorial/" title="Vuex 入門教學筆記：集中式狀態管理實作入門教學筆記 | 學習筆記" rel="bookmark">Vuex 入門教學筆記：集中式狀態管理實作入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/10/16/learning-notes-alpinejs-intro-tutorial/" title="Alpine.js 入門教學筆記 | 學習筆記" rel="bookmark">Alpine.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/01/learning-notes-cookie-intro-tutorial/" title="Cookie 入門教學筆記 | 學習筆記" rel="bookmark">Cookie 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-css-animation-intro-tutorial/" title="CSS Animation 入門教學筆記 | 學習筆記" rel="bookmark">CSS Animation 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -373,8 +339,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2018/02/01/learning-notes-concurrently-js-intro-tutorial/";
-    var disqus_url = "https://tech.kdchang.net/2018/02/01/learning-notes-concurrently-js-intro-tutorial/";
+    var disqus_identifier = "https://tech.kdchang.net/2024/11/16/learning-notes-vue3-element-plus-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2024/11/16/learning-notes-vue3-element-plus-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
