@@ -71,9 +71,9 @@ export function sum(a, b) {
 
 ```javascript
 // sum.test.mjs
-import { sum } from "./sum.mjs";
+import { sum } from './sum.mjs';
 
-test("adds 1 + 2 to equal 3", () => {
+test('adds 1 + 2 to equal 3', () => {
   expect(sum(1, 2)).toBe(3);
 });
 ```
@@ -100,8 +100,8 @@ SyntaxError: Cannot use import statement outside a module
 // jest.config.js
 export default {
   transform: {},
-  extensionsToTreatAsEsm: [".mjs"],
-  testEnvironment: "node",
+  extensionsToTreatAsEsm: ['.mjs'],
+  testEnvironment: 'node',
 };
 ```
 
@@ -142,10 +142,10 @@ npm install --save-dev @babel/preset-env babel-jest
 ```javascript
 export default {
   transform: {
-    "^.+\\.m?js$": "babel-jest",
+    '^.+\\.m?js$': 'babel-jest',
   },
-  extensionsToTreatAsEsm: [".mjs"],
-  testEnvironment: "node",
+  extensionsToTreatAsEsm: ['.mjs'],
+  testEnvironment: 'node',
 };
 ```
 
@@ -167,7 +167,7 @@ PASS  ./sum.test.mjs
 ```javascript
 // fetchData.mjs
 export async function fetchData() {
-  return "peanut butter";
+  return 'peanut butter';
 }
 ```
 
@@ -175,11 +175,11 @@ export async function fetchData() {
 
 ```javascript
 // fetchData.test.mjs
-import { fetchData } from "./fetchData.mjs";
+import { fetchData } from './fetchData.mjs';
 
-test("returns peanut butter", async () => {
+test('returns peanut butter', async () => {
   const data = await fetchData();
-  expect(data).toBe("peanut butter");
+  expect(data).toBe('peanut butter');
 });
 ```
 
@@ -195,16 +195,16 @@ test("returns peanut butter", async () => {
 
 ```javascript
 // fileUtil.mjs
-import { readFile } from "node:fs/promises";
-import { fileURLToPath } from "node:url";
-import { dirname, join } from "node:path";
+import { readFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export async function readConfig() {
-  const filePath = join(__dirname, "config.json");
-  const content = await readFile(filePath, "utf-8");
+  const filePath = join(__dirname, 'config.json');
+  const content = await readFile(filePath, 'utf-8');
   return JSON.parse(content);
 }
 ```
@@ -267,4 +267,4 @@ Jest 預設是為 **CommonJS** 設計，但隨著 **ES Module** 在 Node.js 與�
 
 雖然設定比 CJS 稍微複雜，但一旦設定好後，整個測試流程一樣流暢，也能為未來更符合現代標準的專案奠定基礎。
 
-建議未來若有使用 TypeScript、React、Vue 等，也可以結合對應的 transformer 與設定，讓 Jest 完全支援你的開發堆疊。
+建議未來若有使用 TypeScript、React、Vue 等，也可以結合對應的 transformer 與設定，讓 Jest 完全支援你的開發。

@@ -87,6 +87,14 @@ source ~/.zshrc
 
 1. [lucide](https://lucide.dev/)
 
+## 投影片
+
+1. [Slidev - Presentation Slides for Developers](https://sli.dev/)
+
+## 文件
+
+1. [Docusaurus](https://docusaurus.io/)
+
 ## 影片
 
 1. [Free Creative Commons Zero Videos](https://www.pexels.com/search/videos/creative%20commons%20zero/)
