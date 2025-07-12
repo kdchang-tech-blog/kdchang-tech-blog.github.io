@@ -26,11 +26,11 @@
     
     <title>
         
-          Cookie 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          TanStack Query 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/11/01/learning-notes-cookie-intro-tutorial/">
+    <link rel="canonical" href="https://tech.kdchang.net/2018/02/01/learning-notes-tanstack-query-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="Cookie 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="Cookie 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="TanStack Query 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="TanStack Query 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,27 +199,17 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>Cookie 入門教學筆記 | 學習筆記</h1>
+                    <h1>TanStack Query 入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2024-11-01
+                        2018-02-01
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                          <a class="tag" href="/tags/#Jest" title="Jest">Jest</a>
                         
-                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
-                        
-                          <a class="tag" href="/tags/#前端開發" title="前端開發">前端開發</a>
-                        
-                          <a class="tag" href="/tags/#前端工程" title="前端工程">前端工程</a>
-                        
-                          <a class="tag" href="/tags/#frontend" title="frontend">frontend</a>
-                        
-                          <a class="tag" href="/tags/#frontend engineer" title="frontend engineer">frontend engineer</a>
-                        
-                          <a class="tag" href="/tags/#cookie" title="cookie">cookie</a>
+                          <a class="tag" href="/tags/#ES Module" title="ES Module">ES Module</a>
                         
 
                     </div>
@@ -245,79 +235,89 @@
                 </div>
                 <br>
                 <div>
-                    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Cookie 是一種儲存在使用者瀏覽器上的小型文字檔案，用於保存使用者的狀態或資訊。常見用途包含：</p>
-<p><strong>紀錄登入狀態</strong>：讓使用者在網站上保持登入，不需每次重新輸入帳號。<br><strong>使用者偏好設定</strong>：保存使用者選擇的語言、主題等個人化設定。<br><strong>追蹤使用者行為</strong>：例如分析網站流量、廣告投放追蹤等。</p>
-<h1 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h1><p>Cookie 依據不同的分類方式，可以分為以下幾種常見種類：</p>
-<h3 id="一、依用途分類："><a href="#一、依用途分類：" class="headerlink" title="一、依用途分類："></a>一、依用途分類：</h3><ol>
-<li><p><strong>功能性 Cookie（Functional Cookies）</strong>  </p>
-<ul>
-<li>主要用於提升網站使用體驗，例如記住使用者的登入狀態、語言設定、購物車內容等。</li>
-</ul>
-</li>
-<li><p><strong>必要性 Cookie（Strictly Necessary Cookies）</strong>  </p>
-<ul>
-<li>維持網站基本運作所需，例如登入認證、網頁導航等，通常無法被關閉。</li>
-</ul>
-</li>
-<li><p><strong>分析型 Cookie（Analytical&#x2F;Performance Cookies）</strong>  </p>
-<ul>
-<li>用於收集網站流量數據，分析使用者行為，幫助網站優化，例如 Google Analytics。</li>
-</ul>
-</li>
-<li><p><strong>廣告追蹤 Cookie（Advertising&#x2F;Targeting Cookies）</strong>  </p>
-<ul>
-<li>用於追蹤使用者瀏覽行為，以提供個人化廣告或推薦內容。</li>
-</ul>
-</li>
-</ol>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在現代前端開發中，資料取得（Data Fetching）與狀態管理是非常重要的課題。傳統上，我們可能會使用 <code>useEffect</code> 搭配 <code>fetch</code> 或 <code>axios</code> 來手動管理資料請求，並維護載入狀態、錯誤狀態與資料快取等，但這樣往往容易導致重複程式碼、管理複雜以及效能不佳。</p>
+<p>TanStack Query（舊名 React Query）是一個專門用來管理伺服器狀態（server state）的函式庫，極大地簡化了資料抓取、快取、同步、重新整理與錯誤處理的流程。它不只支援 React，也能搭配 Vue、Svelte 等其他框架。</p>
+<p>這篇筆記將介紹 TanStack Query 的核心概念與使用方式，並提供一個簡單範例，幫助你快速上手。</p>
 <hr>
-<h3 id="二、依存放時間分類："><a href="#二、依存放時間分類：" class="headerlink" title="二、依存放時間分類："></a>二、依存放時間分類：</h3><ol>
-<li><p><strong>暫時性 Cookie（Session Cookies）</strong>  </p>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p><strong>TanStack Query 是什麼？</strong><br>一個用於管理非同步伺服器資料的 React Hooks 函式庫，能自動處理快取、背景重新整理、錯誤重試等。</p>
+</li>
+<li><p><strong>主要功能</strong></p>
 <ul>
-<li>只在<code>使用者開啟網頁期間有效</code>，<code>關閉瀏覽器後即刪除</code>。</li>
+<li>自動快取資料，減少重複請求。</li>
+<li>自動背景刷新（Background Refetching）保持資料最新。</li>
+<li>支援資料同步與離線快取。</li>
+<li>強大的錯誤重試與錯誤處理機制。</li>
+<li>方便整合 Pagination、Infinite Query。</li>
+<li>非常輕量且易於擴充。</li>
 </ul>
 </li>
-<li><p><strong>永久性 Cookie（Persistent Cookies）</strong>  </p>
+<li><p><strong>核心概念</strong></p>
 <ul>
-<li>設定到期日期，存放於使用者裝置上，保存時間較長，即使關閉瀏覽器也不會刪除，<code>直到設定的到期日或手動刪除</code>。</li>
+<li><strong>Query</strong>：對伺服器資料的請求。</li>
+<li><strong>Query Key</strong>：唯一標識一個 Query 的鍵，決定快取與重新抓取。</li>
+<li><strong>useQuery Hook</strong>：用於發起資料請求並取得資料狀態。</li>
+<li><strong>Query Client</strong>：全域管理 Query 狀態與快取。</li>
 </ul>
 </li>
+<li><p><strong>安裝方式</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install @tanstack/react-query</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">yarn add @tanstack/react-query</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>基本使用步驟</strong></p>
+<ol>
+<li>在 React 根組件包裹 <code>&lt;QueryClientProvider&gt;</code>。</li>
+<li>使用 <code>useQuery</code> Hook 進行資料請求。</li>
+<li>使用 <code>data</code>、<code>error</code>、<code>isLoading</code> 等狀態呈現畫面。</li>
 </ol>
+</li>
+<li><p><strong>常用參數</strong></p>
+<ul>
+<li><code>queryKey</code>：快取與識別用的陣列或字串。</li>
+<li><code>queryFn</code>：負責非同步取得資料的函式。</li>
+<li><code>enabled</code>：是否啟用該 query。</li>
+<li><code>staleTime</code>：資料被視為新鮮的時間（避免頻繁重新抓取）。</li>
+<li><code>cacheTime</code>：資料快取存在時間。</li>
+<li><code>retry</code>：失敗時重試次數。</li>
+</ul>
+</li>
+</ul>
 <hr>
-<h3 id="三、依來源分類："><a href="#三、依來源分類：" class="headerlink" title="三、依來源分類："></a>三、依來源分類：</h3><ol>
-<li><p><strong>第一方 Cookie（First-party Cookies）</strong>  </p>
+<h2 id="實際範例"><a href="#實際範例" class="headerlink" title="實際範例"></a>實際範例</h2><p>以下以 React 搭配 TanStack Query 實現一個簡單的使用者列表資料抓取為例：</p>
+<h3 id="1-設定-Query-Client"><a href="#1-設定-Query-Client" class="headerlink" title="1. 設定 Query Client"></a>1. 設定 Query Client</h3><p>在應用程式最外層（通常是 <code>App.js</code> 或 <code>index.js</code>）包裹 <code>QueryClientProvider</code>：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">QueryClient</span>, <span class="title class_">QueryClientProvider</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@tanstack/react-query&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">UserList</span> <span class="keyword">from</span> <span class="string">&#x27;./UserList&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> queryClient = <span class="keyword">new</span> <span class="title class_">QueryClient</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">QueryClientProvider</span> <span class="attr">client</span>=<span class="string">&#123;queryClient&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">UserList</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">QueryClientProvider</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-建立-UserList-元件，使用-useQuery-抓取資料"><a href="#2-建立-UserList-元件，使用-useQuery-抓取資料" class="headerlink" title="2. 建立 UserList 元件，使用 useQuery 抓取資料"></a>2. 建立 UserList 元件，使用 <code>useQuery</code> 抓取資料</h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useQuery &#125; <span class="keyword">from</span> <span class="string">&#x27;@tanstack/react-query&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchUsers</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&#x27;https://jsonplaceholder.typicode.com/users&#x27;</span>);</span><br><span class="line">  <span class="keyword">if</span> (!res.<span class="property">ok</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;網路錯誤&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res.<span class="title function_">json</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">UserList</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; data, error, isLoading, isError &#125; = <span class="title function_">useQuery</span>([<span class="string">&#x27;users&#x27;</span>], fetchUsers, &#123;</span><br><span class="line">    <span class="attr">staleTime</span>: <span class="number">1000</span> * <span class="number">60</span> * <span class="number">5</span>, <span class="comment">// 5分鐘內資料視為新鮮</span></span><br><span class="line">    <span class="attr">retry</span>: <span class="number">2</span>, <span class="comment">// 失敗重試2次</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (isLoading) <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>資料載入中...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (isError) <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>錯誤發生：&#123;error.message&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;data.map((user) =&gt; (</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;user.id&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          &#123;user.name&#125;（&#123;user.email&#125;）</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      ))&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">UserList</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-說明"><a href="#3-說明" class="headerlink" title="3. 說明"></a>3. 說明</h3><ul>
+<li><p><code>useQuery</code> 第一個參數為 query key，這裡用 <code>[&#39;users&#39;]</code> 表示抓取使用者列表。</p>
+</li>
+<li><p>第二個參數是非同步函式 <code>fetchUsers</code>，負責呼叫 API 並回傳資料。</p>
+</li>
+<li><p>返回的物件中包含多種狀態：</p>
 <ul>
-<li>由<code>使用者瀏覽的網站</code>所設定，通常用於<code>記錄該網站上的互動紀錄</code>。</li>
+<li><code>isLoading</code>：資料還在請求中。</li>
+<li><code>isError</code> 與 <code>error</code>：請求失敗時的錯誤狀態與訊息。</li>
+<li><code>data</code>：請求成功後的資料。</li>
 </ul>
 </li>
-<li><p><strong>第三方 Cookie（Third-party Cookies）</strong>  </p>
-<ul>
-<li>由非該網站的<code>第三方</code>（如廣告商）設定，用於<code>跨網站追蹤使用者行為</code>，以<code>推送廣告</code>等。</li>
-</ul>
+<li><p><code>staleTime</code> 設定資料多久內視為新鮮，避免頻繁重新抓取。</p>
 </li>
-</ol>
+<li><p><code>retry</code> 設定失敗時自動重試的次數。</p>
+</li>
+</ul>
 <hr>
-<h3 id="四、特殊類型："><a href="#四、特殊類型：" class="headerlink" title="四、特殊類型："></a>四、特殊類型：</h3><ol>
-<li><p><strong>安全性 Cookie（Secure Cookies）</strong>  </p>
-<ul>
-<li>只能透過 <code>HTTPS</code> 傳輸，避免被攔截，主要保障敏感資料安全。</li>
-</ul>
+<h2 id="進階應用"><a href="#進階應用" class="headerlink" title="進階應用"></a>進階應用</h2><ul>
+<li><p><strong>背景重新抓取</strong><br>使用者回到頁面或重新聚焦視窗時，TanStack Query 預設會重新抓取最新資料，保持資料同步。<br>可透過 <code>refetchOnWindowFocus</code> 控制是否啟用。</p>
 </li>
-<li><p><strong>HttpOnly Cookie</strong>  </p>
-<ul>
-<li>僅限伺服器端存取，JavaScript 無法讀取，用於防範 <code>XSS</code> 攻擊。</li>
-</ul>
+<li><p><strong>資料快取與共享</strong><br>不同組件如果使用相同 <code>queryKey</code>，會共用快取資料，避免重複請求。</p>
 </li>
-<li><p><strong>SameSite Cookie</strong>  </p>
-<ul>
-<li>限制跨站請求攜帶 Cookie，減少 <code>CSRF</code> 攻擊風險，值可設為：</li>
-<li><code>Strict</code>：禁止跨站請求攜帶 Cookie。</li>
-<li><code>Lax</code>：部分允許，如從第三方網站點擊連結進來時可帶 Cookie。</li>
-<li><code>None</code>：允許跨站攜帶，但須配合 Secure。</li>
-</ul>
+<li><p><strong>Mutation</strong><br>除了讀取資料，TanStack Query 也提供 <code>useMutation</code> 用於資料修改（新增、更新、刪除）並自動管理快取更新。</p>
 </li>
-</ol>
-<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>這些分類會依需求搭配使用，例如一個「<code>必要性第一方暫時性 Cookie</code>」可能用於維護<code>登入和操作狀態</code>；一個「<code>第三方廣告追蹤永久性 Cookie</code>」則可能用於<code>跨網站顯示個人化廣告</code>。</p>
+<li><p><strong>分頁與無限滾動</strong><br>支援分頁資料抓取的 <code>useInfiniteQuery</code>，適合實作滾動載入。</p>
+</li>
+</ul>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>TanStack Query 是一個強大且方便的資料狀態管理工具，解決了傳統手動管理非同步請求的種種痛點。它自動快取、背景重新整理、錯誤重試等機制，大幅提升開發效率與使用者體驗。</p>
 
                 </div>
 
@@ -334,7 +334,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/10/16/learning-notes-alpinejs-intro-tutorial/" title="Alpine.js 入門教學筆記 | 學習筆記" rel="bookmark">Alpine.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2017/02/01/learning-notes-ecmascript6-es6-javascript-intro-tutorial copy/" title="JavaScript ES6 入門語法教學筆記 | 學習筆記" rel="bookmark">JavaScript ES6 入門語法教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-arrow-function-this-intro-tutorial/" title="JavaScript 箭頭函式 (Arrow Function）入門教學筆記 | 學習筆記" rel="bookmark">JavaScript 箭頭函式 (Arrow Function）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-async-await/" title="async/await 入門教學筆記 | 學習筆記" rel="bookmark">async/await 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/16/learning-notes-javascript-call-stack-intro-tutorial/" title="JavaScript Call Stack 入門教學筆記 | 學習筆記" rel="bookmark">JavaScript Call Stack 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2018/02/01/learning-notes-jest-intro-tutorial/" title="Jest 使用 ES Module 入門教學筆記 | 學習筆記" rel="bookmark">Jest 使用 ES Module 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2018/02/01/learning-notes-jest-unit-test-aaa-intro-tutorial/" title="Jest AAA 測試原則入門教學筆記 | 學習筆記" rel="bookmark">Jest AAA 測試原則入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2018/02/01/learning-notes-lighthouse-intro-tutorial/" title="Google Lighthouse 介紹與入門教學筆記 | 學習筆記" rel="bookmark">Google Lighthouse 介紹與入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/07/01/learning-notes-lodash-intro-tutorial/" title="Lodash 介紹與入門教學筆記 | 學習筆記" rel="bookmark">Lodash 介紹與入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2018/02/01/learning-notes-pwa-intro-tutorial/" title="Progressive Web App（PWA）入門教學筆記 | 學習筆記" rel="bookmark">Progressive Web App（PWA）入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -370,8 +370,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/11/01/learning-notes-cookie-intro-tutorial/";
-    var disqus_url = "https://tech.kdchang.net/2024/11/01/learning-notes-cookie-intro-tutorial/";
+    var disqus_identifier = "https://tech.kdchang.net/2018/02/01/learning-notes-tanstack-query-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2018/02/01/learning-notes-tanstack-query-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
