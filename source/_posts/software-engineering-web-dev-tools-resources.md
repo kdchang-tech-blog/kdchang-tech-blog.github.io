@@ -72,6 +72,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 source ~/.zshrc
 ```
 
+# 流行技術文件
+
+1. [Up-to-date documentation for LLMs and AI code editors](https://context7.com/)
+
 ## 假文字
 
 1. [中文亂數假文產生器 Chinese Lorem Ipsum](https://pinkylam.me/generator/chinese-lorem-ipsum/)
