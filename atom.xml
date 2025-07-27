@@ -6,7 +6,7 @@
   <link href="https://tech.kdchang.net/atom.xml" rel="self"/>
   
   <link href="https://tech.kdchang.net/"/>
-  <updated>2025-07-27T05:50:50.224Z</updated>
+  <updated>2025-07-27T06:04:43.906Z</updated>
   <id>https://tech.kdchang.net/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://tech.kdchang.net/2025/02/20/learning-notes-roo-code-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2025/02/20/learning-notes-roo-code-intro-tutorial/</id>
     <published>2025-02-20T03:33:41.000Z</published>
-    <updated>2025-07-27T05:50:50.224Z</updated>
+    <updated>2025-07-27T06:04:43.906Z</updated>
     
     
       
@@ -48,7 +48,7 @@
     <link href="https://tech.kdchang.net/2025/02/08/learning-notes-12-factor-cloud-app-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2025/02/08/learning-notes-12-factor-cloud-app-intro-tutorial/</id>
     <published>2025-02-08T18:23:41.000Z</published>
-    <updated>2025-07-27T05:50:50.219Z</updated>
+    <updated>2025-07-27T06:04:43.900Z</updated>
     
     
       
@@ -79,7 +79,7 @@
     <link href="https://tech.kdchang.net/2024/12/26/learning-notes-react-lazy-loading-code-splitting-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/26/learning-notes-react-lazy-loading-code-splitting-intro-tutorial/</id>
     <published>2024-12-26T18:23:41.000Z</published>
-    <updated>2025-07-27T05:50:50.224Z</updated>
+    <updated>2025-07-27T06:04:43.905Z</updated>
     
     
       
@@ -106,7 +106,7 @@
     <link href="https://tech.kdchang.net/2024/12/25/learning-notes-react-performance-optimization-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/25/learning-notes-react-performance-optimization-intro-tutorial/</id>
     <published>2024-12-25T18:23:41.000Z</published>
-    <updated>2025-07-27T05:50:50.224Z</updated>
+    <updated>2025-07-27T06:04:43.906Z</updated>
     
     
       
@@ -133,7 +133,7 @@
     <link href="https://tech.kdchang.net/2024/12/24/learning-notes-react-performance-optimization-sop-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/24/learning-notes-react-performance-optimization-sop-intro-tutorial/</id>
     <published>2024-12-24T18:23:41.000Z</published>
-    <updated>2025-07-27T05:50:50.224Z</updated>
+    <updated>2025-07-27T06:04:43.906Z</updated>
     
     
       
@@ -160,7 +160,7 @@
     <link href="https://tech.kdchang.net/2024/12/23/learning-notes-lang-graph-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/23/learning-notes-lang-graph-intro-tutorial/</id>
     <published>2024-12-23T18:23:41.000Z</published>
-    <updated>2025-07-27T05:50:50.222Z</updated>
+    <updated>2025-07-27T06:04:43.904Z</updated>
     
     
       
@@ -191,7 +191,7 @@
     <link href="https://tech.kdchang.net/2024/12/23/learning-notes-useswr-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/23/learning-notes-useswr-intro-tutorial/</id>
     <published>2024-12-23T18:23:41.000Z</published>
-    <updated>2025-07-27T05:50:50.225Z</updated>
+    <updated>2025-07-27T06:04:43.907Z</updated>
     
     
       
@@ -226,7 +226,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-07-27T05:50:50.222Z</updated>
+    <updated>2025-07-27T06:04:43.903Z</updated>
     
     
       
@@ -259,7 +259,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-nextauth-js-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-nextauth-js-intro-tutorial/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-07-27T05:50:50.223Z</updated>
+    <updated>2025-07-27T06:04:43.904Z</updated>
     
     
       
@@ -284,7 +284,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-07-27T05:50:50.224Z</updated>
+    <updated>2025-07-27T06:04:43.905Z</updated>
     
     
       
@@ -325,7 +325,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-07-27T05:50:50.219Z</updated>
+    <updated>2025-07-27T06:04:43.900Z</updated>
     
     
       
@@ -346,40 +346,11 @@
   </entry>
   
   <entry>
-    <title>Claude Code 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/12/20/learning-notes-claude-code-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2024/12/20/learning-notes-claude-code-intro-tutorial/</id>
-    <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-07-27T05:50:50.219Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;隨著 AI 編程助手的發展，越來越多開發者開始使用 AI 工具來加速開發流程。由 Anthropic 推出的 &lt;strong&gt;Claude</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Claude" scheme="https://tech.kdchang.net/tags/Claude/"/>
-    
-    <category term="Claude Code" scheme="https://tech.kdchang.net/tags/Claude-Code/"/>
-    
-    <category term="編輯器" scheme="https://tech.kdchang.net/tags/%E7%B7%A8%E8%BC%AF%E5%99%A8/"/>
-    
-    <category term="AI IDE" scheme="https://tech.kdchang.net/tags/AI-IDE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>chrome.storage.local vs. localStorage：資料儲存方式差異入門教學筆記 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-local-storage-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-local-storage-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-07-27T05:50:50.219Z</updated>
+    <updated>2025-07-27T06:04:43.900Z</updated>
     
     
       
@@ -404,11 +375,40 @@
   </entry>
   
   <entry>
+    <title>Claude Code 入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/20/learning-notes-claude-code-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/20/learning-notes-claude-code-intro-tutorial/</id>
+    <published>2024-12-20T03:33:41.000Z</published>
+    <updated>2025-07-27T06:04:43.901Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;隨著 AI 編程助手的發展，越來越多開發者開始使用 AI 工具來加速開發流程。由 Anthropic 推出的 &lt;strong&gt;Claude</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Claude" scheme="https://tech.kdchang.net/tags/Claude/"/>
+    
+    <category term="Claude Code" scheme="https://tech.kdchang.net/tags/Claude-Code/"/>
+    
+    <category term="編輯器" scheme="https://tech.kdchang.net/tags/%E7%B7%A8%E8%BC%AF%E5%99%A8/"/>
+    
+    <category term="AI IDE" scheme="https://tech.kdchang.net/tags/AI-IDE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>GitHub Copilot 與 Copilot Agent 入門教學筆記 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-github-copilot-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-github-copilot-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-07-27T05:50:50.221Z</updated>
+    <updated>2025-07-27T06:04:43.902Z</updated>
     
     
       
@@ -439,7 +439,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-n8n-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-n8n-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-07-27T05:50:50.223Z</updated>
+    <updated>2025-07-27T06:04:43.904Z</updated>
     
     
       
@@ -466,7 +466,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-07-27T05:50:50.224Z</updated>
+    <updated>2025-07-27T06:04:43.906Z</updated>
     
     
       
@@ -507,7 +507,7 @@
     <link href="https://tech.kdchang.net/2024/12/19/learning-notes-angular-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/19/learning-notes-angular-intro-tutorial/</id>
     <published>2024-12-19T18:23:41.000Z</published>
-    <updated>2025-07-27T05:50:50.219Z</updated>
+    <updated>2025-07-27T06:04:43.900Z</updated>
     
     
       
@@ -532,7 +532,7 @@
     <link href="https://tech.kdchang.net/2024/12/18/learning-notes-payment-hash-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2024/12/18/learning-notes-payment-hash-intro-tutorial%20copy/</id>
     <published>2024-12-18T18:23:41.000Z</published>
-    <updated>2025-07-27T05:50:50.223Z</updated>
+    <updated>2025-07-27T06:04:43.905Z</updated>
     
     
       
@@ -565,7 +565,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-line-pay-api-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-line-pay-api-intro-tutorial/</id>
     <published>2024-12-16T18:23:41.000Z</published>
-    <updated>2025-07-27T05:50:50.222Z</updated>
+    <updated>2025-07-27T06:04:43.904Z</updated>
     
     
       
@@ -592,7 +592,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/</id>
     <published>2024-12-16T18:23:41.000Z</published>
-    <updated>2025-07-27T05:50:50.225Z</updated>
+    <updated>2025-07-27T06:04:43.907Z</updated>
     
     
       

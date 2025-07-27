@@ -26,7 +26,7 @@
     
     <title>
         
-          React Compound Component 模式介紹與入門教學 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          Jest AAA 測試原則入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="React Compound Component 模式介紹與入門教學 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="React Compound Component 模式介紹與入門教學 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="Jest AAA 測試原則入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="Jest AAA 測試原則入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,7 +199,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>React Compound Component 模式介紹與入門教學 | 學習筆記</h1>
+                    <h1>Jest AAA 測試原則入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
                         2018-02-01
@@ -207,11 +207,9 @@
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#React" title="React">React</a>
+                          <a class="tag" href="/tags/#Jest" title="Jest">Jest</a>
                         
-                          <a class="tag" href="/tags/#Compound" title="Compound">Compound</a>
-                        
-                          <a class="tag" href="/tags/#Compound Component" title="Compound Component">Compound Component</a>
+                          <a class="tag" href="/tags/#ES Module" title="ES Module">ES Module</a>
                         
 
                     </div>
@@ -237,57 +235,40 @@
                 </div>
                 <br>
                 <div>
-                    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在開發大型或複雜的 UI 元件時，傳統的 props 傳遞方式很容易導致元件層層嵌套、可讀性差與維護困難。Compound Component（複合元件）是一種設計模式，能提升 React 元件的可組合性與彈性。它讓父元件扮演「邏輯控制中心」的角色，子元件則能共享上下文資訊，專注於呈現。這種模式常見於設計系統或第三方 UI 套件（例如：<code>&lt;Tabs&gt;</code>、<code>&lt;Accordion&gt;</code>、<code>&lt;Dropdown&gt;</code> 等），能夠建立更清晰、有彈性的 API。</p>
-<hr>
-<h3 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h3><ul>
-<li><p><strong>定義</strong>：Compound Component 是一組彼此配合使用的 React 元件，透過共享上下文管理狀態與邏輯。</p>
-</li>
-<li><p><strong>優點</strong>：</p>
-<ul>
-<li>增強元件 API 的彈性與可擴充性。</li>
-<li>父元件集中邏輯，子元件只負責 UI。</li>
-<li>避免 props drilling，提升可維護性。</li>
-</ul>
-</li>
-<li><p><strong>技術關鍵</strong>：</p>
-<ul>
-<li>使用 <code>React.createContext()</code> 建立 Context。</li>
-<li>利用 <code>Children.map</code> 搭配 <code>cloneElement</code> 傳遞資料（進階用法）。</li>
-<li>常結合 <code>static property</code> 方式導出子元件（如 <code>MyComponent.Header</code>）。</li>
-</ul>
-</li>
-<li><p><strong>常見應用場景</strong>：</p>
-<ul>
-<li>Tabs 分頁元件</li>
-<li>Accordion 折疊面板</li>
-<li>Dropdown 下拉選單</li>
-<li>Modal 對話框元件</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="實際範例：建立一個自訂的-lt-Toggle-gt-元件"><a href="#實際範例：建立一個自訂的-lt-Toggle-gt-元件" class="headerlink" title="實際範例：建立一個自訂的 &lt;Toggle&gt; 元件"></a>實際範例：建立一個自訂的 <code>&lt;Toggle&gt;</code> 元件</h3><p>此範例展示如何實作一個 Compound Component：<code>&lt;Toggle&gt;</code>, <code>&lt;Toggle.On&gt;</code>, <code>&lt;Toggle.Off&gt;</code>, <code>&lt;Toggle.Button&gt;</code></p>
-<h4 id="1-ToggleContext-js"><a href="#1-ToggleContext-js" class="headerlink" title="1. ToggleContext.js"></a>1. ToggleContext.js</h4><figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createContext, useContext &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">ToggleContext</span> = <span class="title function_">createContext</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">useToggleContext</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> context = <span class="title function_">useContext</span>(<span class="title class_">ToggleContext</span>);</span><br><span class="line">  <span class="keyword">if</span> (!context) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Toggle compound components must be used within &lt;Toggle /&gt;&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> context;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">ToggleContext</span>;</span><br></pre></td></tr></table></figure>
+                    <h3 id="範例測試：saveMoney-方法"><a href="#範例測試：saveMoney-方法" class="headerlink" title="範例測試：saveMoney 方法"></a><strong>範例測試：<code>saveMoney</code> 方法</strong></h3><p><code>atm.js</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ATM</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">balance</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">balance</span> = balance;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">saveMoney</span>(<span class="params">amount</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (amount &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Amount must be positive&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">balance</span> += amount;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">balance</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">withdrawMoney</span>(<span class="params">amount</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (amount &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Amount must be positive&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (amount &gt; <span class="variable language_">this</span>.<span class="property">balance</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Insufficient balance&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">balance</span> -= amount;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">balance</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">getBalance</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">balance</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">reset</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">balance</span> = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">setBalance</span>(<span class="params">balance</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (balance &lt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Balance cannot be negative&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">balance</span> = balance;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="variable constant_">ATM</span>;</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-Toggle-js"><a href="#2-Toggle-js" class="headerlink" title="2. Toggle.js"></a>2. Toggle.js</h4><figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ToggleContext</span> <span class="keyword">from</span> <span class="string">&#x27;./ToggleContext&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">Toggle</span>(<span class="params">&#123; children &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [on, setOn] = <span class="title function_">useState</span>(<span class="literal">false</span>);</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">toggle</span> = (<span class="params"></span>) =&gt; <span class="title function_">setOn</span>(<span class="function">(<span class="params">prev</span>) =&gt;</span> !prev);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">ToggleContext.Provider</span> <span class="attr">value</span>=<span class="string">&#123;&#123;</span> <span class="attr">on</span>, <span class="attr">toggle</span> &#125;&#125;&gt;</span>&#123;children&#125;<span class="tag">&lt;/<span class="name">ToggleContext.Provider</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Toggle</span>.<span class="property">On</span> = <span class="keyword">function</span> <span class="title function_">ToggleOn</span>(<span class="params">&#123; children &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; on &#125; = <span class="title function_">useToggleContext</span>();</span><br><span class="line">  <span class="keyword">return</span> on ? children : <span class="literal">null</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Toggle</span>.<span class="property">Off</span> = <span class="keyword">function</span> <span class="title function_">ToggleOff</span>(<span class="params">&#123; children &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; on &#125; = <span class="title function_">useToggleContext</span>();</span><br><span class="line">  <span class="keyword">return</span> !on ? children : <span class="literal">null</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Toggle</span>.<span class="property">Button</span> = <span class="keyword">function</span> <span class="title function_">ToggleButton</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; on, toggle &#125; = <span class="title function_">useToggleContext</span>();</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;toggle&#125;</span>&gt;</span>&#123;on ? &#x27;ON&#x27; : &#x27;OFF&#x27;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><code>atm.test.js</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="variable constant_">ATM</span> <span class="keyword">from</span> <span class="string">&#x27;../atm.js&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span>(<span class="string">&#x27;saveMoney adds money to balance&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// Arrange: 建立一個 ATM 實例，初始餘額 0</span></span><br><span class="line">  <span class="keyword">const</span> atm = <span class="keyword">new</span> <span class="title function_">ATM</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Act: 存入 1000</span></span><br><span class="line">  atm.<span class="title function_">saveMoney</span>(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Assert: 餘額應該變成 1000</span></span><br><span class="line">  <span class="title function_">expect</span>(atm.<span class="property">balance</span>).<span class="title function_">toBe</span>(<span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-App-js（使用方式）"><a href="#3-App-js（使用方式）" class="headerlink" title="3. App.js（使用方式）"></a>3. App.js（使用方式）</h4><figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Toggle</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;./Toggle&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Compound Component 範例<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Toggle</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Toggle.On</span>&gt;</span>狀態為：開啟<span class="tag">&lt;/<span class="name">Toggle.On</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Toggle.Off</span>&gt;</span>狀態為：關閉<span class="tag">&lt;/<span class="name">Toggle.Off</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Toggle.Button</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Toggle</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>逐步對應：</strong></p>
+<table>
+<thead>
+<tr>
+<th>步驟</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Arrange</td>
+<td>建立 <code>ATM</code> 物件並給初始值</td>
+</tr>
+<tr>
+<td>Act</td>
+<td>呼叫 <code>saveMoney(1000)</code></td>
+</tr>
+<tr>
+<td>Assert</td>
+<td>驗證 <code>atm.balance</code> 是否等於 <code>1000</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="另一個範例：檢查錯誤拋出"><a href="#另一個範例：檢查錯誤拋出" class="headerlink" title="另一個範例：檢查錯誤拋出"></a><strong>另一個範例：檢查錯誤拋出</strong></h3><p>如果要測試當金額是負數時會丟錯誤：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">test</span>(<span class="string">&#x27;saveMoney throws error when amount &lt;= 0&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// Arrange</span></span><br><span class="line">  <span class="keyword">const</span> atm = <span class="keyword">new</span> <span class="title function_">ATM</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Act &amp; Assert</span></span><br><span class="line">  <span class="title function_">expect</span>(<span class="function">() =&gt;</span> atm.<span class="title function_">saveMoney</span>(<span class="number">0</span>)).<span class="title function_">toThrow</span>(<span class="string">&#x27;Amount must be positive&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
+<p>這裡因為 <strong><code>act</code> 跟 <code>assert</code> 綁在一起</strong>，所以在 <code>expect</code> 裡包了一個 function，來驗證是否拋出錯誤。</p>
 <hr>
-<h3 id="延伸說明"><a href="#延伸說明" class="headerlink" title="延伸說明"></a>延伸說明</h3><ul>
-<li><strong>Context 的角色</strong>：<code>ToggleContext</code> 扮演資訊橋梁，讓所有子元件能共用 <code>on</code> 狀態與 <code>toggle</code> 函式。</li>
-<li><strong>錯誤處理</strong>：<code>useToggleContext</code> 中若未包在 <code>&lt;Toggle&gt;</code> 裡使用，會主動拋出錯誤，提醒開發者正確使用上下文。</li>
-<li><strong>可擴充性</strong>：我們可以進一步加入 <code>&lt;Toggle.Icon&gt;</code>、<code>&lt;Toggle.Label&gt;</code> 等元件，複用相同邏輯，保持一致行為。</li>
-<li><strong>比傳統 Props 傳遞更清晰</strong>：使用 <code>&lt;Toggle.On&gt;</code> 等方式比 <code>showOn=&#123;true&#125;</code> 更語意化且易於理解。</li>
-</ul>
-<hr>
-<h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><p>Compound Component 是 React 開發中一個極具表達力與彈性的設計模式，尤其適用於 UI 元件庫的開發。透過 Context 的使用，我們能解耦邏輯與顯示元件，提升可讀性、可維護性與開發效率。雖然初期設計較為繁瑣，但一旦建立模式後，能帶來長遠效益，尤其在大型專案或多人協作的情境下更具價值。</p>
-<hr>
-<h3 id="延伸學習"><a href="#延伸學習" class="headerlink" title="延伸學習"></a>延伸學習</h3><ul>
-<li><code>React.cloneElement()</code> 的進階應用（自動注入 props）</li>
-<li><code>TypeScript</code> 搭配 Compound Component 的型別設計</li>
-<li>使用 Zustand、Jotai 或 Redux 搭配 Compound Component</li>
-</ul>
+<h2 id="完整測試檔（用-AAA-標註）"><a href="#完整測試檔（用-AAA-標註）" class="headerlink" title="完整測試檔（用 AAA 標註）"></a><strong>完整測試檔（用 AAA 標註）</strong></h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="variable constant_">ATM</span> <span class="keyword">from</span> <span class="string">&#x27;../atm.js&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span>(<span class="string">&#x27;saveMoney adds money to balance&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// Arrange</span></span><br><span class="line">  <span class="keyword">const</span> atm = <span class="keyword">new</span> <span class="title function_">ATM</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Act</span></span><br><span class="line">  atm.<span class="title function_">saveMoney</span>(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Assert</span></span><br><span class="line">  <span class="title function_">expect</span>(atm.<span class="property">balance</span>).<span class="title function_">toBe</span>(<span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span>(<span class="string">&#x27;saveMoney throws error when amount &lt;= 0&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// Arrange</span></span><br><span class="line">  <span class="keyword">const</span> atm = <span class="keyword">new</span> <span class="title function_">ATM</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Act &amp; Assert</span></span><br><span class="line">  <span class="title function_">expect</span>(<span class="function">() =&gt;</span> atm.<span class="title function_">saveMoney</span>(<span class="number">0</span>)).<span class="title function_">toThrow</span>(<span class="string">&#x27;Amount must be positive&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
                 </div>
 
@@ -304,7 +285,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/12/21/learning-notes-jwt-react-intro-tutorial/" title="React 前端整合 JWT（含 Refresh Token）入門教學筆記 | 學習筆記" rel="bookmark">React 前端整合 JWT（含 Refresh Token）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/21/learning-notes-react-context-api-intro-tutorial/" title="React Context API 入門教學 | 學習筆記" rel="bookmark">React Context API 入門教學 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/26/learning-notes-react-lazy-loading-code-splitting-intro-tutorial/" title="React 效能優化入門教學筆記 | 學習筆記" rel="bookmark">React 效能優化入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-react-nextjs-intro-tutorial/" title="React 與 Next.js 入門教學筆記 | 學習筆記" rel="bookmark">React 與 Next.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/25/learning-notes-react-performance-optimization-intro-tutorial/" title="React 效能優化入門教學筆記 | 學習筆記" rel="bookmark">React 效能優化入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2018/02/01/learning-notes-jest-intro-tutorial/" title="Jest 使用 ES Module 入門教學筆記 | 學習筆記" rel="bookmark">Jest 使用 ES Module 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2018/02/01/learning-notes-lighthouse-intro-tutorial/" title="Google Lighthouse 介紹與入門教學筆記 | 學習筆記" rel="bookmark">Google Lighthouse 介紹與入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/07/01/learning-notes-lodash-intro-tutorial/" title="Lodash 介紹與入門教學筆記 | 學習筆記" rel="bookmark">Lodash 介紹與入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2018/02/01/learning-notes-pwa-intro-tutorial/" title="Progressive Web App（PWA）入門教學筆記 | 學習筆記" rel="bookmark">Progressive Web App（PWA）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/26/learning-notes-react-lazy-loading-code-splitting-intro-tutorial/" title="React 效能優化入門教學筆記 | 學習筆記" rel="bookmark">React 效能優化入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
