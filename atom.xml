@@ -6,7 +6,7 @@
   <link href="https://tech.kdchang.net/atom.xml" rel="self"/>
   
   <link href="https://tech.kdchang.net/"/>
-  <updated>2025-07-27T05:30:18.819Z</updated>
+  <updated>2025-07-27T05:50:50.224Z</updated>
   <id>https://tech.kdchang.net/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://tech.kdchang.net/2025/02/20/learning-notes-roo-code-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2025/02/20/learning-notes-roo-code-intro-tutorial/</id>
     <published>2025-02-20T03:33:41.000Z</published>
-    <updated>2025-07-27T05:30:18.819Z</updated>
+    <updated>2025-07-27T05:50:50.224Z</updated>
     
     
       
@@ -48,7 +48,7 @@
     <link href="https://tech.kdchang.net/2025/02/08/learning-notes-12-factor-cloud-app-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2025/02/08/learning-notes-12-factor-cloud-app-intro-tutorial/</id>
     <published>2025-02-08T18:23:41.000Z</published>
-    <updated>2025-07-27T05:30:18.813Z</updated>
+    <updated>2025-07-27T05:50:50.219Z</updated>
     
     
       
@@ -79,7 +79,7 @@
     <link href="https://tech.kdchang.net/2024/12/26/learning-notes-react-lazy-loading-code-splitting-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/26/learning-notes-react-lazy-loading-code-splitting-intro-tutorial/</id>
     <published>2024-12-26T18:23:41.000Z</published>
-    <updated>2025-07-27T05:30:18.818Z</updated>
+    <updated>2025-07-27T05:50:50.224Z</updated>
     
     
       
@@ -106,7 +106,7 @@
     <link href="https://tech.kdchang.net/2024/12/25/learning-notes-react-performance-optimization-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/25/learning-notes-react-performance-optimization-intro-tutorial/</id>
     <published>2024-12-25T18:23:41.000Z</published>
-    <updated>2025-07-27T05:30:18.818Z</updated>
+    <updated>2025-07-27T05:50:50.224Z</updated>
     
     
       
@@ -133,7 +133,7 @@
     <link href="https://tech.kdchang.net/2024/12/24/learning-notes-react-performance-optimization-sop-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/24/learning-notes-react-performance-optimization-sop-intro-tutorial/</id>
     <published>2024-12-24T18:23:41.000Z</published>
-    <updated>2025-07-27T05:30:18.818Z</updated>
+    <updated>2025-07-27T05:50:50.224Z</updated>
     
     
       
@@ -160,7 +160,7 @@
     <link href="https://tech.kdchang.net/2024/12/23/learning-notes-lang-graph-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/23/learning-notes-lang-graph-intro-tutorial/</id>
     <published>2024-12-23T18:23:41.000Z</published>
-    <updated>2025-07-27T05:30:18.817Z</updated>
+    <updated>2025-07-27T05:50:50.222Z</updated>
     
     
       
@@ -191,7 +191,7 @@
     <link href="https://tech.kdchang.net/2024/12/23/learning-notes-useswr-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/23/learning-notes-useswr-intro-tutorial/</id>
     <published>2024-12-23T18:23:41.000Z</published>
-    <updated>2025-07-27T05:30:18.820Z</updated>
+    <updated>2025-07-27T05:50:50.225Z</updated>
     
     
       
@@ -226,7 +226,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-07-27T05:30:18.816Z</updated>
+    <updated>2025-07-27T05:50:50.222Z</updated>
     
     
       
@@ -259,7 +259,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-nextauth-js-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-nextauth-js-intro-tutorial/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-07-27T05:30:18.817Z</updated>
+    <updated>2025-07-27T05:50:50.223Z</updated>
     
     
       
@@ -284,7 +284,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-07-27T05:30:18.818Z</updated>
+    <updated>2025-07-27T05:50:50.224Z</updated>
     
     
       
@@ -325,7 +325,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-07-27T05:30:18.814Z</updated>
+    <updated>2025-07-27T05:50:50.219Z</updated>
     
     
       
@@ -346,40 +346,11 @@
   </entry>
   
   <entry>
-    <title>chrome.storage.local vs. localStorage：資料儲存方式差異入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-local-storage-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-local-storage-intro-tutorial/</id>
-    <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-07-27T05:30:18.814Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在前端與 Chrome 擴充功能（Chrome</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Chrome Extension" scheme="https://tech.kdchang.net/tags/Chrome-Extension/"/>
-    
-    <category term="Chrome" scheme="https://tech.kdchang.net/tags/Chrome/"/>
-    
-    <category term="chrome.storage.local" scheme="https://tech.kdchang.net/tags/chrome-storage-local/"/>
-    
-    <category term="localStorage" scheme="https://tech.kdchang.net/tags/localStorage/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Claude Code 入門教學筆記 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-claude-code-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-claude-code-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-07-27T05:30:18.814Z</updated>
+    <updated>2025-07-27T05:50:50.219Z</updated>
     
     
       
@@ -404,11 +375,40 @@
   </entry>
   
   <entry>
+    <title>chrome.storage.local vs. localStorage：資料儲存方式差異入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-local-storage-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-local-storage-intro-tutorial/</id>
+    <published>2024-12-20T03:33:41.000Z</published>
+    <updated>2025-07-27T05:50:50.219Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在前端與 Chrome 擴充功能（Chrome</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Chrome Extension" scheme="https://tech.kdchang.net/tags/Chrome-Extension/"/>
+    
+    <category term="Chrome" scheme="https://tech.kdchang.net/tags/Chrome/"/>
+    
+    <category term="chrome.storage.local" scheme="https://tech.kdchang.net/tags/chrome-storage-local/"/>
+    
+    <category term="localStorage" scheme="https://tech.kdchang.net/tags/localStorage/"/>
+    
+  </entry>
+  
+  <entry>
     <title>GitHub Copilot 與 Copilot Agent 入門教學筆記 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-github-copilot-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-github-copilot-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-07-27T05:30:18.815Z</updated>
+    <updated>2025-07-27T05:50:50.221Z</updated>
     
     
       
@@ -439,7 +439,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-n8n-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-n8n-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-07-27T05:30:18.817Z</updated>
+    <updated>2025-07-27T05:50:50.223Z</updated>
     
     
       
@@ -466,7 +466,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-07-27T05:30:18.819Z</updated>
+    <updated>2025-07-27T05:50:50.224Z</updated>
     
     
       
@@ -507,7 +507,7 @@
     <link href="https://tech.kdchang.net/2024/12/19/learning-notes-angular-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/19/learning-notes-angular-intro-tutorial/</id>
     <published>2024-12-19T18:23:41.000Z</published>
-    <updated>2025-07-27T05:30:18.813Z</updated>
+    <updated>2025-07-27T05:50:50.219Z</updated>
     
     
       
@@ -532,7 +532,7 @@
     <link href="https://tech.kdchang.net/2024/12/18/learning-notes-payment-hash-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2024/12/18/learning-notes-payment-hash-intro-tutorial%20copy/</id>
     <published>2024-12-18T18:23:41.000Z</published>
-    <updated>2025-07-27T05:30:18.818Z</updated>
+    <updated>2025-07-27T05:50:50.223Z</updated>
     
     
       
@@ -565,7 +565,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-line-pay-api-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-line-pay-api-intro-tutorial/</id>
     <published>2024-12-16T18:23:41.000Z</published>
-    <updated>2025-07-27T05:30:18.817Z</updated>
+    <updated>2025-07-27T05:50:50.222Z</updated>
     
     
       
@@ -592,7 +592,7 @@
     <link href="https://tech.kdchang.net/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/16/learning-notes-vue-ref-reactive-intro-tutorial/</id>
     <published>2024-12-16T18:23:41.000Z</published>
-    <updated>2025-07-27T05:30:18.820Z</updated>
+    <updated>2025-07-27T05:50:50.225Z</updated>
     
     
       

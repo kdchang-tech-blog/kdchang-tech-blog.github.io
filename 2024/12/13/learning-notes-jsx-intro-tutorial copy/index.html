@@ -26,11 +26,11 @@
     
     <title>
         
-          常見軟體工程師/網頁開發工具和學習資源整理 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          JSX 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/03/22/software-engineering-web-dev-tools-resources/">
+    <link rel="canonical" href="https://tech.kdchang.net/2024/12/13/learning-notes-jsx-intro-tutorial copy/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="常見軟體工程師/網頁開發工具和學習資源整理 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="常見軟體工程師/網頁開發工具和學習資源整理 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="JSX 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="JSX 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發/程式設計技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,37 +199,17 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>常見軟體工程師/網頁開發工具和學習資源整理</h1>
+                    <h1>JSX 入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2024-03-22
+                        2024-12-13
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#前端工程" title="前端工程">前端工程</a>
+                          <a class="tag" href="/tags/#react" title="react">react</a>
                         
-                          <a class="tag" href="/tags/#軟體工程師" title="軟體工程師">軟體工程師</a>
-                        
-                          <a class="tag" href="/tags/#Software Engineer" title="Software Engineer">Software Engineer</a>
-                        
-                          <a class="tag" href="/tags/#Web" title="Web">Web</a>
-                        
-                          <a class="tag" href="/tags/#前端工程師" title="前端工程師">前端工程師</a>
-                        
-                          <a class="tag" href="/tags/#軟體工程" title="軟體工程">軟體工程</a>
-                        
-                          <a class="tag" href="/tags/#Frontend Roadmap" title="Frontend Roadmap">Frontend Roadmap</a>
-                        
-                          <a class="tag" href="/tags/#網頁開發" title="網頁開發">網頁開發</a>
-                        
-                          <a class="tag" href="/tags/#網站開發" title="網站開發">網站開發</a>
-                        
-                          <a class="tag" href="/tags/#網站開發工具" title="網站開發工具">網站開發工具</a>
-                        
-                          <a class="tag" href="/tags/#學習資源" title="學習資源">學習資源</a>
-                        
-                          <a class="tag" href="/tags/#Software Engineering" title="Software Engineering">Software Engineering</a>
+                          <a class="tag" href="/tags/#JSX" title="JSX">JSX</a>
                         
 
                     </div>
@@ -255,118 +235,40 @@
                 </div>
                 <br>
                 <div>
-                    <p>以下彙整常見 Web 網頁開發工具和資源整理：</p>
-<h2 id="VS-Code-套件"><a href="#VS-Code-套件" class="headerlink" title="VS Code 套件"></a>VS Code 套件</h2><ol>
-<li>emmet</li>
-<li>Live Server</li>
-<li>Material Icon Theme</li>
-<li>Babel JavaScript</li>
-<li>Prettier</li>
-<li>CodeSnap</li>
-<li>JavaScript code snippets</li>
-<li>Peacock</li>
-<li>TODO Highlight</li>
-<li>Code Runner</li>
-<li>Live Share</li>
-<li>Color Highlight</li>
-</ol>
-<h2 id="Chrome-瀏覽器擴充套件"><a href="#Chrome-瀏覽器擴充套件" class="headerlink" title="Chrome 瀏覽器擴充套件"></a>Chrome 瀏覽器擴充套件</h2><ol>
-<li>Responsive Viewer</li>
-<li>HTML5 Outliner</li>
-<li>ColorZilla</li>
-<li>Fonts Ninja</li>
-<li>Check My Links</li>
-</ol>
-<h2 id="終端機工具"><a href="#終端機工具" class="headerlink" title="終端機工具"></a>終端機工具</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes">ohmyzsh Themes</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh">ohmyzsh</a></li>
-</ol>
-<p>(1). Terminal App：iTerm2<br>網站：<a target="_blank" rel="noopener" href="https://iterm2.com/">https://iterm2.com</a></p>
-<p>(2). Shell：zsh（macOS 預設就是 zsh）<br>macOS Catalina 之後預設就是 zsh，不用特別安裝<br>比 bash 現代，有 plugin &amp; theme 支援</p>
-<p>(3). Framework：Oh My Zsh<br>網站：<a target="_blank" rel="noopener" href="https://ohmyz.sh/">https://ohmyz.sh</a></p>
-<p>優點：<br>超多好用 plugin（git、docker、npm、自動補齊等）<br>主題選擇豐富（powerlevel10k、agnoster…）<br>安裝簡單，社群活躍</p>
-<p>安裝指令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span><br><span class="line">brew install romkatv/powerlevel10k/powerlevel10k</span><br><span class="line"><span class="comment"># vim ~/.zshrc 修改主題樣式</span></span><br><span class="line">ZSH_THEME=<span class="string">&quot;powerlevel10k/powerlevel10k&quot;</span></span><br><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+                    <h2 id="1-JSX-是什麼？"><a href="#1-JSX-是什麼？" class="headerlink" title="1. JSX 是什麼？"></a>1. JSX 是什麼？</h2><p>JSX（JavaScript XML）是一種語法擴展，主要用於 React 函式庫中，它允許在 JavaScript 代碼中撰寫類似 HTML 的語法，使 UI 組件的編寫更加直觀。JSX 並非原生 JavaScript，需要透過 Babel 轉譯成標準 JavaScript 代碼。</p>
+<h2 id="2-為什麼使用-JSX？"><a href="#2-為什麼使用-JSX？" class="headerlink" title="2. 為什麼使用 JSX？"></a>2. 為什麼使用 JSX？</h2><p>JSX 提供了一種更加可讀、直觀的方式來描述 UI 結構，相比於傳統的 JavaScript DOM 操作，它更簡潔易懂。此外，JSX 具備以下優勢：</p>
+<ul>
+<li><strong>可讀性高</strong>：類似 HTML 的語法使 UI 組件結構清晰。</li>
+<li><strong>與 JavaScript 無縫結合</strong>：可在 JSX 中嵌入 JavaScript 表達式。</li>
+<li><strong>更安全</strong>：React 會自動處理 XSS（跨站腳本攻擊），確保數據安全。</li>
+<li><strong>高效渲染</strong>：React 使用虛擬 DOM 最小化真實 DOM 更新，提高性能。</li>
+</ul>
+<h2 id="3-基本語法"><a href="#3-基本語法" class="headerlink" title="3. 基本語法"></a>3. 基本語法</h2><h3 id="3-1-基本範例"><a href="#3-1-基本範例" class="headerlink" title="3.1 基本範例"></a>3.1 基本範例</h3><p>JSX 允許我們在 JavaScript 代碼中使用類似 HTML 的語法來描述 UI：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, JSX!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(element, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
 
-<h1 id="流行技術文件"><a href="#流行技術文件" class="headerlink" title="流行技術文件"></a>流行技術文件</h1><ol>
-<li><a target="_blank" rel="noopener" href="https://context7.com/">Up-to-date documentation for LLMs and AI code editors</a></li>
-</ol>
-<h2 id="假文字"><a href="#假文字" class="headerlink" title="假文字"></a>假文字</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://pinkylam.me/generator/chinese-lorem-ipsum/">中文亂數假文產生器 Chinese Lorem Ipsum</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.lipsum.com/">英文 Lorem Ipsum</a></li>
-</ol>
-<h2 id="假圖"><a href="#假圖" class="headerlink" title="假圖"></a>假圖</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://fakeimg.pl/">Fake images please?</a></li>
-<li><a target="_blank" rel="noopener" href="https://picsum.photos/">Picsum photos</a></li>
-<li><a target="_blank" rel="noopener" href="https://placehold.co/">placehold</a></li>
-</ol>
-<h2 id="icon"><a href="#icon" class="headerlink" title="icon"></a>icon</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://lucide.dev/">lucide</a></li>
-</ol>
-<h2 id="投影片"><a href="#投影片" class="headerlink" title="投影片"></a>投影片</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://sli.dev/">Slidev - Presentation Slides for Developers</a></li>
-</ol>
-<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://docusaurus.io/">Docusaurus</a></li>
-</ol>
-<h2 id="影片"><a href="#影片" class="headerlink" title="影片"></a>影片</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://www.pexels.com/search/videos/creative%20commons%20zero/">Free Creative Commons Zero Videos</a></li>
-</ol>
-<h1 id="前端學習資源"><a href="#前端學習資源" class="headerlink" title="前端學習資源"></a>前端學習資源</h1><ol>
-<li><a target="_blank" rel="noopener" href="https://frontendmasters.com/guides/front-end-handbook/2024/">前端開發大全手冊：The Front End Developer&#x2F;Engineer Handbook 2024</a></li>
-<li><a target="_blank" rel="noopener" href="https://100dayscss.com/">100 天 CSS 練習挑戰</a></li>
-<li><a target="_blank" rel="noopener" href="https://javascript30.com/">javascript30</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.greatfrontend.com/">greatfrontend</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.thisweb.dev/post/front-end-beginner-guide">零基礎一年轉職前端工程師：完整路徑、心得、資源全公開</a></li>
-</ol>
-<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><ol>
-<li><a target="_blank" rel="noopener" href="https://daisyui.com/">daisyui</a></li>
-<li><a target="_blank" rel="noopener" href="https://tailwindcss.com/">TailwindCSS</a></li>
-<li><a target="_blank" rel="noopener" href="https://realnewbie.com/coding/css/beginner-guide-integrating-tailwindcss-with-daisyui/">新手入門：TailwindCSS 與 DaisyUI 的整合指南</a></li>
-<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20128346/ironman/3396">重新認識 Flex 和 Grid 系列</a></li>
-</ol>
-<h2 id="CSS-文件"><a href="#CSS-文件" class="headerlink" title="CSS 文件"></a>CSS 文件</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://css-tricks.com/">css-tricks</a></li>
-</ol>
-<h2 id="CSS-Reset"><a href="#CSS-Reset" class="headerlink" title="CSS Reset"></a>CSS Reset</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://www.joshwcomeau.com/css/custom-css-reset/">A Modern CSS Reset</a></li>
-<li><a target="_blank" rel="noopener" href="https://meyerweb.com/eric/tools/css/reset/">CSS Tools: Reset CSS</a></li>
-</ol>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://learngitbranching.js.org/">Learn Git Branching</a></li>
-</ol>
-<h2 id="CSS-選擇器練習"><a href="#CSS-選擇器練習" class="headerlink" title="CSS 選擇器練習"></a>CSS 選擇器練習</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://flukeout.github.io/">CSS Dinner</a></li>
-</ol>
-<h2 id="CSS-排版練習"><a href="#CSS-排版練習" class="headerlink" title="CSS 排版練習"></a>CSS 排版練習</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://flexboxfroggy.com/">Flexbox Froggy</a></li>
-<li><a target="_blank" rel="noopener" href="https://cssgridgarden.com/">CSS Grid Garden</a></li>
-</ol>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://jsonplaceholder.typicode.com/">{JSON} Placeholder Free fake and reliable API for testing and prototyping.</a></li>
-</ol>
-<h2 id="設計"><a href="#設計" class="headerlink" title="設計"></a>設計</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://www.s5-style.com/">s5-style</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cssdesignawards.com/">cssdesignawards</a></li>
-</ol>
-<h2 id="CSS-動畫"><a href="#CSS-動畫" class="headerlink" title="CSS 動畫"></a>CSS 動畫</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://cubic-bezier.com/">CSS 貝茲曲線</a></li>
-</ol>
-<h2 id="文件工具"><a href="#文件工具" class="headerlink" title="文件工具"></a>文件工具</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://docusaurus.io/">docusaurus</a></li>
-</ol>
-<h2 id="線上編輯器"><a href="#線上編輯器" class="headerlink" title="線上編輯器"></a>線上編輯器</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://codesandbox.io/">codesandbox</a></li>
-<li><a target="_blank" rel="noopener" href="https://codepen.io/">codepen</a></li>
-<li><a target="_blank" rel="noopener" href="https://jsbin.com/">jsbin</a></li>
-</ol>
-<h2 id="VS-Code-排版工具"><a href="#VS-Code-排版工具" class="headerlink" title="VS Code 排版工具"></a>VS Code 排版工具</h2><p>安裝 Prettier 外掛<br>1️. 打開 <code>VS Code</code> → <code>Extensions</code> → 搜尋 <code>Prettier</code> - <code>Code formatter</code> → 安裝</p>
-<p>2️. 在你的 VS Code 設定檔 <code>.vscode/settings.json</code>（或直接設定 → 搜尋「<code>prettier」</code>）加入：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;editor.defaultFormatter&quot;</span><span class="punctuation">:</span> <span class="string">&quot;esbenp.prettier-vscode&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;editor.formatOnSave&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;prettier.semi&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-2-JSX-中的-JavaScript-表達式"><a href="#3-2-JSX-中的-JavaScript-表達式" class="headerlink" title="3.2 JSX 中的 JavaScript 表達式"></a>3.2 JSX 中的 JavaScript 表達式</h3><p>JSX 允許在 <code>&#123;&#125;</code> 中插入 JavaScript 表達式，例如變數、函式調用等。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">&quot;Alice&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;name&#125;!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
 
-<p><code>prettier.semi: true</code> 就是 每行最後自動加分號<br>以後每次 存檔（<code>Ctrl+S</code>）會自動補分號、排版！</p>
-<h2 id="ESLint"><a href="#ESLint" class="headerlink" title="ESLint"></a>ESLint</h2><p>eslint.config.js</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> js <span class="keyword">from</span> <span class="string">&#x27;@eslint/js&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> globals <span class="keyword">from</span> <span class="string">&#x27;globals&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> pluginVue <span class="keyword">from</span> <span class="string">&#x27;eslint-plugin-vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; defineConfig &#125; <span class="keyword">from</span> <span class="string">&#x27;eslint/config&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>([</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">files</span>: [<span class="string">&#x27;**/*.&#123;js,mjs,cjs,vue&#125;&#x27;</span>],</span><br><span class="line">    <span class="attr">ignores</span>: [<span class="string">&#x27;dist/**&#x27;</span>, <span class="string">&#x27;node_modules/**&#x27;</span>],</span><br><span class="line">    <span class="attr">plugins</span>: &#123; js &#125;,</span><br><span class="line">    <span class="attr">extends</span>: [<span class="string">&#x27;js/recommended&#x27;</span>],</span><br><span class="line">    <span class="attr">rules</span>: &#123;&#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">files</span>: [<span class="string">&#x27;**/*.&#123;js,mjs,cjs,vue&#125;&#x27;</span>],</span><br><span class="line">    <span class="attr">languageOptions</span>: &#123; <span class="attr">globals</span>: globals.<span class="property">browser</span> &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  pluginVue.<span class="property">configs</span>[<span class="string">&#x27;flat/essential&#x27;</span>],</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+<h3 id="3-3-JSX-屬性"><a href="#3-3-JSX-屬性" class="headerlink" title="3.3 JSX 屬性"></a>3.3 JSX 屬性</h3><p>JSX 屬性與 HTML 類似，但有些屬性名稱需使用 camelCase，例如 <code>className</code> 取代 <code>class</code>，<code>htmlFor</code> 取代 <code>for</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;輸入文字&quot;</span> <span class="attr">className</span>=<span class="string">&quot;input-box&quot;</span> /&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-JSX-內聯樣式"><a href="#3-4-JSX-內聯樣式" class="headerlink" title="3.4 JSX 內聯樣式"></a>3.4 JSX 內聯樣式</h3><p>內聯樣式需使用 JavaScript 對象，且屬性名稱為 camelCase。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> style = &#123; <span class="attr">color</span>: <span class="string">&#x27;blue&#x27;</span>, <span class="attr">fontSize</span>: <span class="string">&#x27;20px&#x27;</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&#123;style&#125;</span>&gt;</span>這是一段藍色文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-JSX-中的條件與循環"><a href="#4-JSX-中的條件與循環" class="headerlink" title="4. JSX 中的條件與循環"></a>4. JSX 中的條件與循環</h2><h3 id="4-1-條件渲染（if…else）"><a href="#4-1-條件渲染（if…else）" class="headerlink" title="4.1 條件渲染（if…else）"></a>4.1 條件渲染（if…else）</h3><p>JSX 本身不支援 <code>if...else</code>，需使用三元運算子或變數。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> isLoggedIn = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">const</span> element = isLoggedIn ? <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>歡迎回來！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span> : <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>請登入<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-使用-amp-amp-運算符"><a href="#4-2-使用-amp-amp-運算符" class="headerlink" title="4.2 使用 &amp;&amp; 運算符"></a>4.2 使用 &amp;&amp; 運算符</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> messages = [<span class="string">&#x27;新訊息1&#x27;</span>, <span class="string">&#x27;新訊息2&#x27;</span>];</span><br><span class="line"><span class="keyword">const</span> element = (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    &#123;messages.length &gt; 0 &amp;&amp; <span class="tag">&lt;<span class="name">p</span>&gt;</span>你有 &#123;messages.length&#125; 則未讀訊息。<span class="tag">&lt;/<span class="name">p</span>&gt;</span>&#125;</span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-迴圈渲染（map）"><a href="#4-3-迴圈渲染（map）" class="headerlink" title="4.3 迴圈渲染（map）"></a>4.3 迴圈渲染（map）</h3><p>JSX 可透過 <code>map</code> 方法來動態渲染列表。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> list = [<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Banana&#x27;</span>, <span class="string">&#x27;Cherry&#x27;</span>];</span><br><span class="line"><span class="keyword">const</span> element = (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    &#123;list.map((item, index) =&gt; <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span>)&#125;</span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-JSX-與-React-組件"><a href="#5-JSX-與-React-組件" class="headerlink" title="5. JSX 與 React 組件"></a>5. JSX 與 React 組件</h2><p>JSX 可與 React 組件結合使用，提升 UI 開發的模組化程度。</p>
+<h3 id="5-1-函式型組件"><a href="#5-1-函式型組件" class="headerlink" title="5.1 函式型組件"></a>5.1 函式型組件</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Welcome</span>(<span class="params">props</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>你好，&#123;props.name&#125;！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">Welcome</span> <span class="attr">name</span>=<span class="string">&quot;小明&quot;</span> /&gt;</span></span>;</span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(element, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-類別型組件"><a href="#5-2-類別型組件" class="headerlink" title="5.2 類別型組件"></a>5.2 類別型組件</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Welcome</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>你好，&#123;this.props.name&#125;！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">Welcome</span> <span class="attr">name</span>=<span class="string">&quot;小明&quot;</span> /&gt;</span></span>;</span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(element, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-總結"><a href="#6-總結" class="headerlink" title="6. 總結"></a>6. 總結</h2><p>JSX 是 React 開發的重要語法，它能夠讓 UI 描述更加直觀，並與 JavaScript 無縫整合。透過學習 JSX，我們可以更高效地撰寫可重用的 React 組件，提高開發效率。</p>
 
                 </div>
 
@@ -383,7 +285,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/03/22/software-engineer-technical-interview-resources/" title="常見軟體工程師/Web 開發技術面試及學習資源整理" rel="bookmark">常見軟體工程師/Web 開發技術面試及學習資源整理</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/06/13/about-frontend-engineer-10-keywords/" title="關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字" rel="bookmark">關於 Web 網頁前端工程師 Frontend Engineer 的 10 個關鍵字</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/22/web-frontend-interview-question-list/" title="常見 Web Frontend 前端工程師面試準備題目清單" rel="bookmark">常見 Web Frontend 前端工程師面試準備題目清單</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/06/21/about-backend-engineer-10-keywords/" title="關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字" rel="bookmark">關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-django-middleware-intro-tutorial/" title="Django Middleware 入門教學筆記" rel="bookmark">Django Middleware 入門教學筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/13/learning-notes-jsx-intro-tutorial/" title="JSX 入門教學筆記 | 學習筆記" rel="bookmark">JSX 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/12/learning-notes-backend-for-frontend-intro-tutorial/" title="Backend For Frontend（BFF）入門教學筆記 | 學習筆記" rel="bookmark">Backend For Frontend（BFF）入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/12/learning-notes-react-redux-intro-tutorial/" title="React Redux 介紹入門教學筆記 | 學習筆記" rel="bookmark">React Redux 介紹入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/23/learning-notes-useswr-intro-tutorial/" title="useSWR 入門教學筆記：打造高效、簡潔的資料請求方式 | 學習筆記" rel="bookmark">useSWR 入門教學筆記：打造高效、簡潔的資料請求方式 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/04/learning-notes-w3schools-react-jsx-intro-tutorial/" title="React JSX 入門教學 | w3schools 學習筆記" rel="bookmark">React JSX 入門教學 | w3schools 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -419,8 +321,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/03/22/software-engineering-web-dev-tools-resources/";
-    var disqus_url = "https://tech.kdchang.net/2024/03/22/software-engineering-web-dev-tools-resources/";
+    var disqus_identifier = "https://tech.kdchang.net/2024/12/13/learning-notes-jsx-intro-tutorial%20copy/";
+    var disqus_url = "https://tech.kdchang.net/2024/12/13/learning-notes-jsx-intro-tutorial%20copy/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
