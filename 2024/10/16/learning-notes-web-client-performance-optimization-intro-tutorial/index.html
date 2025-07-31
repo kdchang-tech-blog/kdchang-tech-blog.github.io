@@ -265,7 +265,7 @@
 </ol>
 <hr>
 <h2 id="一、減少不必要的資源請求"><a href="#一、減少不必要的資源請求" class="headerlink" title="一、減少不必要的資源請求"></a>一、減少不必要的資源請求</h2><h3 id="使用-CDN"><a href="#使用-CDN" class="headerlink" title="使用 CDN"></a>使用 CDN</h3><p>透過 CDN（Content Delivery Network）可將靜態資源分發到全球節點，加速載入。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 使用 Google Fonts CDN --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 使用 Google Fonts CDN --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="合併與壓縮資源（Minify-amp-Bundle）"><a href="#合併與壓縮資源（Minify-amp-Bundle）" class="headerlink" title="合併與壓縮資源（Minify &amp; Bundle）"></a>合併與壓縮資源（Minify &amp; Bundle）</h3><p>使用打包工具如 Webpack、Vite，可以：</p>
 <ul>
@@ -273,14 +273,14 @@
 <li>移除註解與空白</li>
 <li>合併多個檔案減少 HTTP 請求數量</li>
 </ul>
-<h4 id="範例（Webpack-設定簡略）："><a href="#範例（Webpack-設定簡略）：" class="headerlink" title="範例（Webpack 設定簡略）："></a>範例（Webpack 設定簡略）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">mode</span>: <span class="string">&quot;production&quot;</span>, <span class="comment">// 自動啟用壓縮</span></span><br><span class="line">  <span class="attr">entry</span>: <span class="string">&quot;./src/index.js&quot;</span>,</span><br><span class="line">  <span class="attr">output</span>: &#123;</span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&quot;bundle.js&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="範例（Webpack-設定簡略）："><a href="#範例（Webpack-設定簡略）：" class="headerlink" title="範例（Webpack 設定簡略）："></a>範例（Webpack 設定簡略）：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">mode</span>: <span class="string">&#x27;production&#x27;</span>, <span class="comment">// 自動啟用壓縮</span></span><br><span class="line">  <span class="attr">entry</span>: <span class="string">&#x27;./src/index.js&#x27;</span>,</span><br><span class="line">  <span class="attr">output</span>: &#123;</span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&#x27;bundle.js&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <hr>
 <h2 id="二、圖片與多媒體優化"><a href="#二、圖片與多媒體優化" class="headerlink" title="二、圖片與多媒體優化"></a>二、圖片與多媒體優化</h2><h3 id="適當圖片格式"><a href="#適當圖片格式" class="headerlink" title="適當圖片格式"></a>適當圖片格式</h3><ul>
 <li>使用 <strong>WebP</strong> 或 <strong>AVIF</strong> 取代 JPEG &#x2F; PNG，可減少檔案體積 25% 以上</li>
 <li>SVG 適用於圖示與 icon，解析度不會失真</li>
 </ul>
-<h3 id="延遲載入圖片（Lazy-Loading）"><a href="#延遲載入圖片（Lazy-Loading）" class="headerlink" title="延遲載入圖片（Lazy Loading）"></a>延遲載入圖片（Lazy Loading）</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;thumbnail.jpg&quot;</span> <span class="attr">loading</span>=<span class="string">&quot;lazy&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;延遲載入圖片&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="延遲載入圖片（Lazy-Loading）"><a href="#延遲載入圖片（Lazy-Loading）" class="headerlink" title="延遲載入圖片（Lazy Loading）"></a>延遲載入圖片（Lazy Loading）</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;thumbnail.jpg&quot;</span> <span class="attr">loading</span>=<span class="string">&quot;lazy&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;延遲載入圖片&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>或搭配 JavaScript 實現滾動載入。</p>
 <hr>
@@ -331,6 +331,9 @@
 <li>使用 Lighthouse 檢查並優化問題</li>
 </ol>
 <p>效能優化並非一次性工作，而是一個持續調整的過程。建議我們可以從專案開始就納入效能考量，將它當成基本開發原則來實踐。</p>
+<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=evrNn54UkHQ">Core Web Vitals: An everyday explanation (Taiwanese with English subtitles)</a></li>
+</ol>
 
                 </div>
 
