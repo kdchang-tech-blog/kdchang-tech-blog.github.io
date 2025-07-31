@@ -2,16 +2,15 @@
 title: Web 前端效能優化入門教學筆記 | 學習筆記
 date: 2024-10-16 11:33:41
 author: kdchang
-tags: 
-    - 前端
-    - 前端開發
-    - 前端工程
-    - frontend
-    - css
-    - web
-    - 前端效能
-    - frontend engineer
-
+tags:
+  - 前端
+  - 前端開發
+  - 前端工程
+  - frontend
+  - css
+  - web
+  - 前端效能
+  - frontend engineer
 ---
 
 # 前言
@@ -50,7 +49,7 @@ tags:
 
 ```html
 <!-- 使用 Google Fonts CDN -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 ```
 
 ### 合併與壓縮資源（Minify & Bundle）
@@ -66,10 +65,10 @@ tags:
 ```js
 // webpack.config.js
 module.exports = {
-  mode: "production", // 自動啟用壓縮
-  entry: "./src/index.js",
+  mode: 'production', // 自動啟用壓縮
+  entry: './src/index.js',
   output: {
-    filename: "bundle.js",
+    filename: 'bundle.js',
   },
 };
 ```
@@ -86,7 +85,7 @@ module.exports = {
 ### 延遲載入圖片（Lazy Loading）
 
 ```html
-<img src="thumbnail.jpg" loading="lazy" alt="延遲載入圖片">
+<img src="thumbnail.jpg" loading="lazy" alt="延遲載入圖片" />
 ```
 
 或搭配 JavaScript 實現滾動載入。
@@ -207,3 +206,7 @@ element.classList.add('resized');
 7. 使用 Lighthouse 檢查並優化問題
 
 效能優化並非一次性工作，而是一個持續調整的過程。建議我們可以從專案開始就納入效能考量，將它當成基本開發原則來實踐。
+
+## 參考文件
+
+1. [Core Web Vitals: An everyday explanation (Taiwanese with English subtitles)](https://www.youtube.com/watch?v=evrNn54UkHQ)
