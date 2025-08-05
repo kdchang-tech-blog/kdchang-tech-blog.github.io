@@ -119,14 +119,14 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/books/">Books</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/books/">Books</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -218,6 +218,35 @@
             ">
                 <!-- Main Content -->
 
+
+<div class="post-preview">
+
+    <a href="/2024/12/18/learning-notes-payment-hash-intro-tutorial copy/">
+        <h2 class="post-title">
+            金流使用 Hash 原因入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            在金流（第三方支付或自建金流）系統中使用 Hash（雜湊） 的原因，主要是為了安全性與防止資料被竄改。以下是更詳細的解釋：
+
+一、為什麼金流需要 Hash？金流交易涉及敏感資料（如金額、訂單編號、使用者資訊、驗證參數等），若這些資料在傳輸過程中被竄改，將造成：
+
+金額錯誤（被調整為更小金額）
+偽造付款成功通知
+使用者資料外洩
+金流詐騙行為
+
+因此，金流平台與商家之間需要一種方式來驗證資料完整......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2024-12-18
+    </p>
+
+</div>
+<hr>
 
 <div class="post-preview">
 
@@ -420,36 +449,6 @@ Logo、按鈕字體
 避免字體大小變動的情境
 
 範例h1 &#123; fo......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2024-12-14
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2024/12/14/learning-notes-vue-set-intro-tutorial/">
-        <h2 class="post-title">
-            Vue 正確新增或修改物件屬性入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言在 Vue 2（Options API）中，this.$set 是用來在響應式系統中正確新增或修改物件屬性的方法。這對於動態新增屬性或修改陣列的指定索引值特別有用。
-
-語法this.$set(target, propertyName/index, value)
-
-
-target：要修改的對象或陣列
-propertyName（物件）或 index（陣列）
-value：要設的值
-
-
-為什麼需......
         </div>
     </a>
     <p class="post-meta">
