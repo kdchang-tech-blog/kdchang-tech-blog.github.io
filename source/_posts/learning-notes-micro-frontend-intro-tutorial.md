@@ -21,6 +21,23 @@ tags:
 
 ## 重點摘要
 
+### 微前端的常見做法
+
+1. Module Federation（Webpack 5 原生支援，超常見）
+
+- 各子應用直接共享模組，不用重複打包
+- Webpack 官方強項，Vite 沒有原生支援
+
+2. iframe / Web Component（框架無關，通用做法）
+
+- 每個子應用獨立部署，用 iframe 或 custom elements 包裝
+- Vite/React/Vue/Angular 都可以做
+
+3. 乾淨的 build output + 部署整合
+
+- 子應用都 build 出靜態資源，整合到主應用路由
+- 跟工具無關，Vite 也能勝任
+
 - **定義**：微前端是一種將前端應用拆解為多個獨立子應用的架構設計模式。
 - **目的**：
 
