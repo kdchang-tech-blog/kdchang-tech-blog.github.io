@@ -126,13 +126,6 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/search/">Search</a>
                         </li>
                         
@@ -141,6 +134,13 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -246,7 +246,28 @@
                     <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>隨著前端應用日益複雜、團隊規模擴大，「前端單體應用」（Monolithic Frontend）逐漸面臨維護困難、部署不靈活、開發效率低落等問題。微前端（Micro-Frontend）是一種將大型前端應用拆解為數個獨立子應用的架構設計理念，靈感來自後端的微服務（Microservices）架構。每個子應用可以由不同的團隊獨立開發、部署、維護，並共同組成一個整體的產品。</p>
 <p>微前端不是某個框架，而是一種架構模式。它的目標是促進前端大型專案的模組化、團隊分工清晰、技術選型彈性，進而提升整體開發與交付效率。</p>
 <hr>
-<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><h3 id="微前端的常見做法"><a href="#微前端的常見做法" class="headerlink" title="微前端的常見做法"></a>微前端的常見做法</h3><ol>
+<li>Module Federation（Webpack 5 原生支援，超常見）</li>
+</ol>
+<ul>
+<li>各子應用直接共享模組，不用重複打包</li>
+<li>Webpack 官方強項，Vite 沒有原生支援</li>
+</ul>
+<ol start="2">
+<li>iframe &#x2F; Web Component（框架無關，通用做法）</li>
+</ol>
+<ul>
+<li>每個子應用獨立部署，用 iframe 或 custom elements 包裝</li>
+<li>Vite&#x2F;React&#x2F;Vue&#x2F;Angular 都可以做</li>
+</ul>
+<ol start="3">
+<li>乾淨的 build output + 部署整合</li>
+</ol>
+<ul>
+<li><p>子應用都 build 出靜態資源，整合到主應用路由</p>
+</li>
+<li><p>跟工具無關，Vite 也能勝任</p>
+</li>
 <li><p><strong>定義</strong>：微前端是一種將前端應用拆解為多個獨立子應用的架構設計模式。</p>
 </li>
 <li><p><strong>目的</strong>：</p>
