@@ -26,11 +26,11 @@
     
     <title>
         
-          軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap） - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          Server-Sent Events（SSE）入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/06/22/software-engineer-and-web-develement-skill-tree/">
+    <link rel="canonical" href="https://tech.kdchang.net/2025/01/30/learning-notes-git-intro-tutorial copy/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap） - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap） - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="Server-Sent Events（SSE）入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="Server-Sent Events（SSE）入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發、程式設計和產品專案管理技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計、產品專案管理、職涯發展和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,23 +199,19 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>軟體工程師和 Web 前後端開發技能樹/學習藍圖（Roadmap）</h1>
+                    <h1>Server-Sent Events（SSE）入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2024-06-22
+                        2025-01-30
                     </span>
                     <br>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#Software Engineer" title="Software Engineer">Software Engineer</a>
+                          <a class="tag" href="/tags/#SSE" title="SSE">SSE</a>
                         
-                          <a class="tag" href="/tags/#Frontend Roadmap" title="Frontend Roadmap">Frontend Roadmap</a>
+                          <a class="tag" href="/tags/#stream" title="stream">stream</a>
                         
-                          <a class="tag" href="/tags/#Backend Roadmap" title="Backend Roadmap">Backend Roadmap</a>
-                        
-                          <a class="tag" href="/tags/#DevOps" title="DevOps">DevOps</a>
-                        
-                          <a class="tag" href="/tags/#Full Stack" title="Full Stack">Full Stack</a>
+                          <a class="tag" href="/tags/#Server-Sent Events" title="Server-Sent Events">Server-Sent Events</a>
                         
 
                     </div>
@@ -241,31 +237,134 @@
                 </div>
                 <br>
                 <div>
-                    <h1 id="前端工程"><a href="#前端工程" class="headerlink" title="前端工程"></a>前端工程</h1><p><a target="_blank" rel="noopener" href="https://roadmap.sh/frontend">Frontend Roadmap</a> &#x2F; <a target="_blank" rel="noopener" href="https://roadmap.sh/frontend?r=frontend-beginner">Frontend Beginner Roadmap</a></p>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在現代 Web 應用中，即時資料傳輸已經成為重要需求，例如股票行情更新、聊天室訊息、即時通知等。傳統的 HTTP 請求模式是 <strong>客戶端發起請求，伺服器回應一次</strong>，這種「單向請求-回應」模式無法有效支持持續更新。</p>
+<p>WebSocket 是一個廣為人知的解決方案，提供全雙工通道，但對於單向更新（伺服器推送到客戶端）而言，WebSocket 可能略顯複雜。這時，<strong>Server-Sent Events（SSE）</strong> 就是一個簡單、輕量級的替代方案。SSE 提供 <strong>伺服器到客戶端的單向持續資料推送</strong>，使用原生 HTML5 技術即可實現，不需額外協議或第三方套件。</p>
+<hr>
+<h2 id="SSE-的核心概念"><a href="#SSE-的核心概念" class="headerlink" title="SSE 的核心概念"></a>SSE 的核心概念</h2><p>Server-Sent Events 是基於 <strong>HTTP 協議</strong>，透過 <strong>text&#x2F;event-stream</strong> 的 MIME 類型，保持一個持久連接，讓伺服器可以不斷地向客戶端傳送資料。SSE 的主要特性包括：</p>
 <ol>
-<li><input checked="" disabled="" type="checkbox"> HTML</li>
-<li><input disabled="" type="checkbox"> CSS</li>
-<li><input disabled="" type="checkbox"> JavaScript</li>
-<li><input disabled="" type="checkbox"> Version Control Systems&#x2F;Git&#x2F;Github</li>
-<li><input disabled="" type="checkbox"> npm</li>
-<li><input disabled="" type="checkbox"> Vue</li>
-<li><input disabled="" type="checkbox"> React</li>
-<li><input disabled="" type="checkbox"> Angular</li>
-<li><input disabled="" type="checkbox"> TailwindCSS</li>
-<li><input disabled="" type="checkbox"> Vitest</li>
-<li><input disabled="" type="checkbox"> Cypress&#x2F;Jest</li>
-<li><input disabled="" type="checkbox"> TypeScript</li>
-<li><input disabled="" type="checkbox"> PWA</li>
-<li><input disabled="" type="checkbox"> SASS&#x2F;LESS&#x2F;PostCSS</li>
-<li><input disabled="" type="checkbox"> NodeJS</li>
+<li><p><strong>單向通訊</strong></p>
+<ul>
+<li>伺服器向客戶端推送資料，客戶端只能接收。若需要雙向通訊，仍需搭配 WebSocket 或 AJAX 請求。</li>
+</ul>
+</li>
+<li><p><strong>自動重連</strong></p>
+<ul>
+<li>客戶端若因網路斷線或其他原因中斷，瀏覽器會自動重連，可透過 <code>retry</code> 指定重連間隔。</li>
+</ul>
+</li>
+<li><p><strong>文字格式傳輸</strong></p>
+<ul>
+<li>SSE 傳輸的資料以純文字格式為主，每個事件用特定的格式標記（如 <code>event:</code>、<code>data:</code>、<code>id:</code> 等）。</li>
+</ul>
+</li>
+<li><p><strong>支援事件命名</strong></p>
+<ul>
+<li>可以自定義事件名稱，在前端監聽不同事件，提高可讀性與維護性。</li>
+</ul>
+</li>
+<li><p><strong>輕量且易實作</strong></p>
+<ul>
+<li>客戶端只需使用 JavaScript 的 <code>EventSource</code> API，即可快速建立 SSE 連接。</li>
+</ul>
+</li>
 </ol>
-<h1 id="後端"><a href="#後端" class="headerlink" title="後端"></a>後端</h1><p><a target="_blank" rel="noopener" href="https://roadmap.sh/backend">Backend Roadmap</a> &#x2F; <a target="_blank" rel="noopener" href="https://roadmap.sh/backend?r=backend-beginner">Backend Beginner Roadmap</a></p>
-<h1 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h1><p><a target="_blank" rel="noopener" href="https://roadmap.sh/devops">DevOps Roadmap</a> &#x2F; <a target="_blank" rel="noopener" href="https://roadmap.sh/devops?r=devops-beginner">DevOps Beginner Roadmap</a></p>
-<h1 id="全端"><a href="#全端" class="headerlink" title="全端"></a>全端</h1><p><a target="_blank" rel="noopener" href="https://roadmap.sh/full-stack">Full Stack Roadmap</a></p>
-<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
-<li><a target="_blank" rel="noopener" href="https://github.com/kamranahmedse/developer-roadmap?tab=readme-ov-file">github developer-roadmap</a></li>
-<li><a target="_blank" rel="noopener" href="https://hackmd.io/@were1122was/BkUpHXuAq">N+1 Queries 效能問題</a></li>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p><strong>單向連接</strong>：伺服器 → 客戶端</p>
+</li>
+<li><p><strong>持久連接</strong>：不需每次重新建立 HTTP 請求</p>
+</li>
+<li><p><strong>事件格式</strong>：<code>event</code>, <code>data</code>, <code>id</code>, <code>retry</code></p>
+</li>
+<li><p><strong>自動重連</strong>：瀏覽器自動處理連線中斷</p>
+</li>
+<li><p><strong>瀏覽器支援</strong>：大部分現代瀏覽器原生支援（IE 除外）</p>
+</li>
+<li><p><strong>適用場景</strong>：</p>
+<ul>
+<li>即時通知系統</li>
+<li>資料更新流（股票、天氣、社群消息）</li>
+<li>運行狀態監控儀表板</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="SSE-的資料格式"><a href="#SSE-的資料格式" class="headerlink" title="SSE 的資料格式"></a>SSE 的資料格式</h2><p>SSE 的資料格式遵循 <strong>行為約定</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">id: 1</span><br><span class="line">event: message</span><br><span class="line">retry: 3000</span><br><span class="line">data: Hello, this is a message from server</span><br></pre></td></tr></table></figure>
+
+<p>說明：</p>
+<ul>
+<li><strong>id</strong>（選填）：事件 ID，客戶端斷線後重連，會告訴伺服器最後接收的 ID</li>
+<li><strong>event</strong>（選填）：事件名稱，自訂事件類型</li>
+<li><strong>retry</strong>（選填）：重連間隔，單位為毫秒</li>
+<li><strong>data</strong>（必填）：事件資料內容，可有多行</li>
+</ul>
+<p><strong>注意</strong>：每個事件以空行結束，代表事件結束。</p>
+<hr>
+<h2 id="SSE-實作範例"><a href="#SSE-實作範例" class="headerlink" title="SSE 實作範例"></a>SSE 實作範例</h2><p>以下示範如何使用 <strong>Node.js + Express</strong> 建立 SSE 服務，並在前端接收事件：</p>
+<h3 id="1-後端-Node-js-Express"><a href="#1-後端-Node-js-Express" class="headerlink" title="1. 後端 (Node.js + Express)"></a>1. 後端 (Node.js + Express)</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/events&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 設定 SSE 標頭</span></span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/event-stream&#x27;</span>);</span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Cache-Control&#x27;</span>, <span class="string">&#x27;no-cache&#x27;</span>);</span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Connection&#x27;</span>, <span class="string">&#x27;keep-alive&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> counter = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 每秒推送一次訊息</span></span><br><span class="line">  <span class="keyword">const</span> interval = <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    counter++;</span><br><span class="line">    res.<span class="title function_">write</span>(<span class="string">`id: <span class="subst">$&#123;counter&#125;</span>\n`</span>);</span><br><span class="line">    res.<span class="title function_">write</span>(<span class="string">`event: message\n`</span>);</span><br><span class="line">    res.<span class="title function_">write</span>(<span class="string">`data: &#123;&quot;count&quot;: <span class="subst">$&#123;counter&#125;</span>, &quot;time&quot;: &quot;<span class="subst">$&#123;<span class="keyword">new</span> <span class="built_in">Date</span>().toISOString()&#125;</span>&quot;&#125;\n\n`</span>);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 當客戶端斷線時清理 interval</span></span><br><span class="line">  req.<span class="title function_">on</span>(<span class="string">&#x27;close&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">clearInterval</span>(interval);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">3000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;SSE server running on http://localhost:3000&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-前端-HTML-JavaScript"><a href="#2-前端-HTML-JavaScript" class="headerlink" title="2. 前端 (HTML + JavaScript)"></a>2. 前端 (HTML + JavaScript)</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>SSE Example<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Server-Sent Events Demo<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;messages&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> eventSource = <span class="keyword">new</span> <span class="title class_">EventSource</span>(<span class="string">&#x27;http://localhost:3000/events&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      eventSource.<span class="property">onmessage</span> = <span class="keyword">function</span> (<span class="params">event</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> msgDiv = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;messages&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> data = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(event.<span class="property">data</span>);</span></span><br><span class="line"><span class="language-javascript">        msgDiv.<span class="property">innerHTML</span> += <span class="string">`&lt;p&gt;Count: <span class="subst">$&#123;data.count&#125;</span>, Time: <span class="subst">$&#123;data.time&#125;</span>&lt;/p&gt;`</span>;</span></span><br><span class="line"><span class="language-javascript">      &#125;;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      eventSource.<span class="title function_">addEventListener</span>(<span class="string">&#x27;message&#x27;</span>, <span class="keyword">function</span> (<span class="params">event</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 也可透過自訂事件名稱接收</span></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Received event:&#x27;</span>, event.<span class="property">data</span>);</span></span><br><span class="line"><span class="language-javascript">      &#125;);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      eventSource.<span class="property">onerror</span> = <span class="keyword">function</span> (<span class="params">err</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;EventSource failed:&#x27;</span>, err);</span></span><br><span class="line"><span class="language-javascript">      &#125;;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>解釋</strong>：</p>
+<ul>
+<li><code>EventSource</code> 會自動建立持久連接</li>
+<li>每次後端 <code>res.write</code> 新事件時，前端 <code>onmessage</code> 會被觸發</li>
+<li>客戶端不需發起額外請求，伺服器可以持續推送</li>
+</ul>
+<hr>
+<h2 id="SSE-與-WebSocket-的比較"><a href="#SSE-與-WebSocket-的比較" class="headerlink" title="SSE 與 WebSocket 的比較"></a>SSE 與 WebSocket 的比較</h2><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>SSE</th>
+<th>WebSocket</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>通訊方向</td>
+<td>伺服器 → 客戶端（單向）</td>
+<td>雙向（伺服器 ↔ 客戶端）</td>
+</tr>
+<tr>
+<td>協議</td>
+<td>HTTP</td>
+<td>TCP &#x2F; WebSocket protocol</td>
+</tr>
+<tr>
+<td>連接維護</td>
+<td>自動重連</td>
+<td>需手動處理斷線</td>
+</tr>
+<tr>
+<td>輕量實作</td>
+<td>非常簡單</td>
+<td>相對複雜</td>
+</tr>
+<tr>
+<td>適用場景</td>
+<td>事件推送、資料流</td>
+<td>即時遊戲、聊天室、雙向互動</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="實務應用建議"><a href="#實務應用建議" class="headerlink" title="實務應用建議"></a>實務應用建議</h2><ol>
+<li><p><strong>適用場景</strong>：單向更新、事件通知、儀表板數據刷新</p>
+</li>
+<li><p><strong>不適用場景</strong>：需要大量雙向互動、低延遲遊戲或高頻交易</p>
+</li>
+<li><p><strong>瀏覽器支援</strong>：大部分現代瀏覽器支援，但 IE 需 polyfill</p>
+</li>
+<li><p><strong>部署注意</strong>：</p>
+<ul>
+<li>長連接可能對 Nginx &#x2F; Proxy 設定有影響，需允許長時間 HTTP keep-alive</li>
+<li>伺服器端要注意資源釋放，避免記憶體泄漏</li>
+</ul>
+</li>
 </ol>
+<hr>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>Server-Sent Events 是一種 <strong>簡單、輕量、易於實作的即時資料推送方案</strong>，特別適合需要 <strong>單向事件更新</strong> 的 Web 應用。對於需要雙向通訊的場景，WebSocket 或其他方案可能更合適。掌握 SSE 可以讓我們在開發即時應用、監控儀表板或通知系統時快速上手，並結合現代瀏覽器的原生支援，提供穩定的即時體驗。</p>
 
                 </div>
 
@@ -282,7 +381,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/03/22/software-engineer-technical-interview-resources/" title="常見軟體工程師/Web 開發技術面試及學習資源整理" rel="bookmark">常見軟體工程師/Web 開發技術面試及學習資源整理</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/03/22/software-engineering-web-dev-tools-resources/" title="常見軟體工程師/網頁開發工具和學習資源整理" rel="bookmark">常見軟體工程師/網頁開發工具和學習資源整理</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/22/web-frontend-interview-question-list/" title="常見 Web Frontend 前端工程師面試準備題目清單" rel="bookmark">常見 Web Frontend 前端工程師面試準備題目清單</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/06/21/about-backend-engineer-10-keywords/" title="關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字" rel="bookmark">關於 Web 網頁後端工程師 Backend Engineer 的 10 個關鍵字</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2015/01/22/about-software-engineer-10-keywords/" title="關於軟體工程師 Software Engineer 的 10 個關鍵字" rel="bookmark">關於軟體工程師 Software Engineer 的 10 個關鍵字</a></h3></div></li></ul>
+                        
                     </div>
                 </div>
                 <!-- Tags -->
@@ -318,8 +417,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/06/22/software-engineer-and-web-develement-skill-tree/";
-    var disqus_url = "https://tech.kdchang.net/2024/06/22/software-engineer-and-web-develement-skill-tree/";
+    var disqus_identifier = "https://tech.kdchang.net/2025/01/30/learning-notes-git-intro-tutorial%20copy/";
+    var disqus_url = "https://tech.kdchang.net/2025/01/30/learning-notes-git-intro-tutorial%20copy/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
