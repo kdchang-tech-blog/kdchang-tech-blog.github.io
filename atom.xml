@@ -6,7 +6,7 @@
   <link href="https://tech.kdchang.net/atom.xml" rel="self"/>
   
   <link href="https://tech.kdchang.net/"/>
-  <updated>2025-08-16T03:40:01.532Z</updated>
+  <updated>2025-08-21T02:13:50.293Z</updated>
   <id>https://tech.kdchang.net/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://tech.kdchang.net/2025/02/23/learning-notes-django-flask-fastapi-throughput-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2025/02/23/learning-notes-django-flask-fastapi-throughput-intro-tutorial/</id>
     <published>2025-02-23T18:23:41.000Z</published>
-    <updated>2025-08-16T03:40:01.532Z</updated>
+    <updated>2025-08-21T02:13:50.293Z</updated>
     
     
       
@@ -54,7 +54,7 @@
     <link href="https://tech.kdchang.net/2025/02/20/learning-notes-roo-code-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2025/02/20/learning-notes-roo-code-intro-tutorial/</id>
     <published>2025-02-20T03:33:41.000Z</published>
-    <updated>2025-08-16T03:40:01.536Z</updated>
+    <updated>2025-08-21T02:13:50.298Z</updated>
     
     
       
@@ -81,7 +81,7 @@
     <link href="https://tech.kdchang.net/2025/02/08/learning-notes-12-factor-cloud-app-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2025/02/08/learning-notes-12-factor-cloud-app-intro-tutorial/</id>
     <published>2025-02-08T18:23:41.000Z</published>
-    <updated>2025-08-16T03:40:01.530Z</updated>
+    <updated>2025-08-21T02:13:50.292Z</updated>
     
     
       
@@ -108,37 +108,11 @@
   </entry>
   
   <entry>
-    <title>30 Days of JavaScript 入門教學筆記 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2025/02/08/learning-notes-30-days-of-javascript-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2025/02/08/learning-notes-30-days-of-javascript-intro-tutorial/</id>
-    <published>2025-02-08T18:23:41.000Z</published>
-    <updated>2025-08-16T03:40:01.530Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;問題研討&quot;&gt;&lt;a href=&quot;#問題研討&quot; class=&quot;headerlink&quot; title=&quot;問題研討&quot;&gt;&lt;/a&gt;問題研討&lt;/h1&gt;&lt;p&gt;一、Closures&lt;/p&gt;
-&lt;p&gt;二、Basic Array</summary>
-        
-      
-    
-    
-    
-    
-    <category term="30 Days of JavaScript" scheme="https://tech.kdchang.net/tags/30-Days-of-JavaScript/"/>
-    
-    <category term="JavaScript" scheme="https://tech.kdchang.net/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>前端 i18n 入門教學與注意事項整理筆記 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2025/01/13/learning-notes-frontend-i18n-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2025/01/13/learning-notes-frontend-i18n-intro-tutorial%20copy/</id>
     <published>2025-01-13T18:23:41.000Z</published>
-    <updated>2025-08-16T03:40:01.532Z</updated>
+    <updated>2025-08-21T02:13:50.294Z</updated>
     
     
       
@@ -165,7 +139,7 @@
     <link href="https://tech.kdchang.net/2024/12/31/learning-notes-micro-frontend-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/31/learning-notes-micro-frontend-intro-tutorial/</id>
     <published>2024-12-31T03:33:41.000Z</published>
-    <updated>2025-08-16T03:40:01.534Z</updated>
+    <updated>2025-08-21T02:13:50.296Z</updated>
     
     
       
@@ -198,7 +172,7 @@
     <link href="https://tech.kdchang.net/2024/12/26/learning-notes-react-lazy-loading-code-splitting-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/26/learning-notes-react-lazy-loading-code-splitting-intro-tutorial/</id>
     <published>2024-12-26T18:23:41.000Z</published>
-    <updated>2025-08-16T03:40:01.536Z</updated>
+    <updated>2025-08-21T02:13:50.297Z</updated>
     
     
       
@@ -225,7 +199,7 @@
     <link href="https://tech.kdchang.net/2024/12/25/learning-notes-react-performance-optimization-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/25/learning-notes-react-performance-optimization-intro-tutorial/</id>
     <published>2024-12-25T18:23:41.000Z</published>
-    <updated>2025-08-16T03:40:01.536Z</updated>
+    <updated>2025-08-21T02:13:50.297Z</updated>
     
     
       
@@ -252,7 +226,7 @@
     <link href="https://tech.kdchang.net/2024/12/24/learning-notes-react-performance-optimization-sop-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/24/learning-notes-react-performance-optimization-sop-intro-tutorial/</id>
     <published>2024-12-24T18:23:41.000Z</published>
-    <updated>2025-08-16T03:40:01.536Z</updated>
+    <updated>2025-08-21T02:13:50.297Z</updated>
     
     
       
@@ -279,7 +253,7 @@
     <link href="https://tech.kdchang.net/2024/12/23/learning-notes-lang-graph-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/23/learning-notes-lang-graph-intro-tutorial/</id>
     <published>2024-12-23T18:23:41.000Z</published>
-    <updated>2025-08-16T03:40:01.534Z</updated>
+    <updated>2025-08-21T02:13:50.296Z</updated>
     
     
       
@@ -310,7 +284,7 @@
     <link href="https://tech.kdchang.net/2024/12/23/learning-notes-useswr-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/23/learning-notes-useswr-intro-tutorial/</id>
     <published>2024-12-23T18:23:41.000Z</published>
-    <updated>2025-08-16T03:40:01.537Z</updated>
+    <updated>2025-08-21T02:13:50.298Z</updated>
     
     
       
@@ -345,7 +319,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-08-16T03:40:01.533Z</updated>
+    <updated>2025-08-21T02:13:50.295Z</updated>
     
     
       
@@ -378,7 +352,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-nextauth-js-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-nextauth-js-intro-tutorial/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-08-16T03:40:01.535Z</updated>
+    <updated>2025-08-21T02:13:50.296Z</updated>
     
     
       
@@ -403,7 +377,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-08-16T03:40:01.535Z</updated>
+    <updated>2025-08-21T02:13:50.297Z</updated>
     
     
       
@@ -444,7 +418,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-08-16T03:40:01.531Z</updated>
+    <updated>2025-08-21T02:13:50.292Z</updated>
     
     
       
@@ -469,7 +443,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-local-storage-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-local-storage-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-08-16T03:40:01.531Z</updated>
+    <updated>2025-08-21T02:13:50.292Z</updated>
     
     
       
@@ -498,7 +472,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-claude-code-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-claude-code-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-08-16T03:40:01.531Z</updated>
+    <updated>2025-08-21T02:13:50.292Z</updated>
     
     
       
@@ -527,7 +501,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-github-copilot-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-github-copilot-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-08-16T03:40:01.532Z</updated>
+    <updated>2025-08-21T02:13:50.294Z</updated>
     
     
       
@@ -558,7 +532,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-n8n-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-n8n-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-08-16T03:40:01.535Z</updated>
+    <updated>2025-08-21T02:13:50.296Z</updated>
     
     
       
@@ -585,7 +559,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-08-16T03:40:01.536Z</updated>
+    <updated>2025-08-21T02:13:50.298Z</updated>
     
     
       
@@ -618,6 +592,31 @@
     <category term="useMemo" scheme="https://tech.kdchang.net/tags/useMemo/"/>
     
     <category term="useCallback" scheme="https://tech.kdchang.net/tags/useCallback/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Angular 入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2024/12/19/learning-notes-angular-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2024/12/19/learning-notes-angular-intro-tutorial/</id>
+    <published>2024-12-19T18:23:41.000Z</published>
+    <updated>2025-08-21T02:13:50.292Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言：什麼是-Angular？&quot;&gt;&lt;a href=&quot;#前言：什麼是-Angular？&quot; class=&quot;headerlink&quot; title=&quot;前言：什麼是 Angular？&quot;&gt;&lt;/a&gt;前言：什麼是 Angular？&lt;/h2&gt;&lt;p&gt;Angular 是由 Google</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Angular" scheme="https://tech.kdchang.net/tags/Angular/"/>
+    
+    <category term="TypeScript" scheme="https://tech.kdchang.net/tags/TypeScript/"/>
     
   </entry>
   
