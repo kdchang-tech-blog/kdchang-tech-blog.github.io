@@ -26,11 +26,11 @@
     
     <title>
         
-          Git 入門教學筆記：從零開始學版本控制 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          事件物件屬性 e.target 與 e.currentTarget 的差異與應用 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2023/12/21/learning-notes-git-intro-tutorial/">
+    <link rel="canonical" href="https://tech.kdchang.net/2023/12/21/learning-notes-event-target-event-current-target-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="Git 入門教學筆記：從零開始學版本控制 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="Git 入門教學筆記：從零開始學版本控制 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="事件物件屬性 e.target 與 e.currentTarget 的差異與應用 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="事件物件屬性 e.target 與 e.currentTarget 的差異與應用 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發、程式設計和產品專案管理技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計、產品專案管理、職涯發展和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,7 +199,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>Git 入門教學筆記：從零開始學版本控制 | 學習筆記</h1>
+                    <h1>事件物件屬性 e.target 與 e.currentTarget 的差異與應用 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
                         2023-12-21
@@ -207,11 +207,13 @@
                     <br>
                     <div class="tags">
                         
+                          <a class="tag" href="/tags/#事件物件屬性" title="事件物件屬性">事件物件屬性</a>
+                        
+                          <a class="tag" href="/tags/#e.target" title="e.target">e.target</a>
+                        
+                          <a class="tag" href="/tags/#e.currentTarget" title="e.currentTarget">e.currentTarget</a>
+                        
                           <a class="tag" href="/tags/#版本控制" title="版本控制">版本控制</a>
-                        
-                          <a class="tag" href="/tags/#Github" title="Github">Github</a>
-                        
-                          <a class="tag" href="/tags/#Git" title="Git">Git</a>
                         
 
                     </div>
@@ -237,98 +239,100 @@
                 </div>
                 <br>
                 <div>
-                    <h2 id="為什麼要學-Git？"><a href="#為什麼要學-Git？" class="headerlink" title="為什麼要學 Git？"></a>為什麼要學 Git？</h2><p>在軟體開發中，版本控制是一個不可或缺的工具。Git 是目前最流行的版本控制系統，它能幫助你：</p>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在網頁開發中，事件處理是前端工程師必須熟悉的基礎知識之一。當我們使用 JavaScript 或框架（如 Vue、React）監聽 DOM 事件時，瀏覽器會提供一個事件物件（event object）給監聽函式，透過它我們能取得觸發事件的相關資訊。而在事件物件中，最常被初學者混淆的兩個屬性就是 <code>e.target</code> 與 <code>e.currentTarget</code>。</p>
+<p>這兩者的差別看似微小，但實際上與事件冒泡機制息息相關。如果理解不清，會導致點擊判斷錯誤、事件綁定邏輯混亂，甚至出現無法預期的行為。本文將從概念、重點摘要，再到程式碼範例，逐步說明 <code>e.target</code> 與 <code>e.currentTarget</code> 的異同，並介紹實際開發中如何正確使用。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ol>
+<li><p><strong>事件冒泡（Event Bubbling）</strong></p>
 <ul>
-<li>記錄每次修改的歷史紀錄</li>
-<li>回復到任一個過去的狀態</li>
-<li>多人協作開發不衝突</li>
-<li>管理分支進行實驗性開發</li>
+<li>當某個元素觸發事件時，事件會從最深層的子元素向外層父元素依序傳遞。</li>
+<li>這意味著外層元素的事件監聽器也可能被觸發。</li>
 </ul>
-<p>無論是獨立開發者、團隊協作，還是參與開源專案，Git 都是你的好夥伴。</p>
-<hr>
-<h2 id="一、安裝-Git"><a href="#一、安裝-Git" class="headerlink" title="一、安裝 Git"></a>一、安裝 Git</h2><h3 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
-
-<h3 id="Ubuntu-x2F-Debian"><a href="#Ubuntu-x2F-Debian" class="headerlink" title="Ubuntu &#x2F; Debian"></a>Ubuntu &#x2F; Debian</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install git</span><br></pre></td></tr></table></figure>
-
-<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>請至官網下載安裝：<a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com</a></p>
-<hr>
-<h2 id="二、基本設定"><a href="#二、基本設定" class="headerlink" title="二、基本設定"></a>二、基本設定</h2><p>第一次使用 Git 前，請先設定你的名稱與 Email（這會記錄在每次提交的資訊中）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的名字&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;you@example.com&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>你也可以檢查目前的設定：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="三、建立本地倉庫（repository）"><a href="#三、建立本地倉庫（repository）" class="headerlink" title="三、建立本地倉庫（repository）"></a>三、建立本地倉庫（repository）</h2><h3 id="建立一個新資料夾並初始化-Git"><a href="#建立一個新資料夾並初始化-Git" class="headerlink" title="建立一個新資料夾並初始化 Git"></a>建立一個新資料夾並初始化 Git</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> my-project</span><br><span class="line"><span class="built_in">cd</span> my-project</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
-
-<p>此時 <code>.git/</code> 目錄會被建立，代表你已經在這個資料夾啟用了版本控制。</p>
-<hr>
-<h2 id="四、版本控制的基本流程"><a href="#四、版本控制的基本流程" class="headerlink" title="四、版本控制的基本流程"></a>四、版本控制的基本流程</h2><p>Git 的工作流程大致分為三個區域：</p>
-<ol>
-<li><strong>工作區（Working Directory）</strong>：你實際修改的檔案</li>
-<li><strong>暫存區（Staging Area）</strong>：準備提交的檔案</li>
-<li><strong>版本庫（Repository）</strong>：正式提交的版本歷史</li>
+</li>
+<li><p><strong><code>e.target</code></strong></p>
+<ul>
+<li>代表「事件最初發生的元素」。</li>
+<li>使用者實際點擊或操作的 DOM 元素，不論事件是否冒泡到其他父層。</li>
+</ul>
+</li>
+<li><p><strong><code>e.currentTarget</code></strong></p>
+<ul>
+<li>代表「當前正在處理事件的元素」。</li>
+<li>永遠指向事件監聽器綁定的元素。</li>
+</ul>
+</li>
+<li><p><strong>差異核心</strong></p>
+<ul>
+<li><code>e.target</code> &#x3D; 使用者操作的來源元素。</li>
+<li><code>e.currentTarget</code> &#x3D; 當前呼叫事件處理函式的元素。</li>
+</ul>
+</li>
+<li><p><strong>常見用途</strong></p>
+<ul>
+<li><code>e.target</code>：用於判斷使用者點擊了哪個子元素，常用於事件代理（event delegation）。</li>
+<li><code>e.currentTarget</code>：用於保證取得事件綁定的元素本身，避免因冒泡導致判斷錯誤。</li>
+</ul>
+</li>
 </ol>
-<h3 id="1-查看狀態"><a href="#1-查看狀態" class="headerlink" title="1. 查看狀態"></a>1. 查看狀態</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-將檔案加入暫存區"><a href="#2-將檔案加入暫存區" class="headerlink" title="2. 將檔案加入暫存區"></a>2. 將檔案加入暫存區</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add 檔名</span><br><span class="line"><span class="comment"># 或加入全部變動檔案</span></span><br><span class="line">git add .</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-提交版本（commit）"><a href="#3-提交版本（commit）" class="headerlink" title="3. 提交版本（commit）"></a>3. 提交版本（commit）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;加入了首頁 HTML 結構&quot;</span></span><br></pre></td></tr></table></figure>
-
 <hr>
-<h2 id="五、版本紀錄與回溯"><a href="#五、版本紀錄與回溯" class="headerlink" title="五、版本紀錄與回溯"></a>五、版本紀錄與回溯</h2><h3 id="查看提交紀錄"><a href="#查看提交紀錄" class="headerlink" title="查看提交紀錄"></a>查看提交紀錄</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<h2 id="範例一：基本點擊事件"><a href="#範例一：基本點擊事件" class="headerlink" title="範例一：基本點擊事件"></a>範例一：基本點擊事件</h2><p>以下是一個簡單的 HTML 結構：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;outer&quot;</span> <span class="attr">style</span>=<span class="string">&quot;padding:20px; background:lightgray;&quot;</span>&gt;</span></span><br><span class="line">  Outer Div</span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;inner&quot;</span>&gt;</span>Click Me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> outer = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;outer&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  outer.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;target:&#x27;</span>, e.<span class="property">target</span>.<span class="property">id</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;currentTarget:&#x27;</span>, e.<span class="property">currentTarget</span>.<span class="property">id</span>);</span></span><br><span class="line"><span class="language-javascript">  &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>如果想要簡潔查看</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> --oneline</span><br></pre></td></tr></table></figure>
-
-<h3 id="回到先前的狀態（例如最近一次提交）"><a href="#回到先前的狀態（例如最近一次提交）" class="headerlink" title="回到先前的狀態（例如最近一次提交）"></a>回到先前的狀態（例如最近一次提交）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout HEAD^</span><br><span class="line"><span class="comment"># 回到上上一個版本</span></span><br><span class="line">git checkout HEAD~2</span><br></pre></td></tr></table></figure>
-
-<p>但請注意這樣會進入「detached HEAD」狀態，只是暫時查看，不適合繼續開發。</p>
-<hr>
-<h2 id="六、分支操作（branch）"><a href="#六、分支操作（branch）" class="headerlink" title="六、分支操作（branch）"></a>六、分支操作（branch）</h2><p>分支是 Git 強大的一環，可以讓你同時開發多個功能而互不干擾。</p>
-<h3 id="建立新分支"><a href="#建立新分支" class="headerlink" title="建立新分支"></a>建立新分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch feature-login</span><br></pre></td></tr></table></figure>
-
-<h3 id="切換分支"><a href="#切換分支" class="headerlink" title="切換分支"></a>切換分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout feature-login</span><br></pre></td></tr></table></figure>
-
-<p>或合併成一行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -b feature-login</span><br></pre></td></tr></table></figure>
-
-<h3 id="合併分支"><a href="#合併分支" class="headerlink" title="合併分支"></a>合併分支</h3><p>切回主分支（通常是 <code>main</code> 或 <code>master</code>）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout main</span><br><span class="line">git merge feature-login</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="七、遠端倉庫（Remote-Repository）"><a href="#七、遠端倉庫（Remote-Repository）" class="headerlink" title="七、遠端倉庫（Remote Repository）"></a>七、遠端倉庫（Remote Repository）</h2><p>若你使用 GitHub、GitLab 等服務，可以將本地專案推送到遠端：</p>
-<h3 id="新增遠端倉庫"><a href="#新增遠端倉庫" class="headerlink" title="新增遠端倉庫"></a>新增遠端倉庫</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add origin https://github.com/yourname/yourproject.git</span><br></pre></td></tr></table></figure>
-
-<h3 id="推送本地分支"><a href="#推送本地分支" class="headerlink" title="推送本地分支"></a>推送本地分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
-
-<h3 id="拉取遠端最新變更"><a href="#拉取遠端最新變更" class="headerlink" title="拉取遠端最新變更"></a>拉取遠端最新變更</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git pull origin main</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="八、-gitignore-檔案"><a href="#八、-gitignore-檔案" class="headerlink" title="八、.gitignore 檔案"></a>八、.gitignore 檔案</h2><p><code>.gitignore</code> 用來指定不想被 Git 管理的檔案，例如：</p>
-<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">node_modules/</span><br><span class="line">.env</span><br><span class="line">*.log</span><br><span class="line">.DS_Store</span><br></pre></td></tr></table></figure>
-
-<p>建立一個 <code>.gitignore</code> 檔案，放進你專案根目錄，就能避免把不該版本控制的東西送到遠端倉庫。</p>
-<hr>
-<h2 id="九、常見狀況與解法"><a href="#九、常見狀況與解法" class="headerlink" title="九、常見狀況與解法"></a>九、常見狀況與解法</h2><h3 id="修改後不小心沒-add-就-commit-了？"><a href="#修改後不小心沒-add-就-commit-了？" class="headerlink" title="修改後不小心沒 add 就 commit 了？"></a>修改後不小心沒 add 就 commit 了？</h3><p>可用下列方式補上：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add 新增的檔案</span><br><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
-
-<h3 id="想撤銷修改？"><a href="#想撤銷修改？" class="headerlink" title="想撤銷修改？"></a>想撤銷修改？</h3><p>還沒 add 的：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -- 檔案名</span><br></pre></td></tr></table></figure>
-
-<p>已經 add 了但還沒 commit：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset HEAD 檔案名</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="十、總結：從習慣開始，讓版本控制變簡單"><a href="#十、總結：從習慣開始，讓版本控制變簡單" class="headerlink" title="十、總結：從習慣開始，讓版本控制變簡單"></a>十、總結：從習慣開始，讓版本控制變簡單</h2><p>熟悉 Git 的過程一開始可能會覺得繁瑣，但當你習慣了之後，它會成為你每天工作中不可或缺的工具。建議你在小專案中練習基本指令，隨手記錄每次的變更，透過良好的 commit message，讓未來的你感謝現在有好好整理的你。</p>
-<p>如果你希望與他人協作開發，Git 更能大幅簡化流程、避免衝突。下一步，你可以學習 Pull Request（PR）、Git Flow、Rebase 等進階技巧，逐步精進你的版本控制能力。</p>
-<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
-<li><a target="_blank" rel="noopener" href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.conventionalcommits.org/zh-hant/v1.0.0/">約定式提交</a></li>
-<li><a target="_blank" rel="noopener" href="https://hackmd.io/@ohQEG7SsQoeXVwVP2-v06A/rkhtpmyXa">[Git] Conventional Commits 規範性提交</a></li>
-<li><a target="_blank" rel="noopener" href="https://w3c.hexschool.com/git/10bf7677">git reflog - 還原大招</a></li>
-<li><a target="_blank" rel="noopener" href="https://gitbook.tw/">為你自己學 Git</a></li>
+<h3 id="執行結果"><a href="#執行結果" class="headerlink" title="執行結果"></a>執行結果</h3><ol>
+<li><p>點擊按鈕（id&#x3D;”inner”）：</p>
+<ul>
+<li><code>e.target.id</code> → <code>inner</code></li>
+<li><code>e.currentTarget.id</code> → <code>outer</code></li>
+</ul>
+</li>
+<li><p>點擊外層灰色區塊（id&#x3D;”outer”）：</p>
+<ul>
+<li><code>e.target.id</code> → <code>outer</code></li>
+<li><code>e.currentTarget.id</code> → <code>outer</code></li>
+</ul>
+</li>
 </ol>
+<h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><ul>
+<li>使用者實際點擊按鈕，所以 <code>e.target</code> 是 <code>inner</code>。</li>
+<li>但因為事件冒泡，<code>outer</code> 的監聽器被觸發，因此 <code>e.currentTarget</code> 永遠是 <code>outer</code>。</li>
+<li>這正好展示了兩者的不同：一個描述事件來源，一個描述處理者。</li>
+</ul>
+<hr>
+<h2 id="範例二：事件代理（Event-Delegation）"><a href="#範例二：事件代理（Event-Delegation）" class="headerlink" title="範例二：事件代理（Event Delegation）"></a>範例二：事件代理（Event Delegation）</h2><p>事件代理是一種常見技巧，將監聽器掛在父層元素，由它統一處理子元素的事件。這種情境下，<code>e.target</code> 就非常重要。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;list&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-id</span>=<span class="string">&quot;1&quot;</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-id</span>=<span class="string">&quot;2&quot;</span>&gt;</span>Item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-id</span>=<span class="string">&quot;3&quot;</span>&gt;</span>Item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> list = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;list&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  list.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;target tag:&#x27;</span>, e.<span class="property">target</span>.<span class="property">tagName</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;currentTarget tag:&#x27;</span>, e.<span class="property">currentTarget</span>.<span class="property">tagName</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">if</span> (e.<span class="property">target</span>.<span class="property">tagName</span> === <span class="string">&#x27;LI&#x27;</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;You clicked item with data-id:&#x27;</span>, e.<span class="property">target</span>.<span class="property">dataset</span>.<span class="property">id</span>);</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="執行結果-1"><a href="#執行結果-1" class="headerlink" title="執行結果"></a>執行結果</h3><ul>
+<li><p>點擊 <code>Item 2</code> 時：</p>
+<ul>
+<li><code>e.target.tagName</code> → <code>LI</code></li>
+<li><code>e.currentTarget.tagName</code> → <code>UL</code></li>
+<li>印出 <code>&quot;You clicked item with data-id: 2&quot;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="說明-1"><a href="#說明-1" class="headerlink" title="說明"></a>說明</h3><ul>
+<li><code>list</code>（UL）負責監聽整個清單，這就是 <code>e.currentTarget</code>。</li>
+<li>實際點擊的 <code>&lt;li&gt;</code> 元素才是 <code>e.target</code>。</li>
+<li>藉由 <code>e.target</code>，我們能知道使用者點的是哪個清單項目，而不用對每個 <code>&lt;li&gt;</code> 綁定監聽器。</li>
+</ul>
+<hr>
+<h2 id="範例三：模擬-Vue-的-self-行為"><a href="#範例三：模擬-Vue-的-self-行為" class="headerlink" title="範例三：模擬 Vue 的 .self 行為"></a>範例三：模擬 Vue 的 <code>.self</code> 行為</h2><p>在 Vue 中有一個 <code>.self</code> 修飾符，代表「只有點擊元素本身，而不是子元素時，事件才觸發」。這其實就是透過 <code>e.target === e.currentTarget</code> 判斷。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;modal&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width:300px; height:200px; background:rgba(0,0,0,0.5);&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width:100px; height:100px; background:white; margin:50px auto;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> modal = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;modal&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  modal.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">if</span> (e.<span class="property">target</span> === e.<span class="property">currentTarget</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Clicked on modal background, close modal&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Clicked on inner content, do nothing&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="說明-2"><a href="#說明-2" class="headerlink" title="說明"></a>說明</h3><ul>
+<li>點擊外層灰色背景時：<code>e.target === e.currentTarget</code> → 成立 → 關閉彈窗。</li>
+<li>點擊白色內層時：<code>e.target</code> 為內層 div，而 <code>e.currentTarget</code> 為外層 → 不相等 → 不關閉。</li>
+</ul>
+<p>這個邏輯就是框架中 <code>.self</code> 修飾符的實作原理。</p>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><ul>
+<li><code>e.target</code> 與 <code>e.currentTarget</code> 都是事件物件的重要屬性。</li>
+<li><code>e.target</code> 表示事件來源，是使用者實際操作的元素。</li>
+<li><code>e.currentTarget</code> 表示事件處理者，是目前綁定監聽器的元素。</li>
+<li>理解這兩者的差別，對於處理事件冒泡、事件代理、以及控制複雜 UI 行為都至關重要。</li>
+</ul>
+<p>當我們需要知道「使用者點了哪個子元素」時，請使用 <code>e.target</code>。當我們需要確保「正在處理事件的元素本身」時，請使用 <code>e.currentTarget</code>。</p>
+<p>掌握這個觀念，能讓我們在撰寫事件監聽邏輯時更精準，避免誤判來源，也能設計出更乾淨與可維護的程式碼。</p>
 
                 </div>
 
@@ -345,7 +349,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/12/21/learning-notes-git-command-intro-tutorial/" title="Git 指令學習筆記 | 學習筆記" rel="bookmark">Git 指令學習筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/04/learning-notes-git-flow-github-flow-intro-tutorial/" title="Git Flow 介紹與 GitHub Flow 介紹入門教學筆記 | 學習筆記" rel="bookmark">Git Flow 介紹與 GitHub Flow 介紹入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/12/21/learning-notes-event-target-event-current-target-intro-tutorial/" title="事件物件屬性 e.target 與 e.currentTarget 的差異與應用 | 學習筆記" rel="bookmark">事件物件屬性 e.target 與 e.currentTarget 的差異與應用 | 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/12/21/learning-notes-git-command-intro-tutorial/" title="Git 指令學習筆記 | 學習筆記" rel="bookmark">Git 指令學習筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2023/12/21/learning-notes-git-intro-tutorial/" title="Git 入門教學筆記：從零開始學版本控制 | 學習筆記" rel="bookmark">Git 入門教學筆記：從零開始學版本控制 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -381,8 +385,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2023/12/21/learning-notes-git-intro-tutorial/";
-    var disqus_url = "https://tech.kdchang.net/2023/12/21/learning-notes-git-intro-tutorial/";
+    var disqus_identifier = "https://tech.kdchang.net/2023/12/21/learning-notes-event-target-event-current-target-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2023/12/21/learning-notes-event-target-event-current-target-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

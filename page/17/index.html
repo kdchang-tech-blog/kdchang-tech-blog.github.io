@@ -221,6 +221,31 @@
 
 <div class="post-preview">
 
+    <a href="/2021/01/16/learning-notes-javascript-this-intro-tutorial/">
+        <h2 class="post-title">
+            JavaScript this 入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            在 JavaScript 中，this 是一個關鍵字，它的值會根據執行環境的不同而改變。以下是 this 在不同情境下的行為：
+
+1. 全域環境 (Global Context)在瀏覽器中，this 預設指向 window 物件：
+console.log(this); // 在瀏覽器中，this 指向 window
+在 Node.js 環境下，this 則指向 global：
+console......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2021-01-16
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2021/01/16/learning-notes-javascript-var-closure/">
         <h2 class="post-title">
             JavaScript var 閉包（Closure）入門教學筆記 | 學習筆記
@@ -430,27 +455,6 @@ paragraph
         
         <div class="post-content-preview">
             前言在 JavaScript 開發中，ES Modules (ESM) 已成為標準。從 Node.js 12 開始，ESM 已獲得原生支援，而前端開發（如 React、Vue、Svelte 等框架）早已全面採用 ES Module。然而，當我們使用 Jest 來撰寫與執行測試時，若要直接使用 ES Module，會遇到一些設定上的挑戰。本篇筆記將說明如何在專案中讓 Jest 正確執行 ES ......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2018-02-01
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2018/02/01/learning-notes-jest-unit-test-aaa-intro-tutorial/">
-        <h2 class="post-title">
-            Jest AAA 測試原則入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            範例測試：saveMoney 方法atm.js：
-class ATM &#123;  constructor(balance) &#123;    this.balance = balance;  &#125;  saveMoney(amount) &#123;    if (amount &lt;= 0) &#123;      throw new Error(&#x27;Amount m......
         </div>
     </a>
     <p class="post-meta">
