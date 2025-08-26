@@ -4,8 +4,8 @@
 
 # Site
 title: KD's Tech Blog
-subtitle: 軟體工程和產品專案管理現場，紀錄關於軟體開發/程式設計/工程思維的技術筆記
-author: 張凱迪（KD Chang）
+subtitle: 軟體工程和產品專案管理現場觀察：關於軟體開發/程式設計/工程思維的技術部落格
+author: KD Chang 張凱迪
 language:
   - zh-TW
   - en
@@ -26,7 +26,7 @@ pretty_urls:
 SEOTitle: KD's Tech Blog 技術部落格 | KD Chang 張凱迪
 header-img: img/cover.jpg
 email: kdchang.net@gmail.com
-description: "KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發、程式設計和產品專案管理技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計、產品專案管理、職涯發展和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！"
+description: "KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發、程式設計、技術管理和產品專案管理技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計、產品專案管理、職涯發展和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！"
 keyword: "軟體工程, 程式設計, 程式開發, frontend, backend, web, software, software engineer, JavaScript, Python"
 
 
