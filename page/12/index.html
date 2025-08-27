@@ -119,14 +119,14 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/books/">Books</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/books/">Books</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -218,26 +218,6 @@
             ">
                 <!-- Main Content -->
 
-
-<div class="post-preview">
-
-    <a href="/2024/01/03/learning-notes-w3schools-react-render-html-intro-tutorial/">
-        <h2 class="post-title">
-            React Render HTML 入門教學 | w3schools 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言React 是一個專門用於構建使用者介面（UI）的 JavaScript 函式庫，其主要目標就是將 HTML 呈現在網頁中。透過 React 的核心函式 createRoot() 和方法 render()，開發者可以將 UI 元件渲染到指定的 HTML 元素中。本文將介紹 React 如何在網頁上渲染 HTML，包括核心函式與方法的用途、應用位置與語法示範，並介紹與 JSX 語法的結合使......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2024-01-03
-    </p>
-
-</div>
-<hr>
 
 <div class="post-preview">
 
@@ -438,6 +418,34 @@ JWT 本身就包含用戶資訊與簽名，不需要在伺服器端儲存 sessio
 使用者輸入帳密登入，發送 /login 請求。
 
 伺服器簽發兩種 tok......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2023-12-21
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2023/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial copy/">
+        <h2 class="post-title">
+            JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            一、JWT 基本安全策略1. 使用強密鑰（Secret）或非對稱加密
+對稱加密：使用 HS256 時，secret 應具備高強度（建議 256-bit 以上）。
+非對稱加密：使用 RS256 時，私鑰與公鑰分離，便於服務間驗證。
+
+2. 設定有效期限（exp）
+Access Token 建議設為 短效（10~30 分鐘）。
+避免永久有效的 Token，防止被盜用後長期濫用。
+
+3. 限制 T......
         </div>
     </a>
     <p class="post-meta">
