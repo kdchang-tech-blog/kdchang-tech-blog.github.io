@@ -6,7 +6,7 @@
   <link href="https://tech.kdchang.net/atom.xml" rel="self"/>
   
   <link href="https://tech.kdchang.net/"/>
-  <updated>2025-08-27T10:22:24.459Z</updated>
+  <updated>2025-08-28T09:54:07.953Z</updated>
   <id>https://tech.kdchang.net/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://tech.kdchang.net/2025/02/23/learning-notes-django-flask-fastapi-throughput-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2025/02/23/learning-notes-django-flask-fastapi-throughput-intro-tutorial/</id>
     <published>2025-02-23T18:23:41.000Z</published>
-    <updated>2025-08-27T10:22:24.459Z</updated>
+    <updated>2025-08-28T09:54:07.953Z</updated>
     
     
       
@@ -54,7 +54,7 @@
     <link href="https://tech.kdchang.net/2025/02/20/learning-notes-roo-code-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2025/02/20/learning-notes-roo-code-intro-tutorial/</id>
     <published>2025-02-20T03:33:41.000Z</published>
-    <updated>2025-08-27T10:22:24.463Z</updated>
+    <updated>2025-08-28T09:54:07.958Z</updated>
     
     
       
@@ -81,7 +81,7 @@
     <link href="https://tech.kdchang.net/2025/02/08/learning-notes-12-factor-cloud-app-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2025/02/08/learning-notes-12-factor-cloud-app-intro-tutorial/</id>
     <published>2025-02-08T18:23:41.000Z</published>
-    <updated>2025-08-27T10:22:24.458Z</updated>
+    <updated>2025-08-28T09:54:07.952Z</updated>
     
     
       
@@ -108,11 +108,48 @@
   </entry>
   
   <entry>
+    <title>EventSource API in JavaScript 入門教學筆記 | 學習筆記</title>
+    <link href="https://tech.kdchang.net/2025/02/02/learning-notes-event-source-api-intro-tutorial/"/>
+    <id>https://tech.kdchang.net/2025/02/02/learning-notes-event-source-api-intro-tutorial/</id>
+    <published>2025-02-02T18:23:41.000Z</published>
+    <updated>2025-08-28T09:54:07.954Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="前端" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端開發" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
+    
+    <category term="前端工程" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+    
+    <category term="frontend" scheme="https://tech.kdchang.net/tags/frontend/"/>
+    
+    <category term="frontend engineer" scheme="https://tech.kdchang.net/tags/frontend-engineer/"/>
+    
+    <category term="CSS" scheme="https://tech.kdchang.net/tags/CSS/"/>
+    
+    <category term="SSE" scheme="https://tech.kdchang.net/tags/SSE/"/>
+    
+    <category term="EventSource" scheme="https://tech.kdchang.net/tags/EventSource/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Server-Sent Events（SSE）入門教學筆記 | 學習筆記</title>
     <link href="https://tech.kdchang.net/2025/01/30/learning-notes-git-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2025/01/30/learning-notes-git-intro-tutorial%20copy/</id>
     <published>2025-01-30T03:33:41.000Z</published>
-    <updated>2025-08-27T10:22:24.460Z</updated>
+    <updated>2025-08-28T09:54:07.954Z</updated>
     
     
       
@@ -139,7 +176,7 @@
     <link href="https://tech.kdchang.net/2025/01/13/learning-notes-frontend-i18n-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2025/01/13/learning-notes-frontend-i18n-intro-tutorial%20copy/</id>
     <published>2025-01-13T18:23:41.000Z</published>
-    <updated>2025-08-27T10:22:24.459Z</updated>
+    <updated>2025-08-28T09:54:07.954Z</updated>
     
     
       
@@ -166,7 +203,7 @@
     <link href="https://tech.kdchang.net/2024/12/31/learning-notes-micro-frontend-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/31/learning-notes-micro-frontend-intro-tutorial/</id>
     <published>2024-12-31T03:33:41.000Z</published>
-    <updated>2025-08-27T10:22:24.462Z</updated>
+    <updated>2025-08-28T09:54:07.956Z</updated>
     
     
       
@@ -199,7 +236,7 @@
     <link href="https://tech.kdchang.net/2024/12/26/learning-notes-react-lazy-loading-code-splitting-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/26/learning-notes-react-lazy-loading-code-splitting-intro-tutorial/</id>
     <published>2024-12-26T18:23:41.000Z</published>
-    <updated>2025-08-27T10:22:24.463Z</updated>
+    <updated>2025-08-28T09:54:07.957Z</updated>
     
     
       
@@ -226,7 +263,7 @@
     <link href="https://tech.kdchang.net/2024/12/25/learning-notes-react-performance-optimization-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/25/learning-notes-react-performance-optimization-intro-tutorial/</id>
     <published>2024-12-25T18:23:41.000Z</published>
-    <updated>2025-08-27T10:22:24.463Z</updated>
+    <updated>2025-08-28T09:54:07.957Z</updated>
     
     
       
@@ -253,7 +290,7 @@
     <link href="https://tech.kdchang.net/2024/12/24/learning-notes-react-performance-optimization-sop-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/24/learning-notes-react-performance-optimization-sop-intro-tutorial/</id>
     <published>2024-12-24T18:23:41.000Z</published>
-    <updated>2025-08-27T10:22:24.463Z</updated>
+    <updated>2025-08-28T09:54:07.957Z</updated>
     
     
       
@@ -280,7 +317,7 @@
     <link href="https://tech.kdchang.net/2024/12/23/learning-notes-lang-graph-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/23/learning-notes-lang-graph-intro-tutorial/</id>
     <published>2024-12-23T18:23:41.000Z</published>
-    <updated>2025-08-27T10:22:24.461Z</updated>
+    <updated>2025-08-28T09:54:07.956Z</updated>
     
     
       
@@ -311,7 +348,7 @@
     <link href="https://tech.kdchang.net/2024/12/23/learning-notes-useswr-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/23/learning-notes-useswr-intro-tutorial/</id>
     <published>2024-12-23T18:23:41.000Z</published>
-    <updated>2025-08-27T10:22:24.464Z</updated>
+    <updated>2025-08-28T09:54:07.958Z</updated>
     
     
       
@@ -346,7 +383,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-javascript-optional-chaining-intro-tutorial%20copy/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-08-27T10:22:24.461Z</updated>
+    <updated>2025-08-28T09:54:07.955Z</updated>
     
     
       
@@ -379,7 +416,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-nextauth-js-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-nextauth-js-intro-tutorial/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-08-27T10:22:24.462Z</updated>
+    <updated>2025-08-28T09:54:07.956Z</updated>
     
     
       
@@ -404,7 +441,7 @@
     <link href="https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/21/learning-notes-react-context-api-intro-tutorial/</id>
     <published>2024-12-21T03:33:41.000Z</published>
-    <updated>2025-08-27T10:22:24.463Z</updated>
+    <updated>2025-08-28T09:54:07.957Z</updated>
     
     
       
@@ -445,7 +482,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-08-27T10:22:24.458Z</updated>
+    <updated>2025-08-28T09:54:07.952Z</updated>
     
     
       
@@ -470,7 +507,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-local-storage-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-chrome-extension-local-storage-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-08-27T10:22:24.458Z</updated>
+    <updated>2025-08-28T09:54:07.952Z</updated>
     
     
       
@@ -499,7 +536,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-claude-code-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-claude-code-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-08-27T10:22:24.458Z</updated>
+    <updated>2025-08-28T09:54:07.952Z</updated>
     
     
       
@@ -528,7 +565,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-github-copilot-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-github-copilot-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-08-27T10:22:24.460Z</updated>
+    <updated>2025-08-28T09:54:07.954Z</updated>
     
     
       
@@ -559,7 +596,7 @@
     <link href="https://tech.kdchang.net/2024/12/20/learning-notes-n8n-intro-tutorial/"/>
     <id>https://tech.kdchang.net/2024/12/20/learning-notes-n8n-intro-tutorial/</id>
     <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-08-27T10:22:24.462Z</updated>
+    <updated>2025-08-28T09:54:07.956Z</updated>
     
     
       
@@ -578,47 +615,6 @@
     <category term="n8n" scheme="https://tech.kdchang.net/tags/n8n/"/>
     
     <category term="工作流程自動化工具" scheme="https://tech.kdchang.net/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E8%87%AA%E5%8B%95%E5%8C%96%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React useMemo 與 useCallback 差異介紹與入門教學 | 學習筆記</title>
-    <link href="https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/"/>
-    <id>https://tech.kdchang.net/2024/12/20/learning-notes-react-use-callback-use-memo-intro-tutorial/</id>
-    <published>2024-12-20T03:33:41.000Z</published>
-    <updated>2025-08-27T10:22:24.463Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;在使用 React hooks 進行開發時，&lt;code&gt;useMemo&lt;/code&gt; 和 &lt;code&gt;useCallback&lt;/code&gt;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="javascript" scheme="https://tech.kdchang.net/tags/javascript/"/>
-    
-    <category term="前端" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="前端開發" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/"/>
-    
-    <category term="前端工程" scheme="https://tech.kdchang.net/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
-    
-    <category term="frontend" scheme="https://tech.kdchang.net/tags/frontend/"/>
-    
-    <category term="React" scheme="https://tech.kdchang.net/tags/React/"/>
-    
-    <category term="React.js" scheme="https://tech.kdchang.net/tags/React-js/"/>
-    
-    <category term="ReactJS" scheme="https://tech.kdchang.net/tags/ReactJS/"/>
-    
-    <category term="useMemo" scheme="https://tech.kdchang.net/tags/useMemo/"/>
-    
-    <category term="useCallback" scheme="https://tech.kdchang.net/tags/useCallback/"/>
     
   </entry>
   

@@ -26,11 +26,11 @@
     
     <title>
         
-          React List 入門教學 | w3schools 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+          EventSource API in JavaScript 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
         
     </title>
 
-    <link rel="canonical" href="https://tech.kdchang.net/2024/01/09/learning-notes-w3schools-react-list-intro-tutorial/">
+    <link rel="canonical" href="https://tech.kdchang.net/2025/02/02/learning-notes-event-source-api-intro-tutorial/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -53,8 +53,8 @@
     <!-- og tag -->
     <meta name="generator" content="KD's Tech Blog">
     
-      <meta name="og:title" content="React List 入門教學 | w3schools 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
-      <meta name="og:site_name" content="React List 入門教學 | w3schools 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:title" content="EventSource API in JavaScript 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="EventSource API in JavaScript 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
     
     
       <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發、程式設計、技術管理和產品專案管理技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計、產品專案管理、職涯發展和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
@@ -199,10 +199,10 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
-                    <h1>React List 入門教學 | w3schools 學習筆記</h1>
+                    <h1>EventSource API in JavaScript 入門教學筆記 | 學習筆記</h1>
                     <span class="meta">
                         Posted by kdchang on
-                        2024-01-09
+                        2025-02-02
                     </span>
                     <br>
                     <div class="tags">
@@ -217,11 +217,11 @@
                         
                           <a class="tag" href="/tags/#frontend engineer" title="frontend engineer">frontend engineer</a>
                         
-                          <a class="tag" href="/tags/#React" title="React">React</a>
+                          <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
                         
-                          <a class="tag" href="/tags/#Next.js" title="Next.js">Next.js</a>
+                          <a class="tag" href="/tags/#SSE" title="SSE">SSE</a>
                         
-                          <a class="tag" href="/tags/#React Hooks" title="React Hooks">React Hooks</a>
+                          <a class="tag" href="/tags/#EventSource" title="EventSource">EventSource</a>
                         
 
                     </div>
@@ -247,17 +247,68 @@
                 </div>
                 <br>
                 <div>
-                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>React 是一個用於建立 UI 組件的 JavaScript 函式庫，而 JSX 則是 React 中的重要語法擴充。前一章我們已學會如何使用 JSX 編寫 React 介面，本文將進一步說明 React 元件（Components）、props、事件處理（Events）、條件渲染（Conditional Rendering）與列表渲染（Lists）的基本觀念與應用，協助讀者掌握建立互動式介面的核心技巧。</p>
-<h2 id="渲染列表與使用-key"><a href="#渲染列表與使用-key" class="headerlink" title="渲染列表與使用 key"></a>渲染列表與使用 key</h2><p>基本列表渲染：</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Car</span>(<span class="params">props</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>I am a &#123;props.brand&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Garage</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> cars = [<span class="string">&#x27;Ford&#x27;</span>, <span class="string">&#x27;BMW&#x27;</span>, <span class="string">&#x27;Audi&#x27;</span>];</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Who lives in my garage?<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;cars.map((car) =&gt; (</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">Car</span> <span class="attr">brand</span>=<span class="string">&#123;car&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        ))&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>加上 key 改寫版本：</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Car</span>(<span class="params">props</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>I am a &#123;props.brand&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Garage</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> cars = [</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">brand</span>: <span class="string">&#x27;Ford&#x27;</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">brand</span>: <span class="string">&#x27;BMW&#x27;</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">brand</span>: <span class="string">&#x27;Audi&#x27;</span> &#125;,</span><br><span class="line">  ];</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Who lives in my garage?<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;cars.map((car) =&gt; (</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">Car</span> <span class="attr">key</span>=<span class="string">&#123;car.id&#125;</span> <span class="attr">brand</span>=<span class="string">&#123;car.brand&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        ))&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>結論<br>React 提供了彈性而強大的組件機制，透過 props 傳遞資料、事件處理強化互動、條件與列表渲染控制顯示邏輯，讓開發者可以有效建立模組化與資料驅動的使用者介面。熟悉這些基本觀念，將為深入理解 React 的狀態管理與 hooks 打下堅實基礎。</p>
-<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://www.w3schools.com/react/react_customhooks.asp">React Custom Hooks</a></li>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在現代的網頁應用程式中，實時性資料更新是一個常見需求，例如即時通知、股價更新、聊天室訊息、伺服器狀態監控等。傳統上，開發者可能會透過輪詢（Polling）或 WebSocket 來實現。然而，若只是單向由伺服器推送訊息到瀏覽器端，其實有更簡單且高效的選擇：<strong>EventSource API</strong>。</p>
+<p>EventSource 基於 <strong>Server-Sent Events（SSE）</strong>，由伺服器主動推送文字資料到客戶端，並且使用 <strong>HTTP 協議的持久連線</strong>，開發上比 WebSocket 更簡單，適合事件流的場景。本文將帶我們快速入門 EventSource API，理解它的特性與應用方式。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ol>
+<li><p><strong>EventSource 與 SSE 的核心概念</strong></p>
+<ul>
+<li>EventSource 是瀏覽器提供的 JavaScript API，用於接收伺服器推送的 SSE（Server-Sent Events）。</li>
+<li>採用 <strong>HTTP 長連線</strong>，不需要 WebSocket，也不需要額外協議。</li>
+<li>支援自動重連（瀏覽器會自動在連線中斷時重新連接伺服器）。</li>
+</ul>
+</li>
+<li><p><strong>EventSource 的適用場景</strong></p>
+<ul>
+<li>即時通知（系統提醒、訊息推送）</li>
+<li>資料更新（股價、天氣、賽事比分）</li>
+<li>記錄串流（伺服器日誌、事件追蹤）</li>
+<li>聊天室訊息（單向推送）</li>
+</ul>
+</li>
+<li><p><strong>EventSource 的特性</strong></p>
+<ul>
+<li>單向通訊：伺服器 → 客戶端</li>
+<li>自動重連機制（可透過伺服器端 <code>retry:</code> 指令調整重試時間）</li>
+<li>基於純文字的事件格式（MIME type 為 <code>text/event-stream</code>）</li>
+<li>可透過自訂事件名稱分發不同事件</li>
+</ul>
+</li>
+<li><p><strong>與其他技術比較</strong></p>
+<ul>
+<li><strong>Polling</strong>：需要客戶端頻繁請求，耗費頻寬與伺服器資源。</li>
+<li><strong>WebSocket</strong>：雙向溝通更靈活，但需要額外處理協議與狀態管理。</li>
+<li><strong>EventSource（SSE）</strong>：單向推送即可，實作簡單、輕量化，適合多數即時通知場景。</li>
+</ul>
+</li>
 </ol>
+<hr>
+<h2 id="EventSource-使用範例"><a href="#EventSource-使用範例" class="headerlink" title="EventSource 使用範例"></a>EventSource 使用範例</h2><h3 id="1-瀏覽器端（JavaScript）"><a href="#1-瀏覽器端（JavaScript）" class="headerlink" title="1. 瀏覽器端（JavaScript）"></a>1. 瀏覽器端（JavaScript）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 建立 EventSource 連線</span></span><br><span class="line"><span class="keyword">const</span> eventSource = <span class="keyword">new</span> <span class="title class_">EventSource</span>(<span class="string">&#x27;/events&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 接收預設訊息（message 事件）</span></span><br><span class="line">eventSource.<span class="property">onmessage</span> = <span class="keyword">function</span> (<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;收到訊息:&#x27;</span>, event.<span class="property">data</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 接收自訂事件</span></span><br><span class="line">eventSource.<span class="title function_">addEventListener</span>(<span class="string">&#x27;news&#x27;</span>, <span class="keyword">function</span> (<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;收到新聞事件:&#x27;</span>, event.<span class="property">data</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 監控錯誤與連線狀態</span></span><br><span class="line">eventSource.<span class="property">onerror</span> = <span class="keyword">function</span> (<span class="params">error</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;EventSource 發生錯誤:&#x27;</span>, error);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-伺服器端（Node-js-Express-範例）"><a href="#2-伺服器端（Node-js-Express-範例）" class="headerlink" title="2. 伺服器端（Node.js Express 範例）"></a>2. 伺服器端（Node.js Express 範例）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/events&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 設定 SSE 必要的 Header</span></span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/event-stream&#x27;</span>);</span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Cache-Control&#x27;</span>, <span class="string">&#x27;no-cache&#x27;</span>);</span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Connection&#x27;</span>, <span class="string">&#x27;keep-alive&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 每隔 3 秒推送一個訊息</span></span><br><span class="line">  <span class="keyword">const</span> intervalId = <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">toLocaleTimeString</span>();</span><br><span class="line">    res.<span class="title function_">write</span>(<span class="string">`data: 現在時間 <span class="subst">$&#123;data&#125;</span>\n\n`</span>);</span><br><span class="line">  &#125;, <span class="number">3000</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 當客戶端中斷連線時清理資源</span></span><br><span class="line">  req.<span class="title function_">on</span>(<span class="string">&#x27;close&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">clearInterval</span>(intervalId);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">3000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;SSE 伺服器運行於 http://localhost:3000/events&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-SSE-資料格式範例"><a href="#3-SSE-資料格式範例" class="headerlink" title="3. SSE 資料格式範例"></a>3. SSE 資料格式範例</h3><p>伺服器回傳的資料需符合 <code>text/event-stream</code> 格式，每筆訊息以兩個換行結尾。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">data: 這是一個預設訊息</span><br><span class="line"></span><br><span class="line">event: news</span><br><span class="line">data: 這是一個新聞更新</span><br><span class="line"></span><br><span class="line">event: alert</span><br><span class="line">data: 系統警告訊息</span><br><span class="line">retry: 5000</span><br></pre></td></tr></table></figure>
+
+<p>說明：</p>
+<ul>
+<li><code>data:</code>：主要訊息內容，可以有多行。</li>
+<li><code>event:</code>：指定自訂事件名稱，客戶端可用 <code>addEventListener</code> 監聽。</li>
+<li><code>retry:</code>：定義自動重連的延遲時間（毫秒）。</li>
+</ul>
+<hr>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><ol>
+<li><strong>瀏覽器支援性</strong>：大部分現代瀏覽器支援 EventSource（IE 除外）。</li>
+<li><strong>跨域問題</strong>：若伺服器與前端不同網域，需設定 CORS。</li>
+<li><strong>資料格式</strong>：僅支援 UTF-8 文字資料，若要傳送二進位資料需轉成 Base64 或 JSON。</li>
+<li><strong>連線數限制</strong>：部分瀏覽器對同一網域的 SSE 連線數有限制（通常 6 條）。</li>
+<li><strong>斷線重連</strong>：內建自動重連機制，但若伺服器返回錯誤狀態碼，可能需手動處理。</li>
+</ol>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>EventSource API 提供了一個簡單又高效的方式，讓前端應用程式能夠輕鬆接收伺服器的即時推送。相較於 WebSocket，EventSource 不需要額外的協議處理，也避免了頻繁輪詢帶來的效能浪費。在僅需單向資料更新的場景下，它是一個理想解決方案。</p>
+<p>當我們下次需要在前端實現即時通知、動態更新數據或流式資料顯示時，不妨先考慮 EventSource，它或許就是最輕量的選擇。</p>
 
                 </div>
 
@@ -274,7 +325,7 @@
                 <div>
                     <h3>Related Posts</h3>
                     <div>
-                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/01/learning-notes-w3schools-react-basic-intro-tutorial/" title="React 入門教學 | w3schools 學習筆記" rel="bookmark">React 入門教學 | w3schools 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/05/learning-notes-w3schools-react-components-intro-tutorial/" title="React Components 入門教學 | w3schools 學習筆記" rel="bookmark">React Components 入門教學 | w3schools 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/08/learning-notes-w3schools-react-conditional-rendering-intro-tutorial/" title="React 條件渲染入門教學 | w3schools 學習筆記" rel="bookmark">React 條件渲染入門教學 | w3schools 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/15/learning-notes-w3schools-react-css-sass-style-intro-tutorial/" title="在 React 中使用 Sass 進行樣式設計教學 | w3schools 學習筆記" rel="bookmark">在 React 中使用 Sass 進行樣式設計教學 | w3schools 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/01/14/learning-notes-w3schools-react-css-style-intro-tutorial/" title="React 中使用 CSS 的三種方式教學 | w3schools 學習筆記" rel="bookmark">React 中使用 CSS 的三種方式教學 | w3schools 學習筆記</a></h3></div></li></ul>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/30/learning-notes-emotion-css-intro-tutorial/" title="Emotion CSS 入門教學筆記 | 學習筆記" rel="bookmark">Emotion CSS 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/01/learning-notes-nuxtjs-intro-tutorial/" title="Nuxt.js 入門教學筆記 | 學習筆記" rel="bookmark">Nuxt.js 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/03/learning-notes-parallax-scrolling-intro-tutorial/" title="滾動視差（Parallax Scrolling）網頁設計入門教學筆記 | 學習筆記" rel="bookmark">滾動視差（Parallax Scrolling）網頁設計入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/30/learning-notes-tailwind-css-intro-tutorial/" title="Tailwind CSS 入門教學筆記 | 學習筆記" rel="bookmark">Tailwind CSS 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/12/02/learning-notes-typescript-intro-tutorial/" title="TypeScript 入門教學筆記 | 學習筆記" rel="bookmark">TypeScript 入門教學筆記 | 學習筆記</a></h3></div></li></ul>
                     </div>
                 </div>
                 <!-- Tags -->
@@ -310,8 +361,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "kdchang-tech-blog";
-    var disqus_identifier = "https://tech.kdchang.net/2024/01/09/learning-notes-w3schools-react-list-intro-tutorial/";
-    var disqus_url = "https://tech.kdchang.net/2024/01/09/learning-notes-w3schools-react-list-intro-tutorial/";
+    var disqus_identifier = "https://tech.kdchang.net/2025/02/02/learning-notes-event-source-api-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2025/02/02/learning-notes-event-source-api-intro-tutorial/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

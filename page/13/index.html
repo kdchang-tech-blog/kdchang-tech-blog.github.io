@@ -221,6 +221,34 @@
 
 <div class="post-preview">
 
+    <a href="/2023/12/21/learning-notes-jwt-security-refresh-token-intro-tutorial copy/">
+        <h2 class="post-title">
+            JWT 的實作安全策略與 Refresh Token 安全做法入門教學筆記 | 學習筆記
+        </h2>
+        <hr>
+        
+        <div class="post-content-preview">
+            一、JWT 基本安全策略1. 使用強密鑰（Secret）或非對稱加密
+對稱加密：使用 HS256 時，secret 應具備高強度（建議 256-bit 以上）。
+非對稱加密：使用 RS256 時，私鑰與公鑰分離，便於服務間驗證。
+
+2. 設定有效期限（exp）
+Access Token 建議設為 短效（10~30 分鐘）。
+避免永久有效的 Token，防止被盜用後長期濫用。
+
+3. 限制 T......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by kdchang on
+        2023-12-21
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2023/12/21/learning-notes-prisma-orm-intro-tutorial/">
         <h2 class="post-title">
             Prisma ORM 入門教學筆記 | 學習筆記
@@ -449,29 +477,6 @@ SASS 有兩種語法：
     <p class="post-meta">
         Posted by kdchang on
         2023-07-01
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/05/31/learning-notes-less-intro-tutorial/">
-        <h2 class="post-title">
-            LESS 入門教學筆記 | 學習筆記
-        </h2>
-        <hr>
-        
-        <div class="post-content-preview">
-            前言LESS（Leaner Style Sheets）是一種 CSS 預處理器，它在 CSS 的基礎上加入了變數、嵌套、混合（Mixins）、函式等功能，使樣式表的管理更加靈活且易於維護。LESS 文件最終會被編譯成標準的 CSS，並可在瀏覽器或 Node.js 環境中使用。
-
-1. 安裝與使用LESS 可以透過以下幾種方式使用：  
-1.1 透過 LESS.js 在瀏覽器中運行這種方式適合......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by kdchang on
-        2023-05-31
     </p>
 
 </div>
