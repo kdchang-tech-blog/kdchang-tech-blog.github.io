@@ -116,6 +116,21 @@
       </tags>
   </entry>
   <entry>
+    <title>30 Days of JavaScript 入門教學筆記 | 學習筆記</title>
+    <url>/2023/02/08/learning-notes-30-days-of-javascript-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="問題研討"><a href="#問題研討" class="headerlink" title="問題研討"></a>問題研討</h1><p>一、Closures</p>
+<p>二、Basic Array Transformations</p>
+<p>三、Function Transformations</p>
+<p>四、Promises and Time</p>
+<p>五、JSON</p>
+<p>六、Classes</p>
+]]></content>
+      <tags>
+        <tag>30 Days of JavaScript</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>12 Factor App 入門教學：打造現代雲端應用的十二守則教學筆記 | 學習筆記</title>
     <url>/2025/02/08/learning-notes-12-factor-cloud-app-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>12 Factor App</strong> 是由 Heroku 團隊提出的一套雲端應用架構設計原則，旨在幫助開發者打造可擴展、可維護、易部署的現代化應用程式。這些準則不限語言或框架，廣泛適用於各種 SaaS 應用、API 服務、微服務架構等場景。</p>
@@ -206,21 +221,6 @@
         <tag>SaaS</tag>
         <tag>API</tag>
         <tag>cloud</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>30 Days of JavaScript 入門教學筆記 | 學習筆記</title>
-    <url>/2023/02/08/learning-notes-30-days-of-javascript-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="問題研討"><a href="#問題研討" class="headerlink" title="問題研討"></a>問題研討</h1><p>一、Closures</p>
-<p>二、Basic Array Transformations</p>
-<p>三、Function Transformations</p>
-<p>四、Promises and Time</p>
-<p>五、JSON</p>
-<p>六、Classes</p>
-]]></content>
-      <tags>
-        <tag>30 Days of JavaScript</tag>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -1103,6 +1103,93 @@
       </tags>
   </entry>
   <entry>
+    <title>Cookie 入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/01/learning-notes-cookie-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Cookie 是一種儲存在使用者瀏覽器上的小型文字檔案，用於保存使用者的狀態或資訊。常見用途包含：</p>
+<p><strong>紀錄登入狀態</strong>：讓使用者在網站上保持登入，不需每次重新輸入帳號。<br><strong>使用者偏好設定</strong>：保存使用者選擇的語言、主題等個人化設定。<br><strong>追蹤使用者行為</strong>：例如分析網站流量、廣告投放追蹤等。</p>
+<h1 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h1><p>Cookie 依據不同的分類方式，可以分為以下幾種常見種類：</p>
+<h3 id="一、依用途分類："><a href="#一、依用途分類：" class="headerlink" title="一、依用途分類："></a>一、依用途分類：</h3><ol>
+<li><p><strong>功能性 Cookie（Functional Cookies）</strong>  </p>
+<ul>
+<li>主要用於提升網站使用體驗，例如記住使用者的登入狀態、語言設定、購物車內容等。</li>
+</ul>
+</li>
+<li><p><strong>必要性 Cookie（Strictly Necessary Cookies）</strong>  </p>
+<ul>
+<li>維持網站基本運作所需，例如登入認證、網頁導航等，通常無法被關閉。</li>
+</ul>
+</li>
+<li><p><strong>分析型 Cookie（Analytical&#x2F;Performance Cookies）</strong>  </p>
+<ul>
+<li>用於收集網站流量數據，分析使用者行為，幫助網站優化，例如 Google Analytics。</li>
+</ul>
+</li>
+<li><p><strong>廣告追蹤 Cookie（Advertising&#x2F;Targeting Cookies）</strong>  </p>
+<ul>
+<li>用於追蹤使用者瀏覽行為，以提供個人化廣告或推薦內容。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="二、依存放時間分類："><a href="#二、依存放時間分類：" class="headerlink" title="二、依存放時間分類："></a>二、依存放時間分類：</h3><ol>
+<li><p><strong>暫時性 Cookie（Session Cookies）</strong>  </p>
+<ul>
+<li>只在<code>使用者開啟網頁期間有效</code>，<code>關閉瀏覽器後即刪除</code>。</li>
+</ul>
+</li>
+<li><p><strong>永久性 Cookie（Persistent Cookies）</strong>  </p>
+<ul>
+<li>設定到期日期，存放於使用者裝置上，保存時間較長，即使關閉瀏覽器也不會刪除，<code>直到設定的到期日或手動刪除</code>。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="三、依來源分類："><a href="#三、依來源分類：" class="headerlink" title="三、依來源分類："></a>三、依來源分類：</h3><ol>
+<li><p><strong>第一方 Cookie（First-party Cookies）</strong>  </p>
+<ul>
+<li>由<code>使用者瀏覽的網站</code>所設定，通常用於<code>記錄該網站上的互動紀錄</code>。</li>
+</ul>
+</li>
+<li><p><strong>第三方 Cookie（Third-party Cookies）</strong>  </p>
+<ul>
+<li>由非該網站的<code>第三方</code>（如廣告商）設定，用於<code>跨網站追蹤使用者行為</code>，以<code>推送廣告</code>等。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="四、特殊類型："><a href="#四、特殊類型：" class="headerlink" title="四、特殊類型："></a>四、特殊類型：</h3><ol>
+<li><p><strong>安全性 Cookie（Secure Cookies）</strong>  </p>
+<ul>
+<li>只能透過 <code>HTTPS</code> 傳輸，避免被攔截，主要保障敏感資料安全。</li>
+</ul>
+</li>
+<li><p><strong>HttpOnly Cookie</strong>  </p>
+<ul>
+<li>僅限伺服器端存取，JavaScript 無法讀取，用於防範 <code>XSS</code> 攻擊。</li>
+</ul>
+</li>
+<li><p><strong>SameSite Cookie</strong>  </p>
+<ul>
+<li>限制跨站請求攜帶 Cookie，減少 <code>CSRF</code> 攻擊風險，值可設為：</li>
+<li><code>Strict</code>：禁止跨站請求攜帶 Cookie。</li>
+<li><code>Lax</code>：部分允許，如從第三方網站點擊連結進來時可帶 Cookie。</li>
+<li><code>None</code>：允許跨站攜帶，但須配合 Secure。</li>
+</ul>
+</li>
+</ol>
+<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>這些分類會依需求搭配使用，例如一個「<code>必要性第一方暫時性 Cookie</code>」可能用於維護<code>登入和操作狀態</code>；一個「<code>第三方廣告追蹤永久性 Cookie</code>」則可能用於<code>跨網站顯示個人化廣告</code>。</p>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>cookie</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>前端渲染模式入門教學筆記：CSR、SSR、SSG、ISR、DPR | 學習筆記</title>
     <url>/2024/12/12/learning-notes-csr-ssr-ssg-isr-dpr-intro-tutorial%20copy/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>隨著前端框架如 React、Vue、Next.js、Nuxt 的普及，網站渲染方式也變得更加多樣化。不再只是單純地將 HTML 靜態輸出，開發者可依據產品需求選擇合適的渲染模式，如 CSR（Client Side Rendering）、SSR（Server Side Rendering）、SSG（Static Site Generation）、ISR（Incremental Static Regeneration）和 DPR（Distributed Persistent Rendering）。這些策略在效能、SEO、使用者體驗與部署維運上各有優劣。</p>
@@ -1285,93 +1372,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Cookie 入門教學筆記 | 學習筆記</title>
-    <url>/2024/11/01/learning-notes-cookie-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Cookie 是一種儲存在使用者瀏覽器上的小型文字檔案，用於保存使用者的狀態或資訊。常見用途包含：</p>
-<p><strong>紀錄登入狀態</strong>：讓使用者在網站上保持登入，不需每次重新輸入帳號。<br><strong>使用者偏好設定</strong>：保存使用者選擇的語言、主題等個人化設定。<br><strong>追蹤使用者行為</strong>：例如分析網站流量、廣告投放追蹤等。</p>
-<h1 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h1><p>Cookie 依據不同的分類方式，可以分為以下幾種常見種類：</p>
-<h3 id="一、依用途分類："><a href="#一、依用途分類：" class="headerlink" title="一、依用途分類："></a>一、依用途分類：</h3><ol>
-<li><p><strong>功能性 Cookie（Functional Cookies）</strong>  </p>
-<ul>
-<li>主要用於提升網站使用體驗，例如記住使用者的登入狀態、語言設定、購物車內容等。</li>
-</ul>
-</li>
-<li><p><strong>必要性 Cookie（Strictly Necessary Cookies）</strong>  </p>
-<ul>
-<li>維持網站基本運作所需，例如登入認證、網頁導航等，通常無法被關閉。</li>
-</ul>
-</li>
-<li><p><strong>分析型 Cookie（Analytical&#x2F;Performance Cookies）</strong>  </p>
-<ul>
-<li>用於收集網站流量數據，分析使用者行為，幫助網站優化，例如 Google Analytics。</li>
-</ul>
-</li>
-<li><p><strong>廣告追蹤 Cookie（Advertising&#x2F;Targeting Cookies）</strong>  </p>
-<ul>
-<li>用於追蹤使用者瀏覽行為，以提供個人化廣告或推薦內容。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="二、依存放時間分類："><a href="#二、依存放時間分類：" class="headerlink" title="二、依存放時間分類："></a>二、依存放時間分類：</h3><ol>
-<li><p><strong>暫時性 Cookie（Session Cookies）</strong>  </p>
-<ul>
-<li>只在<code>使用者開啟網頁期間有效</code>，<code>關閉瀏覽器後即刪除</code>。</li>
-</ul>
-</li>
-<li><p><strong>永久性 Cookie（Persistent Cookies）</strong>  </p>
-<ul>
-<li>設定到期日期，存放於使用者裝置上，保存時間較長，即使關閉瀏覽器也不會刪除，<code>直到設定的到期日或手動刪除</code>。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="三、依來源分類："><a href="#三、依來源分類：" class="headerlink" title="三、依來源分類："></a>三、依來源分類：</h3><ol>
-<li><p><strong>第一方 Cookie（First-party Cookies）</strong>  </p>
-<ul>
-<li>由<code>使用者瀏覽的網站</code>所設定，通常用於<code>記錄該網站上的互動紀錄</code>。</li>
-</ul>
-</li>
-<li><p><strong>第三方 Cookie（Third-party Cookies）</strong>  </p>
-<ul>
-<li>由非該網站的<code>第三方</code>（如廣告商）設定，用於<code>跨網站追蹤使用者行為</code>，以<code>推送廣告</code>等。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="四、特殊類型："><a href="#四、特殊類型：" class="headerlink" title="四、特殊類型："></a>四、特殊類型：</h3><ol>
-<li><p><strong>安全性 Cookie（Secure Cookies）</strong>  </p>
-<ul>
-<li>只能透過 <code>HTTPS</code> 傳輸，避免被攔截，主要保障敏感資料安全。</li>
-</ul>
-</li>
-<li><p><strong>HttpOnly Cookie</strong>  </p>
-<ul>
-<li>僅限伺服器端存取，JavaScript 無法讀取，用於防範 <code>XSS</code> 攻擊。</li>
-</ul>
-</li>
-<li><p><strong>SameSite Cookie</strong>  </p>
-<ul>
-<li>限制跨站請求攜帶 Cookie，減少 <code>CSRF</code> 攻擊風險，值可設為：</li>
-<li><code>Strict</code>：禁止跨站請求攜帶 Cookie。</li>
-<li><code>Lax</code>：部分允許，如從第三方網站點擊連結進來時可帶 Cookie。</li>
-<li><code>None</code>：允許跨站攜帶，但須配合 Secure。</li>
-</ul>
-</li>
-</ol>
-<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p>這些分類會依需求搭配使用，例如一個「<code>必要性第一方暫時性 Cookie</code>」可能用於維護<code>登入和操作狀態</code>；一個「<code>第三方廣告追蹤永久性 Cookie</code>」則可能用於<code>跨網站顯示個人化廣告</code>。</p>
-]]></content>
-      <tags>
-        <tag>javascript</tag>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>cookie</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS Animation 入門教學筆記 | 學習筆記</title>
     <url>/2024/11/16/learning-notes-css-animation-intro-tutorial/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在現代網頁開發中，動畫是一種強而有力的表現手法，能提升使用者體驗，使介面更加生動、有趣。相比 JavaScript，CSS Animation 提供一種更簡潔、性能更佳的動畫解法，尤其適合製作 UI 中的小型動畫效果。</p>
@@ -1463,173 +1463,6 @@
         <tag>Animation</tag>
         <tag>transition</tag>
         <tag>transform</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Flexbox Froggy 入門教學筆記 | 學習筆記</title>
-    <url>/2024/07/10/learning-notes-css-flexbox-froggy-tutorial/</url>
-    <content><![CDATA[<h1 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h1><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
-<p>Flexbox Froggy 透過小青蛙過河遊戲化方式去介紹 Flexbox 使用方式：</p>
-<h2 id="Level-1"><a href="#Level-1" class="headerlink" title="Level 1"></a>Level 1</h2><p>Welcome to Flexbox Froggy, a game where you help Froggy and friends by writing CSS code! Guide this frog to the lilypad on the right by using the justify-content property, which aligns items horizontally and accepts the following values:</p>
-<p>flex-start: Items align to the left side of the container.<br>flex-end: Items align to the right side of the container.<br>center: Items align at the center of the container.<br>space-between: Items display with equal spacing between them.<br>space-around: Items display with equal spacing around them.<br>For example, justify-content: flex-end; will move the frog to the right. </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-2"><a href="#Level-2" class="headerlink" title="Level 2"></a>Level 2</h2><p>Use justify-content again to help these frogs get to their lilypads. Remember that this CSS property aligns items horizontally and accepts the following values:</p>
-<p><code>flex-start</code>: Items align to the left side of the container.<br><code>flex-end</code>: Items align to the right side of the container.<br><code>center</code>: Items align at the center of the container.<br><code>space-between</code>: Items display with equal spacing between them.<br><code>space-around</code>: Items display with equal spacing around them.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-3"><a href="#Level-3" class="headerlink" title="Level 3"></a>Level 3</h2><p>Help all three frogs find their lilypads just by using justify-content. This time, the lilypads have lots of space all around them.</p>
-<p>If you find yourself forgetting the possible values for a property, you can click on the property name to view them. Try clicking on justify-content.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-around;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-4"><a href="#Level-4" class="headerlink" title="Level 4"></a>Level 4</h2><p>Now the lilypads on the edges have drifted to the shore, increasing the space between them. Use justify-content. This time, the lilypads have equal spacing between them.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-5"><a href="#Level-5" class="headerlink" title="Level 5"></a>Level 5</h2><p>Now use align-items to help the frogs get to the bottom of the pond. This CSS property aligns items vertically and accepts the following values:</p>
-<p><code>flex-start</code>: Items align to the top of the container.<br><code>flex-end</code>: Items align to the bottom of the container.<br><code>center</code>: Items align at the vertical center of the container.<br><code>baseline</code>: Items display at the baseline of the container.<br><code>stretch</code>: Items are stretched to fit the container.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-6"><a href="#Level-6" class="headerlink" title="Level 6"></a>Level 6</h2><p>Lead the frog to the center of the pond using a combination of justify-content and align-items.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-7"><a href="#Level-7" class="headerlink" title="Level 7"></a>Level 7</h2><p>The frogs need to cross the pond again, this time for some lilypads with plenty of space around them. Use a combination of justify-content and align-items.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-around;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-8"><a href="#Level-8" class="headerlink" title="Level 8"></a>Level 8</h2><p>The frogs need to get in the same order as their lilypads using flex-direction. This CSS property defines the direction items are placed in the container, and accepts the following values:</p>
-<p><code>row</code>: Items are placed the same as the text direction.<br><code>row-reverse</code>: Items are placed opposite to the text direction.<br><code>column</code>: Items are placed top to bottom.<br><code>column-reverse</code>: Items are placed bottom to top.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-9"><a href="#Level-9" class="headerlink" title="Level 9"></a>Level 9</h2><p>Help the frogs find their column of lilypads using flex-direction. This CSS property defines the direction items are placed in the container, and accepts the following values:</p>
-<p><code>row</code>: Items are placed the same as the text direction.<br><code>row-reverse</code>: Items are placed opposite to the text direction.<br><code>column</code>: Items are placed top to bottom.<br><code>column-reverse</code>: Items are placed bottom to top.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-10"><a href="#Level-10" class="headerlink" title="Level 10"></a>Level 10</h2><p>Help the frogs get to their own lilypads. Although they seem close, it will take both flex-direction and justify-content to get them there.</p>
-<p>Notice that when you set the direction to a reversed row or column, start and end are also reversed.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-11"><a href="#Level-11" class="headerlink" title="Level 11"></a>Level 11</h2><p>Help the frogs find their lilypads using flex-direction and justify-content.</p>
-<p>Notice that when the flex direction is a column, justify-content changes to the vertical and align-items to the horizontal.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-12"><a href="#Level-12" class="headerlink" title="Level 12"></a>Level 12</h2><p>Help the frogs find their lilypads using flex-direction and justify-content.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-13"><a href="#Level-13" class="headerlink" title="Level 13"></a>Level 13</h2><p>Help the frogs find their lilypads using flex-direction, justify-content, and align-items.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-14"><a href="#Level-14" class="headerlink" title="Level 14"></a>Level 14</h2><p>Sometimes reversing the row or column order of a container is not enough. In these cases, we can apply the order property to individual items. By default, items have a value of 0, but we can use this property to also set it to a positive or negative integer value <code>(-2, -1, 0, 1, 2)</code>.</p>
-<p>Use the order property to reorder the frogs according to their lilypads.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-15"><a href="#Level-15" class="headerlink" title="Level 15"></a>Level 15</h2><p>Use the order property to send the red frog to his lilypad.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.red</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-16"><a href="#Level-16" class="headerlink" title="Level 16"></a>Level 16</h2><p>Another property you can apply to individual items is align-self. This property accepts the same values as align-items and its value for the specific item.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">align-self</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-17"><a href="#Level-17" class="headerlink" title="Level 17"></a>Level 17</h2><p>Combine order with align-self to help the frogs to their destinations.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">align-self</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-18"><a href="#Level-18" class="headerlink" title="Level 18"></a>Level 18</h2><p>Oh no! The frogs are all squeezed onto a single row of lilypads. Spread them out using the flex-wrap property, which accepts the following values:</p>
-<p>nowrap: Every item is fit to a single line.<br>wrap: Items wrap around to additional lines.<br>wrap-reverse: Items wrap around to additional lines in reverse.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-19"><a href="#Level-19" class="headerlink" title="Level 19"></a>Level 19</h2><p>Help this army of frogs form three orderly columns using a combination of flex-direction and flex-wrap.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-20"><a href="#Level-20" class="headerlink" title="Level 20"></a>Level 20</h2><p>The two properties flex-direction and flex-wrap are used so often together that the shorthand property flex-flow was created to combine them. This shorthand property accepts the value of the two properties separated by a space.</p>
-<p>For example, you can use flex-flow: row wrap to set rows and wrap them.</p>
-<p>Try using flex-flow to repeat the previous level.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-flow</span>: column wrap</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-21"><a href="#Level-21" class="headerlink" title="Level 21"></a>Level 21</h2><p>The frogs are spread all over the pond, but the lilypads are bunched at the top. You can use align-content to set how multiple lines are spaced apart from each other. This property takes the following values:</p>
-<p><code>flex-start</code>: Lines are packed at the top of the container.<br><code>flex-end</code>: Lines are packed at the bottom of the container.<br><code>center</code>: Lines are packed at the vertical center of the container.<br><code>space-between</code>: Lines display with equal spacing between them.<br><code>space-around</code>: Lines display with equal spacing around them.<br><code>stretch</code>: Lines are stretched to fit the container.<br>This can be confusing, but align-content determines the spacing between lines, while align-items determines how the items as a whole are aligned within the container. When there is only one line, align-content has no effect.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-22"><a href="#Level-22" class="headerlink" title="Level 22"></a>Level 22</h2><p>Now the current has bunched the lilypads at the bottom. Use align-content to guide the frogs there.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-23"><a href="#Level-23" class="headerlink" title="Level 23"></a>Level 23</h2><p>The frogs have had a party, but it is time to go home. Use a combination of flex-direction and align-content to get them to their lilypads.</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">  <span class="attribute">align-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Level-24"><a href="#Level-24" class="headerlink" title="Level 24"></a>Level 24</h2><p>Bring the frogs home one last time by using the CSS properties you’ve learned:</p>
-<p><code>justify-content</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>align-items</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>flex-direction</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>order</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>align-self</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>flex-wrap</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>flex-flow</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<p><code>align-content</code>：Aligns flex items along the main axis.</p>
-<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-content</span>: space-between;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
-<li><a href="https://flexboxfroggy.com/">flexboxfroggy</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Flexbox Froggy</tag>
-        <tag>Flexbox</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Flexbox 網頁排版技巧入門教學筆記 | 學習筆記</title>
-    <url>/2024/11/14/learning-notes-css-flexbox-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h2><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
-<h3 id="1-1-為何使用-Flexbox？"><a href="#1-1-為何使用-Flexbox？" class="headerlink" title="1.1 為何使用 Flexbox？"></a>1.1 為何使用 Flexbox？</h3><ul>
-<li><strong>彈性調整</strong>：元素可根據可用空間動態調整大小。</li>
-<li><strong>簡化佈局</strong>：減少對 <code>float</code>、<code>inline-block</code> 及 <code>position</code> 依賴。</li>
-<li><strong>更好的對齊方式</strong>：內建強大的對齊與分佈控制。</li>
-</ul>
-<h2 id="2-Flexbox-基本概念"><a href="#2-Flexbox-基本概念" class="headerlink" title="2. Flexbox 基本概念"></a>2. Flexbox 基本概念</h2><p>Flexbox 佈局的核心概念是 <strong>容器（container）</strong> 和 <strong>子項目（items）</strong>。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>一旦對容器使用 <code>display: flex</code>，其內部的子元素將自動變成 Flex 子項目，並受 Flex 佈局影響。</p>
-<h2 id="3-Flex-容器屬性"><a href="#3-Flex-容器屬性" class="headerlink" title="3. Flex 容器屬性"></a>3. Flex 容器屬性</h2><h3 id="3-1-flex-direction"><a href="#3-1-flex-direction" class="headerlink" title="3.1 flex-direction"></a>3.1 <code>flex-direction</code></h3><p>決定主軸（main axis）方向。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row; <span class="comment">/* 預設值，水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse; <span class="comment">/* 反向水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column; <span class="comment">/* 垂直排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse; <span class="comment">/* 反向垂直排列 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-justify-content"><a href="#3-2-justify-content" class="headerlink" title="3.2 justify-content"></a>3.2 <code>justify-content</code></h3><p>控制子項目在主軸上的對齊方式。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start; <span class="comment">/* 預設，從左到右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end; <span class="comment">/* 靠右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: center; <span class="comment">/* 置中排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-between; <span class="comment">/* 兩端對齊，間距平均分布 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-around; <span class="comment">/* 子項目兩側有相等的間距 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-evenly; <span class="comment">/* 所有間距均等 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-align-items"><a href="#3-3-align-items" class="headerlink" title="3.3 align-items"></a>3.3 <code>align-items</code></h3><p>控制子項目在交叉軸（cross axis）上的對齊方式。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start; <span class="comment">/* 靠起始位置對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: flex-end; <span class="comment">/* 靠末端對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: center; <span class="comment">/* 垂直置中對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: stretch; <span class="comment">/* 預設，撐滿高度 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: baseline; <span class="comment">/* 依據文本基線對齊 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-4-align-content"><a href="#3-4-align-content" class="headerlink" title="3.4 align-content"></a>3.4 <code>align-content</code></h3><p>適用於多行佈局，控制多行之間的間距。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-end;</span><br><span class="line">  <span class="attribute">align-content</span>: center;</span><br><span class="line">  <span class="attribute">align-content</span>: space-between;</span><br><span class="line">  <span class="attribute">align-content</span>: space-around;</span><br><span class="line">  <span class="attribute">align-content</span>: space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-Flex-子項目屬性"><a href="#4-Flex-子項目屬性" class="headerlink" title="4. Flex 子項目屬性"></a>4. Flex 子項目屬性</h2><h3 id="4-1-flex-grow"><a href="#4-1-flex-grow" class="headerlink" title="4.1 flex-grow"></a>4.1 <code>flex-grow</code></h3><p>設定子項目如何分配多餘空間。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-grow</span>: <span class="number">1</span>; <span class="comment">/* 所有子項目平均分配空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-flex-shrink"><a href="#4-2-flex-shrink" class="headerlink" title="4.2 flex-shrink"></a>4.2 <code>flex-shrink</code></h3><p>控制子項目如何縮小。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-shrink</span>: <span class="number">0</span>; <span class="comment">/* 防止縮小 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-3-flex-basis"><a href="#4-3-flex-basis" class="headerlink" title="4.3 flex-basis"></a>4.3 <code>flex-basis</code></h3><p>設定子項目的初始大小。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-basis</span>: <span class="number">200px</span>; <span class="comment">/* 設定初始寬度或高度 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-4-flex"><a href="#4-4-flex" class="headerlink" title="4.4 flex"></a>4.4 <code>flex</code></h3><p>綜合 <code>flex-grow</code>、<code>flex-shrink</code> 和 <code>flex-basis</code>。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span> <span class="number">1</span> <span class="number">100px</span>; <span class="comment">/* grow, shrink, basis */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-Flexbox-常見佈局範例"><a href="#5-Flexbox-常見佈局範例" class="headerlink" title="5. Flexbox 常見佈局範例"></a>5. Flexbox 常見佈局範例</h2><h3 id="5-1-水平置中"><a href="#5-1-水平置中" class="headerlink" title="5.1 水平置中"></a>5.1 水平置中</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-2-等寬三欄佈局"><a href="#5-2-等寬三欄佈局" class="headerlink" title="5.2 等寬三欄佈局"></a>5.2 等寬三欄佈局</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-3-兩欄固定-自適應"><a href="#5-3-兩欄固定-自適應" class="headerlink" title="5.3 兩欄固定 + 自適應"></a>5.3 兩欄固定 + 自適應</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">200px</span>; <span class="comment">/* 固定 200px */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>; <span class="comment">/* 佔滿剩餘空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-結論"><a href="#6-結論" class="headerlink" title="6. 結論"></a>6. 結論</h2><p>Flexbox 是一種強大且直觀的 CSS 佈局方式，能夠解決傳統排版難題，使開發者能夠輕鬆實現響應式佈局與對齊方式。本篇筆記介紹了 Flexbox 的基本屬性及常見佈局範例，進一步學習可以研究 CSS Grid 和更進階的排版技巧。</p>
-]]></content>
-      <tags>
-        <tag>css</tag>
-        <tag>Flexbox</tag>
-        <tag>排版</tag>
       </tags>
   </entry>
   <entry>
@@ -1748,11 +1581,178 @@
 </ol>
 ]]></content>
       <tags>
-        <tag>CSS</tag>
         <tag>Grid Garden</tag>
         <tag>Grid</tag>
         <tag>align-items</tag>
         <tag>align-content</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flexbox Froggy 入門教學筆記 | 學習筆記</title>
+    <url>/2024/07/10/learning-notes-css-flexbox-froggy-tutorial/</url>
+    <content><![CDATA[<h1 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h1><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
+<p>Flexbox Froggy 透過小青蛙過河遊戲化方式去介紹 Flexbox 使用方式：</p>
+<h2 id="Level-1"><a href="#Level-1" class="headerlink" title="Level 1"></a>Level 1</h2><p>Welcome to Flexbox Froggy, a game where you help Froggy and friends by writing CSS code! Guide this frog to the lilypad on the right by using the justify-content property, which aligns items horizontally and accepts the following values:</p>
+<p>flex-start: Items align to the left side of the container.<br>flex-end: Items align to the right side of the container.<br>center: Items align at the center of the container.<br>space-between: Items display with equal spacing between them.<br>space-around: Items display with equal spacing around them.<br>For example, justify-content: flex-end; will move the frog to the right. </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-2"><a href="#Level-2" class="headerlink" title="Level 2"></a>Level 2</h2><p>Use justify-content again to help these frogs get to their lilypads. Remember that this CSS property aligns items horizontally and accepts the following values:</p>
+<p><code>flex-start</code>: Items align to the left side of the container.<br><code>flex-end</code>: Items align to the right side of the container.<br><code>center</code>: Items align at the center of the container.<br><code>space-between</code>: Items display with equal spacing between them.<br><code>space-around</code>: Items display with equal spacing around them.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-3"><a href="#Level-3" class="headerlink" title="Level 3"></a>Level 3</h2><p>Help all three frogs find their lilypads just by using justify-content. This time, the lilypads have lots of space all around them.</p>
+<p>If you find yourself forgetting the possible values for a property, you can click on the property name to view them. Try clicking on justify-content.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-around;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-4"><a href="#Level-4" class="headerlink" title="Level 4"></a>Level 4</h2><p>Now the lilypads on the edges have drifted to the shore, increasing the space between them. Use justify-content. This time, the lilypads have equal spacing between them.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-5"><a href="#Level-5" class="headerlink" title="Level 5"></a>Level 5</h2><p>Now use align-items to help the frogs get to the bottom of the pond. This CSS property aligns items vertically and accepts the following values:</p>
+<p><code>flex-start</code>: Items align to the top of the container.<br><code>flex-end</code>: Items align to the bottom of the container.<br><code>center</code>: Items align at the vertical center of the container.<br><code>baseline</code>: Items display at the baseline of the container.<br><code>stretch</code>: Items are stretched to fit the container.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-6"><a href="#Level-6" class="headerlink" title="Level 6"></a>Level 6</h2><p>Lead the frog to the center of the pond using a combination of justify-content and align-items.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-7"><a href="#Level-7" class="headerlink" title="Level 7"></a>Level 7</h2><p>The frogs need to cross the pond again, this time for some lilypads with plenty of space around them. Use a combination of justify-content and align-items.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-around;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-8"><a href="#Level-8" class="headerlink" title="Level 8"></a>Level 8</h2><p>The frogs need to get in the same order as their lilypads using flex-direction. This CSS property defines the direction items are placed in the container, and accepts the following values:</p>
+<p><code>row</code>: Items are placed the same as the text direction.<br><code>row-reverse</code>: Items are placed opposite to the text direction.<br><code>column</code>: Items are placed top to bottom.<br><code>column-reverse</code>: Items are placed bottom to top.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-9"><a href="#Level-9" class="headerlink" title="Level 9"></a>Level 9</h2><p>Help the frogs find their column of lilypads using flex-direction. This CSS property defines the direction items are placed in the container, and accepts the following values:</p>
+<p><code>row</code>: Items are placed the same as the text direction.<br><code>row-reverse</code>: Items are placed opposite to the text direction.<br><code>column</code>: Items are placed top to bottom.<br><code>column-reverse</code>: Items are placed bottom to top.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-10"><a href="#Level-10" class="headerlink" title="Level 10"></a>Level 10</h2><p>Help the frogs get to their own lilypads. Although they seem close, it will take both flex-direction and justify-content to get them there.</p>
+<p>Notice that when you set the direction to a reversed row or column, start and end are also reversed.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-11"><a href="#Level-11" class="headerlink" title="Level 11"></a>Level 11</h2><p>Help the frogs find their lilypads using flex-direction and justify-content.</p>
+<p>Notice that when the flex direction is a column, justify-content changes to the vertical and align-items to the horizontal.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-12"><a href="#Level-12" class="headerlink" title="Level 12"></a>Level 12</h2><p>Help the frogs find their lilypads using flex-direction and justify-content.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-13"><a href="#Level-13" class="headerlink" title="Level 13"></a>Level 13</h2><p>Help the frogs find their lilypads using flex-direction, justify-content, and align-items.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-14"><a href="#Level-14" class="headerlink" title="Level 14"></a>Level 14</h2><p>Sometimes reversing the row or column order of a container is not enough. In these cases, we can apply the order property to individual items. By default, items have a value of 0, but we can use this property to also set it to a positive or negative integer value <code>(-2, -1, 0, 1, 2)</code>.</p>
+<p>Use the order property to reorder the frogs according to their lilypads.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-15"><a href="#Level-15" class="headerlink" title="Level 15"></a>Level 15</h2><p>Use the order property to send the red frog to his lilypad.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.red</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-16"><a href="#Level-16" class="headerlink" title="Level 16"></a>Level 16</h2><p>Another property you can apply to individual items is align-self. This property accepts the same values as align-items and its value for the specific item.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">align-self</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-17"><a href="#Level-17" class="headerlink" title="Level 17"></a>Level 17</h2><p>Combine order with align-self to help the frogs to their destinations.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.yellow</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">align-self</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-18"><a href="#Level-18" class="headerlink" title="Level 18"></a>Level 18</h2><p>Oh no! The frogs are all squeezed onto a single row of lilypads. Spread them out using the flex-wrap property, which accepts the following values:</p>
+<p>nowrap: Every item is fit to a single line.<br>wrap: Items wrap around to additional lines.<br>wrap-reverse: Items wrap around to additional lines in reverse.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-19"><a href="#Level-19" class="headerlink" title="Level 19"></a>Level 19</h2><p>Help this army of frogs form three orderly columns using a combination of flex-direction and flex-wrap.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-20"><a href="#Level-20" class="headerlink" title="Level 20"></a>Level 20</h2><p>The two properties flex-direction and flex-wrap are used so often together that the shorthand property flex-flow was created to combine them. This shorthand property accepts the value of the two properties separated by a space.</p>
+<p>For example, you can use flex-flow: row wrap to set rows and wrap them.</p>
+<p>Try using flex-flow to repeat the previous level.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-flow</span>: column wrap</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-21"><a href="#Level-21" class="headerlink" title="Level 21"></a>Level 21</h2><p>The frogs are spread all over the pond, but the lilypads are bunched at the top. You can use align-content to set how multiple lines are spaced apart from each other. This property takes the following values:</p>
+<p><code>flex-start</code>: Lines are packed at the top of the container.<br><code>flex-end</code>: Lines are packed at the bottom of the container.<br><code>center</code>: Lines are packed at the vertical center of the container.<br><code>space-between</code>: Lines display with equal spacing between them.<br><code>space-around</code>: Lines display with equal spacing around them.<br><code>stretch</code>: Lines are stretched to fit the container.<br>This can be confusing, but align-content determines the spacing between lines, while align-items determines how the items as a whole are aligned within the container. When there is only one line, align-content has no effect.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-22"><a href="#Level-22" class="headerlink" title="Level 22"></a>Level 22</h2><p>Now the current has bunched the lilypads at the bottom. Use align-content to guide the frogs there.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-23"><a href="#Level-23" class="headerlink" title="Level 23"></a>Level 23</h2><p>The frogs have had a party, but it is time to go home. Use a combination of flex-direction and align-content to get them to their lilypads.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">  <span class="attribute">align-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Level-24"><a href="#Level-24" class="headerlink" title="Level 24"></a>Level 24</h2><p>Bring the frogs home one last time by using the CSS properties you’ve learned:</p>
+<p><code>justify-content</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>align-items</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>flex-direction</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>order</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>align-self</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>flex-wrap</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>flex-flow</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<p><code>align-content</code>：Aligns flex items along the main axis.</p>
+<p>flex-start (default) flex-end center space-between space-around space-evenly</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pond</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap-reverse;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-content</span>: space-between;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
+<li><a href="https://flexboxfroggy.com/">flexboxfroggy</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>Flexbox Froggy</tag>
+        <tag>Flexbox</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flexbox 網頁排版技巧入門教學筆記 | 學習筆記</title>
+    <url>/2024/11/14/learning-notes-css-flexbox-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="1-Flexbox-簡介"><a href="#1-Flexbox-簡介" class="headerlink" title="1. Flexbox 簡介"></a>1. Flexbox 簡介</h2><p><code>Flexbox</code>（Flexible Box Layout）是一種 CSS3 佈局模式，專門用來設計一維的彈性佈局，適用於水平或垂直排列元素，使網頁排版更加靈活且易於維護。</p>
+<h3 id="1-1-為何使用-Flexbox？"><a href="#1-1-為何使用-Flexbox？" class="headerlink" title="1.1 為何使用 Flexbox？"></a>1.1 為何使用 Flexbox？</h3><ul>
+<li><strong>彈性調整</strong>：元素可根據可用空間動態調整大小。</li>
+<li><strong>簡化佈局</strong>：減少對 <code>float</code>、<code>inline-block</code> 及 <code>position</code> 依賴。</li>
+<li><strong>更好的對齊方式</strong>：內建強大的對齊與分佈控制。</li>
+</ul>
+<h2 id="2-Flexbox-基本概念"><a href="#2-Flexbox-基本概念" class="headerlink" title="2. Flexbox 基本概念"></a>2. Flexbox 基本概念</h2><p>Flexbox 佈局的核心概念是 <strong>容器（container）</strong> 和 <strong>子項目（items）</strong>。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一旦對容器使用 <code>display: flex</code>，其內部的子元素將自動變成 Flex 子項目，並受 Flex 佈局影響。</p>
+<h2 id="3-Flex-容器屬性"><a href="#3-Flex-容器屬性" class="headerlink" title="3. Flex 容器屬性"></a>3. Flex 容器屬性</h2><h3 id="3-1-flex-direction"><a href="#3-1-flex-direction" class="headerlink" title="3.1 flex-direction"></a>3.1 <code>flex-direction</code></h3><p>決定主軸（main axis）方向。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row; <span class="comment">/* 預設值，水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: row-reverse; <span class="comment">/* 反向水平排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column; <span class="comment">/* 垂直排列 */</span></span><br><span class="line">  <span class="attribute">flex-direction</span>: column-reverse; <span class="comment">/* 反向垂直排列 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-justify-content"><a href="#3-2-justify-content" class="headerlink" title="3.2 justify-content"></a>3.2 <code>justify-content</code></h3><p>控制子項目在主軸上的對齊方式。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start; <span class="comment">/* 預設，從左到右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: flex-end; <span class="comment">/* 靠右排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: center; <span class="comment">/* 置中排列 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-between; <span class="comment">/* 兩端對齊，間距平均分布 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-around; <span class="comment">/* 子項目兩側有相等的間距 */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: space-evenly; <span class="comment">/* 所有間距均等 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-align-items"><a href="#3-3-align-items" class="headerlink" title="3.3 align-items"></a>3.3 <code>align-items</code></h3><p>控制子項目在交叉軸（cross axis）上的對齊方式。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start; <span class="comment">/* 靠起始位置對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: flex-end; <span class="comment">/* 靠末端對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: center; <span class="comment">/* 垂直置中對齊 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: stretch; <span class="comment">/* 預設，撐滿高度 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: baseline; <span class="comment">/* 依據文本基線對齊 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-align-content"><a href="#3-4-align-content" class="headerlink" title="3.4 align-content"></a>3.4 <code>align-content</code></h3><p>適用於多行佈局，控制多行之間的間距。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-end;</span><br><span class="line">  <span class="attribute">align-content</span>: center;</span><br><span class="line">  <span class="attribute">align-content</span>: space-between;</span><br><span class="line">  <span class="attribute">align-content</span>: space-around;</span><br><span class="line">  <span class="attribute">align-content</span>: space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-Flex-子項目屬性"><a href="#4-Flex-子項目屬性" class="headerlink" title="4. Flex 子項目屬性"></a>4. Flex 子項目屬性</h2><h3 id="4-1-flex-grow"><a href="#4-1-flex-grow" class="headerlink" title="4.1 flex-grow"></a>4.1 <code>flex-grow</code></h3><p>設定子項目如何分配多餘空間。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-grow</span>: <span class="number">1</span>; <span class="comment">/* 所有子項目平均分配空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-flex-shrink"><a href="#4-2-flex-shrink" class="headerlink" title="4.2 flex-shrink"></a>4.2 <code>flex-shrink</code></h3><p>控制子項目如何縮小。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-shrink</span>: <span class="number">0</span>; <span class="comment">/* 防止縮小 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-flex-basis"><a href="#4-3-flex-basis" class="headerlink" title="4.3 flex-basis"></a>4.3 <code>flex-basis</code></h3><p>設定子項目的初始大小。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-basis</span>: <span class="number">200px</span>; <span class="comment">/* 設定初始寬度或高度 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-4-flex"><a href="#4-4-flex" class="headerlink" title="4.4 flex"></a>4.4 <code>flex</code></h3><p>綜合 <code>flex-grow</code>、<code>flex-shrink</code> 和 <code>flex-basis</code>。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span> <span class="number">1</span> <span class="number">100px</span>; <span class="comment">/* grow, shrink, basis */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-Flexbox-常見佈局範例"><a href="#5-Flexbox-常見佈局範例" class="headerlink" title="5. Flexbox 常見佈局範例"></a>5. Flexbox 常見佈局範例</h2><h3 id="5-1-水平置中"><a href="#5-1-水平置中" class="headerlink" title="5.1 水平置中"></a>5.1 水平置中</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-等寬三欄佈局"><a href="#5-2-等寬三欄佈局" class="headerlink" title="5.2 等寬三欄佈局"></a>5.2 等寬三欄佈局</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-兩欄固定-自適應"><a href="#5-3-兩欄固定-自適應" class="headerlink" title="5.3 兩欄固定 + 自適應"></a>5.3 兩欄固定 + 自適應</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">200px</span>; <span class="comment">/* 固定 200px */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>; <span class="comment">/* 佔滿剩餘空間 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-結論"><a href="#6-結論" class="headerlink" title="6. 結論"></a>6. 結論</h2><p>Flexbox 是一種強大且直觀的 CSS 佈局方式，能夠解決傳統排版難題，使開發者能夠輕鬆實現響應式佈局與對齊方式。本篇筆記介紹了 Flexbox 的基本屬性及常見佈局範例，進一步學習可以研究 CSS Grid 和更進階的排版技巧。</p>
+]]></content>
+      <tags>
+        <tag>css</tag>
+        <tag>Flexbox</tag>
+        <tag>排版</tag>
       </tags>
   </entry>
   <entry>
@@ -2018,9 +2018,9 @@
 </ol>
 ]]></content>
       <tags>
-        <tag>CSS</tag>
         <tag>Grid Garden</tag>
         <tag>Grid</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -2076,8 +2076,8 @@
 ]]></content>
       <tags>
         <tag>css</tag>
-        <tag>排版</tag>
         <tag>Grid</tag>
+        <tag>排版</tag>
       </tags>
   </entry>
   <entry>
@@ -6542,6 +6542,109 @@
       </tags>
   </entry>
   <entry>
+    <title>網站效能診斷入門教學：Lighthouse、Chrome DevTools 與 WebPageTest 實戰指南 | 學習筆記</title>
+    <url>/2024/03/20/learning-notes-lighthouse-chrome-devtools-web-page-test-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>現今網站的使用者體驗與載入速度息息相關，無論是 SEO 排名、使用者留存率或轉換率，都受到頁面效能影響。為了協助開發者精準找出網站瓶頸，Google 與其他組織提供了多種強大的診斷工具，其中最常用且具代表性的就是 Lighthouse、Chrome DevTools 與 WebPageTest。</p>
+<p>本篇教學筆記將介紹這三種工具的基礎使用方法與診斷技巧，幫助我們從初學者也能迅速上手，實際分析與優化網站效能。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><h3 id="一、Lighthouse：全方位效能檢測工具"><a href="#一、Lighthouse：全方位效能檢測工具" class="headerlink" title="一、Lighthouse：全方位效能檢測工具"></a>一、Lighthouse：全方位效能檢測工具</h3><ul>
+<li>Google 提供的開源工具，可分析網站效能、可存取性、SEO、最佳實踐等面向</li>
+<li>可直接從 Chrome DevTools 或使用 CLI、CI 工具啟用</li>
+<li>評分以 0 ～ 100 呈現，並提供具體優化建議</li>
+</ul>
+<h3 id="二、Chrome-DevTools：開發者內建利器"><a href="#二、Chrome-DevTools：開發者內建利器" class="headerlink" title="二、Chrome DevTools：開發者內建利器"></a>二、Chrome DevTools：開發者內建利器</h3><ul>
+<li>即時查看資源載入時間、執行效能、DOM 結構變動與網頁回應</li>
+<li>適合追蹤 JavaScript 執行瓶頸、CSS 回流與重繪等細節</li>
+<li>提供 Coverage 與 Performance 分析工具，可定位未使用程式碼與長任務</li>
+</ul>
+<h3 id="三、WebPageTest：真實環境模擬工具"><a href="#三、WebPageTest：真實環境模擬工具" class="headerlink" title="三、WebPageTest：真實環境模擬工具"></a>三、WebPageTest：真實環境模擬工具</h3><ul>
+<li>可選擇不同地區、裝置與網路條件進行測試，模擬真實用戶情境</li>
+<li>顯示詳細瀏覽器載入瀑布圖與視覺呈現速度</li>
+<li>適合做跨國網站或行動裝置載入效能的驗證</li>
+</ul>
+<hr>
+<h2 id="實際範例操作"><a href="#實際範例操作" class="headerlink" title="實際範例操作"></a>實際範例操作</h2><p>以下以一個虛擬電商網站首頁為例，展示如何使用三種工具進行效能診斷：</p>
+<hr>
+<h3 id="一、使用-Lighthouse-快速評估整體效能"><a href="#一、使用-Lighthouse-快速評估整體效能" class="headerlink" title="一、使用 Lighthouse 快速評估整體效能"></a>一、使用 Lighthouse 快速評估整體效能</h3><ol>
+<li>首先，開啟 Chrome，瀏覽欲診斷的頁面</li>
+<li>按下 <code>F12</code> 或右鍵「檢查」開啟開發者工具</li>
+<li>點選上方分頁中的「Lighthouse」</li>
+<li>選擇測試裝置類型（建議選 Mobile）與檢測類型（建議全選）</li>
+<li>點擊「Generate report」開始分析</li>
+</ol>
+<h4 id="分析結果："><a href="#分析結果：" class="headerlink" title="分析結果："></a>分析結果：</h4><ul>
+<li><p><strong>Performance</strong> 得分僅有 45，顯示首次繪製（FCP）與最大內容繪製（LCP）時間過長</p>
+</li>
+<li><p>建議項目包含：</p>
+<ul>
+<li>移除未使用 JavaScript（節省 800KB）</li>
+<li>延遲載入非關鍵第三方資源</li>
+<li>圖片未壓縮且未啟用 lazy loading</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="二、使用-Chrome-DevTools-找出瓶頸細節"><a href="#二、使用-Chrome-DevTools-找出瓶頸細節" class="headerlink" title="二、使用 Chrome DevTools 找出瓶頸細節"></a>二、使用 Chrome DevTools 找出瓶頸細節</h3><h4 id="使用-Network-分頁觀察資源載入："><a href="#使用-Network-分頁觀察資源載入：" class="headerlink" title="使用 Network 分頁觀察資源載入："></a>使用 Network 分頁觀察資源載入：</h4><ol>
+<li><p>開啟「Network」分頁並刷新頁面</p>
+</li>
+<li><p>可看到：</p>
+<ul>
+<li>主頁面共載入 150 多個資源</li>
+<li>初始 JavaScript bundle 超過 2MB</li>
+<li>字體與圖片資源沒有使用快取（Status 200）</li>
+</ul>
+</li>
+</ol>
+<h4 id="使用-Performance-分頁錄製頁面加載過程："><a href="#使用-Performance-分頁錄製頁面加載過程：" class="headerlink" title="使用 Performance 分頁錄製頁面加載過程："></a>使用 Performance 分頁錄製頁面加載過程：</h4><ol>
+<li><p>點選「Performance」分頁，按下「Record」</p>
+</li>
+<li><p>刷新頁面並等待數秒，按下「Stop」</p>
+</li>
+<li><p>分析結果顯示：</p>
+<ul>
+<li>主執行緒中有多個長任務（超過 50ms）</li>
+<li>某第三方追蹤腳本佔用主執行緒 600ms</li>
+<li>大量 DOM 節點修改導致 Layout Shift（CLS 分數高）</li>
+</ul>
+</li>
+</ol>
+<h4 id="使用-Coverage-分頁掃描未使用程式碼："><a href="#使用-Coverage-分頁掃描未使用程式碼：" class="headerlink" title="使用 Coverage 分頁掃描未使用程式碼："></a>使用 Coverage 分頁掃描未使用程式碼：</h4><ol>
+<li><p>使用 <code>Ctrl+Shift+P</code> 開啟命令列</p>
+</li>
+<li><p>輸入「Coverage」並啟用功能</p>
+</li>
+<li><p>點選「Reload &amp; Start Capturing Coverage」</p>
+</li>
+<li><p>結果顯示：</p>
+<ul>
+<li>主要 CSS 檔案使用率僅 18%</li>
+<li>JavaScript 檔案使用率 35% 左右</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="三、使用-WebPageTest-模擬不同環境下的體驗"><a href="#三、使用-WebPageTest-模擬不同環境下的體驗" class="headerlink" title="三、使用 WebPageTest 模擬不同環境下的體驗"></a>三、使用 WebPageTest 模擬不同環境下的體驗</h3><ol>
+<li>進入 <a href="https://www.webpagetest.org/">https://www.webpagetest.org</a></li>
+<li>輸入目標網站網址，選擇測試地點（如東京）與設備（如 Android + 3G 網路）</li>
+<li>點擊「Start Test」</li>
+</ol>
+<h4 id="分析結果：-1"><a href="#分析結果：-1" class="headerlink" title="分析結果："></a>分析結果：</h4><ul>
+<li><strong>First Byte Time</strong> 達 1.2 秒，伺服器回應偏慢</li>
+<li><strong>Speed Index</strong> 高達 6500，顯示可視畫面建立時間過長</li>
+<li>瀑布圖顯示首頁載入依賴超過 50 個 JS 檔案，部分為同步載入</li>
+</ul>
+<hr>
+<h2 id="總結與行動建議"><a href="#總結與行動建議" class="headerlink" title="總結與行動建議"></a>總結與行動建議</h2><p>網站效能優化並非一次性的修補，而是需要透過持續監控與工具診斷的長期工程。Lighthouse 提供了入門評估的方向，Chrome DevTools 協助你深入定位細節，WebPageTest 則讓你檢視在真實用戶情境中的行為。</p>
+<p>建議每次上線新功能或導入第三方資源後，皆定期進行這三種工具的檢測，確保網站在不同網路、不同裝置下都有良好的使用者體驗。</p>
+]]></content>
+      <tags>
+        <tag>Lighthouse</tag>
+        <tag>Chrome DevTools</tag>
+        <tag>WebPageTest</tag>
+        <tag>網站效能</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Google Lighthouse 介紹與入門教學筆記 | 學習筆記</title>
     <url>/2018/02/01/learning-notes-lighthouse-intro-tutorial/</url>
     <content><![CDATA[<h3 id="一、什麼是-Lighthouse？"><a href="#一、什麼是-Lighthouse？" class="headerlink" title="一、什麼是 Lighthouse？"></a>一、什麼是 Lighthouse？</h3><p><strong>Google Lighthouse</strong> 是 Google 開發的開源自動化工具，主要用來評估網頁的品質，包含 <strong>效能 (Performance)、無障礙 (Accessibility)、最佳化 (Best Practices)、SEO、漸進式網頁應用 (PWA)</strong> 等五大面向。透過 Lighthouse，開發者可以快速找到網站問題與優化建議，幫助網站在使用者體驗與搜尋引擎上表現更好。</p>
@@ -6691,109 +6794,6 @@
       <tags>
         <tag>Jest</tag>
         <tag>ES Module</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>網站效能診斷入門教學：Lighthouse、Chrome DevTools 與 WebPageTest 實戰指南 | 學習筆記</title>
-    <url>/2024/03/20/learning-notes-lighthouse-chrome-devtools-web-page-test-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>現今網站的使用者體驗與載入速度息息相關，無論是 SEO 排名、使用者留存率或轉換率，都受到頁面效能影響。為了協助開發者精準找出網站瓶頸，Google 與其他組織提供了多種強大的診斷工具，其中最常用且具代表性的就是 Lighthouse、Chrome DevTools 與 WebPageTest。</p>
-<p>本篇教學筆記將介紹這三種工具的基礎使用方法與診斷技巧，幫助我們從初學者也能迅速上手，實際分析與優化網站效能。</p>
-<hr>
-<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><h3 id="一、Lighthouse：全方位效能檢測工具"><a href="#一、Lighthouse：全方位效能檢測工具" class="headerlink" title="一、Lighthouse：全方位效能檢測工具"></a>一、Lighthouse：全方位效能檢測工具</h3><ul>
-<li>Google 提供的開源工具，可分析網站效能、可存取性、SEO、最佳實踐等面向</li>
-<li>可直接從 Chrome DevTools 或使用 CLI、CI 工具啟用</li>
-<li>評分以 0 ～ 100 呈現，並提供具體優化建議</li>
-</ul>
-<h3 id="二、Chrome-DevTools：開發者內建利器"><a href="#二、Chrome-DevTools：開發者內建利器" class="headerlink" title="二、Chrome DevTools：開發者內建利器"></a>二、Chrome DevTools：開發者內建利器</h3><ul>
-<li>即時查看資源載入時間、執行效能、DOM 結構變動與網頁回應</li>
-<li>適合追蹤 JavaScript 執行瓶頸、CSS 回流與重繪等細節</li>
-<li>提供 Coverage 與 Performance 分析工具，可定位未使用程式碼與長任務</li>
-</ul>
-<h3 id="三、WebPageTest：真實環境模擬工具"><a href="#三、WebPageTest：真實環境模擬工具" class="headerlink" title="三、WebPageTest：真實環境模擬工具"></a>三、WebPageTest：真實環境模擬工具</h3><ul>
-<li>可選擇不同地區、裝置與網路條件進行測試，模擬真實用戶情境</li>
-<li>顯示詳細瀏覽器載入瀑布圖與視覺呈現速度</li>
-<li>適合做跨國網站或行動裝置載入效能的驗證</li>
-</ul>
-<hr>
-<h2 id="實際範例操作"><a href="#實際範例操作" class="headerlink" title="實際範例操作"></a>實際範例操作</h2><p>以下以一個虛擬電商網站首頁為例，展示如何使用三種工具進行效能診斷：</p>
-<hr>
-<h3 id="一、使用-Lighthouse-快速評估整體效能"><a href="#一、使用-Lighthouse-快速評估整體效能" class="headerlink" title="一、使用 Lighthouse 快速評估整體效能"></a>一、使用 Lighthouse 快速評估整體效能</h3><ol>
-<li>首先，開啟 Chrome，瀏覽欲診斷的頁面</li>
-<li>按下 <code>F12</code> 或右鍵「檢查」開啟開發者工具</li>
-<li>點選上方分頁中的「Lighthouse」</li>
-<li>選擇測試裝置類型（建議選 Mobile）與檢測類型（建議全選）</li>
-<li>點擊「Generate report」開始分析</li>
-</ol>
-<h4 id="分析結果："><a href="#分析結果：" class="headerlink" title="分析結果："></a>分析結果：</h4><ul>
-<li><p><strong>Performance</strong> 得分僅有 45，顯示首次繪製（FCP）與最大內容繪製（LCP）時間過長</p>
-</li>
-<li><p>建議項目包含：</p>
-<ul>
-<li>移除未使用 JavaScript（節省 800KB）</li>
-<li>延遲載入非關鍵第三方資源</li>
-<li>圖片未壓縮且未啟用 lazy loading</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="二、使用-Chrome-DevTools-找出瓶頸細節"><a href="#二、使用-Chrome-DevTools-找出瓶頸細節" class="headerlink" title="二、使用 Chrome DevTools 找出瓶頸細節"></a>二、使用 Chrome DevTools 找出瓶頸細節</h3><h4 id="使用-Network-分頁觀察資源載入："><a href="#使用-Network-分頁觀察資源載入：" class="headerlink" title="使用 Network 分頁觀察資源載入："></a>使用 Network 分頁觀察資源載入：</h4><ol>
-<li><p>開啟「Network」分頁並刷新頁面</p>
-</li>
-<li><p>可看到：</p>
-<ul>
-<li>主頁面共載入 150 多個資源</li>
-<li>初始 JavaScript bundle 超過 2MB</li>
-<li>字體與圖片資源沒有使用快取（Status 200）</li>
-</ul>
-</li>
-</ol>
-<h4 id="使用-Performance-分頁錄製頁面加載過程："><a href="#使用-Performance-分頁錄製頁面加載過程：" class="headerlink" title="使用 Performance 分頁錄製頁面加載過程："></a>使用 Performance 分頁錄製頁面加載過程：</h4><ol>
-<li><p>點選「Performance」分頁，按下「Record」</p>
-</li>
-<li><p>刷新頁面並等待數秒，按下「Stop」</p>
-</li>
-<li><p>分析結果顯示：</p>
-<ul>
-<li>主執行緒中有多個長任務（超過 50ms）</li>
-<li>某第三方追蹤腳本佔用主執行緒 600ms</li>
-<li>大量 DOM 節點修改導致 Layout Shift（CLS 分數高）</li>
-</ul>
-</li>
-</ol>
-<h4 id="使用-Coverage-分頁掃描未使用程式碼："><a href="#使用-Coverage-分頁掃描未使用程式碼：" class="headerlink" title="使用 Coverage 分頁掃描未使用程式碼："></a>使用 Coverage 分頁掃描未使用程式碼：</h4><ol>
-<li><p>使用 <code>Ctrl+Shift+P</code> 開啟命令列</p>
-</li>
-<li><p>輸入「Coverage」並啟用功能</p>
-</li>
-<li><p>點選「Reload &amp; Start Capturing Coverage」</p>
-</li>
-<li><p>結果顯示：</p>
-<ul>
-<li>主要 CSS 檔案使用率僅 18%</li>
-<li>JavaScript 檔案使用率 35% 左右</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="三、使用-WebPageTest-模擬不同環境下的體驗"><a href="#三、使用-WebPageTest-模擬不同環境下的體驗" class="headerlink" title="三、使用 WebPageTest 模擬不同環境下的體驗"></a>三、使用 WebPageTest 模擬不同環境下的體驗</h3><ol>
-<li>進入 <a href="https://www.webpagetest.org/">https://www.webpagetest.org</a></li>
-<li>輸入目標網站網址，選擇測試地點（如東京）與設備（如 Android + 3G 網路）</li>
-<li>點擊「Start Test」</li>
-</ol>
-<h4 id="分析結果：-1"><a href="#分析結果：-1" class="headerlink" title="分析結果："></a>分析結果：</h4><ul>
-<li><strong>First Byte Time</strong> 達 1.2 秒，伺服器回應偏慢</li>
-<li><strong>Speed Index</strong> 高達 6500，顯示可視畫面建立時間過長</li>
-<li>瀑布圖顯示首頁載入依賴超過 50 個 JS 檔案，部分為同步載入</li>
-</ul>
-<hr>
-<h2 id="總結與行動建議"><a href="#總結與行動建議" class="headerlink" title="總結與行動建議"></a>總結與行動建議</h2><p>網站效能優化並非一次性的修補，而是需要透過持續監控與工具診斷的長期工程。Lighthouse 提供了入門評估的方向，Chrome DevTools 協助你深入定位細節，WebPageTest 則讓你檢視在真實用戶情境中的行為。</p>
-<p>建議每次上線新功能或導入第三方資源後，皆定期進行這三種工具的檢測，確保網站在不同網路、不同裝置下都有良好的使用者體驗。</p>
-]]></content>
-      <tags>
-        <tag>Lighthouse</tag>
-        <tag>Chrome DevTools</tag>
-        <tag>WebPageTest</tag>
-        <tag>網站效能</tag>
       </tags>
   </entry>
   <entry>
@@ -8648,66 +8648,6 @@
       </tags>
   </entry>
   <entry>
-    <title>React Context API 入門教學 | 學習筆記</title>
-    <url>/2024/12/21/learning-notes-react-context-api-intro-tutorial/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>React Context API 是 React 提供的一種方式，讓我們能夠在組件樹中傳遞資料，而不需要一層層地使用 props。Context API 可以解決多層嵌套組件的傳遞問題，讓我們在深層組件中輕鬆訪問到全局狀態。本文將介紹如何使用 React Context API，並提供一個簡單的範例來展示其實際應用。</p>
-<h3 id="什麼是-React-Context-API"><a href="#什麼是-React-Context-API" class="headerlink" title="什麼是 React Context API"></a>什麼是 React Context API</h3><p>React Context API 是 React 的一個內建功能，它可以讓我們在組件樹中共享資料，避免多層嵌套的 props 傳遞。Context 主要由三個部分組成：</p>
-<ol>
-<li>**React.createContext()**：創建一個 Context 物件。</li>
-<li><strong>Provider</strong>：這是 Context API 中的一個組件，它用來包裹整個應用，並提供一個全局的資料源。</li>
-<li><strong>Consumer</strong>：這是用來訪問 Context 資料的組件，它能夠獲取 Provider 中傳遞的資料。</li>
-</ol>
-<p>使用 Context 的目的，是為了避免將相同的資料層層傳遞到每個組件，這樣可以讓應用的資料流變得更加簡潔。</p>
-<h3 id="使用-Context-API-的步驟"><a href="#使用-Context-API-的步驟" class="headerlink" title="使用 Context API 的步驟"></a>使用 Context API 的步驟</h3><h4 id="步驟-1-創建-Context"><a href="#步驟-1-創建-Context" class="headerlink" title="步驟 1: 創建 Context"></a>步驟 1: 創建 Context</h4><p>首先，我們需要使用 <code>React.createContext()</code> 來創建一個 Context 物件。這個物件會返回一個 <code>Provider</code> 和 <code>Consumer</code> 組件，讓我們在應用中使用。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 創建 Context</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">MyContext</span> = <span class="title class_">React</span>.<span class="title function_">createContext</span>();</span><br></pre></td></tr></table></figure>
-
-<h4 id="步驟-2-使用-Provider-來傳遞資料"><a href="#步驟-2-使用-Provider-來傳遞資料" class="headerlink" title="步驟 2: 使用 Provider 來傳遞資料"></a>步驟 2: 使用 Provider 來傳遞資料</h4><p>Context 的 <code>Provider</code> 是用來包裹應用的，它會接收一個 <code>value</code> 屬性，這個屬性就是要共享給整個組件樹的資料。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> [user, setUser] = <span class="title class_">React</span>.<span class="title function_">useState</span>(&#123; <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">MyContext.Provider</span> <span class="attr">value</span>=<span class="string">&#123;user&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">UserProfile</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">MyContext.Provider</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>在這個範例中，我們將一個 <code>user</code> 物件傳遞給 <code>MyContext.Provider</code> 的 <code>value</code> 屬性，這樣整個組件樹中的所有子組件都能夠訪問到這個 <code>user</code> 資料。</p>
-<h4 id="步驟-3-使用-Consumer-來接收資料"><a href="#步驟-3-使用-Consumer-來接收資料" class="headerlink" title="步驟 3: 使用 Consumer 來接收資料"></a>步驟 3: 使用 Consumer 來接收資料</h4><p>在需要使用資料的地方，我們可以使用 <code>MyContext.Consumer</code> 來獲取資料。<code>Consumer</code> 的 <code>children</code> 是一個函數，它會接收一個 <code>value</code> 參數，這個參數就是在 <code>Provider</code> 中傳遞的資料。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">UserProfile</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">MyContext.Consumer</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;(user) =&gt; (</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;user.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">p</span>&gt;</span>Age: &#123;user.age&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      )&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">MyContext.Consumer</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>在這個範例中，<code>UserProfile</code> 組件通過 <code>Consumer</code> 來訪問 <code>MyContext</code> 中的 <code>user</code> 資料，並渲染顯示用戶的名字和年齡。</p>
-<h4 id="步驟-4-使用-useContext-Hook-React-16-8-及以上"><a href="#步驟-4-使用-useContext-Hook-React-16-8-及以上" class="headerlink" title="步驟 4: 使用 useContext Hook (React 16.8 及以上)"></a>步驟 4: 使用 <code>useContext</code> Hook (React 16.8 及以上)</h4><p>React 16.8 引入了 <code>useContext</code> Hook，這樣我們可以更方便地在函數組件中使用 Context，而不需要使用 <code>Consumer</code>。這樣的寫法更加簡潔，並且避免了過多的嵌套。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useContext &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">UserProfile</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> user = <span class="title function_">useContext</span>(<span class="title class_">MyContext</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;user.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>Age: &#123;user.age&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>使用 <code>useContext</code> 可以直接從 Context 中獲取資料，而不需要使用 <code>Consumer</code>。這使得代碼更簡潔，並提高了可讀性。</p>
-<h3 id="實際範例"><a href="#實際範例" class="headerlink" title="實際範例"></a>實際範例</h3><p>下面是一個完整的範例，展示了如何使用 React Context API 來管理應用中的全局狀態。這個範例將包括一個用戶資料的管理，並能夠在多個組件中共享這些資料。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState, useContext &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 創建 Context</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">MyContext</span> = <span class="title class_">React</span>.<span class="title function_">createContext</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> [user, setUser] = <span class="title function_">useState</span>(&#123; <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">MyContext.Provider</span> <span class="attr">value</span>=<span class="string">&#123;user&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">UserProfile</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">AgeUpdater</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">MyContext.Provider</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">UserProfile</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> user = <span class="title function_">useContext</span>(<span class="title class_">MyContext</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;user.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>Age: &#123;user.age&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">AgeUpdater</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> user = <span class="title function_">useContext</span>(<span class="title class_">MyContext</span>);</span><br><span class="line">  <span class="keyword">const</span> setUser = <span class="title function_">useState</span>()[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">updateAge</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">setUser</span>(&#123; ...user, <span class="attr">age</span>: user.<span class="property">age</span> + <span class="number">1</span> &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;updateAge&#125;</span>&gt;</span>Increase Age<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="範例解析"><a href="#範例解析" class="headerlink" title="範例解析"></a>範例解析</h3><ol>
-<li><strong>App 組件</strong>：在 <code>App</code> 組件中，我們使用 <code>useState</code> 定義了一個 <code>user</code> 資料，並通過 <code>MyContext.Provider</code> 將資料提供給下層組件。</li>
-<li><strong>UserProfile 組件</strong>：<code>UserProfile</code> 使用 <code>useContext</code> 來讀取 <code>MyContext</code> 中的資料，並顯示用戶的名字和年齡。</li>
-<li><strong>AgeUpdater 組件</strong>：這個組件同樣使用 <code>useContext</code> 來讀取和更新 <code>user</code> 資料。我們在這裡定義了一個按鈕，當按下時，會更新 <code>user</code> 的年齡。</li>
-</ol>
-<h3 id="Context-API-的優缺點"><a href="#Context-API-的優缺點" class="headerlink" title="Context API 的優缺點"></a>Context API 的優缺點</h3><h4 id="優點："><a href="#優點：" class="headerlink" title="優點："></a>優點：</h4><ol>
-<li><strong>簡化資料傳遞</strong>：當我們需要在多層嵌套的組件中共享資料時，使用 Context 可以避免繁瑣的 props 傳遞。</li>
-<li><strong>可擴展性</strong>：Context 非常適合用於應用中的全局狀態管理，像是用戶認證、語言設置、主題樣式等。</li>
-</ol>
-<h4 id="缺點："><a href="#缺點：" class="headerlink" title="缺點："></a>缺點：</h4><ol>
-<li><strong>重新渲染問題</strong>：當 <code>Provider</code> 中的資料變更時，所有使用該 Context 的組件都會重新渲染。對於大型應用來說，這可能會影響性能。</li>
-<li><strong>狀態過度共享</strong>：Context 主要用於共享全局資料，如果將太多不相關的資料放入同一個 Context，可能會使代碼變得難以維護。</li>
-</ol>
-<h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><p>React Context API 是一個強大的工具，可以幫助我們管理應用中的全局狀態。在適當的情況下使用 Context 可以大大簡化代碼，避免深層嵌套的 props 傳遞。但也需要謹慎使用，避免過多不必要的資料共享，從而影響性能和可維護性。在開發中，我們可以根據具體需求來選擇是否使用 Context API，並搭配其他狀態管理工具（如 Redux 或 Zustand）來管理更複雜的應用狀態。</p>
-<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
-<li><a href="https://muki.tw/react-context-api/">用 React Context API 實作跨組件傳值的功能</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>javascript</tag>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>React</tag>
-        <tag>React.js</tag>
-        <tag>ReactJS</tag>
-        <tag>useContext</tag>
-        <tag>Context API</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>React 效能優化入門教學筆記 | 學習筆記</title>
     <url>/2024/12/26/learning-notes-react-lazy-loading-code-splitting-intro-tutorial/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>隨著前端應用日益龐大，單頁應用（SPA）在初次載入時常面臨 JavaScript 檔案過大、載入時間過久的問題，導致使用者等待時間過長、效能下降。為了解決這個問題，React 與現代建構工具（如 Webpack、Vite）提供了 Code Splitting（程式碼分割）與 Lazy Loading（延遲載入）兩種策略，協助開發者更有效地管理與優化應用程式的載入流程。</p>
@@ -8831,6 +8771,66 @@
         <tag>ES Module</tag>
         <tag>React</tag>
         <tag>Performance Optimization</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>React Context API 入門教學 | 學習筆記</title>
+    <url>/2024/12/21/learning-notes-react-context-api-intro-tutorial/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>React Context API 是 React 提供的一種方式，讓我們能夠在組件樹中傳遞資料，而不需要一層層地使用 props。Context API 可以解決多層嵌套組件的傳遞問題，讓我們在深層組件中輕鬆訪問到全局狀態。本文將介紹如何使用 React Context API，並提供一個簡單的範例來展示其實際應用。</p>
+<h3 id="什麼是-React-Context-API"><a href="#什麼是-React-Context-API" class="headerlink" title="什麼是 React Context API"></a>什麼是 React Context API</h3><p>React Context API 是 React 的一個內建功能，它可以讓我們在組件樹中共享資料，避免多層嵌套的 props 傳遞。Context 主要由三個部分組成：</p>
+<ol>
+<li>**React.createContext()**：創建一個 Context 物件。</li>
+<li><strong>Provider</strong>：這是 Context API 中的一個組件，它用來包裹整個應用，並提供一個全局的資料源。</li>
+<li><strong>Consumer</strong>：這是用來訪問 Context 資料的組件，它能夠獲取 Provider 中傳遞的資料。</li>
+</ol>
+<p>使用 Context 的目的，是為了避免將相同的資料層層傳遞到每個組件，這樣可以讓應用的資料流變得更加簡潔。</p>
+<h3 id="使用-Context-API-的步驟"><a href="#使用-Context-API-的步驟" class="headerlink" title="使用 Context API 的步驟"></a>使用 Context API 的步驟</h3><h4 id="步驟-1-創建-Context"><a href="#步驟-1-創建-Context" class="headerlink" title="步驟 1: 創建 Context"></a>步驟 1: 創建 Context</h4><p>首先，我們需要使用 <code>React.createContext()</code> 來創建一個 Context 物件。這個物件會返回一個 <code>Provider</code> 和 <code>Consumer</code> 組件，讓我們在應用中使用。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 創建 Context</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">MyContext</span> = <span class="title class_">React</span>.<span class="title function_">createContext</span>();</span><br></pre></td></tr></table></figure>
+
+<h4 id="步驟-2-使用-Provider-來傳遞資料"><a href="#步驟-2-使用-Provider-來傳遞資料" class="headerlink" title="步驟 2: 使用 Provider 來傳遞資料"></a>步驟 2: 使用 Provider 來傳遞資料</h4><p>Context 的 <code>Provider</code> 是用來包裹應用的，它會接收一個 <code>value</code> 屬性，這個屬性就是要共享給整個組件樹的資料。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> [user, setUser] = <span class="title class_">React</span>.<span class="title function_">useState</span>(&#123; <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">MyContext.Provider</span> <span class="attr">value</span>=<span class="string">&#123;user&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">UserProfile</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">MyContext.Provider</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在這個範例中，我們將一個 <code>user</code> 物件傳遞給 <code>MyContext.Provider</code> 的 <code>value</code> 屬性，這樣整個組件樹中的所有子組件都能夠訪問到這個 <code>user</code> 資料。</p>
+<h4 id="步驟-3-使用-Consumer-來接收資料"><a href="#步驟-3-使用-Consumer-來接收資料" class="headerlink" title="步驟 3: 使用 Consumer 來接收資料"></a>步驟 3: 使用 Consumer 來接收資料</h4><p>在需要使用資料的地方，我們可以使用 <code>MyContext.Consumer</code> 來獲取資料。<code>Consumer</code> 的 <code>children</code> 是一個函數，它會接收一個 <code>value</code> 參數，這個參數就是在 <code>Provider</code> 中傳遞的資料。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">UserProfile</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">MyContext.Consumer</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;(user) =&gt; (</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;user.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">p</span>&gt;</span>Age: &#123;user.age&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      )&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">MyContext.Consumer</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在這個範例中，<code>UserProfile</code> 組件通過 <code>Consumer</code> 來訪問 <code>MyContext</code> 中的 <code>user</code> 資料，並渲染顯示用戶的名字和年齡。</p>
+<h4 id="步驟-4-使用-useContext-Hook-React-16-8-及以上"><a href="#步驟-4-使用-useContext-Hook-React-16-8-及以上" class="headerlink" title="步驟 4: 使用 useContext Hook (React 16.8 及以上)"></a>步驟 4: 使用 <code>useContext</code> Hook (React 16.8 及以上)</h4><p>React 16.8 引入了 <code>useContext</code> Hook，這樣我們可以更方便地在函數組件中使用 Context，而不需要使用 <code>Consumer</code>。這樣的寫法更加簡潔，並且避免了過多的嵌套。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useContext &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">UserProfile</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> user = <span class="title function_">useContext</span>(<span class="title class_">MyContext</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;user.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>Age: &#123;user.age&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>useContext</code> 可以直接從 Context 中獲取資料，而不需要使用 <code>Consumer</code>。這使得代碼更簡潔，並提高了可讀性。</p>
+<h3 id="實際範例"><a href="#實際範例" class="headerlink" title="實際範例"></a>實際範例</h3><p>下面是一個完整的範例，展示了如何使用 React Context API 來管理應用中的全局狀態。這個範例將包括一個用戶資料的管理，並能夠在多個組件中共享這些資料。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState, useContext &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 創建 Context</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">MyContext</span> = <span class="title class_">React</span>.<span class="title function_">createContext</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> [user, setUser] = <span class="title function_">useState</span>(&#123; <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">MyContext.Provider</span> <span class="attr">value</span>=<span class="string">&#123;user&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">UserProfile</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">AgeUpdater</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">MyContext.Provider</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">UserProfile</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> user = <span class="title function_">useContext</span>(<span class="title class_">MyContext</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;user.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>Age: &#123;user.age&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">AgeUpdater</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> user = <span class="title function_">useContext</span>(<span class="title class_">MyContext</span>);</span><br><span class="line">  <span class="keyword">const</span> setUser = <span class="title function_">useState</span>()[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">updateAge</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">setUser</span>(&#123; ...user, <span class="attr">age</span>: user.<span class="property">age</span> + <span class="number">1</span> &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;updateAge&#125;</span>&gt;</span>Increase Age<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="範例解析"><a href="#範例解析" class="headerlink" title="範例解析"></a>範例解析</h3><ol>
+<li><strong>App 組件</strong>：在 <code>App</code> 組件中，我們使用 <code>useState</code> 定義了一個 <code>user</code> 資料，並通過 <code>MyContext.Provider</code> 將資料提供給下層組件。</li>
+<li><strong>UserProfile 組件</strong>：<code>UserProfile</code> 使用 <code>useContext</code> 來讀取 <code>MyContext</code> 中的資料，並顯示用戶的名字和年齡。</li>
+<li><strong>AgeUpdater 組件</strong>：這個組件同樣使用 <code>useContext</code> 來讀取和更新 <code>user</code> 資料。我們在這裡定義了一個按鈕，當按下時，會更新 <code>user</code> 的年齡。</li>
+</ol>
+<h3 id="Context-API-的優缺點"><a href="#Context-API-的優缺點" class="headerlink" title="Context API 的優缺點"></a>Context API 的優缺點</h3><h4 id="優點："><a href="#優點：" class="headerlink" title="優點："></a>優點：</h4><ol>
+<li><strong>簡化資料傳遞</strong>：當我們需要在多層嵌套的組件中共享資料時，使用 Context 可以避免繁瑣的 props 傳遞。</li>
+<li><strong>可擴展性</strong>：Context 非常適合用於應用中的全局狀態管理，像是用戶認證、語言設置、主題樣式等。</li>
+</ol>
+<h4 id="缺點："><a href="#缺點：" class="headerlink" title="缺點："></a>缺點：</h4><ol>
+<li><strong>重新渲染問題</strong>：當 <code>Provider</code> 中的資料變更時，所有使用該 Context 的組件都會重新渲染。對於大型應用來說，這可能會影響性能。</li>
+<li><strong>狀態過度共享</strong>：Context 主要用於共享全局資料，如果將太多不相關的資料放入同一個 Context，可能會使代碼變得難以維護。</li>
+</ol>
+<h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><p>React Context API 是一個強大的工具，可以幫助我們管理應用中的全局狀態。在適當的情況下使用 Context 可以大大簡化代碼，避免深層嵌套的 props 傳遞。但也需要謹慎使用，避免過多不必要的資料共享，從而影響性能和可維護性。在開發中，我們可以根據具體需求來選擇是否使用 Context API，並搭配其他狀態管理工具（如 Redux 或 Zustand）來管理更複雜的應用狀態。</p>
+<h1 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h1><ol>
+<li><a href="https://muki.tw/react-context-api/">用 React Context API 實作跨組件傳值的功能</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>React</tag>
+        <tag>React.js</tag>
+        <tag>ReactJS</tag>
+        <tag>useContext</tag>
+        <tag>Context API</tag>
       </tags>
   </entry>
   <entry>
@@ -10724,84 +10724,6 @@
       </tags>
   </entry>
   <entry>
-    <title>useSWR 入門教學筆記：打造高效、簡潔的資料請求方式 | 學習筆記</title>
-    <url>/2024/12/23/learning-notes-useswr-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在現代前端開發中，資料的取得與管理是不可或缺的一環。傳統上，我們可能使用 <code>useEffect</code> 搭配 <code>fetch</code> 或 <code>axios</code> 來處理資料請求，但這樣的方式不僅冗長，還需要手動管理 loading、error 狀態與快取邏輯。為了解決這些問題，Vercel 推出的 SWR（stale-while-revalidate）提供了一種簡潔、聲明式且高效的資料取得方式，特別適合搭配 React 應用開發。</p>
-<p>本文將介紹 SWR 的核心觀念、使用方式與基本範例，幫助我們快速上手並應用於實務開發中。</p>
-<hr>
-<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
-<li><p><strong>SWR 是什麼？</strong></p>
-<ul>
-<li>SWR 是由 Vercel 開發的 React Hooks 函式庫，提供資料快取與同步機制。</li>
-<li>名稱來自 HTTP 快取策略 “stale-while-revalidate”，意指：<strong>先顯示舊資料，再重新驗證更新資料</strong>。</li>
-</ul>
-</li>
-<li><p><strong>為什麼要使用 SWR？</strong></p>
-<ul>
-<li>自動處理資料快取與重新驗證。</li>
-<li>簡化資料請求邏輯，減少樣板程式碼。</li>
-<li>支援多種進階功能（錯誤重試、revalidate on focus、polling 等）。</li>
-</ul>
-</li>
-<li><p><strong>基本用法</strong></p>
-<ul>
-<li>使用 <code>useSWR(key, fetcher)</code> 進行資料請求。</li>
-<li><code>key</code>：唯一識別資料來源的 key，通常為 API 路徑。</li>
-<li><code>fetcher</code>：資料請求函式，可使用 <code>fetch</code> 或 <code>axios</code> 實作。</li>
-</ul>
-</li>
-<li><p><strong>常見功能</strong></p>
-<ul>
-<li><code>isLoading</code>、<code>error</code> 狀態管理。</li>
-<li>自動重試與重新整理資料。</li>
-<li>快取與全域共用資料（Shared cache）。</li>
-<li>手動重新驗證資料（revalidate）。</li>
-<li>支援 SSR、Pagination、Mutation 等進階功能。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="實際範例：取得-GitHub-使用者資料"><a href="#實際範例：取得-GitHub-使用者資料" class="headerlink" title="實際範例：取得 GitHub 使用者資料"></a>實際範例：取得 GitHub 使用者資料</h2><h3 id="1-安裝-SWR"><a href="#1-安裝-SWR" class="headerlink" title="1. 安裝 SWR"></a>1. 安裝 SWR</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install swr</span><br><span class="line"><span class="comment"># 或使用 yarn</span></span><br><span class="line">yarn add swr</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="2-撰寫-fetcher-函式"><a href="#2-撰寫-fetcher-函式" class="headerlink" title="2. 撰寫 fetcher 函式"></a>2. 撰寫 fetcher 函式</h3><figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">// libs/fetcher.ts</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">fetcher</span> = (<span class="params">url: <span class="built_in">string</span></span>) =&gt; <span class="title function_">fetch</span>(url).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> res.<span class="title function_">json</span>());</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="3-在元件中使用-useSWR"><a href="#3-在元件中使用-useSWR" class="headerlink" title="3. 在元件中使用 useSWR"></a>3. 在元件中使用 useSWR</h3><figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">// pages/UserProfile.tsx</span></span><br><span class="line"><span class="keyword">import</span> useSWR <span class="keyword">from</span> <span class="string">&#x27;swr&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; fetcher &#125; <span class="keyword">from</span> <span class="string">&#x27;../libs/fetcher&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">UserProfile</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; data, error, isLoading &#125; = <span class="title function_">useSWR</span>(<span class="string">&#x27;https://api.github.com/users/octocat&#x27;</span>, fetcher);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (isLoading) <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>載入中...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">  <span class="keyword">if</span> (error) <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>載入失敗：&#123;error.message&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;data.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>GitHub：&#123;data.login&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>Followers：&#123;data.followers&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&#123;data.avatar_url&#125;</span> <span class="attr">width</span>=<span class="string">&#123;100&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">UserProfile</span>;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="4-手動重新驗證資料"><a href="#4-手動重新驗證資料" class="headerlink" title="4. 手動重新驗證資料"></a>4. 手動重新驗證資料</h3><figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; data, mutate &#125; = <span class="title function_">useSWR</span>(<span class="string">&#x27;/api/data&#x27;</span>, fetcher);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 手動刷新資料</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">handleRefresh</span> = <span class="keyword">async</span> (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">await</span> <span class="title function_">mutate</span>();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="5-搭配條件式載入"><a href="#5-搭配條件式載入" class="headerlink" title="5. 搭配條件式載入"></a>5. 搭配條件式載入</h3><figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> shouldFetch = userId !== <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; data &#125; = <span class="title function_">useSWR</span>(shouldFetch ? <span class="string">`/api/users/<span class="subst">$&#123;userId&#125;</span>`</span> : <span class="literal">null</span>, fetcher);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="6-自訂快取與設定"><a href="#6-自訂快取與設定" class="headerlink" title="6. 自訂快取與設定"></a>6. 自訂快取與設定</h3><figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> useSWR <span class="keyword">from</span> <span class="string">&#x27;swr&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; data, error &#125; = <span class="title function_">useSWR</span>(<span class="string">&#x27;/api/data&#x27;</span>, fetcher, &#123;</span><br><span class="line">  <span class="attr">refreshInterval</span>: <span class="number">10000</span>, <span class="comment">// 每 10 秒重新抓資料</span></span><br><span class="line">  <span class="attr">revalidateOnFocus</span>: <span class="literal">true</span>, <span class="comment">// 回到畫面時自動刷新</span></span><br><span class="line">  <span class="attr">dedupingInterval</span>: <span class="number">5000</span>, <span class="comment">// 阻止過於頻繁的 API 請求</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>SWR 提供了一種優雅、聲明式的方式來管理 React 應用中的資料請求與快取，不僅能有效簡化程式碼，還能提高使用者體驗與應用效能。其彈性與擴充性也適合應用於中大型專案中。</p>
-<p>當我們熟悉了 SWR 的基本用法後，接下來也可以進一步探索以下功能：</p>
-<ul>
-<li><strong>Mutation API</strong>：用於資料寫入後手動更新快取。</li>
-<li><strong>依賴 key 的動態載入</strong>：搭配 router 參數動態請求資料。</li>
-<li><strong>全域快取策略自訂（SWRConfig）</strong>：統一設定所有請求的行為。</li>
-</ul>
-<p>透過 SWR，我們不再需要手動處理快取與副作用邏輯，只需專注於資料的呈現與邏輯本身，是開發現代 React 應用的絕佳利器。</p>
-<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
-<li><a href="https://swr.vercel.app/">React Hooks for Data Fetching</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>react</tag>
-        <tag>html</tag>
-        <tag>fetch</tag>
-        <tag>useSWR</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>TypeScript 入門教學筆記 | 學習筆記</title>
     <url>/2024/12/02/learning-notes-typescript-intro-tutorial/</url>
     <content><![CDATA[<h1 id="一、什麼是-TypeScript？"><a href="#一、什麼是-TypeScript？" class="headerlink" title="一、什麼是 TypeScript？"></a>一、什麼是 TypeScript？</h1><p>TypeScript 是由 Microsoft 開發的 JavaScript 超集（Superset），提供靜態型別檢查（Static Type Checking），讓開發者在編譯時發現錯誤，提升程式碼的可靠性與可維護性。TypeScript 會被編譯為標準 JavaScript，並可以運行於任何支援 JavaScript 的環境，例如瀏覽器或 Node.js。</p>
@@ -10932,6 +10854,84 @@
       </tags>
   </entry>
   <entry>
+    <title>useSWR 入門教學筆記：打造高效、簡潔的資料請求方式 | 學習筆記</title>
+    <url>/2024/12/23/learning-notes-useswr-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在現代前端開發中，資料的取得與管理是不可或缺的一環。傳統上，我們可能使用 <code>useEffect</code> 搭配 <code>fetch</code> 或 <code>axios</code> 來處理資料請求，但這樣的方式不僅冗長，還需要手動管理 loading、error 狀態與快取邏輯。為了解決這些問題，Vercel 推出的 SWR（stale-while-revalidate）提供了一種簡潔、聲明式且高效的資料取得方式，特別適合搭配 React 應用開發。</p>
+<p>本文將介紹 SWR 的核心觀念、使用方式與基本範例，幫助我們快速上手並應用於實務開發中。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p><strong>SWR 是什麼？</strong></p>
+<ul>
+<li>SWR 是由 Vercel 開發的 React Hooks 函式庫，提供資料快取與同步機制。</li>
+<li>名稱來自 HTTP 快取策略 “stale-while-revalidate”，意指：<strong>先顯示舊資料，再重新驗證更新資料</strong>。</li>
+</ul>
+</li>
+<li><p><strong>為什麼要使用 SWR？</strong></p>
+<ul>
+<li>自動處理資料快取與重新驗證。</li>
+<li>簡化資料請求邏輯，減少樣板程式碼。</li>
+<li>支援多種進階功能（錯誤重試、revalidate on focus、polling 等）。</li>
+</ul>
+</li>
+<li><p><strong>基本用法</strong></p>
+<ul>
+<li>使用 <code>useSWR(key, fetcher)</code> 進行資料請求。</li>
+<li><code>key</code>：唯一識別資料來源的 key，通常為 API 路徑。</li>
+<li><code>fetcher</code>：資料請求函式，可使用 <code>fetch</code> 或 <code>axios</code> 實作。</li>
+</ul>
+</li>
+<li><p><strong>常見功能</strong></p>
+<ul>
+<li><code>isLoading</code>、<code>error</code> 狀態管理。</li>
+<li>自動重試與重新整理資料。</li>
+<li>快取與全域共用資料（Shared cache）。</li>
+<li>手動重新驗證資料（revalidate）。</li>
+<li>支援 SSR、Pagination、Mutation 等進階功能。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="實際範例：取得-GitHub-使用者資料"><a href="#實際範例：取得-GitHub-使用者資料" class="headerlink" title="實際範例：取得 GitHub 使用者資料"></a>實際範例：取得 GitHub 使用者資料</h2><h3 id="1-安裝-SWR"><a href="#1-安裝-SWR" class="headerlink" title="1. 安裝 SWR"></a>1. 安裝 SWR</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install swr</span><br><span class="line"><span class="comment"># 或使用 yarn</span></span><br><span class="line">yarn add swr</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-撰寫-fetcher-函式"><a href="#2-撰寫-fetcher-函式" class="headerlink" title="2. 撰寫 fetcher 函式"></a>2. 撰寫 fetcher 函式</h3><figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">// libs/fetcher.ts</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">fetcher</span> = (<span class="params">url: <span class="built_in">string</span></span>) =&gt; <span class="title function_">fetch</span>(url).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> res.<span class="title function_">json</span>());</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-在元件中使用-useSWR"><a href="#3-在元件中使用-useSWR" class="headerlink" title="3. 在元件中使用 useSWR"></a>3. 在元件中使用 useSWR</h3><figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">// pages/UserProfile.tsx</span></span><br><span class="line"><span class="keyword">import</span> useSWR <span class="keyword">from</span> <span class="string">&#x27;swr&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; fetcher &#125; <span class="keyword">from</span> <span class="string">&#x27;../libs/fetcher&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">UserProfile</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; data, error, isLoading &#125; = <span class="title function_">useSWR</span>(<span class="string">&#x27;https://api.github.com/users/octocat&#x27;</span>, fetcher);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (isLoading) <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>載入中...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">  <span class="keyword">if</span> (error) <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>載入失敗：&#123;error.message&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;data.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>GitHub：&#123;data.login&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>Followers：&#123;data.followers&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&#123;data.avatar_url&#125;</span> <span class="attr">width</span>=<span class="string">&#123;100&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">UserProfile</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="4-手動重新驗證資料"><a href="#4-手動重新驗證資料" class="headerlink" title="4. 手動重新驗證資料"></a>4. 手動重新驗證資料</h3><figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; data, mutate &#125; = <span class="title function_">useSWR</span>(<span class="string">&#x27;/api/data&#x27;</span>, fetcher);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 手動刷新資料</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">handleRefresh</span> = <span class="keyword">async</span> (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">await</span> <span class="title function_">mutate</span>();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="5-搭配條件式載入"><a href="#5-搭配條件式載入" class="headerlink" title="5. 搭配條件式載入"></a>5. 搭配條件式載入</h3><figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> shouldFetch = userId !== <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; data &#125; = <span class="title function_">useSWR</span>(shouldFetch ? <span class="string">`/api/users/<span class="subst">$&#123;userId&#125;</span>`</span> : <span class="literal">null</span>, fetcher);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="6-自訂快取與設定"><a href="#6-自訂快取與設定" class="headerlink" title="6. 自訂快取與設定"></a>6. 自訂快取與設定</h3><figure class="highlight tsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> useSWR <span class="keyword">from</span> <span class="string">&#x27;swr&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; data, error &#125; = <span class="title function_">useSWR</span>(<span class="string">&#x27;/api/data&#x27;</span>, fetcher, &#123;</span><br><span class="line">  <span class="attr">refreshInterval</span>: <span class="number">10000</span>, <span class="comment">// 每 10 秒重新抓資料</span></span><br><span class="line">  <span class="attr">revalidateOnFocus</span>: <span class="literal">true</span>, <span class="comment">// 回到畫面時自動刷新</span></span><br><span class="line">  <span class="attr">dedupingInterval</span>: <span class="number">5000</span>, <span class="comment">// 阻止過於頻繁的 API 請求</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>SWR 提供了一種優雅、聲明式的方式來管理 React 應用中的資料請求與快取，不僅能有效簡化程式碼，還能提高使用者體驗與應用效能。其彈性與擴充性也適合應用於中大型專案中。</p>
+<p>當我們熟悉了 SWR 的基本用法後，接下來也可以進一步探索以下功能：</p>
+<ul>
+<li><strong>Mutation API</strong>：用於資料寫入後手動更新快取。</li>
+<li><strong>依賴 key 的動態載入</strong>：搭配 router 參數動態請求資料。</li>
+<li><strong>全域快取策略自訂（SWRConfig）</strong>：統一設定所有請求的行為。</li>
+</ul>
+<p>透過 SWR，我們不再需要手動處理快取與副作用邏輯，只需專注於資料的呈現與邏輯本身，是開發現代 React 應用的絕佳利器。</p>
+<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
+<li><a href="https://swr.vercel.app/">React Hooks for Data Fetching</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>react</tag>
+        <tag>html</tag>
+        <tag>fetch</tag>
+        <tag>useSWR</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue i18n 入門教學筆記 | 學習筆記</title>
     <url>/2024/11/13/learning-notes-vue-i18n-intro-tutorial/</url>
     <content><![CDATA[<h2 id="1-Vue-I18n-簡介"><a href="#1-Vue-I18n-簡介" class="headerlink" title="1. Vue I18n 簡介"></a>1. Vue I18n 簡介</h2><p>Vue i18n 是 Vue.js 的國際化（Internationalization）解決方案，可用於管理應用程式的多語系內容。當開發需要支援不同語言的應用時，Vue i18n 提供了一個高效的方式來處理翻譯、數字格式、日期格式等。</p>
@@ -10987,6 +10987,89 @@
         <tag>多語系</tag>
         <tag>多國語系</tag>
         <tag>在地化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue nextTick 入門教學筆記 | 學習筆記</title>
+    <url>/2023/05/31/learning-notes-vue-next-tick-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用 Vue 進行開發時，常常會遇到「資料已經更新，但畫面上的 DOM 尚未更新完成」的情況。這是因為 Vue 採用了 **非同步更新策略 (asynchronous update strategy)**，它會先收集多次資料變動，再一次性地進行 DOM 更新，以提升效能。但這也意味著，如果我們想在資料變更後立即操作更新後的 DOM，往往會發現 DOM 還停留在舊的狀態。</p>
+<p>為了解決這個問題，Vue 提供了 <code>nextTick</code> 這個 API。它允許我們在 <strong>DOM 更新完成後</strong>，執行特定的 callback function 或程式碼，確保操作的 DOM 是最新的。本文將介紹 <code>nextTick</code> 的基本概念、使用情境與實際範例，幫助你掌握這個常用的技巧。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p><strong>Vue 更新策略</strong></p>
+<ul>
+<li>Vue 採用「批次非同步更新」，會延遲 DOM 實際渲染，等所有同步程式碼執行後再統一更新。</li>
+<li>好處：避免重複渲染、提升效能。</li>
+<li>挑戰：在資料變更後立刻訪問 DOM，可能還是舊狀態。</li>
+</ul>
+</li>
+<li><p><strong><code>nextTick</code> 的作用</strong></p>
+<ul>
+<li><p>確保在下一次 DOM 更新循環結束後再執行指定 callback。</p>
+</li>
+<li><p>語法：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; nextTick &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">nextTick</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// DOM 已更新完成</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>常見使用情境</strong></p>
+<ol>
+<li><strong>操作最新 DOM 元素</strong>：例如要取得更新後元素的高度、寬度或位置。</li>
+<li><strong>與第三方函式庫整合</strong>：某些 UI 套件需要等 DOM 更新後再初始化。</li>
+<li><strong>強制等待渲染完成再執行程式</strong>：避免非同步更新造成的狀態錯誤。</li>
+</ol>
+</li>
+<li><p><strong>可搭配 async&#x2F;await</strong></p>
+<ul>
+<li><code>nextTick</code> 也能回傳 <code>Promise</code>，讓程式碼更直觀。</li>
+<li>適合在 <code>setup</code> 或 <code>methods</code> 中使用 <code>await nextTick()</code>。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="實際範例"><a href="#實際範例" class="headerlink" title="實際範例"></a>實際範例</h2><h3 id="範例一：取得更新後的-DOM"><a href="#範例一：取得更新後的-DOM" class="headerlink" title="範例一：取得更新後的 DOM"></a>範例一：取得更新後的 DOM</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button @click=&quot;addItem&quot;&gt;新增項目&lt;/button&gt;</span><br><span class="line">    &lt;ul ref=&quot;list&quot;&gt;</span><br><span class="line">      &lt;li v-for=&quot;(item, index) in items&quot; :key=&quot;index&quot;&gt;&#123;&#123; item &#125;&#125;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;p&gt;目前清單高度：&#123;&#123; listHeight &#125;&#125;px&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref, nextTick &#125; from &#x27;vue&#x27;;</span><br><span class="line"></span><br><span class="line">const items = ref([&#x27;項目 1&#x27;, &#x27;項目 2&#x27;]);</span><br><span class="line">const list = ref(null);</span><br><span class="line">const listHeight = ref(0);</span><br><span class="line"></span><br><span class="line">function addItem() &#123;</span><br><span class="line">  items.value.push(`項目 $&#123;items.value.length + 1&#125;`);</span><br><span class="line">  // 此時 DOM 尚未更新，listHeight 還是舊的</span><br><span class="line">  nextTick(() =&gt; &#123;</span><br><span class="line">    listHeight.value = list.value.offsetHeight;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>說明：</strong></p>
+<ul>
+<li>點擊按鈕時，會往清單新增項目。</li>
+<li><code>items</code> 更新後，Vue 還沒立刻修改 DOM。</li>
+<li>使用 <code>nextTick</code>，等到 DOM 重新渲染後，才能正確取得最新高度。</li>
+</ul>
+<hr>
+<h3 id="範例二：搭配-async-x2F-await-使用"><a href="#範例二：搭配-async-x2F-await-使用" class="headerlink" title="範例二：搭配 async&#x2F;await 使用"></a>範例二：搭配 async&#x2F;await 使用</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button @click=&quot;toggleBox&quot;&gt;切換方塊&lt;/button&gt;</span><br><span class="line">    &lt;div v-if=&quot;show&quot; ref=&quot;box&quot; class=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref, nextTick &#125; from &#x27;vue&#x27;;</span><br><span class="line"></span><br><span class="line">const show = ref(false);</span><br><span class="line">const box = ref(null);</span><br><span class="line"></span><br><span class="line">async function toggleBox() &#123;</span><br><span class="line">  show.value = !show.value;</span><br><span class="line">  await nextTick();</span><br><span class="line">  if (box.value) &#123;</span><br><span class="line">    console.log(&#x27;方塊尺寸：&#x27;, box.value.offsetWidth, box.value.offsetHeight);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.box &#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background-color: lightblue;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>說明：</strong></p>
+<ul>
+<li>使用 <code>await nextTick()</code>，讓程式碼讀起來更直覺。</li>
+<li>在 <code>v-if</code> 切換後，等 DOM 更新完成再訪問 <code>box</code>，避免 <code>null</code> 或舊的狀態。</li>
+</ul>
+<hr>
+<h3 id="範例三：計算新增元素更新後高度"><a href="#範例三：計算新增元素更新後高度" class="headerlink" title="範例三：計算新增元素更新後高度"></a>範例三：計算新增元素更新後高度</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button @click=&quot;addItem&quot;&gt;新增項目&lt;/button&gt;</span><br><span class="line">    &lt;ul ref=&quot;list&quot;&gt;</span><br><span class="line">      &lt;li v-for=&quot;n in items&quot; :key=&quot;n&quot;&gt;項目 &#123;&#123; n &#125;&#125;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref, nextTick &#125; from &#x27;vue&#x27;;</span><br><span class="line"></span><br><span class="line">const items = ref([1, 2]);</span><br><span class="line">const list = ref(null);</span><br><span class="line"></span><br><span class="line">async function addItem() &#123;</span><br><span class="line">  items.value.push(items.value.length + 1);</span><br><span class="line"></span><br><span class="line">  console.log(&#x27;立即讀取高度：&#x27;, list.value.offsetHeight);</span><br><span class="line"></span><br><span class="line">  await nextTick();</span><br><span class="line">  console.log(&#x27;nextTick 後高度：&#x27;, list.value.offsetHeight);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>說明：</strong></p>
+<ul>
+<li>立即讀取高度 → 還是舊值</li>
+<li>nextTick 後高度 → 才是更新後的 DOM 高度</li>
+</ul>
+<h3 id="範例四：與第三方套件整合"><a href="#範例四：與第三方套件整合" class="headerlink" title="範例四：與第三方套件整合"></a>範例四：與第三方套件整合</h3><p>假設要在 Vue 中使用某個需要 DOM 初始化的套件（例如輪播圖 Swiper）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button @click=&quot;initSlider&quot;&gt;初始化輪播&lt;/button&gt;</span><br><span class="line">    &lt;div ref=&quot;slider&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;slide&quot; v-for=&quot;n in 3&quot; :key=&quot;n&quot;&gt;Slide &#123;&#123; n &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref, nextTick &#125; from &#x27;vue&#x27;;</span><br><span class="line">// 假設已安裝 Swiper</span><br><span class="line">import Swiper from &#x27;swiper&#x27;;</span><br><span class="line"></span><br><span class="line">const slider = ref(null);</span><br><span class="line">let swiperInstance = null;</span><br><span class="line"></span><br><span class="line">async function initSlider() &#123;</span><br><span class="line">  await nextTick();</span><br><span class="line">  if (slider.value &amp;&amp; !swiperInstance) &#123;</span><br><span class="line">    swiperInstance = new Swiper(slider.value, &#123;</span><br><span class="line">      loop: true,</span><br><span class="line">      autoplay: true,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>說明：</strong></p>
+<ul>
+<li>先確保 DOM 結構已經渲染完成，才交給第三方套件初始化。</li>
+<li>若省略 <code>nextTick</code>，可能會因為 DOM 還沒出現而報錯。</li>
+</ul>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><ul>
+<li>Vue 採用非同步批次更新策略，能提升效能，但會導致資料更新後 DOM 還未立即反映。</li>
+<li><code>nextTick</code> 可用來等待 DOM 更新完成後再執行特定程式。</li>
+<li>使用情境包括：取得最新 DOM、整合第三方套件、避免狀態錯誤。</li>
+<li>可以透過 <strong>callback function</strong> 或 <strong>async&#x2F;await</strong> 使用，後者更直覺。</li>
+<li>熟悉 <code>nextTick</code> 能幫助我們更精確掌握 Vue 的渲染時機，寫出更穩定的互動邏輯。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Vue</tag>
+        <tag>nextTick</tag>
       </tags>
   </entry>
   <entry>
@@ -12709,69 +12792,6 @@
       </tags>
   </entry>
   <entry>
-    <title>React Hooks useMemo 入門教學 | w3schools 學習筆記</title>
-    <url>/2024/01/22/learning-notes-w3schools-react-hooks-usememo-intro-tutorial/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 React 的開發中，我們常會遇到一些運算成本高昂（expensive）的函式，例如複雜的計算或操作大量資料。如果這些運算每次重新渲染都會重新執行，可能會導致效能低落，甚至造成使用者界面的卡頓或延遲。此時，我們可以使用 React 的 <code>useMemo</code> Hook，透過「記憶化」（memoization）技術，避免不必要的重新計算，從而提升效能。</p>
-<p>本文將說明 <code>useMemo</code> 的用途、使用時機，並透過實際範例展示其效能優化的實際效果。</p>
-<hr>
-<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
-<li><p><code>useMemo</code> 是 React 提供的 Hook，用來「記憶化」一個計算結果，僅在依賴（dependencies）變動時才重新計算。</p>
-</li>
-<li><p>它的語法為：<code>useMemo(() =&gt; &#123; return value &#125;, [dependencies])</code></p>
-</li>
-<li><p><code>useMemo</code> 適合用在：</p>
-<ul>
-<li>資源密集的計算</li>
-<li>必須避免重複執行的運算</li>
-</ul>
-</li>
-<li><p><code>useMemo</code> 與 <code>useCallback</code> 類似，但：</p>
-<ul>
-<li><code>useMemo</code> 回傳的是 <strong>記憶化的值</strong></li>
-<li><code>useCallback</code> 回傳的是 <strong>記憶化的函式</strong></li>
-</ul>
-</li>
-<li><p>搭配依賴陣列使用，確保只在必要時重新計算</p>
-</li>
-</ul>
-<hr>
-<h2 id="範例一：未使用-useMemo，效能不佳"><a href="#範例一：未使用-useMemo，效能不佳" class="headerlink" title="範例一：未使用 useMemo，效能不佳"></a>範例一：未使用 useMemo，效能不佳</h2><p>以下是一個基本範例，展示若每次重新渲染都執行一次昂貴的計算函式 <code>expensiveCalculation</code>，會造成延遲的情形：</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom/client&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">const</span> [todos, setTodos] = <span class="title function_">useState</span>([]);</span><br><span class="line">  <span class="keyword">const</span> calculation = <span class="title function_">expensiveCalculation</span>(count); <span class="comment">// 每次 render 都執行</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">increment</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">setCount</span>(<span class="function">(<span class="params">c</span>) =&gt;</span> c + <span class="number">1</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">addTodo</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">setTodos</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> [...t, <span class="string">&#x27;New Todo&#x27;</span>]);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>My Todos<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;todos.map((todo, index) =&gt; (</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">p</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span>&#123;todo&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        ))&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;addTodo&#125;</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        Count: &#123;count&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;increment&#125;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Expensive Calculation<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;calculation&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">expensiveCalculation</span> = (<span class="params">num</span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Calculating...&#x27;</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1000000000</span>; i++) &#123;</span><br><span class="line">    num += <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> num;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="問題說明："><a href="#問題說明：" class="headerlink" title="問題說明："></a>問題說明：</h3><p>當我們只是點擊「Add Todo」按鈕，實際上並未更動 <code>count</code>，但昂貴的 <code>expensiveCalculation(count)</code> 卻仍然被重新執行，造成整體效能低落。</p>
-<hr>
-<h2 id="範例二：使用-useMemo-優化效能"><a href="#範例二：使用-useMemo-優化效能" class="headerlink" title="範例二：使用 useMemo 優化效能"></a>範例二：使用 useMemo 優化效能</h2><p>接下來我們使用 <code>useMemo</code> 來包裝昂貴的計算函式，使其僅在 <code>count</code> 變動時才重新執行：</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState, useMemo &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom/client&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">const</span> [todos, setTodos] = <span class="title function_">useState</span>([]);</span><br><span class="line">  <span class="keyword">const</span> calculation = <span class="title function_">useMemo</span>(<span class="function">() =&gt;</span> <span class="title function_">expensiveCalculation</span>(count), [count]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">increment</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">setCount</span>(<span class="function">(<span class="params">c</span>) =&gt;</span> c + <span class="number">1</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">addTodo</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">setTodos</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> [...t, <span class="string">&#x27;New Todo&#x27;</span>]);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>My Todos<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;todos.map((todo, index) =&gt; (</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">p</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span>&#123;todo&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        ))&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;addTodo&#125;</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        Count: &#123;count&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;increment&#125;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Expensive Calculation<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;calculation&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">expensiveCalculation</span> = (<span class="params">num</span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Calculating...&#x27;</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1000000000</span>; i++) &#123;</span><br><span class="line">    num += <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> num;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="優化結果："><a href="#優化結果：" class="headerlink" title="優化結果："></a>優化結果：</h3><ul>
-<li>當你按下「Add Todo」時，不再觸發 <code>expensiveCalculation</code></li>
-<li>僅當 <code>count</code> 變動時，才會重新執行昂貴的計算</li>
-<li>大幅減少不必要的運算與效能浪費</li>
-</ul>
-<hr>
-<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p><code>useMemo</code> 是 React 提供用來優化效能的重要工具，尤其在面對昂貴計算或複雜資料處理時，能有效避免不必要的運算。雖然 <code>useMemo</code> 不該過度使用於簡單運算，但在大型應用中，對於效能的提升非常有幫助。</p>
-<h3 id="使用時機建議："><a href="#使用時機建議：" class="headerlink" title="使用時機建議："></a>使用時機建議：</h3><ul>
-<li>當某個函式或邏輯的執行成本高昂</li>
-<li>該邏輯只需在某些依賴值變化時執行一次</li>
-<li>搭配 <code>useMemo</code> 可減少重複運算、提升 UI 響應速度</li>
-</ul>
-<p>記得：不要為了使用而使用，只有在效能瓶頸或實際需求下，<code>useMemo</code> 才能發揮其最大效益。</p>
-<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
-<li><a href="https://www.w3schools.com/react/react_customhooks.asp">React Custom Hooks</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>前端開發</tag>
-        <tag>前端工程</tag>
-        <tag>frontend</tag>
-        <tag>frontend engineer</tag>
-        <tag>React</tag>
-        <tag>Next.js</tag>
-        <tag>React Hooks</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>React Hooks useEffect 入門教學 | w3schools 學習筆記</title>
     <url>/2024/01/18/learning-notes-w3schools-react-hooks-useeffect-intro-tutorial/</url>
     <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在 React 函式型元件中，<code>useEffect</code> 是一個強大且常用的 Hook，用來處理副作用（side effects）。副作用指的是那些不直接涉及元件渲染的操作，例如：發送 API 請求、操作 DOM、設定或清除計時器等。</p>
@@ -12824,6 +12844,69 @@
 <li>若副作用產生了外部資源（如計時器、訂閱等），務必記得清除。</li>
 </ul>
 <p>掌握這些原則後，就能更靈活並安全地使用 <code>useEffect</code>，打造高效穩定的 React 應用。</p>
+<h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
+<li><a href="https://www.w3schools.com/react/react_customhooks.asp">React Custom Hooks</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>前端開發</tag>
+        <tag>前端工程</tag>
+        <tag>frontend</tag>
+        <tag>frontend engineer</tag>
+        <tag>React</tag>
+        <tag>Next.js</tag>
+        <tag>React Hooks</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>React Hooks useMemo 入門教學 | w3schools 學習筆記</title>
+    <url>/2024/01/22/learning-notes-w3schools-react-hooks-usememo-intro-tutorial/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 React 的開發中，我們常會遇到一些運算成本高昂（expensive）的函式，例如複雜的計算或操作大量資料。如果這些運算每次重新渲染都會重新執行，可能會導致效能低落，甚至造成使用者界面的卡頓或延遲。此時，我們可以使用 React 的 <code>useMemo</code> Hook，透過「記憶化」（memoization）技術，避免不必要的重新計算，從而提升效能。</p>
+<p>本文將說明 <code>useMemo</code> 的用途、使用時機，並透過實際範例展示其效能優化的實際效果。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p><code>useMemo</code> 是 React 提供的 Hook，用來「記憶化」一個計算結果，僅在依賴（dependencies）變動時才重新計算。</p>
+</li>
+<li><p>它的語法為：<code>useMemo(() =&gt; &#123; return value &#125;, [dependencies])</code></p>
+</li>
+<li><p><code>useMemo</code> 適合用在：</p>
+<ul>
+<li>資源密集的計算</li>
+<li>必須避免重複執行的運算</li>
+</ul>
+</li>
+<li><p><code>useMemo</code> 與 <code>useCallback</code> 類似，但：</p>
+<ul>
+<li><code>useMemo</code> 回傳的是 <strong>記憶化的值</strong></li>
+<li><code>useCallback</code> 回傳的是 <strong>記憶化的函式</strong></li>
+</ul>
+</li>
+<li><p>搭配依賴陣列使用，確保只在必要時重新計算</p>
+</li>
+</ul>
+<hr>
+<h2 id="範例一：未使用-useMemo，效能不佳"><a href="#範例一：未使用-useMemo，效能不佳" class="headerlink" title="範例一：未使用 useMemo，效能不佳"></a>範例一：未使用 useMemo，效能不佳</h2><p>以下是一個基本範例，展示若每次重新渲染都執行一次昂貴的計算函式 <code>expensiveCalculation</code>，會造成延遲的情形：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom/client&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">const</span> [todos, setTodos] = <span class="title function_">useState</span>([]);</span><br><span class="line">  <span class="keyword">const</span> calculation = <span class="title function_">expensiveCalculation</span>(count); <span class="comment">// 每次 render 都執行</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">increment</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">setCount</span>(<span class="function">(<span class="params">c</span>) =&gt;</span> c + <span class="number">1</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">addTodo</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">setTodos</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> [...t, <span class="string">&#x27;New Todo&#x27;</span>]);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>My Todos<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;todos.map((todo, index) =&gt; (</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">p</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span>&#123;todo&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        ))&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;addTodo&#125;</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        Count: &#123;count&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;increment&#125;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Expensive Calculation<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;calculation&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">expensiveCalculation</span> = (<span class="params">num</span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Calculating...&#x27;</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1000000000</span>; i++) &#123;</span><br><span class="line">    num += <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> num;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="問題說明："><a href="#問題說明：" class="headerlink" title="問題說明："></a>問題說明：</h3><p>當我們只是點擊「Add Todo」按鈕，實際上並未更動 <code>count</code>，但昂貴的 <code>expensiveCalculation(count)</code> 卻仍然被重新執行，造成整體效能低落。</p>
+<hr>
+<h2 id="範例二：使用-useMemo-優化效能"><a href="#範例二：使用-useMemo-優化效能" class="headerlink" title="範例二：使用 useMemo 優化效能"></a>範例二：使用 useMemo 優化效能</h2><p>接下來我們使用 <code>useMemo</code> 來包裝昂貴的計算函式，使其僅在 <code>count</code> 變動時才重新執行：</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState, useMemo &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom/client&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">const</span> [todos, setTodos] = <span class="title function_">useState</span>([]);</span><br><span class="line">  <span class="keyword">const</span> calculation = <span class="title function_">useMemo</span>(<span class="function">() =&gt;</span> <span class="title function_">expensiveCalculation</span>(count), [count]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">increment</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">setCount</span>(<span class="function">(<span class="params">c</span>) =&gt;</span> c + <span class="number">1</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">addTodo</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">setTodos</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> [...t, <span class="string">&#x27;New Todo&#x27;</span>]);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>My Todos<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;todos.map((todo, index) =&gt; (</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">p</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span>&#123;todo&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        ))&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;addTodo&#125;</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        Count: &#123;count&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;increment&#125;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Expensive Calculation<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;calculation&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">expensiveCalculation</span> = (<span class="params">num</span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Calculating...&#x27;</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1000000000</span>; i++) &#123;</span><br><span class="line">    num += <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> num;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="優化結果："><a href="#優化結果：" class="headerlink" title="優化結果："></a>優化結果：</h3><ul>
+<li>當你按下「Add Todo」時，不再觸發 <code>expensiveCalculation</code></li>
+<li>僅當 <code>count</code> 變動時，才會重新執行昂貴的計算</li>
+<li>大幅減少不必要的運算與效能浪費</li>
+</ul>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p><code>useMemo</code> 是 React 提供用來優化效能的重要工具，尤其在面對昂貴計算或複雜資料處理時，能有效避免不必要的運算。雖然 <code>useMemo</code> 不該過度使用於簡單運算，但在大型應用中，對於效能的提升非常有幫助。</p>
+<h3 id="使用時機建議："><a href="#使用時機建議：" class="headerlink" title="使用時機建議："></a>使用時機建議：</h3><ul>
+<li>當某個函式或邏輯的執行成本高昂</li>
+<li>該邏輯只需在某些依賴值變化時執行一次</li>
+<li>搭配 <code>useMemo</code> 可減少重複運算、提升 UI 響應速度</li>
+</ul>
+<p>記得：不要為了使用而使用，只有在效能瓶頸或實際需求下，<code>useMemo</code> 才能發揮其最大效益。</p>
 <h2 id="參考文件"><a href="#參考文件" class="headerlink" title="參考文件"></a>參考文件</h2><ol>
 <li><a href="https://www.w3schools.com/react/react_customhooks.asp">React Custom Hooks</a></li>
 </ol>

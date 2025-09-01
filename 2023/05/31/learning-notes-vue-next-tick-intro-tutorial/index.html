@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword"  content="軟體工程, 程式設計, 程式開發, frontend, backend, web, software, software engineer, JavaScript, Python">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/img/logo.ico">
+    <meta name="google-site-verification" content="cMTgiEFMM7gXpRMBbu_05Lnj0scwhDPCMvpfhQOpENI" />
+    <script src="/js/search.js"></script> 
+
+    
+    
+    
+       <script type="text/javascript">      
+         var search_path = "search.xml";
+       if (search_path.length == 0) {
+         search_path = "search.xml";
+       }
+       var path = "/" + search_path;
+         searchFunc(path, 'local-search-input', 'local-search-result');
+       </script>
+    
+    <title>
+        
+          Vue nextTick 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪
+        
+    </title>
+
+    <link rel="canonical" href="https://tech.kdchang.net/2023/05/31/learning-notes-vue-next-tick-intro-tutorial/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/main.css?v=1">
+
+    <!-- og tag -->
+    <meta name="generator" content="KD's Tech Blog">
+    
+      <meta name="og:title" content="Vue nextTick 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+      <meta name="og:site_name" content="Vue nextTick 入門教學筆記 | 學習筆記 - KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪">
+    
+    
+      <meta name="description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發、程式設計、技術管理和產品專案管理技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計、產品專案管理、職涯發展和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+      <meta name="og:description" content="KD 技術部落格。Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發、程式設計、技術管理和產品專案管理技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計、產品專案管理、職涯發展和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！">
+    
+    
+      <meta name="og:image" content="https://tech.kdchang.net/img/logo.png">
+    
+    <meta name="og:type" content="website">
+    <!--Twitter Graph-->
+    <meta name="twitter:card" content="summary" />
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<link rel="alternate" href="/atom.xml" title="KD's Tech Blog" type="application/atom+xml">
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">KD&#39;s Tech Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/books/">Books</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/search/">Search</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    <li>
+                        <a href="/atom.xml">RSS</a>
+                    </li>                 
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/cover.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+
+                    <h1>Vue nextTick 入門教學筆記 | 學習筆記</h1>
+                    <span class="meta">
+                        Posted by kdchang on
+                        2023-05-31
+                    </span>
+                    <br>
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#Vue" title="Vue">Vue</a>
+                        
+                          <a class="tag" href="/tags/#nextTick" title="nextTick">nextTick</a>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+                <br>
+                <div>
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.net" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+                <br>
+                <div>
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用 Vue 進行開發時，常常會遇到「資料已經更新，但畫面上的 DOM 尚未更新完成」的情況。這是因為 Vue 採用了 **非同步更新策略 (asynchronous update strategy)**，它會先收集多次資料變動，再一次性地進行 DOM 更新，以提升效能。但這也意味著，如果我們想在資料變更後立即操作更新後的 DOM，往往會發現 DOM 還停留在舊的狀態。</p>
+<p>為了解決這個問題，Vue 提供了 <code>nextTick</code> 這個 API。它允許我們在 <strong>DOM 更新完成後</strong>，執行特定的 callback function 或程式碼，確保操作的 DOM 是最新的。本文將介紹 <code>nextTick</code> 的基本概念、使用情境與實際範例，幫助你掌握這個常用的技巧。</p>
+<hr>
+<h2 id="重點摘要"><a href="#重點摘要" class="headerlink" title="重點摘要"></a>重點摘要</h2><ul>
+<li><p><strong>Vue 更新策略</strong></p>
+<ul>
+<li>Vue 採用「批次非同步更新」，會延遲 DOM 實際渲染，等所有同步程式碼執行後再統一更新。</li>
+<li>好處：避免重複渲染、提升效能。</li>
+<li>挑戰：在資料變更後立刻訪問 DOM，可能還是舊狀態。</li>
+</ul>
+</li>
+<li><p><strong><code>nextTick</code> 的作用</strong></p>
+<ul>
+<li><p>確保在下一次 DOM 更新循環結束後再執行指定 callback。</p>
+</li>
+<li><p>語法：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; nextTick &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">nextTick</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// DOM 已更新完成</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>常見使用情境</strong></p>
+<ol>
+<li><strong>操作最新 DOM 元素</strong>：例如要取得更新後元素的高度、寬度或位置。</li>
+<li><strong>與第三方函式庫整合</strong>：某些 UI 套件需要等 DOM 更新後再初始化。</li>
+<li><strong>強制等待渲染完成再執行程式</strong>：避免非同步更新造成的狀態錯誤。</li>
+</ol>
+</li>
+<li><p><strong>可搭配 async&#x2F;await</strong></p>
+<ul>
+<li><code>nextTick</code> 也能回傳 <code>Promise</code>，讓程式碼更直觀。</li>
+<li>適合在 <code>setup</code> 或 <code>methods</code> 中使用 <code>await nextTick()</code>。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="實際範例"><a href="#實際範例" class="headerlink" title="實際範例"></a>實際範例</h2><h3 id="範例一：取得更新後的-DOM"><a href="#範例一：取得更新後的-DOM" class="headerlink" title="範例一：取得更新後的 DOM"></a>範例一：取得更新後的 DOM</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button @click=&quot;addItem&quot;&gt;新增項目&lt;/button&gt;</span><br><span class="line">    &lt;ul ref=&quot;list&quot;&gt;</span><br><span class="line">      &lt;li v-for=&quot;(item, index) in items&quot; :key=&quot;index&quot;&gt;&#123;&#123; item &#125;&#125;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;p&gt;目前清單高度：&#123;&#123; listHeight &#125;&#125;px&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref, nextTick &#125; from &#x27;vue&#x27;;</span><br><span class="line"></span><br><span class="line">const items = ref([&#x27;項目 1&#x27;, &#x27;項目 2&#x27;]);</span><br><span class="line">const list = ref(null);</span><br><span class="line">const listHeight = ref(0);</span><br><span class="line"></span><br><span class="line">function addItem() &#123;</span><br><span class="line">  items.value.push(`項目 $&#123;items.value.length + 1&#125;`);</span><br><span class="line">  // 此時 DOM 尚未更新，listHeight 還是舊的</span><br><span class="line">  nextTick(() =&gt; &#123;</span><br><span class="line">    listHeight.value = list.value.offsetHeight;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>說明：</strong></p>
+<ul>
+<li>點擊按鈕時，會往清單新增項目。</li>
+<li><code>items</code> 更新後，Vue 還沒立刻修改 DOM。</li>
+<li>使用 <code>nextTick</code>，等到 DOM 重新渲染後，才能正確取得最新高度。</li>
+</ul>
+<hr>
+<h3 id="範例二：搭配-async-x2F-await-使用"><a href="#範例二：搭配-async-x2F-await-使用" class="headerlink" title="範例二：搭配 async&#x2F;await 使用"></a>範例二：搭配 async&#x2F;await 使用</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button @click=&quot;toggleBox&quot;&gt;切換方塊&lt;/button&gt;</span><br><span class="line">    &lt;div v-if=&quot;show&quot; ref=&quot;box&quot; class=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref, nextTick &#125; from &#x27;vue&#x27;;</span><br><span class="line"></span><br><span class="line">const show = ref(false);</span><br><span class="line">const box = ref(null);</span><br><span class="line"></span><br><span class="line">async function toggleBox() &#123;</span><br><span class="line">  show.value = !show.value;</span><br><span class="line">  await nextTick();</span><br><span class="line">  if (box.value) &#123;</span><br><span class="line">    console.log(&#x27;方塊尺寸：&#x27;, box.value.offsetWidth, box.value.offsetHeight);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.box &#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background-color: lightblue;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>說明：</strong></p>
+<ul>
+<li>使用 <code>await nextTick()</code>，讓程式碼讀起來更直覺。</li>
+<li>在 <code>v-if</code> 切換後，等 DOM 更新完成再訪問 <code>box</code>，避免 <code>null</code> 或舊的狀態。</li>
+</ul>
+<hr>
+<h3 id="範例三：計算新增元素更新後高度"><a href="#範例三：計算新增元素更新後高度" class="headerlink" title="範例三：計算新增元素更新後高度"></a>範例三：計算新增元素更新後高度</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button @click=&quot;addItem&quot;&gt;新增項目&lt;/button&gt;</span><br><span class="line">    &lt;ul ref=&quot;list&quot;&gt;</span><br><span class="line">      &lt;li v-for=&quot;n in items&quot; :key=&quot;n&quot;&gt;項目 &#123;&#123; n &#125;&#125;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref, nextTick &#125; from &#x27;vue&#x27;;</span><br><span class="line"></span><br><span class="line">const items = ref([1, 2]);</span><br><span class="line">const list = ref(null);</span><br><span class="line"></span><br><span class="line">async function addItem() &#123;</span><br><span class="line">  items.value.push(items.value.length + 1);</span><br><span class="line"></span><br><span class="line">  console.log(&#x27;立即讀取高度：&#x27;, list.value.offsetHeight);</span><br><span class="line"></span><br><span class="line">  await nextTick();</span><br><span class="line">  console.log(&#x27;nextTick 後高度：&#x27;, list.value.offsetHeight);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>說明：</strong></p>
+<ul>
+<li>立即讀取高度 → 還是舊值</li>
+<li>nextTick 後高度 → 才是更新後的 DOM 高度</li>
+</ul>
+<h3 id="範例四：與第三方套件整合"><a href="#範例四：與第三方套件整合" class="headerlink" title="範例四：與第三方套件整合"></a>範例四：與第三方套件整合</h3><p>假設要在 Vue 中使用某個需要 DOM 初始化的套件（例如輪播圖 Swiper）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button @click=&quot;initSlider&quot;&gt;初始化輪播&lt;/button&gt;</span><br><span class="line">    &lt;div ref=&quot;slider&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;slide&quot; v-for=&quot;n in 3&quot; :key=&quot;n&quot;&gt;Slide &#123;&#123; n &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref, nextTick &#125; from &#x27;vue&#x27;;</span><br><span class="line">// 假設已安裝 Swiper</span><br><span class="line">import Swiper from &#x27;swiper&#x27;;</span><br><span class="line"></span><br><span class="line">const slider = ref(null);</span><br><span class="line">let swiperInstance = null;</span><br><span class="line"></span><br><span class="line">async function initSlider() &#123;</span><br><span class="line">  await nextTick();</span><br><span class="line">  if (slider.value &amp;&amp; !swiperInstance) &#123;</span><br><span class="line">    swiperInstance = new Swiper(slider.value, &#123;</span><br><span class="line">      loop: true,</span><br><span class="line">      autoplay: true,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>說明：</strong></p>
+<ul>
+<li>先確保 DOM 結構已經渲染完成，才交給第三方套件初始化。</li>
+<li>若省略 <code>nextTick</code>，可能會因為 DOM 還沒出現而報錯。</li>
+</ul>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><ul>
+<li>Vue 採用非同步批次更新策略，能提升效能，但會導致資料更新後 DOM 還未立即反映。</li>
+<li><code>nextTick</code> 可用來等待 DOM 更新完成後再執行特定程式。</li>
+<li>使用情境包括：取得最新 DOM、整合第三方套件、避免狀態錯誤。</li>
+<li>可以透過 <strong>callback function</strong> 或 <strong>async&#x2F;await</strong> 使用，後者更直覺。</li>
+<li>熟悉 <code>nextTick</code> 能幫助我們更精確掌握 Vue 的渲染時機，寫出更穩定的互動邏輯。</li>
+</ul>
+
+                </div>
+
+                <br>
+                <section>
+                    歡迎分享按讚給予支持和鼓勵！
+                    <div class="fb-like" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                </section>
+                <br>
+                <div>
+                    <div class="fb-page" data-href="https://www.facebook.com/tech.kdchang.net" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/tech.kdchang.net" class="fb-xfbml-parse-ignore"><a target="_blank" rel="noopener" href="https://www.facebook.com/tech.kdchang.net">KD Chang（張凱迪）</a></blockquote></div>
+                </div>
+                <hr>
+                <div>
+                    <h3>Related Posts</h3>
+                    <div>
+                        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/13/learning-notes-vue-i18n-intro-tutorial/" title="Vue i18n 入門教學筆記 | 學習筆記" rel="bookmark">Vue i18n 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-vue-router-intro-tutorial/" title="Vue Router 入門教學筆記 | 學習筆記" rel="bookmark">Vue Router 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/02/20/learning-notes-vue-v-cloak-intro-tutorial/" title="Vue v-cloak 入門教學筆記 | 學習筆記" rel="bookmark">Vue v-cloak 入門教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2018/02/01/learning-notes-vue3-app-github-pages-deploy-intro-tutorial copy/" title="將 Vue 3 應用部署到 GitHub Pages 入門語法教學筆記 | 學習筆記" rel="bookmark">將 Vue 3 應用部署到 GitHub Pages 入門語法教學筆記 | 學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2024/11/16/learning-notes-vue3-element-plus-intro-tutorial/" title="Element Plus 介紹入門教學筆記 | 學習筆記" rel="bookmark">Element Plus 介紹入門教學筆記 | 學習筆記</a></h3></div></li></ul>
+                    </div>
+                </div>
+                <!-- Tags -->
+                <h3>Comments</h3>
+                <hr>
+                
+                <!-- disqus start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus end -->
+                
+
+            </div>
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "kdchang-tech-blog";
+    var disqus_identifier = "https://tech.kdchang.net/2023/05/31/learning-notes-vue-next-tick-intro-tutorial/";
+    var disqus_url = "https://tech.kdchang.net/2023/05/31/learning-notes-vue-next-tick-intro-tutorial/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5728979c6a10856b"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<!-- <script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script> -->
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+<script>
+   anchors.add('h1, h2, h3');
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<a id="scroll-to-top-button">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/kaidichang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/tech.kdchang.net">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/kdchang_net">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kdchang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <hr>
+                <div class="copyright text-muted">
+                    Special thanks <a href="https://unsplash.com/@afgprogrammer" target="_blank">Mohammad Rahmani</a>、<a href="https://www.flickr.com/photos/derek-john-lee/14698093740/in/photolist-ooPzcj-r2kVt-ppV21v-brhFX3-wd3Qsy-cLiKEL-xDR92-28QCtA-29YFZZ-gzuZk-dqbhxt-9FwCBY-q57bEv-bVhZJr-dYxGXn-dxg9g7-8x7gjU-dzjMic-rQhf-9TMgJ3-mEsFjW-qbzd4p-q6cJvc-7zYttk-q2gE5S-bdb4G4-8ifmQN-eivVeg-9ZZFVz-aD6q6r-bnjfWh-qJAn2g-k22Ttf-n9Jhfj-kk4woh-sj43iz-5NYGUn-96wNhi-9ZZFz6-8DJkQf-4wQizw-3bzz8p-9yzTSd-xDQee-68Xwfp-7t5WPx-xDTM5-o5RPYA-kWihhy-7iHDEX" target="_blank">Derek</a>、<a href="https://www.flickr.com/photos/mashleymorgan/" target="_blank">mashleymorgan</a>、<a href="https://www.flickr.com/photos/mustafeez27/" target="_blank">mustafeez27</a>         
+                    and <a href="http://blog.kaijun.rocks" target="_blank">Kaijun</a>
+                    <br> 
+                    Copyright &copy; KD&#39;s Tech Blog 技術部落格 | KD Chang 張凱迪 2025
+                    <hr>
+                    <!-- facebook follow -->
+                    <div class="fb-like" data-href="https://www.facebook.com/tech.kdchang.net" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+<!-- Custom Main JavaScript -->
+<script src="/js/main.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://tech.kdchang.net/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fb.js -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="X3eUifxc"></script>
+
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FN9X92SM77"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FN9X92SM77');
+</script>
+
+
+
+	
+</body>
+
+</html>
