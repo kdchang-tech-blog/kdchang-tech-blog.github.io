@@ -1,4 +1,8 @@
-
+---
+title: KD Tech Blog 技術部落格 | KD Chang 張凱迪
+description: Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發、程式設計和產品專案管理技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計、產品專案管理、職涯發展和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！
+image: https://tech.kdchang.net/img/logo.png
+---
 
 > KD 技術部落格｜ Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發、程式設計和產品專案管理技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計、產品專案管理、職涯發展和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！
 
@@ -36,7 +40,7 @@ KD Chang 張凱迪，台灣大學，主修經濟學，臺大資管所畢業。�
 
 1. E-MAIL: kdchang.cc[at]gmail.com
 2. Github: [https://github.com/kdchang](https://github.com/kdchang)
-3. Personal Site/Blog: [https://www.kdchang.cc](https://www.kdchang.cc)
+3. Personal Site/Blog: [https://www.kdchang.net](https://www.kdchang.net)
 4. Tech Blog: [https://tech.kdchang.net](https://tech.kdchang.net)
 5. Slides: [http://slides.com/kd-chang](http://slides.com/kd-chang)
 6. Slideshare: [http://www.slideshare.net/KaiDiChang/](http://www.slideshare.net/KaiDiChang/)
