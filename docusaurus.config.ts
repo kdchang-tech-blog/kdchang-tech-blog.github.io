@@ -182,7 +182,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} KD Tech Blog, Inc. Built with ❤️ in Taiwan.`,
+      copyright: `Copyright © ${new Date().getFullYear()} KD Tech Blog. Built with ❤️ in Taiwan.`,
     },
     prism: {
       theme: prismThemes.github,
