@@ -1,7 +1,7 @@
 ---
 title: Bloom Filter 入門教學筆記 | 學習筆記
 date: 2024-12-16 02:23:41
-author: kdchang
+authors: kdchang
 tags:
   - Bloom Filter
   - 布隆過濾器

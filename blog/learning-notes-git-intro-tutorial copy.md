@@ -1,7 +1,7 @@
 ---
 title: Server-Sent Events（SSE）入門教學筆記 | 學習筆記
 date: 2025-01-30 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - SSE
   - stream

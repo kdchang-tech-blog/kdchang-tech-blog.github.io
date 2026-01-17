@@ -1,7 +1,7 @@
 ---
 title: Lodash 介紹與入門教學筆記 | 學習筆記
 date: 2024-07-02 02:23:41
-author: kdchang
+authors: kdchang
 tags:
   - Lodash
   - ES Module

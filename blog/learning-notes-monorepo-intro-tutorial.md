@@ -1,7 +1,7 @@
 ---
 title: Monorepo 入門教學筆記：使用 npm Workspaces 管理多專案 | 學習筆記
 date: 2024-11-16 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - Monorepo
   - npm

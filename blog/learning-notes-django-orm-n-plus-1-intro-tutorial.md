@@ -1,7 +1,7 @@
 ---
 title: Django 中的 n+1 問題入門教學筆記
 date: 2024-11-16 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - 前端
   - 後端

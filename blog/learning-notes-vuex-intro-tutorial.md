@@ -1,7 +1,7 @@
 ---
 title: Vuex 入門教學筆記：集中式狀態管理實作入門教學筆記 | 學習筆記
 date: 2024-11-16 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - Vue
   - Vue Router

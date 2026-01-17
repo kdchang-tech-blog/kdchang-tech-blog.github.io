@@ -1,7 +1,7 @@
 ---
 title: Angular 入門教學筆記 | 學習筆記
 date: 2024-12-20 02:23:41
-author: kdchang
+authors: kdchang
 tags:
   - Angular
   - TypeScript

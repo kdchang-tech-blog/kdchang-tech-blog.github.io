@@ -1,7 +1,7 @@
 ---
 title: Vue3 Options API 和 Composition API 風格差異教學筆記 | 學習筆記
 date: 2020-11-16 11:33:41
-author: kdchang
+authors: kdchang
 tags: 
     - vue
     - vue3

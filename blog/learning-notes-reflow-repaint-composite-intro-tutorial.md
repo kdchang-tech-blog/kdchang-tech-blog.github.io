@@ -1,7 +1,7 @@
 ---
 title: 瀏覽器渲染優化入門：掌握重繪、重排與合成的效能關鍵 | 學習筆記
 date: 2024-02-20 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - 瀏覽器渲染
   - Reflow

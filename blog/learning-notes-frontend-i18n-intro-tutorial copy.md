@@ -1,7 +1,7 @@
 ---
 title: 前端 i18n 入門教學與注意事項整理筆記 | 學習筆記
 date: 2025-01-14 02:23:41
-author: kdchang
+authors: kdchang
 tags:
   - i18n
   - react

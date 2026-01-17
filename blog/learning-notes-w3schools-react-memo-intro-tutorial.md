@@ -1,7 +1,7 @@
 ---
 title: 提升效能的利器：React.memo 使用入門教學 | w3schools 學習筆記
 date: 2024-01-13 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - React
   - React Hooks

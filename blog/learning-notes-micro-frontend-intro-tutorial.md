@@ -1,7 +1,7 @@
 ---
 title: 微前端（Micro-Frontend）介紹與入門教學筆記 | 學習筆記
 date: 2024-12-31 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - npm
   - 前端

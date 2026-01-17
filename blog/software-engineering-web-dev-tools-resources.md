@@ -1,7 +1,7 @@
 ---
 title: 常見軟體工程師/網頁開發工具和學習資源整理
 date: 2024-03-22 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - frontend-roadmap
   - software-engineer

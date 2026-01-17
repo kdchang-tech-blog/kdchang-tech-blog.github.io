@@ -1,7 +1,7 @@
 ---
 title: Flexbox 網頁排版技巧入門教學筆記 | 學習筆記
 date: 2024-11-15 02:23:41
-author: kdchang
+authors: kdchang
 tags: 
     - Flexbox
     - css

@@ -1,7 +1,7 @@
 ---
 title: React 條件渲染入門教學 | w3schools 學習筆記
 date: 2024-01-08 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - React
   - React Hooks

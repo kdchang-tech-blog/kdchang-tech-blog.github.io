@@ -1,7 +1,7 @@
 ---
 title: 12 Factor App 入門教學：打造現代雲端應用的十二守則教學筆記 | 學習筆記
 date: 2025-02-09 02:23:41
-author: kdchang
+authors: kdchang
 tags:
   - 12 Factor App
   - Heroku

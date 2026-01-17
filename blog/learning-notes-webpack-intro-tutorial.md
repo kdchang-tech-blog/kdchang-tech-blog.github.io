@@ -1,7 +1,7 @@
 ---
 title: Webpack 入門教學筆記：現代前端建構工具的基礎與實戰 | 學習筆記
 date: 2024-11-16 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - Webpack
   - 前端

@@ -1,7 +1,7 @@
 ---
 title: 資料庫索引（Index）介紹入門教學筆記 | 學習筆記
 date: 2024-02-20 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - Roo Code
   - VS Code

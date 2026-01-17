@@ -1,7 +1,7 @@
 ---
 title: Django「一對一」、「一對多」、「多對多」關聯入門教學筆記 | 學習筆記
 date: 2024-12-02 02:23:41
-author: kdchang
+authors: kdchang
 tags: 
     - Django
     - 一對一

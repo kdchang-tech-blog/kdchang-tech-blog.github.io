@@ -1,7 +1,7 @@
 ---
 title: React Context API 入門教學 | 學習筆記
 date: 2024-12-21 11:33:41
-author: kdchang
+authors: kdchang
 tags: 
     - 前端
     - 前端開發

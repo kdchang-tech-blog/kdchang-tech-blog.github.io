@@ -1,7 +1,7 @@
 ---
 title: 使用 React Router 實現多頁面導覽功能教學（React Router v6）入門教學 | w3schools 學習筆記
 date: 2024-01-12 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - React
   - React Hooks

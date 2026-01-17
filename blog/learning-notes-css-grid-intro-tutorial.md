@@ -1,7 +1,7 @@
 ---
 title: Grid 網頁排版技巧入門教學筆記 | 學習筆記
 date: 2024-11-16 02:23:41
-author: kdchang
+authors: kdchang
 tags: 
     - Grid
     - css

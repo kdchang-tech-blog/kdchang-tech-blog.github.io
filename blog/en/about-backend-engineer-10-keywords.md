@@ -1,7 +1,7 @@
 ---
 title: 10 key terms related to backend engineering
 date: 2024-01-21 10:12:43
-author: kdchang
+authors: kdchang
 lang: en
 tags: 
     - SWE

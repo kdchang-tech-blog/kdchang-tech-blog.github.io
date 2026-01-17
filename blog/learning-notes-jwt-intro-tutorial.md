@@ -1,7 +1,7 @@
 ---
 title: JWT 入門教學筆記 | 學習筆記
 date: 2023-12-20 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - JWT
   - Refresh Token

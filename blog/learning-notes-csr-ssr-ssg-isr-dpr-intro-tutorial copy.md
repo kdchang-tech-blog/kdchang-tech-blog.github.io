@@ -1,7 +1,7 @@
 ---
 title: 前端渲染模式入門教學筆記：CSR、SSR、SSG、ISR、DPR | 學習筆記
 date: 2024-12-13 02:23:41
-author: kdchang
+authors: kdchang
 tags:
   - CSR
   - SSR

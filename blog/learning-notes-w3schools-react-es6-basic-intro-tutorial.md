@@ -1,7 +1,7 @@
 ---
 title: React 與 ES6 語法教學入門 | w3schools 學習筆記
 date: 2024-01-02 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - React
   - React Hooks

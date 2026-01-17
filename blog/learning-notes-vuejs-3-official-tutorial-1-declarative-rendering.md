@@ -1,7 +1,7 @@
 ---
 title: Vue.js 3 官方入門語法教學筆記 [1] - Declarative Rendering 聲明式渲染 | 學習筆記
 date: 2021-02-01 02:23:41
-author: kdchang
+authors: kdchang
 tags: 
     - vue
     - vue3

@@ -1,7 +1,7 @@
 ---
 title: 常見軟體工程師/Web 開發技術面試及學習資源整理
 date: 2023-03-22 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - Frontend Roadmap
   - Software Engineer

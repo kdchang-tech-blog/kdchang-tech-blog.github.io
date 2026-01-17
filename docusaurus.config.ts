@@ -8,7 +8,7 @@ const config: Config = {
   title: "KD Tech Blog 技術部落格",
   tagline:
     "軟體工程和產品專案管理現場觀察：關於軟體開發/程式設計/工程思維的技術部落格",
-  favicon: "https://tech.kdchang.net/img/favicon.ico",
+  favicon: "/img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -58,6 +58,7 @@ const config: Config = {
         blog: {
           showReadingTime: true,
           blogSidebarCount: "ALL",
+          postsPerPage: 10,
           feedOptions: {
             type: ["rss", "atom"],
             xslt: true,

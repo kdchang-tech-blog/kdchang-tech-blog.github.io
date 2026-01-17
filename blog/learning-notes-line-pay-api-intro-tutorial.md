@@ -1,7 +1,7 @@
 ---
 title: LINE Pay API 入門教學筆記 | 學習筆記
 date: 2024-12-17 02:23:41
-author: kdchang
+authors: kdchang
 tags:
   - Line Pay API
   - 第三方支付

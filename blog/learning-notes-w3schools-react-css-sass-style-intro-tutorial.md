@@ -1,7 +1,7 @@
 ---
 title: 在 React 中使用 Sass 進行樣式設計教學 | w3schools 學習筆記
 date: 2024-01-15 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - React
   - React Hooks

@@ -1,7 +1,7 @@
 ---
 title: React 效能優化 SOP 檢核清單入門教學筆記 | 學習筆記
 date: 2024-12-25 02:23:41
-author: kdchang
+authors: kdchang
 tags:
   - Performance Optimization
   - React

@@ -1,7 +1,7 @@
 ---
 title: Vue v-cloak 入門教學筆記 | 學習筆記
 date: 2024-02-20 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - 瀏覽器渲染
   - v-cloak

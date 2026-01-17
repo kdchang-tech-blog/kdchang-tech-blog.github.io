@@ -1,7 +1,7 @@
 ---
 title: GitHub Copilot 與 Copilot Agent 入門教學筆記 | 學習筆記
 date: 2024-12-20 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - GitHub
   - GitHub Copilot

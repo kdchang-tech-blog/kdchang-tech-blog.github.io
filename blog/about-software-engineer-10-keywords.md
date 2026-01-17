@@ -1,7 +1,7 @@
 ---
 title: 關於軟體工程師 Software Engineer 的 10 個關鍵字
 date: 2015-01-22 11:33:41
-author: kdchang
+authors: kdchang
 tags: 
     - 開發者
     - 軟體工程師

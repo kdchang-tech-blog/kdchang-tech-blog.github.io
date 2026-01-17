@@ -1,7 +1,7 @@
 ---
 title: Responsive Design 響應式設計入門教學筆記 | 學習筆記
 date: 2022-06-10 02:23:41
-author: kdchang
+authors: kdchang
 tags: 
     - Responsive Design
     - 響應式設計

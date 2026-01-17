@@ -1,7 +1,7 @@
 ---
 title: JavaScript this 使用情境入門教學筆記 | 學習筆記
 date: 2023-12-21 11:33:41
-author: kdchang
+authors: kdchang
 tags: 
     - JavaScript
     - arrow function

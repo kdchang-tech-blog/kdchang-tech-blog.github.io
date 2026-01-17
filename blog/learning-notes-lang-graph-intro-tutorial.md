@@ -1,7 +1,7 @@
 ---
 title: LangGraph 入門教學筆記：打造多步驟 AI 流程的圖形化解決方案 | 學習筆記
 date: 2024-12-24 02:23:41
-author: kdchang
+authors: kdchang
 tags:
   - html
   - 前端

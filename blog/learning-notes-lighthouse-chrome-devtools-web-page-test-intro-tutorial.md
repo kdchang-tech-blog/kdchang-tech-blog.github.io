@@ -1,7 +1,7 @@
 ---
 title: 網站效能診斷入門教學：Lighthouse、Chrome DevTools 與 WebPageTest 實戰指南 | 學習筆記
 date: 2024-03-20 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - Lighthouse
   - Chrome DevTools

@@ -1,7 +1,7 @@
 ---
 title: 30 Days of JavaScript 入門教學筆記 | 學習筆記
 date: 2023-02-09 02:23:41
-author: kdchang
+authors: kdchang
 tags:
   - 30 Days of JavaScript
   - JavaScript

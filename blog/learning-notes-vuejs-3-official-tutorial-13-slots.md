@@ -1,7 +1,7 @@
 ---
 title: Vue.js 3 官方入門語法教學筆記 [13] - Slots 插槽 | 學習筆記
 date: 2021-02-14 02:23:41
-author: kdchang
+authors: kdchang
 tags: 
     - vue
     - vue3

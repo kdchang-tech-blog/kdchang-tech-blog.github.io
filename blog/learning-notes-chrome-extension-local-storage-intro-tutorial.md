@@ -1,7 +1,7 @@
 ---
 title: chrome.storage.local vs. localStorage：資料儲存方式差異入門教學筆記 | 學習筆記
 date: 2024-12-20 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - Chrome Extension
   - Chrome

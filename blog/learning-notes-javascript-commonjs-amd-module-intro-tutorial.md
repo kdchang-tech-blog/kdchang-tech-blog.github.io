@@ -1,7 +1,7 @@
 ---
 title: JavaScript 模組系統：CommonJS 與 AMD 入門教學 | 學習筆記
 date: 2024-12-16 11:33:41
-author: kdchang
+authors: kdchang
 tags: 
     - 前端
     - 前端開發

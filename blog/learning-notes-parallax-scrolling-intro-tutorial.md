@@ -1,7 +1,7 @@
 ---
 title: 滾動視差（Parallax Scrolling）網頁設計入門教學筆記 | 學習筆記
 date: 2024-12-04 02:23:41
-author: kdchang
+authors: kdchang
 tags: 
     - typescript
     - 前端

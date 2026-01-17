@@ -1,7 +1,7 @@
 ---
 title: JavaScript 可選鏈接運算符（Optional Chaining）介紹與入門教學 | 學習筆記
 date: 2024-12-21 11:33:41
-author: kdchang
+authors: kdchang
 tags: 
     - 前端
     - 前端開發

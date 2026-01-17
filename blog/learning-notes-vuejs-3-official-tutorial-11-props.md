@@ -1,7 +1,7 @@
 ---
 title: Vue.js 3 官方入門語法教學筆記 [11] - Props 屬性 | 學習筆記
 date: 2021-02-11 02:23:41
-author: kdchang
+authors: kdchang
 tags: 
     - vue
     - vue3

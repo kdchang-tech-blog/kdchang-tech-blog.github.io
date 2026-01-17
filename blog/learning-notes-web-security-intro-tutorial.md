@@ -1,7 +1,7 @@
 ---
 title: Web 資訊安全入門教學筆記 | 學習筆記
 date: 2024-10-16 11:33:41
-author: kdchang
+authors: kdchang
 tags: 
     - 前端
     - 前端開發

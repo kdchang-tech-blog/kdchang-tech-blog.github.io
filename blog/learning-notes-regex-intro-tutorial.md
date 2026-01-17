@@ -1,7 +1,7 @@
 ---
 title: 正規表達式（Regex）入門教學筆記 | 學習筆記
 date: 2024-12-14 02:23:41
-author: kdchang
+authors: kdchang
 tags: 
     - Regular Expression
     - 正則式

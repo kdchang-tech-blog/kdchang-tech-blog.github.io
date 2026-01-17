@@ -1,7 +1,7 @@
 ---
 title: 使用 ESM 的 Swagger 入門教學（Node.js + Express） | 學習筆記
 date: 2023-12-21 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - Swagger
   - API

@@ -1,7 +1,7 @@
 ---
 title: React 與 Next.js 入門教學筆記 | 學習筆記
 date: 2024-11-16 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - React
   - Next.js

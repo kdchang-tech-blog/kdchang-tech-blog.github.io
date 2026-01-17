@@ -1,7 +1,7 @@
 ---
 title: 軟體工程專有名詞彙整學習筆記
 date: 2024-11-16 11:33:41
-author: kdchang
+authors: kdchang
 tags:
   - 前端
   - 後端

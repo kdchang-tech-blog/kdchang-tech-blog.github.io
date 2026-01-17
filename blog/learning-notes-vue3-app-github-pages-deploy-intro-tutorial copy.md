@@ -1,7 +1,7 @@
 ---
 title: 將 Vue 3 應用部署到 GitHub Pages 入門語法教學筆記 | 學習筆記
 date: 2018-02-02 02:23:41
-author: kdchang
+authors: kdchang
 tags:
   - Vue
   - GitHub Pages
