@@ -42,11 +42,7 @@ const config: Config = {
       "@docusaurus/preset-classic",
       {
         googleTagManager: {
-          containerId: "GTM-NM3JS43H", // GTM
-        },
-        gtag: {
-          trackingID: "G-FN9X92SM77",
-          anonymizeIP: true,
+          containerId: "GTM-KZJ725WL", // GTM
         },
         docs: {
           sidebarPath: "./sidebars.ts",
