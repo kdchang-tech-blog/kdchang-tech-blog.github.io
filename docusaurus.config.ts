@@ -26,7 +26,6 @@ const config: Config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "kdchang-tech-blog", // Usually your GitHub org/user name.
   projectName: "kdchang-tech-blog.github.io", // repo
-
   onBrokenLinks: "throw",
 
   // Even if you don't use internationalization, you can use this field to set
